@@ -45,13 +45,13 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+          <h2 className="section-title">
             What Our Clients Say
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="section-subtitle mx-auto">
             Hear from our valued partners about their experience working with SRIA Infotech.
           </p>
         </motion.div>
@@ -69,8 +69,8 @@ const TestimonialsSection = () => {
             >
               {/* Quote Icon */}
               <div className="absolute -top-6 left-8 md:left-12">
-                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                  <Quote className="w-6 h-6 text-accent-foreground" />
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                  <Quote className="w-6 h-6 text-primary-foreground" />
                 </div>
               </div>
 
@@ -80,8 +80,8 @@ const TestimonialsSection = () => {
                 </p>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-xl font-heading font-bold text-primary">
+                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center">
+                    <span className="text-xl font-heading font-bold text-primary-foreground">
                       {testimonials[current].author[0]}
                     </span>
                   </div>
@@ -101,7 +101,7 @@ const TestimonialsSection = () => {
             <div className="flex justify-center gap-4 mt-8">
               <button
                 onClick={prev}
-                className="w-12 h-12 rounded-full border-2 border-border hover:border-primary flex items-center justify-center transition-colors group"
+                className="w-12 h-12 rounded-full border-2 border-border hover:border-primary hover:bg-primary/10 flex items-center justify-center transition-colors group"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -114,7 +114,7 @@ const TestimonialsSection = () => {
                     onClick={() => setCurrent(index)}
                     className={`w-2.5 h-2.5 rounded-full transition-all ${
                       index === current
-                        ? "bg-accent w-8"
+                        ? "bg-primary w-8"
                         : "bg-border hover:bg-primary/50"
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
@@ -124,7 +124,7 @@ const TestimonialsSection = () => {
 
               <button
                 onClick={next}
-                className="w-12 h-12 rounded-full border-2 border-border hover:border-primary flex items-center justify-center transition-colors group"
+                className="w-12 h-12 rounded-full border-2 border-border hover:border-primary hover:bg-primary/10 flex items-center justify-center transition-colors group"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />

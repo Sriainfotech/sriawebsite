@@ -57,23 +57,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom corporate colors
-        navy: {
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
-        },
-        orange: {
-          DEFAULT: "hsl(var(--orange))",
-          light: "hsl(var(--orange-light))",
-        },
+        // Blue palette - single color system
         blue: {
+          50: "hsl(var(--blue-50))",
           100: "hsl(var(--blue-100))",
           200: "hsl(var(--blue-200))",
+          300: "hsl(var(--blue-300))",
+          400: "hsl(var(--blue-400))",
           500: "hsl(var(--blue-500))",
           600: "hsl(var(--blue-600))",
           700: "hsl(var(--blue-700))",
           800: "hsl(var(--blue-800))",
           900: "hsl(var(--blue-900))",
+          950: "hsl(var(--blue-950))",
         },
       },
       fontFamily: {
@@ -124,8 +120,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--accent) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--accent) / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.5)" },
         },
       },
       animation: {

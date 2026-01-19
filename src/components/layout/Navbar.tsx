@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -46,7 +46,6 @@ const Navbar = () => {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-xl font-heading">S</span>
               </div>
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-accent rounded-full" />
             </div>
             <div className="flex flex-col">
               <span className={`font-heading font-bold text-xl transition-colors ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}>
@@ -66,7 +65,7 @@ const Navbar = () => {
                 to={link.path}
                 className={`relative font-medium transition-colors link-underline ${
                   location.pathname === link.path
-                    ? "text-accent"
+                    ? isScrolled ? "text-primary" : "text-primary-foreground"
                     : isScrolled
                     ? "text-foreground hover:text-primary"
                     : "text-primary-foreground/90 hover:text-primary-foreground"
@@ -80,7 +79,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link to="/contact">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
+              <Button className={`font-semibold px-6 ${isScrolled ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}>
                 Get in Touch
               </Button>
             </Link>
@@ -121,7 +120,7 @@ const Navbar = () => {
                       to={link.path}
                       className={`block px-4 py-3 font-medium transition-colors ${
                         location.pathname === link.path
-                          ? "text-accent bg-accent/10"
+                          ? "text-primary bg-primary/10"
                           : "text-foreground hover:text-primary hover:bg-primary/5"
                       }`}
                     >
@@ -131,7 +130,7 @@ const Navbar = () => {
                 ))}
                 <div className="px-4 pt-2">
                   <Link to="/contact">
-                    <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                       Get in Touch
                     </Button>
                   </Link>

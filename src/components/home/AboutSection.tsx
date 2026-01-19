@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import aboutTeam from "@/assets/about-team.jpg";
+import aboutOffice from "@/assets/about-office.jpg";
 
 const highlights = [
   "Partner-centric approach with trust and integrity",
@@ -23,50 +25,48 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative z-10">
-              <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 text-primary-foreground">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-primary-foreground/10 rounded-xl p-6 text-center">
-                    <div className="text-4xl font-heading font-bold mb-2">10+</div>
-                    <div className="text-sm opacity-80">Years Experience</div>
-                  </div>
-                  <div className="bg-primary-foreground/10 rounded-xl p-6 text-center">
-                    <div className="text-4xl font-heading font-bold mb-2">100+</div>
-                    <div className="text-sm opacity-80">Happy Clients</div>
-                  </div>
-                  <div className="bg-primary-foreground/10 rounded-xl p-6 text-center">
-                    <div className="text-4xl font-heading font-bold mb-2">500+</div>
-                    <div className="text-sm opacity-80">Projects Done</div>
-                  </div>
-                  <div className="bg-primary-foreground/10 rounded-xl p-6 text-center">
-                    <div className="text-4xl font-heading font-bold mb-2">3</div>
-                    <div className="text-sm opacity-80">Global Offices</div>
-                  </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="image-card">
+                <img 
+                  src={aboutTeam} 
+                  alt="Team collaboration" 
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              </div>
+              <div className="image-card mt-8">
+                <img 
+                  src={aboutOffice} 
+                  alt="Office environment" 
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              </div>
+            </div>
+            
+            {/* Floating Stats Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary shadow-xl rounded-xl p-6 text-primary-foreground"
+            >
+              <div className="flex items-center gap-8">
+                <div className="text-center">
+                  <p className="text-3xl font-heading font-bold">10+</p>
+                  <p className="text-sm opacity-80">Years</p>
+                </div>
+                <div className="w-px h-12 bg-primary-foreground/30" />
+                <div className="text-center">
+                  <p className="text-3xl font-heading font-bold">100+</p>
+                  <p className="text-sm opacity-80">Clients</p>
+                </div>
+                <div className="w-px h-12 bg-primary-foreground/30" />
+                <div className="text-center">
+                  <p className="text-3xl font-heading font-bold">3</p>
+                  <p className="text-sm opacity-80">Offices</p>
                 </div>
               </div>
-              
-              {/* Floating Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-8 -right-8 bg-card shadow-xl rounded-xl p-6 border border-border max-w-xs"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🌍</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Global Presence</p>
-                    <p className="text-sm text-muted-foreground">India & USA</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Background Decoration */}
-            <div className="absolute -top-4 -left-4 w-full h-full bg-accent/10 rounded-2xl -z-10" />
+            </motion.div>
           </motion.div>
 
           {/* Content Side */}
@@ -76,12 +76,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
+            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
               About Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-              What Sets Us Apart:{" "}
-              <span className="text-primary">Partner-Centric Approach</span>
+            <h2 className="section-title">
+              What Sets Us Apart: Partner-Centric Approach
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               Our partner-centric approach sets us apart, as we believe in establishing 
@@ -100,7 +99,7 @@ const AboutSection = () => {
                   transition={{ duration: 0.4, delay: 0.1 * index }}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                   <span className="text-foreground">{item}</span>
                 </motion.li>
               ))}

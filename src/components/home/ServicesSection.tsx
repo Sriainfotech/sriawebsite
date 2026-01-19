@@ -1,50 +1,32 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Server, Cloud, Code, Settings, Database, LineChart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import serviceSap from "@/assets/service-sap.jpg";
+import serviceCloud from "@/assets/service-cloud.jpg";
+import serviceDigital from "@/assets/service-digital.jpg";
+import serviceManaged from "@/assets/service-managed.jpg";
 
 const services = [
   {
-    icon: Server,
+    image: serviceSap,
     title: "SAP S/4HANA Implementation",
     description: "End-to-end implementation services for SAP S/4HANA, enabling intelligent enterprise operations with real-time insights.",
-    color: "from-blue-500/20 to-blue-600/20",
-    iconColor: "text-blue-600",
   },
   {
-    icon: Cloud,
+    image: serviceCloud,
     title: "SAP S/4HANA Migration",
     description: "Seamless migration to SAP S/4HANA with minimal disruption, ensuring data integrity and business continuity.",
-    color: "from-cyan-500/20 to-cyan-600/20",
-    iconColor: "text-cyan-600",
   },
   {
-    icon: Code,
-    title: "SAP Fiori Development",
-    description: "Custom Fiori applications that deliver modern, intuitive user experiences across all devices and platforms.",
-    color: "from-violet-500/20 to-violet-600/20",
-    iconColor: "text-violet-600",
+    image: serviceDigital,
+    title: "Digital Transformation",
+    description: "Custom digital solutions that deliver modern, intuitive user experiences across all devices and platforms.",
   },
   {
-    icon: Settings,
-    title: "Application Management (AMS)",
+    image: serviceManaged,
+    title: "Managed Services",
     description: "Comprehensive SAP S/4HANA application management services to optimize performance and reduce operational costs.",
-    color: "from-emerald-500/20 to-emerald-600/20",
-    iconColor: "text-emerald-600",
-  },
-  {
-    icon: Database,
-    title: "SAP Business Technology Platform",
-    description: "Leverage SAP BTP to integrate, extend, and innovate with cloud-native development and analytics.",
-    color: "from-orange-500/20 to-orange-600/20",
-    iconColor: "text-orange-600",
-  },
-  {
-    icon: LineChart,
-    title: "Data Analytics",
-    description: "Transform raw data into actionable insights with advanced analytics solutions for informed decision-making.",
-    color: "from-pink-500/20 to-pink-600/20",
-    iconColor: "text-pink-600",
   },
 ];
 
@@ -60,20 +42,20 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
             Our Services
           </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+          <h2 className="section-title">
             Comprehensive SAP Managed Services
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="section-subtitle mx-auto">
             We offer a full spectrum of SAP solutions designed to transform your business 
             operations and drive digital excellence.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid with Images */}
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -83,30 +65,22 @@ const ServicesSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="relative bg-card p-8 rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full overflow-hidden">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                
-                <div className="relative z-10">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+              <div className="image-card h-full">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-primary-foreground">
+                    <h3 className="font-heading font-semibold text-xl mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-                  
-                  <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  
-                  <Link
-                    to="/services"
-                    className="inline-flex items-center text-primary font-medium group/link"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
                 </div>
               </div>
             </motion.div>

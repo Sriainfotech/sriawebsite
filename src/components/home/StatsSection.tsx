@@ -1,5 +1,6 @@
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import heroServices from "@/assets/hero-services.jpg";
 
 const stats = [
   { value: 10, suffix: "+", label: "Years of Excellence" },
@@ -45,13 +46,15 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
 const StatsSection = () => {
   return (
-    <section className="py-20 hero-gradient relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
-        }} />
+    <section className="py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroServices} 
+          alt="Technology background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 hero-overlay" />
       </div>
 
       <div className="container-custom relative z-10">
