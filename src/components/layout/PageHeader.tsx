@@ -6,11 +6,26 @@ interface PageHeaderProps {
   title: string;
   subtitle?: string;
   breadcrumbs?: { name: string; path: string }[];
+  backgroundImage?: string;
 }
 
-const PageHeader = ({ title, subtitle, breadcrumbs }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeaderProps) => {
   return (
-    <section className="hero-gradient relative overflow-hidden">
+    <section className="relative overflow-hidden min-h-[400px] flex items-center">
+      {/* Background Image or Gradient */}
+      {backgroundImage ? (
+        <div className="absolute inset-0">
+          <img 
+            src={backgroundImage} 
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 hero-overlay" />
+        </div>
+      ) : (
+        <div className="absolute inset-0 hero-gradient" />
+      )}
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -18,7 +33,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs }: PageHeaderProps) => {
         }} />
       </div>
 
-      <div className="container-custom relative pt-32 pb-20">
+      <div className="container-custom relative z-10 pt-24 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +52,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs }: PageHeaderProps) => {
                 <div key={crumb.path} className="flex items-center gap-2">
                   <ChevronRight className="w-4 h-4 text-primary-foreground/50" />
                   {index === breadcrumbs.length - 1 ? (
-                    <span className="text-accent text-sm font-medium">{crumb.name}</span>
+                    <span className="text-primary-foreground text-sm font-medium">{crumb.name}</span>
                   ) : (
                     <Link
                       to={crumb.path}
