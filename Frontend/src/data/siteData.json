@@ -1,0 +1,109 @@
+{
+    "testimonials": [
+        {
+            "id": 1,
+            "name": "V. Jay",
+            "role": "Chairman, LVK Pharma",
+            "rating": 5,
+            "review": "Moving from manual processes to a fully digital CRM with Odoo was a major transformation for us. The team ensured a smooth transition and supported us throughout the journey. Their professionalism and technical expertise greatly improved our operations.",
+            "verified": true,
+            "image": "about-team.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Vidyasagar",
+            "role": "IT Head, Patil Group",
+            "rating": 5,
+            "review": "From SAP configuration to fund management and PDF OCR automation, their solutions have helped us scale efficiently and intelligently. The team is responsive, strategic, and focused on long-term value. Outstanding delivery across all modules.",
+            "verified": true,
+            "image": "about-team.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Mallesh",
+            "role": "Owner, 7Hills Restaurant",
+            "rating": 5,
+            "review": "Our digital transformation has been incredible. From a modern website to real-time POS and inventory control, everything just works smoothly. Guests are happier, and so is my staff. I'm thankful for their vision and execution.",
+            "verified": true,
+            "image": "about-team.jpg"
+        }
+    ],
+    "successStories": [
+        {
+            "id": 1,
+            "title": "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
+            "category": "Partnership",
+            "image": "/partners/ivc-logo.png",
+            "readMoreLink": "/partners/ivc-solutions"
+        },
+        {
+            "id": 2,
+            "title": "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+            "category": "SAP & Automation",
+            "image": "/customerStories/patil.jpg",
+            "readMoreLink": "/patil"
+        },
+        {
+            "id": 3,
+            "title": "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+            "category": "Digital Transformation",
+            "image": "/customerStories/7hills.jpg",
+            "readMoreLink": "/hills"
+        },
+        {
+            "id": 4,
+            "title": "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+            "category": "Odoo CRM",
+            "image": "/customerStories/pharma.jpg",
+            "readMoreLink": "/Lvk"
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "title": "SAP Inside Track 2025 – Edition 2",
+            "tag": "In-person",
+            "date": "August 23, 2025",
+            "venue": "India (Venue TBA)",
+            "image": "/Events/sapevent.jpg"
+        },
+        {
+            "id": 2,
+            "title": "New Office Launch – Mulugu District, Hyderabad",
+            "tag": "In-person",
+            "date": "August 11, 2025",
+            "venue": "Mulugu, Hyderabad",
+            "image": "/Events/launch.jpg"
+        }
+    ],
+    "news": [
+        {
+            "id": 1,
+            "title": "Leading Pharma Manufacturer in US Embarks on Digital Transformation with SAP S/4HANA and Commerce Platform",
+            "tag": "United States",
+            "description": "Major expansion announced across multiple continents to serve growing client base.",
+            "link": "/news1"
+        },
+        {
+            "id": 2,
+            "title": "Partnership with Leading Tech Giants",
+            "tag": "Europe",
+            "description": "Strategic partnerships formed to enhance service delivery and innovation capabilities.",
+            "link": "/news1"
+        },
+        {
+            "id": 3,
+            "title": "Award for Excellence in Digital Solutions",
+            "tag": "Asia",
+            "description": "Recognition received for outstanding contributions to digital transformation initiatives.",
+            "link": "/news1"
+        },
+        {
+            "id": 4,
+            "title": "New Research & Development Center",
+            "tag": "Canada",
+            "description": "State-of-the-art facility launched to drive innovation in emerging technologies.",
+            "link": "/news1"
+        }
+    ]
+}
