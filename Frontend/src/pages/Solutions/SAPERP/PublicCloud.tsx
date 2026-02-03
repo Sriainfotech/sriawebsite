@@ -1,286 +1,211 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PageHeader from "@/components/layout/PageHeader";
-
 import {
-  Star,
-  Globe,
-  Shield,
-  Rocket,
-  BarChart2,
-  Database,
+  BarChart,
+  Cloud,
+  CheckCircle2,
+  Layers,
+  Code2,
   Users,
+  LifeBuoy,
+  Zap,
   Settings,
+  Factory,
+  Globe,
+  ShieldCheck,
+  Briefcase,
+  Rocket,
+  TrendingUp,
+  Database,
+  Lock,
+  Server,
+  RefreshCw,
+  Layout,
+  FileCheck,
+  GraduationCap,
+  Cpu,
+  PieChart,
+  Map,
 } from "lucide-react";
 
-const faqs = [
+// Data Structures
+const advisoryServices = [
   {
-    question: "What is SAP S/4HANA Public Cloud?",
-    answer:
-      "It is a ready-to-run cloud ERP that delivers the latest industry best practices and continuous innovation.",
+    title: "Fit-to-Standard",
+    icon: <Users className="w-8 h-8 text-orange-600" />,
+    items: ["Workshops", "Business process discovery and mapping"],
   },
   {
-    question: "How fast can it be deployed?",
-    answer:
-      "With pre-configured best practices and standard processes, deployment can be achieved in weeks rather than months.",
-  },
-  {
-    question: "Is it customizable?",
-    answer:
-      "Yes, it supports in-app extensibility and side-by-side extensions via SAP BTP to meet specific business needs without disrupting the core.",
-  },
-  {
-    question: "How are upgrades handled?",
-    answer:
-      "SAP manages all infrastructure and software updates, ensuring you are always on the latest version with minimal effort.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "SAP provides enterprise-grade security, compliance, and data protection, adhering to global standards and regulations.",
+    title: "Readiness Check",
+    icon: <CheckCircle2 className="w-8 h-8 text-orange-600" />,
+    items: ["Landscape assessment", "Cloud readiness evaluation"],
   },
 ];
 
-const tabs = [
+const systemSetupServices = [
   {
-    icon: <Users className="w-10 h-10 text-blue-500" />,
-    title: "End-to-End SAP Services",
-    description:
-      "From planning to execution, we cover every aspect of your SAP journey.",
+    title: "Provisioning & Access",
+    desc: "Tenant provisioning and system access setup.",
   },
   {
-    icon: <Star className="w-10 h-10 text-yellow-500" />,
-    title: "Industry Expertise",
-    description:
-      "Deep knowledge across various sectors to tailor solutions for your specific needs.",
+    title: "Identity Management",
+    desc: "Identity and Access Management (IAM) configuration.",
   },
   {
-    icon: <Settings className="w-10 h-10 text-gray-500" />,
-    title: "Certified SAP Professionals",
-    description:
-      "A team of highly skilled and certified experts dedicated to your success.",
-  },
-  {
-    icon: <Rocket className="w-10 h-10 text-purple-500" />,
-    title: "Rapid Deployment",
-    description:
-      "Accelerated implementation methodologies to get you up and running faster.",
-  },
-  {
-    icon: <Database className="w-10 h-10 text-orange-500" />,
-    title: "Cloud & On-Prem Expertise",
-    description:
-      "Seamless integration and management of hybrid environments.",
-  },
-  {
-    icon: <Globe className="w-10 h-10 text-green-500" />,
-    title: "Global Delivery Model",
-    description:
-      "Flexible delivery options ensuring 24/7 support and execution.",
-  },
-  {
-    icon: <Shield className="w-10 h-10 text-red-500" />,
-    title: "Security & Compliance",
-    description:
-      "Ensuring your data is secure and compliant with industry standards.",
-  },
-  {
-    icon: <BarChart2 className="w-10 h-10 text-pink-500" />,
-    title: "Value Realization",
-    description:
-      "Focusing on tangible business outcomes and ROI.",
+    title: "Org & Master Data",
+    desc: "Organizational structure and master data setup.",
   },
 ];
 
-const sampleSolutions = [
+const configServices = [
+  "Pre-configured best practices activation (SAP Best Practices Explorer)",
+  "Country- and industry-specific configurations",
+  "Business process scoping in SAP Central Business Configuration (CBC)",
+];
+
+const migrationServices = [
   {
-    title: "Advisory",
-    heading: "Advisory & Readiness",
-    description:
-      "Assess your cloud readiness.",
-    points: [
-      "Fit-to-standard workshops",
-      "Process discovery",
-      "Landscape assessment",
-      "Cloud readiness check",
-    ],
+    title: "Data Preparation",
+    icon: (
+      <Database className="w-12 h-12 mx-auto text-slate-400 group-hover:text-orange-600 mb-6 transition-colors" />
+    ),
+    desc: "Data cleansing and transformation for accurate migration.",
   },
   {
-    title: "Setup",
-    heading: "Initial System Setup",
-    description:
-      "Provisioning and access.",
-    points: [
-      "Tenant provisioning",
-      "Identity management",
-      "Org structure setup",
-      "Master data setup",
-    ],
-  },
-  {
-    title: "Config",
-    heading: "Process Configuration",
-    description:
-      "Activate best practices.",
-    points: [
-      "Best practices activation",
-      "Industry configurations",
-      "Process scoping (CBC)",
-      "Country specifics",
-    ],
-  },
-  {
-    title: "Migration",
-    heading: "Data Migration",
-    description:
-      "Secure data transfer.",
-    points: [
-      "Data cleansing",
-      "Migration Cockpit",
-      "Data validation",
-      "Reconciliation",
-    ],
-  },
-  {
-    title: "Integration",
-    heading: "Integration Services",
-    description:
-      "Connect your landscape.",
-    points: [
-      "SAP BTP integrations",
-      "Standard APIs",
-      "Non-SAP integration",
-      "eCommerce & CRM",
-    ],
-  },
-  {
-    title: "Support",
-    heading: "AMS & Support",
-    description:
-      "Continuous operations.",
-    points: [
-      "Incident resolution",
-      "Release testing",
-      "SLA-driven support",
-      "Upgrade management",
-    ],
+    title: "Execution & Validation",
+    icon: (
+      <RefreshCw className="w-12 h-12 mx-auto text-slate-400 group-hover:text-orange-600 mb-6 transition-colors" />
+    ),
+    desc: "Using SAP Migration Cockpit, validation, and reconciliation.",
   },
 ];
 
-const menuItems = [
-  "Overview",
-  "Features",
-  "Insights",
-  "Benefits",
-  "Find Your Answers",
-  "Other Products",
-];
-
-const sapData = {
-  heading: "Delivering Impact-Driven SAP Implementations",
-  description:
-    "Your Trusted Partner in SAP Transformation. We help organizations unlock agility and innovation with SAP S/4HANA Public Cloud.",
-  imageUrl: "/Solutions/erp-public-cloud.png",
-  imageAlt: "SAP Public Cloud",
-  items: [
-    {
-      title: "Advisory",
-      highlight: "Readiness Assessment",
-      description:
-        "Fit-to-standard workshops and landscape assessment to ensure a smooth cloud transition.",
-    },
-    {
-      title: "Configuration",
-      highlight: "Best Practices",
-      description:
-        "Activation of pre-configured best practices and industry-specific processes.",
-    },
-    {
-      title: "Migration",
-      highlight: "Secure Data",
-      description:
-        "Data cleansing, mapping, and transformation using SAP Migration Cockpit.",
-    },
-  ],
-};
-
-const customerStories = [
+const integrationServices = [
   {
-    id: 1,
-    image: "/partners/ivc-logo.png",
-    title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
-    readMoreLink: "/partners/ivc-solutions",
+    title: "SAP BTP Integrations",
+    icon: <Layers className="w-6 h-6" />,
+    desc: "Seamless connection via SAP Integration Suite.",
   },
   {
-    id: 2,
-    image: "/customerStories/patil.jpg",
-    title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
-    readMoreLink: "/patil",
+    title: "Standard Connectivity",
+    icon: <Globe className="w-6 h-6" />,
+    desc: "Standard APIs and iFlows from SAP API Hub.",
   },
   {
-    id: 3,
-    image: "/customerStories/7hills.jpg",
-    title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
-    readMoreLink: "/hills",
-  },
-  {
-    id: 4,
-    image: "/customerStories/pharma.jpg",
-    title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
-    readMoreLink: "/Lvk",
+    title: "Non-SAP Systems",
+    icon: <Server className="w-6 h-6" />,
+    desc: "Integration with CRM, PLM, and eCommerce platforms.",
   },
 ];
 
-const insights = {
-  heading: "Elevate, Innovate, and Thrive with SAP",
-  description:
-    "Ready to Grow Your Business? Explore our comprehensive range of services from implementation to support.",
-  ctaText: "Contact Us",
-  ctaLink: "/contactus",
-  solutions: [
-    { title: "Rise with SAP", href: "/solutions/rise-with-sap" },
-    { title: "SAP S/4HANA", href: "/solutions/sap-s4hana" },
-  ],
-};
+const amsServices = [
+  "Incident and problem resolution",
+  "Release and regression testing for quarterly upgrades",
+  "SLA-driven support models",
+];
 
-const features = [
+const trainingServices = [
   {
-    title: "Application Development",
-    description:
-      "Building robust applications to extend SAP capabilities with ABAP and custom development.",
-    image: "/Solutions/buildapps.png",
+    title: "User Enablement",
+    items: ["End-user and super-user training", "Role-based documentation"],
   },
   {
-    title: "Data & Analytics",
-    description:
-      "Empowering decisions with SAP Analytics Cloud (SAC) for comprehensive business insights.",
-    image: "/DATA ANALYTICS.png",
-  },
-  {
-    title: "Automation & AI",
-    description:
-      "Streamlining operations with RPA, AI, and intelligent automation technologies.",
-    image: "/Services/automation.png",
-  },
-  {
-    title: "Integration Services",
-    description:
-      "Seamless connectivity using SAP CPI and BTP for a unified business landscape.",
-    image: "/Solutions/cpi.png",
-  },
-  {
-    title: "Fiori User Experience",
-    description:
-      "Enhancing user engagement with custom Fiori-based extensions and modern UI.",
-    image: "/Services/FIORI.webp",
+    title: "eLearning",
+    items: ["Custom eLearning modules", "Continuous learning paths"],
   },
 ];
 
-function PublicCloud() {
+const continuousImprovement = [
+  {
+    title: "KPI Monitoring",
+    icon: <BarChart className="w-8 h-8 text-orange-600" />,
+    desc: "Continuous monitoring and optimization of KPIs.",
+  },
+  {
+    title: "Process Improvement",
+    icon: <TrendingUp className="w-8 h-8 text-orange-600" />,
+    desc: "Business process improvement recommendations.",
+  },
+];
+
+const analyticsServices = [
+  "Embedded SAP Analytics Cloud dashboards",
+  "Custom KPIs and real-time reporting",
+];
+
+const extensibilityServices = [
+  {
+    title: "In-App Extensibility",
+    desc: "Custom fields, logic, and UI adjustments.",
+  },
+  {
+    title: "Side-by-Side Extensions",
+    desc: "Developments via SAP BTP (CAP, RAP).",
+  },
+];
+
+const localizationServices = [
+  "Country-specific legal and tax requirements",
+  "E-invoicing and statutory reporting",
+];
+
+const trustedPartnerFeatures = [
+  {
+    icon: <Briefcase className="w-8 h-8" />,
+    label: "Industry Expertise",
+  },
+  {
+    icon: <ShieldCheck className="w-8 h-8" />,
+    label: "Certified Professionals",
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    label: "Global Delivery Model",
+  },
+  {
+    icon: <Rocket className="w-8 h-8" />,
+    label: "Rapid Deployment",
+  },
+];
+
+const endToEndServices = [
+  "Cloud & On-Prem Expertise",
+  "Innovation-Driven",
+  "Change Management & Training",
+  "Value Realization & Continuous Improvement",
+  "License Advisory & Optimization",
+  "Security & Compliance",
+];
+
+const techTrends = [
+  "Application Development",
+  "Data & Analytics",
+  "Automation",
+  "Integration",
+  "ABAP",
+  "SAC",
+  "FIORI",
+  "RPA",
+  "CPI",
+  "AI",
+];
+
+const sapKeywords = [
+  "Implementation",
+  "Rollouts",
+  "Training",
+  "Migrations",
+  "Upgrades",
+  "Development",
+  "Support",
+  "Integration",
+  "Testing",
+];
+
+const PublicCloud = () => {
   return (
-    <div className="min-h-screen">
-      {/* <Navigation /> */}
-
+    <div className="bg-white font-sans text-slate-800">
+      {/* Hero Section */}
       <PageHeader
         title="Unlock Agility & Innovation"
         subtitle="SAP S/4HANA Public Cloud is a comprehensive, next-generation enterprise resource planning (ERP) solution designed for scalability, agility, and innovation."
@@ -290,221 +215,382 @@ function PublicCloud() {
           { name: "Public Cloud", path: "/solutions/public-cloud" },
         ]}
         backgroundImage="/Solutions/public.jpeg"
+        bottomWaveColor="fill-gray-50"
       />
 
-
-
-      {/* Main Content - Responsive Layout */}
-      <div className="flex flex-col lg:flex-row w-full max-w-[1400px] mx-auto mt-4 lg:px-8">
-        {/* Sidebar */}
-        <div className="hidden lg:block lg:w-1/6">
-          <div className="sticky top-24">
-            {/* <SidebarMenu menuItems={menuItems} /> */}
-            <div className="space-y-2">
-              {menuItems.map((item, idx) => (
-                <a key={idx} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="block text-gray-600 hover:text-primary">{item}</a>
-              ))}
-            </div>
+      {/* SECTION 1: Impact-Driven Header */}
+      <section className="relative w-full py-24 px-6 lg:px-12 bg-gradient-to-br from-gray-50 to-orange-50/30 animate-fade-in">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="lg:w-1/2">
+            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+              Impact-Driven <br />
+              <span className="text-orange-500 pt-2">SAP Growth</span> <br />
+            </h1>
+            <div className="h-1 w-24 bg-orange-500 mt-4 mb-6 rounded-full" />
           </div>
-        </div>
-
-        {/* Main Content */}
-        <div className="w-full lg:w-5/6 bg-white min-h-screen p-4 lg:p-6">
-          {/* Overview Section */}
-          <section id="overview" className="scroll-mt-24">
-            <div className="bg-white">
-              {/* <InfoSection {...sapData} /> */}
-              <h2 className="text-3xl font-bold mb-4">{sapData.heading}</h2>
-              <p className="mb-8 text-gray-600">{sapData.description}</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {sapData.items.map((item, idx) => (
-                  <div key={idx} className="p-6 border rounded-lg">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-sm font-semibold text-primary mb-2">{item.highlight}</p>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Features Section */}
-          <section id="features" className="mt-12 sm:mt-16 scroll-mt-24">
-            <div className="flex justify-center">
-              {/* <ConsultationTabsSection
-                solutions={sampleSolutions}
-                mainHeading="Delivering Impact-Driven SAP Implementations for Sustainable Growth"
-                mainDescription="Our services cover the entire cloud lifecycle from advisory and setup to migration and support."
-              // ctaText="Get a Consultation"
-              /> */}
-              <div className="w-full">
-                <h2 className="text-3xl font-bold mb-4">Delivering Impact-Driven SAP Implementations for Sustainable Growth</h2>
-                <p className="mb-8 text-gray-600">Our services cover the entire cloud lifecycle from advisory and setup to migration and support.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {sampleSolutions.map((sol, idx) => (
-                    <div key={idx} className="p-6 border rounded-lg">
-                      <h3 className="text-xl font-bold mb-2">{sol.heading}</h3>
-                      <p className="text-gray-600 mb-4">{sol.description}</p>
-                      <ul className="list-disc pl-5">
-                        {sol.points.map((pt, i) => (
-                          <li key={i} className="text-sm text-gray-500">{pt}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Insights */}
-          <section id="insights" className="mt-16 sm:mt-20 w-full scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-              Insights that define value
-            </h2>
-
-            <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
-              {/* <StatCardStable
-                percentage="100%"
-                description="Commitment to Sustainable Growth"
-              />
-              <StatCardStable
-                percentage="24/7"
-                description="Support with Application Management Services"
-              />
-              <StatCardStable
-                percentage="10+"
-                description="Years of Experience Helping Companies"
-              /> */}
-              <div className="p-6 bg-gray-50 rounded-lg text-center">
-                <div className="text-4xl font-bold text-primary mb-2">100%</div>
-                <p>Commitment to Sustainable Growth</p>
-              </div>
-              <div className="p-6 bg-gray-50 rounded-lg text-center">
-                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                <p>Support with Application Management Services</p>
-              </div>
-              <div className="p-6 bg-gray-50 rounded-lg text-center">
-                <div className="text-4xl font-bold text-primary mb-2">10+</div>
-                <p>Years of Experience Helping Companies</p>
-              </div>
-            </div>
-
-            <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
-              <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Our innovative technologies empower financial institutions to streamline operations, enhance customer experiences, and drive growth.
-              </h1>
-              <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
-                <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
-                  Request a Demo
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          {/* Key Features Section */}
-          <section id="key-features" className="mt-16 sm:mt-20 scroll-mt-24">
-            <div className="w-full lg:w-3/4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                Key features
-              </h2>
-              <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Drive Innovation and Excellence with the Latest Tech Trends. We empower your business with Application Development, Data & Analytics, Automation, and AI.
-              </p>
-            </div>
-            <section className="my-8 sm:my-10 w-full">
-              {/* <FeatureTabs features={features} /> */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {features.map((feat, idx) => (
-                  <div key={idx} className="p-6 border rounded-lg">
-                    <h3 className="text-xl font-bold mb-2">{feat.title}</h3>
-                    <p className="text-gray-600">{feat.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </section>
-
-          {/* Benefits Section */}
-          <section id="benefits" className="mt-16 sm:mt-20 w-full scroll-mt-24">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl w-full lg:w-3/4 font-semibold">
-              Unlock powerful benefits
-            </h2>
-            <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Your Trusted Partner in SAP Transformation. We bring industry expertise, certified professionals, and a global delivery model to ensure your success.
+          <div className="lg:w-1/3">
+            <p className="text-lg text-slate-600 leading-relaxed font-light">
+              We empower enterprises with future-ready SAP solutions, ensuring
+              seamless transformation, operational excellence, and long-term
+              value creation.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="max-w-7xl mx-auto py-8 sm:py-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
-                {tabs.map((tab, idx) => (
-                  // <InfoTab key={idx} {...tab} />
-                  <div key={idx} className="p-6 border rounded-lg">
-                    <div className="mb-4">{tab.icon}</div>
-                    <h3 className="text-xl font-bold mb-2">{tab.title}</h3>
-                    <p className="text-gray-600">{tab.description}</p>
-                  </div>
+      {/* SECTION 2: Advisory & Readiness Assessment */}
+      <section className="py-20 px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-slate-900">
+              Advisory & Readiness Assessment
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {advisoryServices.map((card, i) => (
+              <div
+                key={i}
+                className="group p-8 bg-slate-50 hover:bg-white border border-slate-100 hover:border-orange-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="mb-6 p-3 bg-orange-50 w-fit rounded-lg group-hover:bg-orange-200 group-hover:text-white transition-colors duration-300">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-slate-900">
+                  {card.title}
+                </h3>
+                <ul className="space-y-2">
+                  {card.items.map((item, j) => (
+                    <li
+                      key={j}
+                      className="text-slate-600 text-sm flex items-center gap-2"
+                    >
+                      <span className="w-1.5 h-1.5 bg-orange-400 rounded-full" />{" "}
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: Initial System Setup */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold text-slate-900">
+              Initial System Setup
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {systemSetupServices.map((step, i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border-t-4 border-orange-500">
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-slate-600">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: Business Process Configuration */}
+      <section className="py-20 px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+          <div className="lg:w-1/3 sticky top-24 self-start">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Business Process Configuration
+            </h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              Activate and configure best practices tailored to your specific industry needs.
+            </p>
+          </div>
+          <div className="lg:w-2/3 space-y-6">
+            {configServices.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-4 p-6 border border-slate-100 rounded-xl hover:border-orange-200 transition-colors duration-300 bg-slate-50/50"
+              >
+                <div className="mt-1 flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-orange-600" />
+                </div>
+                <span className="text-lg text-slate-800 font-medium">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: Data Migration */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+            Data Migration
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {migrationServices.map((service, i) => (
+              <div
+                key={i}
+                className="bg-white p-8 rounded-xl border border-slate-200 hover:border-orange-600 hover:ring-1 hover:ring-orange-600 transition-all duration-300 group text-center"
+              >
+                {service.icon}
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-slate-600">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: Integration Services */}
+      <section className="py-20 px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-12">
+            Integration Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {integrationServices.map((card, i) => (
+              <div
+                key={i}
+                className="group h-full p-8 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors duration-300 flex flex-col items-center text-center"
+              >
+                <div className="mb-4 p-3 bg-slate-100 rounded-full text-slate-600 group-hover:scale-110 group-hover:bg-orange-100 group-hover:text-orange-600 transition-all duration-300">
+                  {card.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {card.title}
+                </h3>
+                <p className="text-slate-600 mt-2">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7: Application Management Services (AMS) */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white border-l-4 border-orange-600 rounded-r-lg shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="md:w-2/3">
+              <div className="flex items-center gap-3 mb-4">
+                <LifeBuoy className="text-orange-600 w-8 h-8" />
+                <h2 className="text-3xl font-bold text-slate-900">
+                  Application Management Services (AMS)
+                </h2>
+              </div>
+              <ul className="space-y-2 mb-6">
+                {amsServices.map((service, i) => (
+                  <li key={i} className="flex items-center gap-2 text-slate-600">
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+                    {service}
+                  </li>
                 ))}
+              </ul>
+            </div>
+            <div className="md:w-1/3 flex justify-center">
+              <div className="hidden md:block w-32 h-32 border-4 border-dashed border-orange-200 rounded-full flex items-center justify-center animate-spin-slow">
+                <Settings className="w-12 h-12 text-orange-300" />
               </div>
             </div>
-          </section>
-
-          <div className="mt-16 sm:mt-20 w-full scroll-mt-24 text-black">
-            {/* <CustomerStories stories={customerStories} theme="light" /> */}
-            {/* <div className="p-8 bg-gray-50 rounded-lg">
-              <h2 className="text-3xl font-bold mb-8">Success Stories</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {customerStories.map((story, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-xl font-bold mb-2">{story.title}</h3>
-                    <Link to={story.readMoreLink} className="text-primary hover:underline">Read More</Link>
-                  </div>
-                ))}
-              </div>
-            </div> */}
           </div>
+        </div>
+      </section>
 
-          {/* FAQ Section */}
-          <section
-            id="find-your-answers"
-            className="mt-16 sm:mt-20 w-full scroll-mt-24"
-          >
-            {/* <FAQSection faqs={faqs} /> */}
-            <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="p-4 border rounded-lg">
-                  <h3 className="font-bold mb-2">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+      {/* SECTION 8: User Training & Change Management */}
+      <section className="py-20 px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              User Training & Change Management
+            </h2>
+            <div className="space-y-6">
+              {trainingServices.map((group, i) => (
+                <div key={i}>
+                  <h3 className="font-semibold text-lg text-slate-800 mb-2">{group.title}</h3>
+                  <ul className="pl-4 space-y-1 border-l-2 border-orange-200">
+                    {group.items.map((item, j) => (
+                      <li key={j} className="text-slate-600 pl-2">{item}</li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
-          </section>
-
-          <section id="other-products" className="mt-12 sm:mt-16 scroll-mt-24">
-            {/* <RelatedSolutions {...insights} /> */}
-            <h2 className="text-3xl font-bold mb-8">{insights.heading}</h2>
-            <p className="mb-8 text-gray-600">{insights.description}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {insights.solutions.map((sol, idx) => (
-                <Link key={idx} to={sol.href} className="p-6 border rounded-lg hover:border-primary block">
-                  <h3 className="text-xl font-bold">{sol.title}</h3>
-                </Link>
-              ))}
+          </div>
+          <div className="md:w-1/2 flex justify-center">
+            <div className="w-64 h-64 bg-orange-100 rounded-full flex items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-orange-200/50 transform -rotate-12 translate-x-10 translate-y-10"></div>
+              <GraduationCap className="w-24 h-24 text-orange-600 relative z-10" />
             </div>
-          </section>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="p-4 lg:p-8 rounded-lg mt-8">
-      </div>
-
-      <div className="w-full bg-black">
-        <div className="max-w-[1400px] w-full mx-auto">
-          {/* <Footer /> */}
+      {/* SECTION 9: Continuous Improvement */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+            Continuous Improvement
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {continuousImprovement.map((item, i) => (
+              <div key={i} className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm">
+                <div className="p-3 bg-orange-50 rounded-lg text-orange-600">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-slate-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* SECTION 10: Analytics & Reporting */}
+      <section className="py-20 px-6 lg:px-12 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Analytics & Reporting</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {analyticsServices.map((service, i) => (
+              <span key={i} className="px-6 py-3 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-medium flex items-center gap-2">
+                <PieChart className="w-4 h-4 text-orange-500" />
+                {service}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 11: Extensibility & Localization */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <Cpu className="text-orange-600" /> Extensibility Development
+            </h3>
+            <ul className="space-y-4">
+              {extensibilityServices.map((item, i) => (
+                <li key={i} className="bg-white p-4 rounded-lg shadow-sm">
+                  <h4 className="font-semibold text-slate-800">{item.title}</h4>
+                  <p className="text-sm text-slate-600">{item.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <Map className="text-orange-600" /> Localization & Compliance
+            </h3>
+            <ul className="space-y-3">
+              {localizationServices.map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <span className="text-slate-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+      {/* SECTION 12: Your Trusted Partner in SAP Transformation */}
+      <section className="py-20 px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            Your Trusted Partner in SAP Transformation
+          </h2>
+          <div className="h-0.5 w-16 bg-orange-600 mx-auto mb-12" />
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+            {trustedPartnerFeatures.map((item, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="mb-4 text-slate-400 p-4 border border-slate-200 rounded-full hover:border-orange-500 hover:text-orange-600 transition-colors duration-300">
+                  {item.icon}
+                </div>
+                <span className="font-semibold text-slate-700">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 13: End-to-End SAP Services */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+            End-to-End SAP Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {endToEndServices.map((service, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border-l-2 border-transparent hover:border-orange-500 transition-all"
+              >
+                <div className="w-2 h-2 bg-orange-400 rounded-full" />
+                <span className="text-slate-700 font-medium">{service}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 14: Drive Innovation and Excellence with Latest Tech Trends */}
+      <section className="py-20 px-6 lg:px-12 bg-slate-900 text-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            Drive Innovation and Excellence with Latest Tech Trends
+          </h2>
+          <p className="text-slate-400 mb-12 text-lg">
+            Our innovative technologies empower financial institutions to
+            streamline operations, enhance customer experiences, and drive
+            growth.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {techTrends.map((tech, i) => (
+              <span
+                key={i}
+                className="px-6 py-2 rounded-full bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-orange-600 hover:border-orange-500 hover:-translate-y-1 transition-all duration-300 cursor-default"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 15: Elevate, Innovate, and Thrive with SAP */}
+      <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-white to-orange-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl ld:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+            Elevate, Innovate, and Thrive <br />
+            <span className="text-orange-600">with SAP</span>
+          </h2>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-slate-500 font-medium mb-12">
+            {sapKeywords.map((word, i) => (
+              <span key={i} className="">
+                {word}
+              </span>
+            ))}
+          </div>
+          <div className="mt-12 pt-12 border-t border-slate-200">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">
+              Ready to Grow Your Business?
+            </h3>
+            <p className="text-orange-600 font-semibold cursor-pointer text-lg">
+              Contact Us
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
-}
+};
 
 export default PublicCloud;

@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import axiosInstance from "@/lib/axios";
 
-const HeroSection = () => {
+const HeroSection = ({ customTitle }: { customTitle?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -103,10 +103,18 @@ const HeroSection = () => {
               WE ARE A LEADING SAP DIGITAL PARTNER
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-              Trusted Globally <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
-                for SAP Consulting
-              </span>
+              {customTitle ? (
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
+                  {customTitle}
+                </span>
+              ) : (
+                <>
+                  Trusted Globally <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
+                    for SAP Consulting
+                  </span>
+                </>
+              )}
             </h1>
           </motion.div>
 

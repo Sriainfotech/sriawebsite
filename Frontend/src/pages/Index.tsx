@@ -8,10 +8,10 @@ import ChairmanStatement from "@/components/home/ChairmanStatement";
 import FloatingButtons from "@/components/home/FloatingButtons";
 import { FaWhatsapp } from "react-icons/fa";
 
-const Index = () => {
+const Index = ({ customTitle }: { customTitle?: string }) => {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <HeroSection />
+      <HeroSection customTitle={customTitle} />
       <FeaturesSection />
       <ServicesSection />
       <SolutionsGrid />

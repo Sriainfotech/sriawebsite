@@ -94,6 +94,7 @@ const App = () => (
           <Route element={<Layout />}>
             {/* Main Routes */}
             <Route path="/" element={<Index />} />
+            <Route path="/best-digital-transformation-company" element={<Index customTitle="Best Digital Transformation Company" />} />
             <Route path="/about" element={<About />} />
             <Route path="/aboutus" element={<About />} />
             <Route path="/services" element={<Services />} />
