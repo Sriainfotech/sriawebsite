@@ -1,94 +1,205 @@
 import React from "react";
-// import Navigation from "@/components/Navigation";
-// import Footer from "@/components/Footer";
-// import HeroSectionWithLinks from "@/components/HeroSectionWIthLInks";
-// import Requesademobtn from "@/components/Requesademobtn";
-// import PartnersSection from "@/components/PartnersSection";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowRight, Globe, CheckCircle, MapPin } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
+const partners = [
+  {
+    name: "IVC Solutions",
+    type: "Joint Venture Partner",
+    badge: "SAP Gold Partner",
+    shortDescription:
+      "An authorized SAP Gold Partner with offices across Mainland China, Hong Kong, Macau, Taiwan, and Asia Pacific. Together, we deliver world-class SAP and enterprise solutions.",
+    logo: "/ivclogo.png",
+    detailsUrl: "/partners/ivc-solutions",
+    regions: ["Mainland China", "Hong Kong", "Macau", "Taiwan", "Asia Pacific"],
+    stats: [
+      { value: "500+", label: "SAP Implementations" },
+      { value: "20+", label: "Years of Expertise" },
+      { value: "100%", label: "Client Commitment" },
+    ],
+  },
+];
 
 function Partners() {
-    return (
-        <div className="w-full min-h-screen">
-            {/* <Navigation enableScrollEffect={true} /> */}
+  return (
+    <div className="w-full min-h-screen bg-white">
+      <PageHeader
+        title="Our Strategic Partners"
+        subtitle="Building powerful alliances to deliver world-class enterprise solutions across the globe."
+        breadcrumbs={[
+          { name: "About Us", path: "/aboutus" },
+          { name: "Partners", path: "/about/partners" },
+        ]}
+        backgroundImage="/partners/sap-partner.png"
+      />
 
-            <PageHeader
-                title="Our Strategic Partners"
-                breadcrumbs={[
-                    { name: "About us", path: "/aboutus" },
-                    { name: "Partners", path: "/about/partners" },
-                ]}
-                backgroundImage="/partners/sap-partner.png"
-            />
+      {/* ── Partnership Overview ── */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl opacity-60 pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">
+                Partnership Overview
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
+                Collaborating for<br />Innovation & Growth
+              </h2>
+              <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
+              <p className="text-slate-500 leading-relaxed mb-5">
+                At Sria Infotech, strategic collaboration empowers our mission of
+                building smarter, more sustainable, future-ready solutions. Each
+                partnership strengthens our capabilities, expands our global
+                presence, and accelerates innovation across industries.
+              </p>
+              <p className="text-slate-500 leading-relaxed mb-8">
+                Our joint venture ecosystem is built on trust, shared vision, and
+                a commitment to delivering transformative digital solutions for
+                businesses worldwide.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "SAP Gold Partner network",
+                  "Global delivery model",
+                  "Asia Pacific market coverage",
+                  "End-to-end SAP implementations",
+                  "Certified SAP professionals",
+                  "Localised enterprise solutions",
+                ].map((pt, i) => (
+                  <div key={i} className="flex items-center gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{pt}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-
-            {/* PARTNERSHIP OVERVIEW SECTION */}
-            <div className="w-full bg-white flex justify-center p-6 lg:p-10 relative z-10">
-                <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-8 bg-gray-100 p-6 lg:p-10 rounded-lg">
-                    {/* LEFT TEXT */}
-                    <div className="lg:w-[45%]">
-                        <h3 className="text-sm text-gray-400 mb-2">Partnership Overview</h3>
-                        <h4 className="text-3xl sm:text-4xl md:text-[42px] font-semibold text-black mb-6 leading-tight">
-                            Collaborating for Innovation & Growth
-                        </h4>
-
-                        <p className="text-gray-500 text-base leading-relaxed mb-4">
-                            At Sria Infotech, strategic collaboration empowers our mission of
-                            building smarter, more sustainable, future-ready solutions. Each
-                            partnership strengthens our capabilities, expands our global
-                            presence, and accelerates innovation across industries.
-                        </p>
-
-                        <p className="text-gray-500 text-base leading-relaxed">
-                            Our joint venture ecosystem is built on trust, shared vision, and
-                            a commitment to delivering transformative digital solutions for
-                            businesses worldwide.
-                        </p>
-                    </div>
-
-                    {/* RIGHT IMAGE */}
-                    <div className="lg:w-[55%]">
-                        <div className="w-full h-64 sm:h-80 md:h-[32rem] overflow-hidden rounded-md shadow-md bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-                            <img
-                                src="/partners/partner-overview.png"
-                                alt="Partnership Overview"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </div>
+            {/* Right: image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="relative"
+            >
+              <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px]">
+                <img
+                  src="/partners/partner-overview.png"
+                  alt="Partnership Overview"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
+                    <p className="text-white font-bold text-sm">Global Partnership Network</p>
+                    <p className="text-white/60 text-xs mt-0.5">Trusted across Asia Pacific & beyond</p>
+                  </div>
                 </div>
-            </div>
-
-            {/* PARTNERS SECTION - Data-driven, scalable */}
-            {/* <PartnersSection /> */}
-            <div className="py-16 bg-white text-center">
-                <h2 className="text-3xl font-bold mb-8">Our Partners</h2>
-                <p className="text-gray-600">Partner logos and details would go here.</p>
-            </div>
-
-            {/* CTA SECTION */}
-            <div className="w-full bg-black h-[100px] relative z-10 text-white flex items-center p-4 justify-center">
-                <div className="w-[1400px] flex flex-row justify-between items-center">
-                    <h1 className="text-[21px]">Learn about Sria Infotech and what we do</h1>
-
-                    <Link to="/contactus">
-                        {/* <Requesademobtn text="Get in Touch" /> */}
-                        <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-colors">
-                            Get in Touch
-                        </button>
-                    </Link>
-                </div>
-            </div>
-
-            {/* FOOTER */}
-            <div className="w-full relative z-10 bg-black">
-                <div className="max-w-[1400px] w-full mx-auto">
-                    {/* <Footer /> */}
-                </div>
-            </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-    );
+      </section>
+
+      {/* ── Our Partners ── */}
+      <section className="py-20 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Alliance Network</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Our Strategic Partners</h2>
+            <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
+          </motion.div>
+
+          <div className="space-y-8">
+            {partners.map((partner, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="group bg-white rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-400 overflow-hidden"
+              >
+                <div className="grid lg:grid-cols-3 gap-0">
+                  {/* Left: logo + badge */}
+                  <div className="lg:border-r border-slate-100 p-10 flex flex-col items-center justify-center bg-slate-50 group-hover:bg-orange-50/40 transition-colors duration-300">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="h-20 object-contain mb-5"
+                    />
+                    <span className="inline-block px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider">
+                      {partner.badge}
+                    </span>
+                    <p className="text-slate-500 text-xs font-medium mt-2">{partner.type}</p>
+                  </div>
+
+                  {/* Middle: content */}
+                  <div className="lg:col-span-2 p-8 lg:p-10">
+                    <div className="mb-6">
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
+                        {partner.name}
+                      </h3>
+                      <p className="text-slate-500 leading-relaxed mb-5">{partner.shortDescription}</p>
+
+                      {/* Regions */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        <span className="flex items-center gap-1 text-xs text-slate-500 font-medium mr-1">
+                          <MapPin className="w-3.5 h-3.5 text-orange-400" /> Coverage:
+                        </span>
+                        {partner.regions.map((region, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium"
+                          >
+                            {region}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Stats row */}
+                      <div className="grid grid-cols-3 gap-4 mb-7 border-t border-slate-100 pt-6">
+                        {partner.stats.map((stat, i) => (
+                          <div key={i} className="text-center">
+                            <p className="text-2xl font-black text-orange-500">{stat.value}</p>
+                            <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <Link to={partner.detailsUrl}>
+                        <motion.button
+                          whileHover={{ x: 4 }}
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-orange-200"
+                        >
+                          View Partnership <ArrowRight className="w-4 h-4" />
+                        </motion.button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
 }
 
 export default Partners;

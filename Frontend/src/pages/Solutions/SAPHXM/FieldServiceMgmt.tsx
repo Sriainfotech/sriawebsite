@@ -1,575 +1,281 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import PageHeader from "@/components/layout/PageHeader";
-
+import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
-    Star,
-    Globe,
-    Shield,
-    Rocket,
-    BarChart2,
-    Database,
-    Users,
-    Settings,
+ Wrench,
+ ClipboardCheck,
+ Settings,
+ Layers,
+ Smartphone,
+ BarChart,
+ Users,
+ Calendar,
+ Globe,
+ Rocket,
+ ShieldCheck,
+ Briefcase,
+ Zap,
+ CheckCircle2,
+ MapPin,
+ MessageSquare,
+ GraduationCap
 } from "lucide-react";
 
-const faqs = [
-    {
-        question: "What is SAP Field Service Management (FSM)?",
-        answer:
-            "SAP FSM is a cloud solution that empowers technicians with mobile tools, optimizes scheduling with AI, and improves customer service with self-service portals.",
-    },
-    {
-        question: "Does SAP FSM work offline?",
-        answer:
-            "Yes, the mobile app provides full offline functionality, allowing technicians to access data and complete tasks even without an internet connection.",
-    },
-    {
-        question: "Can it integrate with SAP S/4HANA?",
-        answer:
-            "Absolutely. It integrates seamlessly with SAP S/4HANA Service and Plant Maintenance (PM) for end-to-end service processes.",
-    },
-    {
-        question: "How does AI help in scheduling?",
-        answer:
-            "AI-based scheduling optimizes technician assignments based on skills, location, and availability, ensuring the right person is sent to the right job.",
-    },
-    {
-        question: "Is there a customer portal?",
-        answer:
-            "Yes, SAP FSM includes a self-service portal where customers can book appointments, track technician arrival, and view service history.",
-    },
+// Data Structures
+const advisoryServices = [
+ {
+ title: "Readiness Assessment",
+ icon: <ClipboardCheck className="w-8 h-8 text-orange-600" />,
+ items: ["FSM readiness assessment", "Business process evaluation & mapping"],
+ },
+ {
+ title: "Fit-Gap Analysis",
+ icon: <BarChart className="w-8 h-8 text-orange-600" />,
+ items: ["Analysis with current systems (ERP, CRM)", "ROI analysis & business case prep"],
+ },
+ {
+ title: "Process Optimization",
+ icon: <MapPin className="w-8 h-8 text-orange-600" />,
+ items: ["Field operations mapping", "Dispatching & mobile workforce optimization"],
+ },
 ];
 
-const tabs = [
-    {
-        icon: <Users className="w-10 h-10 text-blue-500" />,
-        title: "End-to-End SAP Services",
-        description:
-            "From planning to execution, we cover every aspect of your SAP journey.",
-    },
-    {
-        icon: <Star className="w-10 h-10 text-yellow-500" />,
-        title: "Industry Expertise",
-        description:
-            "Deep knowledge across various sectors to tailor solutions for your specific needs.",
-    },
-    {
-        icon: <Settings className="w-10 h-10 text-gray-500" />,
-        title: "Certified SAP Professionals",
-        description:
-            "A team of highly skilled and certified experts dedicated to your success.",
-    },
-    {
-        icon: <Rocket className="w-10 h-10 text-purple-500" />,
-        title: "Rapid Deployment",
-        description:
-            "Accelerated implementation methodologies to get you up and running faster.",
-    },
-    {
-        icon: <Database className="w-10 h-10 text-orange-500" />,
-        title: "Cloud & On-Prem Expertise",
-        description:
-            "Seamless integration and management of hybrid environments.",
-    },
-    {
-        icon: <Globe className="w-10 h-10 text-green-500" />,
-        title: "Global Delivery Model",
-        description:
-            "Flexible delivery options ensuring 24/7 support and execution.",
-    },
-    {
-        icon: <Shield className="w-10 h-10 text-red-500" />,
-        title: "Security & Compliance",
-        description:
-            "Ensuring your data is secure and compliant with industry standards.",
-    },
-    {
-        icon: <BarChart2 className="w-10 h-10 text-pink-500" />,
-        title: "Value Realization",
-        description:
-            "Focusing on tangible business outcomes and ROI.",
-    },
+const implementationServices = [
+ {
+ title: "System Config",
+ desc: "FSM system configuration, master data setup (equipment, customers, workforce).",
+ },
+ {
+ title: "Workflow Design",
+ desc: "Service call execution, feedback loops, and billing workflows.",
+ },
+ {
+ title: "Smart Scheduling",
+ desc: "AI-based dynamic scheduling & dispatching optimization.",
+ },
 ];
 
-const features = [
-    {
-        title: "Application Development",
-        description:
-            "Building robust applications to extend SAP capabilities with ABAP and custom development.",
-        image: "/Solutions/buildapps.png",
-    },
-    {
-        title: "Data & Analytics",
-        description:
-            "Empowering decisions with SAP Analytics Cloud (SAC) for comprehensive business insights.",
-        image: "/Solutions/analytics.png",
-    },
-    {
-        title: "Automation & AI",
-        description:
-            "Streamlining operations with RPA, AI, and intelligent automation technologies.",
-        image: "/Solutions/best-practices.png",
-    },
-    {
-        title: "Integration Services",
-        description:
-            "Seamless connectivity using SAP CPI and BTP for a unified business landscape.",
-        image: "/Solutions/cpi.png",
-    },
-    {
-        title: "Fiori User Experience",
-        description:
-            "Enhancing user engagement with custom Fiori-based extensions and modern UI.",
-        image: "/Solutions/mobile-experience.png",
-    },
+const integrationServices = [
+ {
+ title: "Backend Integration",
+ icon: <Settings className="w-6 h-6" />,
+ desc: "Seamless integration with SAP S/4HANA (PM/CS) or ECC.",
+ },
+ {
+ title: "CRM Connectivity",
+ icon: <Users className="w-6 h-6" />,
+ desc: "Connects with Sales Cloud, Service Cloud, and Salesforce.",
+ },
+ {
+ title: "Mobile & HR",
+ icon: <Smartphone className="w-6 h-6" />,
+ desc: "Integration with mobile apps (iOS/Android) and HR systems.",
+ },
 ];
 
-const sampleSolutions = [
-    {
-        title: "Advisory",
-        heading: "Advisory & Assessment",
-        description:
-            "Plan your FSM journey.",
-        points: [
-            "Readiness assessment",
-            "Process evaluation",
-            "Fit-gap analysis",
-            "ROI analysis",
-        ],
-    },
-    {
-        title: "Implementation",
-        heading: "Implementation Services",
-        description:
-            "Configure and deploy FSM.",
-        points: [
-            "System configuration",
-            "Master data setup",
-            "Workflow design",
-            "AI scheduling setup",
-        ],
-    },
-    {
-        title: "Integration",
-        heading: "Integration Services",
-        description:
-            "Connect your landscape.",
-        points: [
-            "S/4HANA & ERP integration",
-            "CRM integration",
-            "Mobile app connectivity",
-            "HR system sync",
-        ],
-    },
-    {
-        title: "Custom",
-        heading: "Custom Development",
-        description:
-            "Tailor to your needs.",
-        points: [
-            "Mobile app enhancements",
-            "Custom reports & KPIs",
-            "BTP extensions",
-            "Offline customization",
-        ],
-    },
-    {
-        title: "Training",
-        heading: "Training & Change Mgmt",
-        description:
-            "Empower your team.",
-        points: [
-            "End-user training",
-            "Train-the-trainer",
-            "Adoption strategy",
-            "User monitoring",
-        ],
-    },
-    {
-        title: "Support",
-        heading: "Support & Optimization",
-        description:
-            "Ensure continuous success.",
-        points: [
-            "Hypercare support",
-            "AMS services",
-            "Health checks",
-            "Performance tuning",
-        ],
-    },
+const customDevelopment = [
+ {
+ title: "UI & Mobile Enhancements",
+ icon: (
+ <Smartphone className="w-12 h-12 mx-auto text-slate-400 group-hover:text-orange-200 mb-6 transition-colors" />
+ ),
+ desc: "Custom UI, offline mobile functionality, and app enhancements.",
+ },
+ {
+ title: "Reporting & KPIs",
+ icon: (
+ <BarChart className="w-12 h-12 mx-auto text-slate-400 group-hover:text-orange-200 mb-6 transition-colors" />
+ ),
+ desc: "Development of specific reports, KPI tracking, and dashboards.",
+ },
+ {
+ title: "BTP Extensions",
+ icon: (
+ <Layers className="w-12 h-12 mx-auto text-slate-400 group-hover:text-orange-200 mb-6 transition-colors" />
+ ),
+ desc: "Building powerful extensions using SAP Business Technology Platform.",
+ },
 ];
 
-const menuItems = [
-    "Overview",
-    "Features",
-    "Insights",
-    "Benefits",
-    "Find Your Answers",
-    "Other Products",
-    // "Resources",
+const supportAndTraining = [
+ "End-user training (technicians, dispatchers)",
+ "Train-the-trainer programs",
+ "Change management strategy & execution",
+ "Post-go-live hypercare support",
+ "Ongoing Application Management Services (AMS)",
+ "System health checks & performance tuning"
 ];
 
 
-const sapData = {
-    heading: "Delivering Impact-Driven SAP Implementations",
-    description:
-        "Your Trusted Partner in SAP Transformation. We help organizations optimize their field service operations for greater efficiency and customer satisfaction.",
-    imageUrl: "/Solutions/successfactors.png",
-    imageAlt: "SAP Field Service Management",
-    items: [
-        {
-            title: "Advisory Services",
-            highlight: "Strategic Planning",
-            description:
-                "Assess readiness and define a roadmap for intelligent field service management.",
-        },
-        {
-            title: "Implementation",
-            highlight: "End-to-End Setup",
-            description:
-                "Configure AI-based scheduling, mobile tools, and self-service portals.",
-        },
-        {
-            title: "Integration",
-            highlight: "Seamless Connectivity",
-            description:
-                "Integrate FSM with SAP S/4HANA, ERP, and CRM systems for unified operations.",
-        },
-    ],
+
+
+
+
+const trustedPartnerFeatures = [
+  { icon: <Briefcase className="w-8 h-8" />, label: "Industry Expertise" },
+  { icon: <ShieldCheck className="w-8 h-8" />, label: "Certified Professionals" },
+  { icon: <Globe className="w-8 h-8" />, label: "Global Delivery Model" },
+  { icon: <Rocket className="w-8 h-8" />, label: "Rapid Deployment" },
+];
+const endToEndServices = ["Cloud & On-Prem Expertise", "Innovation-Driven", "Change Management & Training", "Value Realization & Continuous Improvement", "License Advisory & Optimization", "Security & Compliance"];
+const techTrends = ["Application Development", "Data & Analytics", "Automation", "Integration", "ABAP", "SAC", "FIORI", "RPA", "CPI", "AI"];
+
+const FieldServiceMgmt = () => {
+ return (
+ <SolutionPageLayout
+      title="Field Service Management"
+      subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
+      breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP HXM", path: "/solutions/successfactors" }, { name: "Field Service", path: "/solutions/field-service-management" }]}
+      backgroundImage="/Solutions/financial.png"
+      impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
+      impactDescription="Empower your mobile workforce and optimize field operations with SAP FSM. Enhance customer satisfaction through smarter dispatching and real-time connectivity."
+      trustedFeatures={trustedPartnerFeatures}
+      endToEndServices={endToEndServices}
+      techTrends={techTrends}
+    >
+ {/* Hero Section */}
+
+ {/* SECTION 2: Advisory & Assessment */}
+ <section className="section-padding px-6 lg:px-12 bg-white">
+ <div className="max-w-7xl mx-auto">
+ <div className="mb-12">
+ <h2 className="text-base font-bold text-slate-900">
+ Advisory & Assessment Services
+ </h2>
+ </div>
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+ {advisoryServices.map((card, i) => (
+ <div
+ key={i}
+ className="group p-8 bg-slate-50 hover:bg-white border border-slate-100 hover:border-orange-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+ >
+ <div className="mb-6 p-3 bg-orange-50 w-fit rounded-lg group-hover:bg-orange-200 group-hover:text-white transition-colors duration-300">
+ {card.icon}
+ </div>
+ <h3 className="text-base font-semibold mb-4 text-slate-900">
+ {card.title}
+ </h3>
+ <ul className="space-y-2">
+ {card.items.map((item, j) => (
+ <li
+ key={j}
+ className="text-slate-600 text-sm flex items-center gap-2"
+ >
+ <span className="w-1.5 h-1.5 bg-orange-400 rounded-full" />{" "}
+ {item}
+ </li>
+ ))}
+ </ul>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ {/* SECTION 3: Implementation Services */}
+ <section className="section-padding px-6 lg:px-12 bg-slate-50">
+ <div className="max-w-5xl mx-auto">
+ <div className="mb-16 text-center">
+ <h2 className="text-base font-bold text-slate-900 flex items-center justify-center gap-3">
+ <Wrench className="text-orange-600" /> Implementation & Setup
+ </h2>
+ </div>
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+ {implementationServices.map((step, i) => (
+ <div key={i} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border-t-4 border-orange-500">
+ <h3 className="text-base font-bold text-slate-900 mb-2">
+ {step.title}
+ </h3>
+ <p className="text-slate-600">{step.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ {/* SECTION 4: Integration Services (Split Layout) */}
+ <section className="section-padding px-6 lg:px-12 bg-white">
+ <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+ <div className="md:w-1/2">
+ <h2 className="text-base font-bold text-slate-900 mb-6">
+ Integration Services
+ </h2>
+ <div className="space-y-6">
+ {integrationServices.map((group, i) => (
+ <div key={i}>
+ <h3 className="font-semibold text-lg text-slate-800 mb-2 flex items-center gap-2">
+ {group.icon}
+ {group.title}
+ </h3>
+ <p className="text-slate-600 pl-7 border-l-2 border-orange-200 ml-2">
+ {group.desc}
+ </p>
+ </div>
+ ))}
+ </div>
+ </div>
+ <div className="md:w-1/2 flex justify-center">
+ <div className="w-64 h-64 bg-orange-100 rounded-full flex items-center justify-center relative overflow-hidden">
+ <div className="absolute inset-0 bg-orange-200/50 transform -rotate-12 translate-x-10 translate-y-10"></div>
+ <Users className="w-24 h-24 text-orange-600 relative z-10" />
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* SECTION 5: Custom Development */}
+ <section className="section-padding px-6 lg:px-12 bg-slate-50">
+ <div className="max-w-7xl mx-auto">
+ <h2 className="text-base font-bold text-slate-900 mb-12 text-center">
+ Custom Development & Extensions
+ </h2>
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+ {customDevelopment.map((card, i) => (
+ <div
+ key={i}
+ className="bg-white p-8 rounded-xl border border-slate-200 hover:border-orange-600 hover:ring-1 hover:ring-orange-600 transition-all duration-300 group text-center"
+ >
+ {card.icon}
+ <h3 className="text-base font-bold mb-3">{card.title}</h3>
+ <p className="text-slate-600">{card.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ {/* SECTION 6: Training & Support (List w/ Spinner) */}
+ <section className="section-padding px-6 lg:px-12 bg-white">
+ <div className="max-w-6xl mx-auto">
+ <div className="bg-slate-50 border-l-4 border-orange-600 rounded-r-lg shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+ <div className="md:w-2/3">
+ <div className="flex items-center gap-3 mb-4">
+ <GraduationCap className="text-orange-600 w-8 h-8" />
+ <h2 className="text-base font-bold text-slate-900">
+ Training & Continuous Support
+ </h2>
+ </div>
+ <ul className="space-y-3 mb-6">
+ {supportAndTraining.map((service, i) => (
+ <li key={i} className="flex items-center gap-3 text-slate-600">
+ <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+ {service}
+ </li>
+ ))}
+ </ul>
+ </div>
+ <div className="md:w-1/3 flex justify-center">
+ <div className="hidden md:block w-32 h-32 border-4 border-dashed border-orange-200 rounded-full flex items-center justify-center animate-spin-slow">
+ <Settings className="w-12 h-12 text-orange-300" />
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* SECTION 10: Call to Action */}
+    </SolutionPageLayout>
+ );
 };
-
-const customerStories = [
-    {
-        id: 1,
-        image: "/partners/ivc-logo.png",
-        title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
-        readMoreLink: "/partners/ivc-solutions",
-    },
-    {
-        id: 2,
-        image: "/customerStories/patil.jpg",
-        title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
-        readMoreLink: "/patil",
-    },
-    {
-        id: 3,
-        image: "/customerStories/7hills.jpg",
-        title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
-        readMoreLink: "/hills",
-    },
-    {
-        id: 4,
-        image: "/customerStories/pharma.jpg",
-        title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
-        readMoreLink: "/Lvk",
-    },
-];
-
-const insights = {
-    heading: "Elevate, Innovate, and Thrive with SAP",
-    description:
-        "Ready to Grow Your Business? Explore our comprehensive range of services from implementation to support.",
-    ctaText: "Contact Us",
-    ctaLink: "/contactus",
-    solutions: [
-        { title: "Rise with SAP", href: "/solutions/rise-with-sap" },
-        { title: "SAP S/4HANA", href: "/solutions/sap-s4hana" },
-    ],
-};
-
-const insightsData = [
-    {
-        title: "Future of Human Experience Management",
-        imageUrl: "/images/successfactors-future.jpg",
-        imageAlt: "HXM Future",
-        gradientFrom: "from-blue-600",
-        gradientTo: "to-blue-800",
-    },
-    {
-        title: "AI in Talent Management",
-        imageUrl: "/images/successfactors-ai.jpg",
-        imageAlt: "AI in HR",
-        gradientFrom: "from-teal-600",
-        gradientTo: "to-cyan-700",
-    },
-    {
-        title: "Building a Learning Culture",
-        imageUrl: "/images/successfactors-learning.jpg",
-        imageAlt: "Learning Development",
-        gradientFrom: "from-purple-600",
-        gradientTo: "to-indigo-700",
-    },
-];
-
-function FieldServiceMgmt() {
-    return (
-        <div className="min-h-screen">
-            {/* <Navigation /> */}
-
-            <PageHeader
-                title="SAP Field Service Management"
-                subtitle="Enable intelligent scheduling, faster issue resolution, and real-time service insights with SAP Field Service Management."
-                breadcrumbs={[
-                    { name: "Solutions", path: "/solutions" },
-                    { name: "SAP HXM", path: "/solutions/sap-hxm" },
-                    { name: "Field Service Management", path: "/solutions/field-service-management" },
-                ]}
-                backgroundImage="/Solutions/successfactors.png"
-            />
-
-
-            {/* Main Content - Responsive Layout */}
-            <div className="flex flex-col lg:flex-row w-full max-w-[1400px] mx-auto mt-4 lg:px-8">
-                {/* Sidebar - Hidden on mobile, sticky on desktop */}
-                <div className="hidden lg:block lg:w-1/6">
-                    <div className="sticky top-24">
-                        {/* <SidebarMenu menuItems={menuItems} /> */}
-                        <div className="space-y-2">
-                            {menuItems.map((item, idx) => (
-                                <a key={idx} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="block text-gray-600 hover:text-primary">{item}</a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Main Content */}
-                <div className="w-full lg:w-5/6 bg-white min-h-screen p-4 lg:p-6">
-                    {/* Overview Section */}
-                    <section id="overview" className="scroll-mt-24">
-                        <div className="bg-white">
-                            {/* <InfoSection {...sapData} /> */}
-                            <h2 className="text-3xl font-bold mb-4">{sapData.heading}</h2>
-                            <p className="mb-8 text-gray-600">{sapData.description}</p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {sapData.items.map((item, idx) => (
-                                    <div key={idx} className="p-6 border rounded-lg">
-                                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                                        <p className="text-sm font-semibold text-primary mb-2">{item.highlight}</p>
-                                        <p className="text-gray-600">{item.description}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Features Section */}
-                    <section id="features" className="mt-12 sm:mt-16 scroll-mt-24">
-                        <div className="flex justify-center">
-                            {/* <ConsultationTabsSection
-                                solutions={sampleSolutions}
-                                mainHeading="Delivering Impact-Driven SAP Implementations for Sustainable Growth"
-                                mainDescription="Our services cover the entire FSM lifecycle from advisory and implementation to integration and support."
-                            // ctaText="Get a Consultation"
-                            /> */}
-                            <div className="w-full">
-                                <h2 className="text-3xl font-bold mb-4">Delivering Impact-Driven SAP Implementations for Sustainable Growth</h2>
-                                <p className="mb-8 text-gray-600">Our services cover the entire FSM lifecycle from advisory and implementation to integration and support.</p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {sampleSolutions.map((sol, idx) => (
-                                        <div key={idx} className="p-6 border rounded-lg">
-                                            <h3 className="text-xl font-bold mb-2">{sol.heading}</h3>
-                                            <p className="text-gray-600 mb-4">{sol.description}</p>
-                                            <ul className="list-disc pl-5">
-                                                {sol.points.map((pt, i) => (
-                                                    <li key={i} className="text-sm text-gray-500">{pt}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="insights" className="mt-16 sm:mt-20 w-full scroll-mt-24">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                            Insights that define value
-                        </h2>
-
-                        {/* Stats Cards - Responsive Grid */}
-                        <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
-                            {/* <StatCardStable
-                                percentage="100%"
-                                description="Commitment to Sustainable Growth"
-                            />
-                            <StatCardStable
-                                percentage="24/7"
-                                description="Support with Application Management Services"
-                            />
-                            <StatCardStable
-                                percentage="10+"
-                                description="Years of Experience Helping Companies"
-                            /> */}
-                            <div className="p-6 bg-gray-50 rounded-lg text-center">
-                                <div className="text-4xl font-bold text-primary mb-2">100%</div>
-                                <p>Commitment to Sustainable Growth</p>
-                            </div>
-                            <div className="p-6 bg-gray-50 rounded-lg text-center">
-                                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                                <p>Support with Application Management Services</p>
-                            </div>
-                            <div className="p-6 bg-gray-50 rounded-lg text-center">
-                                <div className="text-4xl font-bold text-primary mb-2">10+</div>
-                                <p>Years of Experience Helping Companies</p>
-                            </div>
-                        </div>
-
-                        {/* CTA Section - Responsive */}
-                        <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
-                            <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                                Our innovative technologies empower financial institutions to streamline operations, enhance customer experiences, and drive growth.
-                            </h1>
-                            <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
-                                <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
-                                    Request a Demo
-                                </Link>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Key Features Section */}
-                    <section id="key-features" className="mt-16 sm:mt-20 scroll-mt-24">
-                        <div className="w-full lg:w-3/4">
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                                Key features
-                            </h2>
-                            <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                                Drive Innovation and Excellence with the Latest Tech Trends. We empower your business with Application Development, Data & Analytics, Automation, and AI.
-                            </p>
-                        </div>
-                        <section className="my-8 sm:my-10 w-full">
-                            {/* <FeatureTabs features={features} /> */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {features.map((feat, idx) => (
-                                    <div key={idx} className="p-6 border rounded-lg">
-                                        <h3 className="text-xl font-bold mb-2">{feat.title}</h3>
-                                        <p className="text-gray-600">{feat.description}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-                    </section>
-
-                    {/* Insights Section */}
-
-                    {/* Benefits Section */}
-                    <section id="benefits" className="mt-16 sm:mt-20 w-full scroll-mt-24">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl w-full lg:w-3/4 font-semibold">
-                            Unlock powerful benefits
-                        </h2>
-                        <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-                            Your Trusted Partner in SAP Transformation. We bring industry expertise, certified professionals, and a global delivery model to ensure your success.
-                        </p>
-
-                        {/* Benefits Grid - Responsive */}
-                        <div className="max-w-7xl mx-auto py-8 sm:py-10">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
-                                {tabs.map((tab, idx) => (
-                                    // <InfoTab key={idx} {...tab} />
-                                    <div key={idx} className="p-6 border rounded-lg">
-                                        <div className="mb-4">{tab.icon}</div>
-                                        <h3 className="text-xl font-bold mb-2">{tab.title}</h3>
-                                        <p className="text-gray-600">{tab.description}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                    <div className="mt-16 sm:mt-20 w-full scroll-mt-24 text-black">
-                        {/* <CustomerStories stories={customerStories} theme="light" /> */}
-                        <div className="p-8 bg-gray-50 rounded-lg">
-                            <h2 className="text-3xl font-bold mb-8">Success Stories</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {customerStories.map((story, idx) => (
-                                    <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
-                                        <h3 className="text-xl font-bold mb-2">{story.title}</h3>
-                                        <Link to={story.readMoreLink} className="text-primary hover:underline">Read More</Link>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Consultation Section */}
-                    {/* FAQ Section */}
-                    <section
-                        id="find-your-answers"
-                        className="mt-16 sm:mt-20 w-full scroll-mt-24"
-                    >
-                        {/* <FAQSection faqs={faqs} /> */}
-                        <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-                        <div className="space-y-4">
-                            {faqs.map((faq, idx) => (
-                                <div key={idx} className="p-4 border rounded-lg">
-                                    <h3 className="font-bold mb-2">{faq.question}</h3>
-                                    <p className="text-gray-600">{faq.answer}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Empowering Trade Section */}
-                    <section
-                        id="empowering-trade"
-                        className="mt-16 sm:mt-20 scroll-mt-24"
-                    >
-                        <div className="bg-black w-full p-4 lg:p-10 text-white rounded-lg">
-                            {/* Heading and button - Responsive Layout */}
-                            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-                                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
-                                    Empowering global trade for businesses
-                                </h1>
-                                <div className="flex-shrink-0">
-                                    <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
-                                        Request a Demo
-                                    </Link>
-                                </div>
-                            </div>
-
-                            {/* Paragraph */}
-                            <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                                Ready to Transform Your Business? Join hundreds of successful companies who have modernized their operations with our SAP solutions.
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* Resources Section */}
-
-                    {/* <InsightsSection insights={insightsData} /> */}
-
-
-                    <section id="other-products" className="mt-12 sm:mt-16 scroll-mt-24">
-                        {/* <RelatedSolutions {...insights} /> */}
-                        <h2 className="text-3xl font-bold mb-8">{insights.heading}</h2>
-                        <p className="mb-8 text-gray-600">{insights.description}</p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {insights.solutions.map((sol, idx) => (
-                                <Link key={idx} to={sol.href} className="p-6 border rounded-lg hover:border-primary block">
-                                    <h3 className="text-xl font-bold">{sol.title}</h3>
-                                </Link>
-                            ))}
-                        </div>
-                    </section>
-                </div>
-            </div>
-
-            {/* Certifications Section - Responsive */}
-            <div className="p-4 lg:p-8 rounded-lg mt-8">
-
-            </div>
-
-            <div className="w-full bg-black">
-                {" "}
-                {/* Full width container */}
-                <div className="max-w-[1400px] w-full mx-auto">
-                    {" "}
-                    {/* Centered max width container */}
-                    {/* <Footer /> */}
-                </div>
-            </div>
-        </div>
-    );
-}
 
 export default FieldServiceMgmt;
+

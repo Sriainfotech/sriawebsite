@@ -1,95 +1,107 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
-import heroServices from "@/assets/hero-services.jpg";
 import siteData from "@/data/siteData.json";
 
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80";
+
 const EventsSection = () => {
-    const events = siteData.events.map(event => ({
-        ...event,
-        image: event.image.startsWith('/') ? event.image : heroServices
-    }));
+  const events = siteData.events.map(event => ({
+    ...event,
+    image: event.image.startsWith("/") ? event.image : FALLBACK_IMAGE,
+  }));
 
-    return (
-        <section className="py-24 bg-slate-50 overflow-hidden">
-            <div className="container-custom">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <span className="text-primary font-semibold tracking-wider uppercase text-sm">Upcoming Events</span>
-                        <h2 className="text-4xl md:text-5xl font-heading font-bold mt-2 text-foreground">Join Us Globally</h2>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="mt-4 md:mt-0"
-                    >
-                        <p className="text-muted-foreground max-w-md text-right">
-                            Connect with our experts at the world's leading technology conferences and summits.
-                        </p>
-                    </motion.div>
+  return (
+    <section className="section-padding bg-white overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-50 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-14">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Upcoming Events</span>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">Join Us Globally</h2>
+            <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-4 md:mt-0"
+          >
+            <p className="text-slate-500 text-sm max-w-sm text-right leading-relaxed">
+              Connect with our experts at the world's leading technology conferences and summits.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Events Grid */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {events.map((event, index) => (
+            <motion.div
+              key={event.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
+              whileHover={{ y: -4 }}
+              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300"
+            >
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+
+                {/* Tag badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-orange-500 text-white rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    {event.tag}
+                  </span>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {events.map((event, index) => (
-                        <motion.div
-                            key={event.id}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100"
-                        >
-                            <div className="relative h-64 overflow-hidden">
-                                <img
-                                    src={event.image}
-                                    alt={event.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                                <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-white/90 backdrop-blur rounded-full text-[10px] font-bold text-primary uppercase tracking-wider shadow-sm">
-                                        {event.tag}
-                                    </span>
-                                </div>
-
-                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur p-3 rounded-2xl text-center min-w-[70px] shadow-sm">
-                                    <span className="block text-[10px] font-bold text-muted-foreground uppercase">{event.date.split(" ")[0]}</span>
-                                    <span className="block text-xl font-bold text-primary">{event.date.split(" ")[1].replace(",", "")}</span>
-                                </div>
-                            </div>
-
-                            <div className="p-8">
-                                <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
-                                    <MapPin className="w-4 h-4 text-primary" /> {event.venue}
-                                </div>
-                                <h3 className="text-2xl font-bold text-slate-800 mb-6 group-hover:text-primary transition-colors line-clamp-2 min-h-[4rem]">
-                                    {event.title}
-                                </h3>
-                                <div className="w-full h-px bg-slate-100 mb-6" />
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2 text-sm font-bold text-primary cursor-pointer group/btn">
-                                        Register Now
-                                        <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                                    </div>
-                                    <div className="flex items-center gap-1 text-[10px] font-medium text-slate-400">
-                                        <Calendar className="w-3 h-3" />
-                                        {event.date.split(",")[1]}
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                {/* Date badge */}
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur p-3 rounded-xl text-center min-w-[60px] shadow-sm">
+                  <span className="block text-[9px] font-bold text-slate-400 uppercase">{event.date.split(" ")[0]}</span>
+                  <span className="block text-lg font-black text-orange-500">{event.date.split(" ")[1]?.replace(",", "")}</span>
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                  <MapPin className="w-3.5 h-3.5 text-orange-400 flex-shrink-0" />
+                  <span>{event.venue}</span>
+                </div>
+                <h3 className="text-base font-bold text-slate-800 mb-5 group-hover:text-orange-600 transition-colors line-clamp-2 leading-snug min-h-[2.8rem]">
+                  {event.title}
+                </h3>
+                <div className="h-px bg-slate-100 mb-5" />
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center gap-1.5 text-orange-500 font-semibold text-xs group/btn cursor-pointer hover:gap-2.5 transition-all">
+                    Register Now
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                  </div>
+                  <div className="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+                    <Calendar className="w-3 h-3" />
+                    {event.date.split(",")[1]}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default EventsSection;

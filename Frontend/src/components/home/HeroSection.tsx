@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Download, Loader2 } from "lucide-react";
+import { ArrowRight, Download, Loader2, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+ Dialog,
+ DialogContent,
+ DialogDescription,
+ DialogHeader,
+ DialogTitle,
+ DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,238 +17,215 @@ import { useToast } from "@/hooks/use-toast";
 import axiosInstance from "@/lib/axios";
 
 const HeroSection = ({ customTitle }: { customTitle?: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: ""
-  });
-  const { toast } = useToast();
-  const videoUrl = "Sria Website Video.mp4";
+ const [isOpen, setIsOpen] = useState(false);
+ const [isLoading, setIsLoading] = useState(false);
+ const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+ const { toast } = useToast();
+ const videoUrl = "Sria Website Video.mp4";
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+ const { name, value } = e.target;
+ setFormData((prev) => ({ ...prev, [name]: value }));
+ };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+ e.preventDefault();
+ setIsLoading(true);
+ try {
+ const response = await axiosInstance.post('/download-profile', formData);
+ if (response.data.success) {
+ toast({ title: "Success", description: "Your request has been received. Downloading profile..." });
+ setIsOpen(false);
+ setFormData({ name: "", email: "", phone: "" });
+ const link = document.createElement('a');
+ link.href = '/SRIA Company Profile.pdf';
+ link.download = 'SRIA Company Profile.pdf';
+ document.body.appendChild(link);
+ link.click();
+ document.body.removeChild(link);
+ }
+ } catch (error) {
+ console.error("Error submitting profile request:", error);
+ toast({ title: "Error", description: "Failed to submit request. Please try again.", variant: "destructive" });
+ } finally {
+ setIsLoading(false);
+ }
+ };
 
-    try {
-      const response = await axiosInstance.post('/download-profile', formData);
+ return (
+ <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+ {/* Video Background */}
+ <div className="absolute inset-0 z-0">
+ <video
+ autoPlay muted loop playsInline
+ className="absolute inset-0 w-full h-full object-cover"
+ style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
+ >
+ <source src={videoUrl} type="video/mp4" />
+ </video>
+ {/* Cinematic gradient overlays */}
+ <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+ <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+ </div>
 
-      if (response.data.success) {
-        toast({
-          title: "Success",
-          description: "Your request has been received. Downloading profile...",
-        });
-        setIsOpen(false);
-        setFormData({ name: "", email: "", phone: "" });
+ {/* Animated floating orbs */}
+ <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+ <motion.div
+ animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.2, 1] }}
+ transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+ className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-orange-500/8 blur-3xl"
+ />
+ <motion.div
+ animate={{ x: [0, -40, 0], y: [0, 60, 0], scale: [1, 1.3, 1] }}
+ transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+ className="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-amber-400/6 blur-3xl"
+ />
+ </div>
 
-        const link = document.createElement('a');
-        link.href = '/SRIA Company Profile.pdf';
-        link.download = 'SRIA Company Profile.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    } catch (error) {
-      console.error("Error submitting profile request:", error);
-      toast({
-        title: "Error",
-        description: "Failed to submit request. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+ {/* Subtle grid pattern */}
+ <div className="absolute inset-0 z-[1] opacity-5 pointer-events-none"
+ style={{
+ backgroundImage: `linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)`,
+ backgroundSize: "80px 80px"
+ }}
+ />
 
-  return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            filter: "brightness(0.6) contrast(1.1)",
-          }}
-        >
-          <source src={videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+ <div className="container-custom relative z-10 w-full">
+ <div className="max-w-4xl mx-auto text-center">
 
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+ {/* Badge */}
+ <motion.div
+ initial={{ opacity: 0, y: 20, scale: 0.95 }}
+ animate={{ opacity: 1, y: 0, scale: 1 }}
+ transition={{ duration: 0.7 }}
+ className="mb-8"
+ >
+ <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-orange-400/30 bg-orange-400/10 backdrop-blur-md text-orange-300 font-semibold text-xs tracking-widest uppercase">
+ <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
+ WE ARE A LEADING SAP DIGITAL PARTNER
+ </span>
+ </motion.div>
 
-      <div className="container-custom relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary-foreground font-semibold text-sm mb-6">
-              WE ARE A LEADING SAP DIGITAL PARTNER
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-              {customTitle ? (
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
-                  {customTitle}
-                </span>
-              ) : (
-                <>
-                  Trusted Globally <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
-                    for SAP Consulting
-                  </span>
-                </>
-              )}
-            </h1>
-          </motion.div>
+ {/* Headline */}
+ <motion.div
+ initial={{ opacity: 0, y: 40 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.9, delay: 0.1 }}
+ >
+ <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6 tracking-tight">
+ {customTitle ? (
+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
+ {customTitle}
+ </span>
+ ) : (
+ <>
+ Trusted Globally{" "}
+ <br />
+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
+ for SAP Consulting
+ </span>
+ </>
+ )}
+ </h1>
+ </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-lg md:text-xl text-primary-foreground/80 mb-10 leading-relaxed max-w-2xl mx-auto"
-          >
-            Helping businesses accelerate digital transformation with cloud-driven solutions where innovation meets technology.
-          </motion.p>
+ {/* Subtitle */}
+ <motion.p
+ initial={{ opacity: 0, y: 30 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.3, duration: 0.8 }}
+ className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto font-light"
+ >
+ Helping businesses accelerate digital transformation with cloud-driven solutions where innovation meets technology.
+ </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
-              <DialogTrigger asChild>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full">
-                  Download Our Profile <Download className="ml-2 w-5 h-5" />
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[400px]">
-                <DialogHeader>
-                  <DialogTitle className="text-lg">Download Company Profile</DialogTitle>
-                  <DialogDescription className="text-sm">
-                    Please provide your details to receive our company profile.
-                  </DialogDescription>
-                </DialogHeader>
-                <form onSubmit={handleSubmit} className="grid gap-3 py-3">
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="name" className="text-sm">Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="John Doe"
-                      className="h-9 text-sm"
-                      required
-                    />
-                  </div>
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="email" className="text-sm">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="john@example.com"
-                      className="h-9 text-sm"
-                      required
-                    />
-                  </div>
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="phone" className="text-sm">Phone (Optional)</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+1 (555) 000-0000"
-                      className="h-9 text-sm"
-                    />
-                  </div>
-                  <Button type="submit" disabled={isLoading} className="w-full h-10 text-sm">
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Submitting...
-                      </>
-                    ) : (
-                      "Download Profile"
-                    )}
-                  </Button>
-                </form>
-              </DialogContent>
-            </Dialog>
+ {/* CTA Buttons */}
+ <motion.div
+ initial={{ opacity: 0, y: 30 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.5, duration: 0.8 }}
+ className="flex flex-wrap justify-center gap-4 mb-16"
+ >
+ <Dialog open={isOpen} onOpenChange={setIsOpen}>
+ <DialogTrigger asChild>
+ <button className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-base shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300 overflow-hidden">
+ <span className="relative z-10 flex items-center gap-2">
+ Download Our Profile <Download className="w-5 h-5" />
+ </span>
+ <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+ </button>
+ </DialogTrigger>
+ <DialogContent className="sm:max-w-[400px]">
+ <DialogHeader>
+ <DialogTitle className="text-lg">Download Company Profile</DialogTitle>
+ <DialogDescription className="text-sm">
+ Please provide your details to receive our company profile.
+ </DialogDescription>
+ </DialogHeader>
+ <form onSubmit={handleSubmit} className="grid gap-3 py-3">
+ <div className="grid gap-1.5">
+ <Label htmlFor="name" className="text-sm">Name</Label>
+ <Input id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="John Doe" className="h-9 text-sm" required />
+ </div>
+ <div className="grid gap-1.5">
+ <Label htmlFor="email" className="text-sm">Email</Label>
+ <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" className="h-9 text-sm" required />
+ </div>
+ <div className="grid gap-1.5">
+ <Label htmlFor="phone" className="text-sm">Phone (Optional)</Label>
+ <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 000-0000" className="h-9 text-sm" />
+ </div>
+ <Button type="submit" disabled={isLoading} className="w-full h-10 text-sm">
+ {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Submitting...</> : "Download Profile"}
+ </Button>
+ </form>
+ </DialogContent>
+ </Dialog>
 
-            <Link to="/services">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-primary-foreground/10 text-primary hover:bg-primary-foreground/50 px-8 py-6 text-lg rounded-full"
-              >
-                <Play className="mr-2 w-5 h-5" />
-                Discover More
-              </Button>
-            </Link>
-          </motion.div>
+ <Link to="/aboutus">
+ <button className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold text-base hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300">
+ Discover More <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+ </button>
+ </Link>
+ </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-8 pt-8 mt-6"
-          >
-            <div className="text-center">
-              <p className="text-4xl font-heading font-bold text-white">10+</p>
-              <p className="text-sm text-primary-foreground/70">Years Experience</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-heading font-bold text-white">100+</p>
-              <p className="text-sm text-primary-foreground/70">Happy Clients</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-heading font-bold text-white">500+</p>
-              <p className="text-sm text-primary-foreground/70">Projects</p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+ {/* Stats Row */}
+ <motion.div
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.7 }}
+ className="flex flex-wrap justify-center items-center gap-0"
+ >
+ {[
+ { value: "10+", label: "Years Experience" },
+ { value: "100+", label: "Happy Clients" },
+ { value: "500+", label: "Projects" },
+ ].map((stat, i) => (
+ <div key={i} className="flex items-center">
+ <div className="px-10 text-center">
+ <p className="text-3xl font-heading font-bold text-white">{stat.value}</p>
+ <p className="text-sm text-white/50 font-light mt-1">{stat.label}</p>
+ </div>
+ {i < 2 && <div className="w-px h-12 bg-white/20" />}
+ </div>
+ ))}
+ </motion.div>
+ </div>
+ </div>
 
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto translate-y-[1px]"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="hsl(var(--background))"
-          />
-        </svg>
-      </div>
-    </section>
-  );
+ {/* Scroll indicator */}
+ <motion.div
+ animate={{ y: [0, 8, 0] }}
+ transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+ className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/40"
+ >
+ <ChevronDown className="w-6 h-6" />
+ </motion.div>
+
+ </section>
+ );
 };
 
 export default HeroSection;
+
+
