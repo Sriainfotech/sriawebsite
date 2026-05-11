@@ -479,6 +479,7 @@ const Navbar: React.FC<NavbarProps> = ({
  { label: "Success Stories", link: "/about/customer-stories" },
  { label: "Events", link: "/about/events" },
  { label: "Locations", link: "/about/locations" },
+ { label: "Life at SRIA", link: "/gallery" },
  ],
  },
  ];

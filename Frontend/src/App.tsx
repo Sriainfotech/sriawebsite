@@ -12,6 +12,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+// Gallery
+import Gallery from "./pages/Gallery";
+
 // About Sub-pages
 import ComingSoon from "./pages/About/ComingSoon";
 import CustomerStoriesPage from "./pages/About/CustomerStoriesPage";
@@ -132,6 +135,7 @@ const App = () => (
  <Route path="/about/leadership" element={<LeaderShip />} />
  <Route path="/about/locations" element={<Location />} />
  <Route path="/about/sap-partner" element={<Partners />} />
+ <Route path="/gallery" element={<Gallery />} />
  <Route path="/about/events" element={<ComingSoon />} />
  <Route path="/insights/customer-stories" element={<CustomerStoriesPage />} />
 
