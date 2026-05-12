@@ -129,7 +129,7 @@ const SolutionPageLayout = ({
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto mt-4" />
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {trustedFeatures.map((item, i) => (
               <motion.div
                 key={i}
@@ -137,12 +137,12 @@ const SolutionPageLayout = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group flex flex-col items-center text-center"
+                className="group bg-white border border-slate-100 rounded-2xl p-6 flex flex-col items-center text-center hover:border-orange-200 hover:shadow-xl transition-all duration-300"
               >
-                <div className="mb-4 w-16 h-16 rounded-2xl bg-white/8 border border-white/15 flex items-center justify-center text-slate-400 group-hover:bg-orange-500/20 group-hover:border-orange-500/40 group-hover:text-orange-400 transition-all duration-300 [&_svg]:w-7 [&_svg]:h-7">
+                <div className="mb-4 w-14 h-14 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300 [&_svg]:w-6 [&_svg]:h-6">
                   {item.icon}
                 </div>
-                <span className="font-semibold text-slate-200 text-sm group-hover:text-orange-400 transition-colors">{item.label}</span>
+                <span className="font-semibold text-slate-800 text-sm group-hover:text-orange-600 transition-colors">{item.label}</span>
               </motion.div>
             ))}
           </div>
@@ -215,18 +215,8 @@ const SolutionPageLayout = ({
       </section>
 
       {/* ── Tech Trends ── */}
-      <section className="py-20 bg-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80"
-            alt="Technology"
-            className="w-full h-full object-cover opacity-8"
-          />
-          <div className="absolute inset-0 bg-slate-900/96" />
-        </div>
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{ backgroundImage: `linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px)`, backgroundSize: "60px 60px" }}
-        />
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-50 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -235,9 +225,10 @@ const SolutionPageLayout = ({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
-            <h2 className="text-xl lg:text-2xl font-bold text-white mb-3">Drive Innovation with Latest Tech Trends</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed">
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
+            <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Drive Innovation with Latest Tech Trends</h2>
+            <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-4" />
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Our innovative technologies empower businesses to streamline operations, enhance customer experiences, and drive growth.
             </p>
           </motion.div>
@@ -251,7 +242,7 @@ const SolutionPageLayout = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
                 whileHover={{ y: -4, scale: 1.05 }}
-                className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-sm font-medium hover:bg-orange-500/20 hover:border-orange-500/40 hover:text-orange-300 transition-all duration-300 cursor-default"
+                className="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300 cursor-default shadow-sm"
               >
                 {tech}
               </motion.span>

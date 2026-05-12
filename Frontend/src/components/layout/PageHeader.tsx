@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { ChevronRight, Home } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface PageHeaderProps {
  title: string;
@@ -9,7 +7,7 @@ interface PageHeaderProps {
  backgroundImage?: string;
 }
 
-const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, backgroundImage }: PageHeaderProps) => {
  return (
  <section className="relative overflow-hidden min-h-[420px] flex items-end pb-0">
  {/* Background */}
@@ -36,7 +34,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  }}
  />
 
- <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28 pb-12 w-full">
+ <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 sm:pt-28 pb-10 sm:pb-12 w-full">
 
  <motion.div
  initial={{ opacity: 0, y: 25 }}

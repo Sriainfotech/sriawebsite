@@ -54,7 +54,7 @@ const AboutSection = () => {
  <motion.div
  animate={{ y: [0, -10, 0] }}
  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
- className="absolute top-8 -right-6 z-20 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 flex items-center gap-3"
+ className="hidden xl:flex absolute top-8 -right-6 z-20 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 items-center gap-3"
  >
  <div className="bg-orange-100 p-2 rounded-xl">
  <Zap className="w-5 h-5 text-orange-500" />

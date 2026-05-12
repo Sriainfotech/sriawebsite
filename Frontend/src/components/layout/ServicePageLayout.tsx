@@ -155,56 +155,65 @@ const ServicePageLayout = ({
         </div>
       </section>
 
-      {/* ── SECTION 2: Stats ── */}
-      <section className="py-24 relative overflow-hidden">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
-            alt="Technology"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-slate-950/92" />
-          <div className="absolute inset-0 opacity-[0.03]"
-            style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "32px 32px" }}
-          />
-        </div>
-
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-orange-500/8 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-80 bg-amber-500/6 rounded-full blur-3xl pointer-events-none" />
+      {/* ── SECTION 2: Stats / Impact ── */}
+      <section className="py-24 bg-slate-950 relative overflow-hidden">
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "36px 36px" }}
+        />
+        {/* Glow orbs */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-500/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-500/6 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
-            <h2 className="text-xl lg:text-2xl font-bold text-white">{statsTitle}</h2>
+            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">{statsTitle}</h2>
+            <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/8">
+          {/* Stats grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/8 rounded-2xl overflow-hidden border border-white/10">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white/[0.03] hover:bg-white/[0.08] transition-colors duration-300 p-10 lg:p-12 text-center"
+                className="group bg-slate-950 hover:bg-white/[0.04] transition-colors duration-300 p-10 flex flex-col items-center text-center relative overflow-hidden"
               >
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 }}
-                  className="mb-5 inline-flex p-3 rounded-2xl bg-white/5 border border-white/8 group-hover:bg-orange-500/20 group-hover:border-orange-500/30 transition-all duration-300"
-                >
-                  <span className="text-slate-400 group-hover:text-orange-400 transition-colors [&_svg]:w-6 [&_svg]:h-6">{stat.icon}</span>
-                </motion.div>
-                <div className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-amber-300 mb-2">
-                  {stat.value}
+                {/* Hover glow */}
+                <div className="absolute inset-0 bg-gradient-to-b from-orange-500/0 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Number index */}
+                <span className="absolute top-4 right-5 text-white/10 text-xs font-bold tabular-nums">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                {/* Icon */}
+                <div className="mb-5 w-14 h-14 rounded-2xl bg-orange-500/15 border border-orange-500/25 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300 [&_svg]:w-6 [&_svg]:h-6 [&_svg]:text-orange-400 group-hover:[&_svg]:text-white [&_svg]:transition-colors">
+                  {stat.icon}
                 </div>
-                <p className="text-slate-400 text-sm font-medium">{stat.label}</p>
+
+                {/* Value */}
+                <p className="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-amber-300 mb-3 leading-none">
+                  {stat.value}
+                </p>
+
+                {/* Accent line */}
+                <div className="w-8 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-3 group-hover:w-14 transition-all duration-500" />
+
+                {/* Label */}
+                <p className="text-white/80 text-sm font-medium tracking-wide">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -283,35 +292,26 @@ const ServicePageLayout = ({
             className="text-center"
           >
             <p className="text-white/50 text-xs tracking-widest uppercase mb-2">Powering Enterprise Transformation</p>
-            <p className="text-white text-xl font-bold">Trusted by 100+ businesses across 3 continents</p>
+            <p className="text-white text-xl font-bold">Trusted by 100+ businesses across India & the USA</p>
           </motion.div>
         </div>
       </section>
 
       {/* ── SECTION 4: Tech Trends ── */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80"
-            alt="Technology trends"
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-slate-900/95" />
-        </div>
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{ backgroundImage: `linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)`, backgroundSize: "50px 50px" }}
-        />
+      <section className="pt-20 pb-10 bg-white relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-50 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
-            <h2 className="text-xl lg:text-2xl font-bold text-white mb-3">{techTrendsTitle}</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed">{techTrendsDescription}</p>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
+            <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">{techTrendsTitle}</h2>
+            <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-4" />
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">{techTrendsDescription}</p>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -323,7 +323,7 @@ const ServicePageLayout = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.04 }}
                 whileHover={{ y: -4, scale: 1.05 }}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-sm font-medium hover:bg-orange-500/20 hover:border-orange-500/40 hover:text-orange-300 transition-all duration-300 cursor-default"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300 cursor-default shadow-sm"
               >
                 {tech.icon && <span className="[&_svg]:w-4 [&_svg]:h-4">{tech.icon}</span>}
                 {tech.name}
@@ -334,7 +334,7 @@ const ServicePageLayout = ({
       </section>
 
       {/* ── SECTION 5: Related Services ── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="pt-10 pb-24 bg-white relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-50 rounded-full translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -365,8 +365,8 @@ const ServicePageLayout = ({
                     {/* Top color bar */}
                     <div className="h-1 bg-gradient-to-r from-orange-500 to-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
                     <div className="p-7 flex flex-col flex-1">
-                      <div className="mb-5 w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
-                        <span className="text-orange-500 group-hover:text-white transition-colors [&_svg]:w-6 [&_svg]:h-6">{service.icon}</span>
+                      <div className="mb-5 w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300 [&_svg]:w-6 [&_svg]:h-6 [&_svg]:text-orange-500 [&_svg]:transition-colors group-hover:[&_svg]:text-white">
+                        {service.icon}
                       </div>
                       <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{service.title}</h3>
                       <p className="text-slate-500 text-sm leading-relaxed flex-1 mb-5">{service.desc}</p>

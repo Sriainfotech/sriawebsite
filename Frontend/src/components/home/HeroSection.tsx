@@ -58,6 +58,8 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
  <div className="absolute inset-0 z-0">
  <video
  autoPlay muted loop playsInline
+ preload="metadata"
+ poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=60"
  className="absolute inset-0 w-full h-full object-cover"
  style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
  >
@@ -202,9 +204,9 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
  { value: "500+", label: "Projects" },
  ].map((stat, i) => (
  <div key={i} className="flex items-center">
- <div className="px-10 text-center">
- <p className="text-3xl font-heading font-bold text-white">{stat.value}</p>
- <p className="text-sm text-white/50 font-light mt-1">{stat.label}</p>
+ <div className="px-5 sm:px-10 text-center">
+ <p className="text-2xl sm:text-3xl font-heading font-bold text-white">{stat.value}</p>
+ <p className="text-xs sm:text-sm text-white/50 font-light mt-1">{stat.label}</p>
  </div>
  {i < 2 && <div className="w-px h-12 bg-white/20" />}
  </div>

@@ -1,102 +1,407 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Send, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import {
+  MapPin, Mail, Phone, Send, CheckCircle, Loader2,
+  Clock, MessageSquare, ArrowRight, Building2, Users, Globe
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import PageHeader from "@/components/layout/PageHeader";
-import heroContact from "@/assets/hero-contact.jpg";
 import axiosInstance from "@/lib/axios";
 
 const offices = [
- { title: "India - Miyapur", address: "First Floor, 1-121/63 Survey No. 63 Part, Miyapur, Telangana 500049", phone: "+91-9014552492", email: "info@sriainfotech.com" },
- { title: "India - Knowledge City", address: "Plot No 1/C, Sy No 83/1, Raidurgam, Hyderabad Knowledge City, Telangana 500081", phone: "+91-9014552492", email: "info@sriainfotech.com" },
- { title: "USA", address: "18 Hunters Dr, Gilbertsville, PA 19525-6601 USA", phone: "+1-6142167070", email: "info@sriainfotech.com" },
+  {
+    title: "India – Miyapur",
+    flag: "🇮🇳",
+    address: "First Floor, 1-121/63 Survey No. 63 Part Hotel, Sitara Grand Backside, Miyapur, Hyderabad, Telangana 500049",
+    phone: "+91 97013 14138",
+    email: "hr@sriainfotech.com",
+  },
+  {
+    title: "India – Amaravati",
+    flag: "🇮🇳",
+    address: "Amaravati, Telangana 500081",
+    phone: "+91 95539 55893",
+    email: "hr@sriainfotech.com",
+  },
+  {
+    title: "India – Mulugu",
+    flag: "🇮🇳",
+    address: "TASK Center, Mulugu, Telangana 506343",
+    phone: "+91 90145 52492",
+    email: "hr@sriainfotech.com",
+  },
+  {
+    title: "USA – Pennsylvania",
+    flag: "🇺🇸",
+    address: "18 Hunters Dr, Gilbertsville, PA 19525-6601, USA",
+    phone: "+91 99897 95335",
+    email: "hr@sriainfotech.com",
+  },
+];
+
+const stats = [
+  { icon: Clock,    value: "< 24 hrs",  label: "Response Time" },
+  { icon: Users,    value: "100+",       label: "Happy Clients" },
+  { icon: Globe,    value: "2",          label: "Countries" },
 ];
 
 const Contact = () => {
- const { toast } = useToast();
- const [isSubmitting, setIsSubmitting] = useState(false);
- const [isSubmitted, setIsSubmitted] = useState(false);
- const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
 
- const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
- setFormData({ ...formData, [e.target.name]: e.target.value });
- };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
- const handleSubmit = async (e: React.FormEvent) => {
- e.preventDefault();
- setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const response = await axiosInstance.post("/contact", formData);
+      if (response.data.success) {
+        setIsSubmitted(true);
+        toast({ title: "Message Sent!", description: response.data.message || "We'll get back to you soon." });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setIsSubmitted(false), 3000);
+      } else {
+        toast({ title: "Error", description: response.data.message || "Failed to send message.", variant: "destructive" });
+      }
+    } catch (error: any) {
+      toast({ title: "Error", description: error.response?.data?.message || "Something went wrong. Please try again later.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
- try {
- const response = await axiosInstance.post('/contact', formData);
+  return (
+    <div className="min-h-screen bg-white">
 
- if (response.data.success) {
- setIsSubmitted(true);
- toast({ title: "Message Sent!", description: response.data.message || "We'll get back to you soon." });
- setFormData({ name: "", email: "", phone: "", message: "" });
- setTimeout(() => setIsSubmitted(false), 3000);
- } else {
- toast({ title: "Error", description: response.data.message || "Failed to send message.", variant: "destructive" });
- }
- } catch (error: any) {
- console.error("Error submitting form:", error);
- toast({ title: "Error", description: error.response?.data?.message || "Something went wrong. Please try again later.", variant: "destructive" });
- } finally {
- setIsSubmitting(false);
- }
- };
+      <PageHeader
+        title="Contact Us"
+        subtitle="Get in touch with our team — we respond within 24 hours."
+        breadcrumbs={[{ name: "Contact", path: "/contact" }]}
+        backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80"
+      />
 
- return (
- <div className="min-h-screen">
- <PageHeader title="Contact Us" subtitle="Get in touch with our team" breadcrumbs={[{ name: "Contact", path: "/contact" }]} backgroundImage={heroContact} />
+      {/* ── Form + Info ── */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
 
- <section className="section-padding">
- <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
- <div className="grid lg:grid-cols-2 gap-12">
- <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
- <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Get in Touch</span>
- <h2 className="section-title">Send Us a Message</h2>
- <p className="text-muted-foreground text-lg mb-8">Fill out the form and we'll respond within 24 hours.</p>
- <form onSubmit={handleSubmit} className="space-y-6">
- <div className="grid md:grid-cols-2 gap-6">
- <div><label className="block text-sm font-medium text-foreground mb-2">Full Name *</label><Input name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" className="h-12 text-base" /></div>
- <div><label className="block text-sm font-medium text-foreground mb-2">Email *</label><Input name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="h-12 text-base" /></div>
- </div>
- <div><label className="block text-sm font-medium text-foreground mb-2">Phone</label><Input name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+91 9876543210" className="h-12 text-base" /></div>
- <div><label className="block text-sm font-medium text-foreground mb-2">Message *</label><Textarea name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us about your project..." rows={6} className="text-base" /></div>
- <Button type="submit" disabled={isSubmitting || isSubmitted} className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg">
- {isSubmitting ? <span className="flex items-center gap-2"><div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />Sending...</span> : isSubmitted ? <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" />Sent!</span> : <span className="flex items-center gap-2"><Send className="w-4 h-4" />Send Message</span>}
- </Button>
- </form>
- </motion.div>
+            {/* Left: info panel — 2/5 */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-2 flex flex-col gap-8"
+            >
+              <div>
+                <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Get in Touch</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+                  Let's Start a<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">Conversation</span>
+                </h2>
+                <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-5" />
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Whether you have a project in mind, a question about our services, or just want to say hello — our team is ready to help.
+                </p>
+              </div>
 
- <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
- <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Our Offices</span>
- <h2 className="section-title">Global Locations</h2>
- <div className="space-y-6 mt-8">
- {offices.map((office, i) => (
- <motion.div key={office.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-card p-6 rounded-xl border border-border hover:shadow-md transition-all">
- <h3 className="font-heading font-semibold text-xl text-foreground mb-4 flex items-center gap-3"><div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center"><MapPin className="w-5 h-5 text-primary" /></div>{office.title}</h3>
- <div className="space-y-3 pl-13">
- <p className="text-muted-foreground text-base leading-relaxed">{office.address}</p>
- <a href={`tel:${office.phone}`} className="flex items-center gap-3 text-base text-foreground hover:text-primary"><Phone className="w-4 h-4" />{office.phone}</a>
- <a href={`mailto:${office.email}`} className="flex items-center gap-3 text-base text-foreground hover:text-primary"><Mail className="w-4 h-4" />{office.email}</a>
- </div>
- </motion.div>
- ))}
- </div>
- <div className="mt-8 rounded-xl overflow-hidden border border-border">
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.0825025699913!2d78.35776897516617!3d17.49489998339951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9373a7fc9889%3A0xbba26a8d54eb8c76!2sMiyapur%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1705656323456!5m2!1sen!2sin" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy" title="Location" />
- </div>
- </motion.div>
- </div>
- </div>
- </section>
- </div>
- );
+              {/* Quick contacts */}
+              <div className="flex flex-col gap-3">
+                {[
+                  { icon: Phone, label: "Call Us",   value: "+91 97013 14138",     href: "tel:+919701314138" },
+                  { icon: Mail,  label: "Email Us",  value: "hr@sriainfotech.com", href: "mailto:hr@sriainfotech.com" },
+                  { icon: MapPin, label: "Head Office", value: "Miyapur, Hyderabad, India", href: null },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    {item.href ? (
+                      <a href={item.href}
+                        className="group flex items-center gap-4 p-4 rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+                          <item.icon className="w-4 h-4 text-orange-500 group-hover:text-white transition-colors" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-slate-400 text-xs">{item.label}</p>
+                          <p className="text-slate-800 text-sm font-semibold truncate">{item.value}</p>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-4 p-4 rounded-2xl border border-slate-100 bg-white">
+                        <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-4 h-4 text-orange-500" />
+                        </div>
+                        <div>
+                          <p className="text-slate-400 text-xs">{item.label}</p>
+                          <p className="text-slate-800 text-sm font-semibold">{item.value}</p>
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-3">
+                {stats.map((s, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center"
+                  >
+                    <s.icon className="w-4 h-4 text-orange-500 mx-auto mb-2" />
+                    <p className="text-slate-900 font-bold text-lg leading-none">{s.value}</p>
+                    <p className="text-slate-400 text-xs mt-1">{s.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right: form — 3/5 */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-3 relative"
+            >
+              <div className="bg-slate-950 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "28px 28px" }}
+                />
+                <div className="absolute top-0 right-0 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/25 flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="w-5 h-5 text-orange-400" />
+                    </div>
+                    <div>
+                      <p className="text-orange-400 font-semibold text-xs uppercase tracking-widest">Message Us</p>
+                      <h2 className="text-white font-bold text-xl leading-tight">Send a Message</h2>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
+                          Full Name <span className="text-orange-400">*</span>
+                        </label>
+                        <input
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="John Doe"
+                          className="w-full h-11 px-4 rounded-xl bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-orange-500/60 focus:bg-white/[0.09] transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
+                          Email <span className="text-orange-400">*</span>
+                        </label>
+                        <input
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="john@example.com"
+                          className="w-full h-11 px-4 rounded-xl bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-orange-500/60 focus:bg-white/[0.09] transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
+                        Phone <span className="text-slate-600 normal-case font-normal">(optional)</span>
+                      </label>
+                      <div className="relative">
+                        <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
+                        <input
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+91 9876543210"
+                          className="w-full h-11 pl-10 pr-4 rounded-xl bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-orange-500/60 focus:bg-white/[0.09] transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
+                        Message <span className="text-orange-400">*</span>
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        placeholder="Tell us about your project or requirements..."
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-orange-500/60 focus:bg-white/[0.09] transition-all resize-none"
+                      />
+                    </div>
+
+                    <motion.button
+                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                      type="submit"
+                      disabled={isSubmitting || isSubmitted}
+                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 disabled:opacity-70 text-white font-bold text-sm flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
+                    >
+                      {isSubmitting ? (
+                        <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>
+                      ) : isSubmitted ? (
+                        <><CheckCircle className="w-4 h-4" /> Message Sent!</>
+                      ) : (
+                        <><Send className="w-4 h-4" /> Send Message</>
+                      )}
+                    </motion.button>
+
+                    <p className="text-slate-600 text-xs text-center">
+                      By submitting, you agree to our privacy policy. We'll never spam.
+                    </p>
+                  </form>
+                </div>
+              </div>
+
+              <div className="hidden lg:block absolute -bottom-3 -right-3 w-full h-full rounded-3xl border-2 border-orange-200/40 pointer-events-none -z-10" />
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Offices ── */}
+      <section className="py-16 md:py-20 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-orange-50 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
+
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-10"
+          >
+            <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0">
+              <Building2 className="w-5 h-5 text-orange-500" />
+            </div>
+            <div>
+              <p className="text-orange-500 font-semibold text-xs uppercase tracking-widest">Where We Are</p>
+              <h2 className="text-slate-900 font-bold text-2xl leading-tight">Our Offices</h2>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {offices.map((office, i) => (
+              <motion.div
+                key={office.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group bg-white border border-slate-100 rounded-2xl p-6 hover:border-orange-200 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col"
+              >
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+
+                {/* Flag + title */}
+                <div className="flex items-center gap-2.5 mb-4">
+                  <span className="text-2xl leading-none">{office.flag}</span>
+                  <h3 className="font-bold text-slate-900 text-sm group-hover:text-orange-600 transition-colors leading-tight">
+                    {office.title}
+                  </h3>
+                </div>
+
+                {/* Address */}
+                <div className="flex items-start gap-2 mb-4 flex-1">
+                  <MapPin className="w-3.5 h-3.5 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <p className="text-slate-500 text-xs leading-relaxed">{office.address}</p>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-slate-100 mb-4" />
+
+                {/* Contact links */}
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={`tel:${office.phone.replace(/\s/g, "")}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-orange-500 transition-colors"
+                  >
+                    <Phone className="w-3 h-3 text-orange-400 flex-shrink-0" />
+                    {office.phone}
+                  </a>
+                  <a
+                    href={`mailto:${office.email}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-orange-500 transition-colors"
+                  >
+                    <Mail className="w-3 h-3 text-orange-400 flex-shrink-0" />
+                    {office.email}
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Map ── */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8 text-center"
+          >
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-2">Find Us</span>
+            <h2 className="text-slate-900 font-bold text-2xl">Head Office – Miyapur, Hyderabad</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="rounded-2xl overflow-hidden border border-slate-100 shadow-lg relative"
+          >
+            <div className="absolute top-4 left-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-slate-100 rounded-xl px-3 py-2 shadow-sm">
+              <MapPin className="w-3.5 h-3.5 text-orange-500" />
+              <span className="text-slate-700 text-xs font-semibold">SRIA Infotech, Miyapur</span>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.280746844092!2d78.3542804!3d17.4941067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9398a74e6225%3A0x9ab33bfbaff07f32!2sSria%20Infotech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1778567792333!5m2!1sen!2sin"
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              title="SRIA Infotech Location"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+    </div>
+  );
 };
 
 export default Contact;
-

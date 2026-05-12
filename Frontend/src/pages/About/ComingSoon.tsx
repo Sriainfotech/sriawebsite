@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Sparkles, Mail, ArrowRight } from "lucide-react";
+import { ArrowLeft, Sparkles, Mail, ArrowRight, Loader2 } from "lucide-react";
+import axiosInstance from "@/lib/axios";
 
 const ComingSoon: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [dots, setDots] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  /* animated ellipsis */
   useEffect(() => {
     const id = setInterval(() => {
       setDots(prev => (prev.length >= 3 ? "" : prev + "."));
@@ -17,9 +20,19 @@ const ComingSoon: React.FC = () => {
     return () => clearInterval(id);
   }, []);
 
-  const handleNotify = (e: React.FormEvent) => {
+  const handleNotify = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) setSubmitted(true);
+    if (!email.trim()) return;
+    setIsLoading(true);
+    setError("");
+    try {
+      await axiosInstance.post("/notify", { email: email.trim(), page: location.pathname });
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -27,11 +40,9 @@ const ComingSoon: React.FC = () => {
 
       {/* ── Background decorations ── */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Dot grid */}
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "36px 36px" }}
         />
-        {/* Glow orbs */}
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -42,8 +53,6 @@ const ComingSoon: React.FC = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-3xl"
         />
-
-        {/* Floating particles */}
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -131,7 +140,7 @@ const ComingSoon: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="text-slate-500 text-sm leading-relaxed mb-12 max-w-md mx-auto"
         >
-          This page is currently being built. We're crafting something amazing and will be back with you very soon. Stay tuned!
+          This page is currently being built. Leave your email and we'll notify you the moment it goes live.
         </motion.p>
 
         {/* Notify form */}
@@ -141,27 +150,38 @@ const ComingSoon: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.55 }}
         >
           {!submitted ? (
-            <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
-              <div className="flex-1 relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full pl-10 pr-4 py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-orange-500/50 focus:bg-white/8 transition-all"
-                  required
-                />
-              </div>
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                type="submit"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition-shadow whitespace-nowrap"
-              >
-                Notify Me <ArrowRight className="w-4 h-4" />
-              </motion.button>
-            </form>
+            <div className="max-w-md mx-auto">
+              <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3">
+                <div className="flex-1 relative">
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={e => { setEmail(e.target.value); setError(""); }}
+                    placeholder="Enter your email"
+                    className="w-full pl-10 pr-4 py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-orange-500/50 focus:bg-white/8 transition-all"
+                    required
+                    disabled={isLoading}
+                  />
+                </div>
+                <motion.button
+                  whileHover={{ scale: isLoading ? 1 : 1.04 }}
+                  whileTap={{ scale: isLoading ? 1 : 0.97 }}
+                  type="submit"
+                  disabled={isLoading}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition-shadow whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Saving...</>
+                  ) : (
+                    <>Notify Me <ArrowRight className="w-4 h-4" /></>
+                  )}
+                </motion.button>
+              </form>
+              {error && (
+                <p className="mt-3 text-red-400 text-xs text-center">{error}</p>
+              )}
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}

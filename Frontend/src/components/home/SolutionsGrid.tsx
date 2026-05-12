@@ -62,12 +62,12 @@ const SolutionsGrid = () => {
  transition={{ duration: 0.7 }}
  className="relative"
  >
- <div className="rounded-3xl border border-slate-100 bg-white p-10 h-full overflow-hidden">
+ <div className="rounded-3xl border border-slate-100 bg-white p-6 md:p-10 h-full overflow-hidden">
  {/* Image header strip */}
- <div className="relative h-44 -mx-10 -mt-10 mb-8 overflow-hidden rounded-t-3xl">
+ <div className="relative h-36 md:h-44 -mx-6 -mt-6 md:-mx-10 md:-mt-10 mb-6 md:mb-8 overflow-hidden rounded-t-3xl">
  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="SAP Solutions" className="w-full h-full object-cover" />
  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/40 to-transparent" />
- <div className="absolute bottom-4 left-6 flex items-center gap-3">
+ <div className="absolute bottom-3 left-4 md:bottom-4 md:left-6 flex items-center gap-3">
  <div className="w-10 h-10 rounded-xl bg-orange-500/30 backdrop-blur-sm border border-orange-400/30 flex items-center justify-center">
  <expertiseData.sap.icon className="w-5 h-5 text-orange-300" />
  </div>
@@ -113,12 +113,12 @@ const SolutionsGrid = () => {
  transition={{ duration: 0.7 }}
  className="relative"
  >
- <div className="rounded-3xl border border-slate-100 bg-white p-10 h-full overflow-hidden">
+ <div className="rounded-3xl border border-slate-100 bg-white p-6 md:p-10 h-full overflow-hidden">
  {/* Image header strip */}
- <div className="relative h-44 -mx-10 -mt-10 mb-8 overflow-hidden rounded-t-3xl">
+ <div className="relative h-36 md:h-44 -mx-6 -mt-6 md:-mx-10 md:-mt-10 mb-6 md:mb-8 overflow-hidden rounded-t-3xl">
  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Data Analytics" className="w-full h-full object-cover" />
  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/40 to-transparent" />
- <div className="absolute bottom-4 left-6 flex items-center gap-3">
+ <div className="absolute bottom-3 left-4 md:bottom-4 md:left-6 flex items-center gap-3">
  <div className="w-10 h-10 rounded-xl bg-orange-500/30 backdrop-blur-sm border border-orange-400/30 flex items-center justify-center">
  <expertiseData.analytics.icon className="w-5 h-5 text-orange-300" />
  </div>

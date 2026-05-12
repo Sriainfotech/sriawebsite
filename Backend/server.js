@@ -3,6 +3,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const ProfileRequest = require('./models/ProfileRequest');
+const NotifySubscriber = require('./models/NotifySubscriber');
 require('dotenv').config();
 
 const app = express();
@@ -91,6 +92,24 @@ app.post("/api/download-profile", async (req, res) => {
     }
 });
 
+
+app.post('/api/notify', async (req, res) => {
+    const { email, page } = req.body;
+
+    if (!email || !email.trim()) {
+        return res.status(400).json({ success: false, message: 'Email is required.' });
+    }
+
+    try {
+        const subscriber = new NotifySubscriber({ email: email.trim(), page: page || 'unknown' });
+        await subscriber.save();
+        console.log(`Notify subscriber saved: ${email} (page: ${page})`);
+        res.status(201).json({ success: true, message: 'You\'re on the list!' });
+    } catch (error) {
+        console.error('Error saving notify subscriber:', error);
+        res.status(500).json({ success: false, message: 'Failed to save. Please try again.', error: error.message });
+    }
+});
 
 app.get('/', (req, res) => {
     res.send('Backend is running!');

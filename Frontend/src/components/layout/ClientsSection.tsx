@@ -1,12 +1,30 @@
 import { motion } from "framer-motion";
-import { Building2, Users, Globe2, Cloud, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SiSap, SiSalesforce } from "react-icons/si";
+import { FaMicrosoft, FaAws } from "react-icons/fa";
 
 const partners = [
-  { name: "SAP", icon: Globe2, description: "Gold Partner" },
-  { name: "Microsoft", icon: Building2, description: "Technology Alliance" },
-  { name: "AWS", icon: Cloud, description: "Cloud Partner" },
-  { name: "Salesforce", icon: Users, description: "Implementation Partner" },
+  {
+    name: "SAP",
+    icon: SiSap,
+    description: "Gold Partner",
+  },
+  {
+    name: "Microsoft",
+    icon: FaMicrosoft,
+    description: "Technology Alliance",
+  },
+  {
+    name: "AWS",
+    icon: FaAws,
+    description: "Cloud Partner",
+  },
+  {
+    name: "Salesforce",
+    icon: SiSalesforce,
+    description: "Implementation Partner",
+  },
 ];
 
 const ClientsSection = () => {

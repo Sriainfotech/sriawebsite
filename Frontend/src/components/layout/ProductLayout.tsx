@@ -269,7 +269,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                   transition={{ duration: 0.7 }}
                   className="flex-1 w-full relative"
                 >
-                  <div className={`absolute -bottom-3 ${section.reverse ? "-left-3" : "-right-3"} w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none`} />
+                  <div className={`hidden lg:block absolute -bottom-3 ${section.reverse ? "-left-3" : "-right-3"} w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none`} />
                   <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative z-10">
                     <img src={section.image} alt={section.title} className="w-full h-72 md:h-80 object-cover" />
                   </div>

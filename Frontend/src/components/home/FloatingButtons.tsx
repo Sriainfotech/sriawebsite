@@ -81,16 +81,16 @@ const FloatingButtons = () => {
  };
 
  return (
- <div className="fixed right-2 top-1/4 z-50 flex flex-col gap-3 items-end">
+ <div className="hidden sm:flex fixed right-2 top-1/4 z-50 flex-col gap-3 items-end">
 
  {/* IVC */}
  <a
  href="https://ivcsol.com/"
  target="_blank"
  rel="noopener noreferrer"
- className="bg-white backdrop-blur-sm w-auto h-20 rounded-md shadow-lg hover:bg-black/30 hover:scale-105 transition overflow-hidden flex items-center justify-center"
+ className="bg-white backdrop-blur-sm w-auto h-16 rounded-md shadow-lg hover:bg-black/30 hover:scale-105 transition overflow-hidden flex items-center justify-center"
  >
- <img src='/ivclogo.png' alt="IVC" className="h-28 max-w-none object-contain" />
+ <img src='/ivclogo.png' alt="IVC" className="h-20 max-w-none object-contain" />
  </a>
 
  {/* PHONE */}

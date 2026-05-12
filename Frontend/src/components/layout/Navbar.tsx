@@ -479,7 +479,6 @@ const Navbar: React.FC<NavbarProps> = ({
  { label: "Success Stories", link: "/about/customer-stories" },
  { label: "Events", link: "/about/events" },
  { label: "Locations", link: "/about/locations" },
- { label: "Life at SRIA", link: "/gallery" },
  ],
  },
  ];
@@ -544,6 +543,12 @@ const Navbar: React.FC<NavbarProps> = ({
  sections={aboutSections}
  layout="single"
  />
+ <Link
+ to="/gallery"
+ className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+ >
+ Our Culture
+ </Link>
  </div>
 
  <div className="flex items-center space-x-3">
@@ -607,6 +612,15 @@ const Navbar: React.FC<NavbarProps> = ({
  sections={aboutSections}
  id="mobile-about"
  />
+ <div className="border-b border-gray-700">
+ <Link
+ to="/gallery"
+ onClick={() => setIsMobileMenuOpen(false)}
+ className="block py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+ >
+ Our Culture
+ </Link>
+ </div>
  </div>
  </div>
  </div>

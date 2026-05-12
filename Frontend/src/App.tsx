@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,80 +6,94 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 
-// Main Pages
+// Eager-loaded (critical above-the-fold pages)
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 
-// Gallery
-import Gallery from "./pages/Gallery";
+// All other pages — loaded only when navigated to
+const About = React.lazy(() => import("./pages/About"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+const Gallery = React.lazy(() => import("./pages/Gallery"));
+
+// Customer Stories
+const Hills = React.lazy(() => import("./pages/CustomerStories/Hills"));
+const Lvk = React.lazy(() => import("./pages/CustomerStories/Lvk"));
+const Patil = React.lazy(() => import("./pages/CustomerStories/Patil"));
 
 // About Sub-pages
-import ComingSoon from "./pages/About/ComingSoon";
-import CustomerStoriesPage from "./pages/About/CustomerStoriesPage";
-import LeaderShip from "./pages/About/LeaderShip";
-import Location from "./pages/About/Location";
-import Partners from "./pages/About/Partners";
+const ComingSoon = React.lazy(() => import("./pages/About/ComingSoon"));
+const CustomerStoriesPage = React.lazy(() => import("./pages/About/CustomerStoriesPage"));
+const LeaderShip = React.lazy(() => import("./pages/About/LeaderShip"));
+const Location = React.lazy(() => import("./pages/About/Location"));
+const Partners = React.lazy(() => import("./pages/About/Partners"));
 
-// Products Sub-pages
-import AutoExtract from "./pages/Products/AutoExtract";
-import GateCheck from "./pages/Products/GateCheck";
-import Jatayu from "./pages/Products/Jatayu";
-import NxDesk from "./pages/Products/NxDesk";
-import Nxify from "./pages/Products/Nxify";
+// Products
+const AutoExtract = React.lazy(() => import("./pages/Products/AutoExtract"));
+const GateCheck = React.lazy(() => import("./pages/Products/GateCheck"));
+const Jatayu = React.lazy(() => import("./pages/Products/Jatayu"));
+const NxDesk = React.lazy(() => import("./pages/Products/NxDesk"));
+const Nxify = React.lazy(() => import("./pages/Products/Nxify"));
 
-// Partners Sub-pages
-import IVCSolutions from "./pages/Partners/IVCSolutions";
+// Partners
+const IVCSolutions = React.lazy(() => import("./pages/Partners/IVCSolutions"));
 
-// Services Sub-pages - SAP Support
-import Upgrade from "./pages/Services/SAPSupport/Upgrade";
-import Abap from "./pages/Services/SAPSupport/Abap";
-import Migration from "./pages/Services/SAPSupport/Migration";
-import Integration from "./pages/Services/SAPSupport/Integration";
-import SAPConsulting from "./pages/Services/SAPSupport/Rollouts";
-import Application from "./pages/Services/SAPSupport/Application";
-import SAPFiori from "./pages/Services/SAPSupport/SAPFiori";
-import Implementation from "./pages/Services/SAPSupport/Implementation";
-import Support from "./pages/Services/SAPSupport/Support";
+// Services — SAP Support
+const Upgrade = React.lazy(() => import("./pages/Services/SAPSupport/Upgrade"));
+const Abap = React.lazy(() => import("./pages/Services/SAPSupport/Abap"));
+const Migration = React.lazy(() => import("./pages/Services/SAPSupport/Migration"));
+const Integration = React.lazy(() => import("./pages/Services/SAPSupport/Integration"));
+const SAPConsulting = React.lazy(() => import("./pages/Services/SAPSupport/Rollouts"));
+const Application = React.lazy(() => import("./pages/Services/SAPSupport/Application"));
+const SAPFiori = React.lazy(() => import("./pages/Services/SAPSupport/SAPFiori"));
+const Implementation = React.lazy(() => import("./pages/Services/SAPSupport/Implementation"));
+const Support = React.lazy(() => import("./pages/Services/SAPSupport/Support"));
 
-// Services Sub-pages - Strategy Consulting
-import BusinessConsulting from "./pages/Services/StratagyConsulting/BusinessConsulting";
-import ProcessConsulting from "./pages/Services/StratagyConsulting/ProcessConsulting";
-import TechConsulting from "./pages/Services/StratagyConsulting/TechConsulting";
+// Services — Strategy Consulting
+const BusinessConsulting = React.lazy(() => import("./pages/Services/StratagyConsulting/BusinessConsulting"));
+const ProcessConsulting = React.lazy(() => import("./pages/Services/StratagyConsulting/ProcessConsulting"));
+const TechConsulting = React.lazy(() => import("./pages/Services/StratagyConsulting/TechConsulting"));
 
-// Services Sub-pages - Implementation
-import CustomeDevelopment from "./pages/Services/implementation/CustomeDevelopment";
-import DataAnalytics from "./pages/Services/implementation/DataAnalytics";
-import OdooImplementation from "./pages/Services/implementation/OdooImplementation";
+// Services — Implementation
+const CustomeDevelopment = React.lazy(() => import("./pages/Services/implementation/CustomeDevelopment"));
+const DataAnalytics = React.lazy(() => import("./pages/Services/implementation/DataAnalytics"));
+const OdooImplementation = React.lazy(() => import("./pages/Services/implementation/OdooImplementation"));
 
-// Solutions Sub-pages - Analytics Cloud
-import Ariba from "./pages/Solutions/SAPANALITICSCLOUD/Ariba";
-import Manufacturing from "./pages/Solutions/SAPANALITICSCLOUD/Manufacturing";
-import PaPM from "./pages/Solutions/SAPANALITICSCLOUD/PaPM";
-import Concur from "./pages/Solutions/SAPANALITICSCLOUD/Concur";
+// Solutions — Analytics Cloud
+const Ariba = React.lazy(() => import("./pages/Solutions/SAPANALITICSCLOUD/Ariba"));
+const Manufacturing = React.lazy(() => import("./pages/Solutions/SAPANALITICSCLOUD/Manufacturing"));
+const PaPM = React.lazy(() => import("./pages/Solutions/SAPANALITICSCLOUD/PaPM"));
+const Concur = React.lazy(() => import("./pages/Solutions/SAPANALITICSCLOUD/Concur"));
 
-// Solutions Sub-pages - BTP
-import BTP from "./pages/Solutions/SAPBTP/BTP";
-import Warehouse from "./pages/Solutions/SAPBTP/Warehouse";
-import Fieldglass from "./pages/Solutions/SAPBTP/Fieldglass";
+// Solutions — BTP
+const BTP = React.lazy(() => import("./pages/Solutions/SAPBTP/BTP"));
+const Warehouse = React.lazy(() => import("./pages/Solutions/SAPBTP/Warehouse"));
+const Fieldglass = React.lazy(() => import("./pages/Solutions/SAPBTP/Fieldglass"));
 
-// Solutions Sub-pages - CRM
-import CommerceCloud from "./pages/Solutions/SAPCRM/CommerceCloud";
-import Business from "./pages/Solutions/SAPCRM/Business";
-import Logistics from "./pages/Solutions/SAPCRM/Logistics";
-import Digital from "./pages/Solutions/SAPCRM/Digital";
+// Solutions — CRM
+const CommerceCloud = React.lazy(() => import("./pages/Solutions/SAPCRM/CommerceCloud"));
+const Business = React.lazy(() => import("./pages/Solutions/SAPCRM/Business"));
+const Logistics = React.lazy(() => import("./pages/Solutions/SAPCRM/Logistics"));
+const Digital = React.lazy(() => import("./pages/Solutions/SAPCRM/Digital"));
 
-// Solutions Sub-pages - ERP
-import PrivateCloud from "./pages/Solutions/SAPERP/PrivateCloud";
-import PublicCloud from "./pages/Solutions/SAPERP/PublicCloud";
-import Rise from "./pages/Solutions/SAPERP/Rise";
+// Solutions — ERP
+const PrivateCloud = React.lazy(() => import("./pages/Solutions/SAPERP/PrivateCloud"));
+const PublicCloud = React.lazy(() => import("./pages/Solutions/SAPERP/PublicCloud"));
+const Rise = React.lazy(() => import("./pages/Solutions/SAPERP/Rise"));
 
-// Solutions Sub-pages - HXM
-import AssetPerformance from "./pages/Solutions/SAPHXM/AssetPerformance";
-import FieldServiceMgmt from "./pages/Solutions/SAPHXM/FieldServiceMgmt";
-import ProductLifeCycle from "./pages/Solutions/SAPHXM/ProductLifeCycle";
-import SuccessFactors from "./pages/Solutions/SAPHXM/SuccessFactors";
+// Solutions — HXM
+const AssetPerformance = React.lazy(() => import("./pages/Solutions/SAPHXM/AssetPerformance"));
+const FieldServiceMgmt = React.lazy(() => import("./pages/Solutions/SAPHXM/FieldServiceMgmt"));
+const ProductLifeCycle = React.lazy(() => import("./pages/Solutions/SAPHXM/ProductLifeCycle"));
+const SuccessFactors = React.lazy(() => import("./pages/Solutions/SAPHXM/SuccessFactors"));
+
+const PageFallback = () => (
+  <div className="min-h-screen bg-white flex items-center justify-center">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-10 h-10 rounded-full border-4 border-orange-200 border-t-orange-500 animate-spin" />
+      <p className="text-slate-400 text-sm font-medium">Loading…</p>
+    </div>
+  </div>
+);
 
 class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -109,103 +123,108 @@ class ErrorBoundary extends React.Component<
 const queryClient = new QueryClient();
 
 const App = () => (
- <ErrorBoundary>
- <QueryClientProvider client={queryClient}>
- <TooltipProvider>
- <Toaster />
- <Sonner />
- <BrowserRouter>
- <Routes>
- <Route element={<Layout />}>
- {/* Main Routes */}
- <Route path="/" element={<Index />} />
- <Route path="/best-digital-transformation-company" element={<Index customTitle="Best Digital Transformation Company" />} />
- <Route path="/about" element={<About />} />
- <Route path="/aboutus" element={<About />} />
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
+              <Route element={<Layout />}>
+                {/* Main Routes */}
+                <Route path="/" element={<Index />} />
+                <Route path="/best-digital-transformation-company" element={<Index customTitle="Best Digital Transformation Company" />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/aboutus" element={<About />} />
 
- <Route path="/careers" element={<ComingSoon />} />
- <Route path="/contact" element={<Contact />} />
- <Route path="/contactus" element={<Contact />} />
+                <Route path="/careers" element={<ComingSoon />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/contactus" element={<Contact />} />
 
- {/* About Routes */}
- <Route path="/about/alliances" element={<ComingSoon />} />
- <Route path="/about/careers" element={<ComingSoon />} />
- <Route path="/about/coming-soon" element={<ComingSoon />} />
- <Route path="/about/customer-stories" element={<CustomerStoriesPage />} />
- <Route path="/about/leadership" element={<LeaderShip />} />
- <Route path="/about/locations" element={<Location />} />
- <Route path="/about/sap-partner" element={<Partners />} />
- <Route path="/gallery" element={<Gallery />} />
- <Route path="/about/events" element={<ComingSoon />} />
- <Route path="/insights/customer-stories" element={<CustomerStoriesPage />} />
+                {/* About Routes */}
+                <Route path="/about/alliances" element={<ComingSoon />} />
+                <Route path="/about/careers" element={<ComingSoon />} />
+                <Route path="/about/coming-soon" element={<ComingSoon />} />
+                <Route path="/about/customer-stories" element={<CustomerStoriesPage />} />
+                <Route path="/hills" element={<Hills />} />
+                <Route path="/Lvk" element={<Lvk />} />
+                <Route path="/patil" element={<Patil />} />
+                <Route path="/about/leadership" element={<LeaderShip />} />
+                <Route path="/about/locations" element={<Location />} />
+                <Route path="/about/sap-partner" element={<Partners />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/about/events" element={<ComingSoon />} />
+                <Route path="/insights/customer-stories" element={<CustomerStoriesPage />} />
 
- {/* Products Routes */}
- <Route path="/products/auto-extract" element={<AutoExtract />} />
- <Route path="/products/gatecheck" element={<GateCheck />} />
- <Route path="/products/jatayu" element={<Jatayu />} />
- <Route path="/products/nxdesk" element={<NxDesk />} />
- <Route path="/products/nxify" element={<Nxify />} />
+                {/* Products Routes */}
+                <Route path="/products/auto-extract" element={<AutoExtract />} />
+                <Route path="/products/gatecheck" element={<GateCheck />} />
+                <Route path="/products/jatayu" element={<Jatayu />} />
+                <Route path="/products/nxdesk" element={<NxDesk />} />
+                <Route path="/products/nxify" element={<Nxify />} />
 
- {/* Partners Routes */}
- <Route path="/partners/ivc-solutions" element={<IVCSolutions />} />
+                {/* Partners Routes */}
+                <Route path="/partners/ivc-solutions" element={<IVCSolutions />} />
 
- {/* Services Routes - SAP Support */}
- <Route path="/upgrades" element={<Upgrade />} />
- <Route path="/abap" element={<Abap />} />
- <Route path="/migrations" element={<Migration />} />
- <Route path="/integration" element={<Integration />} />
- <Route path="/rollouts" element={<SAPConsulting />} />
- <Route path="/application-development" element={<Application />} />
- <Route path="/fioridevelop" element={<SAPFiori />} />
- <Route path="/implement" element={<Implementation />} />
- <Route path="/support-maintainance" element={<Support />} />
+                {/* Services Routes - SAP Support */}
+                <Route path="/upgrades" element={<Upgrade />} />
+                <Route path="/abap" element={<Abap />} />
+                <Route path="/migrations" element={<Migration />} />
+                <Route path="/integration" element={<Integration />} />
+                <Route path="/rollouts" element={<SAPConsulting />} />
+                <Route path="/application-development" element={<Application />} />
+                <Route path="/fioridevelop" element={<SAPFiori />} />
+                <Route path="/implement" element={<Implementation />} />
+                <Route path="/support-maintainance" element={<Support />} />
 
- {/* Services Routes - Strategy Consulting */}
- <Route path="/services/strategy-consulting/business" element={<BusinessConsulting />} />
- <Route path="/services/strategy-consulting/process" element={<ProcessConsulting />} />
- <Route path="/services/strategy-consulting/tech" element={<TechConsulting />} />
+                {/* Services Routes - Strategy Consulting */}
+                <Route path="/services/strategy-consulting/business" element={<BusinessConsulting />} />
+                <Route path="/services/strategy-consulting/process" element={<ProcessConsulting />} />
+                <Route path="/services/strategy-consulting/tech" element={<TechConsulting />} />
 
- {/* Services Routes - Implementation */}
- <Route path="/odooservices/customdevelopment" element={<CustomeDevelopment />} />
- <Route path="/additionalServices/dataanalytics" element={<DataAnalytics />} />
- <Route path="/odooservices/implementation" element={<OdooImplementation />} />
+                {/* Services Routes - Implementation */}
+                <Route path="/odooservices/customdevelopment" element={<CustomeDevelopment />} />
+                <Route path="/additionalServices/dataanalytics" element={<DataAnalytics />} />
+                <Route path="/odooservices/implementation" element={<OdooImplementation />} />
 
- {/* Solutions Routes - Analytics Cloud */}
- <Route path="/solutions/ariba" element={<Ariba />} />
- <Route path="/solutions/manufacturing-execution" element={<Manufacturing />} />
- <Route path="/solutions/papm" element={<PaPM />} />
- <Route path="/solutions/concur" element={<Concur />} />
+                {/* Solutions Routes - Analytics Cloud */}
+                <Route path="/solutions/ariba" element={<Ariba />} />
+                <Route path="/solutions/manufacturing-execution" element={<Manufacturing />} />
+                <Route path="/solutions/papm" element={<PaPM />} />
+                <Route path="/solutions/concur" element={<Concur />} />
 
- {/* Solutions Routes - BTP */}
- <Route path="/solutions/btp" element={<BTP />} />
- <Route path="/solutions/extended-warehouse-management" element={<Warehouse />} />
- <Route path="/solutions/fieldglass" element={<Fieldglass />} />
+                {/* Solutions Routes - BTP */}
+                <Route path="/solutions/btp" element={<BTP />} />
+                <Route path="/solutions/extended-warehouse-management" element={<Warehouse />} />
+                <Route path="/solutions/fieldglass" element={<Fieldglass />} />
 
- {/* Solutions Routes - CRM */}
- <Route path="/solutions/commerce-cloud" element={<CommerceCloud />} />
- <Route path="/solutions/business" element={<Business />} />
- <Route path="/solutions/manufacturing-logistics" element={<Logistics />} />
- <Route path="/solutions/digital-manufacturing" element={<Digital />} />
+                {/* Solutions Routes - CRM */}
+                <Route path="/solutions/commerce-cloud" element={<CommerceCloud />} />
+                <Route path="/solutions/business" element={<Business />} />
+                <Route path="/solutions/manufacturing-logistics" element={<Logistics />} />
+                <Route path="/solutions/digital-manufacturing" element={<Digital />} />
 
- {/* Solutions Routes - ERP */}
- <Route path="/solutions/private-cloud" element={<PrivateCloud />} />
- <Route path="/solutions/public-cloud" element={<PublicCloud />} />
- <Route path="/solutions/rise-with-sap" element={<Rise />} />
+                {/* Solutions Routes - ERP */}
+                <Route path="/solutions/private-cloud" element={<PrivateCloud />} />
+                <Route path="/solutions/public-cloud" element={<PublicCloud />} />
+                <Route path="/solutions/rise-with-sap" element={<Rise />} />
 
- {/* Solutions Routes - HXM */}
- <Route path="/solutions/asset-performance-management" element={<AssetPerformance />} />
- <Route path="/solutions/field-service-management" element={<FieldServiceMgmt />} />
- <Route path="/solutions/product-lifecycle" element={<ProductLifeCycle />} />
- <Route path="/solutions/successfactors" element={<SuccessFactors />} />
+                {/* Solutions Routes - HXM */}
+                <Route path="/solutions/asset-performance-management" element={<AssetPerformance />} />
+                <Route path="/solutions/field-service-management" element={<FieldServiceMgmt />} />
+                <Route path="/solutions/product-lifecycle" element={<ProductLifeCycle />} />
+                <Route path="/solutions/successfactors" element={<SuccessFactors />} />
 
- {/* Catch-all */}
- <Route path="*" element={<NotFound />} />
- </Route>
- </Routes>
- </BrowserRouter>
- </TooltipProvider>
- </QueryClientProvider>
- </ErrorBoundary>
+                {/* Catch-all */}
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;
