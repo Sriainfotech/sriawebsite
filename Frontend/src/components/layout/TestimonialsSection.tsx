@@ -2,12 +2,22 @@ import { motion } from "framer-motion";
 import { Star, Quote, CheckCircle } from "lucide-react";
 import siteData from "@/data/siteData.json";
 
-const FALLBACK_AVATAR = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80";
+const testimonials = siteData.testimonials;
 
-const testimonials = siteData.testimonials.map(t => ({
-  ...t,
-  image: t.image.startsWith("/") ? t.image : FALLBACK_AVATAR,
-}));
+const getInitials = (name: string) => {
+  const parts = name.replace(/[.\-]/g, " ").trim().split(/\s+/).filter(Boolean);
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return parts[0].slice(0, 2).toUpperCase();
+};
+
+const avatarGradients = [
+  "from-orange-500 to-amber-400",
+  "from-violet-500 to-purple-400",
+  "from-sky-500 to-blue-400",
+  "from-emerald-500 to-teal-400",
+  "from-rose-500 to-pink-400",
+  "from-amber-500 to-yellow-400",
+];
 
 const TestimonialsSection = () => {
   return (
@@ -60,11 +70,11 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-11 h-11 rounded-full object-cover ring-2 ring-orange-100 group-hover:ring-orange-300 transition-all"
-                />
+                <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${avatarGradients[index % avatarGradients.length]} flex items-center justify-center flex-shrink-0 ring-2 ring-white shadow-md`}>
+                  <span className="text-white font-bold text-sm leading-none select-none">
+                    {getInitials(testimonial.name)}
+                  </span>
+                </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
                     <p className="font-bold text-slate-900 text-sm">{testimonial.name}</p>
