@@ -8,6 +8,7 @@ import ClientsSection from "./ClientsSection";
 import EventsSection from "./EventsSection";
 import NewsSection from "./NewsSection";
 import FloatingButtons from "@/components/home/FloatingButtons";
+import CookieBanner from "@/components/layout/CookieBanner";
 import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -41,6 +42,7 @@ const Layout = () => {
  </>
  )}
  <Footer />
+ <CookieBanner />
  <FloatingButtons />
  <a
  aria-label="Chat on WhatsApp"
