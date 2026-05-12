@@ -125,7 +125,7 @@ const AssetPerformance = () => {
       title="Asset Performance Management"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP HXM", path: "/solutions/successfactors" }, { name: "Asset Performance", path: "/solutions/asset-performance-management" }]}
-      backgroundImage="/Solutions/financial.png"
+      backgroundImage="/Solutions/service.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Maximize the health and performance of your critical assets with SAP APM. Leverage predictive insights to reduce downtime and optimize maintenance strategies."
       trustedFeatures={trustedPartnerFeatures}

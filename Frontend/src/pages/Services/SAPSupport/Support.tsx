@@ -39,7 +39,7 @@ function Support() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Support & Maintenance", path: "/services/sap-support-maintenance" },
       ]}
-      backgroundImage="/Services/support.png"
+      backgroundImage="/Services/ams.png"
       processTitle="Delivering Impact-Driven SAP Support for Business Continuity"
       processDescription="Our comprehensive support framework ensures your SAP landscape remains stable, compliant, and optimized for growth."
       processSteps={[

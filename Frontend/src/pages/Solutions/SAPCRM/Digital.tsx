@@ -141,7 +141,7 @@ const Digital = () => {
       title="Digital Manufacturing Cloud"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP CRM", path: "/solutions/business" }, { name: "Digital Manufacturing", path: "/solutions/digital-manufacturing" }]}
-      backgroundImage="/Solutions/financial.png"
+      backgroundImage="/Solutions/buildapps.png"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Transform your manufacturing operations with SAP Digital Manufacturing Cloud. Gain real-time visibility, optimize performance, and drive continuous improvement."
       trustedFeatures={trustedPartnerFeatures}

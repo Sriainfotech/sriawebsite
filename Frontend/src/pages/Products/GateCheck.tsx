@@ -201,7 +201,7 @@ const GateCheck = () => {
  { name: "Products", path: "/products" },
  { name: "GateCheck", path: "/products/gatecheck" },
  ]}
- backgroundImage="/gatecheck.png"
+ backgroundImage="/gatecheck/GATE CHECK.png"
  />
  <ProductLayout
  overview={overviewData}

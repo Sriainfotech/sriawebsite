@@ -39,7 +39,7 @@ function Upgrade() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Upgrade Services", path: "/services/sap-upgrades" },
       ]}
-      backgroundImage="/Services/upgrades.png"
+      backgroundImage="/S4HANA/finance.jpg"
       processTitle="Delivering Impact-Driven SAP Upgrades for Sustainable Growth"
       processDescription="Our proven upgrade methodology ensures minimal downtime and maximum functional value for your enterprise."
       processSteps={[

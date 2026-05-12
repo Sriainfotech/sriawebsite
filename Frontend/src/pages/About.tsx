@@ -7,7 +7,7 @@ import {
   Eye, Target, Heart, TrendingUp, Shield, Zap,
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
-import heroAbout from "@/assets/hero-about.jpg";
+
 import aboutTeam from "@/assets/about-team.jpg";
 import aboutOffice from "@/assets/about-office.jpg";
 
@@ -104,7 +104,7 @@ const About = () => {
         title="About Sria Infotech"
         subtitle="A global SAP consulting company delivering world-class services through proven methodologies and innovation."
         breadcrumbs={[{ name: "About Us", path: "/about" }]}
-        backgroundImage={heroAbout}
+        backgroundImage="/aboutus.jpg"
       />
 
       {/* ── Who We Are ── */}

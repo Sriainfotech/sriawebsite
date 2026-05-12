@@ -201,7 +201,7 @@ const NxDesk = () => {
  { name: "Products", path: "/products" },
  { name: "NxDesk", path: "/products/nxdesk" },
  ]}
- backgroundImage="/nxdesk.png"
+ backgroundImage="/Nxdesk/mockup.png"
  />
  <ProductLayout
  overview={overviewData}

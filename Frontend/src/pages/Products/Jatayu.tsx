@@ -201,7 +201,7 @@ const Jatayu = () => {
  { name: "Products", path: "/products" },
  { name: "Jatayu", path: "/products/jatayu" },
  ]}
- backgroundImage="/jatayu.png"
+ backgroundImage="/Services/AI.jpg"
  />
  <ProductLayout
  overview={overviewData}

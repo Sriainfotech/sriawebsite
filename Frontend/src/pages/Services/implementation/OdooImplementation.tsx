@@ -144,7 +144,7 @@ const OdooImplementation = () => {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Odoo Implementation", path: "/services/odoo-implementation" },
         ]}
-        backgroundImage="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
+        backgroundImage="/odoo-app.png"
       />
 
       {/* ── Intro Split Section ── */}
