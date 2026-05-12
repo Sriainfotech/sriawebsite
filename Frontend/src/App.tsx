@@ -80,6 +80,11 @@ const PrivateCloud = React.lazy(() => import("./pages/Solutions/SAPERP/PrivateCl
 const PublicCloud = React.lazy(() => import("./pages/Solutions/SAPERP/PublicCloud"));
 const Rise = React.lazy(() => import("./pages/Solutions/SAPERP/Rise"));
 
+// Legal
+const PrivacyPolicy = React.lazy(() => import("./pages/legal/PrivacyPolicy"));
+const TermsOfService = React.lazy(() => import("./pages/legal/TermsOfService"));
+const CookiePolicy = React.lazy(() => import("./pages/legal/CookiePolicy"));
+
 // Solutions — HXM
 const AssetPerformance = React.lazy(() => import("./pages/Solutions/SAPHXM/AssetPerformance"));
 const FieldServiceMgmt = React.lazy(() => import("./pages/Solutions/SAPHXM/FieldServiceMgmt"));
@@ -215,6 +220,11 @@ const App = () => (
                 <Route path="/solutions/field-service-management" element={<FieldServiceMgmt />} />
                 <Route path="/solutions/product-lifecycle" element={<ProductLifeCycle />} />
                 <Route path="/solutions/successfactors" element={<SuccessFactors />} />
+
+                {/* Legal */}
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/cookies" element={<CookiePolicy />} />
 
                 {/* Catch-all */}
                 <Route path="*" element={<NotFound />} />

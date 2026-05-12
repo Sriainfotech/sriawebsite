@@ -35,7 +35,7 @@ const Layout = () => {
  <ClientsSection />
  <SuccessStories />
  <EventsSection />
- <NewsSection />
+ {/* <NewsSection /> */}
  <TestimonialsSection />
  <CTASection />
  </>
