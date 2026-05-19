@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Star, Quote, CheckCircle } from "lucide-react";
 import siteData from "@/data/siteData.json";
 
 const testimonials = siteData.testimonials;
@@ -25,7 +24,6 @@ const TestimonialsSection = () => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-50 pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +35,6 @@ const TestimonialsSection = () => {
           <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
         </motion.div>
 
-        {/* Cards Grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -46,23 +43,16 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white border border-slate-100 rounded-2xl p-7 hover:border-orange-200 hover:shadow-xl transition-all duration-300 relative"
+              className="group bg-white border border-slate-100 rounded-2xl p-7 hover:border-orange-200 hover:shadow-xl transition-all duration-300 relative flex flex-col"
             >
-              {/* Quote badge */}
-              <div className="absolute -top-3.5 -right-3.5 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center shadow-lg shadow-orange-500/25">
-                <Quote className="w-5 h-5 text-white fill-current" />
-              </div>
-
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-amber-400 fill-current" />
-                ))}
+              {/* Large decorative quotation mark */}
+              <div className="text-orange-100 font-serif text-[80px] leading-none -mb-4 select-none" aria-hidden>
+                &ldquo;
               </div>
 
               {/* Review */}
-              <p className="text-slate-500 text-sm leading-relaxed mb-6 italic">
-                "{testimonial.review}"
+              <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                {testimonial.review}
               </p>
 
               {/* Divider */}
@@ -70,20 +60,13 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${avatarGradients[index % avatarGradients.length]} flex items-center justify-center flex-shrink-0 ring-2 ring-white shadow-md`}>
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${avatarGradients[index % avatarGradients.length]} flex items-center justify-center flex-shrink-0 shadow-md`}>
                   <span className="text-white font-bold text-sm leading-none select-none">
                     {getInitials(testimonial.name)}
                   </span>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <p className="font-bold text-slate-900 text-sm">{testimonial.name}</p>
-                    {testimonial.verified && (
-                      <span className="inline-flex items-center gap-0.5 text-[9px] font-bold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full border border-green-100">
-                        <CheckCircle className="w-2.5 h-2.5" /> Verified
-                      </span>
-                    )}
-                  </div>
+                <div className="min-w-0">
+                  <p className="font-bold text-slate-900 text-sm">{testimonial.name}</p>
                   <p className="text-xs text-orange-500 font-medium mt-0.5">{testimonial.role}</p>
                 </div>
               </div>

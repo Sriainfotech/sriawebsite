@@ -41,29 +41,17 @@ const AboutSection = () => {
  {/* Gradient overlay */}
  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
 
- {/* Bottom text overlay */}
- <div className="absolute bottom-0 left-0 right-0 p-8">
- <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
- <p className="text-xl font-bold text-white mb-1">Innovation Hub</p>
- <p className="text-sm text-white/70">Driving Digital Excellence</p>
- </div>
- </div>
- </div>
-
- {/* Floating badge */}
- <motion.div
- animate={{ y: [0, -10, 0] }}
- transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
- className="hidden xl:flex absolute top-8 -right-6 z-20 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 items-center gap-3"
- >
- <div className="bg-orange-100 p-2 rounded-xl">
- <Zap className="w-5 h-5 text-orange-500" />
- </div>
+ {/* Single bottom overlay */}
+ <div className="absolute bottom-0 left-0 right-0 p-6">
+ <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 flex items-center gap-3">
+ <Zap className="w-4 h-4 text-orange-400 flex-shrink-0" />
  <div>
- <p className="text-sm font-bold text-slate-900">Future Ready</p>
- <p className="text-[11px] text-slate-400">AI & Cloud Native</p>
+ <p className="text-sm font-bold text-white leading-tight">AI & Cloud Native</p>
+ <p className="text-xs text-white/60">Driving Digital Excellence</p>
  </div>
- </motion.div>
+ </div>
+ </div>
+ </div>
  </motion.div>
 
  {/* Content Side */}

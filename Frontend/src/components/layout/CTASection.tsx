@@ -90,10 +90,9 @@ const CTASection = () => {
               </Link>
             </motion.div>
 
-            <Link to="/aboutus">
-              <button className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-white/[0.08] border border-white/20 text-white font-semibold text-base hover:bg-white/[0.15] hover:border-white/30 hover:scale-105 transition-all duration-300">
-                Learn About Us <ArrowRight className="w-5 h-5" />
-              </button>
+            <Link to="/aboutus" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors group">
+              Learn About Us
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </motion.div>

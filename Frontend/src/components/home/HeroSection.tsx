@@ -205,9 +205,9 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
  { value: "50+", label: "Group Employees" },
  ].map((stat, i) => (
  <div key={i} className="flex items-center">
- <div className="px-5 sm:px-10 text-center">
- <p className="text-2xl sm:text-3xl font-heading font-bold text-white">{stat.value}</p>
- <p className="text-xs sm:text-sm text-white/50 font-light mt-1">{stat.label}</p>
+ <div className="px-4 sm:px-7 text-center">
+ <p className="text-lg sm:text-xl font-heading font-semibold text-white/70">{stat.value}</p>
+ <p className="text-[10px] sm:text-xs text-white/35 font-light mt-0.5">{stat.label}</p>
  </div>
  {i < 2 && <div className="w-px h-12 bg-white/20" />}
  </div>
