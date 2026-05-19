@@ -39,7 +39,7 @@ function Migration() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Migration Services", path: "/services/sap-migration" },
       ]}
-      backgroundImage="/Services/basis.png"
+      backgroundImage="/Services/migration.jpeg"
       processTitle="Delivering Impact-Driven SAP Migrations for Sustainable Growth"
       processDescription="Our proven methodology ensures a risk-free, on-time, and on-budget transformation journey."
       processSteps={[

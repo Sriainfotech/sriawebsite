@@ -50,7 +50,7 @@ function Application() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Application Development", path: "/services/sap-application-development" },
       ]}
-      backgroundImage="/Services/custom.png"
+      backgroundImage="/Services/application.jpeg"
       processTitle="Delivering Scalable SAP Applications for Modern Enterprises"
       processDescription="From Fiori UX to cloud-native BTP apps, we design and build solutions that keep pace with your business."
       processSteps={[

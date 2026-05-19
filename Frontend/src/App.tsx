@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+import LoadingScreen from "./components/layout/LoadingScreen";
 
 // Eager-loaded (critical above-the-fold pages)
 import Index from "./pages/Index";
@@ -80,6 +81,10 @@ const PrivateCloud = React.lazy(() => import("./pages/Solutions/SAPERP/PrivateCl
 const PublicCloud = React.lazy(() => import("./pages/Solutions/SAPERP/PublicCloud"));
 const Rise = React.lazy(() => import("./pages/Solutions/SAPERP/Rise"));
 
+// Subscription & Plans
+const SubscriptionPage = React.lazy(() => import("./pages/Subscription"));
+const PlansPage = React.lazy(() => import("./pages/Plans"));
+
 // Legal
 const PrivacyPolicy = React.lazy(() => import("./pages/legal/PrivacyPolicy"));
 const TermsOfService = React.lazy(() => import("./pages/legal/TermsOfService"));
@@ -91,14 +96,6 @@ const FieldServiceMgmt = React.lazy(() => import("./pages/Solutions/SAPHXM/Field
 const ProductLifeCycle = React.lazy(() => import("./pages/Solutions/SAPHXM/ProductLifeCycle"));
 const SuccessFactors = React.lazy(() => import("./pages/Solutions/SAPHXM/SuccessFactors"));
 
-const PageFallback = () => (
-  <div className="min-h-screen bg-white flex items-center justify-center">
-    <div className="flex flex-col items-center gap-4">
-      <div className="w-10 h-10 rounded-full border-4 border-orange-200 border-t-orange-500 animate-spin" />
-      <p className="text-slate-400 text-sm font-medium">Loading…</p>
-    </div>
-  </div>
-);
 
 class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -134,7 +131,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Suspense fallback={<PageFallback />}>
+          <Suspense fallback={<LoadingScreen />}>
             <Routes>
               <Route element={<Layout />}>
                 {/* Main Routes */}
@@ -220,6 +217,10 @@ const App = () => (
                 <Route path="/solutions/field-service-management" element={<FieldServiceMgmt />} />
                 <Route path="/solutions/product-lifecycle" element={<ProductLifeCycle />} />
                 <Route path="/solutions/successfactors" element={<SuccessFactors />} />
+
+                {/* Subscription & Plans */}
+                <Route path="/subscription" element={<SubscriptionPage />} />
+                <Route path="/plans" element={<PlansPage />} />
 
                 {/* Legal */}
                 <Route path="/privacy" element={<PrivacyPolicy />} />

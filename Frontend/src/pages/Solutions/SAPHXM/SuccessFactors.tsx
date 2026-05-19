@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
  BarChart,
@@ -150,7 +150,7 @@ const SuccessFactors = () => {
       title="Transform HR Experience"
       subtitle="Streamline workforce management and elevate employee experience with intelligent cloud-based HCM solutions."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP HXM", path: "/solutions/sap-hxm" }, { name: "SuccessFactors", path: "/solutions/successfactors" }]}
-      backgroundImage="/Solutions/successfactors.png"
+      backgroundImage="/Solutions/success-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We empower enterprises with future-ready SAP SuccessFactors solutions, ensuring seamless transformation, operational excellence, and long-term value creation."
       trustedFeatures={trustedPartnerFeatures}

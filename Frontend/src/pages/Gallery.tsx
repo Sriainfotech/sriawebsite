@@ -4,30 +4,20 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Camera, Users, MapPin, Heart, X } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-const categories = ["All", "Team Events", "Office Life", "Celebrations", "Milestones", "Community"];
+const categories = ["All", "Team Events", "Office Life", "Celebrations", "Milestones"];
 
 const gallery = [
-  { id: 1,  src: "/gallery/sria-office-workspace.png",  category: "Office Life",   caption: "SRIA Infotech Office – Hyderabad",              featured: true  },
-  { id: 2,  src: "/gallery/sria-team-photo.png",        category: "Team Events",   caption: "SRIA Team at Hyderabad Office",                 featured: false },
-  { id: 3,  src: "/gallery/training-workshop.png",      category: "Team Events",   caption: "SAP Training Workshop",                         featured: false },
-  { id: 4,  src: "/gallery/team-dinner.png",            category: "Celebrations",  caption: "Team Celebration Dinner",                       featured: true  },
-  { id: 5,  src: "/gallery/diwali-celebration.png",     category: "Celebrations",  caption: "Diwali Celebrations at SRIA",                   featured: false },
-  { id: 6,  src: "/gallery/thub-family-event.png",      category: "Team Events",   caption: "Family Day at T-Hub, Hyderabad",                featured: false },
-  { id: 7,  src: "/gallery/office-inauguration.png",    category: "Milestones",    caption: "Office Inauguration Ceremony",                  featured: false },
-  { id: 8,  src: "/gallery/job-fair-mulugu.png",        category: "Community",     caption: "Job Fair – Placements for Local Youth, Mulugu", featured: true  },
-  { id: 9,  src: "/gallery/team-awards.png",            category: "Milestones",    caption: "Team Recognition & Awards",                     featured: false },
-  { id: 10, src: "/gallery/leadership-meeting.jpg",     category: "Team Events",   caption: "Leadership Team Gathering",                     featured: false },
-  { id: 11, src: "/gallery/christmas-team-lunch.jpg",   category: "Celebrations",  caption: "Christmas Team Lunch",                          featured: false },
-  { id: 12, src: "/gallery/team-outing-restaurant.jpg", category: "Celebrations",  caption: "Team Outing",                                   featured: false },
-  { id: 13, src: "/gallery/amaravati-visit.jpeg",       category: "Milestones",    caption: "Visit to Amaravati Secretariat",                featured: false },
-  { id: 14, src: "/gallery/amaravati-secretariat.jpeg", category: "Milestones",    caption: "Amaravati Capital Region Visit",                featured: false },
-  { id: 15, src: "/gallery/team-hangout.jpg",           category: "Celebrations",  caption: "Team Hangout",                                  featured: false },
-  { id: 16, src: "/gallery/annual-team-gathering.jpg",  category: "Team Events",   caption: "Annual Team Gathering",                         featured: true  },
-  { id: 17, src: "/gallery/thub-visit.jpg",             category: "Milestones",    caption: "Team at T-Hub Hyderabad",                       featured: true  },
-  { id: 18, src: "/gallery/team-celebration.jpg",       category: "Celebrations",  caption: "Year-End Team Party",                           featured: false },
-  { id: 19, src: "/gallery/team-lunch.jpg",             category: "Office Life",   caption: "Team Lunch Together",                           featured: false },
-  { id: 20, src: "/gallery/sap-inside-track.jpg",       category: "Milestones",    caption: "SAP Inside Track – Hyderabad",                  featured: true  },
-  { id: 21, src: "/gallery/government-partnership.jpg", category: "Community",     caption: "Government Partnership Meeting",                featured: false },
+  { id: 1,  src: "/gallery/annual-team-gathering.jpg",  category: "Team Events",   caption: "Annual Team Gathering",                         featured: true  },
+  { id: 2,  src: "/gallery/sap-inside-track.jpg",       category: "Milestones",    caption: "SAP Inside Track – Hyderabad",                  featured: true  },
+  { id: 3,  src: "/gallery/sria-office-workspace.png",  category: "Office Life",   caption: "SRIA Infotech Office – Hyderabad",              featured: false },
+  { id: 4,  src: "/gallery/sria-team-photo.png",        category: "Team Events",   caption: "SRIA Team Photo",                               featured: false },
+  { id: 5,  src: "/gallery/thub-family-event.png",      category: "Team Events",   caption: "Family Day at T-Hub, Hyderabad",                featured: false },
+  { id: 6,  src: "/gallery/job-fair-mulugu.png",        category: "Milestones",    caption: "Job Fair – Placements for Local Youth, Mulugu", featured: true  },
+  { id: 7,  src: "/gallery/office-inauguration.png",    category: "Milestones",    caption: "Office Inauguration – Mulugu",                  featured: false },
+  { id: 8,  src: "/gallery/amaravati-visit.jpeg",       category: "Milestones",    caption: "Visit to Telangana Secretariat, Hyderabad",     featured: false },
+  { id: 9,  src: "/gallery/team-outing-restaurant.jpg", category: "Celebrations",  caption: "Team Outing",                                   featured: false },
+  { id: 10, src: "/gallery/team-hangout.jpg",           category: "Celebrations",  caption: "Team Hangout",                                  featured: false },
+  { id: 11, src: "/gallery/team-lunch.jpg",             category: "Office Life",   caption: "Team Lunch Together",                           featured: false },
 ];
 
 const stats = [

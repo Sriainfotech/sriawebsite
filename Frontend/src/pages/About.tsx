@@ -27,7 +27,7 @@ const accordionData = [
   {
     title: "Leadership",
     text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80",
+    image: "/aboutus/leadership.jpg",
   },
   {
     title: "Core Values",
@@ -37,7 +37,7 @@ const accordionData = [
   {
     title: "Our Services",
     text: "SAP Consulting & Implementation — Expert SAP solutions to streamline enterprise processes.\nEnterprise Application Development — Tailored applications that improve business efficiency.\nCloud Solutions — Scalable and secure cloud services to elevate your infrastructure.\nAI & Machine Learning — Advanced AI-driven solutions to boost automation and decision-making.\nIT Consulting & Managed Services — Comprehensive IT advisory and support.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80",
+    image: "/aboutus/ourservices.jpg",
   },
   {
     title: "Why Choose Us?",

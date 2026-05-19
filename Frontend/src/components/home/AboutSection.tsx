@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
-const aboutImageUrl = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80";
+const aboutImageUrl = "/home/about-home.png";
 
 const highlights = [
  "Partner-centric approach with trust and integrity",

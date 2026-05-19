@@ -1,4 +1,4 @@
-import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
+﻿import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import { CheckCircle2, Briefcase, Globe, ShieldCheck, Rocket, Users, Factory, Settings, BarChart, TrendingUp, Cloud, Layers, Code2, LifeBuoy, Zap } from "lucide-react";
 
 const advisoryServices = [
@@ -60,7 +60,7 @@ const Rise = () => {
         { name: "SAP ERP", path: "/solutions/sap-erp" },
         { name: "RISE with SAP", path: "/solutions/rise-with-sap" },
       ]}
-      backgroundImage="/Solutions/s4hana.png"
+      backgroundImage="/Solutions/rise-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-500">SAP Growth</span></>}
       impactDescription="We empower enterprises with future-ready SAP solutions, ensuring seamless transformation, operational excellence, and long-term value creation."
       trustedFeatures={trustedPartnerFeatures}

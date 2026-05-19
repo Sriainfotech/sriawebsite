@@ -29,7 +29,7 @@ const GateCheck = () => {
  const overviewData = {
  title: "What is GateCheck?",
  description: "GateCheck is a smart facility platform integrating IoT, cloud, and mobility. It digitizes maintenance, visitor management, and compliance across multiple sites, providing actionable insights for better facility management.",
- image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80",
+ image: "/gatecheck/product.jpeg",
  highlights: [
  {
  icon: <Wifi className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const GateCheck = () => {
  {
  title: "IoT-Enabled Monitoring",
  description: "Real-time visibility into facility conditions using smart sensors. Monitor temperature, humidity, energy consumption, and more from a single interface.",
- image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+ image: "/gatecheck/fe1.jpeg",
  },
  {
  title: "Predictive Maintenance",
  description: "Automated alerts and insights to reduce downtime and optimize asset health. Catch potential failures before they happen and schedule maintenance proactively.",
- image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+ image: "/gatecheck/fe2.jpeg",
  reverse: true,
  },
  {
  title: "Compliance & Audits",
  description: "Streamline checklists and audits to ensure regulatory safety standards. Digital documentation makes audits faster and more reliable.",
- image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+ image: "/gatecheck/fe3.jpeg",
  },
  {
  title: "Incident Reporting",
  description: "Efficiently log, track, and resolve incidents with automated workflows. Ensure that every issue is addressed promptly and documented correctly.",
- image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80",
+ image: "/gatecheck/fe4.jpeg",
  reverse: true,
  },
  {
  title: "Role-Based Dashboards",
  description: "Custom dashboards for admins, supervisors, and operators. Get the information you need, tailored to your specific role and responsibilities.",
- image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+ image: "/gatecheck/fe5.jpeg",
  },
  ],
  };
@@ -135,7 +135,7 @@ const GateCheck = () => {
  "Data-driven decision making with AI insights",
  "Mobile-first approach for field teams",
  ],
- illustration: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+ illustration: "/gatecheck/benefits.jpeg",
  };
 
  const faqsData = [
@@ -201,7 +201,7 @@ const GateCheck = () => {
  { name: "Products", path: "/products" },
  { name: "GateCheck", path: "/products/gatecheck" },
  ]}
- backgroundImage="/gatecheck/GATE CHECK.png"
+ backgroundImage="/gatecheck/gatecheck-hero.jpeg"
  />
  <ProductLayout
  overview={overviewData}

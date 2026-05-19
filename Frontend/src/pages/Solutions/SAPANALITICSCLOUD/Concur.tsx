@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
  BarChart,
@@ -146,7 +146,7 @@ const Concur = () => {
       title="Simplify Travel & Expenses"
       subtitle="Automate and control business travel, expenses, and invoices with SAP Concur."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" }, { name: "Concur", path: "/solutions/concur" }]}
-      backgroundImage="/Solutions/financial.jpg"
+      backgroundImage="/Solutions/concur-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We empower financial institutions to streamline operations, enhance compliance, and drive growth through optimized travel, expense, and invoice management."
       trustedFeatures={trustedPartnerFeatures}

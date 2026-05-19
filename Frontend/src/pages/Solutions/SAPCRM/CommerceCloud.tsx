@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
  BarChart,
@@ -134,7 +134,7 @@ const CommerceCloud = () => {
       title="Personalized Commerce Experiences"
       subtitle="Create seamless, scalable, and secure digital shopping journeys with SAP Commerce Cloud."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP CRM", path: "/solutions/sap-crm" }, { name: "Commerce Cloud", path: "/solutions/commerce-cloud" }]}
-      backgroundImage="/Solutions/commerce.webp"
+      backgroundImage="/Solutions/commerce-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We help organizations build scalable, secure, and personalized commerce experiences, ensuring seamless integration and long-term success."
       trustedFeatures={trustedPartnerFeatures}

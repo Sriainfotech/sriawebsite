@@ -199,9 +199,10 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
  className="flex flex-wrap justify-center items-center gap-0"
  >
  {[
- { value: "10+", label: "Years Experience" },
- { value: "100+", label: "Happy Clients" },
- { value: "500+", label: "Projects" },
+ { value: "20+", label: "Projects Completed" },
+ { value: "4+",  label: "Global Offices" },
+ { value: "5+",  label: "Years of Experience" },
+ { value: "50+", label: "Group Employees" },
  ].map((stat, i) => (
  <div key={i} className="flex items-center">
  <div className="px-5 sm:px-10 text-center">

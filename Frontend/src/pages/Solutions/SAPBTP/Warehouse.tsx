@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
  Warehouse as WarehouseIcon,
@@ -128,7 +128,7 @@ const Warehouse = () => {
       title="Extended Warehouse Management"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP BTP", path: "/solutions/sap-btp" }, { name: "Warehouse Management", path: "/solutions/extended-warehouse-management" }]}
-      backgroundImage="/Solutions/erp-public-cloud.png"
+      backgroundImage="/Solutions/warehouse-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Maximize efficiency and visibility with SAP Extended Warehouse Management (EWM). From advisory to implementation and optimization, we transform your warehousing operations."
       trustedFeatures={trustedPartnerFeatures}

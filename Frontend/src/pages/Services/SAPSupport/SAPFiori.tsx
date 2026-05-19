@@ -39,7 +39,7 @@ function SAPFiori() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "SAP Fiori", path: "/services/sap-fiori" },
       ]}
-      backgroundImage="/Services/fiori.png"
+      backgroundImage="/Services/fiori.jpeg"
       processTitle="Modernizing Enterprise UX with Intuitive Fiori Solutions"
       processDescription="From custom app design to seamless backend integration, we deliver role-based dashboards that users love."
       processSteps={[

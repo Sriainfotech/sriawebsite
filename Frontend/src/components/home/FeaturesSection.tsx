@@ -7,7 +7,7 @@ const features = [
   {
     icon: GitBranch,
     number: "01",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+    image: "/home/sap-hana-home.png",
     title: "SAP S/4HANA",
     subtitle: "Intelligent Enterprise Platform",
     description:
@@ -19,7 +19,7 @@ const features = [
   {
     icon: CloudCog,
     number: "02",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+    image: "/home/cloud-sap-home.jpeg",
     title: "Cloud Solutions",
     subtitle: "SAP Business Technology Platform",
     description:
@@ -31,7 +31,7 @@ const features = [
   {
     icon: BarChart3,
     number: "03",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    image: "/home/data-analytics-home.jpeg",
     title: "Data Analytics",
     subtitle: "Insight-Driven Decision Making",
     description:
@@ -43,7 +43,7 @@ const features = [
   {
     icon: HeartPulse,
     number: "04",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80",
+    image: "/home/managed-home.jpeg",
     title: "Managed Services",
     subtitle: "Continuous Application Excellence",
     description:
@@ -184,7 +184,7 @@ const FeaturesSection = () => {
                     <img
                       src={current.image}
                       alt={current.title}
-                      className="w-full h-full object-cover opacity-60"
+                      className="w-full h-full object-cover opacity-80"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-950/55 to-slate-950/30" />
                     {/* Color glow blob */}

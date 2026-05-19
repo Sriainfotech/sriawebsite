@@ -29,7 +29,7 @@ const NxDesk = () => {
  const overviewData = {
  title: "What is NxDesk?",
  description: "NxDesk is a smart issue tracking system for streamlined ticket management. It enables SLA tracking, project categorization, real-time updates, and multi-role access with AI-powered tools for quick resolutions.",
- image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+ image: "/Nxdesk/product.png",
  highlights: [
  {
  icon: <MessageSquare className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const NxDesk = () => {
  {
  title: "Unified Ticket Inbox",
  description: "Centralize support channels into one smart inbox for streamlined management. No more jumping between tools to respond to customers.",
- image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
+ image: "/Nxdesk/fe1.png",
  },
  {
  title: "Automated Workflows",
  description: "Save time with rule-based routing, auto-responses, and SLA tracking. Let the system handle the routine tasks while you focus on complex issues.",
- image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+ image: "/Nxdesk/fe2.png",
  reverse: true,
  },
  {
  title: "AI-Powered Suggestions",
  description: "Auto-suggest solutions and categorize tickets to reduce resolution times. Our AI analyzes past tickets to provide the best possible answers.",
- image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
+ image: "/Nxdesk/fe3.png",
  },
  {
  title: "Customizable Dashboards",
  description: "Track metrics and team performance in real-time with drag-and-drop widgets. Stay on top of your support KPIs with ease.",
- image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+ image: "/Nxdesk/fe4.jpeg",
  reverse: true,
  },
  {
  title: "Collaborative Ticketing",
  description: "Share internal notes, tag teammates, and resolve complex issues faster. Collaboration is built into the heart of the ticketing process.",
- image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+ image: "/Nxdesk/fe5.png",
  },
  ],
  };
@@ -135,7 +135,7 @@ const NxDesk = () => {
  "Scalable support for growing organizations",
  "AI-driven automation for routine tasks",
  ],
- illustration: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+ illustration: "/Nxdesk/benefits.png",
  };
 
  const faqsData = [
@@ -201,7 +201,7 @@ const NxDesk = () => {
  { name: "Products", path: "/products" },
  { name: "NxDesk", path: "/products/nxdesk" },
  ]}
- backgroundImage="/Nxdesk/mockup.png"
+ backgroundImage="/Nxdesk/nxdesk-hero.png"
  />
  <ProductLayout
  overview={overviewData}

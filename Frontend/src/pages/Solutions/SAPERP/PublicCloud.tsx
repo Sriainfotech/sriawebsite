@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
  BarChart,
@@ -169,7 +169,7 @@ const PublicCloud = () => {
       title="Unlock Agility & Innovation"
       subtitle="SAP S/4HANA Public Cloud is a comprehensive, next-generation ERP solution designed for scalability, agility, and innovation."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP ERP", path: "/solutions/sap-erp" }, { name: "Public Cloud", path: "/solutions/public-cloud" }]}
-      backgroundImage="/Solutions/public.jpeg"
+      backgroundImage="/Solutions/public-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-500 pt-2">SAP Growth</span></>}
       impactDescription="We empower enterprises with future-ready SAP solutions, ensuring seamless transformation, operational excellence, and long-term value creation."
       trustedFeatures={trustedPartnerFeatures}

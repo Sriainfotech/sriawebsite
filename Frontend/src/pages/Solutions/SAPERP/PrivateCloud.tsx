@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import SolutionPageLayout from "@/components/layout/SolutionPageLayout";
 import {
  BarChart,
@@ -154,7 +154,7 @@ const PrivateCloud = () => {
       title="Run Smarter with S/4HANA"
       subtitle="Enable secure, scalable, and adaptable ERP transformation on your terms with SAP S/4HANA Private Cloud Edition."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP ERP", path: "/solutions/sap-erp" }, { name: "Private Cloud", path: "/solutions/private-cloud" }]}
-      backgroundImage="/Solutions/private.webp"
+      backgroundImage="/Solutions/private-hero.jpeg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-500 pt-2">SAP Growth</span></>}
       impactDescription="We guide you through every step of your Private Cloud journey, from strategic advisory to robust implementation and ongoing optimization."
       trustedFeatures={trustedPartnerFeatures}

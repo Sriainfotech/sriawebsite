@@ -110,7 +110,7 @@ const SolutionPageLayout = ({
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80"
+            src="/Solutions/partnership.jpeg"
             alt="Partnership"
             className="w-full h-full object-cover"
           />
