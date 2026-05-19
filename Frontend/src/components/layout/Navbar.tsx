@@ -505,7 +505,7 @@ const Navbar: React.FC<NavbarProps> = ({
  animation: "scroll 30s linear infinite",
  }}
  >
- IVC Consulting Group is our Global Partner, enhancing our international delivery capability and enabling seamless collaboration across SAP implementation, rollout, and support engagements worldwide.
+ IVC Consulting is our global SAP delivery partner —&nbsp;<a href="https://ivcsol.com/" target="_blank" rel="noopener noreferrer" style={{textDecoration:"underline",opacity:0.85}}>Learn more →</a>
  {/* Our website is currently undergoing an upgrade to improve your browsing experience. */}
  </div>
  </div>

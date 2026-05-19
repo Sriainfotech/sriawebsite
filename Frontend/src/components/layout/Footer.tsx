@@ -28,21 +28,13 @@ const Footer = () => {
 
     const solutions = [
         { label: "Rise with SAP", link: "/solutions/rise-with-sap" },
-        { label: "SAP S/4 HANA Private Cloud", link: "/solutions/private-cloud" },
-        { label: "SAP S/4 HANA Public Cloud", link: "/solutions/public-cloud" },
+        { label: "SAP S/4HANA Private Cloud", link: "/solutions/private-cloud" },
+        { label: "SAP S/4HANA Public Cloud", link: "/solutions/public-cloud" },
         { label: "SAP SuccessFactors", link: "/solutions/successfactors" },
         { label: "SAP Commerce Cloud", link: "/solutions/commerce-cloud" },
         { label: "SAP Concur", link: "/solutions/concur" },
         { label: "SAP Ariba", link: "/solutions/ariba" },
-        { label: "SAP Manufacturing Execution", link: "/solutions/manufacturing-execution" },
-        { label: "SAP Manufacturing Logistics", link: "/solutions/manufacturing-logistics" },
-        { label: "SAP Digital Manufacturing", link: "/solutions/digital-manufacturing" },
-        { label: "SAP Business Network for Logistics", link: "/solutions/business" },
-        { label: "SAP Fieldglass", link: "/solutions/fieldglass" },
-        { label: "SAP Extended Warehouse Management", link: "/solutions/extended-warehouse-management" },
-        { label: "SAP Product Lifecycle", link: "/solutions/product-lifecycle" },
-        { label: "SAP Asset Performance Management", link: "/solutions/asset-performance-management" },
-        { label: "SAP Field Service Management", link: "/solutions/field-service-management" }
+        { label: "SAP BTP", link: "/solutions/btp" },
     ];
 
     const services = [
@@ -119,12 +111,17 @@ const Footer = () => {
                                 <li key={item.label}>
                                     <Link
                                         to={item.link}
-                                        className="text-sm text-slate-500 hover:text-orange-400 transition-colors duration-200 block hover:translate-x-0.5 transition-transform"
+                                        className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200 block"
                                     >
                                         {item.label}
                                     </Link>
                                 </li>
                             ))}
+                            <li className="pt-1">
+                                <Link to="/about/sap-partner" className="text-sm text-orange-500 hover:text-orange-400 transition-colors font-medium">
+                                    View all solutions →
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -136,7 +133,7 @@ const Footer = () => {
                                 <li key={item.label}>
                                     <Link
                                         to={item.link}
-                                        className="text-sm text-slate-500 hover:text-orange-400 transition-colors duration-200 block hover:translate-x-0.5 transition-transform"
+                                        className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200 block"
                                     >
                                         {item.label}
                                     </Link>
