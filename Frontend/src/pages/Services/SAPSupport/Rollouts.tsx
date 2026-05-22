@@ -39,7 +39,7 @@ function Rollouts() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "SAP Rollouts", path: "/services/sap-rollouts" },
       ]}
-      backgroundImage="/Services/consulting.png"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455207/sria/Services/consulting.png"
       processTitle="Delivering Impact-Driven Global SAP Rollouts"
       processDescription="Our proven methodology ensures a risk-free, on-time, and on-budget transformation journey."
       processSteps={[

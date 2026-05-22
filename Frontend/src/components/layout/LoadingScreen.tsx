@@ -39,7 +39,7 @@ const LoadingScreen = () => {
       <div className="relative mb-10 select-none">
         {/* Faded base logo — always visible as ghost */}
         <img
-          src="/logo-footer.png"
+          src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454980/sria/logo-footer.png"
           alt="SRIA Infotech"
           className="w-44 md:w-52 object-contain opacity-[0.12]"
           draggable={false}
@@ -51,7 +51,7 @@ const LoadingScreen = () => {
           style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }}
         >
           <img
-            src="/logo-footer.png"
+            src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454980/sria/logo-footer.png"
             alt=""
             className="w-44 md:w-52 object-contain"
             draggable={false}

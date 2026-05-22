@@ -148,7 +148,7 @@ function DataAnalytics() {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Data Analytics", path: "/services/data-analytics" },
         ]}
-        backgroundImage="/DATA ANALYTICS.png"
+        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454697/sria/DATA%20ANALYTICS.png"
       />
 
       {/* ── Intro Split Section ── */}

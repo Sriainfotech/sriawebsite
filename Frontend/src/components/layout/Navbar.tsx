@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, Globe, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assetshttps://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454981/sria/logo.png";
 
 interface DropdownSection {
     title: string;
@@ -514,7 +514,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-16">
                         <div className="flex flex-row items-center">
                             <Link to="/" className="font-bold flex flex-row items-center">
-                                <img src='/logo.png' alt="Logo" className="h-auto w-28" />
+                                <img src='https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454981/sria/logo.png' alt="Logo" className="h-auto w-28" />
                             </Link>
                         </div>
 

@@ -110,7 +110,7 @@ const SolutionPageLayout = ({
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="/Solutions/partnership.jpeg"
+            src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455276/sria/Solutions/partnership.jpg"
             alt="Partnership"
             className="w-full h-full object-cover"
           />

@@ -106,7 +106,7 @@ const ServicePageLayout = ({
             >
               <div className="rounded-2xl overflow-hidden shadow-xl h-52 lg:h-60">
                 <img
-                  src="/Services/approach-i.jpeg"
+                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455192/sria/Services/approach-i.jpg"
                   alt="SAP consulting team"
                   className="w-full h-full object-cover"
                 />
@@ -241,7 +241,7 @@ const ServicePageLayout = ({
               )}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64">
                 <img
-                  src="/Services/capability.jpeg"
+                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455205/sria/Services/capability.jpg"
                   alt="Expert SAP team"
                   className="w-full h-full object-cover"
                 />

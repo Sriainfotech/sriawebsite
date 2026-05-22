@@ -184,7 +184,7 @@ const sapData = {
  heading: "Delivering Impact-Driven SAP Implementations",
  description:
  "Your Trusted Partner in SAP Transformation. We help organizations optimize their supply chain and manufacturing logistics for maximum efficiency.",
- imageUrl: "/Solutions/papm-sap.png",
+ imageUrl: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455274/sria/Solutions/papm-sap.png",
  imageAlt: "SAP Manufacturing Logistics",
  items: [
  {
@@ -211,13 +211,13 @@ const sapData = {
 const customerStories = [
  {
  id: 1,
- image: "/partners/ivc-logo.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455089/sria/partners/ivc-logo.png",
  title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
  readMoreLink: "/partners/ivc-solutions",
  },
  {
  id: 2,
- image: "/customerStories/patil.jpg",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454693/sria/customerStories/patil.jpg",
  title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
  readMoreLink: "/patil",
  },
@@ -229,7 +229,7 @@ const customerStories = [
  },
  {
  id: 4,
- image: "/customerStories/pharma.jpg",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454695/sria/customerStories/pharma.jpg",
  title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
  readMoreLink: "/Lvk",
  },
@@ -252,31 +252,31 @@ const features = [
  title: "Application Development",
  description:
  "Building robust applications to extend SAP capabilities with ABAP and custom development.",
- image: "/Solutions/buildapps.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455233/sria/Solutions/buildapps.png",
  },
  {
  title: "Data & Analytics",
  description:
  "Empowering decisions with SAP Analytics Cloud (SAC) for comprehensive business insights.",
- image: "/DATA ANALYTICS.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454697/sria/DATA%20ANALYTICS.png",
  },
  {
  title: "Automation & AI",
  description:
  "Streamlining operations with RPA, AI, and intelligent automation technologies.",
- image: "/Services/automation.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455195/sria/Services/automation.png",
  },
  {
  title: "Integration Services",
  description:
  "Seamless connectivity using SAP CPI and BTP for a unified business landscape.",
- image: "/Solutions/cpi.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455252/sria/Solutions/cpi.png",
  },
  {
  title: "Fiori User Experience",
  description:
  "Enhancing user engagement with custom Fiori-based extensions and modern UI.",
- image: "/Services/FIORI.webp",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455216/sria/Services/fiori.png",
  },
 ];
 const insightsData = [
@@ -316,7 +316,7 @@ function SAPFinancialMgmt() {
  { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" },
  { name: "PaPM", path: "/solutions/papm" },
  ]}
- backgroundImage="/Solutions/papm.png"
+ backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455275/sria/Solutions/papm.png"
  />
 
 

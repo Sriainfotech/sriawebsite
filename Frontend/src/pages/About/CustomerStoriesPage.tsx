@@ -7,7 +7,7 @@ import PageHeader from "@/components/layout/PageHeader";
 const stories = [
   {
     id: 1,
-    image: "/partners/ivc-logo.png",
+    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455089/sria/partners/ivc-logo.png",
     category: "Strategic Partnership",
     title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
     description: "Strategic partnership delivering world-class SAP implementations across Asia Pacific, enabling seamless digital transformation for global enterprises.",
@@ -17,7 +17,7 @@ const stories = [
   },
   {
     id: 2,
-    image: "/customerStories/patil.jpg",
+    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454693/sria/customerStories/patil.jpg",
     category: "SAP Implementation",
     title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
     description: "End-to-end SAP deployment combined with Application Management Services and OCR automation, driving measurable operational improvements across the enterprise.",
@@ -37,7 +37,7 @@ const stories = [
   },
   {
     id: 4,
-    image: "/customerStories/pharma.jpg",
+    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454695/sria/customerStories/pharma.jpg",
     category: "Odoo CRM",
     title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
     description: "Odoo CRM implementation eliminating manual processes and enabling real-time visibility and operational efficiency for the sales team.",
@@ -67,7 +67,7 @@ const CustomerStoriesPage = () => {
           { name: "About Us", path: "/aboutus" },
           { name: "Success Stories", path: "/about/customer-stories" },
         ]}
-        backgroundImage="/customerstory.jpg"
+        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454696/sria/customerstory.jpg"
       />
 
       {/* ── Intro + Stats ── */}

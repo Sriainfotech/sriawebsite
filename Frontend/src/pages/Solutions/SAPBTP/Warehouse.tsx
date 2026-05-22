@@ -128,7 +128,7 @@ const Warehouse = () => {
       title="Extended Warehouse Management"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP BTP", path: "/solutions/sap-btp" }, { name: "Warehouse Management", path: "/solutions/extended-warehouse-management" }]}
-      backgroundImage="/Solutions/warehouse-hero.jpeg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455303/sria/Solutions/warehouse-hero.jpg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Maximize efficiency and visibility with SAP Extended Warehouse Management (EWM). From advisory to implementation and optimization, we transform your warehousing operations."
       trustedFeatures={trustedPartnerFeatures}

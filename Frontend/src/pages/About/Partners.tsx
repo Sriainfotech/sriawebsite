@@ -11,7 +11,7 @@ const partners = [
     badge: "SAP Gold Partner",
     shortDescription:
       "An authorized SAP Gold Partner with offices across Mainland China, Hong Kong, Macau, Taiwan, and Asia Pacific. Together, we deliver world-class SAP and enterprise solutions.",
-    logo: "/ivclogo.png",
+    logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454965/sria/ivclogo.png",
     detailsUrl: "/partners/ivc-solutions",
     regions: ["Mainland China", "Hong Kong", "Macau", "Taiwan", "Asia Pacific"],
     stats: [
@@ -32,7 +32,7 @@ function Partners() {
           { name: "About Us", path: "/aboutus" },
           { name: "Partners", path: "/about/partners" },
         ]}
-        backgroundImage="/partners/sap-partner.png"
+        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455097/sria/partners/sap-partner.png"
       />
 
       {/* ── Partnership Overview ── */}
@@ -93,7 +93,7 @@ function Partners() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px]">
                 <img
-                  src="/partners/partner-overview.png"
+                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455092/sria/partners/partner-overview.png"
                   alt="Partnership Overview"
                   className="w-full h-full object-cover"
                 />

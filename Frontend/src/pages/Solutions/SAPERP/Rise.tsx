@@ -60,7 +60,7 @@ const Rise = () => {
         { name: "SAP ERP", path: "/solutions/sap-erp" },
         { name: "RISE with SAP", path: "/solutions/rise-with-sap" },
       ]}
-      backgroundImage="/Solutions/rise-hero.jpeg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455285/sria/Solutions/rise-hero.jpg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-500">SAP Growth</span></>}
       impactDescription="We empower enterprises with future-ready SAP solutions, ensuring seamless transformation, operational excellence, and long-term value creation."
       trustedFeatures={trustedPartnerFeatures}

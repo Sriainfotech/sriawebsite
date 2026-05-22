@@ -146,7 +146,7 @@ const CustomDevelopment = () => {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Custom Development", path: "/services/custom-development" },
         ]}
-        backgroundImage="/odoo-app.png"
+        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455049/sria/odoo-app.png"
       />
 
       {/* ── Intro Split Section ── */}

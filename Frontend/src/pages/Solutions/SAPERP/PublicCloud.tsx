@@ -169,7 +169,7 @@ const PublicCloud = () => {
       title="Unlock Agility & Innovation"
       subtitle="SAP S/4HANA Public Cloud is a comprehensive, next-generation ERP solution designed for scalability, agility, and innovation."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP ERP", path: "/solutions/sap-erp" }, { name: "Public Cloud", path: "/solutions/public-cloud" }]}
-      backgroundImage="/Solutions/public-hero.jpeg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455283/sria/Solutions/public-hero.jpg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-500 pt-2">SAP Growth</span></>}
       impactDescription="We empower enterprises with future-ready SAP solutions, ensuring seamless transformation, operational excellence, and long-term value creation."
       trustedFeatures={trustedPartnerFeatures}

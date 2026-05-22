@@ -33,7 +33,7 @@ const ChairmanStatement = () => {
                             <div className="relative w-[220px] h-[220px] mx-auto rounded-full p-0.5 bg-gradient-to-br from-orange-500 to-amber-500 shadow-2xl">
                                 <div className="w-full h-full rounded-full overflow-hidden">
                                     <img
-                                        src="/chairman.jpg"
+                                        src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454671/sria/chairman.jpg"
                                         alt="Chairman"
                                         className="w-full h-full object-cover transition-all duration-700"
                                     />

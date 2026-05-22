@@ -282,25 +282,25 @@ const features = [
  title: "Smart Procurement & Sourcing",
  description:
  "Streamline supplier collaboration, automate procurement processes, and optimize purchasing strategies.",
- image: "/S4HANA/procurement.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455135/sria/S4HANA/procurement.png",
  },
  {
  title: "Integrated Logistics & Supply Chain",
  description:
  "Enhance supply chain visibility, warehouse management, and logistics with live data integration.",
- image: "/S4HANA/logistics.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455134/sria/S4HANA/logistics.png",
  },
  {
  title: "Predictive Analytics & Reporting",
  description:
  "Utilize embedded analytics and predictive intelligence to make proactive business decisions.",
- image: "/S4HANA/analytics.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455128/sria/S4HANA/analytics.png",
  },
  {
  title: "Simplified User Experience",
  description:
  "Empower users with an intuitive, role-based interface through SAP Fiori and mobile-ready dashboards.",
- image: "/S4HANA/fiori.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455132/sria/S4HANA/fiori.png",
  },
 ];
 
@@ -316,7 +316,7 @@ function BTP() {
  { name: "Solutions", path: "/solutions" },
  { name: "SAP BTP", path: "/solutions/sap-btp" },
  ]}
- backgroundImage="/Solutions/cpi.jpg"
+ backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455250/sria/Solutions/cpi.jpg"
  />
 
 

@@ -24,7 +24,7 @@ const AutoExtract = () => {
     const overviewData = {
         title: "What is Auto Extract?",
         description: "Auto Extract uses advanced AI to automate data extraction from documents like invoices and forms. It streamlines processing with real-time validation and analytics, ensuring accuracy, security, and seamless integration into your enterprise ecosystem.",
-        image: "/autoextract/product.png",
+        image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454642/sria/autoextract/product.png",
         highlights: [
             {
                 icon: <Brain className="w-6 h-6" />,
@@ -84,29 +84,29 @@ const AutoExtract = () => {
             {
                 title: "Automated Processing",
                 description: "Process large volumes of documents automatically, saving time and reducing operational costs significantly. Our system handles the heavy lifting, allowing your team to focus on high-value tasks.",
-                image: "/autoextract/automated.png",
+                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454632/sria/autoextract/automated.png",
             },
             {
                 title: "Smart Learning",
                 description: "The system adapts to new document structures, improving efficiency over time. It learns from every interaction, becoming more accurate and faster with each document processed.",
-                image: "/autoextract/smart.png",
+                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454645/sria/autoextract/smart.png",
                 reverse: true,
             },
             {
                 title: "Error-Free Processing",
                 description: "Minimize manual entry to ensure high data integrity and consistency. Our AI cross-references data points to ensure that what is extracted is 100% accurate.",
-                image: "/autoextract/error.png",
+                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454638/sria/autoextract/error.png",
             },
             {
                 title: "Custom Workflows",
                 description: "Design workflows that fit your specific document handling needs. Whether it's multi-level approval or specific data routing, Auto Extract adapts to you.",
-                image: "/autoextract/custom.png",
+                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454636/sria/autoextract/custom.png",
                 reverse: true,
             },
             {
                 title: "Instant Validation",
                 description: "Validate and correct data in real-time for faster, reliable results. Catch discrepancies before they enter your system, maintaining a clean database.",
-                image: "/autoextract/instant.png",
+                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454640/sria/autoextract/instant.png",
             },
         ],
     };
@@ -130,7 +130,7 @@ const AutoExtract = () => {
             "Scalable architecture for growing businesses",
             "Improved data accessibility and searchability",
         ],
-        illustration: "/autoextract/benefits.png",
+        illustration: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454634/sria/autoextract/benefits.png",
     };
 
     const faqsData = [
@@ -196,7 +196,7 @@ const AutoExtract = () => {
                     { name: "Products", path: "/products" },
                     { name: "Auto Extract", path: "/products/auto-extract" },
                 ]}
-                backgroundImage="/autoextract/auto-hero.png"
+                backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454630/sria/autoextract/auto-hero.png"
             />
             <ProductLayout
                 overview={overviewData}

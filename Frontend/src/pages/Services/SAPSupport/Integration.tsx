@@ -48,7 +48,7 @@ function Integration() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Integration Services", path: "/services/sap-integration" },
       ]}
-      backgroundImage="/Services/business.png"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455203/sria/Services/business.png"
       processTitle="Delivering Seamless Integration Across Your Enterprise Landscape"
       processDescription="We leverage modern middleware and API-first strategies to build a resilient, connected intelligent enterprise."
       processSteps={[
