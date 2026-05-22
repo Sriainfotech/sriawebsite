@@ -14,13 +14,13 @@ import aboutOffice from "@/assets/about-office.jpg";
 /* ─────────────── data ─────────────── */
 
 const stats = [
-  { value: "4+",    label: "Global Offices" },
+  { value: "4+", label: "Global Offices" },
   { value: "₹1Cr+", label: "Group Turnover" },
-  { value: "5+",    label: "Years of Experience" },
-  { value: "50+",   label: "Group Employees" },
-  { value: "20+",   label: "Projects Delivered" },
-  { value: "98%",   label: "Customer Satisfaction" },
-  { value: "14+",   label: "Industry Solutions" },
+  { value: "5+", label: "Years of Experience" },
+  { value: "50+", label: "Group Employees" },
+  { value: "20+", label: "Projects Delivered" },
+  { value: "98%", label: "Customer Satisfaction" },
+  { value: "14+", label: "Industry Solutions" },
 ];
 
 const accordionData = [
@@ -57,35 +57,35 @@ const accordionData = [
 ];
 
 const missionPoints = [
-  { number: "#1", title: "Accountability",       description: "We hold ourselves accountable to deliver on our commitments to customers." },
-  { number: "#2", title: "Customer Commitment",  description: "We're fully committed to making a positive impact for our customers." },
-  { number: "#3", title: "Teamwork",             description: "We work across borders with mutual respect to achieve shared goals." },
-  { number: "#4", title: "Integrity",            description: "We maintain the highest integrity in everything we do." },
-  { number: "#5", title: "Value",                description: "We deliver outstanding services that provide real value to our customers." },
-  { number: "#6", title: "Environment",          description: "We're responsible citizens in the communities where we live and work." },
+  { number: "#1", title: "Accountability", description: "We hold ourselves accountable to deliver on our commitments to customers." },
+  { number: "#2", title: "Customer Commitment", description: "We're fully committed to making a positive impact for our customers." },
+  { number: "#3", title: "Teamwork", description: "We work across borders with mutual respect to achieve shared goals." },
+  { number: "#4", title: "Integrity", description: "We maintain the highest integrity in everything we do." },
+  { number: "#5", title: "Value", description: "We deliver outstanding services that provide real value to our customers." },
+  { number: "#6", title: "Environment", description: "We're responsible citizens in the communities where we live and work." },
 ];
 
 const timelineEvents = [
-  { year: 2022, title: "Sria Infotech is Launched",          description: "Launched Sria Infotech as a global SAP consulting company.",                      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80" },
-  { year: 2022, title: "Started with SAP All Modules",        description: "Expanded capabilities to cover the complete SAP module portfolio.",               image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" },
-  { year: 2023, title: "Started Data Analytics",              description: "Launched dedicated data analytics and business intelligence services.",            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
-  { year: 2024, title: "Started Application Development",     description: "Began delivering custom application development solutions for clients.",           image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80" },
-  { year: 2025, title: "AMS from Patil Group",                description: "Won Application Management Services contract from Patil Group.",                   image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80" },
-  { year: 2025, title: "Odoo Implementation Partner",         description: "Became official Odoo Implementation Partner.",                                     image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80" },
-  { year: 2025, title: "Branch in Mulugu (Launching Soon)",   description: "Opening our new branch in Mulugu, expanding our Indian presence.",                 image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80" },
+  { year: 2022, title: "Sria Infotech is Launched", description: "Launched Sria Infotech as a global SAP consulting company.", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80" },
+  { year: 2022, title: "Started with SAP All Modules", description: "Expanded capabilities to cover the complete SAP module portfolio.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" },
+  { year: 2023, title: "Started Data Analytics", description: "Launched dedicated data analytics and business intelligence services.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
+  { year: 2024, title: "Started Application Development", description: "Began delivering custom application development solutions for clients.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80" },
+  { year: 2025, title: "AMS from Patil Group", description: "Won Application Management Services contract from Patil Group.", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80" },
+  { year: 2025, title: "Odoo Implementation Partner", description: "Became official Odoo Implementation Partner.", image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80" },
+  { year: 2025, title: "Branch in Mulugu (Launching Soon)", description: "Opening our new branch in Mulugu, expanding our Indian presence.", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80" },
 ];
 
 const offices = [
-  { id: 1, country: "USA",   flag: "🇺🇸", name: "New York Office",    address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA",                                                                          phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80",  mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
-  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office",   address: "First Floor, 1-121/63 Survey No. 63 Part, Hotel Sitara Grand Backside, Miyapur, Hyderabad, Telangana 500049",            phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80",  mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
-  { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office",   address: "Amaravati, Andhra Pradesh 522503, India",                                                                                  phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80",  mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
-  { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office",       address: "TASK Center, Mulugu, Telangana 506343, India",                                                                             phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80",  mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
+  { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
+  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "First Floor, 1-121/63 Survey No. 63 Part, Hotel Sitara Grand Backside, Miyapur, Hyderabad, Telangana 500049", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "/hyderabad.png", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
+  { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
+  { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
 ];
 
 const supportBlocks = [
-  { icon: <Headphones className="w-6 h-6" />, title: "Support",  description: "Get help with your account",      contact: "hr@sriainfotech.com",    phone: "+91 90145 52492" },
-  { icon: <Phone      className="w-6 h-6" />, title: "Sales",    description: "Talk to our sales team",          contact: "sales@sriainfotech.com", phone: "+91 90145 52492" },
-  { icon: <Mail       className="w-6 h-6" />, title: "General",  description: "General inquiries",               contact: "admin@sriainfotech.com", phone: "+91 90145 52492" },
+  { icon: <Headphones className="w-6 h-6" />, title: "Support", description: "Get help with your account", contact: "hr@sriainfotech.com", phone: "+91 90145 52492" },
+  { icon: <Phone className="w-6 h-6" />, title: "Sales", description: "Talk to our sales team", contact: "sales@sriainfotech.com", phone: "+91 90145 52492" },
+  { icon: <Mail className="w-6 h-6" />, title: "General", description: "General inquiries", contact: "admin@sriainfotech.com", phone: "+91 90145 52492" },
 ];
 
 /* ─────────────── component ─────────────── */
@@ -232,7 +232,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Sai Kumar Bonakurthi</p>
-                  <p className="text-orange-400 text-xs">Founder, Managing Director, CEO — SRIA Group of Companies</p>
+                  <p className="text-orange-400 text-xs">Founder, Managing Director — SRIA Group of Companies</p>
                 </div>
               </div>
               <Link to="/about/leadership" className="inline-flex items-center gap-2 text-white/60 hover:text-orange-400 text-sm font-medium mt-5 transition-colors">
@@ -550,11 +550,10 @@ const About = () => {
                 <button
                   key={country}
                   onClick={() => setSelectedCountry(country)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${
-                    selectedCountry === country
-                      ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                      : "bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${selectedCountry === country
+                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
+                    : "bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
+                    }`}
                 >
                   {country}
                 </button>

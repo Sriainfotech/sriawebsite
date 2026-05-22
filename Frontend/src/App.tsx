@@ -89,6 +89,7 @@ const PlansPage = React.lazy(() => import("./pages/Plans"));
 const PrivacyPolicy = React.lazy(() => import("./pages/legal/PrivacyPolicy"));
 const TermsOfService = React.lazy(() => import("./pages/legal/TermsOfService"));
 const CookiePolicy = React.lazy(() => import("./pages/legal/CookiePolicy"));
+const InvoiceTerms = React.lazy(() => import("./pages/legal/InvoiceTerms"));
 
 // Solutions — HXM
 const AssetPerformance = React.lazy(() => import("./pages/Solutions/SAPHXM/AssetPerformance"));
@@ -133,6 +134,9 @@ const App = () => (
         <BrowserRouter>
           <Suspense fallback={<LoadingScreen />}>
             <Routes>
+              {/* Standalone — no navbar/footer */}
+              <Route path="/terms" element={<InvoiceTerms />} />
+
               <Route element={<Layout />}>
                 {/* Main Routes */}
                 <Route path="/" element={<Index />} />
@@ -224,7 +228,7 @@ const App = () => (
 
                 {/* Legal */}
                 <Route path="/privacy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/terms-and-conditions" element={<TermsOfService />} />
                 <Route path="/cookies" element={<CookiePolicy />} />
 
                 {/* Catch-all */}

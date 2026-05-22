@@ -190,8 +190,8 @@ const Footer = () => {
                         <Link to="/privacy" className="hover:text-orange-400 transition-colors">
                             Privacy Policy
                         </Link>
-                        <Link to="/terms" className="hover:text-orange-400 transition-colors">
-                            Terms of Service
+                        <Link to="/terms-and-conditions" className="hover:text-orange-400 transition-colors">
+                            Terms &amp; Conditions
                         </Link>
                         <Link to="/cookies" className="hover:text-orange-400 transition-colors">
                             Cookie Policy

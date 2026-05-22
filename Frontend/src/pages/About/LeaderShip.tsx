@@ -24,7 +24,7 @@ const leaders = [
     name: "Sai Kumar Bonakurthi",
     designation: "Founder, Director — Sria Group of Companies",
     description:
-      "Founder, Managing Director, CEO - SRIA Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
+      "Founder, Managing Director - SRIA Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
     image: "/sai.png",
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
