@@ -33,28 +33,28 @@
             "id": 1,
             "title": "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
             "category": "Partnership",
-            "image": "/partners/ivc-logo.png",
+            "image": "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455089/sria/partners/ivc-logo.png",
             "readMoreLink": "/partners/ivc-solutions"
         },
         {
             "id": 2,
             "title": "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
             "category": "SAP & Automation",
-            "image": "/customerStories/patil.jpg",
+            "image": "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454693/sria/customerStories/patil.jpg",
             "readMoreLink": "/patil"
         },
         {
             "id": 3,
             "title": "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
             "category": "Digital Transformation",
-            "image": "/customerStories/7hills.jpg",
+            "image": "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779879753/sria/customerStories/7hills.jpg",
             "readMoreLink": "/hills"
         },
         {
             "id": 4,
             "title": "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
             "category": "Odoo CRM",
-            "image": "/customerStories/pharma.jpg",
+            "image": "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454695/sria/customerStories/pharma.jpg",
             "readMoreLink": "/Lvk"
         }
     ],
@@ -65,7 +65,7 @@
             "tag": "In-person",
             "date": "August 23, 2025",
             "venue": "India (Venue TBA)",
-            "image": "/Events/sapevent.jpg"
+            "image": "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454716/sria/Events/sapevent.jpg"
         },
         {
             "id": 2,
@@ -73,7 +73,7 @@
             "tag": "In-person",
             "date": "August 11, 2025",
             "venue": "Mulugu, Hyderabad",
-            "image": "/Events/launch.jpg"
+            "image": "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454713/sria/Events/launch.jpg"
         }
     ],
     "news": [

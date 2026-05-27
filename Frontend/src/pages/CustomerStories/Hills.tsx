@@ -3,7 +3,7 @@ import CustomerStoryLayout from "@/components/layout/CustomerStoryLayout";
 const Hills = () => (
   <CustomerStoryLayout
     hero={{
-      image: "/customerStories/7hills.jpg",
+      image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779879753/sria/customerStories/7hills.jpg",
       category: "Hospitality & Food Service",
       title: "7Hills Restaurant Transforms Guest Experience with Website, POS & Inventory Integration",
       tag: "POS · Website · Inventory",

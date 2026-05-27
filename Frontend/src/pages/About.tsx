@@ -27,7 +27,7 @@ const accordionData = [
   {
     title: "Leadership",
     text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
-    image: "/aboutushttps://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454975/sria/leadership.jpg",
+    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454975/sria/leadership.jpg",
   },
   {
     title: "Core Values",

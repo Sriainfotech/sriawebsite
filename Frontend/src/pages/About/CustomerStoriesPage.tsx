@@ -27,7 +27,7 @@ const stories = [
   },
   {
     id: 3,
-    image: "/customerStories/7hills.jpg",
+    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779879753/sria/customerStories/7hills.jpg",
     category: "Digital Transformation",
     title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
     description: "Custom digital platform built for a premium restaurant chain, transforming the guest experience with modern technology and seamless operations.",
@@ -48,10 +48,10 @@ const stories = [
 ];
 
 const impactStats = [
-  { value: "100+", label: "Happy Clients",         icon: <Users className="w-5 h-5" /> },
-  { value: "500+", label: "Projects Delivered",    icon: <TrendingUp className="w-5 h-5" /> },
-  { value: "98%",  label: "Customer Satisfaction", icon: <Award className="w-5 h-5" /> },
-  { value: "10+",  label: "Years of Excellence",   icon: <Globe className="w-5 h-5" /> },
+  { value: "100+", label: "Happy Clients", icon: <Users className="w-5 h-5" /> },
+  { value: "500+", label: "Projects Delivered", icon: <TrendingUp className="w-5 h-5" /> },
+  { value: "98%", label: "Customer Satisfaction", icon: <Award className="w-5 h-5" /> },
+  { value: "10+", label: "Years of Excellence", icon: <Globe className="w-5 h-5" /> },
 ];
 
 const CustomerStoriesPage = () => {

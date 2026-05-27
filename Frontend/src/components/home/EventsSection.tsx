@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
-import heroServices from "@/assets/hero-services.jpg";
-
 import siteData from "@/data/siteData.json";
 
 const EventsSection = () => {
  const events = siteData.events.map(event => ({
  ...event,
- image: event.image.startsWith('/') ? event.image : heroServices,
- location: event.venue // Map venue to location for compatibility with existing JSX
+ location: event.venue,
  }));
  return (
  <section className="section-padding bg-slate-50">

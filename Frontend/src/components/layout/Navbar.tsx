@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Search, Globe, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assetshttps://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454981/sria/logo.png";
 
 interface DropdownSection {
     title: string;

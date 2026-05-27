@@ -2,19 +2,9 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight } from "lucide-react";
-import serviceManaged from "@/assets/service-managed.jpg";
-import heroContact from "@/assets/hero-contact.jpg";
 import siteData from "@/data/siteData.json";
 
-const imageMap: Record<string, string> = {
- "service-managed.jpg": serviceManaged,
- "hero-contact.jpg": heroContact
-};
-
-const stories = siteData.successStories.map(story => ({
- ...story,
- image: story.image.startsWith('/') ? story.image : (imageMap[story.image] || serviceManaged)
-}));
+const stories = siteData.successStories;
 
 const SuccessStories = () => {
  const [emblaRef] = useEmblaCarousel(

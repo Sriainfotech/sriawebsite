@@ -5,11 +5,16 @@ import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight } from "lucide-react";
 import siteData from "@/data/siteData.json";
 
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80";
+const FALLBACK_IMAGES: Record<number, string> = {
+  1: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455089/sria/partners/ivc-logo.png",
+  2: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454693/sria/customerStories/patil.jpg",
+  3: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779879753/sria/customerStories/7hills.jpg",
+  4: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454695/sria/customerStories/pharma.jpg",
+};
 
 const stories = siteData.successStories.map(story => ({
   ...story,
-  image: story.image.startsWith("/") ? story.image : FALLBACK_IMAGE,
+  image: story.image || FALLBACK_IMAGES[story.id],
 }));
 
 const SuccessStories = () => {

@@ -223,7 +223,7 @@ const customerStories = [
  },
  {
  id: 3,
- image: "/customerStories/7hills.jpg",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779879753/sria/customerStories/7hills.jpg",
  title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
  readMoreLink: "/hills",
  },
