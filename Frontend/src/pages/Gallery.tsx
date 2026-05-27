@@ -162,7 +162,7 @@ const gallery: GalleryItem[] = [
     ],
   },
 
-  // ── Videos ──
+  // ── Videos ──--
   {
     id: 13, type: "video", category: "Videos", caption: "SRIA Team Video",
     videoSrc: "https://res.cloudinary.com/dmxfdt7ub/video/upload/v1779454739/sria/gallery/IMG_0225.mp4",
