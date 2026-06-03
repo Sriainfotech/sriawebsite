@@ -388,7 +388,7 @@ const Contact = () => {
               <span className="text-slate-700 text-xs font-semibold">SRIA Infotech, Kondapur</span>
             </div>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.280746844092!2d78.3542804!3d17.4941067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9398a74e6225%3A0x9ab33bfbaff07f32!2sSria%20Infotech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1778567792333!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.944798585087!2d78.36957459999999!3d17.462356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93ceea49d8d9%3A0x23e7ee8e40d707ae!2sUdaya%20Vensar%20Apartments!5e0!3m2!1sen!2sin!4v1780461869992!5m2!1sen!2sin"
               width="100%"
               height="420"
               style={{ border: 0 }}
