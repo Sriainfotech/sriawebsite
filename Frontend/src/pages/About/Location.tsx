@@ -21,7 +21,7 @@ const offices = [
     country: "INDIA",
     flag: "🇮🇳",
     name: "Hyderabad Office",
-    address: "First Floor, 1-121/63 Survey No. 63 Part, Hotel Sitara Grand Backside, Miyapur, Hyderabad, Telangana 500049, India",
+    address: "Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084, India",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80",
@@ -55,9 +55,9 @@ const offices = [
 ];
 
 const supportBlocks = [
-  { icon: <Headphones className="w-6 h-6" />, title: "Support",  description: "Get help with your account",  contact: "hr@sriainfotech.com",    phone: "+91 90145 52492" },
-  { icon: <Phone      className="w-6 h-6" />, title: "Sales",    description: "Talk to our sales team",      contact: "sales@sriainfotech.com", phone: "+91 90145 52492" },
-  { icon: <Mail       className="w-6 h-6" />, title: "General",  description: "General inquiries",           contact: "admin@sriainfotech.com", phone: "+91 90145 52492" },
+  { icon: <Headphones className="w-6 h-6" />, title: "Support", description: "Get help with your account", contact: "hr@sriainfotech.com", phone: "+91 90145 52492" },
+  { icon: <Phone className="w-6 h-6" />, title: "Sales", description: "Talk to our sales team", contact: "sales@sriainfotech.com", phone: "+91 90145 52492" },
+  { icon: <Mail className="w-6 h-6" />, title: "General", description: "General inquiries", contact: "admin@sriainfotech.com", phone: "+91 90145 52492" },
 ];
 
 function Location() {
@@ -84,10 +84,10 @@ function Location() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "4",       label: "Global Offices",   icon: <MapPin className="w-5 h-5" /> },
-              { value: "2",       label: "Countries",        icon: <MapPin className="w-5 h-5" /> },
-              { value: "3",       label: "Indian Cities",    icon: <MapPin className="w-5 h-5" /> },
-              { value: "24/7",    label: "Support Available", icon: <Headphones className="w-5 h-5" /> },
+              { value: "4", label: "Global Offices", icon: <MapPin className="w-5 h-5" /> },
+              { value: "2", label: "Countries", icon: <MapPin className="w-5 h-5" /> },
+              { value: "3", label: "Indian Cities", icon: <MapPin className="w-5 h-5" /> },
+              { value: "24/7", label: "Support Available", icon: <Headphones className="w-5 h-5" /> },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -194,11 +194,10 @@ function Location() {
                 <button
                   key={country}
                   onClick={() => setSelectedCountry(country)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${
-                    selectedCountry === country
+                  className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${selectedCountry === country
                       ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
                       : "bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
-                  }`}
+                    }`}
                 >
                   {country}
                 </button>

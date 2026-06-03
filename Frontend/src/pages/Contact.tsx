@@ -10,9 +10,9 @@ import axiosInstance from "@/lib/axios";
 
 const offices = [
   {
-    title: "India – Miyapur",
+    title: "India – Kondapur",
     flag: "🇮🇳",
-    address: "First Floor, 1-121/63 Survey No. 63 Part Hotel, Sitara Grand Backside, Miyapur, Hyderabad, Telangana 500049",
+    address: "Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
   },
@@ -40,9 +40,9 @@ const offices = [
 ];
 
 const stats = [
-  { icon: Clock,    value: "< 24 hrs",  label: "Response Time" },
-  { icon: Users,    value: "100+",       label: "Happy Clients" },
-  { icon: Globe,    value: "2",          label: "Countries" },
+  { icon: Clock, value: "< 24 hrs", label: "Response Time" },
+  { icon: Users, value: "100+", label: "Happy Clients" },
+  { icon: Globe, value: "2", label: "Countries" },
 ];
 
 const Contact = () => {
@@ -113,9 +113,9 @@ const Contact = () => {
               {/* Quick contacts */}
               <div className="flex flex-col gap-3">
                 {[
-                  { icon: Phone, label: "Call Us",   value: "+91 97013 14138",     href: "tel:+919701314138" },
-                  { icon: Mail,  label: "Email Us",  value: "hr@sriainfotech.com", href: "mailto:hr@sriainfotech.com" },
-                  { icon: MapPin, label: "Head Office", value: "Miyapur, Hyderabad, India", href: null },
+                  { icon: Phone, label: "Call Us", value: "+91 97013 14138", href: "tel:+919701314138" },
+                  { icon: Mail, label: "Email Us", value: "hr@sriainfotech.com", href: "mailto:hr@sriainfotech.com" },
+                  { icon: MapPin, label: "Head Office", value: "Kondapur, Hyderabad, India", href: null },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -373,7 +373,7 @@ const Contact = () => {
             className="mb-8 text-center"
           >
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-2">Find Us</span>
-            <h2 className="text-slate-900 font-bold text-2xl">Head Office – Miyapur, Hyderabad</h2>
+            <h2 className="text-slate-900 font-bold text-2xl">Head Office – Kondapur, Hyderabad</h2>
           </motion.div>
 
           <motion.div
@@ -385,7 +385,7 @@ const Contact = () => {
           >
             <div className="absolute top-4 left-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-slate-100 rounded-xl px-3 py-2 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-orange-500" />
-              <span className="text-slate-700 text-xs font-semibold">SRIA Infotech, Miyapur</span>
+              <span className="text-slate-700 text-xs font-semibold">SRIA Infotech, Kondapur</span>
             </div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.280746844092!2d78.3542804!3d17.4941067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9398a74e6225%3A0x9ab33bfbaff07f32!2sSria%20Infotech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1778567792333!5m2!1sen!2sin"

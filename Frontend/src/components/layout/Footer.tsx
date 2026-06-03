@@ -173,7 +173,7 @@ const Footer = () => {
                                 <div>
                                     <p className="text-xs text-slate-500 mb-0.5">Address</p>
                                     <p className="text-sm text-slate-300 leading-relaxed">
-                                        First Floor, 1-121/63 Survey No. 63 Part, Hotel Sitara Grand Backside, Miyapur, Telangana 500049
+                                        Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084
                                     </p>
                                 </div>
                             </div>

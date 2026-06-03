@@ -556,6 +556,14 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 NxSys Digital
                             </a>
+                            <a
+                                href="https://nxgentechacademy.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                            >
+                                NxGen Tech Academy
+                            </a>
                         </div>
 
                         <div className="flex items-center space-x-3">
