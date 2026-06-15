@@ -646,6 +646,16 @@ const Navbar: React.FC<NavbarProps> = ({
                                     NxSys Digital
                                 </a>
                             </div>
+                            <div className="border-b border-gray-700">
+                                <a
+                                    href="https://nxgentechacademy.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block py-4 text-orange-400 hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    NxGen Tech Academy
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -655,4 +665,3 @@ const Navbar: React.FC<NavbarProps> = ({
 };
 
 export default Navbar;
-

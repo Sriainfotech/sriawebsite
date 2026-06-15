@@ -19,7 +19,7 @@ const leaders = [
         body: "SRIA Infotech was born from a conviction that technology, when thoughtfully applied, can unlock the full potential of any enterprise. From our earliest days, we set out not merely to deliver solutions, but to become the strategic backbone on which our clients build their most ambitious futures.",
     },
     {
-        role: "Co-Founder & COO",
+        role: "Co-Founder",
         name: "Ravikumar Rangari",
         image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454671/sria/ravi.png",
         quote: "Exceptional teams build exceptional products. Culture is the architecture that makes everything else possible.",
