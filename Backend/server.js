@@ -79,6 +79,29 @@ app.post("/api/download-profile", async (req, res) => {
         });
 
         await newRequest.save();
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        });
+
+        const mailOptions = {
+            from: email,
+            to: process.env.EMAIL_USER,
+            subject: `New Profile Download Request from ${name}`,
+            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nThis user has downloaded the Company Profile.`,
+        };
+
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            await transporter.sendMail(mailOptions);
+            console.log('Profile download email sent successfully');
+        } else {
+            console.warn("Email credentials not found in .env. Logging download request only.");
+        }
+
         res.status(201).json({
             success: true,
             message: "Profile request saved successfully",
