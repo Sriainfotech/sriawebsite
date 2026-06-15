@@ -182,7 +182,7 @@ const gallery: GalleryItem[] = [
 
 const stats = [
   { value: "50+", label: "Team Members", Icon: Users },
-  { value: "4", label: "Global Offices", Icon: MapPin },
+  { value: "3", label: "Global Offices", Icon: MapPin },
   { value: "5+", label: "Years Together", Icon: Heart },
   { value: "50+", label: "Events Per Year", Icon: Camera },
 ];

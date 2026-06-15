@@ -84,7 +84,7 @@ function Location() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "4", label: "Global Offices", icon: <MapPin className="w-5 h-5" /> },
+              { value: "3", label: "Global Offices", icon: <MapPin className="w-5 h-5" /> },
               { value: "2", label: "Countries", icon: <MapPin className="w-5 h-5" /> },
               { value: "3", label: "Indian Cities", icon: <MapPin className="w-5 h-5" /> },
               { value: "24/7", label: "Support Available", icon: <Headphones className="w-5 h-5" /> },
@@ -195,8 +195,8 @@ function Location() {
                   key={country}
                   onClick={() => setSelectedCountry(country)}
                   className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${selectedCountry === country
-                      ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                      : "bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
+                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
+                    : "bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
                     }`}
                 >
                   {country}

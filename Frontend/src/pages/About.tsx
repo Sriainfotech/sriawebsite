@@ -14,7 +14,7 @@ import aboutOffice from "@/assets/about-office.jpg";
 /* ─────────────── data ─────────────── */
 
 const stats = [
-  { value: "4+", label: "Global Offices" },
+  { value: "3+", label: "Global Offices" },
   { value: "₹1Cr+", label: "Group Turnover" },
   { value: "5+", label: "Years of Experience" },
   { value: "50+", label: "Group Employees" },
