@@ -91,6 +91,9 @@ const TermsOfService = React.lazy(() => import("./pages/legal/TermsOfService"));
 const CookiePolicy = React.lazy(() => import("./pages/legal/CookiePolicy"));
 const InvoiceTerms = React.lazy(() => import("./pages/legal/InvoiceTerms"));
 
+// App Store
+const AppStore = React.lazy(() => import("./pages/AppStore"));
+
 // Solutions — HXM
 const AssetPerformance = React.lazy(() => import("./pages/Solutions/SAPHXM/AssetPerformance"));
 const FieldServiceMgmt = React.lazy(() => import("./pages/Solutions/SAPHXM/FieldServiceMgmt"));
@@ -162,6 +165,9 @@ const App = () => (
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/about/events" element={<ComingSoon />} />
                 <Route path="/insights/customer-stories" element={<CustomerStoriesPage />} />
+
+                {/* App Store */}
+                <Route path="/app-store" element={<AppStore />} />
 
                 {/* Products Routes */}
                 <Route path="/products/auto-extract" element={<AutoExtract />} />

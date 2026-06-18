@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Search, Globe, ChevronDown, Menu, X } from "lucide-react";
+import { Search, Globe, ChevronDown, Menu, X, LayoutGrid } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface DropdownSection {
@@ -564,6 +564,14 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 NxGen Tech Academy
                             </a>
+                            <Link
+                                to="/app-store"
+                                className="flex items-center gap-1.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white text-sm px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                title="App Store"
+                            >
+                                <LayoutGrid className="w-4 h-4" />
+                                Apps
+                            </Link>
                         </div>
 
                         <div className="flex items-center space-x-3">
@@ -655,6 +663,16 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     NxGen Tech Academy
                                 </a>
+                            </div>
+                            <div className="pt-2 pb-1">
+                                <Link
+                                    to="/app-store"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="flex items-center justify-center gap-2 py-2.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white rounded-lg transition-all duration-200 font-medium text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    <LayoutGrid className="w-4 h-4" />
+                                    App Store
+                                </Link>
                             </div>
                         </div>
                     </div>
