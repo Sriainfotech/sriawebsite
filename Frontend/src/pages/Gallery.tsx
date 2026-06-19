@@ -19,6 +19,7 @@ type GalleryItem = {
   type: "image" | "video";
   images: string[];
   videoSrc?: string;
+  objectPosition?: string;
 };
 
 const getBentoClass = (item: GalleryItem): string => {
@@ -50,8 +51,24 @@ const gallery: GalleryItem[] = [
     images: ["https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454772/sria/gallery/sria-job-fair-mulugu.png"],
   },
   {
-    id: 5, type: "image", category: "Milestones", caption: "Office Inauguration – Mulugu",
+    id: 5, type: "image", category: "Milestones", caption: "Office Inauguration – Hyderabad",
     images: ["https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454758/sria/gallery/mulugu-office-inauguration.png"],
+  },
+  {
+    id: 15, type: "image", category: "Milestones", caption: "Office Inauguration – Mulugu",
+    featured: true, size: "hero", objectPosition: "center",
+    images: [
+      "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787207/sria/events/ow1.jpg",
+      "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787209/sria/events/ow2.jpg",
+      "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787210/sria/events/ow3.jpg",
+      "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787211/sria/events/ow4.jpg",
+      "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787212/sria/events/ow5.jpg",
+      // "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787214/sria/events/ow6.jpg",
+      // "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787215/sria/events/ow7.jpg",
+      // "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787216/sria/events/ow8.jpg",
+      // "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787217/sria/events/ow9.jpg",
+      // "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787208/sria/events/ow10.jpg",
+    ],
   },
 
   // ── Wide banners ──
@@ -284,6 +301,7 @@ const ImageCard: React.FC<{
   item: GalleryItem;
   onOpen: (startIdx: number) => void;
 }> = ({ item, onOpen }) => {
+  const imgPosition = item.objectPosition ?? "top";
   const [idx, setIdx] = useState(0);
   const [hovering, setHovering] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -316,7 +334,8 @@ const ImageCard: React.FC<{
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35 }}
-          className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={{ objectPosition: imgPosition }}
           loading="lazy"
         />
       </AnimatePresence>

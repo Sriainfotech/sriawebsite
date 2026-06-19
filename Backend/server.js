@@ -134,6 +134,17 @@ app.post('/api/notify', async (req, res) => {
     }
 });
 
+app.get('/api/analytics', async (req, res) => {
+    try {
+        const response = await fetch(process.env.APPS_SCRIPT_URL, { redirect: 'follow' });
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Analytics fetch error:', error.message);
+        res.status(500).json({ success: false, message: 'Failed to fetch analytics.', error: error.message });
+    }
+});
+
 app.get('/', (req, res) => {
     res.send('Backend is running!');
 });

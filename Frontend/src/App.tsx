@@ -27,6 +27,7 @@ const CustomerStoriesPage = React.lazy(() => import("./pages/About/CustomerStori
 const LeaderShip = React.lazy(() => import("./pages/About/LeaderShip"));
 const Location = React.lazy(() => import("./pages/About/Location"));
 const Partners = React.lazy(() => import("./pages/About/Partners"));
+const Culture = React.lazy(() => import("./pages/About/Culture"));
 
 // Products
 const AutoExtract = React.lazy(() => import("./pages/Products/AutoExtract"));
@@ -164,6 +165,7 @@ const App = () => (
                 <Route path="/about/sap-partner" element={<Partners />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/about/events" element={<ComingSoon />} />
+                <Route path="/about/culture" element={<Culture />} />
                 <Route path="/insights/customer-stories" element={<CustomerStoriesPage />} />
 
                 {/* App Store */}

@@ -63,7 +63,7 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
                 >
-                    <source src={videoUrl} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic gradient overlays */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
@@ -203,7 +203,7 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                             { value: "3+", label: "Global Offices" },
                             { value: "5+", label: "Years of Experience" },
                             { value: "50+", label: "Group Employees" },
-                        ].map((stat, i) => (
+                                        ].map((stat, i) => (
                             <div key={i} className="flex items-center">
                                 <div className="px-4 sm:px-7 text-center">
                                     <p className="text-lg sm:text-xl font-heading font-semibold text-white/70">{stat.value}</p>
