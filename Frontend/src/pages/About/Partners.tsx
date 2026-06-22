@@ -15,9 +15,9 @@ const partners = [
     detailsUrl: "/partners/ivc-solutions",
     regions: ["Mainland China", "Hong Kong", "Macau", "Taiwan", "Asia Pacific"],
     stats: [
-      { value: "500+", label: "SAP Implementations" },
+      { value: "500+", label: "Successful SAP Projects Delivered" },
       { value: "20+", label: "Years of Expertise" },
-      { value: "100%", label: "Client Commitment" },
+      { value: "5+", label: "Regions Covered" },
     ],
   },
 ];

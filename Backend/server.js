@@ -134,15 +134,44 @@ app.post('/api/notify', async (req, res) => {
     }
 });
 
-app.get('/api/analytics', async (req, res) => {
+let analyticsCache = null;
+let analyticsCachedAt = 0;
+const ANALYTICS_TTL = 5 * 60 * 1000; // refresh every 5 minutes
+
+async function fetchAnalytics() {
+    if (!process.env.APPS_SCRIPT_URL) return null;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     try {
-        const response = await fetch(process.env.APPS_SCRIPT_URL, { redirect: 'follow' });
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        console.error('Analytics fetch error:', error.message);
-        res.status(500).json({ success: false, message: 'Failed to fetch analytics.', error: error.message });
+        const response = await fetch(process.env.APPS_SCRIPT_URL, {
+            redirect: 'follow',
+            signal: controller.signal,
+        });
+        clearTimeout(timeout);
+        return await response.json();
+    } catch (err) {
+        clearTimeout(timeout);
+        console.error('Analytics fetch error:', err.message);
+        return null;
     }
+}
+
+// Warm the cache on startup so the first user request is instant
+fetchAnalytics().then(data => { if (data) { analyticsCache = data; analyticsCachedAt = Date.now(); } });
+
+app.get('/api/analytics', async (req, res) => {
+    const now = Date.now();
+    if (analyticsCache && now - analyticsCachedAt < ANALYTICS_TTL) {
+        return res.json(analyticsCache);
+    }
+    const data = await fetchAnalytics();
+    if (data) {
+        analyticsCache = data;
+        analyticsCachedAt = now;
+        return res.json(data);
+    }
+    if (analyticsCache) return res.json(analyticsCache); // serve stale on failure
+    res.status(500).json({ success: false, message: 'Analytics unavailable.' });
 });
 
 app.get('/', (req, res) => {

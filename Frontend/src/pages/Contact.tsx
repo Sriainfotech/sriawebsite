@@ -12,7 +12,7 @@ const offices = [
   {
     title: "India – Kondapur",
     flag: "🇮🇳",
-    address: "Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084",
+    address: "Third Floor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
   },

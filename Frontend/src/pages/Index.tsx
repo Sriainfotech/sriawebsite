@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
+import ClientsAndAssociations from "@/components/home/ClientsAndAssociations";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import AboutSection from "@/components/home/AboutSection";
 import StatsSection from "@/components/home/StatsSection";
@@ -10,6 +11,7 @@ const Index = ({ customTitle }: { customTitle?: string }) => {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <HeroSection customTitle={customTitle} />
+      {/* <ClientsAndAssociations /> */}
       <FeaturesSection />
       <ServicesSection />
       <SolutionsGrid />
