@@ -95,12 +95,12 @@ const FloatingButtons = () => {
     <div className="hidden sm:flex fixed right-2 top-1/4 z-50 flex-col gap-3 items-end">
 
       {/* Visitor Count */}
-      {/* {totalVisits && (
-  // <div className="bg-black/60 backdrop-blur-sm rounded-md shadow-lg flex items-center gap-2 px-3 py-3">
-  //  <span className="text-white text-[15px] font-bold leading-none">{totalVisits}</span>
-  //  <span className="text-white/50 text-[10px] leading-none">Visits</span>
-  // </div>
- )} */}
+      {totalVisits && (
+        <div className="bg-black/60 backdrop-blur-sm rounded-md shadow-lg flex items-center gap-2 px-3 py-3">
+          <span className="text-white text-[15px] font-bold leading-none">{totalVisits}</span>
+          <span className="text-white/50 text-[10px] leading-none">Visits</span>
+        </div>
+      )}
 
       {/* IVC */}
       <a
