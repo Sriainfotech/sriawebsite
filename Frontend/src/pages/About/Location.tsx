@@ -21,7 +21,7 @@ const offices = [
     country: "INDIA",
     flag: "🇮🇳",
     name: "Hyderabad Office",
-    address: "Third Floor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084, India",
+    address: "Third Floor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084, India",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80",
