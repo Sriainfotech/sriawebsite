@@ -10,29 +10,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-const allowedOrigins = [
-    'http://localhost:5173',
-    'http://localhost:3000',
-    'https://www.sriainfotech.com',
-    'https://sriainfotech.com',
-];
-
-const corsOptions = {
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error(`CORS: origin ${origin} not allowed`));
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-    optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    if (req.method === 'OPTIONS') return res.sendStatus(204);
+    next();
+});
 app.use(express.json());
 
 // MongoDB Connection
@@ -161,6 +145,7 @@ let analyticsCachedAt = 0;
 const ANALYTICS_TTL = 5 * 60 * 1000; // refresh every 5 minutes
 
 async function fetchAnalytics() {
+
     if (!process.env.APPS_SCRIPT_URL) return null;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
@@ -183,6 +168,7 @@ fetchAnalytics().then(data => { if (data) { analyticsCache = data; analyticsCach
 
 app.get('/api/analytics', async (req, res) => {
     const now = Date.now();
+
     if (analyticsCache && now - analyticsCachedAt < ANALYTICS_TTL) {
         return res.json(analyticsCache);
     }
@@ -202,4 +188,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(process.env.APPS_SCRIPT_URL)
 });
