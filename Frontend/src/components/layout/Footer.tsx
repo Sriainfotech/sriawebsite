@@ -70,10 +70,10 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
                             <Link to="/" className="flex items-center group">
-                                <img src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454980/sria/logo-footer.png" alt="Logo" className="w-auto h-20 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454981/sria/logo.png" alt="Logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                             <Link to="https://ivcsol.com/" target="_blank" className="flex items-center group">
-                                <img src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454965/sria/ivclogo.png" alt="IVC Logo" className="w-auto h-20 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454965/sria/ivclogo.png" alt="IVC Logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                         </div>
 
@@ -173,7 +173,7 @@ const Footer = () => {
                                 <div>
                                     <p className="text-xs text-slate-500 mb-0.5">Address</p>
                                     <p className="text-sm text-slate-300 leading-relaxed">
-                                        Third Floor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084
+                                        303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084
                                     </p>
                                 </div>
                             </div>

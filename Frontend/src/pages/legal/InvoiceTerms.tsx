@@ -134,7 +134,7 @@ const InvoiceTerms = () => {
 
         {/* Footer */}
         <div className="mt-12 pt-6 border-t flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-400">
-          <p>SRIA Infotech Pvt. Ltd. &nbsp;·&nbsp; Third Floor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana - 500084</p>
+          <p>SRIA Infotech Pvt. Ltd. &nbsp;·&nbsp; 303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana - 500084</p>
           <p className="sm:text-right whitespace-nowrap">© {new Date().getFullYear()} SRIA Infotech Pvt. Ltd.</p>
         </div>
 

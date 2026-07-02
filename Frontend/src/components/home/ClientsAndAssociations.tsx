@@ -52,7 +52,7 @@ const CLIENTS: Client[] = [
   { name: "LiveRamp", country: "India · USA", flag: "🇮🇳🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/liveramp.png" },
   { name: "LVK Pharma", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/lvkpharma.png" },
   { name: "Sai Balaji Infra Pvt. Ltd.", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/saibalaji.png" },
-  { name: "Rayal Staffing", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/rayal.png" },
+  { name: "Royal Staffing", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/rayal.png" },
   { name: "Digitin Mapping Limited", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/digitin.png" },
   { name: "Pardhu Infotech", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/pardhu.png" },
   { name: "Dotedge Technologies", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/dotedge.png" },
