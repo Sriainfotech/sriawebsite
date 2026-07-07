@@ -39,39 +39,39 @@ interface SectionLabelProps {
 // ── Data ────────────────────────────────────────────────────────────────────
 
 const CLIENTS: Client[] = [
-  { name: "MSPL Limited – Baldota Group", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/mspl.webp" },
+  { name: "MSPL Limited – Baldota Group", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/baldota.jpg" },
   { name: "Patil Group", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/patil.png" },
   { name: "Stannik Technologies", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/stannik.png" },
-  { name: "OnFocus", country: "United States", flag: "🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/onfocus.png" },
-  { name: "Magnify 365", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/magnify365.png" },
+  { name: "OnFocus", country: "United States", flag: "🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/onfocus.jpg" },
+  { name: "Magnify 360", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/magnify360.jpg" },
   { name: "IVC", country: "Hong Kong", flag: "🇭🇰", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454965/sria/ivclogo.png" },
-  { name: "TechLabs", country: "Kenya", flag: "🇰🇪", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/techlabs.png" },
-  { name: "TechLabs", country: "United States", flag: "🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/techlabs.png" },
+  { name: "TechLabs", country: "Kenya", flag: "🇰🇪", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/techlab_kenya.jpg" },
+  { name: "TechLabs", country: "United States", flag: "🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/techlabs_usa.jpg" },
   { name: "CM2 IT Solutions", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/cm2.png" },
-  { name: "Vinayaka Global Solutions", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/vinayaka.png" },
-  { name: "LiveRamp", country: "India · USA", flag: "🇮🇳🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/liveramp.png" },
-  { name: "LVK Pharma", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/lvkpharma.png" },
+  { name: "Vinayaka Global Solutions", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/vinayaka.jpg" },
+  { name: "LiveRamp", country: "India · USA", flag: "🇮🇳🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/liveramp.jpg" },
+  { name: "LVK Pharma", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/lvkpharma.jpg" },
   { name: "Sai Balaji Infra Pvt. Ltd.", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/saibalaji.png" },
-  { name: "Royal Staffing", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/rayal.png" },
+  { name: "Royal Staffing", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/royalstaffing.jpg" },
   { name: "Digitin Mapping Limited", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/digitin.png" },
   { name: "Pardhu Infotech", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/pardhu.png" },
-  { name: "Dotedge Technologies", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/dotedge.png" },
-  { name: "Sugar Times", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/sugartimes.png" },
+  { name: "Dotedge Technologies", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/dotedge.jpg" },
+  { name: "Sugar Times", country: "India", flag: "🇮🇳", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/sugartimes.jpg" },
   { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/savadia.png" },
   { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/clients/7hills.png" },
 ];
 
 // Replace logo URLs with your actual image URLs
 const ASSOCIATIONS: Association[] = [
-  {
-    name: "Telangana Government",
-    tag: "State Partner",
-    logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/logos/telangana.png",
-  },
+  // {
+  //   name: "Telangana Government",
+  //   tag: "State Partner",
+  //   logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/logos/telangana.png",
+  // },
   {
     name: "TASK",
     tag: "Skill Alliance",
-    logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/logos/task.png",
+    logo: "https://res.cloudinary.com/dmxfdt7ub/image/upload/sria/logos/task.jpg",
   },
   {
     name: "BSNL Skill Development",
@@ -144,7 +144,7 @@ function ClientCard({ client }: ClientCardProps) {
     <div className="flex-shrink-0 w-52 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-orange-400/30 transition-all duration-300 group overflow-hidden">
       <div className={`h-1 w-full bg-gradient-to-r ${accent}`} />
       <div className="p-4">
-        <div className={`w-10 h-10 rounded-lg overflow-hidden mb-3 shadow-lg flex-shrink-0 ${imgFailed ? `bg-gradient-to-br ${accent} flex items-center justify-center` : "bg-white p-1"}`}>
+        <div className={`w-16 h-16 rounded-lg overflow-hidden mb-3 shadow-lg flex-shrink-0 ${imgFailed ? `bg-gradient-to-br ${accent} flex items-center justify-center` : "bg-white p-1.5"}`}>
           {client.logo && !imgFailed ? (
             <img
               src={client.logo}
@@ -153,7 +153,7 @@ function ClientCard({ client }: ClientCardProps) {
               onError={() => setImgFailed(true)}
             />
           ) : (
-            <span className="text-white text-xs font-bold">{initials(client.name)}</span>
+            <span className="text-white text-base font-bold">{initials(client.name)}</span>
           )}
         </div>
         <p className="text-white text-sm font-semibold leading-tight line-clamp-2 group-hover:text-orange-300 transition-colors">
@@ -222,7 +222,7 @@ function AssocCard({ assoc }: AssocCardProps) {
           }}
         />
       </div>
-      <div>
+      <div className="w-full text-center">
         <p className="text-white font-semibold text-sm leading-snug">{assoc.name}</p>
         <span className="inline-block mt-1 text-[10px] uppercase tracking-widest text-orange-400 border border-orange-400/30 rounded-full px-2 py-0.5">
           {assoc.tag}
@@ -330,9 +330,11 @@ export default function ClientsAndAssociations() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {ASSOCIATIONS.map((a) => (
-              <AssocCard key={a.name} assoc={a} />
+              <div key={a.name} className="w-40 sm:w-44">
+                <AssocCard assoc={a} />
+              </div>
             ))}
           </div>
 

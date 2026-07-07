@@ -11,7 +11,7 @@ const Index = ({ customTitle }: { customTitle?: string }) => {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <HeroSection customTitle={customTitle} />
-      {/* <ClientsAndAssociations /> */}
+      <ClientsAndAssociations />
       <FeaturesSection />
       <ServicesSection />
       <SolutionsGrid />
