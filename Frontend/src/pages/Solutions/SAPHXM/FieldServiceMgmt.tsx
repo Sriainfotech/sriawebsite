@@ -125,7 +125,7 @@ const FieldServiceMgmt = () => {
       title="Field Service Management"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP HXM", path: "/solutions/successfactors" }, { name: "Field Service", path: "/solutions/field-service-management" }]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455296/sria/Solutions/service-hero.jpg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455296/sria/Solutions/service-hero.jpg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Empower your mobile workforce and optimize field operations with SAP FSM. Enhance customer satisfaction through smarter dispatching and real-time connectivity."
       trustedFeatures={trustedPartnerFeatures}

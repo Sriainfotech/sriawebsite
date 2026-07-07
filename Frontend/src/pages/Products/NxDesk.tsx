@@ -29,7 +29,7 @@ const NxDesk = () => {
  const overviewData = {
  title: "What is NxDesk?",
  description: "NxDesk is a smart issue tracking system for streamlined ticket management. It enables SLA tracking, project categorization, real-time updates, and multi-role access with AI-powered tools for quick resolutions.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455005/sria/Nxdesk/product.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455005/sria/Nxdesk/product.png",
  highlights: [
  {
  icon: <MessageSquare className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const NxDesk = () => {
  {
  title: "Unified Ticket Inbox",
  description: "Centralize support channels into one smart inbox for streamlined management. No more jumping between tools to respond to customers.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454993/sria/Nxdesk/fe1.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454993/sria/Nxdesk/fe1.png",
  },
  {
  title: "Automated Workflows",
  description: "Save time with rule-based routing, auto-responses, and SLA tracking. Let the system handle the routine tasks while you focus on complex issues.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454995/sria/Nxdesk/fe2.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454995/sria/Nxdesk/fe2.png",
  reverse: true,
  },
  {
  title: "AI-Powered Suggestions",
  description: "Auto-suggest solutions and categorize tickets to reduce resolution times. Our AI analyzes past tickets to provide the best possible answers.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454996/sria/Nxdesk/fe3.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454996/sria/Nxdesk/fe3.png",
  },
  {
  title: "Customizable Dashboards",
  description: "Track metrics and team performance in real-time with drag-and-drop widgets. Stay on top of your support KPIs with ease.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454998/sria/Nxdesk/fe4.jpg",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454998/sria/Nxdesk/fe4.jpg",
  reverse: true,
  },
  {
  title: "Collaborative Ticketing",
  description: "Share internal notes, tag teammates, and resolve complex issues faster. Collaboration is built into the heart of the ticketing process.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455000/sria/Nxdesk/fe5.png",
+ image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455000/sria/Nxdesk/fe5.png",
  },
  ],
  };
@@ -135,7 +135,7 @@ const NxDesk = () => {
  "Scalable support for growing organizations",
  "AI-driven automation for routine tasks",
  ],
- illustration: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454986/sria/Nxdesk/benefits.png",
+ illustration: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454986/sria/Nxdesk/benefits.png",
  };
 
  const faqsData = [
@@ -201,7 +201,7 @@ const NxDesk = () => {
  { name: "Products", path: "/products" },
  { name: "NxDesk", path: "/products/nxdesk" },
  ]}
- backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455003/sria/Nxdesk/nxdesk-hero.png"
+ backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455003/sria/Nxdesk/nxdesk-hero.png"
  />
  <ProductLayout
  overview={overviewData}

@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ChevronRight, Home } from "lucide-react";
 
 interface PageHeaderProps {
  title: string;
@@ -7,7 +9,21 @@ interface PageHeaderProps {
  backgroundImage?: string;
 }
 
-const PageHeader = ({ title, subtitle, backgroundImage }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeaderProps) => {
+ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   itemListElement: [
+     { "@type": "ListItem", position: 1, name: "Home", item: "https://sriainfotech.com/" },
+     ...breadcrumbs.map((crumb, index) => ({
+       "@type": "ListItem",
+       position: index + 2,
+       name: crumb.name,
+       item: `https://sriainfotech.com${crumb.path}`,
+     })),
+   ],
+ } : null;
+
  return (
  <section className="relative overflow-hidden min-h-[420px] flex items-end pb-0">
  {/* Background */}
@@ -35,6 +51,41 @@ const PageHeader = ({ title, subtitle, backgroundImage }: PageHeaderProps) => {
  />
 
  <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 sm:pt-28 pb-10 sm:pb-12 w-full">
+
+ {breadcrumbSchema && (
+ <script
+ type="application/ld+json"
+ dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+ />
+ )}
+
+ {breadcrumbs && breadcrumbs.length > 0 && (
+ <nav aria-label="Breadcrumb" className="mb-5">
+ <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/50">
+ <li className="flex items-center gap-1.5">
+ <Link to="/" className="flex items-center gap-1 hover:text-orange-400 transition-colors">
+ <Home className="w-3.5 h-3.5" />
+ <span>Home</span>
+ </Link>
+ <ChevronRight className="w-3 h-3 text-white/30" />
+ </li>
+ {breadcrumbs.map((crumb, index) => (
+ <li key={crumb.path} className="flex items-center gap-1.5">
+ {index === breadcrumbs.length - 1 ? (
+ <span className="text-white/80 font-medium">{crumb.name}</span>
+ ) : (
+ <>
+ <Link to={crumb.path} className="hover:text-orange-400 transition-colors">
+ {crumb.name}
+ </Link>
+ <ChevronRight className="w-3 h-3 text-white/30" />
+ </>
+ )}
+ </li>
+ ))}
+ </ol>
+ </nav>
+ )}
 
  <motion.div
  initial={{ opacity: 0, y: 25 }}

@@ -1,0 +1,48 @@
+# SRIA Infotech
+
+> SRIA Infotech is a digital transformation company headquartered in Hyderabad, India, specializing in SAP consulting, implementation, rollouts, upgrades, and support, along with custom application development and data analytics. SRIA Infotech is an SAP Gold certified partner with over 8 years of experience serving clients across India, the United States, Hong Kong, Kenya, and Belgium.
+
+## Company
+
+- [About Us](https://sriainfotech.com/about): Company background, mission, and team.
+- [Leadership](https://sriainfotech.com/about/leadership): Leadership team profiles.
+- [Locations](https://sriainfotech.com/about/locations): Office locations.
+- [Customer Stories](https://sriainfotech.com/about/customer-stories): Case studies from clients.
+- [Contact](https://sriainfotech.com/contact): Contact details and inquiry form.
+
+## SAP Services
+
+- [SAP Implementation](https://sriainfotech.com/implement)
+- [SAP Rollouts](https://sriainfotech.com/rollouts)
+- [SAP Upgrades](https://sriainfotech.com/upgrades)
+- [SAP Migrations](https://sriainfotech.com/migrations)
+- [SAP Integration](https://sriainfotech.com/integration)
+- [SAP ABAP Development](https://sriainfotech.com/abap)
+- [SAP Fiori Development](https://sriainfotech.com/fioridevelop)
+- [Application Development](https://sriainfotech.com/application-development)
+- [SAP Support & Maintenance](https://sriainfotech.com/support-maintainance)
+
+## Solutions
+
+- [SAP BTP](https://sriainfotech.com/solutions/btp)
+- [SAP Rise with SAP](https://sriainfotech.com/solutions/rise-with-sap)
+- [SAP Private Cloud](https://sriainfotech.com/solutions/private-cloud)
+- [SAP Public Cloud](https://sriainfotech.com/solutions/public-cloud)
+- [SAP SuccessFactors](https://sriainfotech.com/solutions/successfactors)
+- [SAP Commerce Cloud](https://sriainfotech.com/solutions/commerce-cloud)
+- [SAP Ariba](https://sriainfotech.com/solutions/ariba)
+- [SAP Fieldglass](https://sriainfotech.com/solutions/fieldglass)
+
+## Products
+
+- [Nxify](https://sriainfotech.com/products/nxify): Digital transformation suite.
+- [NxDesk](https://sriainfotech.com/products/nxdesk): Helpdesk and ticketing platform.
+- [Jatayu](https://sriainfotech.com/products/jatayu): Workforce field management app.
+- [Auto Extract](https://sriainfotech.com/products/auto-extract): Intelligent data extraction tool.
+- [Gate Check](https://sriainfotech.com/products/gatecheck): Access and security control system.
+
+## Contact
+
+- Email: sales@sriainfotech.com
+- Phone: +91-97013-14138
+- Address: 303, 3rd Floor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084, India

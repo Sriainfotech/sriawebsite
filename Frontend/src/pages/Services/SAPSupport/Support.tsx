@@ -39,7 +39,7 @@ function Support() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Support & Maintenance", path: "/services/sap-support-maintenance" },
       ]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455224/sria/Services/support.jpg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455224/sria/Services/support.jpg"
       processTitle="Delivering Impact-Driven SAP Support for Business Continuity"
       processDescription="Our comprehensive support framework ensures your SAP landscape remains stable, compliant, and optimized for growth."
       processSteps={[

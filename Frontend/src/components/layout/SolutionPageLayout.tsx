@@ -110,8 +110,9 @@ const SolutionPageLayout = ({
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455276/sria/Solutions/partnership.jpg"
-            alt="Partnership"
+            src="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455276/sria/Solutions/partnership.jpg"
+            alt=""
+            role="presentation"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-slate-950/88" />
@@ -169,7 +170,8 @@ const SolutionPageLayout = ({
               <div className="rounded-2xl overflow-hidden h-64 shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
-                  alt="Global SAP services"
+                  alt=""
+                  role="presentation"
                   className="w-full h-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 to-slate-900/60" />

@@ -148,7 +148,7 @@ function DataAnalytics() {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Data Analytics", path: "/services/data-analytics" },
         ]}
-        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454697/sria/DATA%20ANALYTICS.png"
+        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454697/sria/DATA%20ANALYTICS.png"
       />
 
       {/* ── Intro Split Section ── */}
@@ -300,7 +300,8 @@ function DataAnalytics() {
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
-                  alt="Technology"
+                  alt=""
+                  role="presentation"
                   className="w-full h-full object-cover opacity-20"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 to-slate-800/90" />

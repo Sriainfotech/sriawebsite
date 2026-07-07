@@ -63,7 +63,7 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
                 >
-                    <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic gradient overlays */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />

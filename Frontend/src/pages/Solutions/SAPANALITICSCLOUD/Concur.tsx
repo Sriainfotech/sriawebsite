@@ -146,7 +146,7 @@ const Concur = () => {
       title="Simplify Travel & Expenses"
       subtitle="Automate and control business travel, expenses, and invoices with SAP Concur."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" }, { name: "Concur", path: "/solutions/concur" }]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455244/sria/Solutions/concur-hero.jpg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455244/sria/Solutions/concur-hero.jpg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We empower financial institutions to streamline operations, enhance compliance, and drive growth through optimized travel, expense, and invoice management."
       trustedFeatures={trustedPartnerFeatures}

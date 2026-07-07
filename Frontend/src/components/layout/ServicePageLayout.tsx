@@ -106,8 +106,8 @@ const ServicePageLayout = ({
             >
               <div className="rounded-2xl overflow-hidden shadow-xl h-52 lg:h-60">
                 <img
-                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455192/sria/Services/approach-i.jpg"
-                  alt="SAP consulting team"
+                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455192/sria/Services/approach-i.jpg"
+                  alt="SRIA Infotech SAP consulting team collaborating on a client engagement"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 to-transparent" />
@@ -241,8 +241,8 @@ const ServicePageLayout = ({
               )}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64">
                 <img
-                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455205/sria/Services/capability.jpg"
-                  alt="Expert SAP team"
+                  src="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455205/sria/Services/capability.jpg"
+                  alt="Certified SAP consultants from SRIA Infotech's expert team"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
@@ -280,7 +280,7 @@ const ServicePageLayout = ({
       <section className="relative h-52 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80"
-          alt="Global technology"
+          alt="Global technology network representing enterprise digital transformation"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-slate-950/90" />

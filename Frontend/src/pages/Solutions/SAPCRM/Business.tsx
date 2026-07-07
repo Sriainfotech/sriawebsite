@@ -111,7 +111,7 @@ const Business = () => {
       title="SAP Business Network"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP CRM", path: "/solutions/business" }, { name: "Business Network", path: "/solutions/business" }]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455237/sria/Solutions/business-hero.jpg"
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455237/sria/Solutions/business-hero.jpg"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Streamline logistics collaboration, enhance freight settlement accuracy, and gain real-time global visibility with SAP Business Network."
       trustedFeatures={trustedPartnerFeatures}

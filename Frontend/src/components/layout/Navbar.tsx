@@ -513,7 +513,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-16">
                         <div className="flex flex-row items-center">
                             <Link to="/" className="font-bold flex flex-row items-center">
-                                <img src='https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779454981/sria/logo.png' alt="Logo" className="h-auto w-28" />
+                                <img src='https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454981/sria/logo.png' alt="SRIA Infotech logo" className="h-auto w-28" />
                             </Link>
                         </div>
 

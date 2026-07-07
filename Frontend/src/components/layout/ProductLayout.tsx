@@ -360,7 +360,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             >
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none" />
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
-                <img src={benefits.illustration} alt="Benefits" className="w-full h-[440px] object-cover" />
+                <img src={benefits.illustration} alt={`Benefits of ${overview.title}`} className="w-full h-[440px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
               </div>
             </motion.div>

@@ -50,7 +50,7 @@ const ClientsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
-                className="col-span-2 group bg-slate-900 border border-slate-800 rounded-2xl p-7 flex items-center gap-6 hover:border-orange-500/40 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                className="col-span-2 md:col-span-3 group bg-slate-900 border border-slate-800 rounded-2xl p-7 flex items-center gap-6 hover:border-orange-500/40 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400" />
                 <div className="w-16 h-16 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
@@ -67,30 +67,12 @@ const ClientsSection = () => {
                 </div>
               </motion.div>
 
-              {/* Microsoft */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                whileHover={{ y: -4 }}
-                className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-slate-100 transition-all duration-300">
-                  <FaMicrosoft className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-900 text-sm">Microsoft</p>
-                  <p className="text-xs text-slate-400 mt-0.5">Technology Alliance</p>
-                </div>
-              </motion.div>
-
               {/* AWS */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.15 }}
+                transition={{ delay: 0.1 }}
                 whileHover={{ y: -4 }}
                 className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
               >
@@ -108,7 +90,7 @@ const ClientsSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.15 }}
                 whileHover={{ y: -4 }}
                 className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
               >
@@ -118,6 +100,24 @@ const ClientsSection = () => {
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Salesforce</p>
                   <p className="text-xs text-slate-400 mt-0.5">Implementation Partner</p>
+                </div>
+              </motion.div>
+
+              {/* Microsoft */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ y: -4 }}
+                className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
+              >
+                <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-slate-100 transition-all duration-300">
+                  <FaMicrosoft className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900 text-sm">Microsoft</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Technology Alliance</p>
                 </div>
               </motion.div>
 

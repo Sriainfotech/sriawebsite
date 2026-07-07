@@ -6,52 +6,52 @@ import PageHeader from "@/components/layout/PageHeader";
 const eventPhotos = [
   {
     id: 1,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787207/sria/events/ow1.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787207/sria/events/ow1.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 2,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787209/sria/events/ow2.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787209/sria/events/ow2.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 3,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787210/sria/events/ow3.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787210/sria/events/ow3.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 4,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787211/sria/events/ow4.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787211/sria/events/ow4.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 5,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787212/sria/events/ow5.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787212/sria/events/ow5.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 6,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787214/sria/events/ow6.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787214/sria/events/ow6.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 7,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787215/sria/events/ow7.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787215/sria/events/ow7.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 8,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787216/sria/events/ow8.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787216/sria/events/ow8.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 9,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787217/sria/events/ow9.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787217/sria/events/ow9.jpg",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 10,
-    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/v1781787208/sria/events/ow10.jpg",
+    url: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1781787208/sria/events/ow10.jpg",
     caption: "Office Inauguration – Mulugu",
   },
 ];
@@ -109,7 +109,7 @@ const Culture: React.FC = () => {
             >
               <img
                 src={photo.url}
-                alt={photo.caption}
+                alt={`${photo.caption} – photo ${index + 1} of ${eventPhotos.length}`}
                 className="w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -157,7 +157,7 @@ const Culture: React.FC = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
               src={eventPhotos[lightboxIndex].url}
-              alt={eventPhotos[lightboxIndex].caption}
+              alt={`${eventPhotos[lightboxIndex].caption} – photo ${lightboxIndex + 1} of ${eventPhotos.length}`}
               className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl"
               onClick={e => e.stopPropagation()}
             />

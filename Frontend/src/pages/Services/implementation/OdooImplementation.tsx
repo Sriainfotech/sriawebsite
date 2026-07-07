@@ -144,7 +144,7 @@ const OdooImplementation = () => {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Odoo Implementation", path: "/services/odoo-implementation" },
         ]}
-        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/v1779455049/sria/odoo-app.png"
+        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455049/sria/odoo-app.png"
       />
 
       {/* ── Intro Split Section ── */}
@@ -296,7 +296,8 @@ const OdooImplementation = () => {
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
-                  alt="Technology"
+                  alt=""
+                  role="presentation"
                   className="w-full h-full object-cover opacity-20"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 to-slate-800/90" />

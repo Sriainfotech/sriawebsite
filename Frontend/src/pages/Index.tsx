@@ -6,6 +6,7 @@ import StatsSection from "@/components/home/StatsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import SolutionsGrid from "@/components/home/SolutionsGrid";
 import ChairmanStatement from "@/components/home/ChairmanStatement";
+import FAQSection from "@/components/home/FAQSection";
 
 const Index = ({ customTitle }: { customTitle?: string }) => {
   return (
@@ -18,6 +19,7 @@ const Index = ({ customTitle }: { customTitle?: string }) => {
       <AboutSection />
       <StatsSection />
       <ChairmanStatement />
+      <FAQSection />
     </div>
   );
 };
