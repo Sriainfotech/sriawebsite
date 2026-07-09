@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // SAP Analytics proposal page palette
+        sap: {
+          ink: "#0C2233",
+          "ink-2": "#123146",
+          teal: "#14707E",
+          "teal-soft": "#E7F1F0",
+          amber: "#E8A33D",
+          paper: "#FBFAF7",
+          line: "#D8E2E1",
+          muted: "#5B7080",
+        },
         // Blue palette - single color system
         blue: {
           50: "hsl(var(--blue-50))",
@@ -75,6 +86,9 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         heading: ["Poppins", "system-ui", "sans-serif"],
+        sapDisplay: ["Bitter", "Georgia", "serif"],
+        sapBody: ["IBM Plex Sans", "system-ui", "sans-serif"],
+        sapMono: ["IBM Plex Mono", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",

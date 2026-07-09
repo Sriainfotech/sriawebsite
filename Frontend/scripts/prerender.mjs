@@ -26,6 +26,7 @@ const ROUTES = [
   "/about/culture",
   "/insights/customer-stories",
   "/app-store",
+  "/sap-analytics",
   "/products/auto-extract",
   "/products/gatecheck",
   "/products/jatayu",

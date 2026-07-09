@@ -95,6 +95,9 @@ const InvoiceTerms = React.lazy(() => import("./pages/legal/InvoiceTerms"));
 // App Store
 const AppStore = React.lazy(() => import("./pages/AppStore"));
 
+// SAP Analytics proposal page (standalone — own nav/footer)
+const SAPAnalytics = React.lazy(() => import("./pages/SAPAnalytics"));
+
 // Solutions — HXM
 const AssetPerformance = React.lazy(() => import("./pages/Solutions/SAPHXM/AssetPerformance"));
 const FieldServiceMgmt = React.lazy(() => import("./pages/Solutions/SAPHXM/FieldServiceMgmt"));
@@ -140,6 +143,7 @@ const App = () => (
             <Routes>
               {/* Standalone — no navbar/footer */}
               <Route path="/terms" element={<InvoiceTerms />} />
+              <Route path="/sap-analytics" element={<SAPAnalytics />} />
 
               <Route element={<Layout />}>
                 {/* Main Routes */}

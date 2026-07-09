@@ -564,6 +564,14 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 NxGen Tech Academy
                             </a>
+                            {/* <a
+                                href="/sap-analytics"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                            >
+                                SAP Analytics
+                            </a> */}
                             <Link
                                 to="/app-store"
                                 className="flex items-center gap-1.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white text-sm px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
@@ -662,6 +670,17 @@ const Navbar: React.FC<NavbarProps> = ({
                                     className="block py-4 text-orange-400 hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                                 >
                                     NxGen Tech Academy
+                                </a>
+                            </div>
+                            <div className="border-b border-gray-700">
+                                <a
+                                    href="/sap-analytics"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="block py-4 text-orange-400 hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    SAP Analytics
                                 </a>
                             </div>
                             <div className="pt-2 pb-1">
