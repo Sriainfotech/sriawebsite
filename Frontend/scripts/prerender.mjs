@@ -1,7 +1,27 @@
 import { preview } from "vite";
-import puppeteer from "puppeteer";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+
+// Vercel's build image lacks the shared libraries (libnspr4.so, etc.) that
+// full Puppeteer's bundled Chrome expects, so it fails to launch there even
+// though the download succeeds. @sparticuz/chromium ships a Chromium build
+// with those libraries statically bundled, built specifically for
+// serverless/Vercel-style minimal Linux environments. Locally we keep using
+// full Puppeteer (already downloads/launches fine on Windows/Mac/Linux dev
+// machines) since @sparticuz/chromium's binary is Linux-only.
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const { default: chromium } = await import("@sparticuz/chromium");
+    const { default: puppeteerCore } = await import("puppeteer-core");
+    return puppeteerCore.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+  const { default: puppeteer } = await import("puppeteer");
+  return puppeteer.launch({ headless: true });
+}
 
 const ROUTES = [
   "/",
@@ -103,7 +123,7 @@ async function run() {
   const server = await preview({ preview: { port: 4174, strictPort: true } });
   const baseUrl = `http://localhost:4174`;
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await launchBrowser();
 
   console.log(`Prerendering ${ROUTES.length} routes...`);
   let cursor = 0;
