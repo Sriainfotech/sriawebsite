@@ -39,7 +39,7 @@ function Migration() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Migration Services", path: "/services/sap-migration" },
       ]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455220/sria/Services/migration.jpg"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/migration.jpg?tr=f-auto,q-auto"
       processTitle="Delivering Impact-Driven SAP Migrations for Sustainable Growth"
       processDescription="Our proven methodology ensures a risk-free, on-time, and on-budget transformation journey."
       processSteps={[

@@ -2,13 +2,8 @@ import { motion } from "framer-motion";
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import siteData from "@/data/siteData.json";
 
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80";
-
 const EventsSection = () => {
-  const events = siteData.events.map(event => ({
-    ...event,
-    image: event.image.startsWith("/") ? event.image : FALLBACK_IMAGE,
-  }));
+  const events = siteData.events;
 
   if (!events.length) return null;
 

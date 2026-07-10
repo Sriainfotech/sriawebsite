@@ -29,7 +29,7 @@ const GateCheck = () => {
  const overviewData = {
  title: "What is GateCheck?",
  description: "GateCheck is a smart facility platform integrating IoT, cloud, and mobility. It digitizes maintenance, visitor management, and compliance across multiple sites, providing actionable insights for better facility management.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454941/sria/gatecheck/product.jpg",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/product.jpg?tr=f-auto,q-auto",
  highlights: [
  {
  icon: <Wifi className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const GateCheck = () => {
  {
  title: "IoT-Enabled Monitoring",
  description: "Real-time visibility into facility conditions using smart sensors. Monitor temperature, humidity, energy consumption, and more from a single interface.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454924/sria/gatecheck/fe1.jpg",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/fe1.jpg?tr=f-auto,q-auto",
  },
  {
  title: "Predictive Maintenance",
  description: "Automated alerts and insights to reduce downtime and optimize asset health. Catch potential failures before they happen and schedule maintenance proactively.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454925/sria/gatecheck/fe2.jpg",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/fe2.jpg?tr=f-auto,q-auto",
  reverse: true,
  },
  {
  title: "Compliance & Audits",
  description: "Streamline checklists and audits to ensure regulatory safety standards. Digital documentation makes audits faster and more reliable.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454926/sria/gatecheck/fe3.jpg",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/fe3.jpg?tr=f-auto,q-auto",
  },
  {
  title: "Incident Reporting",
  description: "Efficiently log, track, and resolve incidents with automated workflows. Ensure that every issue is addressed promptly and documented correctly.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454928/sria/gatecheck/fe4.jpg",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/fe4.jpg?tr=f-auto,q-auto",
  reverse: true,
  },
  {
  title: "Role-Based Dashboards",
  description: "Custom dashboards for admins, supervisors, and operators. Get the information you need, tailored to your specific role and responsibilities.",
- image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454929/sria/gatecheck/fe5.jpg",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/fe5.jpg?tr=f-auto,q-auto",
  },
  ],
  };
@@ -135,7 +135,7 @@ const GateCheck = () => {
  "Data-driven decision making with AI insights",
  "Mobile-first approach for field teams",
  ],
- illustration: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454920/sria/gatecheck/benefits.jpg",
+ illustration: "https://ik.imagekit.io/hps6th7vy/sria/gatecheck/benefits.jpg?tr=f-auto,q-auto",
  };
 
  const faqsData = [
@@ -201,7 +201,7 @@ const GateCheck = () => {
  { name: "Products", path: "/products" },
  { name: "GateCheck", path: "/products/gatecheck" },
  ]}
- backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454932/sria/gatecheck/gatecheck-hero.jpg"
+ backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/gatecheck/gatecheck-hero.jpg?tr=f-auto,q-auto"
  />
  <ProductLayout
  overview={overviewData}

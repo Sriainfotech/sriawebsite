@@ -109,7 +109,7 @@ const FloatingButtons = () => {
         rel="noopener noreferrer"
         className="bg-white backdrop-blur-sm w-auto h-16 rounded-md shadow-lg hover:bg-black/30 hover:scale-105 transition overflow-hidden flex items-center justify-center"
       >
-        <img src='https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454965/sria/ivclogo.png' alt="IVC" className="h-20 max-w-none object-contain" />
+        <img src='https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto' alt="IVC" className="h-20 max-w-none object-contain" />
       </a>
 
       {/* PHONE */}

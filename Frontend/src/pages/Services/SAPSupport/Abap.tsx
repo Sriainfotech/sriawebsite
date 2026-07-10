@@ -50,7 +50,7 @@ function Abap() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "ABAP Services", path: "/services/sap-abap" },
       ]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455174/sria/Services/abap.jpg"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/abap.jpg?tr=f-auto,q-auto"
       processTitle="Building Future-Proof SAP Applications with Clean Code & RAP"
       processDescription="We leverage modern ABAP development models to deliver high-performance, maintainable enterprise solutions."
       processSteps={[

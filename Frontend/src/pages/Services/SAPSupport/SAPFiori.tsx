@@ -39,7 +39,7 @@ function SAPFiori() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "SAP Fiori", path: "/services/sap-fiori" },
       ]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455213/sria/Services/fiori.jpg"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/fiori.jpg?tr=f-auto,q-auto"
       processTitle="Modernizing Enterprise UX with Intuitive Fiori Solutions"
       processDescription="From custom app design to seamless backend integration, we deliver role-based dashboards that users love."
       processSteps={[

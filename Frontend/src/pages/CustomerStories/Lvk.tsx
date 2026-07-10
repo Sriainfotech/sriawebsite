@@ -3,7 +3,7 @@ import CustomerStoryLayout from "@/components/layout/CustomerStoryLayout";
 const Lvk = () => (
   <CustomerStoryLayout
     hero={{
-      image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454695/sria/customerStories/pharma.jpg",
+      image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto",
       category: "Pharmaceuticals",
       title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
       tag: "CRM Implementation · Odoo",

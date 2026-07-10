@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ExecutiveDashboardDemo from "@/components/sap-analytics/ExecutiveDashboardDemo";
 import {
   LayoutGrid,
   Clock,
@@ -25,9 +27,11 @@ import {
   ArrowRight,
   ZoomIn,
   Sparkles,
+  Target,
+  ChevronRight,
 } from "lucide-react";
 
-const SRIA_LOGO = "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454981/sria/logo.png";
+const SRIA_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto";
 
 /* ── Fonts (Bitter / IBM Plex Sans / IBM Plex Mono) ───────────────────────── */
 
@@ -140,18 +144,16 @@ const FILTERS: { key: FilterKey; label: string }[] = [
 ];
 
 const GALLERY_ITEMS: { cat: FilterKey; thumb: string; full: string; alt: string; category: string; caption: string }[] = [
-  { cat: "fin", thumb: "/sap-analytics/shot-2.jpg", full: "/sap-analytics/shot-3.jpg", alt: "CFO dashboard financial summary", category: "Finance", caption: "CFO Dashboard — Financial Summary" },
-  { cat: "fin", thumb: "/sap-analytics/shot-4.jpg", full: "/sap-analytics/shot-5.jpg", alt: "Balance sheet variance analysis", category: "Finance", caption: "Balance Sheet — Variance Analysis" },
-  { cat: "fin", thumb: "/sap-analytics/shot-6.jpg", full: "/sap-analytics/shot-7.jpg", alt: "Accounts receivable aging and cash inflow", category: "Finance", caption: "Accounts Receivable — Aging & Cash Inflow" },
-  { cat: "fin", thumb: "/sap-analytics/shot-8.jpg", full: "/sap-analytics/shot-9.jpg", alt: "Accounts payable aging and cash outflow", category: "Finance", caption: "Accounts Payable — Aging & Cash Outflow" },
-  { cat: "sales", thumb: "/sap-analytics/shot-10.jpg", full: "/sap-analytics/shot-11.jpg", alt: "Sales analysis dashboard", category: "Sales", caption: "Sales Analysis Dashboard" },
-  { cat: "sales", thumb: "/sap-analytics/shot-12.jpg", full: "/sap-analytics/shot-13.jpg", alt: "Sales comparison analysis report", category: "Sales", caption: "Sales Comparison Report" },
-  { cat: "sales", thumb: "/sap-analytics/shot-14.jpg", full: "/sap-analytics/shot-15.jpg", alt: "Customer sales analysis dashboard", category: "Sales", caption: "Customer Sales Analysis" },
-  { cat: "cost", thumb: "/sap-analytics/shot-16.jpg", full: "/sap-analytics/shot-17.jpg", alt: "Cost analysis summary", category: "Cost", caption: "Cost Analysis — Budget vs Actual" },
-  { cat: "cost", thumb: "/sap-analytics/shot-18.jpg", full: "/sap-analytics/shot-19.jpg", alt: "Plant wise cost comparison", category: "Cost", caption: "Cost Analysis — Plant-wise Comparison" },
-  { cat: "cost", thumb: "/sap-analytics/shot-20.jpg", full: "/sap-analytics/shot-21.jpg", alt: "Plant cost ranking", category: "Cost", caption: "Cost Analysis — Plant Ranking & Trends" },
-  { cat: "wc", thumb: "/sap-analytics/wc-dashboard-1-thumb.jpg", full: "/sap-analytics/wc-dashboard-1-full.jpg", alt: "Working capital dashboard with segment, plant and material-wise target vs actual", category: "Working capital", caption: "Working Capital Dashboard" },
-  { cat: "wc", thumb: "/sap-analytics/wc-dashboard-2-thumb.jpg", full: "/sap-analytics/wc-dashboard-2-full.jpg", alt: "Working capital comparison across fiscal periods by plant and material type", category: "Working capital", caption: "Working Capital — Period Comparison" },
+  { cat: "fin", thumb: "/sap-analytics/cfo-summary-thumb.jpg", full: "/sap-analytics/cfo-summary-full.jpg", alt: "CFO dashboard financial summary with revenue, EBITDA, net profit and expense trends", category: "Finance", caption: "CFO Dashboard — Financial Summary" },
+  { cat: "fin", thumb: "/sap-analytics/cfo-balance-sheet-thumb.jpg", full: "/sap-analytics/cfo-balance-sheet-full.jpg", alt: "Balance sheet with assets, equity and liabilities variance", category: "Finance", caption: "Balance Sheet — Assets, Equity & Liabilities" },
+  { cat: "fin", thumb: "/sap-analytics/cfo-pnl-yearly-thumb.jpg", full: "/sap-analytics/cfo-pnl-yearly-full.jpg", alt: "Yearly profit and loss statement with income, expenses and variance", category: "Finance", caption: "Profit & Loss — Yearly" },
+  { cat: "fin", thumb: "/sap-analytics/cfo-ratios-thumb.jpg", full: "/sap-analytics/cfo-ratios-full.jpg", alt: "Financial ratio analysis covering liquidity, leverage, profitability and efficiency", category: "Finance", caption: "Detailed Analysis — Financial Ratios" },
+  { cat: "sales", thumb: "/sap-analytics/sales-analysis-thumb.jpg", full: "/sap-analytics/sales-analysis-full.jpg", alt: "Sales analysis dashboard with yearly, quarterly and monthly sales trends", category: "Sales", caption: "Sales Analysis Dashboard" },
+  { cat: "sales", thumb: "/sap-analytics/sales-quantity-thumb.jpg", full: "/sap-analytics/sales-quantity-full.jpg", alt: "Sales quantity analysis by material group and material code", category: "Sales", caption: "Sales Quantity Analysis" },
+  { cat: "sales", thumb: "/sap-analytics/sales-avg-price-thumb.jpg", full: "/sap-analytics/sales-avg-price-full.jpg", alt: "Average sales price analysis by material group and plant", category: "Sales", caption: "Average Price Analysis" },
+  { cat: "cost", thumb: "/sap-analytics/cost-plant-comparison-thumb.jpg", full: "/sap-analytics/cost-plant-comparison-full.jpg", alt: "Plant wise cost comparison across production, raw material and variable cost heads", category: "Cost", caption: "Plant Wise Comparison — Cost Analysis" },
+  { cat: "wc", thumb: "/sap-analytics/wc-dashboard-thumb.jpg", full: "/sap-analytics/wc-dashboard-full.jpg", alt: "Working capital dashboard with segment-wise target vs actual and group working capital", category: "Working capital", caption: "Working Capital Dashboard" },
+  { cat: "wc", thumb: "/sap-analytics/wc-comparison-thumb.jpg", full: "/sap-analytics/wc-comparison-full.jpg", alt: "Working capital comparison across fiscal periods by segment", category: "Working capital", caption: "Working Capital — Period Comparison" },
 ];
 
 const PHASES = [
@@ -205,6 +207,7 @@ const SAPAnalytics = () => {
   const [activeSol, setActiveSol] = useState<SolutionKey>("fabric");
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [showDemo, setShowDemo] = useState(false);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -214,6 +217,15 @@ const SAPAnalytics = () => {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [lightbox]);
+
+  useEffect(() => {
+    if (!showDemo) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowDemo(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [showDemo]);
 
   const sol = SOLUTIONS[activeSol];
   const visibleShots = activeFilter === "all" ? GALLERY_ITEMS : GALLERY_ITEMS.filter((s) => s.cat === activeFilter);
@@ -233,13 +245,13 @@ const SAPAnalytics = () => {
               </li>
             ))}
             <li>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="group inline-flex items-center gap-1.5 bg-[#E8A33D] text-[#0C2233] no-underline text-sm font-semibold px-[18px] py-[9px] rounded-md hover:bg-[#F0B357] transition-colors"
               >
                 Book a walkthrough
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -268,13 +280,16 @@ const SAPAnalytics = () => {
                 Sria Infotech turns raw SAP data into interactive dashboards, automated reporting and live KPI monitoring — one governed, trusted source of truth from shop floor to boardroom.
               </p>
               <div className="flex gap-3.5 flex-wrap">
-                <a href="#contact" className="group inline-flex items-center gap-2 px-[26px] py-3.5 rounded-lg font-semibold text-[15px] no-underline bg-[#E8A33D] text-[#0C2233] hover:bg-[#F0B357] transition-colors shadow-[0_10px_30px_rgba(232,163,61,0.25)]">
+                <Link to="/contact" className="group inline-flex items-center gap-2 px-[26px] py-3.5 rounded-lg font-semibold text-[15px] no-underline bg-[#E8A33D] text-[#0C2233] hover:bg-[#F0B357] transition-colors shadow-[0_10px_30px_rgba(232,163,61,0.25)]">
                   Book a walkthrough
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </a>
-                <a href="#gallery" className="inline-block px-[26px] py-3.5 rounded-lg font-semibold text-[15px] no-underline border border-white/[.35] text-white hover:border-white hover:bg-white/5 transition-colors">
+                </Link>
+                <button
+                  onClick={() => setShowDemo(true)}
+                  className="inline-block px-[26px] py-3.5 rounded-lg font-semibold text-[15px] border border-white/[.35] text-white hover:border-white hover:bg-white/5 transition-colors"
+                >
                   See live dashboard samples
-                </a>
+                </button>
               </div>
               <div className="flex flex-wrap gap-2.5 mt-10">
                 {["Executive", "Finance", "Sales", "Procurement", "Inventory", "Manufacturing", "HR", "Supply Chain"].map((s) => (
@@ -296,17 +311,17 @@ const SAPAnalytics = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#E8695A]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#E8A33D]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#5FBF8A]" />
-                  <span className="ml-3 font-sapMono text-[10px] text-[#7E93A2] tracking-wide">live-dashboard.sriainfotech.com</span>
+                  <span className="ml-3 font-sapMono text-[10px] text-[#7E93A2] tracking-wide">CFO Dashboard — Sample Report</span>
                 </div>
-                <img src="/sap-analytics/shot-2.jpg" alt="Live CFO dashboard preview" className="w-full h-auto block" />
+                <img src="/sap-analytics/cfo-summary-full.jpg" alt="Sample CFO dashboard delivered for a client" className="w-full h-auto block" />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-white rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-[#E7F1F0] flex items-center justify-center">
-                  <LayoutDashboard className="w-4.5 h-4.5 text-[#14707E]" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-[#14707E]" />
                 </div>
                 <div>
-                  <p className="text-[#0C2233] font-bold text-sm leading-tight">Live refresh</p>
-                  <p className="text-[#5B7080] text-xs">Updated every 15 min</p>
+                  <p className="text-[#0C2233] font-bold text-sm leading-tight">Real client deliverable</p>
+                  <p className="text-[#5B7080] text-xs">Built on live SAP data</p>
                 </div>
               </div>
             </motion.div>
@@ -363,89 +378,108 @@ const SAPAnalytics = () => {
             <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5">Four proven paths from SAP to insight</h2>
             <p className="text-[#9FB4C0] max-w-[640px]">Select a path to see how the data flows. We recommend the architecture that fits your landscape — not the one tied to a vendor relationship.</p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-11" role="tablist" aria-label="Architecture options">
-              {SOLUTION_TABS.map((tab) => {
-                const selected = activeSol === tab.key;
-                return (
-                  <button
-                    key={tab.key}
-                    role="tab"
-                    aria-selected={selected}
-                    onClick={() => setActiveSol(tab.key)}
-                    className={`text-left font-sapBody rounded-xl px-5 py-[22px] border transition-all duration-200 ${
-                      selected
-                        ? "border-[#E8A33D] bg-[#16405A] -translate-y-[3px] shadow-[0_14px_28px_rgba(0,0,0,0.25)]"
-                        : "border-white/[.12] bg-[#123146] hover:border-[#E8A33D]/60"
-                    }`}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-sapMono text-[11px] text-[#E8A33D] tracking-[.2em]">{tab.num}</span>
-                      <div className={`w-7 h-7 rounded-md flex items-center justify-center transition-colors ${selected ? "bg-[#E8A33D]/15" : "bg-white/5"}`}>
-                        <tab.icon className={`w-3.5 h-3.5 transition-colors ${selected ? "text-[#E8A33D]" : "text-white/40"}`} />
+            <div className="grid lg:grid-cols-[340px_1fr] gap-6 mt-11">
+              {/* Sidebar selector */}
+              <div className="flex flex-col gap-2" role="tablist" aria-label="Architecture options">
+                {SOLUTION_TABS.map((tab) => {
+                  const selected = activeSol === tab.key;
+                  return (
+                    <button
+                      key={tab.key}
+                      role="tab"
+                      aria-selected={selected}
+                      onClick={() => setActiveSol(tab.key)}
+                      className={`group text-left font-sapBody rounded-xl p-4 border-l-2 transition-all duration-200 flex items-start gap-3.5 ${
+                        selected
+                          ? "border-l-[#E8A33D] bg-[#16405A]"
+                          : "border-l-transparent bg-[#123146]/60 hover:bg-[#123146] hover:border-l-[#E8A33D]/40"
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${selected ? "bg-[#E8A33D] text-[#0C2233]" : "bg-white/5 text-white/40 group-hover:text-white/70"}`}>
+                        <tab.icon className="w-4.5 h-4.5" />
                       </div>
-                    </div>
-                    <strong className="font-sapDisplay block text-[17px] mb-1.5">{tab.name}</strong>
-                    <small className="text-[#9FB4C0] text-[12.5px] leading-[1.45] block">{tab.blurb}</small>
-                    {tab.recommended && (
-                      <span className="inline-block mt-2.5 font-sapMono text-[10px] bg-[#E8A33D] text-[#0C2233] px-[9px] py-[3px] rounded-full tracking-[.1em]">★ RECOMMENDED</span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-
-            <motion.div
-              key={activeSol}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="mt-9 bg-[#123146] border border-white/[.12] rounded-2xl p-9"
-              role="tabpanel"
-            >
-              <div className="flex items-center gap-3 mb-1">
-                <div className="w-9 h-9 rounded-lg bg-[#E8A33D]/15 flex items-center justify-center flex-shrink-0">
-                  {(() => { const Icon = SOLUTION_TABS.find((t) => t.key === activeSol)!.icon; return <Icon className="w-4.5 h-4.5 text-[#E8A33D]" />; })()}
-                </div>
-                <h3 className="text-2xl font-sapDisplay font-bold">{sol.t}</h3>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="font-sapMono text-[10px] text-[#E8A33D] tracking-[.2em]">{tab.num}</span>
+                          {tab.recommended && (
+                            <span className="font-sapMono text-[9px] bg-[#E8A33D] text-[#0C2233] px-[7px] py-[1px] rounded-full tracking-[.1em]">★ RECOMMENDED</span>
+                          )}
+                        </div>
+                        <strong className={`font-sapDisplay block text-[15.5px] mt-0.5 ${selected ? "text-white" : "text-white/85"}`}>{tab.name}</strong>
+                        <small className="text-[#9FB4C0] text-[12px] leading-[1.4] block mt-1">{tab.blurb}</small>
+                      </div>
+                      <ChevronRight className={`w-4 h-4 flex-shrink-0 mt-1 transition-all ${selected ? "text-[#E8A33D] translate-x-0.5" : "text-white/20"}`} />
+                    </button>
+                  );
+                })}
               </div>
-              <p className="text-[#9FB4C0] mt-2 max-w-[720px] text-[15px]">{sol.d}</p>
 
-              <div className="flex items-stretch flex-wrap my-[26px] mb-[34px]">
-                {sol.f.map((node, i) => (
-                  <div key={node} className="flex items-center">
-                    <div className="bg-[#0C2233] border border-white/[.18] rounded-[10px] px-[18px] py-4 min-w-[130px] text-center font-sapMono text-[12.5px] text-[#DCE7ED] leading-[1.4]">
-                      {node}
-                    </div>
-                    {i < sol.f.length - 1 && (
-                      <div className="w-[46px] flex items-center justify-center text-[#E8A33D] text-xl" aria-hidden="true">→</div>
-                    )}
+              {/* Detail panel */}
+              <motion.div
+                key={activeSol}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="bg-[#123146] border border-white/[.12] rounded-2xl p-7 sm:p-9"
+                role="tabpanel"
+              >
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="w-9 h-9 rounded-lg bg-[#E8A33D]/15 flex items-center justify-center flex-shrink-0">
+                    {(() => { const Icon = SOLUTION_TABS.find((t) => t.key === activeSol)!.icon; return <Icon className="w-4.5 h-4.5 text-[#E8A33D]" />; })()}
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-xl sm:text-2xl font-sapDisplay font-bold">{sol.t}</h3>
+                </div>
+                <p className="text-[#9FB4C0] mt-2 max-w-[720px] text-[15px]">{sol.d}</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-                <div>
-                  <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Features</h4>
-                  <ul className="list-none">
-                    {sol.feat.map((x) => (
-                      <li key={x} className="text-sm text-[#C6D6DF] py-[5px] pl-[18px] relative before:content-['·'] before:text-[#E8A33D] before:font-bold before:absolute before:left-0.5">{x}</li>
-                    ))}
-                  </ul>
+                <div className="flex items-stretch flex-wrap my-[26px] mb-[30px]">
+                  {sol.f.map((node, i) => (
+                    <div key={node} className="flex items-center">
+                      <div className="bg-[#0C2233] border border-white/[.18] rounded-[10px] px-[18px] py-4 min-w-[130px] text-center font-sapMono text-[12.5px] text-[#DCE7ED] leading-[1.4]">
+                        {node}
+                      </div>
+                      {i < sol.f.length - 1 && (
+                        <div className="w-[46px] flex items-center justify-center text-[#E8A33D] text-xl" aria-hidden="true">→</div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Advantages</h4>
-                  <ul className="list-none">
-                    {sol.adv.map((x) => (
-                      <li key={x} className="text-sm text-[#C6D6DF] py-[5px] pl-[18px] relative before:content-['·'] before:text-[#E8A33D] before:font-bold before:absolute before:left-0.5">{x}</li>
-                    ))}
-                  </ul>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Features</h4>
+                    <ul className="space-y-2">
+                      {sol.feat.map((x) => (
+                        <li key={x} className="text-sm text-[#C6D6DF] flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#14707E] flex-shrink-0 mt-0.5" />
+                          {x}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Advantages</h4>
+                    <ul className="space-y-2">
+                      {sol.adv.map((x) => (
+                        <li key={x} className="text-sm text-[#C6D6DF] flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#E8A33D] flex-shrink-0 mt-0.5" />
+                          {x}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Best for</h4>
-                  <p className="text-sm text-[#C6D6DF]">{sol.best}</p>
+
+                <div className="mt-6 flex items-start gap-3 bg-[#0C2233] border border-white/10 rounded-xl p-4">
+                  <div className="w-8 h-8 rounded-lg bg-[#E8A33D]/15 flex items-center justify-center flex-shrink-0">
+                    <Target className="w-4 h-4 text-[#E8A33D]" />
+                  </div>
+                  <div>
+                    <p className="font-sapMono text-[10px] tracking-[.2em] text-[#E8A33D] uppercase mb-1">Best for</p>
+                    <p className="text-sm text-[#C6D6DF]">{sol.best}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
       </Reveal>
@@ -724,6 +758,35 @@ const SAPAnalytics = () => {
             alt={lightbox.alt}
             className="max-h-[88vh] max-w-[94vw] rounded-lg"
           />
+        </div>
+      )}
+
+      {/* ── LIVE DASHBOARD DEMO MODAL ── */}
+      {showDemo && (
+        <div
+          className="fixed inset-0 bg-[rgba(8,20,30,0.92)] flex items-center justify-center z-[100] p-4 sm:p-[30px]"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Live dashboard sample"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowDemo(false);
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            className="relative w-full max-w-[900px] max-h-[92vh] overflow-y-auto rounded-xl"
+          >
+            <button
+              aria-label="Close dashboard sample"
+              onClick={() => setShowDemo(false)}
+              className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-white text-[#0C2233] text-xl leading-none flex items-center justify-center shadow-lg hover:bg-[#E8A33D] hover:text-white transition-colors"
+            >
+              ×
+            </button>
+            <ExecutiveDashboardDemo />
+          </motion.div>
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@ import CustomerStoryLayout from "@/components/layout/CustomerStoryLayout";
 const Patil = () => (
   <CustomerStoryLayout
     hero={{
-      image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454693/sria/customerStories/patil.jpg",
+      image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto",
       category: "Enterprise IT & Financial Services",
       title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
       tag: "SAP · AMS · OCR · Fund Management",

@@ -16,7 +16,7 @@ const leaders = [
     designation: "Chairman — Sria Group of Companies",
     description:
       "Chairman - SRIA Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
-    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454671/sria/chairman.jpg",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto",
     linkedinUrl: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
     email: "admin@sriainfotech.com",
   },
@@ -25,7 +25,7 @@ const leaders = [
     designation: "Founder, Director — Sria Group of Companies",
     description:
       "Founder, Managing Director - SRIA Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
-    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455136/sria/sai.png",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto",
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
   },
@@ -34,7 +34,7 @@ const leaders = [
     designation: "Co-Founder, Executive Chairman — Sria Group of Companies",
     description:
       "Co-Founder, Executive Chairman - SRIA Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
-    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455115/sria/ravi.png",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto",
     linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
   },
@@ -43,7 +43,7 @@ const leaders = [
     designation: "COO — Sria Infotech",
     description:
       "COO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
-    image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455326/sria/vinod.jpg",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/vinod.jpg?tr=f-auto,q-auto",
     linkedinUrl: "https://www.linkedin.com/in/vinod-kumar-burra-31bb13190/",
     email: "vinodkumar@sriainfotech.com",
   },
@@ -58,7 +58,7 @@ function LeaderShip() {
           { name: "About Us", path: "/aboutus" },
           { name: "Leadership", path: "/about/leadership" },
         ]}
-        backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454975/sria/leadership.jpg"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto"
       />
 
       {/* ── Leadership Cards ── */}
@@ -224,7 +224,7 @@ function LeaderShip() {
               {/* Attribution */}
               <div className="flex items-center gap-4 border-t border-white/10 pt-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
-                  <img src="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454671/sria/chairman.jpg" alt="Ashwini Ganji" className="w-full h-full object-cover object-top" />
+                  <img src="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto" alt="Ashwini Ganji" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Ashwini Ganji</p>

@@ -513,7 +513,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-16">
                         <div className="flex flex-row items-center">
                             <Link to="/" className="font-bold flex flex-row items-center">
-                                <img src='https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779454981/sria/logo.png' alt="SRIA Infotech logo" className="h-auto w-28" />
+                                <img src='https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto' alt="SRIA Infotech logo" className="h-auto w-28" />
                             </Link>
                         </div>
 
@@ -564,14 +564,14 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 NxGen Tech Academy
                             </a>
-                            {/* <a
+                            <a
                                 href="/sap-analytics"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
                                 SAP Analytics
-                            </a> */}
+                            </a>
                             <Link
                                 to="/app-store"
                                 className="flex items-center gap-1.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white text-sm px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"

@@ -63,6 +63,7 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
                 >
+                    {/* TODO: re-point to ImageKit once "Sria Website Video.mp4" is uploaded there — temporarily serving from Cloudinary since it's still live. */}
                     <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic gradient overlays */}

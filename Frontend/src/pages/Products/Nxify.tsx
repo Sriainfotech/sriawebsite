@@ -29,7 +29,7 @@ const Nxify = () => {
     const overviewData = {
         title: "Why Nxify?",
         description: "Nxify is a comprehensive cloud-based platform designed to simplify and automate employee financial operations, HR processes, and EXIM workflows. It unifies everything under one intelligent system with real-time dashboards and analytics.",
-        image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455030/sria/Nxify/product.png",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/product.png?tr=f-auto,q-auto",
         highlights: [
             {
                 icon: <CreditCard className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const Nxify = () => {
             {
                 title: "Unified Employee Financials",
                 description: "Manage salaries, reimbursements, loans, and advances from a single, streamlined platform with real-time visibility for both HR and employees.",
-                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455013/sria/Nxify/fe1.png",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe1.png?tr=f-auto,q-auto",
             },
             {
                 title: "Automated Payroll Processing",
                 description: "Run accurate and timely payrolls with automated calculations, statutory compliance, and direct bank transfers. Reduce manual errors to zero.",
-                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455015/sria/Nxify/fe2.png",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe2.png?tr=f-auto,q-auto",
                 reverse: true,
             },
             {
                 title: "Smart Attendance & Leave",
                 description: "Track attendance, shifts, and leave balances with biometric integrations and employee self-service portals. Everything is synced in real-time.",
-                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455016/sria/Nxify/fe3.png",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe3.png?tr=f-auto,q-auto",
             },
             {
                 title: "IT Declarations & Taxation",
                 description: "Simplify income tax declarations and automate deductions with built-in compliance and real-time projections for employees.",
-                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455018/sria/Nxify/fe4.png",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe4.png?tr=f-auto,q-auto",
                 reverse: true,
             },
             {
                 title: "Workflow Automation",
                 description: "Digitize approvals for expenses, leaves, onboarding, and more using custom rule-based workflows that fit your organization's structure.",
-                image: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455019/sria/Nxify/fe5.png",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe5.png?tr=f-auto,q-auto",
             },
         ],
     };
@@ -135,7 +135,7 @@ const Nxify = () => {
             "Scalable architecture for any organization size",
             "Secure, role-based access to sensitive data",
         ],
-        illustration: "https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455011/sria/Nxify/benefits.png",
+        illustration: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/benefits.png?tr=f-auto,q-auto",
     };
 
     const faqsData = [
@@ -201,7 +201,7 @@ const Nxify = () => {
                     { name: "Products", path: "/products" },
                     { name: "Nxify", path: "/products/nxify" },
                 ]}
-                backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455026/sria/Nxify/nxify-hero.png"
+                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Nxify/nxify-hero.png?tr=f-auto,q-auto"
             />
             <ProductLayout
                 overview={overviewData}

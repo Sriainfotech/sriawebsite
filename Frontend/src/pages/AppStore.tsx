@@ -88,6 +88,14 @@ const apps: App[] = [
     bg: "bg-cyan-50",
     category: "Productivity",
   },
+  {
+    name: "Cashora",
+    description: "Digital Solutions Portal",
+    url: "https://play.google.com/store/apps/details?id=com.cashora.finance",
+    icon: "/Logos/Cashora.jpeg",
+    bg: "bg-cyan-50",
+    category: "Productivity",
+  },
 ];
 
 const categories = ["All", "Operations", "Productivity", "Education", "Security"];

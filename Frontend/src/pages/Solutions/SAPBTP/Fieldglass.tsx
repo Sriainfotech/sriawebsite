@@ -147,7 +147,7 @@ const Fieldglass = () => {
       title="Contingent Workforce Management"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP BTP", path: "/solutions/sap-btp" }, { name: "Fieldglass", path: "/solutions/fieldglass" }]}
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/v1779455257/sria/Solutions/field-hero.jpg"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/field-hero.jpg?tr=f-auto,q-auto"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Optimize your external workforce management with SAP Fieldglass. Enhance visibility, ensure compliance, and drive cost savings."
       trustedFeatures={trustedPartnerFeatures}
