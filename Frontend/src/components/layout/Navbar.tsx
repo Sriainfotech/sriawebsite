@@ -672,7 +672,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                     NxGen Tech Academy
                                 </a>
                             </div>
-                            <div className="border-b border-gray-700">
+                            {/* <div className="border-b border-gray-700">
                                 <a
                                     href="/sap-analytics"
                                     target="_blank"
@@ -682,7 +682,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     SAP Analytics
                                 </a>
-                            </div>
+                            </div> */}
                             <div className="pt-2 pb-1">
                                 <Link
                                     to="/app-store"
