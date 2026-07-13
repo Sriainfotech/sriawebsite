@@ -63,11 +63,11 @@ const CLIENTS: Client[] = [
 
 // Replace logo URLs with your actual image URLs
 const ASSOCIATIONS: Association[] = [
-  // {
-  //   name: "Telangana Government",
-  //   tag: "State Partner",
-  //   logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/telangana.png?tr=f-auto,q-auto,w-2000",
-  // },
+  {
+    name: "Telangana Government",
+    tag: "State Partner",
+    logo: "/Logos/Emblem_of_Telangana.webp",
+  },
   {
     name: "TASK",
     tag: "Skill Alliance",
