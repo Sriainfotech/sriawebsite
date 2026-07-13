@@ -9,6 +9,15 @@ interface PageHeaderProps {
  backgroundImage?: string;
 }
 
+const IMAGE_WIDTHS = [480, 768, 1080, 1600, 2000];
+
+const buildSrcSet = (url: string) => {
+ const [base, query] = url.split("?");
+ if (!query || !query.includes("w-")) return undefined;
+ const trWithoutWidth = query.replace(/,?w-\d+/, "");
+ return IMAGE_WIDTHS.map((w) => `${base}?${trWithoutWidth},w-${w} ${w}w`).join(", ");
+};
+
 const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeaderProps) => {
  const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
    "@context": "https://schema.org",
@@ -29,7 +38,15 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  {/* Background */}
  {backgroundImage ? (
  <div className="absolute inset-0">
- <img src={backgroundImage} alt={title} className="w-full h-full object-cover" />
+ <img
+ src={backgroundImage}
+ srcSet={buildSrcSet(backgroundImage)}
+ sizes="100vw"
+ alt={title}
+ className="w-full h-full object-cover"
+ fetchPriority="high"
+ decoding="async"
+ />
  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/80" />
  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 to-transparent" />
  </div>
