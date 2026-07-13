@@ -129,7 +129,7 @@ const Manufacturing = () => {
       title="Smart Manufacturing"
       subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" }, { name: "Manufacturing", path: "/solutions/manufacturing-execution" }]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/manufacture-hero.jpg?tr=f-auto,q-auto"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/manufacture-hero.jpg?tr=f-auto,q-auto,w-2000"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Our innovative technologies empower manufacturing institutions to streamline operations, enhance production visibility, and drive sustainable growth."
       trustedFeatures={trustedPartnerFeatures}

@@ -78,7 +78,7 @@ function IVCSolutions() {
           { name: "Partners", path: "/about/sap-partner" },
           { name: "IVC Solutions", path: "/partners/ivc-solutions" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-2000"
       />
 
       {/* ── Brand Intro ── */}
@@ -96,7 +96,7 @@ function IVCSolutions() {
             >
               {/* Logo card */}
               <div className="bg-slate-50 rounded-2xl border border-slate-100 p-8 mb-8 inline-flex flex-col items-center w-full max-w-xs">
-                <img src="https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto" alt="IVC Solutions" className="h-20 object-contain mb-4" />
+                <img src="https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000" alt="IVC Solutions" className="h-20 object-contain mb-4" />
                 <span className="inline-block px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider mb-2">
                   SAP Gold Partner
                 </span>

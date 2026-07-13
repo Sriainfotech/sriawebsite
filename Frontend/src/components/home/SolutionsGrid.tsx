@@ -8,7 +8,7 @@ const categories = [
     label: "Enterprise Solutions",
     title: "SAP",
     icon: Network,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-2000",
     count: "5 solutions",
     items: [
       { num: "01", title: "SAP Concur",       tagline: "Automated travel, expense and invoice management.",   link: "/solutions/concur" },
@@ -23,7 +23,7 @@ const categories = [
     label: "Data & Insights",
     title: "Analytics",
     icon: BarChart3,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-2000",
     count: "4 solutions",
     items: [
       { num: "01", title: "Business Intelligence",  tagline: "Transform raw data into actionable business insights.",    link: "/additionalServices/dataanalytics" },

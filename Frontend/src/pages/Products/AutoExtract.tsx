@@ -24,7 +24,7 @@ const AutoExtract = () => {
     const overviewData = {
         title: "What is Auto Extract?",
         description: "Auto Extract uses advanced AI to automate data extraction from documents like invoices and forms. It streamlines processing with real-time validation and analytics, ensuring accuracy, security, and seamless integration into your enterprise ecosystem.",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/product.png?tr=f-auto,q-auto",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/product.png?tr=f-auto,q-auto,w-2000",
         highlights: [
             {
                 icon: <Brain className="w-6 h-6" />,
@@ -84,29 +84,29 @@ const AutoExtract = () => {
             {
                 title: "Automated Processing",
                 description: "Process large volumes of documents automatically, saving time and reducing operational costs significantly. Our system handles the heavy lifting, allowing your team to focus on high-value tasks.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/automated.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/automated.png?tr=f-auto,q-auto,w-2000",
             },
             {
                 title: "Smart Learning",
                 description: "The system adapts to new document structures, improving efficiency over time. It learns from every interaction, becoming more accurate and faster with each document processed.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/smart.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/smart.png?tr=f-auto,q-auto,w-2000",
                 reverse: true,
             },
             {
                 title: "Error-Free Processing",
                 description: "Minimize manual entry to ensure high data integrity and consistency. Our AI cross-references data points to ensure that what is extracted is 100% accurate.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/error.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/error.png?tr=f-auto,q-auto,w-2000",
             },
             {
                 title: "Custom Workflows",
                 description: "Design workflows that fit your specific document handling needs. Whether it's multi-level approval or specific data routing, Auto Extract adapts to you.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/custom.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/custom.png?tr=f-auto,q-auto,w-2000",
                 reverse: true,
             },
             {
                 title: "Instant Validation",
                 description: "Validate and correct data in real-time for faster, reliable results. Catch discrepancies before they enter your system, maintaining a clean database.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/instant.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/instant.png?tr=f-auto,q-auto,w-2000",
             },
         ],
     };
@@ -130,7 +130,7 @@ const AutoExtract = () => {
             "Scalable architecture for growing businesses",
             "Improved data accessibility and searchability",
         ],
-        illustration: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/benefits.png?tr=f-auto,q-auto",
+        illustration: "https://ik.imagekit.io/hps6th7vy/sria/autoextract/benefits.png?tr=f-auto,q-auto,w-2000",
     };
 
     const faqsData = [
@@ -196,7 +196,7 @@ const AutoExtract = () => {
                     { name: "Products", path: "/products" },
                     { name: "Auto Extract", path: "/products/auto-extract" },
                 ]}
-                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/autoextract/auto-hero.png?tr=f-auto,q-auto"
+                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/autoextract/auto-hero.png?tr=f-auto,q-auto,w-2000"
             />
             <ProductLayout
                 overview={overviewData}

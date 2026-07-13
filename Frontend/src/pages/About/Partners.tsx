@@ -11,7 +11,7 @@ const partners = [
     badge: "SAP Gold Partner",
     shortDescription:
       "An authorized SAP Gold Partner with offices across Mainland China, Hong Kong, Macau, Taiwan, and Asia Pacific. Together, we deliver world-class SAP and enterprise solutions.",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000",
     detailsUrl: "/partners/ivc-solutions",
     regions: ["Mainland China", "Hong Kong", "Macau", "Taiwan", "Asia Pacific"],
     stats: [
@@ -32,7 +32,7 @@ function Partners() {
           { name: "About Us", path: "/aboutus" },
           { name: "Partners", path: "/about/partners" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-2000"
       />
 
       {/* ── Partnership Overview ── */}
@@ -93,7 +93,7 @@ function Partners() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px]">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/partner-overview.png?tr=f-auto,q-auto"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/partner-overview.png?tr=f-auto,q-auto,w-2000"
                   alt="Partnership Overview"
                   className="w-full h-full object-cover"
                 />

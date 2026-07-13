@@ -43,7 +43,7 @@ const CookiePolicy = () => {
       <PageHeader
         title="Cookie Policy"
         subtitle="Last Updated: March 2026"
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto,w-2000"
       />
 
       <section className="py-16 md:py-20">

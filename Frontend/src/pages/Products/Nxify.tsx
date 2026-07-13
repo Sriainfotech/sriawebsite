@@ -29,7 +29,7 @@ const Nxify = () => {
     const overviewData = {
         title: "Why Nxify?",
         description: "Nxify is a comprehensive cloud-based platform designed to simplify and automate employee financial operations, HR processes, and EXIM workflows. It unifies everything under one intelligent system with real-time dashboards and analytics.",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/product.png?tr=f-auto,q-auto",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/product.png?tr=f-auto,q-auto,w-2000",
         highlights: [
             {
                 icon: <CreditCard className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const Nxify = () => {
             {
                 title: "Unified Employee Financials",
                 description: "Manage salaries, reimbursements, loans, and advances from a single, streamlined platform with real-time visibility for both HR and employees.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe1.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe1.png?tr=f-auto,q-auto,w-2000",
             },
             {
                 title: "Automated Payroll Processing",
                 description: "Run accurate and timely payrolls with automated calculations, statutory compliance, and direct bank transfers. Reduce manual errors to zero.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe2.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe2.png?tr=f-auto,q-auto,w-2000",
                 reverse: true,
             },
             {
                 title: "Smart Attendance & Leave",
                 description: "Track attendance, shifts, and leave balances with biometric integrations and employee self-service portals. Everything is synced in real-time.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe3.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe3.png?tr=f-auto,q-auto,w-2000",
             },
             {
                 title: "IT Declarations & Taxation",
                 description: "Simplify income tax declarations and automate deductions with built-in compliance and real-time projections for employees.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe4.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe4.png?tr=f-auto,q-auto,w-2000",
                 reverse: true,
             },
             {
                 title: "Workflow Automation",
                 description: "Digitize approvals for expenses, leaves, onboarding, and more using custom rule-based workflows that fit your organization's structure.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe5.png?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/fe5.png?tr=f-auto,q-auto,w-2000",
             },
         ],
     };
@@ -135,7 +135,7 @@ const Nxify = () => {
             "Scalable architecture for any organization size",
             "Secure, role-based access to sensitive data",
         ],
-        illustration: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/benefits.png?tr=f-auto,q-auto",
+        illustration: "https://ik.imagekit.io/hps6th7vy/sria/Nxify/benefits.png?tr=f-auto,q-auto,w-2000",
     };
 
     const faqsData = [
@@ -201,7 +201,7 @@ const Nxify = () => {
                     { name: "Products", path: "/products" },
                     { name: "Nxify", path: "/products/nxify" },
                 ]}
-                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Nxify/nxify-hero.png?tr=f-auto,q-auto"
+                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Nxify/nxify-hero.png?tr=f-auto,q-auto,w-2000"
             />
             <ProductLayout
                 overview={overviewData}

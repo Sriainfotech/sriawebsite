@@ -27,7 +27,7 @@ const accordionData = [
   {
     title: "Leadership",
     text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-2000",
   },
   {
     title: "Core Values",
@@ -77,7 +77,7 @@ const timelineEvents = [
 
 const offices = [
   { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
-  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
+  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto,w-2000", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
   { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
   { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
 ];
@@ -104,7 +104,7 @@ const About = () => {
         title="About Sria Infotech"
         subtitle="A global SAP consulting company delivering world-class services through proven methodologies and innovation."
         breadcrumbs={[{ name: "About Us", path: "/about" }]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/aboutus.jpg?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/aboutus.jpg?tr=f-auto,q-auto,w-2000"
       />
 
       {/* ── Who We Are ── */}
@@ -228,7 +228,7 @@ const About = () => {
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
-                  <img src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto" alt="Sai Kumar" className="w-full h-full object-cover object-top" />
+                  <img src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-2000" alt="Sai Kumar" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Sai Kumar Bonakurthi</p>
@@ -251,7 +251,7 @@ const About = () => {
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-500/20 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-80">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-2000"
                   alt="Sai Kumar Bonakurthi"
                   className="w-full h-full object-cover object-top"
                 />
@@ -377,7 +377,7 @@ const About = () => {
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-80">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-2000"
                   alt="Mission"
                   onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"; }}
                   className="w-full h-full object-cover"

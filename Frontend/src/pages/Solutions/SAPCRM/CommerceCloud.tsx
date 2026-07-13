@@ -134,7 +134,7 @@ const CommerceCloud = () => {
       title="Personalized Commerce Experiences"
       subtitle="Create seamless, scalable, and secure digital shopping journeys with SAP Commerce Cloud."
       breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP CRM", path: "/solutions/sap-crm" }, { name: "Commerce Cloud", path: "/solutions/commerce-cloud" }]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/commerce-hero.jpg?tr=f-auto,q-auto"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/commerce-hero.jpg?tr=f-auto,q-auto,w-2000"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We help organizations build scalable, secure, and personalized commerce experiences, ensuring seamless integration and long-term success."
       trustedFeatures={trustedPartnerFeatures}

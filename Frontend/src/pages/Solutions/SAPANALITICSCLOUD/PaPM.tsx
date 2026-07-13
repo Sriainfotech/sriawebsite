@@ -184,7 +184,7 @@ const sapData = {
  heading: "Delivering Impact-Driven SAP Implementations",
  description:
  "Your Trusted Partner in SAP Transformation. We help organizations optimize their supply chain and manufacturing logistics for maximum efficiency.",
- imageUrl: "https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm-sap.png?tr=f-auto,q-auto",
+ imageUrl: "https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm-sap.png?tr=f-auto,q-auto,w-2000",
  imageAlt: "SAP Manufacturing Logistics",
  items: [
  {
@@ -211,25 +211,25 @@ const sapData = {
 const customerStories = [
  {
  id: 1,
- image: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000",
  title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
  readMoreLink: "/partners/ivc-solutions",
  },
  {
  id: 2,
- image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
  title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
  readMoreLink: "/patil",
  },
  {
  id: 3,
- image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-2000",
  title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
  readMoreLink: "/hills",
  },
  {
  id: 4,
- image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
  title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
  readMoreLink: "/Lvk",
  },
@@ -252,31 +252,31 @@ const features = [
  title: "Application Development",
  description:
  "Building robust applications to extend SAP capabilities with ABAP and custom development.",
- image: "https://ik.imagekit.io/hps6th7vy/sria/Solutions/buildapps.png?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/Solutions/buildapps.png?tr=f-auto,q-auto,w-2000",
  },
  {
  title: "Data & Analytics",
  description:
  "Empowering decisions with SAP Analytics Cloud (SAC) for comprehensive business insights.",
- image: "https://ik.imagekit.io/hps6th7vy/sria/DATA%20ANALYTICS.png?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/DATA%20ANALYTICS.png?tr=f-auto,q-auto,w-2000",
  },
  {
  title: "Automation & AI",
  description:
  "Streamlining operations with RPA, AI, and intelligent automation technologies.",
- image: "https://ik.imagekit.io/hps6th7vy/sria/Services/automation.png?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/Services/automation.png?tr=f-auto,q-auto,w-2000",
  },
  {
  title: "Integration Services",
  description:
  "Seamless connectivity using SAP CPI and BTP for a unified business landscape.",
- image: "https://ik.imagekit.io/hps6th7vy/sria/Solutions/cpi.png?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/Solutions/cpi.png?tr=f-auto,q-auto,w-2000",
  },
  {
  title: "Fiori User Experience",
  description:
  "Enhancing user engagement with custom Fiori-based extensions and modern UI.",
- image: "https://ik.imagekit.io/hps6th7vy/sria/Services/fiori.png?tr=f-auto,q-auto",
+ image: "https://ik.imagekit.io/hps6th7vy/sria/Services/fiori.png?tr=f-auto,q-auto,w-2000",
  },
 ];
 const insightsData = [
@@ -316,7 +316,7 @@ function SAPFinancialMgmt() {
  { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" },
  { name: "PaPM", path: "/solutions/papm" },
  ]}
- backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm.png?tr=f-auto,q-auto"
+ backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm.png?tr=f-auto,q-auto,w-2000"
  />
 
 

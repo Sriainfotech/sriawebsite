@@ -144,7 +144,7 @@ const OdooImplementation = () => {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Odoo Implementation", path: "/services/odoo-implementation" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/odoo-app.png?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/odoo-app.png?tr=f-auto,q-auto,w-2000"
       />
 
       {/* ── Intro Split Section ── */}

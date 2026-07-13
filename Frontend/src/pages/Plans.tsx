@@ -99,7 +99,7 @@ const PlansPage = () => {
       <PageHeader
         title="Plans & Pricing"
         subtitle="Choose the plan that fits your needs. Upgrade or downgrade any time."
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto,w-2000"
       />
 
       <section className="py-14 md:py-20">

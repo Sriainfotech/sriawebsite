@@ -148,7 +148,7 @@ const SubscriptionPage = () => {
       <PageHeader
         title="Subscription & Usage"
         subtitle="Monitor your plan, billing period and usage limits."
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto,w-2000"
       />
 
       <section className="py-14 md:py-20">

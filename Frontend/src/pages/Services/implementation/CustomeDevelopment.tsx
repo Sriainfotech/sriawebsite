@@ -146,7 +146,7 @@ const CustomDevelopment = () => {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Custom Development", path: "/services/custom-development" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/odoo-app.png?tr=f-auto,q-auto"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/odoo-app.png?tr=f-auto,q-auto,w-2000"
       />
 
       {/* ── Intro Split Section ── */}

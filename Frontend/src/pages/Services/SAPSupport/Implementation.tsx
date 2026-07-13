@@ -50,7 +50,7 @@ function Implementation() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "SAP Implementation", path: "/services/sap-implementation" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/implement-hero.jpg?tr=f-auto,q-auto"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/implement-hero.jpg?tr=f-auto,q-auto,w-2000"
       processTitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth"
       processDescription="Our proven methodology ensures a risk-free, on-time, and on-budget transformation journey."
       processSteps={[

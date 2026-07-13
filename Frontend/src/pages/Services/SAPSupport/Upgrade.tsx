@@ -39,7 +39,7 @@ function Upgrade() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "Upgrade Services", path: "/services/sap-upgrades" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-2000"
       processTitle="Delivering Impact-Driven SAP Upgrades for Sustainable Growth"
       processDescription="Our proven upgrade methodology ensures minimal downtime and maximum functional value for your enterprise."
       processSteps={[

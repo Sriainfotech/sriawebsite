@@ -31,7 +31,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const SRIA_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto";
+const SRIA_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000";
 
 /* ── Fonts (Bitter / IBM Plex Sans / IBM Plex Mono) ───────────────────────── */
 

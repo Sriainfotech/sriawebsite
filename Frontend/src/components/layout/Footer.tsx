@@ -70,10 +70,10 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
                             <Link to="/" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto" alt="SRIA Infotech logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000" alt="SRIA Infotech logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                             <Link to="https://ivcsol.com/" target="_blank" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto" alt="IVC Logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000" alt="IVC Logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                         </div>
 

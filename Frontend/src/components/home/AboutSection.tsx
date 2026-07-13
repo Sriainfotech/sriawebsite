@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
-const aboutImageUrl = "https://ik.imagekit.io/hps6th7vy/sria/home/about-home.png?tr=f-auto,q-auto";
+const aboutImageUrl = "https://ik.imagekit.io/hps6th7vy/sria/home/about-home.png?tr=f-auto,q-auto,w-2000";
 
 const highlights = [
     "Partner-centric approach with trust and integrity",

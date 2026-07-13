@@ -29,7 +29,7 @@ const Jatayu = () => {
     const overviewData = {
         title: "Why Jatayu?",
         description: "Jatayu is a comprehensive platform for residential communities. It streamlines billing, accounting, and complaints, improving transparency and communication between residents and management.",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/product.jpg?tr=f-auto,q-auto",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/product.jpg?tr=f-auto,q-auto,w-2000",
         highlights: [
             {
                 icon: <CreditCard className="w-6 h-6" />,
@@ -89,29 +89,29 @@ const Jatayu = () => {
             {
                 title: "Billing & Payments",
                 description: "Automate billing, track dues, and enable secure resident payments effortlessly. Our system ensures that every transaction is recorded and transparent.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe1.jpg?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe1.jpg?tr=f-auto,q-auto,w-2000",
             },
             {
                 title: "Smart Accounting",
                 description: "Simplify accounting with auto-reconciliations, expense tracking, and financial reports. Get a clear picture of your society's financial health at any time.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe2.jpg?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe2.jpg?tr=f-auto,q-auto,w-2000",
                 reverse: true,
             },
             {
                 title: "Complaint Tracking",
                 description: "Raise, track, and resolve issues easily with real-time updates. Residents can track the progress of their complaints from their mobile devices.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe3.jpg?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe3.jpg?tr=f-auto,q-auto,w-2000",
             },
             {
                 title: "Meeting Manager",
                 description: "Plan meetings, share agendas, and record minutes with automated reminders. Ensure that every resident is informed and engaged.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe4.jpg?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe4.jpg?tr=f-auto,q-auto,w-2000",
                 reverse: true,
             },
             {
                 title: "Document Hub",
                 description: "Securely store and share bylaws, invoices, and notices in one place. Access important documents anytime, anywhere.",
-                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe5.jpg?tr=f-auto,q-auto",
+                image: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/fe5.jpg?tr=f-auto,q-auto,w-2000",
             },
         ],
     };
@@ -135,7 +135,7 @@ const Jatayu = () => {
             "Secure and role-based access for all users",
             "Real-time alerts and notifications for community events",
         ],
-        illustration: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/benefits.jpg?tr=f-auto,q-auto",
+        illustration: "https://ik.imagekit.io/hps6th7vy/sria/jatayu/benefits.jpg?tr=f-auto,q-auto,w-2000",
     };
 
     const faqsData = [
@@ -201,7 +201,7 @@ const Jatayu = () => {
                     { name: "Products", path: "/products" },
                     { name: "Jatayu", path: "/products/jatayu" },
                 ]}
-                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/jatayu/jatayu-hero.jpg?tr=f-auto,q-auto"
+                backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/jatayu/jatayu-hero.jpg?tr=f-auto,q-auto,w-2000"
             />
             <ProductLayout
                 overview={overviewData}

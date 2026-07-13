@@ -6,52 +6,52 @@ import PageHeader from "@/components/layout/PageHeader";
 const eventPhotos = [
   {
     id: 1,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 2,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 3,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 4,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 5,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 6,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 7,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 8,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 9,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
   {
     id: 10,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto",
+    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto,w-2000",
     caption: "Office Inauguration – Mulugu",
   },
 ];
