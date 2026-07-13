@@ -192,7 +192,7 @@ const FloatingButtons = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/sriainfotech/"
+              href="https://www.instagram.com/risewithsria/"
               target="_blank"
               rel="noopener noreferrer"
             >

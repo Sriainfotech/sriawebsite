@@ -87,7 +87,7 @@ const Footer = () => {
                                 { Icon: LinkedInIcon, href: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/" },
                                 { Icon: FacebookIcon, href: "https://www.facebook.com/sriainfotech/" },
                                 { Icon: YoutubeIcon, href: "https://www.youtube.com/@SriaInfotech" },
-                                { Icon: InstagramIcon, href: "https://www.instagram.com/sriainfotech/" },
+                                { Icon: InstagramIcon, href: "https://www.instagram.com/risewithsria/" },
                             ].map((social, i) => (
                                 <motion.a
                                     key={i}
