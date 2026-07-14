@@ -88,7 +88,7 @@ const CustomerStoriesPage = () => {
             </h2>
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-5" />
             <p className="text-slate-500 leading-relaxed">
-              From enterprise SAP implementations to custom digital platforms, see how SRIA Infotech has helped organisations across industries transform their operations and achieve lasting growth.
+              From enterprise SAP implementations to custom digital platforms, see how Sria Infotech has helped organisations across industries transform their operations and achieve lasting growth.
             </p>
           </motion.div>
 
@@ -257,7 +257,7 @@ const CustomerStoriesPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Success Story?</span>
             </h2>
             <p className="text-slate-400 text-sm max-w-xl mx-auto mb-8">
-              Join hundreds of businesses that have transformed their operations with SRIA Infotech's enterprise solutions.
+              Join hundreds of businesses that have transformed their operations with Sria Infotech's enterprise solutions.
             </p>
             <Link to="/contactus">
               <motion.button

@@ -31,7 +31,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const SRIA_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000";
+const Sria_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000";
 
 /* ── Fonts (Bitter / IBM Plex Sans / IBM Plex Mono) ───────────────────────── */
 
@@ -236,7 +236,7 @@ const SAPAnalytics = () => {
       <nav className="sticky top-0 z-50 bg-[#0C2233]/[.94] backdrop-blur-md border-b border-white/[.08] shadow-[0_1px_0_rgba(0,0,0,0.2)]">
         <div className="max-w-[1180px] mx-auto px-6 flex items-center justify-between h-16">
           <a className="flex items-center no-underline" href="#top">
-            <img src={SRIA_LOGO} alt="Sria Infotech" className="h-24 w-auto block" />
+            <img src={Sria_LOGO} alt="Sria Infotech" className="h-24 w-auto block" />
           </a>
           <ul className="flex items-center gap-7 list-none">
             {QUICK_LINKS.map((l) => (
@@ -706,7 +706,7 @@ const SAPAnalytics = () => {
       <footer className="bg-[#081826] text-[#7E93A2] text-[13px]">
         <div className="max-w-[1180px] mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between gap-8 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <img src={SRIA_LOGO} alt="Sria Infotech" className="h-24 w-auto block" />
+            <img src={Sria_LOGO} alt="Sria Infotech" className="h-24 w-auto block" />
             <p className="max-w-[280px] text-xs leading-relaxed">Turning SAP data into governed, real-time decision-making — from shop floor to boardroom.</p>
           </div>
           <div className="flex gap-10 flex-wrap">

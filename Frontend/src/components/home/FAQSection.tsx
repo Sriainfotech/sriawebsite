@@ -8,29 +8,29 @@ interface FAQItem {
 
 const FAQS: FAQItem[] = [
   {
-    question: "What does SRIA Infotech do?",
+    question: "What does Sria Infotech do?",
     answer:
-      "SRIA Infotech is a digital transformation company specializing in SAP consulting, implementation, rollouts, upgrades, and ongoing support, alongside custom application development and data analytics services for enterprises.",
+      "Sria Infotech is a digital transformation company specializing in SAP consulting, implementation, rollouts, upgrades, and ongoing support, alongside custom application development and data analytics services for enterprises.",
   },
   {
-    question: "Where is SRIA Infotech located?",
+    question: "Where is Sria Infotech located?",
     answer:
-      "SRIA Infotech is headquartered in Hyderabad, Telangana, India, and serves clients across India, the United States, Hong Kong, Kenya, and Belgium.",
+      "Sria Infotech is headquartered in Hyderabad, Telangana, India, and serves clients across India, the United States, Hong Kong, Kenya, and Belgium.",
   },
   {
-    question: "Is SRIA Infotech an SAP partner?",
+    question: "Is Sria Infotech an SAP partner?",
     answer:
-      "Yes, SRIA Infotech is an SAP Gold certified partner, delivering SAP implementation, rollout, upgrade, and support services across SAP S/4HANA, BTP, CRM, ERP, and HXM solution areas.",
+      "Yes, Sria Infotech is an SAP Gold certified partner, delivering SAP implementation, rollout, upgrade, and support services across SAP S/4HANA, BTP, CRM, ERP, and HXM solution areas.",
   },
   {
-    question: "How many years of experience does SRIA Infotech have?",
+    question: "How many years of experience does Sria Infotech have?",
     answer:
-      "SRIA Infotech has over 8 years of experience delivering digital transformation and SAP consulting services to enterprises across 5 countries.",
+      "Sria Infotech has over 8 years of experience delivering digital transformation and SAP consulting services to enterprises across 5 countries.",
   },
   {
-    question: "Does SRIA Infotech work with international clients?",
+    question: "Does Sria Infotech work with international clients?",
     answer:
-      "Yes, SRIA Infotech has delivered projects for clients across India, the United States, Hong Kong, Kenya, and Belgium, spanning industries from manufacturing to staffing and hospitality.",
+      "Yes, Sria Infotech has delivered projects for clients across India, the United States, Hong Kong, Kenya, and Belgium, spanning industries from manufacturing to staffing and hospitality.",
   },
 ];
 

@@ -6,7 +6,7 @@ const InvoiceTerms = () => {
         {/* Header */}
         <div className="flex items-start justify-between mb-8 border-b pb-6">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-1">SRIA Infotech Pvt. Ltd.</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-1">Sria Infotech Pvt. Ltd.</p>
             <h1 className="text-3xl font-bold text-slate-900">Terms &amp; Conditions</h1>
             <p className="text-sm text-slate-400 mt-1">Applicable to all invoices, product sales, and service engagements</p>
           </div>
@@ -28,7 +28,7 @@ const InvoiceTerms = () => {
               All invoices are due on the date specified as the <strong>Due Date</strong> on the invoice. Payment must be
               made in full in Indian Rupees (INR) via NEFT / RTGS / Cheque / Online Transfer to the bank account
               details provided on the invoice. A late payment interest of <strong>2% per month</strong> will be charged
-              on outstanding amounts beyond the due date. SRIA Infotech reserves the right to withhold delivery of
+              on outstanding amounts beyond the due date. Sria Infotech reserves the right to withhold delivery of
               goods or services until full payment is received.
             </p>
           </section>
@@ -40,7 +40,7 @@ const InvoiceTerms = () => {
             </h2>
             <p>
               Products are delivered to the billing address unless a separate shipping address is specified.
-              Delivery timelines are estimates and SRIA Infotech shall not be liable for delays caused by the
+              Delivery timelines are estimates and Sria Infotech shall not be liable for delays caused by the
               manufacturer, courier partner, or circumstances beyond our control. Risk of loss or damage transfers
               to the buyer upon delivery. The buyer must inspect goods at the time of receipt and report any
               visible damage within <strong>48 hours</strong> of delivery.
@@ -54,9 +54,9 @@ const InvoiceTerms = () => {
             </h2>
             <p>
               Hardware products carry the <strong>manufacturer's warranty</strong> as specified in the product
-              description. SRIA Infotech acts as a reseller and does not provide any additional warranty beyond
+              description. Sria Infotech acts as a reseller and does not provide any additional warranty beyond
               what the manufacturer offers. Warranty claims must be raised directly with the manufacturer or
-              through the authorised service centre. SRIA Infotech will assist in facilitating warranty claims
+              through the authorised service centre. Sria Infotech will assist in facilitating warranty claims
               where possible but bears no liability for manufacturer decisions or timelines.
             </p>
           </section>
@@ -67,7 +67,7 @@ const InvoiceTerms = () => {
               Returns &amp; Cancellations
             </h2>
             <p>
-              Orders once placed and confirmed cannot be cancelled unless agreed in writing by SRIA Infotech.
+              Orders once placed and confirmed cannot be cancelled unless agreed in writing by Sria Infotech.
               Returns are accepted only in case of a manufacturing defect confirmed by the manufacturer or
               if the wrong product was delivered. Returns must be initiated within <strong>7 days</strong> of delivery
               in original, unopened packaging. No returns will be accepted for software, licenses, or
@@ -85,7 +85,7 @@ const InvoiceTerms = () => {
               All prices are exclusive of GST unless explicitly stated otherwise. Applicable GST (CGST + SGST or
               IGST as per the place of supply) will be charged as per prevailing rates under the GST Act, 2017.
               The buyer is responsible for providing accurate GSTIN details for input tax credit eligibility.
-              SRIA Infotech shall not be liable for any GST credit disallowance arising from incorrect or missing
+              Sria Infotech shall not be liable for any GST credit disallowance arising from incorrect or missing
               GSTIN information provided by the buyer.
             </p>
           </section>
@@ -110,8 +110,8 @@ const InvoiceTerms = () => {
               Limitation of Liability
             </h2>
             <p>
-              SRIA Infotech's maximum liability under any invoice shall be limited to the invoice value of the
-              specific product or service giving rise to the claim. SRIA Infotech shall not be liable for any
+              Sria Infotech's maximum liability under any invoice shall be limited to the invoice value of the
+              specific product or service giving rise to the claim. Sria Infotech shall not be liable for any
               indirect, incidental, special, or consequential losses including loss of profit, data, or business
               opportunity.
             </p>
@@ -134,8 +134,8 @@ const InvoiceTerms = () => {
 
         {/* Footer */}
         <div className="mt-12 pt-6 border-t flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-400">
-          <p>SRIA Infotech Pvt. Ltd. &nbsp;·&nbsp; 303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana - 500084</p>
-          <p className="sm:text-right whitespace-nowrap">© {new Date().getFullYear()} SRIA Infotech Pvt. Ltd.</p>
+          <p>Sria Infotech Pvt. Ltd. &nbsp;·&nbsp; 303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana - 500084</p>
+          <p className="sm:text-right whitespace-nowrap">© {new Date().getFullYear()} Sria Infotech Pvt. Ltd.</p>
         </div>
 
       </div>

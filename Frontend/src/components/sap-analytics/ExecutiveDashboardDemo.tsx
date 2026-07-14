@@ -255,7 +255,7 @@ export default function ExecutiveDashboardDemo() {
           </div>
           <div>
             <div style={{ color: "#fff", fontSize: 13, fontWeight: 500 }}>
-              SRIA INFOTECH PVT. LTD. <span style={{ color: "#9fc3f5" }}>| Executive Business Dashboard</span>
+              Sria INFOTECH PVT. LTD. <span style={{ color: "#9fc3f5" }}>| Executive Business Dashboard</span>
             </div>
             <div style={{ color: "#9fc3f5", fontSize: 10 }}>Last refresh: 08 Jul 2026 06:00</div>
           </div>

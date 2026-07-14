@@ -77,7 +77,7 @@ const Lvk = () => (
         },
         {
           title: "Smooth Transition",
-          description: "The team adapted quickly thanks to intuitive UI, step-by-step training, and ongoing support from SRIA.",
+          description: "The team adapted quickly thanks to intuitive UI, step-by-step training, and ongoing support from Sria.",
         },
         {
           title: "Paperless Operations",

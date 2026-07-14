@@ -112,7 +112,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  {/* Accent line */}
  <div className="flex items-center gap-3 mb-5">
  <div className="h-px w-8 bg-gradient-to-r from-orange-500 to-amber-400" />
- <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase">SRIA Infotech</span>
+ <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase">Sria Infotech</span>
  </div>
 
  <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-5">

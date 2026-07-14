@@ -39,7 +39,8 @@ function SAPFiori() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "SAP Fiori", path: "/services/sap-fiori" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/fiori.jpg?tr=f-auto,q-auto,w-2000"
+      // TODO: re-point to ImageKit once fiori.jpg is uploaded there — temporarily serving from Cloudinary since it's still live.
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/sria/Services/fiori.jpg"
       processTitle="Modernizing Enterprise UX with Intuitive Fiori Solutions"
       processDescription="From custom app design to seamless backend integration, we deliver role-based dashboards that users love."
       processSteps={[

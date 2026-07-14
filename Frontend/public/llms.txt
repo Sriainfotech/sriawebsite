@@ -1,6 +1,6 @@
-# SRIA Infotech
+# Sria Infotech
 
-> SRIA Infotech is a digital transformation company headquartered in Hyderabad, India, specializing in SAP consulting, implementation, rollouts, upgrades, and support, along with custom application development and data analytics. SRIA Infotech is an SAP Gold certified partner with over 8 years of experience serving clients across India, the United States, Hong Kong, Kenya, and Belgium.
+> Sria Infotech is a digital transformation company headquartered in Hyderabad, India, specializing in SAP consulting, implementation, rollouts, upgrades, and support, along with custom application development and data analytics. Sria Infotech is an SAP Gold certified partner with over 8 years of experience serving clients across India, the United States, Hong Kong, Kenya, and Belgium.
 
 ## Company
 

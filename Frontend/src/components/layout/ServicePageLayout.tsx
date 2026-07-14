@@ -107,7 +107,7 @@ const ServicePageLayout = ({
               <div className="rounded-2xl overflow-hidden shadow-xl h-52 lg:h-60">
                 <img
                   src="https://ik.imagekit.io/hps6th7vy/sria/Services/approach-i.jpg?tr=f-auto,q-auto,w-2000"
-                  alt="SRIA Infotech SAP consulting team collaborating on a client engagement"
+                  alt="Sria Infotech SAP consulting team collaborating on a client engagement"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 to-transparent" />
@@ -242,7 +242,7 @@ const ServicePageLayout = ({
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64">
                 <img
                   src="https://ik.imagekit.io/hps6th7vy/sria/Services/capability.jpg?tr=f-auto,q-auto,w-2000"
-                  alt="Certified SAP consultants from SRIA Infotech's expert team"
+                  alt="Certified SAP consultants from Sria Infotech's expert team"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />

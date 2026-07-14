@@ -29,7 +29,7 @@ const Careers = () => (
  <div className="container-custom">
  <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center max-w-3xl mx-auto mb-16">
  <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Why Join Us</span>
- <h2 className="section-title">Benefits at SRIA</h2>
+ <h2 className="section-title">Benefits at Sria</h2>
  </motion.div>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
  {benefits.map((b, i) => (

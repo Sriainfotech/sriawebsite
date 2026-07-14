@@ -425,7 +425,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
               </span>
             </h2>
             <p className="text-slate-400 text-sm max-w-xl mx-auto mb-8 leading-relaxed">
-              Join the growing list of businesses that have transformed their operations with SRIA Infotech's enterprise solutions.
+              Join the growing list of businesses that have transformed their operations with Sria Infotech's enterprise solutions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/contactus">

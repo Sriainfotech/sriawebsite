@@ -7,7 +7,7 @@ const sections = [
   {
     number: "1",
     title: "Introduction",
-    content: `SRIA Infotech ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by SRIA Infotech when you access or use our website and services.`,
+    content: `Sria Infotech ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by Sria Infotech when you access or use our website and services.`,
   },
   {
     number: "2",
@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
             <div>
               <p className="font-bold text-slate-900 text-sm mb-1">Your Privacy Matters</p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                SRIA Infotech is committed to protecting your personal data in compliance with the India DPDP Act 2023, GDPR, and CCPA. Read this policy carefully to understand your rights.
+                Sria Infotech is committed to protecting your personal data in compliance with the India DPDP Act 2023, GDPR, and CCPA. Read this policy carefully to understand your rights.
               </p>
             </div>
           </motion.div>

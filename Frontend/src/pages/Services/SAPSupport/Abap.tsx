@@ -50,7 +50,8 @@ function Abap() {
         { name: "SAP Support", path: "/services/sap-support" },
         { name: "ABAP Services", path: "/services/sap-abap" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/abap.jpg?tr=f-auto,q-auto,w-2000"
+      // TODO: re-point to ImageKit once abap.jpg is uploaded there — temporarily serving from Cloudinary since it's still live.
+      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/sria/Services/abap.jpg"
       processTitle="Building Future-Proof SAP Applications with Clean Code & RAP"
       processDescription="We leverage modern ABAP development models to deliver high-performance, maintainable enterprise solutions."
       processSteps={[

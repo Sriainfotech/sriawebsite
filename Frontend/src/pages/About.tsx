@@ -232,7 +232,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Sai Kumar Bonakurthi</p>
-                  <p className="text-orange-400 text-xs">Founder, Managing Director — SRIA Group of Companies</p>
+                  <p className="text-orange-400 text-xs">Founder, Managing Director — Sria Group of Companies</p>
                 </div>
               </div>
               <Link to="/about/leadership" className="inline-flex items-center gap-2 text-white/60 hover:text-orange-400 text-sm font-medium mt-5 transition-colors">
@@ -385,7 +385,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3">
-                    <p className="text-white font-bold text-xs">SRIA — Smart · Resilient · Inclusive · Agile</p>
+                    <p className="text-white font-bold text-xs">Sria — Smart · Resilient · Inclusive · Agile</p>
                   </div>
                 </div>
               </div>

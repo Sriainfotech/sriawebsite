@@ -281,7 +281,7 @@ export default function ClientsAndAssociations() {
               </span>
             </h2>
             <p className="mt-3 text-white/50 text-sm max-w-xl mx-auto">
-              From startups to enterprises, organisations worldwide rely on SRIA Infotech to power their digital growth.
+              From startups to enterprises, organisations worldwide rely on Sria Infotech to power their digital growth.
             </p>
           </div>
 

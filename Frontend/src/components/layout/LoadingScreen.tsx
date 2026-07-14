@@ -40,7 +40,7 @@ const LoadingScreen = () => {
         {/* Faded base logo — always visible as ghost */}
         <img
           src="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-2000"
-          alt="SRIA Infotech"
+          alt="Sria Infotech"
           className="w-44 md:w-52 object-contain opacity-[0.12]"
           draggable={false}
         />

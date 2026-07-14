@@ -93,7 +93,7 @@ const SolutionPageLayout = ({
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
                     <p className="text-white font-bold text-sm">{title}</p>
-                    <p className="text-white/60 text-xs mt-0.5">Powered by SRIA Infotech</p>
+                    <p className="text-white/60 text-xs mt-0.5">Powered by Sria Infotech</p>
                   </div>
                 </div>
               </div>

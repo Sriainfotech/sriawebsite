@@ -123,7 +123,7 @@ const gallery: GalleryItem[] = [
     images: ["https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-team-event-01.jpg?tr=f-auto,q-auto,w-2000"],
   },
   {
-    id: 10, type: "image", category: "Celebrations", caption: "SRIA Celebrations",
+    id: 10, type: "image", category: "Celebrations", caption: "Sria Celebrations",
     featured: true, size: "hero",
     images: [
       "https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-celebration-01.jpg?tr=f-auto,q-auto,w-2000",
@@ -138,7 +138,7 @@ const gallery: GalleryItem[] = [
     ],
   },
   {
-    id: 11, type: "image", category: "Office Life", caption: "SRIA Office & Workspace",
+    id: 11, type: "image", category: "Office Life", caption: "Sria Office & Workspace",
     size: "regular",
     images: [
       "https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-miyapur-office.png?tr=f-auto,q-auto,w-2000",
@@ -153,7 +153,7 @@ const gallery: GalleryItem[] = [
     ],
   },
   {
-    id: 111, type: "image", category: "Office Life", caption: "SRIA Office", size: "tall",
+    id: 111, type: "image", category: "Office Life", caption: "Sria Office", size: "tall",
     images: ["https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-office-photo-02.png?tr=f-auto,q-auto,w-2000"],
   },
   {
@@ -181,13 +181,13 @@ const gallery: GalleryItem[] = [
 
   // ── Videos ──
   {
-    id: 13, type: "video", category: "Videos", caption: "SRIA Team Video",
+    id: 13, type: "video", category: "Videos", caption: "Sria Team Video",
     // TODO: broken on BOTH ImageKit ("No file found") and Cloudinary (423 Locked) — this file needs to be re-uploaded to ImageKit, no working fallback exists right now.
     videoSrc: "https://ik.imagekit.io/hps6th7vy/sria/gallery/IMG_0225.mp4",
     images: [],
   },
   {
-    id: 14, type: "video", category: "Videos", caption: "SRIA Moments",
+    id: 14, type: "video", category: "Videos", caption: "Sria Moments",
     // TODO: re-point to ImageKit once IMG_1442.mp4 is uploaded there — temporarily serving from Cloudinary since it's still live.
     size: "tall", videoSrc: "https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779454744/sria/gallery/IMG_1442.mp4",
     images: [],
@@ -547,9 +547,9 @@ const Gallery: React.FC = () => {
   return (
     <div className="w-full min-h-screen bg-white">
       <PageHeader
-        title="Life at SRIA"
+        title="Life at Sria"
         subtitle="A glimpse into our culture, our people, and the moments that make us who we are."
-        breadcrumbs={[{ name: "About Us", path: "/aboutus" }, { name: "Life at SRIA", path: "/gallery" }]}
+        breadcrumbs={[{ name: "About Us", path: "/aboutus" }, { name: "Life at Sria", path: "/gallery" }]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-annual-team-gathering.jpg?tr=f-auto,q-auto,w-2000"
       />
 
@@ -610,7 +610,7 @@ const Gallery: React.FC = () => {
             </h2>
             <div className="h-px w-16 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-6" />
             <p className="text-slate-400 text-sm leading-relaxed">
-              At SRIA, we believe great work is built on great relationships. From team lunches to global summits — every moment brings us closer and drives our shared mission of digital excellence.
+              At Sria, we believe great work is built on great relationships. From team lunches to global summits — every moment brings us closer and drives our shared mission of digital excellence.
             </p>
           </motion.div>
         </div>

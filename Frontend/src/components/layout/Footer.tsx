@@ -35,6 +35,16 @@ const Footer = () => {
         { label: "SAP Concur", link: "/solutions/concur" },
         { label: "SAP Ariba", link: "/solutions/ariba" },
         { label: "SAP BTP", link: "/solutions/btp" },
+        { label: "Smart Manufacturing", link: "/solutions/manufacturing-execution" },
+        { label: "SAP PaPM", link: "/solutions/papm" },
+        { label: "Extended Warehouse Management", link: "/solutions/extended-warehouse-management" },
+        { label: "Contingent Workforce Management", link: "/solutions/fieldglass" },
+        { label: "SAP Business Network", link: "/solutions/business" },
+        { label: "Manufacturing Logistics", link: "/solutions/manufacturing-logistics" },
+        { label: "Digital Manufacturing Cloud", link: "/solutions/digital-manufacturing" },
+        { label: "Asset Performance Management", link: "/solutions/asset-performance-management" },
+        { label: "Field Service Management", link: "/solutions/field-service-management" },
+        { label: "Product Lifecycle Management", link: "/solutions/product-lifecycle" },
     ];
 
     const services = [
@@ -70,7 +80,7 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
                             <Link to="/" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000" alt="SRIA Infotech logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000" alt="Sria Infotech logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                             <Link to="https://ivcsol.com/" target="_blank" className="flex items-center group">
                                 <img src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000" alt="IVC Logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
@@ -184,7 +194,7 @@ const Footer = () => {
                 {/* Bottom bar */}
                 <div className="border-t border-white/6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-slate-600">
-                        © {currentYear} SRIA Infotech Pvt Ltd. All rights reserved.
+                        © {currentYear} Sria Infotech Pvt Ltd. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-sm text-slate-600">
                         <Link to="/privacy" className="hover:text-orange-400 transition-colors">

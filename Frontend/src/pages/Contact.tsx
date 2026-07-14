@@ -385,7 +385,7 @@ const Contact = () => {
           >
             <div className="absolute top-4 left-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-slate-100 rounded-xl px-3 py-2 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-orange-500" />
-              <span className="text-slate-700 text-xs font-semibold">SRIA Infotech, Kondapur</span>
+              <span className="text-slate-700 text-xs font-semibold">Sria Infotech, Kondapur</span>
             </div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.944798585087!2d78.36957459999999!3d17.462356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93ceea49d8d9%3A0x23e7ee8e40d707ae!2sUdaya%20Vensar%20Apartments!5e0!3m2!1sen!2sin!4v1780461869992!5m2!1sen!2sin"
@@ -394,7 +394,7 @@ const Contact = () => {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="SRIA Infotech Location"
+              title="Sria Infotech Location"
             />
           </motion.div>
         </div>

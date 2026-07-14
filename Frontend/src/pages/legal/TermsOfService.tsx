@@ -12,7 +12,7 @@ const sections = [
   {
     number: "2",
     title: "Use License",
-    content: `Permission is granted to temporarily download one copy of the materials on SRIA Infotech's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:`,
+    content: `Permission is granted to temporarily download one copy of the materials on Sria Infotech's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:`,
     bullets: [
       "Modify or copy the materials.",
       "Use the materials for any commercial purpose or public display.",
@@ -23,7 +23,7 @@ const sections = [
   {
     number: "3",
     title: "Disclaimer",
-    content: `The materials on SRIA Infotech's website are provided on an 'as is' basis. SRIA Infotech makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.`,
+    content: `The materials on Sria Infotech's website are provided on an 'as is' basis. Sria Infotech makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.`,
   },
   {
     number: "4",
@@ -57,7 +57,7 @@ const TermsOfService = () => {
             <div>
               <p className="font-bold text-slate-900 text-sm mb-1">Please Read Carefully</p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                These Terms of Service govern your use of the SRIA Infotech website. By continuing to use our services, you confirm that you have read, understood, and agree to be bound by these terms.
+                These Terms of Service govern your use of the Sria Infotech website. By continuing to use our services, you confirm that you have read, understood, and agree to be bound by these terms.
               </p>
             </div>
           </motion.div>

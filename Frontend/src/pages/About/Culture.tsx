@@ -77,7 +77,7 @@ const Culture: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-white">
       <PageHeader
         title="Office Inauguration – Mulugu"
-        subtitle="Celebrating the opening of our Mulugu office — a proud milestone for the SRIA family and the local community."
+        subtitle="Celebrating the opening of our Mulugu office — a proud milestone for the Sria family and the local community."
       />
 
       {/* Photo Grid */}

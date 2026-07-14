@@ -15,7 +15,7 @@ const leaders = [
     name: "Ashwini Ganji",
     designation: "Chairman — Sria Group of Companies",
     description:
-      "Chairman - SRIA Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
+      "Chairman - Sria Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
     image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-2000",
     linkedinUrl: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
     email: "admin@sriainfotech.com",
@@ -24,7 +24,7 @@ const leaders = [
     name: "Sai Kumar Bonakurthi",
     designation: "Founder, Director — Sria Group of Companies",
     description:
-      "Founder, Managing Director - SRIA Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
+      "Founder, Managing Director - Sria Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
     image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-2000",
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
@@ -33,7 +33,7 @@ const leaders = [
     name: "Ravikumar Rangari",
     designation: "Co-Founder, Executive Chairman — Sria Group of Companies",
     description:
-      "Co-Founder, Executive Chairman - SRIA Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
+      "Co-Founder, Executive Chairman - Sria Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
     image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-2000",
     linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
@@ -79,7 +79,7 @@ function LeaderShip() {
           >
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Leaders</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              The Visionaries Behind SRIA
+              The Visionaries Behind Sria
             </h2>
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -214,7 +214,7 @@ function LeaderShip() {
                 From our humble beginnings to where we stand today, our journey has always been driven by a single purpose: to deliver innovation with impact. We take pride not only in building ERP and digital solutions, but also in creating opportunities that uplift communities, empower rural talent, and bridge the digital divide.
               </p>
               <p className="text-slate-300 leading-relaxed text-sm mb-6">
-                In today's fast-changing world, success depends on agility, inclusiveness, and resilience. These values are at the core of our philosophy—Smart, Resilient, Inclusive, Agile (SRIA)—guiding us in every decision and every partnership.
+                In today's fast-changing world, success depends on agility, inclusiveness, and resilience. These values are at the core of our philosophy—Smart, Resilient, Inclusive, Agile (Sria)—guiding us in every decision and every partnership.
               </p>
               <p className="text-slate-300 leading-relaxed text-sm mb-8">
                 As Chairman, I envision Sria Infotech as a company that not only enables businesses to thrive but also shapes the future of young talent by preparing them for the AI-driven era of innovation. With strong partnerships, dedicated teams, and a relentless commitment to excellence, we are confident of building a brighter, more sustainable future.
@@ -228,7 +228,7 @@ function LeaderShip() {
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Ashwini Ganji</p>
-                  <p className="text-orange-400 text-xs">Chairman, SRIA Group of Companies</p>
+                  <p className="text-orange-400 text-xs">Chairman, Sria Group of Companies</p>
                 </div>
               </div>
             </motion.div>

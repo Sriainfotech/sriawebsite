@@ -147,7 +147,7 @@ function IVCSolutions() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-                    <p className="text-white font-bold text-sm">IVC Solutions × SRIA Infotech</p>
+                    <p className="text-white font-bold text-sm">IVC Solutions × Sria Infotech</p>
                     <p className="text-white/60 text-xs mt-0.5">SAP Gold Partner · Asia Pacific · Since 2020</p>
                   </div>
                 </div>

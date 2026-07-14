@@ -41,7 +41,7 @@ const CTASection = () => {
  </h2>
 
  <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
- Join industry leaders who trust SRIA Infotech for their most critical enterprise challenges. Let's build the future together.
+ Join industry leaders who trust Sria Infotech for their most critical enterprise challenges. Let's build the future together.
  </p>
 
  <motion.div

@@ -113,20 +113,20 @@ const AppStore: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Page header — matches SRIA style */}
+      {/* Page header — matches Sria style */}
       <div className="bg-slate-950 pt-24 pb-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-gradient-to-r from-orange-500 to-amber-400" />
             <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-              SRIA Infotech
+              Sria Infotech
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
             App Store
           </h1>
           <p className="text-white/50 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-            All SRIA Infotech products in one place
+            All Sria Infotech products in one place
           </p>
         </div>
       </div>
@@ -229,7 +229,7 @@ const AppStore: React.FC = () => {
 
         {/* Footer note */}
         <p className="text-center text-gray-300 text-xs mt-12 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-          More apps coming soon · SRIA Infotech
+          More apps coming soon · Sria Infotech
         </p>
       </div>
     </div>
