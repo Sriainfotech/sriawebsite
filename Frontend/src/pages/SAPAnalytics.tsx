@@ -290,7 +290,7 @@ const SAPAnalytics = () => {
                   onClick={() => setShowDemo(true)}
                   className="inline-block px-[26px] py-3.5 rounded-lg font-semibold text-[15px] border border-white/[.35] text-white hover:border-white hover:bg-white/5 transition-colors"
                 >
-                  See live dashboard samples
+                  Explore sample dashboard
                 </button>
               </div>
               <div className="flex flex-wrap gap-2.5 mt-10">
