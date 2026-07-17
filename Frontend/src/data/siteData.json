@@ -33,28 +33,29 @@
             "id": 1,
             "title": "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
             "category": "Partnership",
-            "image": "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000",
+            "image": "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-900",
+            "imageFit": "contain",
             "readMoreLink": "/partners/ivc-solutions"
         },
         {
             "id": 2,
             "title": "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
             "category": "SAP & Automation",
-            "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
+            "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-900",
             "readMoreLink": "/patil"
         },
         {
             "id": 3,
             "title": "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
             "category": "Digital Transformation",
-            "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-2000",
+            "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-900",
             "readMoreLink": "/hills"
         },
         {
             "id": 4,
             "title": "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
             "category": "Odoo CRM",
-            "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
+            "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-900",
             "readMoreLink": "/Lvk"
         }
     ],

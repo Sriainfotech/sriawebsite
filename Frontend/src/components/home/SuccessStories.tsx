@@ -45,10 +45,15 @@ const SuccessStories = () => {
  transition={{ duration: 0.3 }}
  className="group relative rounded-3xl overflow-hidden h-[480px] cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500"
  >
+ {story.imageFit === "contain" && (
+ <div className="absolute inset-0 bg-slate-900" />
+ )}
  <img
  src={story.image}
  alt={story.title}
- className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+ className={`absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-108 ${
+ story.imageFit === "contain" ? "object-contain p-12" : "object-cover"
+ }`}
  />
 
  {/* Base gradient */}

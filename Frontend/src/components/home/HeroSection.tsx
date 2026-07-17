@@ -38,8 +38,8 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                 setIsOpen(false);
                 setFormData({ name: "", email: "", phone: "" });
                 const link = document.createElement('a');
-                link.href = '/Sria_Company_Profile.pdf';
-                link.download = 'Sria_Company_Profile.pdf';
+                link.href = '/SRIA_Company_Profile.pdf';
+                link.download = 'SRIA_Company_Profile.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);

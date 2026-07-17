@@ -62,10 +62,15 @@ const SuccessStories = () => {
                     whileHover={{ y: -6 }}
                     className="group relative rounded-2xl overflow-hidden h-[420px] cursor-pointer border border-slate-100 hover:border-orange-200 shadow-sm hover:shadow-xl transition-all duration-300"
                   >
+                    {story.imageFit === "contain" && (
+                      <div className="absolute inset-0 bg-white" />
+                    )}
                     <img
                       src={story.image}
                       alt={story.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className={`relative w-full h-full transition-transform duration-700 group-hover:scale-105 ${
+                        story.imageFit === "contain" ? "object-contain p-10" : "object-cover"
+                      }`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
 
