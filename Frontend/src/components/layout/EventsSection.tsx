@@ -78,8 +78,8 @@ const EventsSection = () => {
                 <div className="h-px bg-slate-100 mb-5" />
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center gap-1.5 text-slate-400 text-xs">
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    View Details
+                    {/* <ExternalLink className="w-3.5 h-3.5" />
+                    View Details */}
                   </div>
                   <div className="flex items-center gap-1 text-[10px] font-medium text-slate-400">
                     <Calendar className="w-3 h-3" />

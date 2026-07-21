@@ -75,7 +75,7 @@ const ASSOCIATIONS: Association[] = [
   },
   {
     name: "BSNL Skill Development",
-    tag: "Telecom Partner",
+    tag: "Skill Development Partner",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000",
   },
   {
@@ -143,7 +143,7 @@ function ClientCard({ client }: ClientCardProps) {
   return (
     <div className="flex-shrink-0 w-52 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-orange-400/30 transition-all duration-300 group overflow-hidden">
       <div className={`h-1 w-full bg-gradient-to-r ${accent}`} />
-      <div className="p-4">
+      <div className="p-4 flex flex-col items-center text-center">
         <div className={`w-16 h-16 rounded-lg overflow-hidden mb-3 shadow-lg flex-shrink-0 ${imgFailed ? `bg-gradient-to-br ${accent} flex items-center justify-center` : "bg-white p-1.5"}`}>
           {client.logo && !imgFailed ? (
             <img
@@ -159,7 +159,7 @@ function ClientCard({ client }: ClientCardProps) {
         <p className="text-white text-sm font-semibold leading-tight line-clamp-2 group-hover:text-orange-300 transition-colors">
           {client.name}
         </p>
-        <p className="mt-1.5 text-[11px] text-white/40 flex items-center gap-1">
+        <p className="mt-1.5 text-[11px] text-white/40 flex items-center justify-center gap-1">
           <span>{client.flag}</span>
           <span>{client.country}</span>
         </p>
@@ -210,7 +210,7 @@ function StatCounter({ end, label }: StatCounterProps) {
 function AssocCard({ assoc }: AssocCardProps) {
   return (
     <div className="w-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-orange-400/20 transition-all duration-300 group">
-      <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2 flex-shrink-0">
+      <div className="w-24 h-24 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2.5 flex-shrink-0">
         <img
           src={assoc.logo}
           alt={assoc.name}
@@ -218,13 +218,13 @@ function AssocCard({ assoc }: AssocCardProps) {
           onError={(e) => {
             const t = e.currentTarget;
             t.style.display = "none";
-            t.parentElement!.innerHTML = `<span class="text-orange-500 font-bold text-sm">${assoc.name.slice(0, 2).toUpperCase()}</span>`;
+            t.parentElement!.innerHTML = `<span class="text-orange-500 font-bold text-lg">${assoc.name.slice(0, 2).toUpperCase()}</span>`;
           }}
         />
       </div>
       <div className="w-full text-center flex-1 flex flex-col items-center justify-start">
         <p className="text-white font-semibold text-sm leading-snug line-clamp-2 min-h-[2.5rem] flex items-center">{assoc.name}</p>
-        <span className="inline-block mt-1 text-[10px] uppercase tracking-widest text-orange-400 border border-orange-400/30 rounded-full px-2 py-0.5 whitespace-nowrap">
+        <span className="inline-block mt-1 text-[10px] uppercase tracking-widest text-orange-400 border border-orange-400/30 rounded-full px-2 py-0.5 text-center leading-snug">
           {assoc.tag}
         </span>
       </div>
