@@ -6,9 +6,10 @@ Chart.register(...registerables);
 
 /* ── Constants (ported 1:1 from the original static dashboard) ───────────── */
 
-const NAVY = "#0B3D91";
-const SKY = "#00AEEF";
-const ORG = "#FF8C00";
+// Recolored to match the SRIA site's own brand palette (slate-800 dark neutral + orange-500/amber-400 accent pair)
+const NAVY = "#1e293b"; // slate-800 — was navy blue
+const SKY = "#fbbf24"; // amber-400 — was sky blue
+const ORG = "#f97316"; // orange-500 — site's primary accent (already close to the original)
 const GRN = "#1D9E75";
 const RED = "#C0392B";
 
@@ -180,7 +181,7 @@ export default function ExecutiveDashboardDemo() {
   const grp: Record<string, number> = {};
   ast.forEach((a) => (grp[a.c] = (grp[a.c] || 0) + a.v));
   const tclr: Record<string, string> = { Hardware: NAVY, SaaS: SKY, Services: ORG };
-  const ttxt: Record<string, string> = { Hardware: "#dce9f7", SaaS: "#04345c", Services: "#4a2800" };
+  const ttxt: Record<string, string> = { Hardware: "#fed7aa", SaaS: "#78350f", Services: "#431407" };
 
   const sc: Record<string, string> = { Active: GRN, Partial: ORG, Idle: RED };
   const topAssets = [...ast].sort((a, b) => b.v - a.v).slice(0, 6);
@@ -213,7 +214,7 @@ export default function ExecutiveDashboardDemo() {
 
     mk("c3", c3Ref.current, {
       type: "bar",
-      data: { labels: byU.map((x) => x.u), datasets: [{ data: byU.map((x) => x.v), backgroundColor: [NAVY, "#2a5cb0", SKY, "#7fb3e8"], borderRadius: 3 }] },
+      data: { labels: byU.map((x) => x.u), datasets: [{ data: byU.map((x) => x.v), backgroundColor: [NAVY, "#c2410c", ORG, SKY], borderRadius: 3 }] },
       options: {
         ...makeGridOpt(),
         indexAxis: "y",
@@ -234,7 +235,7 @@ export default function ExecutiveDashboardDemo() {
       type: "line",
       data: {
         labels: MONTHS,
-        datasets: [{ data: byM.map((x) => Math.round(x.rev - x.cost)), borderColor: SKY, borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true, backgroundColor: "rgba(0,174,239,0.12)" }],
+        datasets: [{ data: byM.map((x) => Math.round(x.rev - x.cost)), borderColor: ORG, borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true, backgroundColor: "rgba(249,115,22,0.12)" }],
       },
       options: makeGridOpt(),
     });
@@ -248,16 +249,16 @@ export default function ExecutiveDashboardDemo() {
 
   return (
     <div style={{ background: "#FFFFFF", border: "0.5px solid #E2E8F0", borderRadius: 12, padding: 14, fontFamily: "'Segoe UI',sans-serif" }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#0B3D91", borderRadius: 10, padding: "10px 14px", marginBottom: 10 }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#1e293b", borderRadius: 10, padding: "10px 14px", marginBottom: 10 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ background: "#fff", borderRadius: 8, padding: "5px 8px", display: "flex", alignItems: "center" }}>
             <img src="/sap-analytics/exec-dashboard-logo.png" alt="Sria Infotech logo" style={{ height: 34, width: "auto", display: "block" }} />
           </div>
           <div>
             <div style={{ color: "#fff", fontSize: 13, fontWeight: 500 }}>
-              Sria INFOTECH PVT. LTD. <span style={{ color: "#9fc3f5" }}>| Executive Business Dashboard</span>
+              Sria INFOTECH PVT. LTD. <span style={{ color: "#fdba74" }}>| Executive Business Dashboard</span>
             </div>
-            <div style={{ color: "#9fc3f5", fontSize: 10 }}>Last refresh: 08 Jul 2026 06:00</div>
+            <div style={{ color: "#fdba74", fontSize: 10 }}>Last refresh: 08 Jul 2026 06:00</div>
           </div>
         </div>
       </div>
@@ -300,7 +301,7 @@ export default function ExecutiveDashboardDemo() {
         {kp.map((k) => (
           <div key={k.label} style={{ background: "#F5F8FD", borderRadius: 8, padding: "8px 10px", borderLeft: `3px solid ${k.color}` }}>
             <div style={{ fontSize: 10, color: "#5F6B7A" }}>{k.label}</div>
-            <div style={{ fontSize: 15, fontWeight: 500, color: "#0B3D91" }}>
+            <div style={{ fontSize: 15, fontWeight: 500, color: "#1e293b" }}>
               <AnimatedNumber value={k.value} format={k.format} />
             </div>
           </div>
@@ -309,13 +310,13 @@ export default function ExecutiveDashboardDemo() {
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
         <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-          <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91" }}>Revenue trend</div>
+          <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b" }}>Revenue trend</div>
           <div style={{ position: "relative", height: 130 }}>
             <canvas ref={c1Ref} role="img" aria-label="Monthly revenue line chart" />
           </div>
         </div>
         <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-          <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91" }}>Revenue vs cost</div>
+          <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b" }}>Revenue vs cost</div>
           <div style={{ position: "relative", height: 130 }}>
             <canvas ref={c2Ref} role="img" aria-label="Monthly revenue and cost clustered columns" />
           </div>
@@ -324,13 +325,13 @@ export default function ExecutiveDashboardDemo() {
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
         <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-          <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91" }}>Unit performance (revenue)</div>
+          <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b" }}>Unit performance (revenue)</div>
           <div style={{ position: "relative", height: 150 }}>
             <canvas ref={c3Ref} role="img" aria-label="Horizontal bar chart of revenue by business unit" />
           </div>
         </div>
         <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-          <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91" }}>Product category mix</div>
+          <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b" }}>Product category mix</div>
           <div style={{ display: "flex", gap: 10, fontSize: 11, color: "#5F6B7A", margin: "4px 0" }}>
             {CATS.map((c, i) => (
               <span key={c} style={{ display: "flex", alignItems: "center", gap: 4 }}>
@@ -347,7 +348,7 @@ export default function ExecutiveDashboardDemo() {
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
         <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-          <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91", marginBottom: 6 }}>Asset distribution (value)</div>
+          <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b", marginBottom: 6 }}>Asset distribution (value)</div>
           <div style={{ display: "flex", gap: 2, height: 130, borderRadius: 6, overflow: "hidden" }}>
             {Object.entries(grp).length ? (
               Object.entries(grp)
@@ -365,7 +366,7 @@ export default function ExecutiveDashboardDemo() {
           </div>
         </div>
         <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-          <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91" }}>Monthly profit growth</div>
+          <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b" }}>Monthly profit growth</div>
           <div style={{ position: "relative", height: 140 }}>
             <canvas ref={c6Ref} role="img" aria-label="Area chart of monthly profit" />
           </div>
@@ -373,10 +374,10 @@ export default function ExecutiveDashboardDemo() {
       </div>
 
       <div style={{ border: "0.5px solid #E2E8F0", borderRadius: 10, padding: "8px 10px" }}>
-        <div style={{ fontSize: 11, fontWeight: 500, color: "#0B3D91", marginBottom: 6 }}>Top assets</div>
+        <div style={{ fontSize: 11, fontWeight: 500, color: "#1e293b", marginBottom: 6 }}>Top assets</div>
         <table style={{ width: "100%", fontSize: 11, borderCollapse: "collapse", tableLayout: "fixed" }}>
           <thead>
-            <tr style={{ background: "#0B3D91", color: "#fff" }}>
+            <tr style={{ background: "#1e293b", color: "#fff" }}>
               <th style={{ padding: "5px 8px", textAlign: "left", fontWeight: 500, width: "30%" }}>Asset</th>
               <th style={{ padding: "5px 8px", textAlign: "left", fontWeight: 500 }}>Unit</th>
               <th style={{ padding: "5px 8px", textAlign: "left", fontWeight: 500 }}>Category</th>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import ExecutiveDashboardDemo from "@/components/sap-analytics/ExecutiveDashboardDemo";
 import {
   LayoutGrid,
@@ -30,30 +32,6 @@ import {
   Target,
   ChevronRight,
 } from "lucide-react";
-
-const Sria_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000";
-
-/* ── Fonts (Bitter / IBM Plex Sans / IBM Plex Mono) ───────────────────────── */
-
-function useProposalFonts() {
-  useEffect(() => {
-    const links = [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
-      },
-    ];
-    const created = links.map((attrs) => {
-      const el = document.createElement("link");
-      Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k === "crossOrigin" ? "crossorigin" : k, v));
-      document.head.appendChild(el);
-      return el;
-    });
-    return () => created.forEach((el) => el.remove());
-  }, []);
-}
 
 /* ── Reveal-on-scroll wrapper ─────────────────────────────────────────────── */
 
@@ -182,30 +160,30 @@ const STATS = [
   { value: "8–14", label: "Weeks to go-live" },
 ];
 
-const QUICK_LINKS = [
-  { label: "Why now", href: "#problem" },
-  { label: "Architectures", href: "#solutions" },
-  { label: "Dashboards", href: "#gallery" },
-  { label: "Approach", href: "#approach" },
-];
-
 /* ── Reusable bits ─────────────────────────────────────────────────────────── */
 
 function Eyebrow({ children, dark = false, center = false }: { children: React.ReactNode; dark?: boolean; center?: boolean }) {
   return (
-    <p className={`font-sapMono text-xs tracking-[.22em] uppercase flex items-center gap-3 ${center ? "justify-center" : ""} ${dark ? "text-[#E8A33D]" : "text-[#14707E]"}`}>
-      <span className={`h-px w-6 ${dark ? "bg-[#E8A33D]/60" : "bg-[#14707E]/50"}`} />
+    <span className={`inline-block font-semibold tracking-widest uppercase text-xs mb-3 ${dark ? "text-orange-400" : "text-orange-500"} ${center ? "block text-center" : ""}`}>
       {children}
-      {center && <span className={`h-px w-6 ${dark ? "bg-[#E8A33D]/60" : "bg-[#14707E]/50"}`} />}
-    </p>
+    </span>
+  );
+}
+
+function SectionHeading({ children, dark = false, center = false, className = "" }: { children: React.ReactNode; dark?: boolean; center?: boolean; className?: string }) {
+  return (
+    <>
+      <h2 className={`text-2xl md:text-3xl font-heading font-bold leading-tight mb-4 ${dark ? "text-white" : "text-slate-900"} ${center ? "text-center" : ""} ${className}`}>
+        {children}
+      </h2>
+      <div className={`h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-5 ${center ? "mx-auto" : ""}`} />
+    </>
   );
 }
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 
 const SAPAnalytics = () => {
-  useProposalFonts();
-
   const [activeSol, setActiveSol] = useState<SolutionKey>("fabric");
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
@@ -233,69 +211,47 @@ const SAPAnalytics = () => {
   const visibleShots = activeFilter === "all" ? GALLERY_ITEMS : GALLERY_ITEMS.filter((s) => s.cat === activeFilter);
 
   return (
-    <div className="font-sapBody text-[#0C2233] bg-[#FBFAF7] text-base leading-relaxed" style={{ scrollBehavior: "smooth" }}>
-      {/* ── NAV ── */}
-      <nav className="sticky top-0 z-50 bg-[#0C2233]/[.94] backdrop-blur-md border-b border-white/[.08] shadow-[0_1px_0_rgba(0,0,0,0.2)]">
-        <div className="max-w-[1180px] mx-auto px-6 flex items-center justify-between h-16">
-          <a className="flex items-center no-underline" href="#top">
-            <img src={Sria_LOGO} alt="Sria Infotech" className="h-24 w-auto block" />
-          </a>
-          <ul className="flex items-center gap-7 list-none">
-            {QUICK_LINKS.map((l) => (
-              <li key={l.href} className="hidden lg:block">
-                <a className="text-[#CBD9E2] no-underline text-sm font-medium hover:text-white transition-colors" href={l.href}>{l.label}</a>
-              </li>
-            ))}
-            <li>
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-1.5 bg-[#E8A33D] text-[#0C2233] no-underline text-sm font-semibold px-[18px] py-[9px] rounded-md hover:bg-[#F0B357] transition-colors"
-              >
-                Book a walkthrough
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <div className="bg-white text-slate-900" style={{ scrollBehavior: "smooth" }}>
+      <Navbar />
 
       {/* ── HERO ── */}
-      <header id="top" className="relative overflow-hidden text-white pt-[100px] pb-20 bg-gradient-to-br from-[#0C2233] via-[#0F2E45] to-[#123B52]">
-        <div className="absolute -right-[140px] -top-[140px] w-[520px] h-[520px] rounded-full bg-[radial-gradient(circle,rgba(20,112,126,.35),transparent_65%)] pointer-events-none" />
-        <div className="absolute left-[-120px] bottom-[-160px] w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,rgba(232,163,61,.16),transparent_65%)] pointer-events-none" />
+      <header id="top" className="relative overflow-hidden text-white pt-20 pb-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
         <div
           className="absolute inset-0 opacity-[0.05] pointer-events-none"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)", backgroundSize: "56px 56px" }}
         />
 
-        <div className="max-w-[1180px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
           <div className="grid lg:grid-cols-[1fr_460px] gap-14 items-center">
             <div>
               <span className="inline-flex items-center gap-2 bg-white/5 border border-white/15 rounded-full px-4 py-1.5 mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-[#E8A33D]" />
-                <span className="font-sapMono text-[11px] tracking-[.18em] uppercase text-[#E8A33D]">Strategic Technology Proposal</span>
+                <Sparkles className="w-3.5 h-3.5 text-orange-400" />
+                <span className="text-[11px] font-semibold tracking-[.18em] uppercase text-orange-400">Strategic Technology Proposal</span>
               </span>
-              <h1 className="font-sapDisplay leading-[1.12] font-extrabold text-4xl sm:text-5xl lg:text-[56px] max-w-[640px]">
-                Your SAP already has the answers. <span className="text-[#E8A33D]">Your leadership can't see them.</span>
+              <h1 className="font-heading leading-[1.12] font-bold text-4xl sm:text-5xl lg:text-[56px] max-w-[640px]">
+                Your SAP already has the answers. <span className="text-orange-400">Your leadership can't see them.</span>
               </h1>
-              <p className="mt-6 mb-8 text-lg text-[#C6D6DF] max-w-[560px]">
+              <p className="mt-6 mb-8 text-lg text-slate-300 max-w-[560px]">
                 Sria Infotech turns raw SAP data into interactive dashboards, automated reporting and live KPI monitoring — one governed, trusted source of truth from shop floor to boardroom.
               </p>
               <div className="flex gap-3.5 flex-wrap">
-                <Link to="/contact" className="group inline-flex items-center gap-2 px-[26px] py-3.5 rounded-lg font-semibold text-[15px] no-underline bg-[#E8A33D] text-[#0C2233] hover:bg-[#F0B357] transition-colors shadow-[0_10px_30px_rgba(232,163,61,0.25)]">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 px-[26px] py-3.5 rounded-xl font-bold text-[15px] bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
+                >
                   Book a walkthrough
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <button
                   onClick={() => setShowDemo(true)}
-                  className="inline-block px-[26px] py-3.5 rounded-lg font-semibold text-[15px] border border-white/[.35] text-white hover:border-white hover:bg-white/5 transition-colors"
+                  className="inline-block px-[26px] py-3.5 rounded-xl font-bold text-[15px] border border-white/30 text-white hover:border-white hover:bg-white/5 transition-colors"
                 >
                   Explore sample dashboard
                 </button>
               </div>
               <div className="flex flex-wrap gap-2.5 mt-10">
                 {["Executive", "Finance", "Sales", "Procurement", "Inventory", "Manufacturing", "HR", "Supply Chain"].map((s) => (
-                  <span key={s} className="font-sapMono text-xs tracking-wide border border-white/25 text-[#D8E4EA] px-3.5 py-[7px] rounded-full">{s}</span>
+                  <span key={s} className="text-xs font-medium tracking-wide border border-white/25 text-slate-200 px-3.5 py-[7px] rounded-full">{s}</span>
                 ))}
               </div>
             </div>
@@ -307,23 +263,23 @@ const SAPAnalytics = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="hidden lg:block relative"
             >
-              <div className="absolute -inset-4 bg-[#14707E]/20 rounded-2xl blur-2xl" />
-              <div className="relative rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-[#0F2E45]">
-                <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#0C2233] border-b border-white/10">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#E8695A]" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#E8A33D]" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#5FBF8A]" />
-                  <span className="ml-3 font-sapMono text-[10px] text-[#7E93A2] tracking-wide">CFO Dashboard — Sample Report</span>
+              <div className="absolute -inset-4 bg-amber-400/20 rounded-2xl blur-2xl" />
+              <div className="relative rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-slate-800">
+                <div className="flex items-center gap-1.5 px-4 py-2.5 bg-slate-950 border-b border-white/10">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                  <span className="ml-3 text-[10px] text-slate-400 tracking-wide">CFO Dashboard — Sample Report</span>
                 </div>
                 <img src="/sap-analytics/cfo-summary-full.jpg" alt="Sample CFO dashboard delivered for a client" className="w-full h-auto block" />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-white rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#E7F1F0] flex items-center justify-center">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-[#14707E]" />
+                <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center">
+                  <CheckCircle2 className="w-4.5 h-4.5 text-amber-500" />
                 </div>
                 <div>
-                  <p className="text-[#0C2233] font-bold text-sm leading-tight">Real client deliverable</p>
-                  <p className="text-[#5B7080] text-xs">Built on live SAP data</p>
+                  <p className="text-slate-900 font-bold text-sm leading-tight">Real client deliverable</p>
+                  <p className="text-slate-500 text-xs">Built on live SAP data</p>
                 </div>
               </div>
             </motion.div>
@@ -331,9 +287,9 @@ const SAPAnalytics = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-16">
             {STATS.map((s) => (
-              <div key={s.label} className="bg-[#0F2E45]/60 px-5 py-5 text-center">
-                <p className="font-sapDisplay text-2xl sm:text-3xl font-bold text-[#E8A33D]">{s.value}</p>
-                <p className="text-[#9FB4C0] text-xs mt-1">{s.label}</p>
+              <div key={s.label} className="bg-slate-800/60 px-5 py-5 text-center">
+                <p className="font-heading text-2xl sm:text-3xl font-bold text-orange-400">{s.value}</p>
+                <p className="text-slate-400 text-xs mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -342,25 +298,25 @@ const SAPAnalytics = () => {
 
       {/* ── PROBLEM ── */}
       <Reveal>
-        <section id="problem" className="py-[88px]">
-          <div className="max-w-[1180px] mx-auto px-6">
+        <section id="problem" className="py-20">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[380px_1fr] gap-12">
               <div>
                 <Eyebrow>The cost of yesterday's data</Eyebrow>
-                <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5">Why real-time visibility matters</h2>
-                <p className="text-[#5B7080]">Most enterprises run their most critical processes inside SAP, yet decision-makers still wait on spreadsheets that arrive too late to change the outcome.</p>
+                <SectionHeading>Why real-time visibility matters</SectionHeading>
+                <p className="text-slate-500">Most enterprises run their most critical processes inside SAP, yet decision-makers still wait on spreadsheets that arrive too late to change the outcome.</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {PROBLEM_CARDS.map((c, i) => (
                   <Reveal key={c.title} delay={i * 0.06}>
-                    <div className="group h-full flex gap-4 bg-white border border-[#D8E2E1] rounded-xl p-6 hover:border-[#E8A33D]/50 hover:shadow-[0_16px_32px_rgba(12,34,51,0.08)] transition-all duration-300">
-                      <div className="w-11 h-11 rounded-lg bg-[#FBF3E4] border border-[#E8A33D]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#E8A33D] transition-colors duration-300">
-                        <c.icon className="w-5 h-5 text-[#E8A33D] group-hover:text-white transition-colors duration-300" />
+                    <div className="group h-full flex gap-4 bg-white border border-slate-100 rounded-2xl p-6 hover:border-orange-200 hover:shadow-xl transition-all duration-300">
+                      <div className="w-11 h-11 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors duration-300">
+                        <c.icon className="w-5 h-5 text-orange-500 group-hover:text-white transition-colors duration-300" />
                       </div>
                       <div>
-                        <span className="font-sapMono text-[10.5px] text-[#E8A33D] tracking-[.15em] uppercase block mb-1.5">{c.tag}</span>
-                        <h3 className="font-sapDisplay text-[17px] mb-1.5">{c.title}</h3>
-                        <p className="text-[13.5px] text-[#5B7080]">{c.text}</p>
+                        <span className="text-[10.5px] font-semibold text-orange-500 tracking-[.15em] uppercase block mb-1.5">{c.tag}</span>
+                        <h3 className="font-heading font-semibold text-[17px] mb-1.5 text-slate-900">{c.title}</h3>
+                        <p className="text-[13.5px] text-slate-500">{c.text}</p>
                       </div>
                     </div>
                   </Reveal>
@@ -373,12 +329,12 @@ const SAPAnalytics = () => {
 
       {/* ── SOLUTIONS ── */}
       <Reveal>
-        <section id="solutions" className="bg-[#0C2233] text-white relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-[420px] h-[420px] bg-[#14707E]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="max-w-[1180px] mx-auto px-6 py-[88px] relative z-10">
+        <section id="solutions" className="bg-slate-950 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-[420px] h-[420px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <Eyebrow dark>Choose your architecture</Eyebrow>
-            <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5">Four proven paths from SAP to insight</h2>
-            <p className="text-[#9FB4C0] max-w-[640px]">Select a path to see how the data flows. We recommend the architecture that fits your landscape — not the one tied to a vendor relationship.</p>
+            <SectionHeading dark>Four proven paths from SAP to insight</SectionHeading>
+            <p className="text-slate-400 max-w-[640px]">Select a path to see how the data flows. We recommend the architecture that fits your landscape — not the one tied to a vendor relationship.</p>
 
             <div className="grid lg:grid-cols-[340px_1fr] gap-6 mt-11">
               {/* Sidebar selector */}
@@ -391,26 +347,26 @@ const SAPAnalytics = () => {
                       role="tab"
                       aria-selected={selected}
                       onClick={() => setActiveSol(tab.key)}
-                      className={`group text-left font-sapBody rounded-xl p-4 border-l-2 transition-all duration-200 flex items-start gap-3.5 ${
+                      className={`group text-left rounded-xl p-4 border-l-2 transition-all duration-200 flex items-start gap-3.5 ${
                         selected
-                          ? "border-l-[#E8A33D] bg-[#16405A]"
-                          : "border-l-transparent bg-[#123146]/60 hover:bg-[#123146] hover:border-l-[#E8A33D]/40"
+                          ? "border-l-orange-500 bg-slate-700"
+                          : "border-l-transparent bg-slate-800/60 hover:bg-slate-800 hover:border-l-orange-500/40"
                       }`}
                     >
-                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${selected ? "bg-[#E8A33D] text-[#0C2233]" : "bg-white/5 text-white/40 group-hover:text-white/70"}`}>
+                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${selected ? "bg-orange-500 text-slate-950" : "bg-white/5 text-white/40 group-hover:text-white/70"}`}>
                         <tab.icon className="w-4.5 h-4.5" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="font-sapMono text-[10px] text-[#E8A33D] tracking-[.2em]">{tab.num}</span>
+                          <span className="text-[10px] font-semibold text-orange-400 tracking-[.2em]">{tab.num}</span>
                           {tab.recommended && (
-                            <span className="font-sapMono text-[9px] bg-[#E8A33D] text-[#0C2233] px-[7px] py-[1px] rounded-full tracking-[.1em]">★ RECOMMENDED</span>
+                            <span className="text-[9px] font-bold bg-orange-500 text-slate-950 px-[7px] py-[1px] rounded-full tracking-[.1em]">★ RECOMMENDED</span>
                           )}
                         </div>
-                        <strong className={`font-sapDisplay block text-[15.5px] mt-0.5 ${selected ? "text-white" : "text-white/85"}`}>{tab.name}</strong>
-                        <small className="text-[#9FB4C0] text-[12px] leading-[1.4] block mt-1">{tab.blurb}</small>
+                        <strong className={`font-heading block text-[15.5px] mt-0.5 ${selected ? "text-white" : "text-white/85"}`}>{tab.name}</strong>
+                        <small className="text-slate-400 text-[12px] leading-[1.4] block mt-1">{tab.blurb}</small>
                       </div>
-                      <ChevronRight className={`w-4 h-4 flex-shrink-0 mt-1 transition-all ${selected ? "text-[#E8A33D] translate-x-0.5" : "text-white/20"}`} />
+                      <ChevronRight className={`w-4 h-4 flex-shrink-0 mt-1 transition-all ${selected ? "text-orange-400 translate-x-0.5" : "text-white/20"}`} />
                     </button>
                   );
                 })}
@@ -422,25 +378,25 @@ const SAPAnalytics = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="bg-[#123146] border border-white/[.12] rounded-2xl p-7 sm:p-9"
+                className="bg-slate-800 border border-white/[.12] rounded-2xl p-7 sm:p-9"
                 role="tabpanel"
               >
                 <div className="flex items-center gap-3 mb-1">
-                  <div className="w-9 h-9 rounded-lg bg-[#E8A33D]/15 flex items-center justify-center flex-shrink-0">
-                    {(() => { const Icon = SOLUTION_TABS.find((t) => t.key === activeSol)!.icon; return <Icon className="w-4.5 h-4.5 text-[#E8A33D]" />; })()}
+                  <div className="w-9 h-9 rounded-lg bg-orange-500/15 flex items-center justify-center flex-shrink-0">
+                    {(() => { const Icon = SOLUTION_TABS.find((t) => t.key === activeSol)!.icon; return <Icon className="w-4.5 h-4.5 text-orange-400" />; })()}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-sapDisplay font-bold">{sol.t}</h3>
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold">{sol.t}</h3>
                 </div>
-                <p className="text-[#9FB4C0] mt-2 max-w-[720px] text-[15px]">{sol.d}</p>
+                <p className="text-slate-400 mt-2 max-w-[720px] text-[15px]">{sol.d}</p>
 
                 <div className="flex items-stretch flex-wrap my-[26px] mb-[30px]">
                   {sol.f.map((node, i) => (
                     <div key={node} className="flex items-center">
-                      <div className="bg-[#0C2233] border border-white/[.18] rounded-[10px] px-[18px] py-4 min-w-[130px] text-center font-sapMono text-[12.5px] text-[#DCE7ED] leading-[1.4]">
+                      <div className="bg-slate-950 border border-white/[.18] rounded-[10px] px-[18px] py-4 min-w-[130px] text-center text-[12.5px] text-slate-200 leading-[1.4]">
                         {node}
                       </div>
                       {i < sol.f.length - 1 && (
-                        <div className="w-[46px] flex items-center justify-center text-[#E8A33D] text-xl" aria-hidden="true">→</div>
+                        <div className="w-[46px] flex items-center justify-center text-orange-400 text-xl" aria-hidden="true">→</div>
                       )}
                     </div>
                   ))}
@@ -448,22 +404,22 @@ const SAPAnalytics = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Features</h4>
+                    <h4 className="text-[11px] font-semibold tracking-[.2em] text-orange-400 uppercase mb-3">Features</h4>
                     <ul className="space-y-2">
                       {sol.feat.map((x) => (
-                        <li key={x} className="text-sm text-[#C6D6DF] flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-[#14707E] flex-shrink-0 mt-0.5" />
+                        <li key={x} className="text-sm text-slate-300 flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                           {x}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-sapMono text-[11px] tracking-[.2em] text-[#E8A33D] uppercase mb-3">Advantages</h4>
+                    <h4 className="text-[11px] font-semibold tracking-[.2em] text-orange-400 uppercase mb-3">Advantages</h4>
                     <ul className="space-y-2">
                       {sol.adv.map((x) => (
-                        <li key={x} className="text-sm text-[#C6D6DF] flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-[#E8A33D] flex-shrink-0 mt-0.5" />
+                        <li key={x} className="text-sm text-slate-300 flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
                           {x}
                         </li>
                       ))}
@@ -471,13 +427,13 @@ const SAPAnalytics = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-start gap-3 bg-[#0C2233] border border-white/10 rounded-xl p-4">
-                  <div className="w-8 h-8 rounded-lg bg-[#E8A33D]/15 flex items-center justify-center flex-shrink-0">
-                    <Target className="w-4 h-4 text-[#E8A33D]" />
+                <div className="mt-6 flex items-start gap-3 bg-slate-950 border border-white/10 rounded-xl p-4">
+                  <div className="w-8 h-8 rounded-lg bg-orange-500/15 flex items-center justify-center flex-shrink-0">
+                    <Target className="w-4 h-4 text-orange-400" />
                   </div>
                   <div>
-                    <p className="font-sapMono text-[10px] tracking-[.2em] text-[#E8A33D] uppercase mb-1">Best for</p>
-                    <p className="text-sm text-[#C6D6DF]">{sol.best}</p>
+                    <p className="text-[10px] font-semibold tracking-[.2em] text-orange-400 uppercase mb-1">Best for</p>
+                    <p className="text-sm text-slate-300">{sol.best}</p>
                   </div>
                 </div>
               </motion.div>
@@ -488,31 +444,31 @@ const SAPAnalytics = () => {
 
       {/* ── MATRIX ── */}
       <Reveal>
-        <section id="matrix" className="py-[88px]">
-          <div className="max-w-[1180px] mx-auto px-6">
+        <section id="matrix" className="py-20">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <Eyebrow>Side by side</Eyebrow>
-            <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5">Solution comparison matrix</h2>
+            <SectionHeading>Solution comparison matrix</SectionHeading>
 
             {/* Desktop table */}
-            <div className="hidden md:block overflow-x-auto mt-[38px] border border-[#D8E2E1] rounded-xl bg-white shadow-[0_4px_20px_rgba(12,34,51,0.04)]">
+            <div className="hidden md:block overflow-x-auto mt-[38px] border border-slate-100 rounded-2xl bg-white shadow-sm">
               <table className="border-collapse w-full min-w-[760px] text-sm">
                 <thead>
                   <tr>
-                    <th className="p-3.5 px-4 text-left border-b border-[#D8E2E1] bg-[#0C2233] text-white font-sapMono text-xs tracking-wide font-medium">Dimension</th>
-                    <th className="p-3.5 px-4 text-left border-b border-[#D8E2E1] bg-[#0C2233] text-white font-sapMono text-xs tracking-wide font-medium">SAP HANA + Power BI</th>
-                    <th className="p-3.5 px-4 text-left border-b border-[#D8E2E1] bg-[#0C2233] text-white font-sapMono text-xs tracking-wide font-medium">GCP BigQuery</th>
-                    <th className="p-3.5 px-4 text-left border-b border-[#D8E2E1] bg-[#E8A33D] text-[#0C2233] font-sapMono text-xs tracking-wide font-medium">MS Fabric + Power BI</th>
-                    <th className="p-3.5 px-4 text-left border-b border-[#D8E2E1] bg-[#0C2233] text-white font-sapMono text-xs tracking-wide font-medium">SAP Datasphere + SAC</th>
+                    <th className="p-3.5 px-4 text-left border-b border-slate-100 bg-slate-950 text-white text-xs tracking-wide font-semibold">Dimension</th>
+                    <th className="p-3.5 px-4 text-left border-b border-slate-100 bg-slate-950 text-white text-xs tracking-wide font-semibold">SAP HANA + Power BI</th>
+                    <th className="p-3.5 px-4 text-left border-b border-slate-100 bg-slate-950 text-white text-xs tracking-wide font-semibold">GCP BigQuery</th>
+                    <th className="p-3.5 px-4 text-left border-b border-slate-100 bg-orange-500 text-slate-950 text-xs tracking-wide font-semibold">MS Fabric + Power BI</th>
+                    <th className="p-3.5 px-4 text-left border-b border-slate-100 bg-slate-950 text-white text-xs tracking-wide font-semibold">SAP Datasphere + SAC</th>
                   </tr>
                 </thead>
                 <tbody>
                   {MATRIX_ROWS.map((row, i) => (
-                    <tr key={row.label} className="hover:bg-[#FBFAF7] transition-colors">
-                      <th className={`p-3.5 px-4 text-left font-semibold bg-[#E7F1F0] text-[13.5px] ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-[#D8E2E1]"}`}>{row.label}</th>
-                      <td className={`p-3.5 px-4 text-left ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-[#D8E2E1]"}`}>{row.hana}</td>
-                      <td className={`p-3.5 px-4 text-left ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-[#D8E2E1]"}`}>{row.gcp}</td>
-                      <td className={`p-3.5 px-4 text-left bg-[#FBF3E4] font-semibold ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-[#D8E2E1]"}`}>{row.fabric}</td>
-                      <td className={`p-3.5 px-4 text-left ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-[#D8E2E1]"}`}>{row.sap}</td>
+                    <tr key={row.label} className="hover:bg-slate-50 transition-colors">
+                      <th className={`p-3.5 px-4 text-left font-semibold bg-orange-50 text-[13.5px] ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-slate-100"}`}>{row.label}</th>
+                      <td className={`p-3.5 px-4 text-left ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-slate-100"}`}>{row.hana}</td>
+                      <td className={`p-3.5 px-4 text-left ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-slate-100"}`}>{row.gcp}</td>
+                      <td className={`p-3.5 px-4 text-left bg-orange-50 font-semibold ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-slate-100"}`}>{row.fabric}</td>
+                      <td className={`p-3.5 px-4 text-left ${i === MATRIX_ROWS.length - 1 ? "" : "border-b border-slate-100"}`}>{row.sap}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -522,13 +478,13 @@ const SAPAnalytics = () => {
             {/* Mobile stacked cards (same data, readable without horizontal scroll) */}
             <div className="md:hidden space-y-4 mt-8">
               {MATRIX_ROWS.map((row) => (
-                <div key={row.label} className="bg-white border border-[#D8E2E1] rounded-xl p-5">
-                  <p className="font-sapMono text-[11px] tracking-[.15em] uppercase text-[#5B7080] mb-3">{row.label}</p>
+                <div key={row.label} className="bg-white border border-slate-100 rounded-2xl p-5">
+                  <p className="text-[11px] font-semibold tracking-[.15em] uppercase text-slate-500 mb-3">{row.label}</p>
                   <dl className="space-y-2 text-sm">
-                    <div className="flex justify-between gap-4"><dt className="text-[#5B7080]">SAP HANA + Power BI</dt><dd className="font-medium text-right">{row.hana}</dd></div>
-                    <div className="flex justify-between gap-4"><dt className="text-[#5B7080]">GCP BigQuery</dt><dd className="font-medium text-right">{row.gcp}</dd></div>
-                    <div className="flex justify-between gap-4 bg-[#FBF3E4] -mx-2 px-2 py-1 rounded"><dt className="text-[#0C2233] font-semibold">MS Fabric + Power BI</dt><dd className="font-semibold text-right">{row.fabric}</dd></div>
-                    <div className="flex justify-between gap-4"><dt className="text-[#5B7080]">SAP Datasphere + SAC</dt><dd className="font-medium text-right">{row.sap}</dd></div>
+                    <div className="flex justify-between gap-4"><dt className="text-slate-500">SAP HANA + Power BI</dt><dd className="font-medium text-right">{row.hana}</dd></div>
+                    <div className="flex justify-between gap-4"><dt className="text-slate-500">GCP BigQuery</dt><dd className="font-medium text-right">{row.gcp}</dd></div>
+                    <div className="flex justify-between gap-4 bg-orange-50 -mx-2 px-2 py-1 rounded"><dt className="text-slate-900 font-semibold">MS Fabric + Power BI</dt><dd className="font-semibold text-right">{row.fabric}</dd></div>
+                    <div className="flex justify-between gap-4"><dt className="text-slate-500">SAP Datasphere + SAC</dt><dd className="font-medium text-right">{row.sap}</dd></div>
                   </dl>
                 </div>
               ))}
@@ -539,11 +495,11 @@ const SAPAnalytics = () => {
 
       {/* ── GALLERY ── */}
       <Reveal>
-        <section id="gallery" className="bg-white border-t border-b border-[#D8E2E1]">
-          <div className="max-w-[1180px] mx-auto px-6 py-[88px]">
+        <section id="gallery" className="bg-white border-t border-b border-slate-100">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Eyebrow>Delivered work</Eyebrow>
-            <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5">Dashboards we've built on real SAP data</h2>
-            <p className="text-[#5B7080] max-w-[640px]">Live Power BI dashboards delivered for a multi-plant manufacturing group — finance, sales, cost and working capital, all from a single governed data layer.</p>
+            <SectionHeading>Dashboards we've built on real SAP data</SectionHeading>
+            <p className="text-slate-500 max-w-[640px]">Live Power BI dashboards delivered for a multi-plant manufacturing group — finance, sales, cost and working capital, all from a single governed data layer.</p>
 
             <div className="flex gap-2.5 flex-wrap mt-[34px] mb-1.5">
               {FILTERS.map((f) => (
@@ -551,8 +507,8 @@ const SAPAnalytics = () => {
                   key={f.key}
                   onClick={() => setActiveFilter(f.key)}
                   aria-pressed={activeFilter === f.key}
-                  className={`font-sapMono text-[12.5px] tracking-wide px-[18px] py-[9px] rounded-full border transition-colors ${
-                    activeFilter === f.key ? "bg-[#0C2233] text-white border-[#0C2233]" : "bg-transparent text-[#5B7080] border-[#D8E2E1] hover:border-[#0C2233]/30"
+                  className={`text-[12.5px] font-medium tracking-wide px-[18px] py-[9px] rounded-full border transition-colors ${
+                    activeFilter === f.key ? "bg-slate-950 text-white border-slate-950" : "bg-transparent text-slate-500 border-slate-200 hover:border-slate-950/30"
                   }`}
                 >
                   {f.label}
@@ -573,25 +529,25 @@ const SAPAnalytics = () => {
                       setLightbox({ src: shot.full, alt: shot.alt });
                     }
                   }}
-                  className="group border border-[#D8E2E1] rounded-xl overflow-hidden bg-white cursor-zoom-in transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(12,34,51,0.14)] hover:border-[#14707E]/30 p-0 text-left"
+                  className="group border border-slate-100 rounded-2xl overflow-hidden bg-white cursor-zoom-in transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-orange-200 p-0 text-left"
                 >
                   {/* Browser-chrome header — every card framed the same way */}
-                  <div className="flex items-center gap-1.5 px-3.5 py-2.5 bg-[#0C2233] border-b border-white/10">
-                    <span className="w-2 h-2 rounded-full bg-[#E8695A]" />
-                    <span className="w-2 h-2 rounded-full bg-[#E8A33D]" />
-                    <span className="w-2 h-2 rounded-full bg-[#5FBF8A]" />
-                    <span className="ml-2.5 font-sapMono text-[9.5px] text-[#7E93A2] tracking-wide truncate">{shot.category.toLowerCase().replace(/\s+/g, "-")}.sriainfotech.com</span>
+                  <div className="flex items-center gap-1.5 px-3.5 py-2.5 bg-slate-950 border-b border-white/10">
+                    <span className="w-2 h-2 rounded-full bg-red-400" />
+                    <span className="w-2 h-2 rounded-full bg-orange-500" />
+                    <span className="w-2 h-2 rounded-full bg-green-400" />
+                    <span className="ml-2.5 text-[9.5px] text-slate-400 tracking-wide truncate">{shot.category.toLowerCase().replace(/\s+/g, "-")}.sriainfotech.com</span>
                   </div>
                   <div className="relative overflow-hidden aspect-[16/10]">
                     <img loading="lazy" src={shot.thumb} alt={shot.alt} className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-[#0C2233]/0 group-hover:bg-[#0C2233]/30 transition-colors duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-colors duration-300 flex items-center justify-center">
                       <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300">
-                        <ZoomIn className="w-4.5 h-4.5 text-[#0C2233]" />
+                        <ZoomIn className="w-4.5 h-4.5 text-slate-900" />
                       </div>
                     </div>
                   </div>
-                  <figcaption className="p-4 text-[13.5px] font-medium border-t border-[#D8E2E1]">
-                    <span className="inline-block font-sapMono text-[10px] text-[#14707E] tracking-[.15em] uppercase mb-1.5 bg-[#E7F1F0] px-2 py-0.5 rounded">{shot.category}</span>
+                  <figcaption className="p-4 text-[13.5px] font-medium border-t border-slate-100">
+                    <span className="inline-block text-[10px] font-semibold text-amber-600 tracking-[.15em] uppercase mb-1.5 bg-orange-50 px-2 py-0.5 rounded">{shot.category}</span>
                     <p>{shot.caption}</p>
                   </figcaption>
                 </figure>
@@ -603,11 +559,11 @@ const SAPAnalytics = () => {
 
       {/* ── APPROACH / PHASES ── */}
       <Reveal>
-        <section id="approach" className="py-[88px] bg-[#0C2233] text-white relative overflow-hidden">
-          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#14707E]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="max-w-[1180px] mx-auto px-6 relative z-10">
+        <section id="approach" className="py-20 bg-slate-950 text-white relative overflow-hidden">
+          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Eyebrow dark>Delivery methodology</Eyebrow>
-            <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5">From discovery to steady-state in seven phases</h2>
+            <SectionHeading dark>From discovery to steady-state in seven phases</SectionHeading>
 
             <div className="relative mt-16">
               <div className="hidden lg:block absolute top-[19px] left-[3%] right-[3%] h-px bg-white/15" />
@@ -615,40 +571,40 @@ const SAPAnalytics = () => {
                 {PHASES.map((p, i) => (
                   <Reveal key={p.title} delay={i * 0.05}>
                     <div className="group relative h-full text-center lg:text-left">
-                      <div className="hidden lg:flex w-10 h-10 rounded-full bg-[#123146] border-2 border-[#E8A33D] items-center justify-center mb-4 relative z-10 mx-auto lg:mx-0 group-hover:bg-[#E8A33D] transition-colors duration-300">
-                        <p.icon className="w-4.5 h-4.5 text-[#E8A33D] group-hover:text-[#0C2233] transition-colors duration-300" />
+                      <div className="hidden lg:flex w-10 h-10 rounded-full bg-slate-800 border-2 border-orange-500 items-center justify-center mb-4 relative z-10 mx-auto lg:mx-0 group-hover:bg-orange-500 transition-colors duration-300">
+                        <p.icon className="w-4.5 h-4.5 text-orange-400 group-hover:text-slate-950 transition-colors duration-300" />
                       </div>
-                      <div className="lg:hidden w-11 h-11 rounded-lg bg-[#123146] border border-[#E8A33D]/40 flex items-center justify-center mb-3 mx-auto group-hover:bg-[#E8A33D] transition-colors duration-300">
-                        <p.icon className="w-5 h-5 text-[#E8A33D] group-hover:text-[#0C2233] transition-colors duration-300" />
+                      <div className="lg:hidden w-11 h-11 rounded-lg bg-slate-800 border border-orange-500/40 flex items-center justify-center mb-3 mx-auto group-hover:bg-orange-500 transition-colors duration-300">
+                        <p.icon className="w-5 h-5 text-orange-400 group-hover:text-slate-950 transition-colors duration-300" />
                       </div>
-                      <span className="font-sapMono text-[11px] text-[#E8A33D] tracking-[.15em] block mb-1.5">{String(i + 1).padStart(2, "0")}</span>
-                      <strong className="font-sapDisplay text-[15px] block mb-1.5">{p.title}</strong>
-                      <p className="text-[12.5px] text-[#9FB4C0] leading-[1.5]">{p.text}</p>
+                      <span className="text-[11px] font-semibold text-orange-400 tracking-[.15em] block mb-1.5">{String(i + 1).padStart(2, "0")}</span>
+                      <strong className="font-heading text-[15px] block mb-1.5">{p.title}</strong>
+                      <p className="text-[12.5px] text-slate-400 leading-[1.5]">{p.text}</p>
                     </div>
                   </Reveal>
                 ))}
               </div>
             </div>
-            <p className="mt-14 text-sm text-[#9FB4C0] italic max-w-[720px] border-t border-white/10 pt-6">Most engagements move from kickoff to go-live within 8–14 weeks, depending on data complexity and the number of business areas in scope — followed by an ongoing hypercare period.</p>
+            <p className="mt-14 text-sm text-slate-400 italic max-w-[720px] border-t border-white/10 pt-6">Most engagements move from kickoff to go-live within 8–14 weeks, depending on data complexity and the number of business areas in scope — followed by an ongoing hypercare period.</p>
           </div>
         </section>
       </Reveal>
 
       {/* ── WHY ── */}
       <Reveal>
-        <section className="py-[88px] bg-[#FBFAF7]">
-          <div className="max-w-[1180px] mx-auto px-6">
+        <section className="py-20 bg-white">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <Eyebrow center>The delivery team</Eyebrow>
-            <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5 text-center">Why partner with Sria Infotech</h2>
+            <SectionHeading center>Why partner with Sria Infotech</SectionHeading>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
               {WHY_CARDS.map((c, i) => (
                 <Reveal key={c.title} delay={i * 0.06}>
-                  <div className="group h-full text-center sm:text-left bg-[#E7F1F0] border border-transparent rounded-xl p-7 hover:bg-white hover:border-[#14707E]/25 hover:shadow-[0_16px_32px_rgba(12,34,51,0.08)] transition-all duration-300">
-                    <div className="w-11 h-11 rounded-lg bg-white border border-[#14707E]/15 flex items-center justify-center mb-4 mx-auto sm:mx-0 group-hover:bg-[#14707E] transition-colors duration-300">
-                      <c.icon className="w-5 h-5 text-[#14707E] group-hover:text-white transition-colors duration-300" />
+                  <div className="group h-full text-center sm:text-left bg-orange-50 border border-transparent rounded-2xl p-7 hover:bg-white hover:border-orange-200 hover:shadow-xl transition-all duration-300">
+                    <div className="w-11 h-11 rounded-lg bg-white border border-amber-400/25 flex items-center justify-center mb-4 mx-auto sm:mx-0 group-hover:bg-amber-400 transition-colors duration-300">
+                      <c.icon className="w-5 h-5 text-amber-500 group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <h3 className="font-sapDisplay text-[19px] mb-2.5">{c.title}</h3>
-                    <p className="text-[14.5px] text-[#5B7080]">{c.text}</p>
+                    <h3 className="font-heading font-semibold text-[19px] mb-2.5 text-slate-900">{c.title}</h3>
+                    <p className="text-[14.5px] text-slate-500">{c.text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -658,45 +614,45 @@ const SAPAnalytics = () => {
       </Reveal>
 
       {/* ── CTA / CONTACT ── */}
-      <section id="contact" className="relative text-white bg-gradient-to-br from-[#0C2233] to-[#123B52] overflow-hidden">
-        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#E8A33D]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-[1180px] mx-auto px-6 py-[88px] relative z-10">
+      <section id="contact" className="relative text-white bg-gradient-to-br from-slate-950 to-slate-800 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <Eyebrow dark>Next step</Eyebrow>
-              <h2 className="font-sapDisplay leading-[1.15] font-bold text-[clamp(28px,3.6vw,40px)] my-2.5 mb-3.5 text-white max-w-[500px]">Let's build your analytics roadmap together</h2>
-              <p className="text-[#C6D6DF] max-w-[500px]">We welcome the chance to walk through any of these architectures in depth and tailor a plan to your SAP landscape. A 45-minute walkthrough is enough to map your first three dashboards.</p>
-              <a href="tel:+919701314138" className="group inline-flex items-center gap-2 mt-8 px-[26px] py-3.5 rounded-lg font-semibold text-[15px] no-underline bg-[#E8A33D] text-[#0C2233] hover:bg-[#F0B357] transition-colors shadow-[0_10px_30px_rgba(232,163,61,0.25)]">
+              <SectionHeading dark className="max-w-[500px]">Let's build your analytics roadmap together</SectionHeading>
+              <p className="text-slate-300 max-w-[500px]">We welcome the chance to walk through any of these architectures in depth and tailor a plan to your SAP landscape. A 45-minute walkthrough is enough to map your first three dashboards.</p>
+              <a href="tel:+919701314138" className="group inline-flex items-center gap-2 mt-8 px-[26px] py-3.5 rounded-xl font-bold text-[15px] bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
                 Talk to us today
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
             <div className="space-y-4">
-              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-5">
-                <div className="w-9 h-9 rounded-lg bg-[#E8A33D]/15 border border-[#E8A33D]/30 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-4 h-4 text-[#E8A33D]" />
+              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div className="w-9 h-9 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-4 h-4 text-orange-400" />
                 </div>
                 <div>
-                  <span className="block font-sapMono text-[11px] tracking-[.18em] text-[#E8A33D] uppercase mb-1.5">Phone / WhatsApp</span>
+                  <span className="block text-[11px] font-semibold tracking-[.18em] text-orange-400 uppercase mb-1.5">Phone / WhatsApp</span>
                   <a href="tel:+919701314138" className="text-white no-underline border-b border-white/30 text-sm">+91 97013 14138</a>
                 </div>
               </div>
-              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-5">
-                <div className="w-9 h-9 rounded-lg bg-[#E8A33D]/15 border border-[#E8A33D]/30 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-4 h-4 text-[#E8A33D]" />
+              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div className="w-9 h-9 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-4 h-4 text-orange-400" />
                 </div>
                 <div>
-                  <span className="block font-sapMono text-[11px] tracking-[.18em] text-[#E8A33D] uppercase mb-1.5">Email</span>
+                  <span className="block text-[11px] font-semibold tracking-[.18em] text-orange-400 uppercase mb-1.5">Email</span>
                   <a href="mailto:sales@sriainfotech.com" className="text-white no-underline border-b border-white/30 text-sm">sales@sriainfotech.com</a>
                 </div>
               </div>
-              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-5">
-                <div className="w-9 h-9 rounded-lg bg-[#E8A33D]/15 border border-[#E8A33D]/30 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 text-[#E8A33D]" />
+              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div className="w-9 h-9 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-4 h-4 text-orange-400" />
                 </div>
                 <div>
-                  <span className="block font-sapMono text-[11px] tracking-[.18em] text-[#E8A33D] uppercase mb-1.5">Office</span>
-                  <p className="text-sm text-[#C6D6DF]">Udaya Vensar, 303, Rd No. 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084</p>
+                  <span className="block text-[11px] font-semibold tracking-[.18em] text-orange-400 uppercase mb-1.5">Office</span>
+                  <p className="text-sm text-slate-300">Udaya Vensar, 303, Rd No. 1, Hanuman Nagar, Kothaguda, Hyderabad, Telangana 500084</p>
                 </div>
               </div>
             </div>
@@ -704,40 +660,12 @@ const SAPAnalytics = () => {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="bg-[#081826] text-[#7E93A2] text-[13px]">
-        <div className="max-w-[1180px] mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between gap-8 border-b border-white/10">
-          <div className="flex items-center gap-3">
-            <img src={Sria_LOGO} alt="Sria Infotech" className="h-24 w-auto block" />
-            <p className="max-w-[280px] text-xs leading-relaxed">Turning SAP data into governed, real-time decision-making — from shop floor to boardroom.</p>
-          </div>
-          <div className="flex gap-10 flex-wrap">
-            <div>
-              <p className="font-sapMono text-[10px] tracking-[.18em] uppercase text-[#E8A33D] mb-3">This proposal</p>
-              <ul className="space-y-2 list-none">
-                {QUICK_LINKS.map((l) => (
-                  <li key={l.href}><a href={l.href} className="text-[#9FB4C0] no-underline hover:text-white transition-colors">{l.label}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="font-sapMono text-[10px] tracking-[.18em] uppercase text-[#E8A33D] mb-3">Sria Infotech</p>
-              <ul className="space-y-2 list-none">
-                <li><a href="https://www.sriainfotech.com" className="text-[#9FB4C0] no-underline hover:text-white transition-colors">www.sriainfotech.com</a></li>
-                <li><a href="mailto:sales@sriainfotech.com" className="text-[#9FB4C0] no-underline hover:text-white transition-colors">sales@sriainfotech.com</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-[1180px] mx-auto px-6 py-5 text-xs">
-          © Sria Infotech Pvt. Ltd. · CIN U72900TG2022PTC161846
-        </div>
-      </footer>
+      <Footer />
 
       {/* ── LIGHTBOX ── */}
       {lightbox && (
         <div
-          className="fixed inset-0 bg-[rgba(8,20,30,0.92)] flex items-center justify-center z-[100] p-[30px]"
+          className="fixed inset-0 bg-[rgba(2,6,23,0.92)] flex items-center justify-center z-[100] p-[30px]"
           role="dialog"
           aria-modal="true"
           aria-label="Dashboard preview"
@@ -748,7 +676,7 @@ const SAPAnalytics = () => {
           <button
             aria-label="Close preview"
             onClick={() => setLightbox(null)}
-            className="absolute top-[22px] right-[26px] bg-transparent border-none text-white text-[34px] cursor-pointer leading-none hover:text-[#E8A33D] transition-colors"
+            className="absolute top-[22px] right-[26px] bg-transparent border-none text-white text-[34px] cursor-pointer leading-none hover:text-orange-400 transition-colors"
           >
             ×
           </button>
@@ -766,7 +694,7 @@ const SAPAnalytics = () => {
       {/* ── LIVE DASHBOARD DEMO MODAL ── */}
       {showDemo && (
         <div
-          className="fixed inset-0 bg-[rgba(8,20,30,0.92)] flex items-center justify-center z-[100] p-4 sm:p-[30px]"
+          className="fixed inset-0 bg-[rgba(2,6,23,0.92)] flex items-center justify-center z-[100] p-4 sm:p-[30px]"
           role="dialog"
           aria-modal="true"
           aria-label="Live dashboard sample"
@@ -783,7 +711,7 @@ const SAPAnalytics = () => {
             <button
               aria-label="Close dashboard sample"
               onClick={() => setShowDemo(false)}
-              className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-white text-[#0C2233] text-xl leading-none flex items-center justify-center shadow-lg hover:bg-[#E8A33D] hover:text-white transition-colors"
+              className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-white text-slate-900 text-xl leading-none flex items-center justify-center shadow-lg hover:bg-orange-500 hover:text-white transition-colors"
             >
               ×
             </button>
