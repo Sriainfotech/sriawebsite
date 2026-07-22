@@ -44,7 +44,8 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  sizes="100vw"
  alt={title}
  className="w-full h-full object-cover"
- fetchPriority="high"
+ // @ts-expect-error — React 18.3 doesn't type fetchpriority yet; lowercase avoids the "unrecognized prop" warning until React 19
+ fetchpriority="high"
  decoding="async"
  />
  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/80" />

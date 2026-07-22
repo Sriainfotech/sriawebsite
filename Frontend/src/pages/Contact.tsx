@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin, Mail, Phone, Send, CheckCircle, Loader2,
-  Clock, MessageSquare, ArrowRight, Building2, Users, Globe
+  Clock, MessageSquare, ArrowRight, Building2, Users, Globe, Paperclip, X
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import PageHeader from "@/components/layout/PageHeader";
@@ -45,25 +45,63 @@ const stats = [
   { icon: Globe, value: "2", label: "Countries" },
 ];
 
+const MAX_FILE_SIZE_MB = 10;
+const ALLOWED_FILE_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "image/png",
+  "image/jpeg",
+];
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [file, setFile] = useState<File | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files?.[0];
+    e.target.value = "";
+    if (!selected) return;
+
+    if (!ALLOWED_FILE_TYPES.includes(selected.type)) {
+      toast({ title: "Unsupported file", description: "Please upload a PDF, Word document, or image.", variant: "destructive" });
+      return;
+    }
+    if (selected.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+      toast({ title: "File too large", description: `Please upload a file under ${MAX_FILE_SIZE_MB}MB.`, variant: "destructive" });
+      return;
+    }
+    setFile(selected);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await axiosInstance.post("/contact", formData);
+      const payload = new FormData();
+      payload.append("name", formData.name);
+      payload.append("email", formData.email);
+      payload.append("phone", formData.phone);
+      payload.append("message", formData.message);
+      if (file) payload.append("document", file);
+
+      // Let the browser set its own multipart Content-Type + boundary —
+      // axiosInstance's default JSON header would otherwise strip the boundary.
+      const response = await axiosInstance.post("/contact", payload, {
+        headers: { "Content-Type": undefined },
+      });
       if (response.data.success) {
         setIsSubmitted(true);
         toast({ title: "Message Sent!", description: response.data.message || "We'll get back to you soon." });
         setFormData({ name: "", email: "", phone: "", message: "" });
+        setFile(null);
         setTimeout(() => setIsSubmitted(false), 3000);
       } else {
         toast({ title: "Error", description: response.data.message || "Failed to send message.", variant: "destructive" });
@@ -259,6 +297,39 @@ const Contact = () => {
                         rows={5}
                         className="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-orange-500/60 focus:bg-white/[0.09] transition-all resize-none"
                       />
+                    </div>
+
+                    <div>
+                      <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
+                        Attach Document <span className="text-slate-600 normal-case font-normal">(optional — PDF, Word, or image, up to {MAX_FILE_SIZE_MB}MB)</span>
+                      </label>
+                      {file ? (
+                        <div className="flex items-center justify-between gap-3 h-11 px-4 rounded-xl bg-white/[0.06] border border-white/10">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <Paperclip className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                            <span className="text-white text-sm truncate">{file.name}</span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setFile(null)}
+                            className="text-slate-500 hover:text-orange-400 transition-colors flex-shrink-0"
+                            aria-label="Remove attached file"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="flex items-center gap-2 h-11 px-4 rounded-xl bg-white/[0.06] border border-dashed border-white/15 text-slate-500 text-sm cursor-pointer hover:border-orange-500/40 hover:text-slate-300 transition-all">
+                          <Paperclip className="w-4 h-4 flex-shrink-0" />
+                          Choose a file…
+                          <input
+                            type="file"
+                            accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                            onChange={handleFileChange}
+                            className="hidden"
+                          />
+                        </label>
+                      )}
                     </div>
 
                     <motion.button

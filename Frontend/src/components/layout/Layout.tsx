@@ -15,12 +15,20 @@ import { FaWhatsapp } from "react-icons/fa";
 const Layout = () => {
  const location = useLocation();
 
- // Scroll to top on route change — instant to override any CSS scroll-behavior
+ // Scroll to top on route change — instant to override any CSS scroll-behavior.
+ // A hash target (e.g. /#associations) is scrolled into view instead of being overridden.
  useEffect(() => {
+ if (location.hash) {
+ const el = document.getElementById(location.hash.slice(1));
+ if (el) {
+ el.scrollIntoView({ behavior: "instant" as ScrollBehavior, block: "start" });
+ return;
+ }
+ }
  window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
  document.documentElement.scrollTop = 0;
  document.body.scrollTop = 0;
- }, [location.pathname]);
+ }, [location.pathname, location.hash]);
 
  const isHomePage = location.pathname === "/" || location.pathname === "/best-digital-transformation-company";
 

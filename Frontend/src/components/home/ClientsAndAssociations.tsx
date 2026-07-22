@@ -13,6 +13,7 @@ interface Association {
   name: string;
   tag: string;
   logo: string;
+  highlight?: boolean;
 }
 
 interface StatCounterProps {
@@ -59,6 +60,9 @@ const CLIENTS: Client[] = [
   { name: "Sugar Times", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/sugartimes.jpg?tr=f-auto,q-auto,w-2000" },
   { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png?tr=f-auto,q-auto,w-2000" },
   { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/7hills.png?tr=f-auto,q-auto,w-2000" },
+  { name: "CAMP Systems Private Limited", country: "India", flag: "🇮🇳", logo: "/Logos/camp.jpg" },
+  // { name: "KIMS Hospitals", country: "India", flag: "🇮🇳", logo: "/Logos/kims.png" },
+  // { name: "Alekhya Homes", country: "India", flag: "🇮🇳", logo: "/Logos/alekya.png" },
 ];
 
 // Replace logo URLs with your actual image URLs
@@ -77,6 +81,7 @@ const ASSOCIATIONS: Association[] = [
     name: "BSNL Skill Development",
     tag: "Skill Development Partner",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000",
+    highlight: true,
   },
   {
     name: "IVC SAP Gold Partner",
@@ -209,7 +214,13 @@ function StatCounter({ end, label }: StatCounterProps) {
 
 function AssocCard({ assoc }: AssocCardProps) {
   return (
-    <div className="w-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-orange-400/20 transition-all duration-300 group">
+    <div
+      className={`relative w-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl transition-all duration-300 group ${
+        assoc.highlight
+          ? "border-2 border-orange-400/70 bg-orange-500/10 shadow-lg shadow-orange-500/20 hover:bg-orange-500/15 hover:border-orange-400"
+          : "border border-white/10 bg-white/5 hover:bg-white/10 hover:border-orange-400/20"
+      }`}
+    >
       <div className="w-24 h-24 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2.5 flex-shrink-0">
         <img
           src={assoc.logo}
@@ -315,7 +326,7 @@ export default function ClientsAndAssociations() {
       </div>
 
       {/* ── ASSOCIATIONS SECTION ── */}
-      <section className="bg-gray-950 py-20">
+      <section id="associations" className="bg-gray-950 py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <SectionLabel>Associations</SectionLabel>

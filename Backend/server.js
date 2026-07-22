@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const ProfileRequest = require('./models/ProfileRequest');
@@ -38,37 +39,67 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-// ✅ /api/contact — with input validation and correct `from` field
-app.post('/api/contact', async (req, res) => {
-    const { name, email, phone, message } = req.body;
+// ✅ File upload — memory storage (no disk writes), size-capped, restricted to document/image types
+const ALLOWED_DOCUMENT_TYPES = [
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'image/png',
+    'image/jpeg',
+];
 
-    if (!name || !email || !message) {
-        return res.status(400).json({ success: false, message: 'Name, email, and message are required.' });
-    }
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
+    fileFilter: (req, file, cb) => {
+        if (ALLOWED_DOCUMENT_TYPES.includes(file.mimetype)) {
+            cb(null, true);
+        } else {
+            cb(new Error('Unsupported file type. Please upload a PDF, Word document, or image.'));
+        }
+    },
+});
 
-    console.log('Received contact form submission:', { name, email, phone, message });
+// ✅ /api/contact — with input validation, correct `from` field, and optional document attachment
+app.post('/api/contact', (req, res) => {
+    upload.single('document')(req, res, async (uploadErr) => {
+        if (uploadErr) {
+            return res.status(400).json({ success: false, message: uploadErr.message || 'File upload failed.' });
+        }
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-        console.warn('Email credentials not set. Logging submission only.');
-        return res.status(200).json({ success: true, message: 'Form submitted successfully.' });
-    }
+        const { name, email, phone, message } = req.body;
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER, // ✅ must be your Gmail, not the user's email
-        replyTo: email,               // ✅ so you can reply to the visitor
-        to: process.env.EMAIL_USER,
-        subject: `New Contact Form Submission from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,
-    };
+        if (!name || !email || !message) {
+            return res.status(400).json({ success: false, message: 'Name, email, and message are required.' });
+        }
 
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log('Contact email sent successfully');
-        res.status(200).json({ success: true, message: 'Message sent successfully!' });
-    } catch (error) {
-        console.error('Error sending contact email:', error);
-        res.status(500).json({ success: false, message: 'Failed to send message.', error: error.message });
-    }
+        console.log('Received contact form submission:', { name, email, phone, message, file: req.file?.originalname });
+
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            console.warn('Email credentials not set. Logging submission only.');
+            return res.status(200).json({ success: true, message: 'Form submitted successfully.' });
+        }
+
+        const mailOptions = {
+            from: process.env.EMAIL_USER, // ✅ must be your Gmail, not the user's email
+            replyTo: email,               // ✅ so you can reply to the visitor
+            to: process.env.EMAIL_USER,
+            subject: `New Contact Form Submission from ${name}`,
+            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,
+            attachments: req.file
+                ? [{ filename: req.file.originalname, content: req.file.buffer, contentType: req.file.mimetype }]
+                : [],
+        };
+
+        try {
+            await transporter.sendMail(mailOptions);
+            console.log('Contact email sent successfully');
+            res.status(200).json({ success: true, message: 'Message sent successfully!' });
+        } catch (error) {
+            console.error('Error sending contact email:', error);
+            res.status(500).json({ success: false, message: 'Failed to send message.', error: error.message });
+        }
+    });
 });
 
 // ✅ /api/download-profile — with input validation and correct `from` field

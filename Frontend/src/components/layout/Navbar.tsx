@@ -505,6 +505,8 @@ const Navbar: React.FC<NavbarProps> = ({
                         }}
                     >
                         IVC Consulting Group is our Global Partner, enhancing our international delivery capability and enabling seamless collaboration across SAP implementation, rollout, and support engagements worldwide. &nbsp;<a href="https://ivcsol.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        We're proud to be a Skill Development Partner of BSNL, supporting telecom skilling initiatives across India. &nbsp;<Link to="/#associations" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</Link>
                         {/* Our website is currently undergoing an upgrade to improve your browsing experience. */}
                     </div>
                 </div>
