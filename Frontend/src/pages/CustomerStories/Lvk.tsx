@@ -4,6 +4,7 @@ const Lvk = () => (
   <CustomerStoryLayout
     hero={{
       image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
+      alt: "Pharmacist reaching for shelf medication",
       category: "Pharmaceuticals",
       title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
       tag: "CRM Implementation · Odoo",
@@ -11,8 +12,11 @@ const Lvk = () => (
     }}
     images={{
       overview:  "https://images.unsplash.com/photo-1576671081837-49000212a2ad?w=900&q=80",
+      overviewAlt: "Modern office building exterior",
       challenge: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=900&q=80",
+      challengeAlt: "Pill blister packs arranged together",
       impact:    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1400&q=80",
+      impactAlt: "Woman in lab coat smiling",
     }}
     overview={{
       text: "LVK Pharma, a growing pharmaceutical company based in Uppal, Hyderabad, relied entirely on paper-based operations. As customer engagement and data management became more complex, they needed a reliable CRM system to bring structure and speed to their workflows.",
@@ -38,21 +42,25 @@ const Lvk = () => (
           label: "We Analyzed",
           description: "Current workflows and mapped pain points in their paper-based processes to identify the right digital solutions.",
           image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+          alt: "Laptop showing web analytics dashboard",
         },
         {
           label: "We Implemented",
           description: "Odoo CRM with modules tailored for pharmaceutical sales, including lead tracking, contact management, and activity scheduling.",
           image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80",
+          alt: "Two developers working at desks",
         },
         {
           label: "We Trained",
           description: "The internal sales and support teams on CRM usage, ensuring quick adoption and a smooth transition from paper to digital.",
           image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80",
+          alt: "Team laughing during training session",
         },
         {
           label: "We Automated",
           description: "Email templates, reminders, and reporting dashboards to eliminate repetitive tasks and bring real-time visibility across the team.",
           image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80",
+          alt: "Digital brain circuit illustration",
         },
       ],
     }}

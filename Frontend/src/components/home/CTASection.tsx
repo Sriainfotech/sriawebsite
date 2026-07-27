@@ -15,7 +15,7 @@ const CTASection = () => {
  >
  <img
  src={heroContact}
- alt="World Map"
+ alt="City skyline at dusk"
  className="w-[120%] h-full object-cover grayscale"
  />
  </motion.div>

@@ -104,19 +104,19 @@ const OdooImplementation = () => {
       title: "Odoo Cloud Deployment",
       description: "Seamlessly host your Odoo ERP on the cloud for improved performance, scalability, and reduced infrastructure costs.",
       icon: <Cloud className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
     },
     {
       title: "Odoo Customization & Optimization",
       description: "Enhance and tailor Odoo modules to fit your unique workflows, ensuring maximum efficiency and performance.",
       icon: <Settings className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80", alt: "Laptop displaying analytics dashboard charts",
     },
     {
       title: "Odoo Managed Services",
       description: "End-to-end configuration, monitoring, and maintenance of your Odoo ERP for reliable, uninterrupted operations.",
       icon: <Server className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", alt: "Server rack with tangled cables",
     },
   ];
 
@@ -197,7 +197,7 @@ const OdooImplementation = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[380px]">
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
-                  alt="Odoo ERP Implementation"
+                  alt="Colleagues high-fiving at desk"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
@@ -351,7 +351,7 @@ const OdooImplementation = () => {
                     <div className="relative h-36 overflow-hidden">
                       <img
                         src={service.image}
-                        alt={service.title}
+                        alt={service.alt}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />

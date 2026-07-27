@@ -4,6 +4,7 @@ const Patil = () => (
   <CustomerStoryLayout
     hero={{
       image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
+      alt: "Train tracks at sunset",
       category: "Enterprise IT & Financial Services",
       title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
       tag: "SAP · AMS · OCR · Fund Management",
@@ -11,8 +12,11 @@ const Patil = () => (
     }}
     images={{
       overview:  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
+      overviewAlt: "Man working with wood lathe",
       challenge: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80",
+      challengeAlt: "Rows of desks in office",
       impact:    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80",
+      impactAlt: "Team meeting with laptops around table",
     }}
     overview={{
       text: "Patil, a leading enterprise group, needed a robust digital foundation to scale operations across business units. Their existing systems were siloed, with manual processes for handling documents, fund allocation, and service support. We partnered with Patil to implement a tailored tech stack, ensuring visibility, automation, and long-term sustainability.",
@@ -38,21 +42,25 @@ const Patil = () => (
           label: "We Delivered",
           description: "Comprehensive AMS (Application Management Services) to stabilize and support their business-critical applications with proactive monitoring.",
           image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=80",
+          alt: "Modern angular glass building exterior",
         },
         {
           label: "We Built",
           description: "A custom Fund Management solution tailored to Patil's multi-department structure, enabling real-time allocation and tracking.",
           image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80",
+          alt: "Person reviewing tax documents calculator",
         },
         {
           label: "We Configured",
           description: "SAP modules in collaboration with Apna Tech to ensure scalability, standardization, and audit-readiness ahead of rollout.",
           image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+          alt: "Laptop showing web analytics dashboard",
         },
         {
           label: "We Automated",
           description: "PDF OCR workflows to extract key data from scanned documents — instantly syncing with internal systems and reducing manual load.",
           image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80",
+          alt: "Close-up of computer circuit board",
         },
       ],
     }}

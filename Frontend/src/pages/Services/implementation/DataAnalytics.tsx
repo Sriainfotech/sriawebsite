@@ -104,19 +104,19 @@ function DataAnalytics() {
       icon: <Cloud className="w-8 h-8 text-orange-500" />,
       heading: "Cloud-Based Analytics",
       description: "Leverage cloud platforms for fast, cost-efficient, and scalable analytics solutions.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
     },
     {
       icon: <Monitor className="w-8 h-8 text-orange-500" />,
       heading: "Performance Optimization",
       description: "Optimize data pipelines and queries for faster, more reliable analytics processing.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", alt: "Laptop showing web analytics dashboard",
     },
     {
       icon: <Server className="w-8 h-8 text-orange-500" />,
       heading: "Managed Analytics Services",
       description: "We handle setup, maintenance, and optimization of your analytics stack for end-to-end support.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", alt: "Server rack with tangled cables",
     },
   ];
 
@@ -201,7 +201,7 @@ function DataAnalytics() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[380px]">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80"
-                  alt="Data Analytics Dashboard"
+                  alt="Laptop screen showing data analytics"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
@@ -358,7 +358,7 @@ function DataAnalytics() {
                     <div className="relative h-36 overflow-hidden">
                       <img
                         src={tab.image}
-                        alt={tab.heading}
+                        alt={tab.alt}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />

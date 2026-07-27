@@ -13,6 +13,7 @@ const offices = [
     phone: "+91 99897 95335",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80",
+    alt: "New York skyline at sunset",
     mapDot: { top: "36%", left: "20%" },
     tooltip: "New York, USA",
   },
@@ -25,6 +26,7 @@ const offices = [
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80",
+    alt: "City skyline daytime view",
     mapDot: { top: "52%", left: "68%" },
     tooltip: "Hyderabad, India",
   },
@@ -37,6 +39,7 @@ const offices = [
     phone: "+91 95539 55893",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80",
+    alt: "City skyline aerial view",
     mapDot: { top: "55%", left: "69%" },
     tooltip: "Amaravati, India",
   },
@@ -49,6 +52,7 @@ const offices = [
     phone: "+91 90145 52492",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80",
+    alt: "Desert highway at sunset",
     mapDot: { top: "50%", left: "70%" },
     tooltip: "Mulugu, India",
   },
@@ -142,7 +146,7 @@ function Location() {
             <div className="relative w-full h-[380px] md:h-[480px] bg-slate-900">
               <img
                 src="https://www.accely.com/wp-content/themes/accely/assets/images/get-started/location-map.png"
-                alt="World map"
+                alt="World map with global office markers"
                 className="w-full h-full object-cover opacity-50"
               />
               {/* Dark tint */}
@@ -220,7 +224,7 @@ function Location() {
                     <div className="relative h-32 overflow-hidden">
                       <img
                         src={office.image}
-                        alt={office.name}
+                        alt={office.alt}
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />

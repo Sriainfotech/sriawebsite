@@ -8,6 +8,7 @@ const stories = [
   {
     id: 1,
     image: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000",
+    alt: "IVC Solutions company logo",
     category: "Strategic Partnership",
     title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
     description: "Strategic partnership delivering world-class SAP implementations across Asia Pacific, enabling seamless digital transformation for global enterprises.",
@@ -18,6 +19,7 @@ const stories = [
   {
     id: 2,
     image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Train tracks at sunset",
     category: "SAP Implementation",
     title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
     description: "End-to-end SAP deployment combined with Application Management Services and OCR automation, driving measurable operational improvements across the enterprise.",
@@ -28,6 +30,7 @@ const stories = [
   {
     id: 3,
     image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Elegant restaurant dining room interior",
     category: "Digital Transformation",
     title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
     description: "Custom digital platform built for a premium restaurant chain, transforming the guest experience with modern technology and seamless operations.",
@@ -38,6 +41,7 @@ const stories = [
   {
     id: 4,
     image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Pharmacist reaching for shelf medication",
     category: "Odoo CRM",
     title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
     description: "Odoo CRM implementation eliminating manual processes and enabling real-time visibility and operational efficiency for the sales team.",
@@ -142,7 +146,7 @@ const CustomerStoriesPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-slate-900/40" />
                     <img
                       src={featured.image}
-                      alt={featured.title}
+                      alt={featured.alt}
                       className="relative z-10 h-24 object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 opacity-[0.03]"
@@ -202,7 +206,7 @@ const CustomerStoriesPage = () => {
                   <div className="relative h-52 overflow-hidden bg-slate-100">
                     <img
                       src={story.image}
-                      alt={story.title}
+                      alt={story.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />

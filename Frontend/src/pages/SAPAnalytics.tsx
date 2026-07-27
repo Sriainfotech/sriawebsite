@@ -122,17 +122,17 @@ const FILTERS: { key: FilterKey; label: string }[] = [
 ];
 
 const GALLERY_ITEMS: { cat: FilterKey; thumb: string; full: string; alt: string; category: string; caption: string }[] = [
-  { cat: "fin", thumb: "/sap-analytics/cfo-summary-thumb.jpg", full: "/sap-analytics/cfo-summary-full.jpg", alt: "CFO dashboard financial summary with revenue, EBITDA, net profit and expense trends", category: "Finance", caption: "CFO Dashboard — Financial Summary" },
+  { cat: "fin", thumb: "/sap-analytics/cfo-summary-thumb.jpg", full: "/sap-analytics/cfo-summary-full.jpg", alt: "CFO dashboard showing financial summary trends", category: "Finance", caption: "CFO Dashboard — Financial Summary" },
   { cat: "fin", thumb: "/sap-analytics/cfo-balance-sheet-thumb.jpg", full: "/sap-analytics/cfo-balance-sheet-full.jpg", alt: "Balance sheet with assets, equity and liabilities variance", category: "Finance", caption: "Balance Sheet — Assets, Equity & Liabilities" },
   { cat: "fin", thumb: "/sap-analytics/cfo-pnl-yearly-thumb.jpg", full: "/sap-analytics/cfo-pnl-yearly-full.jpg", alt: "Yearly profit and loss statement with income, expenses and variance", category: "Finance", caption: "Profit & Loss — Yearly" },
   { cat: "fin", thumb: "/sap-analytics/cfo-ratios-thumb.jpg", full: "/sap-analytics/cfo-ratios-full.jpg", alt: "Financial ratio analysis covering liquidity, leverage, profitability and efficiency", category: "Finance", caption: "Detailed Analysis — Financial Ratios" },
   { cat: "sales", thumb: "/sap-analytics/sales-analysis-thumb.jpg", full: "/sap-analytics/sales-analysis-full.jpg", alt: "Sales analysis dashboard with yearly, quarterly and monthly sales trends", category: "Sales", caption: "Sales Analysis Dashboard" },
   { cat: "sales", thumb: "/sap-analytics/sales-quantity-thumb.jpg", full: "/sap-analytics/sales-quantity-full.jpg", alt: "Sales quantity analysis by material group and material code", category: "Sales", caption: "Sales Quantity Analysis" },
   { cat: "sales", thumb: "/sap-analytics/sales-avg-price-thumb.jpg", full: "/sap-analytics/sales-avg-price-full.jpg", alt: "Average sales price analysis by material group and plant", category: "Sales", caption: "Average Price Analysis" },
-  { cat: "sales", thumb: "/sap-analytics/customer-sales-analysis-thumb.jpg", full: "/sap-analytics/customer-sales-analysis-full.jpg", alt: "Customer sales analysis dashboard with monthly sales by customer and top customer rankings", category: "Sales", caption: "Customer Sales Analysis" },
-  { cat: "sales", thumb: "/sap-analytics/sales-comparison-thumb.jpg", full: "/sap-analytics/sales-comparison-full.jpg", alt: "Sales comparison analysis report by segment and company code with YTD variance", category: "Sales", caption: "Sales Comparison Analysis" },
-  { cat: "cost", thumb: "/sap-analytics/cost-plant-comparison-thumb.jpg", full: "/sap-analytics/cost-plant-comparison-full.jpg", alt: "Plant wise cost comparison across production, raw material and variable cost heads", category: "Cost", caption: "Plant Wise Comparison — Cost Analysis" },
-  { cat: "wc", thumb: "/sap-analytics/wc-dashboard-thumb.jpg", full: "/sap-analytics/wc-dashboard-full.jpg", alt: "Working capital dashboard with segment-wise target vs actual and group working capital", category: "Working capital", caption: "Working Capital Dashboard" },
+  { cat: "sales", thumb: "/sap-analytics/customer-sales-analysis-thumb.jpg", full: "/sap-analytics/customer-sales-analysis-full.jpg", alt: "Customer sales analysis dashboard view", category: "Sales", caption: "Customer Sales Analysis" },
+  { cat: "sales", thumb: "/sap-analytics/sales-comparison-thumb.jpg", full: "/sap-analytics/sales-comparison-full.jpg", alt: "Sales comparison report by segment", category: "Sales", caption: "Sales Comparison Analysis" },
+  { cat: "cost", thumb: "/sap-analytics/cost-plant-comparison-thumb.jpg", full: "/sap-analytics/cost-plant-comparison-full.jpg", alt: "Plant-wise cost comparison dashboard view", category: "Cost", caption: "Plant Wise Comparison — Cost Analysis" },
+  { cat: "wc", thumb: "/sap-analytics/wc-dashboard-thumb.jpg", full: "/sap-analytics/wc-dashboard-full.jpg", alt: "Working capital dashboard by segment", category: "Working capital", caption: "Working Capital Dashboard" },
   { cat: "wc", thumb: "/sap-analytics/wc-comparison-thumb.jpg", full: "/sap-analytics/wc-comparison-full.jpg", alt: "Working capital comparison across fiscal periods by segment", category: "Working capital", caption: "Working Capital — Period Comparison" },
 ];
 

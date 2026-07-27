@@ -35,7 +35,7 @@ const AboutSection = () => {
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[320px]">
                             <img
                                 src={aboutImageUrl}
-                                alt="Innovation Team"
+                                alt="Team collaborating around laptop together"
                                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                             />
                             {/* Gradient overlay */}

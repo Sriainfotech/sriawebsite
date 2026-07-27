@@ -13,7 +13,7 @@ const CTASection = () => {
       >
         <img
           src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80"
-          alt="World Map"
+          alt="Team meeting with laptops around table"
           className="w-[130%] h-full object-cover grayscale"
         />
       </motion.div>

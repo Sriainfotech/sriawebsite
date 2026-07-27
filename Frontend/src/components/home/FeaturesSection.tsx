@@ -8,6 +8,7 @@ const features = [
     icon: GitBranch,
     number: "01",
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/sap-hana-home.png?tr=f-auto,q-auto,w-2000",
+    alt: "Business team with ERP icons",
     title: "SAP S/4HANA",
     subtitle: "Intelligent Enterprise Platform",
     description:
@@ -20,6 +21,7 @@ const features = [
     icon: CloudCog,
     number: "02",
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/cloud-sap-home.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Business team viewing cloud icons",
     title: "Cloud Solutions",
     subtitle: "SAP Business Technology Platform",
     description:
@@ -32,6 +34,7 @@ const features = [
     icon: BarChart3,
     number: "03",
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/data-analytics-home.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Team analyzing data analytics icons",
     title: "Data Analytics",
     subtitle: "Insight-Driven Decision Making",
     description:
@@ -44,6 +47,7 @@ const features = [
     icon: HeartPulse,
     number: "04",
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/managed-home.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Team monitoring managed services dashboard",
     title: "Managed Services",
     subtitle: "Continuous Application Excellence",
     description:
@@ -183,7 +187,7 @@ const FeaturesSection = () => {
                   <div className="absolute inset-0">
                     <img
                       src={current.image}
-                      alt={current.title}
+                      alt={current.alt}
                       className="w-full h-full object-cover opacity-80"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-950/55 to-slate-950/30" />

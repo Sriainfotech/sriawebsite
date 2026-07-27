@@ -43,7 +43,7 @@ const leaders = [
     designation: "COO — Sria Infotech",
     description:
       "COO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/vinod.jpg?tr=f-auto,q-auto,w-2000",
+    image: "/vinod.PNG",
     linkedinUrl: "https://www.linkedin.com/in/vinod-kumar-burra-31bb13190/",
     email: "vinodkumar@sriainfotech.com",
   },

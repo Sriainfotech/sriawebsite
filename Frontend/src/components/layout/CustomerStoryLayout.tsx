@@ -7,6 +7,7 @@ interface SolutionItem {
   label: string;
   description: string;
   image: string;
+  alt: string;
 }
 
 interface ImpactItem {
@@ -22,6 +23,7 @@ interface StatItem {
 export interface CustomerStoryProps {
   hero: {
     image: string;
+    alt: string;
     category: string;
     title: string;
     tag: string;
@@ -29,8 +31,11 @@ export interface CustomerStoryProps {
   };
   images: {
     overview: string;
+    overviewAlt: string;
     challenge: string;
+    challengeAlt: string;
     impact: string;
+    impactAlt: string;
   };
   overview: {
     text: string;
@@ -74,7 +79,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         <div className="absolute inset-0">
           <img
             src={hero.image}
-            alt={hero.title}
+            alt={hero.alt}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-900/30" />
@@ -201,7 +206,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             >
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none" />
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
-                <img src={images.overview} alt="Project Overview" className="w-full h-[460px] object-cover" />
+                <img src={images.overview} alt={images.overviewAlt} className="w-full h-[460px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
                 {/* Glass card overlay */}
                 <div className="absolute bottom-5 left-5 right-5">
@@ -233,7 +238,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
               className="relative hidden lg:block"
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <img src={images.challenge} alt="Business Challenges" className="w-full h-[500px] object-cover opacity-80" />
+                <img src={images.challenge} alt={images.challengeAlt} className="w-full h-[500px] object-cover opacity-80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
               </div>
             </motion.div>
@@ -300,7 +305,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={item.image}
-                    alt={item.label}
+                    alt={item.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
@@ -326,7 +331,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
       {/* ── Business Impact (full bg image) ── */}
       <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={images.impact} alt="Business Impact" className="w-full h-full object-cover" />
+          <img src={images.impact} alt={images.impactAlt} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-950/88" />
           <div
             className="absolute inset-0 opacity-[0.025] pointer-events-none"

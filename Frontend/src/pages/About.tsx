@@ -28,31 +28,37 @@ const accordionData = [
     title: "Leadership",
     text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
     image: "https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Executives meeting in glass boardroom",
   },
   {
     title: "Core Values",
     text: "Smart — We leverage cutting-edge technology and data-driven insights to provide intelligent solutions.\nResilient — We design solutions built to endure challenges and perform under pressure.\nInclusive — We foster an inclusive work culture and ensure our services create opportunities for everyone.\nAgile — Our flexible approach allows us to respond swiftly to market changes.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80",
+    alt: "Woman presenting ideas with sticky notes",
   },
   {
     title: "Our Services",
     text: "SAP Consulting & Implementation — Expert SAP solutions to streamline enterprise processes.\nEnterprise Application Development — Tailored applications that improve business efficiency.\nCloud Solutions — Scalable and secure cloud services to elevate your infrastructure.\nAI & Machine Learning — Advanced AI-driven solutions to boost automation and decision-making.\nIT Consulting & Managed Services — Comprehensive IT advisory and support.",
     image: "/aboutus/ourservices.jpg",
+    alt: "SAP and IT consulting services",
   },
   {
     title: "Why Choose Us?",
     text: "Proven Expertise — Our team brings years of industry expertise, focusing on high-quality customized solutions.\nClient-Centric Approach — We place your business needs at the center of everything we do.\nInnovation — We stay ahead of technology trends to deliver the most innovative solutions.\nCollaborative Culture — Our collaborative approach ensures seamless integration with your teams.",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80",
+    alt: "Developers coding on laptops together",
   },
   {
     title: "Vision",
     text: "At Sria Infotech, our vision is to build a future where technology empowers every business and individual to thrive. We stand for being Smart in our solutions, Resilient in our execution, Inclusive in our impact, and Agile in adapting to tomorrow's challenges.",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80",
+    alt: "Earth at night from space",
   },
   {
     title: "Mission",
     text: "Our mission is to deliver world-class digital services—ranging from enterprise software to AI and IT consulting—by embracing the core values of being Smart, Resilient, Inclusive, and Agile. We are committed to transforming businesses, uplifting communities, and fostering innovation for a better digital future.",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80",
+    alt: "Laptop displaying analytics dashboard charts",
   },
 ];
 
@@ -66,20 +72,20 @@ const missionPoints = [
 ];
 
 const timelineEvents = [
-  { year: 2022, title: "Sria Infotech is Launched", description: "Launched Sria Infotech as a global SAP consulting company.", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80" },
-  { year: 2022, title: "Started with SAP All Modules", description: "Expanded capabilities to cover the complete SAP module portfolio.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" },
-  { year: 2023, title: "Started Data Analytics", description: "Launched dedicated data analytics and business intelligence services.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" },
-  { year: 2024, title: "Started Application Development", description: "Began delivering custom application development solutions for clients.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80" },
-  { year: 2025, title: "AMS from Patil Group", description: "Won Application Management Services contract from Patil Group.", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80" },
-  { year: 2025, title: "Odoo Implementation Partner", description: "Became official Odoo Implementation Partner.", image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80" },
-  { year: 2025, title: "Branch in Mulugu (Launching Soon)", description: "Opening our new branch in Mulugu, expanding our Indian presence.", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80" },
+  { year: 2022, title: "Sria Infotech is Launched", description: "Launched Sria Infotech as a global SAP consulting company.", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80", alt: "Presentation to team in boardroom" },
+  { year: 2022, title: "Started with SAP All Modules", description: "Expanded capabilities to cover the complete SAP module portfolio.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80", alt: "Close-up of computer circuit board" },
+  { year: 2023, title: "Started Data Analytics", description: "Launched dedicated data analytics and business intelligence services.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", alt: "Laptop screen showing data analytics" },
+  { year: 2024, title: "Started Application Development", description: "Began delivering custom application development solutions for clients.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80", alt: "Laptop screen showing programming code" },
+  { year: 2025, title: "AMS from Patil Group", description: "Won Application Management Services contract from Patil Group.", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80", alt: "Hands typing on laptop keyboard" },
+  { year: 2025, title: "Odoo Implementation Partner", description: "Became official Odoo Implementation Partner.", image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80", alt: "Leather wallet holding credit cards" },
+  { year: 2025, title: "Branch in Mulugu (Launching Soon)", description: "Opening our new branch in Mulugu, expanding our Indian presence.", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80", alt: "City skyline with tower lit" },
 ];
 
 const offices = [
-  { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
-  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto,w-2000", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
-  { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
-  { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
+  { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80", alt: "New York skyline at sunset", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
+  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto,w-2000", alt: "Hyderabad cable bridge lit night", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
+  { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", alt: "City skyline aerial view", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
+  { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80", alt: "Desert highway at sunset", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
 ];
 
 const supportBlocks = [
@@ -155,11 +161,11 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl h-64">
-                  <img src={aboutTeam} alt="Team collaboration" className="w-full h-full object-cover" />
+                  <img src={aboutTeam} alt="Colleagues shaking hands in office" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 mt-8">
-                  <img src={aboutOffice} alt="Office environment" className="w-full h-full object-cover" />
+                  <img src={aboutOffice} alt="Employees working in modern tech office" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                 </div>
               </div>
@@ -320,7 +326,7 @@ const About = () => {
                         </div>
                         <div className="lg:w-1/2">
                           <div className="relative rounded-xl overflow-hidden shadow-lg h-48">
-                            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                            <img src={item.image} alt={item.alt} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
                           </div>
                         </div>
@@ -378,7 +384,7 @@ const About = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-80">
                 <img
                   src="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-2000"
-                  alt="Mission"
+                  alt="Team collaborating around laptops in office"
                   onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"; }}
                   className="w-full h-full object-cover"
                 />
@@ -448,7 +454,7 @@ const About = () => {
                       <div className="relative h-32 overflow-hidden">
                         <img
                           src={event.image}
-                          alt={event.title}
+                          alt={event.alt}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
@@ -504,7 +510,7 @@ const About = () => {
             <div className="relative w-full h-[320px] md:h-[420px] bg-slate-900">
               <img
                 src="https://www.accely.com/wp-content/themes/accely/assets/images/get-started/location-map.png"
-                alt="World map"
+                alt="World map with global office markers"
                 className="w-full h-full object-cover opacity-50"
               />
               <div className="absolute inset-0 bg-slate-950/30" />
@@ -575,7 +581,7 @@ const About = () => {
                     <div className="relative h-32 overflow-hidden">
                       <img
                         src={office.image}
-                        alt={office.name}
+                        alt={office.alt}
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />

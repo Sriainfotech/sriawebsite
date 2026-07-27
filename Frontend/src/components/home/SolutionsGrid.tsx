@@ -9,6 +9,7 @@ const categories = [
     title: "SAP",
     icon: Network,
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Team standing around SAP visual",
     count: "5 solutions",
     items: [
       { num: "01", title: "SAP Concur",       tagline: "Automated travel, expense and invoice management.",   link: "/solutions/concur" },
@@ -24,6 +25,7 @@ const categories = [
     title: "Analytics",
     icon: BarChart3,
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Team viewing data analytics visual",
     count: "4 solutions",
     items: [
       { num: "01", title: "Business Intelligence",  tagline: "Transform raw data into actionable business insights.",    link: "/services/data-analytics" },
@@ -81,7 +83,7 @@ const SolutionsGrid = () => {
               <div className="relative h-48 overflow-hidden flex-shrink-0">
                 <img
                   src={cat.image}
-                  alt={cat.title}
+                  alt={cat.alt}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />

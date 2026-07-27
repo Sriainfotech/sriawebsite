@@ -9,24 +9,28 @@ const solutions = [
  {
  icon: Layers,
  image: serviceSap,
+ alt: "SAP analytics dashboard interface",
  title: "SAP S/4HANA",
  description: "End-to-end implementation and migration services for intelligent enterprise solutions.",
  },
  {
  icon: Cloud,
  image: serviceCloud,
+ alt: "Cloud computing data center servers",
  title: "Cloud Solutions",
  description: "Seamless cloud migration and management with SAP Business Technology Platform.",
  },
  {
  icon: Database,
  image: serviceDigital,
+ alt: "Digital transformation analytics dashboard",
  title: "Data Analytics",
  description: "Transform data into actionable insights for informed decision-making.",
  },
  {
  icon: Shield,
  image: serviceManaged,
+ alt: "IT support team monitoring servers",
  title: "Managed Services",
  description: "Comprehensive application management and support services.",
  },
@@ -61,7 +65,7 @@ const RecommendedSolutions = () => {
  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
  <img
  src={solution.image}
- alt={solution.title}
+ alt={solution.alt}
  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
  />
  <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur p-2 rounded-lg shadow-sm">

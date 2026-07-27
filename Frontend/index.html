@@ -27,35 +27,22 @@
   </script> -->
 
   <!--
-    Fallback SEO tags — used only until React mounts and RouteSeo
-    (src/components/seo/RouteSeo.tsx) sets the current route's own
-    title/description/canonical. Every prerendered route replaces these
-    with page-specific values; keep this generic, not page-specific.
-  -->
-  <title>SAP Consulting & Digital Transformation Company | Sria Infotech</title>
+    Intentionally no static <title>, <meta name="description">,
+    <link rel="canonical">, or Open Graph/Twitter tags here.
 
-  <meta name="description"
-    content="Sria Infotech is a SAP consulting and digital transformation company specializing in SAP implementation, Odoo, analytics and enterprise support across India and global markets." />
+    RouteSeo (src/components/seo/RouteSeo.tsx) renders all of those via
+    react-helmet-async for every route, including this generic fallback
+    for "/". react-helmet-async cannot remove tags it didn't create, so a
+    static duplicate here would survive alongside Helmet's version in the
+    prerendered HTML instead of being replaced by it — every crawler
+    would see two conflicting <title>/<link rel="canonical"> tags. Real
+    users and Googlebot only ever see the Helmet-managed version anyway,
+    since every indexable route is prerendered to static HTML at build
+    time (see scripts/prerender.mjs).
+  -->
 
   <!-- Author -->
   <meta name="author" content="Sria Infotech" />
-
-  <!-- Canonical URL (fallback — overridden per-route by RouteSeo) -->
-  <link rel="canonical" href="https://www.sriainfotech.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="SAP Consulting & Digital Transformation Company | Sria Infotech" />
-  <meta property="og:description"
-    content="Sria Infotech helps growing and established enterprises implement, integrate and support SAP, Odoo and data platforms across India and global markets." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.sriainfotech.com/assets/og-image.png" />
-  <meta property="og:url" content="https://www.sriainfotech.com/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SAP Consulting & Digital Transformation Company | Sria Infotech" />
-  <meta name="twitter:description" content="Innovative and secure digital transformation solutions by Sria Infotech." />
-  <meta name="twitter:image" content="https://www.sriainfotech.com/assets/og-image.png" />
 
   <!-- Schema.org Organization / LocalBusiness -->
   <script type="application/ld+json">

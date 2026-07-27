@@ -7,6 +7,7 @@ import {
 import PageHeader from "@/components/layout/PageHeader";
 
 const THUB_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-2000";
+const HERO_BACKGROUND = "/thub.jpg";
 
 // Dummy placeholder values — replace with real figures once available.
 const STARTUPS_SUPPORTED = "25+";
@@ -33,44 +34,44 @@ const jointPrograms = [
     label: "Startup Mentorship",
     description: "Technical mentorship for founding teams navigating product architecture, technology choices, and engineering practices.",
     icon: <Lightbulb className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80", alt: "Overhead view of startup workspace",
   },
   {
     label: "Technology Enablement",
     description: "Hands-on support helping startups adopt scalable architectures, cloud infrastructure, and modern development practices.",
     icon: <Cloud className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
   },
   {
     label: "Product Engineering Support",
     description: "Collaborative product engineering guidance to help startups move from prototype to production-ready solutions.",
     icon: <Code2 className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", alt: "Close-up of computer circuit board",
   },
   {
     label: "Innovation Workshops",
     description: "Workshops and sessions on emerging technology, product strategy, and engineering best practices for founders and teams.",
     icon: <Rocket className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", alt: "Woman presenting ideas with sticky notes",
   },
 ];
 
 const benefits = [
-  { title: "Recognized Innovation Hub Partner", description: "Trusted technology collaborator within Telangana's startup and innovation ecosystem.", icon: <Rocket className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=70" },
-  { title: "Startup Ecosystem Access",           description: "Ongoing engagement with early-stage founders, incubated startups, and innovation programs.", icon: <Building2 className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&q=70" },
-  { title: "Technology Enablement",              description: "Practical support helping startups adopt scalable, production-grade technology practices.", icon: <Cloud className="w-5 h-5" />,       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=70" },
-  { title: "Mentorship Network",                  description: "Access to experienced technical mentors supporting founding teams and early product decisions.", icon: <Lightbulb className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=70" },
-  { title: "Co-Innovation Opportunities",         description: "Collaborative engagements exploring emerging technology use cases with innovative startups.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70" },
-  { title: "Community Visibility",                description: "Active participation in Telangana's innovation and startup community events and programs.", icon: <Users className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70" },
+  { title: "Recognized Innovation Hub Partner", description: "Trusted technology collaborator within Telangana's startup and innovation ecosystem.", icon: <Rocket className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=70", alt: "Overhead view of startup workspace" },
+  { title: "Startup Ecosystem Access",           description: "Ongoing engagement with early-stage founders, incubated startups, and innovation programs.", icon: <Building2 className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&q=70", alt: "Laptop on high-rise office ledge" },
+  { title: "Technology Enablement",              description: "Practical support helping startups adopt scalable, production-grade technology practices.", icon: <Cloud className="w-5 h-5" />,       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=70", alt: "Earth at night from space" },
+  { title: "Mentorship Network",                  description: "Access to experienced technical mentors supporting founding teams and early product decisions.", icon: <Lightbulb className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=70", alt: "Developers coding on laptops together" },
+  { title: "Co-Innovation Opportunities",         description: "Collaborative engagements exploring emerging technology use cases with innovative startups.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70", alt: "Laptop screen showing data analytics" },
+  { title: "Community Visibility",                description: "Active participation in Telangana's innovation and startup community events and programs.", icon: <Users className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70", alt: "Students laughing together at laptop" },
 ];
 
 const programPortfolio = [
-  { title: "MVP Development",             description: "Rapid, scalable minimum viable product builds for early-stage startups.", icon: <Rocket className="w-6 h-6" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" },
-  { title: "Product Engineering",         description: "End-to-end product engineering support from architecture through deployment.", icon: <Code2 className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" },
-  { title: "Cloud & DevOps Enablement",   description: "Cloud infrastructure setup, CI/CD pipelines, and DevOps practices for scaling startups.", icon: <Cloud className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" },
-  { title: "UI/UX Design Support",        description: "Design guidance helping startups build intuitive, user-centered digital products.", icon: <Layers className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" },
-  { title: "Technical Mentorship",         description: "One-on-one mentorship sessions for founders and technical leads on product and engineering strategy.", icon: <Lightbulb className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" },
-  { title: "Innovation Workshops",         description: "Sessions on emerging technology trends, product strategy, and engineering best practices.", icon: <Briefcase className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80" },
+  { title: "MVP Development",             description: "Rapid, scalable minimum viable product builds for early-stage startups.", icon: <Rocket className="w-6 h-6" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80", alt: "Overhead view of startup workspace" },
+  { title: "Product Engineering",         description: "End-to-end product engineering support from architecture through deployment.", icon: <Code2 className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", alt: "Close-up of computer circuit board" },
+  { title: "Cloud & DevOps Enablement",   description: "Cloud infrastructure setup, CI/CD pipelines, and DevOps practices for scaling startups.", icon: <Cloud className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space" },
+  { title: "UI/UX Design Support",        description: "Design guidance helping startups build intuitive, user-centered digital products.", icon: <Layers className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80", alt: "Developers coding on laptops together" },
+  { title: "Technical Mentorship",         description: "One-on-one mentorship sessions for founders and technical leads on product and engineering strategy.", icon: <Lightbulb className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", alt: "Woman presenting ideas with sticky notes" },
+  { title: "Innovation Workshops",         description: "Sessions on emerging technology trends, product strategy, and engineering best practices.", icon: <Briefcase className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80", alt: "Laptop on high-rise office ledge" },
 ];
 
 function THub() {
@@ -84,6 +85,7 @@ function THub() {
           { name: "Partners", path: "/about/sap-partner" },
           { name: "T-Hub", path: "/partners/t-hub" },
         ]}
+        backgroundImage={HERO_BACKGROUND}
       />
 
       {/* ── Brand Intro ── */}
@@ -153,7 +155,7 @@ function THub() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
                   src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80"
-                  alt="T-Hub Innovation Partnership"
+                  alt="Laptop on high-rise office ledge"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
@@ -202,7 +204,7 @@ function THub() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-72">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
-                  alt="Innovation partnership"
+                  alt="Developers coding on laptops together"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 to-transparent" />
@@ -253,7 +255,7 @@ function THub() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
                   src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80"
-                  alt="Innovation challenges"
+                  alt="Laptop on high-rise office ledge"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -304,7 +306,7 @@ function THub() {
                 <div className="relative h-36 overflow-hidden">
                   <img
                     src={prog.image}
-                    alt={prog.label}
+                    alt={prog.alt}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
@@ -354,7 +356,7 @@ function THub() {
                 <div className="relative h-28 overflow-hidden">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
@@ -381,7 +383,7 @@ function THub() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400&q=80"
-            alt="Startup impact"
+            alt="Overhead view of startup workspace"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-slate-950/90" />
@@ -453,7 +455,7 @@ function THub() {
                 <div className="relative h-36 overflow-hidden">
                   <img
                     src={program.image}
-                    alt={program.title}
+                    alt={program.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />

@@ -24,6 +24,7 @@ const Patil = React.lazy(() => import("./pages/CustomerStories/Patil"));
 
 // About Sub-pages
 const ComingSoon = React.lazy(() => import("./pages/About/ComingSoon"));
+const Careers = React.lazy(() => import("./pages/About/Careers"));
 const CustomerStoriesPage = React.lazy(() => import("./pages/About/CustomerStoriesPage"));
 const LeaderShip = React.lazy(() => import("./pages/About/LeaderShip"));
 const Location = React.lazy(() => import("./pages/About/Location"));
@@ -144,8 +145,19 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          {/*
+            RouteSeo lives outside Suspense on purpose: every lazy-loaded
+            route (and every <Navigate> redirect, which immediately renders
+            its lazy destination) suspends this boundary while its chunk
+            downloads. If RouteSeo were inside it, it would unmount on every
+            such transition, and react-helmet-async removes its tags on
+            unmount — causing a brief (or, under load, not-so-brief) window
+            with no title/canonical at all before they're re-added. Keeping
+            RouteSeo outside means it only ever updates in place as
+            useLocation()'s pathname changes, never unmounts.
+          */}
+          <RouteSeo />
           <Suspense fallback={<LoadingScreen />}>
-            <RouteSeo />
             <Routes>
               {/* Standalone — no navbar/footer */}
               <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
@@ -158,7 +170,7 @@ const App = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
-                <Route path="/careers" element={<ComingSoon />} />
+                <Route path="/careers" element={<Careers />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/contactus" element={<Navigate to="/contact" replace />} />
 

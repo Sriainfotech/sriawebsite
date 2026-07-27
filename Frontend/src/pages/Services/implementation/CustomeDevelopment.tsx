@@ -105,19 +105,19 @@ const CustomDevelopment = () => {
       title: "Odoo Cloud Deployment",
       description: "Seamlessly host your Odoo ERP on the cloud for improved performance, scalability, and reduced infrastructure costs.",
       icon: <Cloud className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
     },
     {
       title: "Custom App Development",
       description: "Build powerful Odoo applications tailored to automate processes, extend functionality, and support unique business needs.",
       icon: <Code className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80", alt: "Laptop screen showing programming code",
     },
     {
       title: "Odoo Managed Services",
       description: "End-to-end configuration, monitoring, and maintenance of your Odoo ERP for reliable, uninterrupted operations.",
       icon: <Server className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", alt: "Server rack with tangled cables",
     },
   ];
 
@@ -166,7 +166,7 @@ const CustomDevelopment = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[380px]">
                 <img
                   src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=900&q=80"
-                  alt="Custom Odoo Development"
+                  alt="Desk setup with code monitors"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
@@ -354,7 +354,7 @@ const CustomDevelopment = () => {
                     <div className="relative h-36 overflow-hidden">
                       <img
                         src={service.image}
-                        alt={service.title}
+                        alt={service.alt}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
