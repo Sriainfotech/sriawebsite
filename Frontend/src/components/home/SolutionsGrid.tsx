@@ -8,7 +8,7 @@ const categories = [
     label: "Enterprise Solutions",
     title: "SAP",
     icon: Network,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-1200",
     alt: "Team standing around SAP visual",
     count: "5 solutions",
     items: [
@@ -24,7 +24,7 @@ const categories = [
     label: "Data & Insights",
     title: "Analytics",
     icon: BarChart3,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-1200",
     alt: "Team viewing data analytics visual",
     count: "4 solutions",
     items: [

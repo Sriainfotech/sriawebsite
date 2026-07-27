@@ -7,7 +7,7 @@ const features = [
   {
     icon: GitBranch,
     number: "01",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/sap-hana-home.png?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/sap-hana-home.png?tr=f-auto,q-auto,w-1200",
     alt: "Business team with ERP icons",
     title: "SAP S/4HANA",
     subtitle: "Intelligent Enterprise Platform",
@@ -20,7 +20,7 @@ const features = [
   {
     icon: CloudCog,
     number: "02",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/cloud-sap-home.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/cloud-sap-home.jpg?tr=f-auto,q-auto,w-1200",
     alt: "Business team viewing cloud icons",
     title: "Cloud Solutions",
     subtitle: "SAP Business Technology Platform",
@@ -33,7 +33,7 @@ const features = [
   {
     icon: BarChart3,
     number: "03",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/data-analytics-home.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/data-analytics-home.jpg?tr=f-auto,q-auto,w-1200",
     alt: "Team analyzing data analytics icons",
     title: "Data Analytics",
     subtitle: "Insight-Driven Decision Making",
@@ -46,7 +46,7 @@ const features = [
   {
     icon: HeartPulse,
     number: "04",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/managed-home.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/managed-home.jpg?tr=f-auto,q-auto,w-1200",
     alt: "Team monitoring managed services dashboard",
     title: "Managed Services",
     subtitle: "Continuous Application Excellence",

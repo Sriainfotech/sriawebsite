@@ -42,26 +42,26 @@ interface SectionLabelProps {
 // ── Data ────────────────────────────────────────────────────────────────────
 
 const CLIENTS: Client[] = [
-  { name: "MSPL Limited – Baldota Group", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/baldota.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "Patil Group", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/patil.png?tr=f-auto,q-auto,w-2000" },
-  { name: "Stannik Technologies", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/stannik.png?tr=f-auto,q-auto,w-2000" },
-  { name: "OnFocus", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/onfocus.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "Magnify 360", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/magnify360.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "IVC", country: "Hong Kong", flag: "🇭🇰", logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000" },
-  { name: "TechLabs", country: "Kenya", flag: "🇰🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/techlab_kenya.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "TechLabs", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/techlabs_usa.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "CM2 IT Solutions", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/cm2.png?tr=f-auto,q-auto,w-2000" },
-  { name: "Vinayaka Global Solutions", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/vinayaka.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "LiveRamp", country: "India · USA", flag: "🇮🇳🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/liveramp.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "LVK Pharma", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/lvkpharma.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "Sai Balaji Infra Pvt. Ltd.", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/saibalaji.png?tr=f-auto,q-auto,w-2000" },
-  { name: "Royal Staffing", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/royalstaffing.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "Digitin Mapping Limited", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/digitin.png?tr=f-auto,q-auto,w-2000" },
-  { name: "Pardhu Infotech", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/pardhu.png?tr=f-auto,q-auto,w-2000" },
-  { name: "Dotedge Technologies", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/dotedge.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "Sugar Times", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/sugartimes.jpg?tr=f-auto,q-auto,w-2000" },
-  { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png?tr=f-auto,q-auto,w-2000" },
-  { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/7hills.png?tr=f-auto,q-auto,w-2000" },
+  { name: "MSPL Limited – Baldota Group", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/baldota.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Patil Group", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/patil.png?tr=f-auto,q-auto,w-160" },
+  { name: "Stannik Technologies", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/stannik.png?tr=f-auto,q-auto,w-160" },
+  { name: "OnFocus", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/onfocus.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Magnify 360", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/magnify360.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "IVC", country: "Hong Kong", flag: "🇭🇰", logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-160" },
+  { name: "TechLabs", country: "Kenya", flag: "🇰🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/techlab_kenya.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "TechLabs", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/techlabs_usa.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "CM2 IT Solutions", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/cm2.png?tr=f-auto,q-auto,w-160" },
+  { name: "Vinayaka Global Solutions", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/vinayaka.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "LiveRamp", country: "India · USA", flag: "🇮🇳🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/liveramp.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "LVK Pharma", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/lvkpharma.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Sai Balaji Infra Pvt. Ltd.", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/saibalaji.png?tr=f-auto,q-auto,w-160" },
+  { name: "Royal Staffing", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/royalstaffing.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Digitin Mapping Limited", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/digitin.png?tr=f-auto,q-auto,w-160" },
+  { name: "Pardhu Infotech", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/pardhu.png?tr=f-auto,q-auto,w-160" },
+  { name: "Dotedge Technologies", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/dotedge.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Sugar Times", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/sugartimes.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png?tr=f-auto,q-auto,w-160" },
+  { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/7hills.png?tr=f-auto,q-auto,w-160" },
   { name: "CAMP Systems Private Limited", country: "India", flag: "🇮🇳", logo: "/Logos/camp.jpg" },
   // { name: "KIMS Hospitals", country: "India", flag: "🇮🇳", logo: "/Logos/kims.png" },
   // { name: "Alekhya Homes", country: "India", flag: "🇮🇳", logo: "/Logos/alekya.png" },
@@ -78,26 +78,26 @@ const ASSOCIATIONS: Association[] = [
   {
     name: "TASK",
     tag: "Skill Alliance",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-200",
     link: "/partners/task",
   },
   {
     name: "BSNL",
     tag: "Skill Solution Partner",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-200",
     highlight: true,
     link: "/partners/bsnl",
   },
   {
     name: "IVC SAP Gold Partner",
     tag: "SAP Gold",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-200",
     link: "/partners/ivc-solutions",
   },
   {
     name: "T-Hub",
     tag: "Innovation Hub",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-200",
     link: "/partners/t-hub",
   },
 ];
@@ -161,6 +161,9 @@ function ClientCard({ client }: ClientCardProps) {
             <img
               src={client.logo}
               alt={client.name}
+              width={64}
+              height={64}
+              loading="lazy"
               className="w-full h-full object-contain"
               onError={() => setImgFailed(true)}
             />
@@ -234,6 +237,9 @@ function AssocCard({ assoc }: AssocCardProps) {
         <img
           src={assoc.logo}
           alt={assoc.name}
+          width={96}
+          height={96}
+          loading="lazy"
           className="w-full h-full object-contain"
           onError={(e) => {
             const t = e.currentTarget;

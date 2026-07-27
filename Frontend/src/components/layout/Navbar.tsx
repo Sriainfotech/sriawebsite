@@ -515,7 +515,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-16">
                         <div className="flex flex-row items-center">
                             <Link to="/" className="font-bold flex flex-row items-center">
-                                <img src='https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000' alt="Sria Infotech logo" className="h-auto w-28" />
+                                <img src='https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-240' alt="Sria Infotech logo" width={112} height={112} className="h-auto w-28" />
                             </Link>
                         </div>
 
@@ -613,9 +613,10 @@ const Navbar: React.FC<NavbarProps> = ({
                     />
                     <div className="mobile-menu-container fixed top-0 right-0 h-full w-80 bg-gray-900 shadow-xl transform transition-transform duration-300 ease-in-out overflow-y-auto">
                         <div className="flex items-center justify-between p-4 border-b border-gray-700">
-                            <h2 className="text-white text-lg font-semibold font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                            {/* Not a document heading — this is a UI panel label that sits before the page's own h1 in the DOM. */}
+                            <p className="text-white text-lg font-semibold font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
                                 Menu
-                            </h2>
+                            </p>
                             <button
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="text-white hover:text-orange-300 transition-colors"

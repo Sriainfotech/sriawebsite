@@ -107,9 +107,9 @@ const ServicesSection = () => {
                   <service.icon className="w-5 h-5 text-slate-400 group-hover:text-orange-400 transition-colors duration-300" />
                 </div>
 
-                <h4 className="text-sm font-semibold text-white/90 mb-2 leading-snug group-hover:text-white transition-colors">
+                <h3 className="text-sm font-semibold text-white/90 mb-2 leading-snug group-hover:text-white transition-colors">
                   {service.title}
-                </h4>
+                </h3>
 
                 <p className="text-xs text-slate-500 mb-5 leading-relaxed group-hover:text-slate-400 transition-colors">
                   {service.description}

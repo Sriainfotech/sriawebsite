@@ -80,10 +80,10 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
                             <Link to="/" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-2000" alt="Sria Infotech logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-240" alt="Sria Infotech logo" width={120} height={120} loading="lazy" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                             <Link to="https://ivcsol.com/" target="_blank" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000" alt="IVC Logo" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-360" alt="IVC Logo" width={180} height={120} loading="lazy" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
                             </Link>
                         </div>
 
@@ -94,16 +94,17 @@ const Footer = () => {
                         {/* Social icons */}
                         <div className="flex gap-3">
                             {[
-                                { Icon: LinkedInIcon, href: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/" },
-                                { Icon: FacebookIcon, href: "https://www.facebook.com/sriainfotech/" },
-                                { Icon: YoutubeIcon, href: "https://www.youtube.com/@SriaInfotech" },
-                                { Icon: InstagramIcon, href: "https://www.instagram.com/risewithsria/" },
+                                { Icon: LinkedInIcon, href: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/", label: "Sria Infotech on LinkedIn" },
+                                { Icon: FacebookIcon, href: "https://www.facebook.com/sriainfotech/", label: "Sria Infotech on Facebook" },
+                                { Icon: YoutubeIcon, href: "https://www.youtube.com/@SriaInfotech", label: "Sria Infotech on YouTube" },
+                                { Icon: InstagramIcon, href: "https://www.instagram.com/risewithsria/", label: "Sria Infotech on Instagram" },
                             ].map((social, i) => (
                                 <motion.a
                                     key={i}
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={social.label}
                                     whileHover={{ scale: 1.1, y: -2 }}
                                     className="w-9 h-9 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center text-slate-500 hover:text-orange-400 hover:bg-orange-500/10 hover:border-orange-500/30 transition-all duration-300"
                                 >
@@ -115,7 +116,7 @@ const Footer = () => {
 
                     {/* Solutions */}
                     <div className="lg:col-span-1">
-                        <h4 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Solutions</h4>
+                        <h3 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Solutions</h3>
                         <ul className="space-y-2.5">
                             {solutions.map((item) => (
                                 <li key={item.label}>
@@ -137,7 +138,7 @@ const Footer = () => {
 
                     {/* Services */}
                     <div className="lg:col-span-1">
-                        <h4 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Services</h4>
+                        <h3 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Services</h3>
                         <ul className="space-y-2.5">
                             {services.map((item) => (
                                 <li key={item.label}>
@@ -154,7 +155,7 @@ const Footer = () => {
 
                     {/* Contact */}
                     <div className="lg:col-span-1">
-                        <h4 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Contact</h4>
+                        <h3 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Contact</h3>
                         <div className="space-y-5">
                             <div className="flex items-start gap-3">
                                 <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center flex-shrink-0 mt-0.5">
