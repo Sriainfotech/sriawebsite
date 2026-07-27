@@ -8,10 +8,10 @@ import SolutionsGrid from "@/components/home/SolutionsGrid";
 import ChairmanStatement from "@/components/home/ChairmanStatement";
 import FAQSection from "@/components/home/FAQSection";
 
-const Index = ({ customTitle }: { customTitle?: string }) => {
+const Index = () => {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <HeroSection customTitle={customTitle} />
+      <HeroSection />
       <ClientsAndAssociations />
       <FeaturesSection />
       <ServicesSection />

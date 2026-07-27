@@ -30,7 +30,7 @@ const Layout = () => {
  document.body.scrollTop = 0;
  }, [location.pathname, location.hash]);
 
- const isHomePage = location.pathname === "/" || location.pathname === "/best-digital-transformation-company";
+ const isHomePage = location.pathname === "/" || location.pathname === "/";
 
  return (
  <div className="min-h-screen bg-background font-sans text-foreground">

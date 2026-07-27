@@ -132,7 +132,7 @@ const CustomDevelopment = () => {
 
   const relatedServices = [
     { title: "Odoo Implementation", description: "End-to-end Odoo ERP deployment from requirement gathering to go-live with minimal disruption to your operations.", link: "/services/odoo-implementation" },
-    { title: "Data Analytics", description: "Transform raw data into actionable insights using modern analytics tools and techniques.", link: "/additionalServices/dataanalytics" },
+    { title: "Data Analytics", description: "Transform raw data into actionable insights using modern analytics tools and techniques.", link: "/services/data-analytics" },
   ];
 
   return (

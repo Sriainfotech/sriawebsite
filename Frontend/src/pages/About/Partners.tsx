@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, CheckCircle, MapPin } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight, ArrowLeft, CheckCircle, MapPin } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
 const partners = [
@@ -20,16 +22,81 @@ const partners = [
       { value: "5+", label: "Regions Covered" },
     ],
   },
+  {
+    name: "BSNL",
+    type: "Skill Solution Partner",
+    badge: "First in Telangana & AP",
+    shortDescription:
+      "Official skill solution partner of BSNL, delivering telecom skilling programs across India — the first such partnership from Telangana and Andhra Pradesh.",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000",
+    detailsUrl: "/partners/bsnl",
+    regions: ["Telangana", "Andhra Pradesh", "Pan-India Network"],
+    stats: [
+      { value: "12,500+", label: "Learners Trained" },
+      { value: "38", label: "Training Centers" },
+      { value: "9", label: "States Covered" },
+    ],
+  },
+  {
+    name: "Telangana Government",
+    type: "State Partner",
+    badge: "Digital Governance",
+    shortDescription:
+      "Supporting the Government of Telangana's digital governance initiatives with secure, scalable e-governance platforms and public sector technology solutions.",
+    logo: "/Logos/Emblem_of_Telangana.webp",
+    detailsUrl: "/partners/telangana-government",
+    regions: ["Telangana"],
+    stats: [
+      { value: "10+", label: "Government Projects" },
+      { value: "6+", label: "Departments Served" },
+      { value: "1M+", label: "Citizens Reached" },
+    ],
+  },
+  {
+    name: "TASK",
+    type: "Skill Alliance Partner",
+    badge: "Employability Training",
+    shortDescription:
+      "Skill alliance partner bridging academia and industry through employability training programs delivered across colleges in Telangana.",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-2000",
+    detailsUrl: "/partners/task",
+    regions: ["Telangana"],
+    stats: [
+      { value: "8,000+", label: "Students Trained" },
+      { value: "40+", label: "Colleges Engaged" },
+      { value: "10+", label: "Districts Covered" },
+    ],
+  },
+  {
+    name: "T-Hub",
+    type: "Innovation Hub Partner",
+    badge: "Startup Ecosystem",
+    shortDescription:
+      "Innovation hub partner supporting startups through technology mentorship, product engineering, and innovation workshops across Telangana's startup ecosystem.",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-2000",
+    detailsUrl: "/partners/t-hub",
+    regions: ["Telangana (Hyderabad)"],
+    stats: [
+      { value: "25+", label: "Startups Supported" },
+      { value: "15+", label: "Workshops Delivered" },
+      { value: "500+", label: "Mentorship Hours" },
+    ],
+  },
 ];
 
 function Partners() {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start" },
+    [Autoplay({ delay: 5000, stopOnInteraction: true })]
+  );
+
   return (
     <div className="w-full min-h-screen bg-white">
       <PageHeader
         title="Our Strategic Partners"
         subtitle="Building powerful alliances to deliver world-class enterprise solutions across the globe."
         breadcrumbs={[
-          { name: "About Us", path: "/aboutus" },
+          { name: "About Us", path: "/about" },
           { name: "Partners", path: "/about/partners" },
         ]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-2000"
@@ -124,76 +191,121 @@ function Partners() {
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
 
-          <div className="space-y-8">
-            {partners.map((partner, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group bg-white rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-400 overflow-hidden"
-              >
-                <div className="grid lg:grid-cols-3 gap-0">
-                  {/* Left: logo + badge */}
-                  <div className="lg:border-r border-slate-100 p-10 flex flex-col items-center justify-center bg-slate-50 group-hover:bg-orange-50/40 transition-colors duration-300">
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="h-20 object-contain mb-5"
-                    />
-                    <span className="inline-block px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider">
-                      {partner.badge}
-                    </span>
-                    <p className="text-slate-500 text-xs font-medium mt-2">{partner.type}</p>
-                  </div>
-
-                  {/* Middle: content */}
-                  <div className="lg:col-span-2 p-8 lg:p-10">
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
-                        {partner.name}
-                      </h3>
-                      <p className="text-slate-500 leading-relaxed mb-5">{partner.shortDescription}</p>
-
-                      {/* Regions */}
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        <span className="flex items-center gap-1 text-xs text-slate-500 font-medium mr-1">
-                          <MapPin className="w-3.5 h-3.5 text-orange-400" /> Coverage:
-                        </span>
-                        {partner.regions.map((region, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium"
-                          >
-                            {region}
+          {/* Carousel */}
+          <div className="relative">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex -ml-6">
+                {partners.map((partner, idx) => (
+                  <div key={idx} className="flex-[0_0_100%] pl-6 min-w-0">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                      className="group bg-white rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-2xl transition-all duration-400 overflow-hidden"
+                    >
+                      <div className="grid lg:grid-cols-3 gap-0">
+                        {/* Left: logo + badge */}
+                        <div className="lg:border-r border-slate-100 p-10 flex flex-col items-center justify-center bg-slate-50 group-hover:bg-orange-50/40 transition-colors duration-300">
+                          <img
+                            src={partner.logo}
+                            alt={partner.name}
+                            className="h-28 object-contain mb-5"
+                            onError={(e) => {
+                              const t = e.currentTarget;
+                              t.style.display = "none";
+                              t.parentElement!.insertAdjacentHTML(
+                                "afterbegin",
+                                `<span class="h-28 flex items-center justify-center text-orange-500 font-bold text-2xl mb-5">${partner.name}</span>`
+                              );
+                            }}
+                          />
+                          <span className="inline-block px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider">
+                            {partner.badge}
                           </span>
-                        ))}
-                      </div>
+                          <p className="text-slate-500 text-xs font-medium mt-2">{partner.type}</p>
+                        </div>
 
-                      {/* Stats row */}
-                      <div className="grid grid-cols-3 gap-4 mb-7 border-t border-slate-100 pt-6">
-                        {partner.stats.map((stat, i) => (
-                          <div key={i} className="text-center">
-                            <p className="text-2xl font-black text-orange-500">{stat.value}</p>
-                            <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                        {/* Middle: content */}
+                        <div className="lg:col-span-2 p-8 lg:p-10">
+                          <div className="mb-6">
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
+                              {partner.name}
+                            </h3>
+                            <p className="text-slate-500 leading-relaxed mb-5">{partner.shortDescription}</p>
+
+                            {/* Regions */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                              <span className="flex items-center gap-1 text-xs text-slate-500 font-medium mr-1">
+                                <MapPin className="w-3.5 h-3.5 text-orange-400" /> Coverage:
+                              </span>
+                              {partner.regions.map((region, i) => (
+                                <span
+                                  key={i}
+                                  className="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium"
+                                >
+                                  {region}
+                                </span>
+                              ))}
+                            </div>
+
+                            {/* Stats row */}
+                            <div className="grid grid-cols-3 gap-4 mb-7 border-t border-slate-100 pt-6">
+                              {partner.stats.map((stat, i) => (
+                                <div key={i} className="text-center">
+                                  <p className="text-2xl font-black text-orange-500">{stat.value}</p>
+                                  <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                                </div>
+                              ))}
+                            </div>
+
+                            <Link to={partner.detailsUrl}>
+                              <motion.button
+                                whileHover={{ x: 4 }}
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-orange-200"
+                              >
+                                View Partnership <ArrowRight className="w-4 h-4" />
+                              </motion.button>
+                            </Link>
                           </div>
-                        ))}
+                        </div>
                       </div>
-
-                      <Link to={partner.detailsUrl}>
-                        <motion.button
-                          whileHover={{ x: 4 }}
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-orange-200"
-                        >
-                          View Partnership <ArrowRight className="w-4 h-4" />
-                        </motion.button>
-                      </Link>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Nav controls */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button
+                type="button"
+                onClick={() => emblaApi?.scrollPrev()}
+                aria-label="Previous partner"
+                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-orange-600 hover:border-orange-300 transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <div className="flex items-center gap-2">
+                {partners.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => emblaApi?.scrollTo(idx)}
+                    aria-label={`Go to partner ${idx + 1}`}
+                    className="w-2 h-2 rounded-full bg-slate-300 hover:bg-orange-400 transition-colors"
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={() => emblaApi?.scrollNext()}
+                aria-label="Next partner"
+                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-orange-600 hover:border-orange-300 transition-colors"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
       </section>

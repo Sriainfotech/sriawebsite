@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({
             onMouseLeave={handleMouseLeave}
         >
             <Link
-                to={id === "about" ? "/aboutus" : "#"}
+                to={id === "about" ? "/about" : "#"}
                 className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap group font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                 onClick={(e) => {
                     if (id !== "about") {
@@ -280,7 +280,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <div className="border-b border-gray-700">
                     <div className="flex">
                         <Link
-                            to="/aboutus"
+                            to="/about"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex-1 py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                         >
@@ -428,27 +428,27 @@ const Navbar: React.FC<NavbarProps> = ({
         {
             title: "SAP",
             items: [
-                { label: "Implementation", link: "/implement" },
-                { label: "Rollouts", link: "/rollouts" },
-                { label: "Application Development", link: "/application-development" },
-                { label: "Integration", link: "/integration" },
-                { label: "Support & Maintenance", link: "/support-maintainance" },
-                { label: "Upgrades", link: "/upgrades" },
-                { label: "Migrations", link: "/migrations" },
-                { label: "Fiori Development", link: "/fioridevelop" }, // kept original
-                { label: "ABAP RAP Services", link: "/abap" },
+                { label: "Implementation", link: "/services/sap-s4hana-implementation" },
+                { label: "Rollouts", link: "/services/global-sap-rollouts" },
+                { label: "Application Development", link: "/services/sap-application-development" },
+                { label: "Integration", link: "/services/sap-integration" },
+                { label: "Support & Maintenance", link: "/services/sap-support-maintenance" },
+                { label: "Upgrades", link: "/services/sap-upgrade" },
+                { label: "Migrations", link: "/services/sap-migration" },
+                { label: "Fiori Development", link: "/services/sap-fiori-development" }, // kept original
+                { label: "ABAP RAP Services", link: "/services/sap-abap-rap-development" },
             ],
         },
         {
             title: "Odoo Implementation",
             items: [
-                { label: "Odoo Implementation", link: "/odooservices/implementation" },
-                { label: "Custom App Development", link: "/odooservices/customdevelopment" },
+                { label: "Odoo Implementation", link: "/services/odoo-implementation" },
+                { label: "Custom App Development", link: "/services/odoo-custom-development" },
             ],
         },
         {
             title: "Data Analytics",
-            link: "/additionalServices/dataanalytics",
+            link: "/services/data-analytics",
             items: [],
         },
     ];
@@ -457,7 +457,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {
             title: "Insights",
             items: [
-                { label: "Success Stories", link: "/insights/customer-stories" },
+                { label: "Success Stories", link: "/about/customer-stories" },
                 { label: "Blogs", link: "/insights/blogs" },
                 { label: "Newsroom", link: "/insights/newsroom" },
                 { label: "White Papers", link: "/insights/white-papers" },
@@ -506,7 +506,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     >
                         IVC Consulting Group is our Global Partner, enhancing our international delivery capability and enabling seamless collaboration across SAP implementation, rollout, and support engagements worldwide. &nbsp;<a href="https://ivcsol.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        We're proud to be a Skill Development Partner of BSNL, supporting telecom skilling initiatives across India. &nbsp;<Link to="/#associations" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</Link>
+                        We're proud to be a Skill Solution Partner of BSNL, supporting telecom skilling initiatives across India. &nbsp;<Link to="/partners/bsnl" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</Link>
                         {/* Our website is currently undergoing an upgrade to improve your browsing experience. */}
                     </div>
                 </div>
@@ -588,7 +588,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             <div className="hidden md:flex items-center space-x-3">
                             </div>
                             <Link
-                                to="/contactus"
+                                to="/contact"
                                 className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
                             >
                                 Contact Us →

@@ -133,7 +133,7 @@ function DataAnalytics() {
     {
       title: "Odoo Implementation Services",
       description: "Comprehensive Odoo ERP solutions including module configuration, customization, integration, and cloud-based hosting to streamline operations and empower smarter business decisions.",
-      link: "/odooservices/implementation",
+      link: "/services/odoo-implementation",
     },
   ];
 

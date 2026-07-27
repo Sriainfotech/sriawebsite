@@ -11,13 +11,13 @@ const sapSolutions = [
   },
   {
     title: "SAP S/4HANA Implementation",
-    link: "/implement",
+    link: "/services/sap-s4hana-implementation",
     icon: Network,
     description: "End-to-end implementation for the intelligent enterprise.",
   },
   {
     title: "SAP Consulting Services",
-    link: "/rollouts",
+    link: "/services/global-sap-rollouts",
     icon: Lightbulb,
     description: "Strategic guidance for your digital roadmap.",
   },

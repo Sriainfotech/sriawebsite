@@ -3,58 +3,43 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-const eventPhotos = [
+const events = [
   {
-    id: 1,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpg?tr=f-auto,q-auto,w-2000",
+    id: "mulugu-inauguration",
+    label: "Mulugu Inauguration",
     caption: "Office Inauguration – Mulugu",
+    photos: [
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto,w-2000",
+    ],
   },
   {
-    id: 2,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 3,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 4,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 5,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 6,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 7,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 8,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 9,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
-  },
-  {
-    id: 10,
-    url: "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto,w-2000",
-    caption: "Office Inauguration – Mulugu",
+    id: "bsnl-partnership-signing",
+    label: "BSNL Partnership Signing",
+    caption: "BSNL Partnership Signing – Regional Telecom Training Centre",
+    photos: [
+      "/gallery/bsnl-partnership-signing-01.jpeg",
+      "/gallery/bsnl-partnership-signing-02.jpeg",
+      "/gallery/bsnl-partnership-signing-03.jpeg",
+      "/gallery/bsnl-partnership-signing-04.jpeg",
+      "/gallery/bsnl-partnership-signing-05.jpeg",
+      "/gallery/bsnl-partnership-signing-06.jpeg",
+    ],
   },
 ];
+
+// Flat list across all events — keeps the lightbox navigable end-to-end.
+const allPhotos = events.flatMap((event) =>
+  event.photos.map((url) => ({ url, caption: event.caption }))
+);
 
 const Culture: React.FC = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -63,9 +48,9 @@ const Culture: React.FC = () => {
   const closeLightbox = () => setLightboxIndex(null);
 
   const prev = () =>
-    setLightboxIndex(i => (i === null ? null : (i - 1 + eventPhotos.length) % eventPhotos.length));
+    setLightboxIndex(i => (i === null ? null : (i - 1 + allPhotos.length) % allPhotos.length));
   const next = () =>
-    setLightboxIndex(i => (i === null ? null : (i + 1) % eventPhotos.length));
+    setLightboxIndex(i => (i === null ? null : (i + 1) % allPhotos.length));
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowLeft") prev();
@@ -76,50 +61,62 @@ const Culture: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <PageHeader
-        title="Office Inauguration – Mulugu"
-        subtitle="Celebrating the opening of our Mulugu office — a proud milestone for the Sria family and the local community."
+        title="Our Culture"
+        subtitle="Moments from our offices, our people, and the communities we work alongside."
       />
 
-      {/* Photo Grid */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Section label */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-3 mb-10"
-        >
-          <Camera className="w-5 h-5 text-orange-400" />
-          <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase">
-            Mulugu Inauguration
-          </span>
-          <div className="flex-1 h-px bg-white/5" />
-          <span className="text-slate-500 text-sm">{eventPhotos.length} photos</span>
-        </motion.div>
+      {events.map((event, eventIndex) => {
+        const startIndex = events
+          .slice(0, eventIndex)
+          .reduce((sum, e) => sum + e.photos.length, 0);
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-          {eventPhotos.map((photo, index) => (
+        return (
+          <section key={event.id} className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            {/* Section label */}
             <motion.div
-              key={photo.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-xl"
-              onClick={() => openLightbox(index)}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-3 mb-10"
             >
-              <img
-                src={photo.url}
-                alt={`${photo.caption} – photo ${index + 1} of ${eventPhotos.length}`}
-                className="w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/40 transition-colors duration-300 flex items-end p-4 opacity-0 group-hover:opacity-100">
-                <span className="text-white text-sm font-medium">{photo.caption}</span>
-              </div>
+              <Camera className="w-5 h-5 text-orange-400" />
+              <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase">
+                {event.label}
+              </span>
+              <div className="flex-1 h-px bg-white/5" />
+              <span className="text-slate-500 text-sm">{event.photos.length} photos</span>
             </motion.div>
-          ))}
-        </div>
-      </section>
+
+            <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+              {event.photos.map((url, index) => {
+                const globalIndex = startIndex + index;
+                return (
+                  <motion.div
+                    key={url}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-xl"
+                    onClick={() => openLightbox(globalIndex)}
+                  >
+                    <img
+                      src={url}
+                      alt={`${event.caption} – photo ${index + 1} of ${event.photos.length}`}
+                      className="w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/40 transition-colors duration-300 flex items-end p-4 opacity-0 group-hover:opacity-100">
+                      <span className="text-white text-sm font-medium">{event.caption}</span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })}
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -156,8 +153,8 @@ const Culture: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              src={eventPhotos[lightboxIndex].url}
-              alt={`${eventPhotos[lightboxIndex].caption} – photo ${lightboxIndex + 1} of ${eventPhotos.length}`}
+              src={allPhotos[lightboxIndex].url}
+              alt={`${allPhotos[lightboxIndex].caption} – photo ${lightboxIndex + 1} of ${allPhotos.length}`}
               className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl"
               onClick={e => e.stopPropagation()}
             />
@@ -172,7 +169,7 @@ const Culture: React.FC = () => {
 
             {/* Counter */}
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/50 text-sm">
-              {lightboxIndex + 1} / {eventPhotos.length}
+              {lightboxIndex + 1} / {allPhotos.length}
             </div>
           </motion.div>
         )}

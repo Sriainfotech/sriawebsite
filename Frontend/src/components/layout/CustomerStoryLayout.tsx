@@ -428,7 +428,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
               Join the growing list of businesses that have transformed their operations with Sria Infotech's enterprise solutions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contactus">
+              <Link to="/contact">
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}

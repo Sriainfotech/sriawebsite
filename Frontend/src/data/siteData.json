@@ -42,21 +42,21 @@
             "title": "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
             "category": "SAP & Automation",
             "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-900",
-            "readMoreLink": "/patil"
+            "readMoreLink": "/customer-stories/patil-sap-ams-automation"
         },
         {
             "id": 3,
             "title": "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
             "category": "Digital Transformation",
             "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-900",
-            "readMoreLink": "/hills"
+            "readMoreLink": "/customer-stories/7hills-restaurant"
         },
         {
             "id": 4,
             "title": "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
             "category": "Odoo CRM",
             "image": "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-900",
-            "readMoreLink": "/Lvk"
+            "readMoreLink": "/customer-stories/lvk-pharma-odoo-crm"
         }
     ],
     "events": [

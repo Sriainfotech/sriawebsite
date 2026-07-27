@@ -70,6 +70,26 @@ const gallery: GalleryItem[] = [
       // "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto,w-2000",
     ],
   },
+  {
+    // Portrait shots — "tall" cell suits the vertical framing.
+    id: 16, type: "image", category: "Milestones", caption: "BSNL Partnership Signing",
+    featured: true, size: "tall", objectPosition: "center",
+    images: [
+      "/gallery/bsnl-partnership-signing-01.jpeg",
+      "/gallery/bsnl-partnership-signing-02.jpeg",
+      "/gallery/bsnl-partnership-signing-03.jpeg",
+    ],
+  },
+  {
+    // Landscape group shots — "wide" cell suits the horizontal framing.
+    id: 17, type: "image", category: "Milestones", caption: "BSNL Partnership Signing",
+    featured: true, size: "wide", objectPosition: "center",
+    images: [
+      "/gallery/bsnl-partnership-signing-04.jpeg",
+      "/gallery/bsnl-partnership-signing-05.jpeg",
+      "/gallery/bsnl-partnership-signing-06.jpeg",
+    ],
+  },
 
   // ── Wide banners ──
   {
@@ -154,6 +174,7 @@ const gallery: GalleryItem[] = [
   },
   {
     id: 111, type: "image", category: "Office Life", caption: "Sria Office", size: "tall",
+    objectPosition: "center",
     images: ["https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-office-photo-02.png?tr=f-auto,q-auto,w-2000"],
   },
   {
@@ -189,7 +210,8 @@ const gallery: GalleryItem[] = [
   {
     id: 14, type: "video", category: "Videos", caption: "Sria Moments",
     // TODO: re-point to ImageKit once IMG_1442.mp4 is uploaded there — temporarily serving from Cloudinary since it's still live.
-    size: "tall", videoSrc: "https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779454744/sria/gallery/IMG_1442.mp4",
+    size: "tall", objectPosition: "center",
+    videoSrc: "https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779454744/sria/gallery/IMG_1442.mp4",
     images: [],
   },
   // {
@@ -248,8 +270,8 @@ const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, 
         muted
         playsInline
         loop
-        className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
-        style={{ opacity: playing ? 1 : 0.65 }}
+        className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+        style={{ opacity: playing ? 1 : 0.65, objectPosition: item.objectPosition ?? "top" }}
       />
 
       {/* Top accent */}
@@ -549,7 +571,7 @@ const Gallery: React.FC = () => {
       <PageHeader
         title="Life at Sria"
         subtitle="A glimpse into our culture, our people, and the moments that make us who we are."
-        breadcrumbs={[{ name: "About Us", path: "/aboutus" }, { name: "Life at Sria", path: "/gallery" }]}
+        breadcrumbs={[{ name: "About Us", path: "/about" }, { name: "Life at Sria", path: "/gallery" }]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-annual-team-gathering.jpg?tr=f-auto,q-auto,w-2000"
       />
 

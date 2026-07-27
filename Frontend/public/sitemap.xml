@@ -2,320 +2,330 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://sriainfotech.com/</loc>
+    <loc>https://www.sriainfotech.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/about</loc>
+    <loc>https://www.sriainfotech.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/contact</loc>
+    <loc>https://www.sriainfotech.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/careers</loc>
+    <loc>https://www.sriainfotech.com/gallery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/gallery</loc>
+    <loc>https://www.sriainfotech.com/app-store</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/app-store</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://sriainfotech.com/sap-analytics</loc>
+    <loc>https://www.sriainfotech.com/sap-analytics</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/plans</loc>
+    <loc>https://www.sriainfotech.com/plans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/subscription</loc>
+    <loc>https://www.sriainfotech.com/subscription</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- About -->
   <url>
-    <loc>https://sriainfotech.com/about/customer-stories</loc>
+    <loc>https://www.sriainfotech.com/about/customer-stories</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/about/leadership</loc>
+    <loc>https://www.sriainfotech.com/about/leadership</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/about/locations</loc>
+    <loc>https://www.sriainfotech.com/about/locations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/about/sap-partner</loc>
+    <loc>https://www.sriainfotech.com/about/sap-partner</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/about/culture</loc>
+    <loc>https://www.sriainfotech.com/about/culture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Customer stories -->
   <url>
-    <loc>https://sriainfotech.com/hills</loc>
+    <loc>https://www.sriainfotech.com/customer-stories/7hills-restaurant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/Lvk</loc>
+    <loc>https://www.sriainfotech.com/customer-stories/lvk-pharma-odoo-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/patil</loc>
+    <loc>https://www.sriainfotech.com/customer-stories/patil-sap-ams-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Products -->
   <url>
-    <loc>https://sriainfotech.com/products/auto-extract</loc>
+    <loc>https://www.sriainfotech.com/products/auto-extract</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/products/gatecheck</loc>
+    <loc>https://www.sriainfotech.com/products/gatecheck</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/products/jatayu</loc>
+    <loc>https://www.sriainfotech.com/products/jatayu</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/products/nxdesk</loc>
+    <loc>https://www.sriainfotech.com/products/nxdesk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/products/nxify</loc>
+    <loc>https://www.sriainfotech.com/products/nxify</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Partners -->
   <url>
-    <loc>https://sriainfotech.com/partners/ivc-solutions</loc>
+    <loc>https://www.sriainfotech.com/partners/ivc-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.sriainfotech.com/partners/bsnl</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.sriainfotech.com/partners/telangana-government</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.sriainfotech.com/partners/task</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.sriainfotech.com/partners/t-hub</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- SAP support services -->
   <url>
-    <loc>https://sriainfotech.com/upgrades</loc>
+    <loc>https://www.sriainfotech.com/services/sap-upgrade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/abap</loc>
+    <loc>https://www.sriainfotech.com/services/sap-abap-rap-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/migrations</loc>
+    <loc>https://www.sriainfotech.com/services/sap-migration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/integration</loc>
+    <loc>https://www.sriainfotech.com/services/sap-integration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/rollouts</loc>
+    <loc>https://www.sriainfotech.com/services/global-sap-rollouts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/application-development</loc>
+    <loc>https://www.sriainfotech.com/services/sap-application-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/fioridevelop</loc>
+    <loc>https://www.sriainfotech.com/services/sap-fiori-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/implement</loc>
+    <loc>https://www.sriainfotech.com/services/sap-s4hana-implementation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/support-maintainance</loc>
+    <loc>https://www.sriainfotech.com/services/sap-support-maintenance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Strategy consulting services -->
   <url>
-    <loc>https://sriainfotech.com/services/strategy-consulting/business</loc>
+    <loc>https://www.sriainfotech.com/services/strategy-consulting/business</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/services/strategy-consulting/process</loc>
+    <loc>https://www.sriainfotech.com/services/strategy-consulting/process</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/services/strategy-consulting/tech</loc>
+    <loc>https://www.sriainfotech.com/services/strategy-consulting/tech</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- Odoo / additional services -->
+  <!-- Odoo / data services -->
   <url>
-    <loc>https://sriainfotech.com/odooservices/customdevelopment</loc>
+    <loc>https://www.sriainfotech.com/services/odoo-custom-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/additionalServices/dataanalytics</loc>
+    <loc>https://www.sriainfotech.com/services/data-analytics</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/odooservices/implementation</loc>
+    <loc>https://www.sriainfotech.com/services/odoo-implementation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Solutions -->
   <url>
-    <loc>https://sriainfotech.com/solutions/ariba</loc>
+    <loc>https://www.sriainfotech.com/solutions/ariba</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/manufacturing-execution</loc>
+    <loc>https://www.sriainfotech.com/solutions/manufacturing-execution</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/papm</loc>
+    <loc>https://www.sriainfotech.com/solutions/papm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/concur</loc>
+    <loc>https://www.sriainfotech.com/solutions/concur</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/btp</loc>
+    <loc>https://www.sriainfotech.com/solutions/btp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/extended-warehouse-management</loc>
+    <loc>https://www.sriainfotech.com/solutions/extended-warehouse-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/fieldglass</loc>
+    <loc>https://www.sriainfotech.com/solutions/fieldglass</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/commerce-cloud</loc>
+    <loc>https://www.sriainfotech.com/solutions/commerce-cloud</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/business</loc>
+    <loc>https://www.sriainfotech.com/solutions/business</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/manufacturing-logistics</loc>
+    <loc>https://www.sriainfotech.com/solutions/manufacturing-logistics</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/digital-manufacturing</loc>
+    <loc>https://www.sriainfotech.com/solutions/digital-manufacturing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/private-cloud</loc>
+    <loc>https://www.sriainfotech.com/solutions/private-cloud</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/public-cloud</loc>
+    <loc>https://www.sriainfotech.com/solutions/public-cloud</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/rise-with-sap</loc>
+    <loc>https://www.sriainfotech.com/solutions/rise-with-sap</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/asset-performance-management</loc>
+    <loc>https://www.sriainfotech.com/solutions/asset-performance-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/field-service-management</loc>
+    <loc>https://www.sriainfotech.com/solutions/field-service-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/product-lifecycle</loc>
+    <loc>https://www.sriainfotech.com/solutions/product-lifecycle</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/solutions/successfactors</loc>
+    <loc>https://www.sriainfotech.com/solutions/successfactors</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Legal -->
   <url>
-    <loc>https://sriainfotech.com/privacy</loc>
+    <loc>https://www.sriainfotech.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/terms-and-conditions</loc>
+    <loc>https://www.sriainfotech.com/terms-and-conditions</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sriainfotech.com/cookies</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sriainfotech.com/terms</loc>
+    <loc>https://www.sriainfotech.com/cookies</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

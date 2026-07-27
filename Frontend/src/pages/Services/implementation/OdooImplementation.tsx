@@ -130,7 +130,7 @@ const OdooImplementation = () => {
   ];
 
   const relatedServices = [
-    { title: "Data Analytics", description: "Transform raw data into actionable insights using modern analytics tools.", link: "/additionalServices/dataanalytics" },
+    { title: "Data Analytics", description: "Transform raw data into actionable insights using modern analytics tools.", link: "/services/data-analytics" },
   ];
 
   return (

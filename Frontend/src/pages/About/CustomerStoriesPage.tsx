@@ -21,7 +21,7 @@ const stories = [
     category: "SAP Implementation",
     title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
     description: "End-to-end SAP deployment combined with Application Management Services and OCR automation, driving measurable operational improvements across the enterprise.",
-    readMoreLink: "/patil",
+    readMoreLink: "/customer-stories/patil-sap-ams-automation",
     featured: false,
     tag: "SAP S/4HANA",
   },
@@ -31,7 +31,7 @@ const stories = [
     category: "Digital Transformation",
     title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
     description: "Custom digital platform built for a premium restaurant chain, transforming the guest experience with modern technology and seamless operations.",
-    readMoreLink: "/hills",
+    readMoreLink: "/customer-stories/7hills-restaurant",
     featured: false,
     tag: "Custom Development",
   },
@@ -41,7 +41,7 @@ const stories = [
     category: "Odoo CRM",
     title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
     description: "Odoo CRM implementation eliminating manual processes and enabling real-time visibility and operational efficiency for the sales team.",
-    readMoreLink: "/Lvk",
+    readMoreLink: "/customer-stories/lvk-pharma-odoo-crm",
     featured: false,
     tag: "Odoo",
   },
@@ -64,7 +64,7 @@ const CustomerStoriesPage = () => {
         title="Success Stories"
         subtitle="Discover how our innovative solutions have empowered businesses to achieve operational excellence and growth."
         breadcrumbs={[
-          { name: "About Us", path: "/aboutus" },
+          { name: "About Us", path: "/about" },
           { name: "Success Stories", path: "/about/customer-stories" },
         ]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/customerstory.jpg?tr=f-auto,q-auto,w-2000"
@@ -259,7 +259,7 @@ const CustomerStoriesPage = () => {
             <p className="text-slate-400 text-sm max-w-xl mx-auto mb-8">
               Join hundreds of businesses that have transformed their operations with Sria Infotech's enterprise solutions.
             </p>
-            <Link to="/contactus">
+            <Link to="/contact">
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-orange-500/20 text-sm"

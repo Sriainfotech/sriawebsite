@@ -73,7 +73,7 @@ function Location() {
         title="Global Presence"
         subtitle="Find the location nearest to you and connect with our local teams across India and the USA."
         breadcrumbs={[
-          { name: "About Us", path: "/aboutus" },
+          { name: "About Us", path: "/about" },
           { name: "Locations", path: "/about/locations" },
         ]}
         backgroundImage="/location.jpg"

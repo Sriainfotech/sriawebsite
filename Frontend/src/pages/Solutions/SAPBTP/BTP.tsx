@@ -241,7 +241,7 @@ const insights = {
  description:
  "Private Cloud is essential for businesses seeking maximum control, security, and compliance. It ensures data sovereignty and tailored infrastructure for mission-critical applications.",
  ctaText: "Talk to an Expert",
- ctaLink: "/contactus",
+ ctaLink: "/contact",
  solutions: [
  { title: "Private Cloud Services", href: "/solutions/private-cloud" },
  { title: "Hybrid Cloud Solutions", href: "/solutions/hybrid-cloud" },
@@ -422,7 +422,7 @@ function BTP() {
  Accelerate digital transformation with SAP Business Technology Platform. Build, integrate, and extend intelligent applications with unified data, analytics, and AI capabilities.
  </h2>
  <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
- <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
+ <Link to="/contact" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
  Request a Demo
  </Link>
  </div>
@@ -522,7 +522,7 @@ function BTP() {
  Empowering Innovation with SAP BTP
  </h2>
  <div className="flex-shrink-0">
- <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
+ <Link to="/contact" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
  Request a Demo
  </Link>
  </div>

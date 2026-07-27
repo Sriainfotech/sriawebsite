@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Phone, Mail, Share2 } from "lucide-react";
 import {
   FaLinkedinIn,
@@ -111,6 +112,28 @@ const FloatingButtons = () => {
       >
         <img src='https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000' alt="IVC" className="h-20 max-w-none object-contain" />
       </a>
+
+      {/* BSNL */}
+      {/* <Link
+        to="/partners/bsnl"
+        title="Official Skill Solution Partner"
+        aria-label="BSNL — Official Skill Solution Partner"
+        className="bg-white backdrop-blur-sm w-auto h-16 rounded-md shadow-lg hover:bg-black/30 hover:scale-105 transition overflow-hidden flex items-center justify-center p-2"
+      >
+        <img
+          src="https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000"
+          alt="BSNL"
+          className="h-full max-w-none object-contain"
+          onError={(e) => {
+            const t = e.currentTarget;
+            t.style.display = "none";
+            t.parentElement!.insertAdjacentHTML(
+              "afterbegin",
+              '<span class="text-orange-600 font-bold text-xs">BSNL</span>'
+            );
+          }}
+        />
+      </Link> */}
 
       {/* PHONE */}
       <div

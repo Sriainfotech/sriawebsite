@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import axiosInstance from "@/lib/axios";
 
-const HeroSection = ({ customTitle }: { customTitle?: string }) => {
+const HeroSection = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
@@ -116,19 +116,11 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                         transition={{ duration: 0.9, delay: 0.1 }}
                     >
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6 tracking-tight">
-                            {customTitle ? (
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
-                                    {customTitle}
-                                </span>
-                            ) : (
-                                <>
-                                    Trusted Globally{" "}
-                                    <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
-                                        for SAP Consulting
-                                    </span>
-                                </>
-                            )}
+                            Trusted Globally{" "}
+                            <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
+                                for SAP Consulting
+                            </span>
                         </h1>
                     </motion.div>
 
@@ -185,7 +177,7 @@ const HeroSection = ({ customTitle }: { customTitle?: string }) => {
                             </DialogContent>
                         </Dialog>
 
-                        <Link to="/aboutus">
+                        <Link to="/about">
                             <button className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold text-base hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300">
                                 Discover More <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>

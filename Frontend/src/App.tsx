@@ -3,9 +3,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import LoadingScreen from "./components/layout/LoadingScreen";
+import RouteSeo from "./components/seo/RouteSeo";
 
 // Eager-loaded (critical above-the-fold pages)
 import Index from "./pages/Index";
@@ -38,6 +39,10 @@ const Nxify = React.lazy(() => import("./pages/Products/Nxify"));
 
 // Partners
 const IVCSolutions = React.lazy(() => import("./pages/Partners/IVCSolutions"));
+const BSNL = React.lazy(() => import("./pages/Partners/BSNL"));
+const TelanganaGovernment = React.lazy(() => import("./pages/Partners/TelanganaGovernment"));
+const TASK = React.lazy(() => import("./pages/Partners/TASK"));
+const THub = React.lazy(() => import("./pages/Partners/THub"));
 
 // Services — SAP Support
 const Upgrade = React.lazy(() => import("./pages/Services/SAPSupport/Upgrade"));
@@ -140,37 +145,42 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Suspense fallback={<LoadingScreen />}>
+            <RouteSeo />
             <Routes>
               {/* Standalone — no navbar/footer */}
-              <Route path="/terms" element={<InvoiceTerms />} />
+              <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
               <Route path="/sap-analytics" element={<SAPAnalytics />} />
 
               <Route element={<Layout />}>
                 {/* Main Routes */}
                 <Route path="/" element={<Index />} />
-                <Route path="/best-digital-transformation-company" element={<Index customTitle="Best Digital Transformation Company" />} />
+                <Route path="/best-digital-transformation-company" element={<Navigate to="/" replace />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/aboutus" element={<About />} />
+                <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
                 <Route path="/careers" element={<ComingSoon />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/contactus" element={<Contact />} />
+                <Route path="/contactus" element={<Navigate to="/contact" replace />} />
 
                 {/* About Routes */}
                 <Route path="/about/alliances" element={<ComingSoon />} />
-                <Route path="/about/careers" element={<ComingSoon />} />
+                <Route path="/about/careers" element={<Navigate to="/careers" replace />} />
                 <Route path="/about/coming-soon" element={<ComingSoon />} />
                 <Route path="/about/customer-stories" element={<CustomerStoriesPage />} />
-                <Route path="/hills" element={<Hills />} />
-                <Route path="/Lvk" element={<Lvk />} />
-                <Route path="/patil" element={<Patil />} />
+                <Route path="/customer-stories/7hills-restaurant" element={<Hills />} />
+                <Route path="/customer-stories/lvk-pharma-odoo-crm" element={<Lvk />} />
+                <Route path="/customer-stories/patil-sap-ams-automation" element={<Patil />} />
+                {/* Legacy customer-story URLs */}
+                <Route path="/hills" element={<Navigate to="/customer-stories/7hills-restaurant" replace />} />
+                <Route path="/Lvk" element={<Navigate to="/customer-stories/lvk-pharma-odoo-crm" replace />} />
+                <Route path="/patil" element={<Navigate to="/customer-stories/patil-sap-ams-automation" replace />} />
                 <Route path="/about/leadership" element={<LeaderShip />} />
                 <Route path="/about/locations" element={<Location />} />
                 <Route path="/about/sap-partner" element={<Partners />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/about/events" element={<ComingSoon />} />
                 <Route path="/about/culture" element={<Culture />} />
-                <Route path="/insights/customer-stories" element={<CustomerStoriesPage />} />
+                <Route path="/insights/customer-stories" element={<Navigate to="/about/customer-stories" replace />} />
 
                 {/* App Store */}
                 <Route path="/app-store" element={<AppStore />} />
@@ -184,27 +194,45 @@ const App = () => (
 
                 {/* Partners Routes */}
                 <Route path="/partners/ivc-solutions" element={<IVCSolutions />} />
+                <Route path="/partners/bsnl" element={<BSNL />} />
+                <Route path="/partners/telangana-government" element={<TelanganaGovernment />} />
+                <Route path="/partners/task" element={<TASK />} />
+                <Route path="/partners/t-hub" element={<THub />} />
 
-                {/* Services Routes - SAP Support */}
-                <Route path="/upgrades" element={<Upgrade />} />
-                <Route path="/abap" element={<Abap />} />
-                <Route path="/migrations" element={<Migration />} />
-                <Route path="/integration" element={<Integration />} />
-                <Route path="/rollouts" element={<SAPConsulting />} />
-                <Route path="/application-development" element={<Application />} />
-                <Route path="/fioridevelop" element={<SAPFiori />} />
-                <Route path="/implement" element={<Implementation />} />
-                <Route path="/support-maintainance" element={<Support />} />
+                {/* Services Routes - SAP Support (clean URLs) */}
+                <Route path="/services/sap-upgrade" element={<Upgrade />} />
+                <Route path="/services/sap-abap-rap-development" element={<Abap />} />
+                <Route path="/services/sap-migration" element={<Migration />} />
+                <Route path="/services/sap-integration" element={<Integration />} />
+                <Route path="/services/global-sap-rollouts" element={<SAPConsulting />} />
+                <Route path="/services/sap-application-development" element={<Application />} />
+                <Route path="/services/sap-fiori-development" element={<SAPFiori />} />
+                <Route path="/services/sap-s4hana-implementation" element={<Implementation />} />
+                <Route path="/services/sap-support-maintenance" element={<Support />} />
+                {/* Legacy SAP Support URLs */}
+                <Route path="/upgrades" element={<Navigate to="/services/sap-upgrade" replace />} />
+                <Route path="/abap" element={<Navigate to="/services/sap-abap-rap-development" replace />} />
+                <Route path="/migrations" element={<Navigate to="/services/sap-migration" replace />} />
+                <Route path="/integration" element={<Navigate to="/services/sap-integration" replace />} />
+                <Route path="/rollouts" element={<Navigate to="/services/global-sap-rollouts" replace />} />
+                <Route path="/application-development" element={<Navigate to="/services/sap-application-development" replace />} />
+                <Route path="/fioridevelop" element={<Navigate to="/services/sap-fiori-development" replace />} />
+                <Route path="/implement" element={<Navigate to="/services/sap-s4hana-implementation" replace />} />
+                <Route path="/support-maintainance" element={<Navigate to="/services/sap-support-maintenance" replace />} />
 
                 {/* Services Routes - Strategy Consulting */}
                 <Route path="/services/strategy-consulting/business" element={<BusinessConsulting />} />
                 <Route path="/services/strategy-consulting/process" element={<ProcessConsulting />} />
                 <Route path="/services/strategy-consulting/tech" element={<TechConsulting />} />
 
-                {/* Services Routes - Implementation */}
-                <Route path="/odooservices/customdevelopment" element={<CustomeDevelopment />} />
-                <Route path="/additionalServices/dataanalytics" element={<DataAnalytics />} />
-                <Route path="/odooservices/implementation" element={<OdooImplementation />} />
+                {/* Services Routes - Implementation (clean URLs) */}
+                <Route path="/services/odoo-custom-development" element={<CustomeDevelopment />} />
+                <Route path="/services/data-analytics" element={<DataAnalytics />} />
+                <Route path="/services/odoo-implementation" element={<OdooImplementation />} />
+                {/* Legacy Odoo/analytics URLs */}
+                <Route path="/odooservices/customdevelopment" element={<Navigate to="/services/odoo-custom-development" replace />} />
+                <Route path="/additionalServices/dataanalytics" element={<Navigate to="/services/data-analytics" replace />} />
+                <Route path="/odooservices/implementation" element={<Navigate to="/services/odoo-implementation" replace />} />
 
                 {/* Solutions Routes - Analytics Cloud */}
                 <Route path="/solutions/ariba" element={<Ariba />} />

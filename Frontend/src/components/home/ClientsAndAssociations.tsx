@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -14,6 +15,7 @@ interface Association {
   tag: string;
   logo: string;
   highlight?: boolean;
+  link?: string;
 }
 
 interface StatCounterProps {
@@ -71,27 +73,32 @@ const ASSOCIATIONS: Association[] = [
     name: "Telangana Government",
     tag: "State Partner",
     logo: "/Logos/Emblem_of_Telangana.webp",
+    link: "/partners/telangana-government",
   },
   {
     name: "TASK",
     tag: "Skill Alliance",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-2000",
+    link: "/partners/task",
   },
   {
-    name: "BSNL Skill Development",
-    tag: "Skill Development Partner",
+    name: "BSNL",
+    tag: "Skill Solution Partner",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000",
     highlight: true,
+    link: "/partners/bsnl",
   },
   {
     name: "IVC SAP Gold Partner",
     tag: "SAP Gold",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000",
+    link: "/partners/ivc-solutions",
   },
   {
     name: "T-Hub",
     tag: "Innovation Hub",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-2000",
+    link: "/partners/t-hub",
   },
 ];
 
@@ -213,14 +220,16 @@ function StatCounter({ end, label }: StatCounterProps) {
 // ── Association card ─────────────────────────────────────────────────────────
 
 function AssocCard({ assoc }: AssocCardProps) {
-  return (
-    <div
-      className={`relative w-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl transition-all duration-300 group ${
-        assoc.highlight
-          ? "border-2 border-orange-400/70 bg-orange-500/10 shadow-lg shadow-orange-500/20 hover:bg-orange-500/15 hover:border-orange-400"
-          : "border border-white/10 bg-white/5 hover:bg-white/10 hover:border-orange-400/20"
-      }`}
-    >
+  const className = `relative w-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl transition-all duration-300 group ${
+    assoc.link ? "cursor-pointer" : ""
+  } ${
+    assoc.highlight
+      ? "border-2 border-orange-400/70 bg-orange-500/10 shadow-lg shadow-orange-500/20 hover:bg-orange-500/15 hover:border-orange-400"
+      : "border border-white/10 bg-white/5 hover:bg-white/10 hover:border-orange-400/20"
+  }`;
+
+  const content = (
+    <>
       <div className="w-24 h-24 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2.5 flex-shrink-0">
         <img
           src={assoc.logo}
@@ -239,8 +248,18 @@ function AssocCard({ assoc }: AssocCardProps) {
           {assoc.tag}
         </span>
       </div>
-    </div>
+    </>
   );
+
+  if (assoc.link) {
+    return (
+      <Link to={assoc.link} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  return <div className={className}>{content}</div>;
 }
 
 // ── Section label ─────────────────────────────────────────────────────────────

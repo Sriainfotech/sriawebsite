@@ -55,7 +55,7 @@ function LeaderShip() {
       <PageHeader
         title="Meet Leadership Team"
         breadcrumbs={[
-          { name: "About Us", path: "/aboutus" },
+          { name: "About Us", path: "/about" },
           { name: "Leadership", path: "/about/leadership" },
         ]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-2000"

@@ -219,19 +219,19 @@ const customerStories = [
  id: 2,
  image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
  title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
- readMoreLink: "/patil",
+ readMoreLink: "/customer-stories/patil-sap-ams-automation",
  },
  {
  id: 3,
  image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-2000",
  title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
- readMoreLink: "/hills",
+ readMoreLink: "/customer-stories/7hills-restaurant",
  },
  {
  id: 4,
  image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
  title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
- readMoreLink: "/Lvk",
+ readMoreLink: "/customer-stories/lvk-pharma-odoo-crm",
  },
 ];
 
@@ -240,7 +240,7 @@ const insights = {
  description:
  "Explore our comprehensive range of services from implementation to support.",
  ctaText: "Contact Us",
- ctaLink: "/contactus",
+ ctaLink: "/contact",
  solutions: [
  { title: "Rise with SAP", href: "/solutions/rise-with-sap" },
  { title: "SAP S/4HANA", href: "/solutions/sap-s4hana" },
@@ -422,7 +422,7 @@ function SAPFinancialMgmt() {
  Our innovative technologies empower financial institutions to streamline operations, enhance customer experiences, and drive growth.
  </h2>
  <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
- <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
+ <Link to="/contact" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
  Request a Demo
  </Link>
  </div>
@@ -522,7 +522,7 @@ function SAPFinancialMgmt() {
  Empowering global trade for businesses
  </h2>
  <div className="flex-shrink-0">
- <Link to="/contactus" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
+ <Link to="/contact" className="bg-white text-black px-6 py-3 rounded-lg inline-block">
  Request a Demo
  </Link>
  </div>

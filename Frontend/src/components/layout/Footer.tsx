@@ -48,18 +48,18 @@ const Footer = () => {
     ];
 
     const services = [
-        { label: "SAP Implementation", link: "/implement" },
-        { label: "SAP Rollouts", link: "/rollouts" },
-        { label: "Application Development", link: "/application-development" },
-        { label: "SAP Integration", link: "/integration" },
-        { label: "Support & Maintenance", link: "/support-maintainance" },
-        { label: "SAP Upgrades", link: "/upgrades" },
-        { label: "SAP Migrations", link: "/migrations" },
-        { label: "Fiori Development", link: "/fioridevelop" },
-        { label: "ABAP RAP Services", link: "/abap" },
-        { label: "Odoo Implementation", link: "/odooservices/implementation" },
-        { label: "Custom App Development", link: "/odooservices/customdevelopment" },
-        { label: "Data Analytics", link: "/additionalServices/dataanalytics" }
+        { label: "SAP Implementation", link: "/services/sap-s4hana-implementation" },
+        { label: "SAP Rollouts", link: "/services/global-sap-rollouts" },
+        { label: "Application Development", link: "/services/sap-application-development" },
+        { label: "SAP Integration", link: "/services/sap-integration" },
+        { label: "Support & Maintenance", link: "/services/sap-support-maintenance" },
+        { label: "SAP Upgrades", link: "/services/sap-upgrade" },
+        { label: "SAP Migrations", link: "/services/sap-migration" },
+        { label: "Fiori Development", link: "/services/sap-fiori-development" },
+        { label: "ABAP RAP Services", link: "/services/sap-abap-rap-development" },
+        { label: "Odoo Implementation", link: "/services/odoo-implementation" },
+        { label: "Custom App Development", link: "/services/odoo-custom-development" },
+        { label: "Data Analytics", link: "/services/data-analytics" }
     ];
 
     return (

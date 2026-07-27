@@ -14,7 +14,7 @@ const categories = [
       { num: "01", title: "SAP Concur",       tagline: "Automated travel, expense and invoice management.",   link: "/solutions/concur" },
       { num: "02", title: "SAP Private Cloud", tagline: "Intelligent, real-time, seamless cloud transformation.", link: "/solutions/private-cloud" },
       { num: "03", title: "SAP SuccessFactors",tagline: "Talent, workforce and experience management.",          link: "/solutions/successfactors" },
-      { num: "04", title: "SAP CPI",           tagline: "Integrated, predictive, intelligent connectivity.",     link: "/integration" },
+      { num: "04", title: "SAP CPI",           tagline: "Integrated, predictive, intelligent connectivity.",     link: "/services/sap-integration" },
       { num: "05", title: "SAP Public Cloud",  tagline: "Scalable, modern, efficient ERP in the cloud.",         link: "/solutions/public-cloud" },
     ],
   },
@@ -26,10 +26,10 @@ const categories = [
     image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-2000",
     count: "4 solutions",
     items: [
-      { num: "01", title: "Business Intelligence",  tagline: "Transform raw data into actionable business insights.",    link: "/additionalServices/dataanalytics" },
-      { num: "02", title: "Predictive Analytics",   tagline: "Anticipate market trends with AI-driven forecasting.",    link: "/additionalServices/dataanalytics" },
-      { num: "03", title: "Data Visualization",     tagline: "Interactive dashboards for real-time decision making.",   link: "/additionalServices/dataanalytics" },
-      { num: "04", title: "Big Data Solutions",     tagline: "Scalable architecture for processing massive datasets.",  link: "/additionalServices/dataanalytics" },
+      { num: "01", title: "Business Intelligence",  tagline: "Transform raw data into actionable business insights.",    link: "/services/data-analytics" },
+      { num: "02", title: "Predictive Analytics",   tagline: "Anticipate market trends with AI-driven forecasting.",    link: "/services/data-analytics" },
+      { num: "03", title: "Data Visualization",     tagline: "Interactive dashboards for real-time decision making.",   link: "/services/data-analytics" },
+      { num: "04", title: "Big Data Solutions",     tagline: "Scalable architecture for processing massive datasets.",  link: "/services/data-analytics" },
     ],
   },
 ];
@@ -155,7 +155,7 @@ const SolutionsGrid = () => {
           transition={{ delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <Link to="/contactus">
+          <Link to="/contact">
             <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-3.5 text-sm rounded-full font-semibold shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-300 hover:-translate-y-0.5">
               Get Started with Our Expertise
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -13,7 +13,7 @@ const features = [
     description:
       "End-to-end implementation and migration services that modernise your core ERP. We guide you through every phase — from blueprinting to go-live — ensuring minimal disruption.",
     highlights: ["Greenfield & Brownfield", "RISE with SAP", "Data Migration", "Post Go-Live Support"],
-    link: "/implement",
+    link: "/services/sap-s4hana-implementation",
     color: "orange",
   },
   {
@@ -37,7 +37,7 @@ const features = [
     description:
       "Transform raw data into strategic advantage. Our analytics practice covers SAP Analytics Cloud, embedded AI, and real-time dashboards that empower every layer of your organisation.",
     highlights: ["SAP Analytics Cloud", "Predictive AI", "Real-Time Dashboards", "Data Warehousing"],
-    link: "/additionalServices/dataanalytics",
+    link: "/services/data-analytics",
     color: "violet",
   },
   {
@@ -49,7 +49,7 @@ const features = [
     description:
       "Keep your SAP landscape healthy with proactive monitoring, SLA-backed support, and continuous optimisation. Our AMS team acts as an extension of your IT function.",
     highlights: ["24 / 7 Monitoring", "SLA-Based Support", "AMS & Optimisation", "Incident Management"],
-    link: "/support-maintainance",
+    link: "/services/sap-support-maintenance",
     color: "emerald",
   },
 ];
