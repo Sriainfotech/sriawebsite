@@ -384,8 +384,8 @@ function TASK() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1400&q=80"
-            alt="Students collaborating in classroom"
+            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1400&q=80"
+            alt="Curved library shelves full of books"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-slate-950/90" />

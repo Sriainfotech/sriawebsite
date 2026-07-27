@@ -11,8 +11,8 @@ const Lvk = () => (
       datePublished: "August 5, 2025",
     }}
     images={{
-      overview:  "https://images.unsplash.com/photo-1576671081837-49000212a2ad?w=900&q=80",
-      overviewAlt: "Modern office building exterior",
+      overview:  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80",
+      overviewAlt: "Rows of desks in office",
       challenge: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=900&q=80",
       challengeAlt: "Pill blister packs arranged together",
       impact:    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1400&q=80",

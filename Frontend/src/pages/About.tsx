@@ -39,8 +39,8 @@ const accordionData = [
   {
     title: "Our Services",
     text: "SAP Consulting & Implementation — Expert SAP solutions to streamline enterprise processes.\nEnterprise Application Development — Tailored applications that improve business efficiency.\nCloud Solutions — Scalable and secure cloud services to elevate your infrastructure.\nAI & Machine Learning — Advanced AI-driven solutions to boost automation and decision-making.\nIT Consulting & Managed Services — Comprehensive IT advisory and support.",
-    image: "/aboutus/ourservices.jpg",
-    alt: "SAP and IT consulting services",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-2000",
+    alt: "Team standing around SAP visual",
   },
   {
     title: "Why Choose Us?",
