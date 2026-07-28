@@ -1,35 +1,31 @@
 import { motion } from "framer-motion";
 import { Cloud, Database, Layers, Shield, ArrowRight } from "lucide-react";
-import serviceSap from "@/assets/service-sap.jpg";
-import serviceCloud from "@/assets/service-cloud.jpg";
-import serviceDigital from "@/assets/service-digital.jpg";
-import serviceManaged from "@/assets/service-managed.jpg";
 
 const solutions = [
  {
  icon: Layers,
- image: serviceSap,
+ image: "https://ik.imagekit.io/hps6th7vy/sria/services/service-sap.jpg?tr=f-auto,q-auto,w-640",
  alt: "SAP analytics dashboard interface",
  title: "SAP S/4HANA",
  description: "End-to-end implementation and migration services for intelligent enterprise solutions.",
  },
  {
  icon: Cloud,
- image: serviceCloud,
+ image: "https://ik.imagekit.io/hps6th7vy/sria/services/service-cloud.jpg?tr=f-auto,q-auto,w-640",
  alt: "Cloud computing data center servers",
  title: "Cloud Solutions",
  description: "Seamless cloud migration and management with SAP Business Technology Platform.",
  },
  {
  icon: Database,
- image: serviceDigital,
+ image: "https://ik.imagekit.io/hps6th7vy/sria/services/service-digital.jpg?tr=f-auto,q-auto,w-640",
  alt: "Digital transformation analytics dashboard",
  title: "Data Analytics",
  description: "Transform data into actionable insights for informed decision-making.",
  },
  {
  icon: Shield,
- image: serviceManaged,
+ image: "https://ik.imagekit.io/hps6th7vy/sria/services/service-managed.jpg?tr=f-auto,q-auto,w-640",
  alt: "IT support team monitoring servers",
  title: "Managed Services",
  description: "Comprehensive application management and support services.",
@@ -66,6 +62,10 @@ const RecommendedSolutions = () => {
  <img
  src={solution.image}
  alt={solution.alt}
+ width={320}
+ height={192}
+ loading="lazy"
+ decoding="async"
  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
  />
  <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur p-2 rounded-lg shadow-sm">

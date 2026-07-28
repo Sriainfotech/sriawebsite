@@ -48,7 +48,16 @@ const StatsSection = () => {
         <section className="section-padding relative overflow-hidden">
             {/* Background image */}
             <div className="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80" alt="" role="presentation" className="w-full h-full object-cover" />
+                <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
+                    alt=""
+                    role="presentation"
+                    width={1400}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-slate-950/90" />
                 {/* Subtle grid */}
                 <div

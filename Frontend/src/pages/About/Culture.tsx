@@ -8,17 +8,20 @@ const events = [
     id: "mulugu-inauguration",
     label: "Mulugu Inauguration",
     caption: "Office Inauguration – Mulugu",
+    // Width kept at 1600 (ladder max) because this same URL also backs the
+    // full-screen lightbox view; the masonry thumbnail below requests a
+    // smaller rendition via its own srcset.
     photos: [
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpg?tr=f-auto,q-auto,w-2000",
-      "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto,w-2000",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpg?tr=f-auto,q-auto,w-1600",
     ],
   },
   {
@@ -26,15 +29,20 @@ const events = [
     label: "BSNL Partnership Signing",
     caption: "BSNL Partnership Signing – Regional Telecom Training Centre",
     photos: [
-      "/gallery/bsnl-partnership-signing-01.jpeg",
-      "/gallery/bsnl-partnership-signing-02.jpeg",
-      "/gallery/bsnl-partnership-signing-03.jpeg",
-      "/gallery/bsnl-partnership-signing-04.jpeg",
-      "/gallery/bsnl-partnership-signing-05.jpeg",
-      "/gallery/bsnl-partnership-signing-06.jpeg",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-05.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-06.jpeg?tr=f-auto,q-auto,w-1600",
     ],
   },
 ];
+
+const IK = "ik.imagekit.io";
+const withW = (url: string, w: number) => (url.includes(IK) ? url.replace(/w-\d+/, `w-${w}`) : url);
+const ikSrcSet = (url: string, w1: number, w2: number) =>
+  url.includes(IK) ? `${withW(url, w1)} ${w1}w, ${withW(url, w2)} ${w2}w` : undefined;
 
 // Flat list across all events — keeps the lightbox navigable end-to-end.
 const allPhotos = events.flatMap((event) =>
@@ -102,10 +110,15 @@ const Culture: React.FC = () => {
                     onClick={() => openLightbox(globalIndex)}
                   >
                     <img
-                      src={url}
+                      src={withW(url, 480)}
+                      srcSet={ikSrcSet(url, 480, 768)}
+                      sizes={url.includes(IK) ? "(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" : undefined}
                       alt={`${event.caption} – photo ${index + 1} of ${event.photos.length}`}
                       className="w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
+                      width={480}
+                      height={600}
                     />
                     <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/40 transition-colors duration-300 flex items-end p-4 opacity-0 group-hover:opacity-100">
                       <span className="text-white text-sm font-medium">{event.caption}</span>
@@ -156,6 +169,10 @@ const Culture: React.FC = () => {
               src={allPhotos[lightboxIndex].url}
               alt={`${allPhotos[lightboxIndex].caption} – photo ${lightboxIndex + 1} of ${allPhotos.length}`}
               className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl"
+              loading="lazy"
+              decoding="async"
+              width={1200}
+              height={800}
               onClick={e => e.stopPropagation()}
             />
 

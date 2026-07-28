@@ -40,7 +40,7 @@ function ProcessConsulting() {
         { name: "Strategy Consulting", path: "/services/strategy-consulting" },
         { name: "Process Strategy", path: "/services/strategy-consulting/process" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-2000"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-1600"
       processTitle="Who This Is For, and What You Get"
       processDescription="Built for process owners, operations managers and COOs who need clean, standardized processes before a technology implementation starts. Most engagements run 2-5 weeks depending on scope."
       processSteps={[

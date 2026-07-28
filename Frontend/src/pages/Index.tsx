@@ -1,25 +1,47 @@
+import { Suspense, lazy } from "react";
 import HeroSection from "@/components/home/HeroSection";
-import ClientsAndAssociations from "@/components/home/ClientsAndAssociations";
-import FeaturesSection from "@/components/home/FeaturesSection";
-import AboutSection from "@/components/home/AboutSection";
-import StatsSection from "@/components/home/StatsSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import SolutionsGrid from "@/components/home/SolutionsGrid";
-import ChairmanStatement from "@/components/home/ChairmanStatement";
-import FAQSection from "@/components/home/FAQSection";
+
+// Everything below is below-the-fold on first paint, so it's code-split out
+// of the eagerly-loaded homepage bundle. Each Suspense fallback reserves an
+// approximate min-height (matched to that section's real rendered height)
+// so the chunk resolving in doesn't shift the layout of whatever's below it.
+const ClientsAndAssociations = lazy(() => import("@/components/home/ClientsAndAssociations"));
+const FeaturesSection = lazy(() => import("@/components/home/FeaturesSection"));
+const ServicesSection = lazy(() => import("@/components/home/ServicesSection"));
+const SolutionsGrid = lazy(() => import("@/components/home/SolutionsGrid"));
+const AboutSection = lazy(() => import("@/components/home/AboutSection"));
+const StatsSection = lazy(() => import("@/components/home/StatsSection"));
+const ChairmanStatement = lazy(() => import("@/components/home/ChairmanStatement"));
+const FAQSection = lazy(() => import("@/components/home/FAQSection"));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <HeroSection />
-      <ClientsAndAssociations />
-      <FeaturesSection />
-      <ServicesSection />
-      <SolutionsGrid />
-      <AboutSection />
-      <StatsSection />
-      <ChairmanStatement />
-      <FAQSection />
+      <Suspense fallback={<div className="min-h-[420px]" />}>
+        <ClientsAndAssociations />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[380px]" />}>
+        <FeaturesSection />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[480px]" />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[380px]" />}>
+        <SolutionsGrid />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[380px]" />}>
+        <AboutSection />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[160px]" />}>
+        <StatsSection />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[320px]" />}>
+        <ChairmanStatement />
+      </Suspense>
+      <Suspense fallback={<div className="min-h-[360px]" />}>
+        <FAQSection />
+      </Suspense>
     </div>
   );
 };

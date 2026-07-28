@@ -148,7 +148,7 @@ function DataAnalytics() {
           { name: "Implementation", path: "/services/implementation" },
           { name: "Data Analytics", path: "/services/data-analytics" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/DATA%20ANALYTICS.png?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/DATA%20ANALYTICS.png?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Intro Split Section ── */}
@@ -203,6 +203,10 @@ function DataAnalytics() {
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80"
                   alt="Laptop screen showing data analytics"
                   className="w-full h-full object-cover"
+                  width={640}
+                  height={380}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -303,6 +307,10 @@ function DataAnalytics() {
                   alt=""
                   role="presentation"
                   className="w-full h-full object-cover opacity-20"
+                  width={1400}
+                  height={480}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 to-slate-800/90" />
                 <div className="absolute inset-0 opacity-[0.04]"
@@ -360,6 +368,10 @@ function DataAnalytics() {
                         src={tab.image}
                         alt={tab.alt}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        width={440}
+                        height={144}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                       <div className="absolute bottom-3 left-4">

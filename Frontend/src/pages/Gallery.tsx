@@ -75,9 +75,9 @@ const gallery: GalleryItem[] = [
     id: 16, type: "image", category: "Milestones", caption: "BSNL Partnership Signing",
     featured: true, size: "tall", objectPosition: "center",
     images: [
-      "/gallery/bsnl-partnership-signing-01.jpeg",
-      "/gallery/bsnl-partnership-signing-02.jpeg",
-      "/gallery/bsnl-partnership-signing-03.jpeg",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-1600",
     ],
   },
   {
@@ -85,9 +85,9 @@ const gallery: GalleryItem[] = [
     id: 17, type: "image", category: "Milestones", caption: "BSNL Partnership Signing",
     featured: true, size: "wide", objectPosition: "center",
     images: [
-      "/gallery/bsnl-partnership-signing-04.jpeg",
-      "/gallery/bsnl-partnership-signing-05.jpeg",
-      "/gallery/bsnl-partnership-signing-06.jpeg",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-05.jpeg?tr=f-auto,q-auto,w-1600",
+      "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-06.jpeg?tr=f-auto,q-auto,w-1600",
     ],
   },
 
@@ -231,6 +231,15 @@ const stats = [
 const countFor = (cat: string) =>
   cat === "All" ? gallery.length : gallery.filter(i => i.category === cat).length;
 
+/* Downsize an ImageKit URL's w- transform to the given widths (no-op for non-ImageKit URLs). */
+const imagekitWidth = (url: string, w: number) =>
+  url.includes("ik.imagekit.io") && /w-\d+/.test(url) ? url.replace(/w-\d+/, `w-${w}`) : url;
+
+const imagekitSrcSet = (url: string, widths: number[]) =>
+  url.includes("ik.imagekit.io") && /w-\d+/.test(url)
+    ? widths.map(w => `${imagekitWidth(url, w)} ${w}w`).join(", ")
+    : undefined;
+
 /* ─── Video Gallery Card ─── */
 const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, onOpen }) => {
   const [playing, setPlaying] = useState(false);
@@ -331,6 +340,14 @@ const ImageCard: React.FC<{
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const isGroup = item.images.length > 1;
   const isProminent = item.size === "hero" || item.size === "wide";
+  // Approximate rendered box size within the bento/uniform grid, used to cap
+  // ImageKit resize widths and to reserve layout space via width/height.
+  const isWide = item.size === "hero" || item.size === "wide";
+  const isTall = item.size === "hero" || item.size === "tall";
+  const cardWidth = isWide ? 686 : 337;
+  const cardHeight = isTall ? 432 : isWide ? 210 : 225;
+  const displaySrc = imagekitWidth(item.images[idx], isWide ? 1600 : 768);
+  const displaySrcSet = imagekitSrcSet(item.images[idx], isWide ? [768, 1600] : [480, 768]);
 
   useEffect(() => {
     if (hovering && isGroup) {
@@ -352,7 +369,9 @@ const ImageCard: React.FC<{
       <AnimatePresence mode="sync">
         <motion.img
           key={idx}
-          src={item.images[idx]}
+          src={displaySrc}
+          srcSet={displaySrcSet}
+          sizes={isWide ? "(min-width: 1280px) 686px, 50vw" : "(min-width: 1280px) 337px, 50vw"}
           alt={item.caption}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -360,7 +379,10 @@ const ImageCard: React.FC<{
           transition={{ duration: 0.35 }}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           style={{ objectPosition: imgPosition }}
+          width={cardWidth}
+          height={cardHeight}
           loading="lazy"
+          decoding="async"
         />
       </AnimatePresence>
 
@@ -489,13 +511,19 @@ const Lightbox: React.FC<{ state: LightboxState; onClose: () => void }> = ({ sta
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={idx}
-                    src={state.item.images[idx]}
+                    src={imagekitWidth(state.item.images[idx], 1600)}
+                    srcSet={imagekitSrcSet(state.item.images[idx], [960, 1600])}
+                    sizes="(min-width: 1024px) 1024px, 100vw"
                     alt={state.item.caption}
                     initial={{ opacity: 0, x: 16 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -16 }}
                     transition={{ duration: 0.2 }}
                     className="w-full max-h-[80vh] object-contain"
+                    width={1024}
+                    height={680}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </AnimatePresence>
               )}
@@ -529,7 +557,15 @@ const Lightbox: React.FC<{ state: LightboxState; onClose: () => void }> = ({ sta
                       className={`w-12 h-9 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${i === idx ? "border-orange-400 opacity-100" : "border-transparent opacity-35 hover:opacity-65"
                         }`}
                     >
-                      <img src={src} alt={`${state.item.caption} – thumbnail ${i + 1}`} className="w-full h-full object-cover" />
+                      <img
+                        src={imagekitWidth(src, 160)}
+                        alt={`${state.item.caption} – thumbnail ${i + 1}`}
+                        className="w-full h-full object-cover"
+                        width={48}
+                        height={36}
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </button>
                   ))}
                 </div>
@@ -572,7 +608,7 @@ const Gallery: React.FC = () => {
         title="Life at Sria"
         subtitle="A glimpse into our culture, our people, and the moments that make us who we are."
         breadcrumbs={[{ name: "About Us", path: "/about" }, { name: "Life at Sria", path: "/gallery" }]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-annual-team-gathering.jpg?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/gallery/sria-annual-team-gathering.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Stats ── */}

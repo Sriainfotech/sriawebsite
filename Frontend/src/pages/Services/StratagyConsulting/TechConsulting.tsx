@@ -39,7 +39,7 @@ function TechConsulting() {
         { name: "Strategy Consulting", path: "/services/strategy-consulting" },
         { name: "Technology Strategy", path: "/services/strategy-consulting/tech" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-2000"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-1600"
       processTitle="Who This Is For, and What You Get"
       processDescription="Built for CIOs, IT leaders and technical architects who need an independent view of platform and architecture options before committing budget. Most engagements run 3-6 weeks depending on landscape complexity."
       processSteps={[

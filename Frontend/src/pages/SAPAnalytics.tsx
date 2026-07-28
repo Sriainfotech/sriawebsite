@@ -122,18 +122,18 @@ const FILTERS: { key: FilterKey; label: string }[] = [
 ];
 
 const GALLERY_ITEMS: { cat: FilterKey; thumb: string; full: string; alt: string; category: string; caption: string }[] = [
-  { cat: "fin", thumb: "/sap-analytics/cfo-summary-thumb.jpg", full: "/sap-analytics/cfo-summary-full.jpg", alt: "CFO dashboard showing financial summary trends", category: "Finance", caption: "CFO Dashboard — Financial Summary" },
-  { cat: "fin", thumb: "/sap-analytics/cfo-balance-sheet-thumb.jpg", full: "/sap-analytics/cfo-balance-sheet-full.jpg", alt: "Balance sheet with assets, equity and liabilities variance", category: "Finance", caption: "Balance Sheet — Assets, Equity & Liabilities" },
-  { cat: "fin", thumb: "/sap-analytics/cfo-pnl-yearly-thumb.jpg", full: "/sap-analytics/cfo-pnl-yearly-full.jpg", alt: "Yearly profit and loss statement with income, expenses and variance", category: "Finance", caption: "Profit & Loss — Yearly" },
-  { cat: "fin", thumb: "/sap-analytics/cfo-ratios-thumb.jpg", full: "/sap-analytics/cfo-ratios-full.jpg", alt: "Financial ratio analysis covering liquidity, leverage, profitability and efficiency", category: "Finance", caption: "Detailed Analysis — Financial Ratios" },
-  { cat: "sales", thumb: "/sap-analytics/sales-analysis-thumb.jpg", full: "/sap-analytics/sales-analysis-full.jpg", alt: "Sales analysis dashboard with yearly, quarterly and monthly sales trends", category: "Sales", caption: "Sales Analysis Dashboard" },
-  { cat: "sales", thumb: "/sap-analytics/sales-quantity-thumb.jpg", full: "/sap-analytics/sales-quantity-full.jpg", alt: "Sales quantity analysis by material group and material code", category: "Sales", caption: "Sales Quantity Analysis" },
-  { cat: "sales", thumb: "/sap-analytics/sales-avg-price-thumb.jpg", full: "/sap-analytics/sales-avg-price-full.jpg", alt: "Average sales price analysis by material group and plant", category: "Sales", caption: "Average Price Analysis" },
-  { cat: "sales", thumb: "/sap-analytics/customer-sales-analysis-thumb.jpg", full: "/sap-analytics/customer-sales-analysis-full.jpg", alt: "Customer sales analysis dashboard view", category: "Sales", caption: "Customer Sales Analysis" },
-  { cat: "sales", thumb: "/sap-analytics/sales-comparison-thumb.jpg", full: "/sap-analytics/sales-comparison-full.jpg", alt: "Sales comparison report by segment", category: "Sales", caption: "Sales Comparison Analysis" },
-  { cat: "cost", thumb: "/sap-analytics/cost-plant-comparison-thumb.jpg", full: "/sap-analytics/cost-plant-comparison-full.jpg", alt: "Plant-wise cost comparison dashboard view", category: "Cost", caption: "Plant Wise Comparison — Cost Analysis" },
-  { cat: "wc", thumb: "/sap-analytics/wc-dashboard-thumb.jpg", full: "/sap-analytics/wc-dashboard-full.jpg", alt: "Working capital dashboard by segment", category: "Working capital", caption: "Working Capital Dashboard" },
-  { cat: "wc", thumb: "/sap-analytics/wc-comparison-thumb.jpg", full: "/sap-analytics/wc-comparison-full.jpg", alt: "Working capital comparison across fiscal periods by segment", category: "Working capital", caption: "Working Capital — Period Comparison" },
+  { cat: "fin", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-summary-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-summary-full.jpg?tr=f-auto,q-auto,w-1600", alt: "CFO dashboard showing financial summary trends", category: "Finance", caption: "CFO Dashboard — Financial Summary" },
+  { cat: "fin", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-balance-sheet-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-balance-sheet-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Balance sheet with assets, equity and liabilities variance", category: "Finance", caption: "Balance Sheet — Assets, Equity & Liabilities" },
+  { cat: "fin", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-pnl-yearly-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-pnl-yearly-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Yearly profit and loss statement with income, expenses and variance", category: "Finance", caption: "Profit & Loss — Yearly" },
+  { cat: "fin", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-ratios-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-ratios-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Financial ratio analysis covering liquidity, leverage, profitability and efficiency", category: "Finance", caption: "Detailed Analysis — Financial Ratios" },
+  { cat: "sales", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-analysis-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-analysis-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Sales analysis dashboard with yearly, quarterly and monthly sales trends", category: "Sales", caption: "Sales Analysis Dashboard" },
+  { cat: "sales", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-quantity-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-quantity-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Sales quantity analysis by material group and material code", category: "Sales", caption: "Sales Quantity Analysis" },
+  { cat: "sales", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-avg-price-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-avg-price-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Average sales price analysis by material group and plant", category: "Sales", caption: "Average Price Analysis" },
+  { cat: "sales", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/customer-sales-analysis-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/customer-sales-analysis-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Customer sales analysis dashboard view", category: "Sales", caption: "Customer Sales Analysis" },
+  { cat: "sales", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-comparison-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-comparison-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Sales comparison report by segment", category: "Sales", caption: "Sales Comparison Analysis" },
+  { cat: "cost", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cost-plant-comparison-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cost-plant-comparison-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Plant-wise cost comparison dashboard view", category: "Cost", caption: "Plant Wise Comparison — Cost Analysis" },
+  { cat: "wc", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-dashboard-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-dashboard-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Working capital dashboard by segment", category: "Working capital", caption: "Working Capital Dashboard" },
+  { cat: "wc", thumb: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-comparison-thumb.jpg?tr=f-auto,q-auto,w-640", full: "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-comparison-full.jpg?tr=f-auto,q-auto,w-1600", alt: "Working capital comparison across fiscal periods by segment", category: "Working capital", caption: "Working Capital — Period Comparison" },
 ];
 
 const PHASES = [
@@ -257,10 +257,8 @@ const SAPAnalytics = () => {
             </div>
 
             {/* Dashboard mockup */}
-            <motion.div
-              initial={{ opacity: 0, y: 24, rotate: -1 }}
-              animate={{ opacity: 1, y: 0, rotate: -1 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            <div
+              style={{ transform: "rotate(-1deg)" }}
               className="hidden lg:block relative"
             >
               <div className="absolute -inset-4 bg-amber-400/20 rounded-2xl blur-2xl" />
@@ -271,7 +269,16 @@ const SAPAnalytics = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
                   <span className="ml-3 text-[10px] text-slate-400 tracking-wide">CFO Dashboard — Sample Report</span>
                 </div>
-                <img src="/sap-analytics/cfo-summary-full.jpg" alt="Sample CFO dashboard delivered for a client" className="w-full h-auto block" />
+                <img
+                  src="https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-summary-full.jpg?tr=f-auto,q-auto,w-960"
+                  alt="Sample CFO dashboard delivered for a client"
+                  className="w-full h-auto block"
+                  decoding="async"
+                  // @ts-expect-error — React 18.3 doesn't type fetchpriority yet; lowercase avoids the "unrecognized prop" warning until React 19
+                  fetchpriority="high"
+                  width={460}
+                  height={320}
+                />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-white rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center">
@@ -282,7 +289,7 @@ const SAPAnalytics = () => {
                   <p className="text-slate-500 text-xs">Built on live SAP data</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-16">
@@ -539,7 +546,15 @@ const SAPAnalytics = () => {
                     <span className="ml-2.5 text-[9.5px] text-slate-400 tracking-wide truncate">{shot.category.toLowerCase().replace(/\s+/g, "-")}.sriainfotech.com</span>
                   </div>
                   <div className="relative overflow-hidden aspect-[16/10]">
-                    <img loading="lazy" src={shot.thumb} alt={shot.alt} className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src={shot.thumb}
+                      alt={shot.alt}
+                      className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      width={450}
+                      height={281}
+                    />
                     <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-colors duration-300 flex items-center justify-center">
                       <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300">
                         <ZoomIn className="w-4.5 h-4.5 text-slate-900" />
@@ -687,6 +702,10 @@ const SAPAnalytics = () => {
             src={lightbox.src}
             alt={lightbox.alt}
             className="max-h-[88vh] max-w-[94vw] rounded-lg"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={750}
           />
         </div>
       )}

@@ -22,7 +22,6 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import axiosInstance from "@/lib/axios";
-import JSZip from "jszip";
 
 type ProfileKey = "sria" | "nxsys" | "both";
 
@@ -81,7 +80,10 @@ const HeroSection = () => {
 
         // Browsers silently block more than one automatic download from a
         // single user action, so multi-file selections are bundled into one
-        // zip and downloaded as a single file instead.
+        // zip and downloaded as a single file instead. JSZip is only needed
+        // for this rare multi-file path, so it's dynamically imported here
+        // rather than bundled into the homepage's initial JS.
+        const { default: JSZip } = await import("jszip");
         const zip = new JSZip();
         await Promise.all(
             files.map(async (profileFile) => {

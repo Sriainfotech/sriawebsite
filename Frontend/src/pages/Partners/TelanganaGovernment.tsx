@@ -6,8 +6,8 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-const TELANGANA_LOGO = "/Logos/Emblem_of_Telangana.webp";
-const HERO_BACKGROUND = "/tg.jpg";
+const TELANGANA_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logos/Emblem_of_Telangana.webp?tr=f-auto,q-auto,w-320";
+const HERO_BACKGROUND = "https://ik.imagekit.io/hps6th7vy/sria/partners/tg.jpg?tr=f-auto,q-auto,w-1600";
 
 // Dummy placeholder values — replace with real figures once available.
 const PROJECTS_DELIVERED = "10+";
@@ -107,6 +107,10 @@ function TelanganaGovernment() {
                   src={TELANGANA_LOGO}
                   alt="Government of Telangana"
                   className="h-28 object-contain mb-4"
+                  width={160}
+                  height={112}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     const t = e.currentTarget;
                     t.style.display = "none";
@@ -162,6 +166,10 @@ function TelanganaGovernment() {
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80"
                   alt="Students laughing together at laptop"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -212,6 +220,10 @@ function TelanganaGovernment() {
                   src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80"
                   alt="Hand signing document with pen"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={288}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 to-transparent" />
               </div>
@@ -265,6 +277,10 @@ function TelanganaGovernment() {
                   src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&q=80"
                   alt="Illuminated microchip circuit pattern"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -316,6 +332,10 @@ function TelanganaGovernment() {
                     src={prog.image}
                     alt={prog.alt}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    width={660}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -366,6 +386,10 @@ function TelanganaGovernment() {
                     src={item.image}
                     alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={112}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -393,6 +417,10 @@ function TelanganaGovernment() {
             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&q=80"
             alt="Students laughing together at laptop"
             className="w-full h-full object-cover"
+            width={1600}
+            height={500}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-slate-950/90" />
           <div className="absolute inset-0 opacity-[0.03]"
@@ -465,6 +493,10 @@ function TelanganaGovernment() {
                     src={program.image}
                     alt={program.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">

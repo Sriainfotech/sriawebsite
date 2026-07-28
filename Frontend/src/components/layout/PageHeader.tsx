@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight, Home } from "lucide-react";
 
@@ -105,11 +104,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  </nav>
  )}
 
- <motion.div
- initial={{ opacity: 0, y: 25 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.7, delay: 0.1 }}
- >
+ <div>
  {/* Accent line */}
  <div className="flex items-center gap-3 mb-5">
  <div className="h-px w-8 bg-gradient-to-r from-orange-500 to-amber-400" />
@@ -125,7 +120,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  {subtitle}
  </p>
  )}
- </motion.div>
+ </div>
  </div>
 
  </section>

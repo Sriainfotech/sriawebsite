@@ -8,8 +8,16 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-import aboutTeam from "@/assets/about-team.jpg";
-import aboutOffice from "@/assets/about-office.jpg";
+const aboutTeam = "https://ik.imagekit.io/hps6th7vy/sria/about/about-team.jpg?tr=f-auto,q-auto,w-640";
+const aboutOffice = "https://ik.imagekit.io/hps6th7vy/sria/about/about-office.jpg?tr=f-auto,q-auto,w-640";
+
+/* ─────────────── image helpers ─────────────── */
+// Only ImageKit URLs (ik.imagekit.io) get width capping + srcset; other
+// remote/local images are left as-is aside from loading/decoding/dimensions.
+const IK = "ik.imagekit.io";
+const withW = (url: string, w: number) => (url.includes(IK) ? url.replace(/w-\d+/, `w-${w}`) : url);
+const ikSrcSet = (url: string, w1: number, w2: number) =>
+  url.includes(IK) ? `${withW(url, w1)} ${w1}w, ${withW(url, w2)} ${w2}w` : undefined;
 
 /* ─────────────── data ─────────────── */
 
@@ -27,7 +35,7 @@ const accordionData = [
   {
     title: "Leadership",
     text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-768",
     alt: "Executives meeting in glass boardroom",
   },
   {
@@ -39,7 +47,7 @@ const accordionData = [
   {
     title: "Our Services",
     text: "SAP Consulting & Implementation — Expert SAP solutions to streamline enterprise processes.\nEnterprise Application Development — Tailored applications that improve business efficiency.\nCloud Solutions — Scalable and secure cloud services to elevate your infrastructure.\nAI & Machine Learning — Advanced AI-driven solutions to boost automation and decision-making.\nIT Consulting & Managed Services — Comprehensive IT advisory and support.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-768",
     alt: "Team standing around SAP visual",
   },
   {
@@ -83,7 +91,7 @@ const timelineEvents = [
 
 const offices = [
   { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80", alt: "New York skyline at sunset", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
-  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto,w-2000", alt: "Hyderabad cable bridge lit night", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
+  { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto,w-480", alt: "Hyderabad cable bridge lit night", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
   { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", alt: "City skyline aerial view", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
   { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80", alt: "Desert highway at sunset", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
 ];
@@ -110,7 +118,7 @@ const About = () => {
         title="About Sria Infotech"
         subtitle="A global SAP consulting company delivering world-class services through proven methodologies and innovation."
         breadcrumbs={[{ name: "About Us", path: "/about" }]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/aboutus.jpg?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/aboutus.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Who We Are ── */}
@@ -161,11 +169,11 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl h-64">
-                  <img src={aboutTeam} alt="Colleagues shaking hands in office" className="w-full h-full object-cover" />
+                  <img src={aboutTeam} alt="Colleagues shaking hands in office" className="w-full h-full object-cover" loading="lazy" decoding="async" width={400} height={256} />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 mt-8">
-                  <img src={aboutOffice} alt="Employees working in modern tech office" className="w-full h-full object-cover" />
+                  <img src={aboutOffice} alt="Employees working in modern tech office" className="w-full h-full object-cover" loading="lazy" decoding="async" width={400} height={256} />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                 </div>
               </div>
@@ -234,7 +242,17 @@ const About = () => {
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
-                  <img src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-2000" alt="Sai Kumar" className="w-full h-full object-cover object-top" />
+                  <img
+                    src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-160"
+                    srcSet="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-320 320w"
+                    sizes="40px"
+                    alt="Sai Kumar"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Sai Kumar Bonakurthi</p>
@@ -257,9 +275,15 @@ const About = () => {
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-500/20 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-80">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-2000"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-480"
+                  srcSet="https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-480 480w, https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-960 960w"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
                   alt="Sai Kumar Bonakurthi"
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                  width={450}
+                  height={320}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
               </div>
@@ -326,7 +350,17 @@ const About = () => {
                         </div>
                         <div className="lg:w-1/2">
                           <div className="relative rounded-xl overflow-hidden shadow-lg h-48">
-                            <img src={item.image} alt={item.alt} className="w-full h-full object-cover" />
+                            <img
+                              src={withW(item.image, 768)}
+                              srcSet={ikSrcSet(item.image, 768, 1600)}
+                              sizes={item.image.includes(IK) ? "(min-width: 1024px) 50vw, 100vw" : undefined}
+                              alt={item.alt}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
+                              width={650}
+                              height={192}
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
                           </div>
                         </div>
@@ -383,10 +417,16 @@ const About = () => {
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-80">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-2000"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-480"
+                  srcSet="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-480 480w, https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-960 960w"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
                   alt="Team collaborating around laptops in office"
                   onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"; }}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width={450}
+                  height={320}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
@@ -456,6 +496,10 @@ const About = () => {
                           src={event.image}
                           alt={event.alt}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          decoding="async"
+                          width={560}
+                          height={128}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                         <div className="absolute top-3 left-4">
@@ -512,6 +556,10 @@ const About = () => {
                 src="https://www.accely.com/wp-content/themes/accely/assets/images/get-started/location-map.png"
                 alt="World map with global office markers"
                 className="w-full h-full object-cover opacity-50"
+                loading="lazy"
+                decoding="async"
+                width={1200}
+                height={420}
               />
               <div className="absolute inset-0 bg-slate-950/30" />
 
@@ -580,9 +628,15 @@ const About = () => {
                     {/* City image */}
                     <div className="relative h-32 overflow-hidden">
                       <img
-                        src={office.image}
+                        src={withW(office.image, 480)}
+                        srcSet={ikSrcSet(office.image, 480, 960)}
+                        sizes={office.image.includes(IK) ? "(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw" : undefined}
                         alt={office.alt}
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                        loading="lazy"
+                        decoding="async"
+                        width={460}
+                        height={128}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
                       <div className="absolute bottom-3 left-4 flex items-center gap-2">

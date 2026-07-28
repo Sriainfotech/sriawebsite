@@ -7,7 +7,7 @@ const features = [
   {
     icon: GitBranch,
     number: "01",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/sap-hana-home.png?tr=f-auto,q-auto,w-1200",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/sap-hana-home.png?tr=f-auto,q-auto,w-1600",
     alt: "Business team with ERP icons",
     title: "SAP S/4HANA",
     subtitle: "Intelligent Enterprise Platform",
@@ -20,7 +20,7 @@ const features = [
   {
     icon: CloudCog,
     number: "02",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/cloud-sap-home.jpg?tr=f-auto,q-auto,w-1200",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/cloud-sap-home.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Business team viewing cloud icons",
     title: "Cloud Solutions",
     subtitle: "SAP Business Technology Platform",
@@ -33,7 +33,7 @@ const features = [
   {
     icon: BarChart3,
     number: "03",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/data-analytics-home.jpg?tr=f-auto,q-auto,w-1200",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/data-analytics-home.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Team analyzing data analytics icons",
     title: "Data Analytics",
     subtitle: "Insight-Driven Decision Making",
@@ -46,7 +46,7 @@ const features = [
   {
     icon: HeartPulse,
     number: "04",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/managed-home.jpg?tr=f-auto,q-auto,w-1200",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/managed-home.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Team monitoring managed services dashboard",
     title: "Managed Services",
     subtitle: "Continuous Application Excellence",
@@ -187,7 +187,13 @@ const FeaturesSection = () => {
                   <div className="absolute inset-0">
                     <img
                       src={current.image}
+                      srcSet={`${current.image.replace(/w-\d+/, "w-960")} 960w, ${current.image.replace(/w-\d+/, "w-1600")} 1600w`}
+                      sizes="(min-width: 1024px) 800px, 100vw"
                       alt={current.alt}
+                      width={960}
+                      height={420}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover opacity-80"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-950/55 to-slate-950/30" />

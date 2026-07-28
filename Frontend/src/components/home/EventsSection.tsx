@@ -26,7 +26,17 @@ const EventsSection = () => {
  className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500"
  >
  <div className="relative h-64 overflow-hidden">
- <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+ <img
+ src={event.image}
+ srcSet={`${event.image.replace(/w-\d+/, "w-480")} 480w, ${event.image.replace(/w-\d+/, "w-960")} 960w`}
+ sizes="(min-width: 768px) 400px, 100vw"
+ alt={event.title}
+ width={400}
+ height={256}
+ loading="lazy"
+ decoding="async"
+ className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+ />
  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500" />
 
  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur p-3 rounded-lg text-center min-w-[70px] shadow-sm">

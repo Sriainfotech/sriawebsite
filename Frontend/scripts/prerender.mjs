@@ -1,6 +1,7 @@
 import { preview } from "vite";
 import { mkdir, writeFile, copyFile, unlink } from "node:fs/promises";
 import path from "node:path";
+import Beasties from "beasties";
 
 // Vercel's build image lacks the shared libraries (libnspr4.so, etc.) that
 // full Puppeteer's bundled Chrome expects, so it fails to launch there even
@@ -133,9 +134,49 @@ const DIST_DIR = path.resolve(process.cwd(), "dist");
 // every other route has finished using the pristine shell.
 const HOME_HOLDING_FILE = path.join(DIST_DIR, "__prerendered_home__.html");
 
+// Inlines each page's above-the-fold CSS directly into <head> (so first
+// paint doesn't block on the full stylesheet round-trip) and rewrites the
+// full stylesheet <link> to load asynchronously via the standard
+// preload+onload-swap pattern, with a <noscript> fallback. Pure loading-order
+// change — no rule is added, removed, or altered, so rendered output/design
+// is identical once the full sheet finishes loading.
+const beasties = new Beasties({
+  path: DIST_DIR,
+  preload: "swap",
+  pruneSource: false,
+  logLevel: "warn",
+});
+
+async function inlineCriticalCss(html) {
+  try {
+    return await beasties.process(html);
+  } catch (err) {
+    console.warn(`  critical-CSS inlining failed, keeping original HTML: ${err.message}`);
+    return html;
+  }
+}
+
+// GTM and Tidio are deliberately deferred client-side (first interaction /
+// idle time — see index.html) so they never compete with the LCP-critical
+// hero. A prerender navigation sits on the page long enough (up to 60s,
+// waiting for networkidle0) for those deferred timers to fire anyway — and
+// since GTM containers can inject arbitrary further third-party tags once
+// they run (GA4's own gtag.js, remarketing pixels, whatever else is
+// configured), trying to strip the after-effects with a tag-shape regex is
+// a losing game. Instead, every prerender page is flagged via
+// window.__PRERENDERING__ before any app code runs, and the deferred-load
+// trigger in index.html checks that flag and skips entirely — so nothing
+// ever fires in the first place, for real or synthesized events alike.
+async function markAsPrerendering(page) {
+  await page.evaluateOnNewDocument(() => {
+    window.__PRERENDERING__ = true;
+  });
+}
+
 async function renderRoute(browser, baseUrl, route) {
   const page = await browser.newPage();
   try {
+    await markAsPrerendering(page);
     await page.goto(`${baseUrl}${route}`, {
       waitUntil: "networkidle0",
       timeout: 60000,
@@ -150,7 +191,7 @@ async function renderRoute(browser, baseUrl, route) {
       { timeout: 20000 }
     );
 
-    const html = await page.content();
+    const html = await inlineCriticalCss(await page.content());
 
     if (route === "/") {
       await writeFile(HOME_HOLDING_FILE, html, "utf-8");
@@ -176,6 +217,7 @@ async function renderRoute(browser, baseUrl, route) {
 async function renderRouteToNowhere(browser, baseUrl) {
   const page = await browser.newPage();
   try {
+    await markAsPrerendering(page);
     await page.goto(baseUrl, { waitUntil: "networkidle0", timeout: 60000 });
     await page
       .waitForFunction(

@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 import siteData from "@/data/siteData.json";
 
 const FALLBACK_IMAGES: Record<number, string> = {
-  1: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000",
-  2: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
-  3: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-2000",
-  4: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
+  1: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-960",
+  2: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-960",
+  3: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-960",
+  4: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-960",
 };
 
 const stories = siteData.successStories.map(story => ({
@@ -67,7 +67,13 @@ const SuccessStories = () => {
                     )}
                     <img
                       src={story.image}
+                      srcSet={`${story.image.replace(/w-\d+/, "w-480")} 480w, ${story.image.replace(/w-\d+/, "w-960")} 960w`}
+                      sizes="(min-width: 1024px) 440px, (min-width: 768px) 50vw, 100vw"
                       alt={story.title}
+                      width={440}
+                      height={420}
+                      loading="lazy"
+                      decoding="async"
                       className={`relative w-full h-full transition-transform duration-700 group-hover:scale-105 ${
                         story.imageFit === "contain" ? "object-contain p-10" : "object-cover"
                       }`}

@@ -6,8 +6,9 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-const THUB_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-2000";
-const HERO_BACKGROUND = "/thub.jpg";
+const THUB_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-320";
+const THUB_LOGO_SRCSET = "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-320 320w";
+const HERO_BACKGROUND = "https://ik.imagekit.io/hps6th7vy/sria/partners/thub.jpg?tr=f-auto,q-auto,w-1600";
 
 // Dummy placeholder values — replace with real figures once available.
 const STARTUPS_SUPPORTED = "25+";
@@ -103,8 +104,14 @@ function THub() {
               <div className="bg-slate-50 rounded-2xl border border-slate-100 p-8 mb-8 flex flex-col items-center w-full">
                 <img
                   src={THUB_LOGO}
+                  srcSet={THUB_LOGO_SRCSET}
+                  sizes="160px"
                   alt="T-Hub"
                   className="h-28 object-contain mb-4"
+                  width={160}
+                  height={112}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     const t = e.currentTarget;
                     t.style.display = "none";
@@ -157,6 +164,10 @@ function THub() {
                   src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80"
                   alt="Laptop on high-rise office ledge"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -206,6 +217,10 @@ function THub() {
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
                   alt="Developers coding on laptops together"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={288}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 to-transparent" />
               </div>
@@ -257,6 +272,10 @@ function THub() {
                   src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80"
                   alt="Laptop on high-rise office ledge"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -308,6 +327,10 @@ function THub() {
                     src={prog.image}
                     alt={prog.alt}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    width={660}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -358,6 +381,10 @@ function THub() {
                     src={item.image}
                     alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={112}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -385,6 +412,10 @@ function THub() {
             src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400&q=80"
             alt="Overhead view of startup workspace"
             className="w-full h-full object-cover"
+            width={1600}
+            height={500}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-slate-950/90" />
           <div className="absolute inset-0 opacity-[0.03]"
@@ -457,6 +488,10 @@ function THub() {
                     src={program.image}
                     alt={program.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">

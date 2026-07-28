@@ -6,6 +6,13 @@ import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, ArrowLeft, CheckCircle, MapPin } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
+const buildLogoSrcSet = (url: string) => {
+  if (!url.includes("ik.imagekit.io") || !url.includes("w-")) return undefined;
+  const w160 = url.replace(/w-\d+/, "w-160");
+  const w320 = url.replace(/w-\d+/, "w-320");
+  return `${w160} 160w, ${w320} 320w`;
+};
+
 const partners = [
   {
     name: "IVC Solutions",
@@ -13,7 +20,7 @@ const partners = [
     badge: "SAP Gold Partner",
     shortDescription:
       "An authorized SAP Gold Partner with offices across Mainland China, Hong Kong, Macau, Taiwan, and Asia Pacific. Together, we deliver world-class SAP and enterprise solutions.",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320",
     detailsUrl: "/partners/ivc-solutions",
     regions: ["Mainland China", "Hong Kong", "Macau", "Taiwan", "Asia Pacific"],
     stats: [
@@ -28,7 +35,7 @@ const partners = [
     badge: "First in Telangana & AP",
     shortDescription:
       "Official skill solution partner of BSNL, delivering telecom skilling programs across India — the first such partnership from Telangana and Andhra Pradesh.",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-320",
     detailsUrl: "/partners/bsnl",
     regions: ["Telangana", "Andhra Pradesh", "Pan-India Network"],
     stats: [
@@ -43,7 +50,7 @@ const partners = [
     badge: "Digital Governance",
     shortDescription:
       "Supporting the Government of Telangana's digital governance initiatives with secure, scalable e-governance platforms and public sector technology solutions.",
-    logo: "/Logos/Emblem_of_Telangana.webp",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/Emblem_of_Telangana.webp?tr=f-auto,q-auto,w-320",
     detailsUrl: "/partners/telangana-government",
     regions: ["Telangana"],
     stats: [
@@ -58,7 +65,7 @@ const partners = [
     badge: "Employability Training",
     shortDescription:
       "Skill alliance partner bridging academia and industry through employability training programs delivered across colleges in Telangana.",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-320",
     detailsUrl: "/partners/task",
     regions: ["Telangana"],
     stats: [
@@ -73,7 +80,7 @@ const partners = [
     badge: "Startup Ecosystem",
     shortDescription:
       "Innovation hub partner supporting startups through technology mentorship, product engineering, and innovation workshops across Telangana's startup ecosystem.",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-2000",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-320",
     detailsUrl: "/partners/t-hub",
     regions: ["Telangana (Hyderabad)"],
     stats: [
@@ -99,7 +106,7 @@ function Partners() {
           { name: "About Us", path: "/about" },
           { name: "Partners", path: "/about/partners" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Partnership Overview ── */}
@@ -160,9 +167,15 @@ function Partners() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px]">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/partner-overview.png?tr=f-auto,q-auto,w-2000"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/partner-overview.png?tr=f-auto,q-auto,w-1600"
+                  srcSet="https://ik.imagekit.io/hps6th7vy/sria/partners/partner-overview.png?tr=f-auto,q-auto,w-768 768w, https://ik.imagekit.io/hps6th7vy/sria/partners/partner-overview.png?tr=f-auto,q-auto,w-1600 1600w"
+                  sizes="(min-width: 1024px) 660px, 100vw"
                   alt="Partnership Overview"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -209,8 +222,14 @@ function Partners() {
                         <div className="lg:border-r border-slate-100 p-10 flex flex-col items-center justify-center bg-slate-50 group-hover:bg-orange-50/40 transition-colors duration-300">
                           <img
                             src={partner.logo}
+                            srcSet={buildLogoSrcSet(partner.logo)}
+                            sizes="160px"
                             alt={partner.name}
                             className="h-28 object-contain mb-5"
+                            width={160}
+                            height={112}
+                            loading="lazy"
+                            decoding="async"
                             onError={(e) => {
                               const t = e.currentTarget;
                               t.style.display = "none";

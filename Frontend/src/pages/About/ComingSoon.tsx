@@ -96,52 +96,31 @@ const ComingSoon: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-6">
-            Under Construction
-          </span>
-        </motion.div>
+        {/* Label, heading, subtitle and description all render plainly (no
+            Framer Motion) — one of these is the LCP element on this page,
+            and a mix of static + fading-in text next to each other would
+            look like a glitch, so the whole block paints together. */}
+        <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-6">
+          Under Construction
+        </span>
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-400 mb-6 leading-tight tracking-tight"
-        >
+        <h1 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-400 mb-6 leading-tight tracking-tight">
           Coming<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
             Soon
           </span>
-        </motion.h1>
+        </h1>
 
-        {/* Subtitle */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="flex items-center justify-center gap-1 mb-6"
-        >
+        <div className="flex items-center justify-center gap-1 mb-6">
           <p className="text-slate-400 text-base md:text-lg">
             We're working on something special
           </p>
           <span className="text-orange-400 font-bold w-7 text-left">{dots}</span>
-        </motion.div>
+        </div>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="text-slate-500 text-sm leading-relaxed mb-12 max-w-md mx-auto"
-        >
+        <p className="text-slate-500 text-sm leading-relaxed mb-12 max-w-md mx-auto">
           This page is currently being built. Leave your email and we'll notify you the moment it goes live.
-        </motion.p>
+        </p>
 
         {/* Notify form */}
         <motion.div

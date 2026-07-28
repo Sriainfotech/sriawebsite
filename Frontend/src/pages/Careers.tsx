@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Lightbulb, Users, Rocket, Coffee, GraduationCap, MapPin, Clock, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageHeader from "@/components/layout/PageHeader";
-import heroCareers from "@/assets/hero-careers.jpg";
+
+const heroCareers = "https://ik.imagekit.io/hps6th7vy/sria/about/hero-careers.jpg?tr=f-auto,q-auto,w-1600";
 
 const benefits = [
  { icon: Heart, title: "Work-Life Balance", description: "Flexible hours and remote options." },

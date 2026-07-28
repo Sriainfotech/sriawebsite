@@ -8,7 +8,7 @@ const categories = [
     label: "Enterprise Solutions",
     title: "SAP",
     icon: Network,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-1200",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/erp-home.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Team standing around SAP visual",
     count: "5 solutions",
     items: [
@@ -24,7 +24,7 @@ const categories = [
     label: "Data & Insights",
     title: "Analytics",
     icon: BarChart3,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-1200",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/home/da-home.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Team viewing data analytics visual",
     count: "4 solutions",
     items: [
@@ -83,7 +83,13 @@ const SolutionsGrid = () => {
               <div className="relative h-48 overflow-hidden flex-shrink-0">
                 <img
                   src={cat.image}
+                  srcSet={`${cat.image.replace(/w-\d+/, "w-960")} 960w, ${cat.image.replace(/w-\d+/, "w-1600")} 1600w`}
+                  sizes="(min-width: 1024px) 660px, 100vw"
                   alt={cat.alt}
+                  width={960}
+                  height={192}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />

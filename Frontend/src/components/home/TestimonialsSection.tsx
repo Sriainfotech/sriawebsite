@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import aboutTeam from "@/assets/about-team.jpg";
 import siteData from "@/data/siteData.json";
+
+const aboutTeam = "https://ik.imagekit.io/hps6th7vy/sria/about/about-team.jpg?tr=f-auto,q-auto,w-160";
 
 const testimonials = siteData.testimonials.map(t => ({
  ...t,
@@ -79,6 +80,10 @@ const TestimonialsSection = () => {
  src={testimonial.image}
  alt={testimonial.name}
  className="w-11 h-11 rounded-full object-cover ring-2 ring-orange-500/30"
+ width={44}
+ height={44}
+ loading="lazy"
+ decoding="async"
  />
  <div>
  <p className="text-white font-semibold text-sm">{testimonial.name}</p>

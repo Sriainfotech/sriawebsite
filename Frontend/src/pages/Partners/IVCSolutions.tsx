@@ -82,7 +82,7 @@ function IVCSolutions() {
           { name: "Partners", path: "/about/sap-partner" },
           { name: "IVC Solutions", path: "/partners/ivc-solutions" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Brand Intro ── */}
@@ -100,7 +100,17 @@ function IVCSolutions() {
             >
               {/* Logo card */}
               <div className="bg-slate-50 rounded-2xl border border-slate-100 p-8 mb-8 flex flex-col items-center w-full">
-                <img src="https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000" alt="IVC Solutions" className="h-20 object-contain mb-4" />
+                <img
+                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-320"
+                  srcSet="https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-320 320w"
+                  sizes="160px"
+                  alt="IVC Solutions"
+                  className="h-20 object-contain mb-4"
+                  width={160}
+                  height={80}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span className="inline-block px-3 py-1.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider mb-2">
                   SAP Gold Partner
                 </span>
@@ -147,6 +157,10 @@ function IVCSolutions() {
                   src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80"
                   alt="Team meeting with laptops around table"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -194,6 +208,10 @@ function IVCSolutions() {
                   src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80"
                   alt="Man presenting whiteboard to team"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={288}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 to-transparent" />
               </div>
@@ -247,6 +265,10 @@ function IVCSolutions() {
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80"
                   alt="Laptop showing web analytics dashboard"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -299,6 +321,10 @@ function IVCSolutions() {
                     src={sol.image}
                     alt={sol.alt}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    width={660}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -351,6 +377,10 @@ function IVCSolutions() {
                     src={item.image}
                     alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={112}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -378,6 +408,10 @@ function IVCSolutions() {
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80"
             alt="Earth at night from space"
             className="w-full h-full object-cover"
+            width={1600}
+            height={500}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-slate-950/90" />
           <div className="absolute inset-0 opacity-[0.03]"
@@ -450,6 +484,10 @@ function IVCSolutions() {
                     src={solution.image}
                     alt={solution.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">

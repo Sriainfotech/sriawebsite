@@ -5,26 +5,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NGJZXX9M');</script>
-  <!-- End Google Tag Manager -->
+  <!--
+    Preconnect to the origins the LCP element (hero text/image) depends on
+    on almost every page — the heading/body font (Google Fonts) and the
+    ImageKit CDN serving nearly every real content image. Establishing the
+    DNS/TLS connection early, in parallel with everything else the preload
+    scanner discovers, avoids that connection setup cost landing entirely
+    after those requests are actually issued.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://ik.imagekit.io" />
 
-  <!-- Google tag (gtag.js) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6VMMYRH53"></script>
+  <!--
+    Google Tag Manager — deferred until the visitor's first interaction
+    (or a capped fallback timer for visitors who never interact) instead of
+    firing synchronously during initial page load, so it can't compete with
+    the LCP-critical hero for network/main-thread time. GA4 is configured
+    as a tag inside this GTM container, so this is the single, non-duplicate
+    analytics entry point for the site (a separate direct gtag.js snippet
+    used to also live here, commented out and unused — removed entirely to
+    avoid ever accidentally re-enabling a duplicate GA4 load alongside GTM).
+  -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    (function () {
+      // Set by scripts/prerender.mjs before the app loads: the prerender
+      // pass sits on each page long enough for these deferred timers to
+      // fire for real, which would bake an already-loaded GTM (and whatever
+      // it injects in turn) into the static HTML. Skip entirely — a
+      // prerendering headless browser has no visitor to analyze anyway.
+      if (window.__PRERENDERING__) return;
 
-    gtag('config', 'G-R6VMMYRH53');
-  </script> -->
+      var GTM_ID = 'GTM-NGJZXX9M';
+      var loaded = false;
+      var events = ['scroll', 'keydown', 'click', 'touchstart', 'mousemove'];
+      var fallback;
+
+      function loadGTM(evt) {
+        // isTrusted excludes programmatic events (e.g. this app's own
+        // window.scrollTo() on route change synthesizes a "scroll" event)
+        // so only a genuine user gesture — or the fallback timer — counts.
+        if (evt && !evt.isTrusted) return;
+        if (loaded) return;
+        loaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = document.getElementsByTagName('script')[0];
+        var j = document.createElement('script');
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+        f.parentNode.insertBefore(j, f);
+        events.forEach(function (evt) { window.removeEventListener(evt, loadGTM); });
+        clearTimeout(fallback);
+      }
+
+      events.forEach(function (evt) { window.addEventListener(evt, loadGTM, { passive: true, once: true }); });
+      fallback = setTimeout(loadGTM, 5000);
+    })();
+  </script>
+  <!-- End Google Tag Manager -->
 
   <!--
     Intentionally no static <title>, <meta name="description">,
@@ -94,8 +133,29 @@
   <!-- React Entry -->
   <script type="module" src="/src/main.tsx"></script>
 
-  <!-- Tidio Chat -->
-  <script src="//code.tidio.co/no8lu53bllk9ahvwl08kuvxxh9xm1pbg.js" async></script>
+  <!--
+    Tidio Chat — deferred to load during browser idle time rather than
+    immediately, since the chat widget isn't needed for the first render
+    and shouldn't compete with it. Falls back to a plain timeout on Safari,
+    which doesn't implement requestIdleCallback.
+  -->
+  <script>
+    (function () {
+      if (window.__PRERENDERING__) return;
+
+      function loadTidio() {
+        var s = document.createElement('script');
+        s.src = '//code.tidio.co/no8lu53bllk9ahvwl08kuvxxh9xm1pbg.js';
+        s.async = true;
+        document.body.appendChild(s);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadTidio, { timeout: 5000 });
+      } else {
+        setTimeout(loadTidio, 3000);
+      }
+    })();
+  </script>
 </body>
 
 </html>

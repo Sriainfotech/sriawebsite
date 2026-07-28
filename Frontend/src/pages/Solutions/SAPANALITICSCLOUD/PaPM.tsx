@@ -114,7 +114,7 @@ const PaPM = () => {
         { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" },
         { name: "PaPM", path: "/solutions/papm" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm.png?tr=f-auto,q-auto,w-2000"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm.png?tr=f-auto,q-auto,w-1600"
       impactHeading={
         <>
           Profitability Insight, <br />

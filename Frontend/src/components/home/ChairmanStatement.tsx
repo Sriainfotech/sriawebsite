@@ -7,21 +7,21 @@ const leaders = [
     {
         role: "Chairman",
         name: "Ashwini Ganji",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-440",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-480",
         quote: "We are not just building software; we are architecting the future of enterprise intelligence.",
         body: "At Sria Infotech, our mission goes beyond implementation. We strive to empower businesses with the agility and insight needed to thrive in a digital-first world. Our commitment to excellence and innovation is unwavering.",
     },
     {
         role: "Founder",
         name: "Sai Kumar Bonakurthi",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-440",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-480",
         quote: "Innovation is not about being first — it is about being relentlessly relevant in a world that never stops evolving.",
         body: "Sria Infotech was born from a conviction that technology, when thoughtfully applied, can unlock the full potential of any enterprise. From our earliest days, we set out not merely to deliver solutions, but to become the strategic backbone on which our clients build their most ambitious futures.",
     },
     {
         role: "Co-Founder",
         name: "Ravikumar Rangari",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-440",
+        image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
         quote: "Exceptional teams build exceptional products. Culture is the architecture that makes everything else possible.",
         body: "At Sria Infotech, our people are our greatest differentiator. I have dedicated my tenure to fostering an environment where curiosity thrives, accountability is shared, and every team member feels the weight and the privilege of co-creating our clients' success stories.",
     },
@@ -103,10 +103,13 @@ const ChairmanStatement = () => {
                                                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                                                     <img
                                                         src={leader.image}
+                                                        srcSet={`${leader.image.replace(/w-\d+/, "w-320")} 320w, ${leader.image.replace(/w-\d+/, "w-480")} 480w`}
+                                                        sizes="220px"
                                                         alt={leader.name}
                                                         width={220}
                                                         height={220}
                                                         loading="lazy"
+                                                        decoding="async"
                                                         className="w-full h-full object-cover transition-all duration-700"
                                                         onError={(e) => {
                                                             (e.target as HTMLImageElement).src =

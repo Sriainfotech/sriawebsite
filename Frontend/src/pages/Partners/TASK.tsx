@@ -6,8 +6,9 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-const TASK_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-2000";
-const HERO_BACKGROUND = "/task-main.jpg";
+const TASK_LOGO = "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-320";
+const TASK_LOGO_SRCSET = "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-320 320w";
+const HERO_BACKGROUND = "https://ik.imagekit.io/hps6th7vy/sria/partners/task-main.jpg?tr=f-auto,q-auto,w-1600";
 
 // Dummy placeholder values — replace with real figures once available.
 const STUDENTS_TRAINED = "8,000+";
@@ -61,13 +62,13 @@ const benefits = [
   { title: "Structured Curriculum Design",       description: "Employability programs designed around real industry requirements and evolving skill demands.", icon: <BookOpen className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=70", alt: "Curved library shelves full of books" },
   { title: "Statewide Campus Reach",              description: "Training delivery across engineering, degree, and polytechnic colleges throughout Telangana.", icon: <MapPin className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70", alt: "City skyline aerial view" },
   { title: "Certification Support",               description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <Award className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=70", alt: "Colleagues high-fiving at desk" },
-  { title: "Student Talent Pipeline",              description: "Access to a growing pipeline of trained, job-ready students across the state.", icon: <Users className="w-5 h-5" />, image: "/student.jpg" },
+  { title: "Student Talent Pipeline",              description: "Access to a growing pipeline of trained, job-ready students across the state.", icon: <Users className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/student.jpg?tr=f-auto,q-auto,w-640" },
   { title: "Community & Academic Impact",          description: "Programs designed to strengthen employability outcomes across both urban and semi-urban colleges.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70", alt: "Laptop screen showing data analytics" },
 ];
 
 const programPortfolio = [
   { title: "IT & Software Skilling",          description: "Foundational and advanced technical training for engineering and computer science students.", icon: <Layers className="w-6 h-6" />,        image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80", alt: "Curved library shelves full of books" },
-  { title: "Soft Skills & Communication",       description: "Workplace communication, teamwork, and interview-readiness training for students.", icon: <Users className="w-6 h-6" />,               image: "/soft-skill-comm.jpg" },
+  { title: "Soft Skills & Communication",       description: "Workplace communication, teamwork, and interview-readiness training for students.", icon: <Users className="w-6 h-6" />,               image: "https://ik.imagekit.io/hps6th7vy/sria/partners/soft-skill-comm.jpg?tr=f-auto,q-auto,w-640" },
   { title: "Campus-to-Corporate Bridge",        description: "Structured programs helping students transition smoothly from academic to professional environments.", icon: <Handshake className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80", alt: "Students laughing together at laptop" },
   { title: "Emerging Tech Bootcamps",           description: "Focused bootcamps on emerging technology areas aligned with current industry hiring trends.", icon: <TrendingUp className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", alt: "Laptop screen showing data analytics" },
   { title: "Certification Programs",            description: "Structured assessments and certificates aligned with employability and industry standards.", icon: <Award className="w-6 h-6" />,        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80", alt: "Colleagues high-fiving at desk" },
@@ -104,8 +105,14 @@ function TASK() {
               <div className="bg-slate-50 rounded-2xl border border-slate-100 p-8 mb-8 flex flex-col items-center w-full">
                 <img
                   src={TASK_LOGO}
+                  srcSet={TASK_LOGO_SRCSET}
+                  sizes="160px"
                   alt="TASK"
                   className="h-28 object-contain mb-4"
+                  width={160}
+                  height={112}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     const t = e.currentTarget;
                     t.style.display = "none";
@@ -156,9 +163,13 @@ function TASK() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="/task-skill-partner.jpg"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/task-skill-partner.jpg?tr=f-auto,q-auto,w-960"
                   alt="Businessmen exchanging cards during meeting"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -208,6 +219,10 @@ function TASK() {
                   src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900&q=80"
                   alt="Curved library shelves full of books"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={288}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 to-transparent" />
               </div>
@@ -259,6 +274,10 @@ function TASK() {
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
                   alt="Woman presenting ideas with sticky notes"
                   className="w-full h-full object-cover"
+                  width={660}
+                  height={420}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -310,6 +329,10 @@ function TASK() {
                     src={prog.image}
                     alt={prog.alt}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    width={660}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -360,6 +383,10 @@ function TASK() {
                     src={item.image}
                     alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={112}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
                   <div className="absolute bottom-3 left-4">
@@ -387,6 +414,10 @@ function TASK() {
             src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1400&q=80"
             alt="Curved library shelves full of books"
             className="w-full h-full object-cover"
+            width={1600}
+            height={500}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-slate-950/90" />
           <div className="absolute inset-0 opacity-[0.03]"
@@ -459,6 +490,10 @@ function TASK() {
                     src={program.image}
                     alt={program.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={450}
+                    height={144}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">

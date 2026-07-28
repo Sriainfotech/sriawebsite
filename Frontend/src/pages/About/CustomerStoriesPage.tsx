@@ -7,7 +7,7 @@ import PageHeader from "@/components/layout/PageHeader";
 const stories = [
   {
     id: 1,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-320",
     alt: "IVC Solutions company logo",
     category: "Strategic Partnership",
     title: "IVC Consulting Strengthens Global SAP Delivery with Strategic Partnership",
@@ -18,7 +18,7 @@ const stories = [
   },
   {
     id: 2,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/patil.jpg?tr=f-auto,q-auto,w-960",
     alt: "Train tracks at sunset",
     category: "SAP Implementation",
     title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
@@ -29,7 +29,7 @@ const stories = [
   },
   {
     id: 3,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/7hills.jpg?tr=f-auto,q-auto,w-960",
     alt: "Elegant restaurant dining room interior",
     category: "Digital Transformation",
     title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
@@ -40,7 +40,7 @@ const stories = [
   },
   {
     id: 4,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/customerStories/pharma.jpg?tr=f-auto,q-auto,w-960",
     alt: "Pharmacist reaching for shelf medication",
     category: "Odoo CRM",
     title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
@@ -71,7 +71,7 @@ const CustomerStoriesPage = () => {
           { name: "About Us", path: "/about" },
           { name: "Success Stories", path: "/about/customer-stories" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/customerstory.jpg?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/customerstory.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Intro + Stats ── */}
@@ -146,8 +146,14 @@ const CustomerStoriesPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-slate-900/40" />
                     <img
                       src={featured.image}
+                      srcSet={`https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/partners/ivc-logo.png?tr=f-auto,q-auto,w-320 320w`}
+                      sizes="160px"
                       alt={featured.alt}
                       className="relative z-10 h-24 object-contain group-hover:scale-105 transition-transform duration-500"
+                      width={160}
+                      height={96}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 opacity-[0.03]"
                       style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "28px 28px" }}
@@ -206,8 +212,14 @@ const CustomerStoriesPage = () => {
                   <div className="relative h-52 overflow-hidden bg-slate-100">
                     <img
                       src={story.image}
+                      srcSet={`${story.image.replace(/w-\d+/, "w-480")} 480w, ${story.image.replace(/w-\d+/, "w-960")} 960w`}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       alt={story.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      width={450}
+                      height={208}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                     {/* Top badge */}

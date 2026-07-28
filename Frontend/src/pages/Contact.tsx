@@ -120,7 +120,7 @@ const Contact = () => {
         title="Contact Us"
         subtitle="Get in touch with our team — we respond within 24 hours."
         breadcrumbs={[{ name: "Contact", path: "/contact" }]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/contactus.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Form + Info ── */}

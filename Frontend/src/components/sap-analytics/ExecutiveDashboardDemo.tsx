@@ -252,7 +252,15 @@ export default function ExecutiveDashboardDemo() {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#1e293b", borderRadius: 10, padding: "10px 14px", marginBottom: 10 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ background: "#fff", borderRadius: 8, padding: "5px 8px", display: "flex", alignItems: "center" }}>
-            <img src="/sap-analytics/exec-dashboard-logo.png" alt="Sria Infotech logo" style={{ height: 34, width: "auto", display: "block" }} />
+            <img
+              src="https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/exec-dashboard-logo.png?tr=f-auto,q-auto,w-160"
+              alt="Sria Infotech logo"
+              style={{ height: 34, width: "auto", display: "block" }}
+              loading="lazy"
+              decoding="async"
+              width={120}
+              height={34}
+            />
           </div>
           <div>
             <div style={{ color: "#fff", fontSize: 13, fontWeight: 500 }}>

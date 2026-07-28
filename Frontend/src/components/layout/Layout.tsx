@@ -1,16 +1,19 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import SuccessStories from "./SuccessStories";
-import TestimonialsSection from "./TestimonialsSection";
-import CTASection from "./CTASection";
-import ClientsSection from "./ClientsSection";
-import EventsSection from "./EventsSection";
-import NewsSection from "./NewsSection";
 import FloatingButtons from "@/components/home/FloatingButtons";
 import CookieBanner from "@/components/layout/CookieBanner";
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+
+// Home-only sections: rendered on "/" alone, but this Layout wraps every
+// route, so a static import here would ship them in the bundle every page
+// pays for. Lazy-loading keeps them out of the shared chunk entirely.
+const ClientsSection = lazy(() => import("./ClientsSection"));
+const SuccessStories = lazy(() => import("./SuccessStories"));
+const EventsSection = lazy(() => import("./EventsSection"));
+const TestimonialsSection = lazy(() => import("./TestimonialsSection"));
+const CTASection = lazy(() => import("./CTASection"));
 
 const Layout = () => {
  const location = useLocation();
@@ -41,12 +44,21 @@ const Layout = () => {
  {/* Common Sections - Only show on home page */}
  {isHomePage && (
  <>
+ <Suspense fallback={<div className="min-h-[260px]" />}>
  <ClientsSection />
+ </Suspense>
+ <Suspense fallback={<div className="min-h-[360px]" />}>
  <SuccessStories />
+ </Suspense>
+ <Suspense fallback={<div className="min-h-[300px]" />}>
  <EventsSection />
- {/* <NewsSection /> */}
+ </Suspense>
+ <Suspense fallback={<div className="min-h-[220px]" />}>
  <TestimonialsSection />
+ </Suspense>
+ <Suspense fallback={<div className="min-h-[260px]" />}>
  <CTASection />
+ </Suspense>
  </>
  )}
  <Footer />

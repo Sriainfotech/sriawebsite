@@ -85,7 +85,13 @@ const SolutionPageLayout = ({
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[320px]">
                 <img
                   src={backgroundImage}
+                  srcSet={backgroundImage.includes("ik.imagekit.io") ? `${backgroundImage.replace(/w-\d+/, "w-768")} 768w, ${backgroundImage.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                  sizes="(min-width: 1024px) 660px, 100vw"
                   alt={title}
+                  width={660}
+                  height={320}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
@@ -110,9 +116,15 @@ const SolutionPageLayout = ({
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://ik.imagekit.io/hps6th7vy/sria/Solutions/partnership.jpg?tr=f-auto,q-auto,w-2000"
+            src="https://ik.imagekit.io/hps6th7vy/sria/Solutions/partnership.jpg?tr=f-auto,q-auto,w-1600"
+            srcSet="https://ik.imagekit.io/hps6th7vy/sria/Solutions/partnership.jpg?tr=f-auto,q-auto,w-960 960w, https://ik.imagekit.io/hps6th7vy/sria/Solutions/partnership.jpg?tr=f-auto,q-auto,w-1600 1600w"
+            sizes="100vw"
             alt=""
             role="presentation"
+            width={1600}
+            height={600}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-slate-950/88" />
@@ -172,6 +184,10 @@ const SolutionPageLayout = ({
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
                   alt=""
                   role="presentation"
+                  width={466}
+                  height={256}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 to-slate-900/60" />

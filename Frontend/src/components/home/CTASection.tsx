@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroContact from "@/assets/hero-contact.jpg";
+
+const heroContact = "https://ik.imagekit.io/hps6th7vy/sria/home/hero-contact.jpg?tr=f-auto,q-auto,w-1600";
 
 const CTASection = () => {
  return (
@@ -16,6 +17,10 @@ const CTASection = () => {
  <img
  src={heroContact}
  alt="City skyline at dusk"
+ width={1600}
+ height={600}
+ loading="lazy"
+ decoding="async"
  className="w-[120%] h-full object-cover grayscale"
  />
  </motion.div>

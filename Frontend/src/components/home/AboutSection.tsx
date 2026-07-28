@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
-const aboutImageUrl = "https://ik.imagekit.io/hps6th7vy/sria/home/about-home.png?tr=f-auto,q-auto,w-1200";
+const aboutImageUrl = "https://ik.imagekit.io/hps6th7vy/sria/home/about-home.png?tr=f-auto,q-auto,w-1600";
 
 const highlights = [
     "Partner-centric approach with trust and integrity",
@@ -35,7 +35,13 @@ const AboutSection = () => {
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[320px]">
                             <img
                                 src={aboutImageUrl}
+                                srcSet={`${aboutImageUrl.replace(/w-\d+/, "w-960")} 960w, ${aboutImageUrl.replace(/w-\d+/, "w-1600")} 1600w`}
+                                sizes="(min-width: 1024px) 660px, 100vw"
                                 alt="Team collaborating around laptop together"
+                                width={960}
+                                height={640}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                             />
                             {/* Gradient overlay */}

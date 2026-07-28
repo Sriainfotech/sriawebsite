@@ -106,8 +106,14 @@ const ServicePageLayout = ({
             >
               <div className="rounded-2xl overflow-hidden shadow-xl h-52 lg:h-60">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/Services/approach-i.jpg?tr=f-auto,q-auto,w-2000"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/Services/approach-i.jpg?tr=f-auto,q-auto,w-1600"
+                  srcSet="https://ik.imagekit.io/hps6th7vy/sria/Services/approach-i.jpg?tr=f-auto,q-auto,w-768 768w, https://ik.imagekit.io/hps6th7vy/sria/Services/approach-i.jpg?tr=f-auto,q-auto,w-1600 1600w"
+                  sizes="(min-width: 1024px) 660px, 100vw"
                   alt="Team meeting with glowing circle"
+                  width={660}
+                  height={240}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 to-transparent" />
@@ -241,8 +247,14 @@ const ServicePageLayout = ({
               )}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/Services/capability.jpg?tr=f-auto,q-auto,w-2000"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/Services/capability.jpg?tr=f-auto,q-auto,w-960"
+                  srcSet="https://ik.imagekit.io/hps6th7vy/sria/Services/capability.jpg?tr=f-auto,q-auto,w-480 480w, https://ik.imagekit.io/hps6th7vy/sria/Services/capability.jpg?tr=f-auto,q-auto,w-960 960w"
+                  sizes="(min-width: 1024px) 466px, 100vw"
                   alt="Team gathered around glass table"
+                  width={466}
+                  height={256}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
@@ -281,6 +293,10 @@ const ServicePageLayout = ({
         <img
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80"
           alt="Earth at night from space"
+          width={1400}
+          height={208}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-slate-950/90" />

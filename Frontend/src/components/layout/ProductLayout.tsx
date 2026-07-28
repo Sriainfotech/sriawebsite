@@ -140,7 +140,17 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 <>
                   <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none" />
                   <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
-                    <img src={overview.image} alt={overview.title} className="w-full h-[480px] object-cover" />
+                    <img
+                      src={overview.image}
+                      srcSet={overview.image.includes("ik.imagekit.io") ? `${overview.image.replace(/w-\d+/, "w-768")} 768w, ${overview.image.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                      sizes="(min-width: 1024px) 630px, 100vw"
+                      alt={overview.title}
+                      width={630}
+                      height={480}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-[480px] object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
                   </div>
                 </>
@@ -271,7 +281,17 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 >
                   <div className={`hidden lg:block absolute -bottom-3 ${section.reverse ? "-left-3" : "-right-3"} w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none`} />
                   <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative z-10">
-                    <img src={section.image} alt={section.title} className="w-full h-72 md:h-80 object-cover" />
+                    <img
+                      src={section.image}
+                      srcSet={section.image.includes("ik.imagekit.io") ? `${section.image.replace(/w-\d+/, "w-768")} 768w, ${section.image.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                      sizes="(min-width: 1024px) 630px, 100vw"
+                      alt={section.title}
+                      width={630}
+                      height={320}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-72 md:h-80 object-cover"
+                    />
                   </div>
                 </motion.div>
               </div>
@@ -360,7 +380,17 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             >
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none" />
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
-                <img src={benefits.illustration} alt={`Benefits of ${overview.title}`} className="w-full h-[440px] object-cover" />
+                <img
+                  src={benefits.illustration}
+                  srcSet={benefits.illustration.includes("ik.imagekit.io") ? `${benefits.illustration.replace(/w-\d+/, "w-768")} 768w, ${benefits.illustration.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                  sizes="(min-width: 1024px) 630px, 100vw"
+                  alt={`Benefits of ${overview.title}`}
+                  width={630}
+                  height={440}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[440px] object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
               </div>
             </motion.div>

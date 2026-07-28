@@ -148,6 +148,10 @@ function Location() {
                 src="https://www.accely.com/wp-content/themes/accely/assets/images/get-started/location-map.png"
                 alt="World map with global office markers"
                 className="w-full h-full object-cover opacity-50"
+                loading="lazy"
+                decoding="async"
+                width={1200}
+                height={480}
               />
               {/* Dark tint */}
               <div className="absolute inset-0 bg-slate-950/30" />
@@ -226,6 +230,10 @@ function Location() {
                         src={office.image}
                         alt={office.alt}
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                        loading="lazy"
+                        decoding="async"
+                        width={460}
+                        height={128}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
                       <div className="absolute bottom-3 left-4 flex items-center gap-2">

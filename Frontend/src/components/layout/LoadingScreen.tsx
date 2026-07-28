@@ -39,10 +39,13 @@ const LoadingScreen = () => {
       <div className="relative mb-10 select-none">
         {/* Faded base logo — always visible as ghost */}
         <img
-          src="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-420"
+          src="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-480"
+          srcSet="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-320 320w, https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-480 480w"
+          sizes="(min-width: 768px) 208px, 176px"
           alt="Sria Infotech"
           width={208}
           height={208}
+          decoding="async"
           className="w-44 md:w-52 object-contain opacity-[0.12]"
           draggable={false}
         />
@@ -53,10 +56,13 @@ const LoadingScreen = () => {
           style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }}
         >
           <img
-            src="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-420"
+            src="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-480"
+            srcSet="https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-320 320w, https://ik.imagekit.io/hps6th7vy/sria/logo-footer.png?tr=f-auto,q-auto,w-480 480w"
+            sizes="(min-width: 768px) 208px, 176px"
             alt=""
             width={208}
             height={208}
+            decoding="async"
             className="w-44 md:w-52 object-contain"
             draggable={false}
           />

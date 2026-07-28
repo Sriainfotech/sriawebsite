@@ -1,0 +1,402 @@
+[
+  {
+    "rel": "public/Logos/sria_logo.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/sria_logo.png"
+  },
+  {
+    "rel": "public/Logos/jatayu.webp",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/jatayu.webp"
+  },
+  {
+    "rel": "public/Logos/nxd.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/nxd.png"
+  },
+  {
+    "rel": "public/Logos/eskoolia_logo.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/eskoolia_logo.png"
+  },
+  {
+    "rel": "public/Logos/nxgen_logo.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/nxgen_logo.png"
+  },
+  {
+    "rel": "public/Logos/Sria Infotech Pvt Ltd..png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/Sria_Infotech_Pvt_Ltd..png"
+  },
+  {
+    "rel": "public/Logos/Cashora.jpeg",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/Cashora.jpeg"
+  },
+  {
+    "rel": "public/Logos/Emblem_of_Telangana.webp",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/Emblem_of_Telangana.webp"
+  },
+  {
+    "rel": "public/Logos/camp.jpg",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/camp.jpg"
+  },
+  {
+    "rel": "public/Logos/kims.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/kims.png"
+  },
+  {
+    "rel": "public/Logos/alekya.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/alekya.png"
+  },
+  {
+    "rel": "public/royal-logo.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/royal-logo.png"
+  },
+  {
+    "rel": "public/Clients/savadia.png",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png"
+  },
+  {
+    "rel": "public/Clients/onfocus.png",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/onfocus.png"
+  },
+  {
+    "rel": "public/Clients/MSPL.webp",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/MSPL.webp"
+  },
+  {
+    "rel": "public/Clients/patil.png",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/patil.png"
+  },
+  {
+    "rel": "public/Clients/lvk.png",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/lvk.png"
+  },
+  {
+    "rel": "public/Clients/live-ramp.png",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/live-ramp.png"
+  },
+  {
+    "rel": "public/Clients/stannik.png",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/stannik.png"
+  },
+  {
+    "rel": "public/event photos/ow1.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow1.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow2.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow2.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow3.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow3.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow4.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow4.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow5.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow5.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow6.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow6.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow7.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow7.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow8.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow8.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow9.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow9.jpeg"
+  },
+  {
+    "rel": "public/event photos/ow10.jpeg",
+    "folder": "sria/events",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/events/ow10.jpeg"
+  },
+  {
+    "rel": "public/gallery/bsnl-partnership-signing-01.jpeg",
+    "folder": "sria/gallery",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg"
+  },
+  {
+    "rel": "public/gallery/bsnl-partnership-signing-02.jpeg",
+    "folder": "sria/gallery",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg"
+  },
+  {
+    "rel": "public/gallery/bsnl-partnership-signing-03.jpeg",
+    "folder": "sria/gallery",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg"
+  },
+  {
+    "rel": "public/gallery/bsnl-partnership-signing-04.jpeg",
+    "folder": "sria/gallery",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg"
+  },
+  {
+    "rel": "public/gallery/bsnl-partnership-signing-05.jpeg",
+    "folder": "sria/gallery",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-05.jpeg"
+  },
+  {
+    "rel": "public/gallery/bsnl-partnership-signing-06.jpeg",
+    "folder": "sria/gallery",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-06.jpeg"
+  },
+  {
+    "rel": "public/bsnl-hero.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg"
+  },
+  {
+    "rel": "public/bsnl-main.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-main.jpg"
+  },
+  {
+    "rel": "public/task-skill-partner.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/task-skill-partner.jpg"
+  },
+  {
+    "rel": "public/task-main.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/task-main.jpg"
+  },
+  {
+    "rel": "public/soft-skill-comm.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/soft-skill-comm.jpg"
+  },
+  {
+    "rel": "public/student.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/student.jpg"
+  },
+  {
+    "rel": "public/tg.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/tg.jpg"
+  },
+  {
+    "rel": "public/thub.jpg",
+    "folder": "sria/partners",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/partners/thub.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-summary-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-summary-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-summary-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-summary-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-balance-sheet-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-balance-sheet-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-balance-sheet-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-balance-sheet-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-pnl-yearly-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-pnl-yearly-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-pnl-yearly-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-pnl-yearly-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-ratios-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-ratios-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cfo-ratios-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cfo-ratios-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cost-plant-comparison-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cost-plant-comparison-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/cost-plant-comparison-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/cost-plant-comparison-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/exec-dashboard-logo.png",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/exec-dashboard-logo.png"
+  },
+  {
+    "rel": "public/sap-analytics/wc-comparison-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-comparison-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/wc-comparison-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-comparison-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/wc-dashboard-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-dashboard-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/wc-dashboard-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/wc-dashboard-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-quantity-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-quantity-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-quantity-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-quantity-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/customer-sales-analysis-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/customer-sales-analysis-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/customer-sales-analysis-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/customer-sales-analysis-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-comparison-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-comparison-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-comparison-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-comparison-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-avg-price-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-avg-price-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-avg-price-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-avg-price-thumb.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-analysis-full.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-analysis-full.jpg"
+  },
+  {
+    "rel": "public/sap-analytics/sales-analysis-thumb.jpg",
+    "folder": "sria/sap-analytics",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/sap-analytics/sales-analysis-thumb.jpg"
+  },
+  {
+    "rel": "src/assets/hero-home.jpg",
+    "folder": "sria/home",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/home/hero-home.jpg"
+  },
+  {
+    "rel": "src/assets/hero-about.jpg",
+    "folder": "sria/about",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/about/hero-about.jpg"
+  },
+  {
+    "rel": "src/assets/hero-careers.jpg",
+    "folder": "sria/about",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/about/hero-careers.jpg"
+  },
+  {
+    "rel": "src/assets/hero-contact.jpg",
+    "folder": "sria/home",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/home/hero-contact.jpg"
+  },
+  {
+    "rel": "src/assets/hero-services.jpg",
+    "folder": "sria/services",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/services/hero-services.jpg"
+  },
+  {
+    "rel": "src/assets/hero-solutions.jpg",
+    "folder": "sria/services",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/services/hero-solutions.jpg"
+  },
+  {
+    "rel": "src/assets/about-office.jpg",
+    "folder": "sria/about",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/about/about-office.jpg"
+  },
+  {
+    "rel": "src/assets/about-team.jpg",
+    "folder": "sria/about",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/about/about-team.jpg"
+  },
+  {
+    "rel": "src/assets/service-cloud.jpg",
+    "folder": "sria/services",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/services/service-cloud.jpg"
+  },
+  {
+    "rel": "src/assets/service-digital.jpg",
+    "folder": "sria/services",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/services/service-digital.jpg"
+  },
+  {
+    "rel": "src/assets/service-managed.jpg",
+    "folder": "sria/services",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/services/service-managed.jpg"
+  },
+  {
+    "rel": "src/assets/service-sap.jpg",
+    "folder": "sria/services",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/services/service-sap.jpg"
+  }
+]

@@ -62,9 +62,9 @@ const CLIENTS: Client[] = [
   { name: "Sugar Times", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/sugartimes.jpg?tr=f-auto,q-auto,w-160" },
   { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png?tr=f-auto,q-auto,w-160" },
   { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/7hills.png?tr=f-auto,q-auto,w-160" },
-  { name: "CAMP Systems Private Limited", country: "India", flag: "🇮🇳", logo: "/Logos/camp.jpg" },
-  // { name: "KIMS Hospitals", country: "India", flag: "🇮🇳", logo: "/Logos/kims.png" },
-  // { name: "Alekhya Homes", country: "India", flag: "🇮🇳", logo: "/Logos/alekya.png" },
+  { name: "CAMP Systems Private Limited", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/camp.jpg?tr=f-auto,q-auto,w-160" },
+  // { name: "KIMS Hospitals", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/kims.png?tr=f-auto,q-auto,w-160" },
+  // { name: "Alekhya Homes", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/alekya.png?tr=f-auto,q-auto,w-160" },
 ];
 
 // Replace logo URLs with your actual image URLs
@@ -72,32 +72,32 @@ const ASSOCIATIONS: Association[] = [
   {
     name: "Telangana Government",
     tag: "State Partner",
-    logo: "/Logos/Emblem_of_Telangana.webp",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/Emblem_of_Telangana.webp?tr=f-auto,q-auto,w-320",
     link: "/partners/telangana-government",
   },
   {
     name: "TASK",
     tag: "Skill Alliance",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-200",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-320",
     link: "/partners/task",
   },
   {
     name: "BSNL",
     tag: "Skill Solution Partner",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-200",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-320",
     highlight: true,
     link: "/partners/bsnl",
   },
   {
     name: "IVC SAP Gold Partner",
     tag: "SAP Gold",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-200",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320",
     link: "/partners/ivc-solutions",
   },
   {
     name: "T-Hub",
     tag: "Innovation Hub",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-200",
+    logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-320",
     link: "/partners/t-hub",
   },
 ];
@@ -160,10 +160,12 @@ function ClientCard({ client }: ClientCardProps) {
           {client.logo && !imgFailed ? (
             <img
               src={client.logo}
+              sizes="64px"
               alt={client.name}
               width={64}
               height={64}
               loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain"
               onError={() => setImgFailed(true)}
             />
@@ -236,10 +238,13 @@ function AssocCard({ assoc }: AssocCardProps) {
       <div className="w-24 h-24 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2.5 flex-shrink-0">
         <img
           src={assoc.logo}
+          srcSet={assoc.logo.includes("ik.imagekit.io") ? `${assoc.logo.replace(/w-\d+/, "w-160")} 160w, ${assoc.logo.replace(/w-\d+/, "w-320")} 320w` : undefined}
+          sizes="96px"
           alt={assoc.name}
           width={96}
           height={96}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-contain"
           onError={(e) => {
             const t = e.currentTarget;

@@ -10,13 +10,19 @@ const LinkedInIcon = () => (
   </svg>
 );
 
+// Only ImageKit URLs (ik.imagekit.io) get a 2x srcset; the local /vinod.PNG
+// photo and any other non-ImageKit src just gets loading/decoding/dimensions.
+const IK = "ik.imagekit.io";
+const ikSrcSet2x = (url: string, w1: number, w2: number) =>
+  url.includes(IK) ? `${url.replace(/w-\d+/, `w-${w1}`)} ${w1}w, ${url.replace(/w-\d+/, `w-${w2}`)} ${w2}w` : undefined;
+
 const leaders = [
   {
     name: "Ashwini Ganji",
     designation: "Chairman — Sria Group of Companies",
     description:
       "Chairman - Sria Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-480",
     linkedinUrl: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
     email: "admin@sriainfotech.com",
   },
@@ -25,7 +31,7 @@ const leaders = [
     designation: "Founder, Director — Sria Group of Companies",
     description:
       "Founder, Managing Director - Sria Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-480",
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
   },
@@ -34,7 +40,7 @@ const leaders = [
     designation: "Co-Founder, Executive Chairman — Sria Group of Companies",
     description:
       "Co-Founder, Executive Chairman - Sria Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-2000",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
     linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
   },
@@ -58,7 +64,7 @@ function LeaderShip() {
           { name: "About Us", path: "/about" },
           { name: "Leadership", path: "/about/leadership" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-2000"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/leadership.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Leadership Cards ── */}
@@ -99,8 +105,14 @@ function LeaderShip() {
                 <div className="relative overflow-hidden h-64 bg-slate-100">
                   <img
                     src={person.image}
+                    srcSet={ikSrcSet2x(person.image, 480, 768)}
+                    sizes={person.image.includes(IK) ? "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" : undefined}
                     alt={person.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    width={326}
+                    height={256}
                   />
                   {/* Gradient overlay at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -224,7 +236,17 @@ function LeaderShip() {
               {/* Attribution */}
               <div className="flex items-center gap-4 border-t border-white/10 pt-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
-                  <img src="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-2000" alt="Ashwini Ganji" className="w-full h-full object-cover object-top" />
+                  <img
+                    src="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-160"
+                    srcSet="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-320 320w"
+                    sizes="48px"
+                    alt="Ashwini Ganji"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                    width={48}
+                    height={48}
+                  />
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Ashwini Ganji</p>

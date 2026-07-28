@@ -79,7 +79,14 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         <div className="absolute inset-0">
           <img
             src={hero.image}
+            srcSet={hero.image.includes("ik.imagekit.io") ? `${hero.image.replace(/w-\d+/, "w-960")} 960w, ${hero.image.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+            sizes="100vw"
             alt={hero.alt}
+            width={1600}
+            height={800}
+            decoding="async"
+            // @ts-expect-error — React 18.3 doesn't type fetchpriority yet; lowercase avoids the "unrecognized prop" warning until React 19
+            fetchpriority="high"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-900/30" />
@@ -93,48 +100,31 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-20 pt-36 w-full">
-          {/* Breadcrumb */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 text-white/50 text-xs mb-6"
-          >
+          {/* Breadcrumb, category pill, title and tags render plainly (no
+              Framer Motion) so the hero — including the h1, which is this
+              page's LCP element — paints immediately instead of waiting on
+              a staggered fade-in. */}
+          <div className="flex items-center gap-2 text-white/50 text-xs mb-6">
             <Link to="/" className="hover:text-orange-400 transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
             <Link to="/about/customer-stories" className="hover:text-orange-400 transition-colors">Success Stories</Link>
             <ChevronRight className="w-3 h-3" />
             <span className="text-orange-400">{overview.industry}</span>
-          </motion.div>
+          </div>
 
           {/* Category pill */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-3 mb-5"
-          >
+          <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-orange-500" />
             <span className="text-orange-400 text-xs font-bold tracking-widest uppercase">{hero.category}</span>
-          </motion.div>
+          </div>
 
           {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-tight mb-7"
-          >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-tight mb-7">
             {hero.title}
-          </motion.h1>
+          </h1>
 
           {/* Tags row */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-3"
-          >
+          <div className="flex flex-wrap items-center gap-3">
             {hero.tag.split("·").map((t, i) => (
               <span key={i} className="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-300 text-xs font-semibold backdrop-blur-sm">
                 {t.trim()}
@@ -142,7 +132,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             ))}
             <span className="text-white/40 text-xs hidden sm:block">·</span>
             <span className="text-white/50 text-xs">{hero.datePublished}</span>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -206,7 +196,17 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             >
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none" />
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
-                <img src={images.overview} alt={images.overviewAlt} className="w-full h-[460px] object-cover" />
+                <img
+                  src={images.overview}
+                  srcSet={images.overview.includes("ik.imagekit.io") ? `${images.overview.replace(/w-\d+/, "w-768")} 768w, ${images.overview.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                  sizes="(min-width: 1024px) 630px, 100vw"
+                  alt={images.overviewAlt}
+                  width={630}
+                  height={460}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[460px] object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
                 {/* Glass card overlay */}
                 <div className="absolute bottom-5 left-5 right-5">
@@ -238,7 +238,17 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
               className="relative hidden lg:block"
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <img src={images.challenge} alt={images.challengeAlt} className="w-full h-[500px] object-cover opacity-80" />
+                <img
+                  src={images.challenge}
+                  srcSet={images.challenge.includes("ik.imagekit.io") ? `${images.challenge.replace(/w-\d+/, "w-768")} 768w, ${images.challenge.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                  sizes="(min-width: 1024px) 630px, 100vw"
+                  alt={images.challengeAlt}
+                  width={630}
+                  height={500}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[500px] object-cover opacity-80"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
               </div>
             </motion.div>
@@ -305,7 +315,13 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={item.image}
+                    srcSet={item.image.includes("ik.imagekit.io") ? `${item.image.replace(/w-\d+/, "w-768")} 768w, ${item.image.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                    sizes="(min-width: 640px) 658px, 100vw"
                     alt={item.alt}
+                    width={658}
+                    height={176}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
@@ -331,7 +347,17 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
       {/* ── Business Impact (full bg image) ── */}
       <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={images.impact} alt={images.impactAlt} className="w-full h-full object-cover" />
+          <img
+            src={images.impact}
+            srcSet={images.impact.includes("ik.imagekit.io") ? `${images.impact.replace(/w-\d+/, "w-960")} 960w, ${images.impact.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+            sizes="100vw"
+            alt={images.impactAlt}
+            width={1600}
+            height={600}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-slate-950/88" />
           <div
             className="absolute inset-0 opacity-[0.025] pointer-events-none"

@@ -80,10 +80,30 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
                             <Link to="/" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-240" alt="Sria Infotech logo" width={120} height={120} loading="lazy" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img
+                                    src="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-320"
+                                    srcSet="https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/logo.png?tr=f-auto,q-auto,w-320 320w"
+                                    sizes="120px"
+                                    alt="Sria Infotech logo"
+                                    width={120}
+                                    height={120}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity"
+                                />
                             </Link>
                             <Link to="https://ivcsol.com/" target="_blank" className="flex items-center group">
-                                <img src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-360" alt="IVC Logo" width={180} height={120} loading="lazy" className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <img
+                                    src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-480"
+                                    srcSet="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320 320w, https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-480 480w"
+                                    sizes="180px"
+                                    alt="IVC Logo"
+                                    width={180}
+                                    height={120}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity"
+                                />
                             </Link>
                         </div>
 

@@ -16,7 +16,7 @@ const apps: App[] = [
     name: "eSkoolia",
     description: "Learning Management System",
     url: "https://app.eskoolia.com/",
-    icon: "/Logos/eskoolia_logo.png",
+    icon: "https://ik.imagekit.io/hps6th7vy/sria/logos/eskoolia_logo.png?tr=f-auto,q-auto,w-160",
     bg: "bg-teal-50",
     category: "Education",
   },
@@ -41,7 +41,7 @@ const apps: App[] = [
     name: "Jatayu",
     description: "Workforce Field Management",
     url: "https://play.google.com/store/apps/details?id=mybigapp.firebase.com&pcampaignid=web_share",
-    icon: "/Logos/jatayu.webp",
+    icon: "https://ik.imagekit.io/hps6th7vy/sria/logos/jatayu.webp?tr=f-auto,q-auto,w-160",
     bg: "bg-orange-50",
     category: "Operations",
   },
@@ -76,7 +76,7 @@ const apps: App[] = [
     name: "NxGen Academy",
     description: "Tech Training & Upskilling",
     url: "https://nxgentechacademy.com",
-    icon: "/Logos/nxgen_logo.png",
+    icon: "https://ik.imagekit.io/hps6th7vy/sria/logos/nxgen_logo.png?tr=f-auto,q-auto,w-160",
     bg: "bg-indigo-50",
     category: "Education",
   },
@@ -84,7 +84,7 @@ const apps: App[] = [
     name: "NxSys Digital",
     description: "Digital Solutions Portal",
     url: "https://nxsysdigital.com",
-    icon: "/Logos/nxd.png",
+    icon: "https://ik.imagekit.io/hps6th7vy/sria/logos/nxd.png?tr=f-auto,q-auto,w-160",
     bg: "bg-cyan-50",
     category: "Productivity",
   },
@@ -92,7 +92,7 @@ const apps: App[] = [
     name: "Cashora",
     description: "Digital Solutions Portal",
     url: "https://play.google.com/store/apps/details?id=com.cashora.finance",
-    icon: "/Logos/Cashora.jpeg",
+    icon: "https://ik.imagekit.io/hps6th7vy/sria/logos/Cashora.jpeg?tr=f-auto,q-auto,w-160",
     bg: "bg-cyan-50",
     category: "Productivity",
   },
@@ -209,7 +209,15 @@ const AppStore: React.FC = () => {
                       }`}
                   >
                     {app.icon.startsWith('/') || app.icon.includes('.') ? (
-                      <img src={app.icon} alt={app.name} className="w-full h-full object-cover" />
+                      <img
+                        src={app.icon}
+                        alt={app.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width={64}
+                        height={64}
+                      />
                     ) : (
                       app.icon
                     )}

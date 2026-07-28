@@ -40,7 +40,7 @@ function BusinessConsulting() {
         { name: "Strategy Consulting", path: "/services/strategy-consulting" },
         { name: "Business Strategy", path: "/services/strategy-consulting/business" },
       ]}
-      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-2000"
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-1600"
       processTitle="Who This Is For, and What You Get"
       processDescription="Built for business and operations leaders who need a clear, board-ready case for transformation before engineering work begins. Most engagements run 3-6 weeks depending on scope."
       processSteps={[
