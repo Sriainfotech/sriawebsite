@@ -13,6 +13,10 @@ const ProfileRequestSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    profile: {
+        type: String,
+        required: false
+    },
     downloadedAt: {
         type: Date,
         default: Date.now

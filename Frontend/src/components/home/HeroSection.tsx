@@ -13,13 +13,49 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import axiosInstance from "@/lib/axios";
+import JSZip from "jszip";
+
+type ProfileKey = "sria" | "nxsys" | "both";
+
+interface ProfileFile {
+    label: string;
+    file: string;
+    downloadName: string;
+}
+
+const SRIA_PROFILE: ProfileFile = {
+    label: "Sria Company Profile",
+    file: "/SRIA_Company_Profile.pdf",
+    downloadName: "SRIA_Company_Profile.pdf",
+};
+
+const NXSYS_PROFILE: ProfileFile = {
+    label: "NxSys Digital Company Profile",
+    file: "/Sria Infotech _NxSys Digital _Company_Profile 2026.pdf",
+    downloadName: "NxSys_Digital_Company_Profile.pdf",
+};
+
+// Each key maps to the one-or-more files that selection should download.
+const PROFILE_OPTIONS: Record<ProfileKey, { label: string; files: ProfileFile[] }> = {
+    sria: { label: SRIA_PROFILE.label, files: [SRIA_PROFILE] },
+    nxsys: { label: NXSYS_PROFILE.label, files: [NXSYS_PROFILE] },
+    both: { label: "Both (Sria & NxSys Digital)", files: [SRIA_PROFILE, NXSYS_PROFILE] },
+};
 
 const HeroSection = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+    const [selectedProfile, setSelectedProfile] = useState<ProfileKey>("sria");
     const { toast } = useToast();
     const videoUrl = "Sria Website Video.mp4";
 
@@ -28,21 +64,52 @@ const HeroSection = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    const triggerDownload = (href: string, downloadName: string) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.download = downloadName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const downloadFiles = async (files: ProfileFile[]) => {
+        if (files.length === 1) {
+            triggerDownload(encodeURI(files[0].file), files[0].downloadName);
+            return;
+        }
+
+        // Browsers silently block more than one automatic download from a
+        // single user action, so multi-file selections are bundled into one
+        // zip and downloaded as a single file instead.
+        const zip = new JSZip();
+        await Promise.all(
+            files.map(async (profileFile) => {
+                const res = await fetch(encodeURI(profileFile.file));
+                const blob = await res.blob();
+                zip.file(profileFile.downloadName, blob);
+            })
+        );
+        const zipBlob = await zip.generateAsync({ type: "blob" });
+        const zipUrl = URL.createObjectURL(zipBlob);
+        triggerDownload(zipUrl, "Sria_Company_Profiles.zip");
+        URL.revokeObjectURL(zipUrl);
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         try {
-            const response = await axiosInstance.post('/download-profile', formData);
+            const selection = PROFILE_OPTIONS[selectedProfile];
+            const response = await axiosInstance.post('/download-profile', {
+                ...formData,
+                profile: selection.label,
+            });
             if (response.data.success) {
-                toast({ title: "Success", description: "Your request has been received. Downloading profile..." });
+                toast({ title: "Success", description: `Your request has been received. Downloading ${selection.label}...` });
                 setIsOpen(false);
                 setFormData({ name: "", email: "", phone: "" });
-                const link = document.createElement('a');
-                link.href = '/SRIA_Company_Profile.pdf';
-                link.download = 'SRIA_Company_Profile.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                await downloadFiles(selection.files);
             }
         } catch (error) {
             console.error("Error submitting profile request:", error);
@@ -169,6 +236,21 @@ const HeroSection = () => {
                                     <div className="grid gap-1.5">
                                         <Label htmlFor="phone" className="text-sm">Phone (Optional)</Label>
                                         <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 000-0000" className="h-9 text-sm" />
+                                    </div>
+                                    <div className="grid gap-1.5">
+                                        <Label htmlFor="profile" className="text-sm">Which profile would you like?</Label>
+                                        <Select value={selectedProfile} onValueChange={(value) => setSelectedProfile(value as ProfileKey)}>
+                                            <SelectTrigger id="profile" className="h-9 text-sm">
+                                                <SelectValue placeholder="Select a company profile" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                {Object.entries(PROFILE_OPTIONS).map(([key, option]) => (
+                                                    <SelectItem key={key} value={key}>
+                                                        {option.label}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
                                     </div>
                                     <Button type="submit" disabled={isLoading} className="w-full h-10 text-sm">
                                         {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Submitting...</> : "Download Profile"}

@@ -104,14 +104,14 @@ app.post('/api/contact', (req, res) => {
 
 // ✅ /api/download-profile — with input validation and correct `from` field
 app.post('/api/download-profile', async (req, res) => {
-    const { name, email, phone } = req.body;
+    const { name, email, phone, profile } = req.body;
 
     if (!email) {
         return res.status(400).json({ success: false, message: 'Email is required.' });
     }
 
     try {
-        const newRequest = new ProfileRequest({ name, email, phone });
+        const newRequest = new ProfileRequest({ name, email, phone, profile });
         await newRequest.save();
 
         if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
@@ -120,7 +120,7 @@ app.post('/api/download-profile', async (req, res) => {
                 replyTo: email,
                 to: process.env.EMAIL_USER,
                 subject: `New Profile Download Request from ${name || email}`,
-                text: `Name: ${name || 'N/A'}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nThis user has downloaded the Company Profile.`,
+                text: `Name: ${name || 'N/A'}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nRequested Profile: ${profile || 'N/A'}\n\nThis user has downloaded the Company Profile.`,
             };
             await transporter.sendMail(mailOptions);
             console.log('Profile download email sent successfully');
