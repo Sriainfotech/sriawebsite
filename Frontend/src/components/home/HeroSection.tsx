@@ -176,30 +176,21 @@ const HeroSection = () => {
                         </span>
                     </motion.div>
 
-                    {/* Headline */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, delay: 0.1 }}
-                    >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6 tracking-tight">
-                            Trusted Globally{" "}
-                            <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
-                                for SAP Consulting
-                            </span>
-                        </h1>
-                    </motion.div>
+                    {/* Headline — rendered plainly (no Framer Motion) so it paints
+                        immediately with the HTML instead of waiting on JS hydration
+                        for its opacity, which otherwise delays LCP. */}
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                        Trusted Globally{" "}
+                        <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
+                            for SAP Consulting
+                        </span>
+                    </h1>
 
-                    {/* Subtitle */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto font-light"
-                    >
+                    {/* Subtitle — same reasoning as the headline above. */}
+                    <p className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
                         Helping businesses accelerate digital transformation with cloud-driven solutions where innovation meets technology.
-                    </motion.p>
+                    </p>
 
                     {/* CTA Buttons */}
                     <motion.div
