@@ -34,6 +34,10 @@ const ROUTES = [
 ];
 
 async function auditRoute(chrome, { category, path }) {
+  // No custom `throttling` override — this relies entirely on Lighthouse's
+  // own built-in mobile default (simulated Slow-4G-equivalent + 4x CPU
+  // slowdown), the same profile PageSpeed Insights uses, so these numbers
+  // are directly comparable to a real Lighthouse/PSI report.
   const options = {
     logLevel: 'error',
     output: 'json',
@@ -41,10 +45,6 @@ async function auditRoute(chrome, { category, path }) {
     port: chrome.port,
     formFactor: 'mobile',
     screenEmulation: { mobile: true, width: 390, height: 844, deviceScaleFactor: 2, disabled: false },
-    throttling: {
-      rttMs: 150, throughputKbps: 1638.4, cpuSlowdownMultiplier: 4,
-      requestLatencyMs: 0, downloadThroughputKbps: 0, uploadThroughputKbps: 0,
-    },
   };
   const runnerResult = await lighthouse(`${BASE}${path}`, options);
   const lhr = runnerResult.lhr;
@@ -116,12 +116,12 @@ async function main() {
       results.push({ category: route.category, path: route.path, error: err.message });
     }
   }
-  await chrome.kill();
   await writeFile(
     'C:\\Users\\safur\\AppData\\Local\\Temp\\claude\\c--Users-safur-OneDrive-Desktop-sria-craft\\73838ec8-a125-45d1-8449-6283ef5a7150\\scratchpad\\audit-results.json',
     JSON.stringify(results, null, 2)
   );
   console.log('\nDone. Results written to audit-results.json');
+  try { await chrome.kill(); } catch { /* benign Windows temp-profile cleanup race, ignore */ }
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
