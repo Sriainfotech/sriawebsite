@@ -107,7 +107,7 @@ const Footer = () => {
                             </a>
                         </div>
 
-                        <p className="text-sm text-slate-500 mb-8 leading-relaxed">
+                        <p className="text-sm text-slate-400 mb-8 leading-relaxed">
                             Delivering innovative technology solutions for modern businesses.
                         </p>
 
@@ -142,7 +142,7 @@ const Footer = () => {
                                 <li key={item.label}>
                                     <Link
                                         to={item.link}
-                                        className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200 block"
+                                        className="text-sm text-slate-400 hover:text-slate-300 transition-colors duration-200 block"
                                     >
                                         {item.label}
                                     </Link>
@@ -164,7 +164,7 @@ const Footer = () => {
                                 <li key={item.label}>
                                     <Link
                                         to={item.link}
-                                        className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200 block"
+                                        className="text-sm text-slate-400 hover:text-slate-300 transition-colors duration-200 block"
                                     >
                                         {item.label}
                                     </Link>
@@ -182,7 +182,7 @@ const Footer = () => {
                                     <Mail className="w-3.5 h-3.5 text-orange-400" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-slate-500 mb-0.5">Email</p>
+                                    <p className="text-xs text-slate-400 mb-0.5">Email</p>
                                     <p className="text-sm text-slate-300">sales@sriainfotech.com</p>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@ const Footer = () => {
                                     <Phone className="w-3.5 h-3.5 text-orange-400" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-slate-500 mb-0.5">Phone</p>
+                                    <p className="text-xs text-slate-400 mb-0.5">Phone</p>
                                     <p className="text-sm text-slate-300">+91-97013 14138</p>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@ const Footer = () => {
                                     <MapPin className="w-3.5 h-3.5 text-orange-400" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-slate-500 mb-0.5">Address</p>
+                                    <p className="text-xs text-slate-400 mb-0.5">Address</p>
                                     <p className="text-sm text-slate-300 leading-relaxed">
                                         303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084
                                     </p>
@@ -214,10 +214,10 @@ const Footer = () => {
 
                 {/* Bottom bar */}
                 <div className="border-t border-white/6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-sm text-slate-600">
+                    <p className="text-sm text-slate-400">
                         © {currentYear} Sria Infotech Pvt Ltd. All rights reserved.
                     </p>
-                    <div className="flex gap-6 text-sm text-slate-600">
+                    <div className="flex gap-6 text-sm text-slate-400">
                         <Link to="/privacy" className="hover:text-orange-400 transition-colors">
                             Privacy Policy
                         </Link>

@@ -40,12 +40,12 @@ const SuccessStories = () => {
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">Success Stories</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
           </motion.div>
-          <Link to="/about/customer-stories">
+          <Link to="/about/customer-stories" className="hidden md:inline-flex">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="hidden md:inline-flex items-center gap-2 text-orange-500 font-semibold text-sm hover:gap-3 transition-all group"
+              className="items-center gap-2 text-orange-500 font-semibold text-sm hover:gap-3 transition-all group inline-flex"
             >
               View All Stories <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </motion.div>

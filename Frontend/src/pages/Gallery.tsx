@@ -273,7 +273,7 @@ const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, 
       onClick={onOpen}
       role="button"
       tabIndex={0}
-      aria-label={`Play video: ${item.caption}`}
+      aria-label={`${item.caption} — play video`}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -295,8 +295,11 @@ const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, 
       {/* Top accent */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400" />
 
-      {/* VIDEO badge */}
-      <div className="absolute top-3 left-3">
+      {/* VIDEO badge — decorative; the card's own aria-label already
+          conveys "play video", and this and the hint text below being
+          separate visible strings inside one aria-labelled control was
+          tripping axe's label/content mismatch check. */}
+      <div className="absolute top-3 left-3" aria-hidden="true">
         <span className="px-2.5 py-1 bg-orange-500 text-white rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg">
           Video
         </span>
@@ -328,7 +331,7 @@ const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, 
       </div>
 
       {/* Bottom info */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950 to-transparent">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950 to-transparent" aria-hidden="true">
         <p className="text-white font-semibold text-sm leading-snug">{item.caption}</p>
         <p className="text-white/40 text-[11px] mt-0.5">
           {playing ? "Playing with sound" : "Hover to play · Click to open"}

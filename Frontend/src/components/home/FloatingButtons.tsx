@@ -215,7 +215,7 @@ const FloatingButtons = () => {
               rel="noopener noreferrer"
               aria-label="Sria Infotech on LinkedIn"
             >
-              <FaLinkedinIn className="text-white hover:text-orange-400 cursor-pointer" />
+              <FaLinkedinIn aria-hidden="true" className="text-white hover:text-orange-400 cursor-pointer" />
             </a>
 
             <a
@@ -224,7 +224,7 @@ const FloatingButtons = () => {
               rel="noopener noreferrer"
               aria-label="Sria Infotech on Facebook"
             >
-              <FaFacebookF className="text-white hover:text-orange-400 cursor-pointer" />
+              <FaFacebookF aria-hidden="true" className="text-white hover:text-orange-400 cursor-pointer" />
             </a>
 
             <a
@@ -233,7 +233,7 @@ const FloatingButtons = () => {
               rel="noopener noreferrer"
               aria-label="Sria Infotech on YouTube"
             >
-              <FaYoutube className="text-white hover:text-orange-400 cursor-pointer" />
+              <FaYoutube aria-hidden="true" className="text-white hover:text-orange-400 cursor-pointer" />
             </a>
 
             <a
@@ -242,7 +242,7 @@ const FloatingButtons = () => {
               rel="noopener noreferrer"
               aria-label="Sria Infotech on Instagram"
             >
-              <FaInstagram className="text-white hover:text-orange-400 cursor-pointer" />
+              <FaInstagram aria-hidden="true" className="text-white hover:text-orange-400 cursor-pointer" />
             </a>
           </div>
         </div>

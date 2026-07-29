@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Cloud, Database, Layers, Shield, ArrowRight } from "lucide-react";
 
 const solutions = [
@@ -8,6 +9,7 @@ const solutions = [
  alt: "SAP analytics dashboard interface",
  title: "SAP S/4HANA",
  description: "End-to-end implementation and migration services for intelligent enterprise solutions.",
+ link: "/services/sap-s4hana-implementation",
  },
  {
  icon: Cloud,
@@ -15,6 +17,7 @@ const solutions = [
  alt: "Cloud computing data center servers",
  title: "Cloud Solutions",
  description: "Seamless cloud migration and management with SAP Business Technology Platform.",
+ link: "/solutions/btp",
  },
  {
  icon: Database,
@@ -22,6 +25,7 @@ const solutions = [
  alt: "Digital transformation analytics dashboard",
  title: "Data Analytics",
  description: "Transform data into actionable insights for informed decision-making.",
+ link: "/services/data-analytics",
  },
  {
  icon: Shield,
@@ -29,6 +33,7 @@ const solutions = [
  alt: "IT support team monitoring servers",
  title: "Managed Services",
  description: "Comprehensive application management and support services.",
+ link: "/services/sap-support-maintenance",
  },
 ];
 
@@ -54,7 +59,10 @@ const RecommendedSolutions = () => {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
- className="group relative bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-border/50"
+ >
+ <Link
+ to={solution.link}
+ className="group relative block bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-border/50"
  >
  {/* Image Area */}
  <div className="h-48 overflow-hidden relative">
@@ -82,11 +90,12 @@ const RecommendedSolutions = () => {
  {solution.description}
  </p>
 
- <div className="flex items-center text-primary font-semibold text-sm group-hover:text-secondary transition-colors cursor-pointer">
+ <div className="flex items-center text-primary font-semibold text-sm group-hover:text-secondary transition-colors">
  Learn More
  <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" />
  </div>
  </div>
+ </Link>
  </motion.div>
  ))}
  </div>

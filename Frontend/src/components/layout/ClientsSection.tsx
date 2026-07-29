@@ -27,10 +27,8 @@ const ClientsSection = () => {
             <p className="text-slate-500 leading-relaxed mb-8 text-sm">
               We collaborate with global technology giants to deliver world-class solutions for your enterprise.
             </p>
-            <Link to="/about/sap-partner">
-              <button className="group inline-flex items-center gap-2 text-slate-700 font-semibold text-sm hover:text-orange-500 transition-colors">
-                View Our Partnerships <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+            <Link to="/about/sap-partner" className="group inline-flex items-center gap-2 text-slate-700 font-semibold text-sm hover:text-orange-500 transition-colors py-2 -my-2">
+              View Our Partnerships <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
 
@@ -54,7 +52,7 @@ const ClientsSection = () => {
               >
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400" />
                 <div className="w-16 h-16 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
-                  <SiSap className="w-9 h-9 text-orange-400" />
+                  <SiSap aria-hidden="true" className="w-9 h-9 text-orange-400" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
@@ -77,7 +75,7 @@ const ClientsSection = () => {
                 className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
               >
                 <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-slate-100 transition-all duration-300">
-                  <FaAws className="w-6 h-6" />
+                  <FaAws aria-hidden="true" className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-sm">AWS</p>
@@ -95,7 +93,7 @@ const ClientsSection = () => {
                 className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
               >
                 <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-slate-100 transition-all duration-300">
-                  <SiSalesforce className="w-6 h-6" />
+                  <SiSalesforce aria-hidden="true" className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Salesforce</p>
@@ -113,7 +111,7 @@ const ClientsSection = () => {
                 className="group bg-white border border-slate-100 rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-slate-200 hover:shadow-md transition-all duration-300"
               >
                 <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-slate-100 transition-all duration-300">
-                  <FaMicrosoft className="w-6 h-6" />
+                  <FaMicrosoft aria-hidden="true" className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Microsoft</p>

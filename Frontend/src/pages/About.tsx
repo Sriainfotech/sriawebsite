@@ -150,14 +150,11 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ x: 4 }}
-                  className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm"
-                >
+              <motion.div whileHover={{ x: 4 }} className="inline-block">
+                <Link to="/contact" className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm py-2 -my-2">
                   Get in touch <ArrowRight className="w-4 h-4" />
-                </motion.button>
-              </Link>
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Right: image grid */}
@@ -384,7 +381,7 @@ const About = () => {
               <h2 className="text-2xl font-bold text-slate-900">Mission Statement</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
             </div>
-            <Link to="/contact" className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm hover:gap-3 transition-all">
+            <Link to="/contact" className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm hover:gap-3 transition-all py-2 -my-2">
               Let's work together <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
