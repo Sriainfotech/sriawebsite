@@ -28,6 +28,11 @@ const CookieBanner = () => {
   const save = (state: ConsentState, p = prefs) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ state, prefs: p, savedAt: Date.now() }));
     setVisible(false);
+    // Notifies the deferred GTM/Tidio loaders set up in index.html — they
+    // don't start their load timers at all until analytics/functional
+    // consent actually arrives here, rather than merely "not yet rejected".
+    const onConsent = (window as unknown as { __sriaOnConsent?: Array<(p: typeof prefs) => void> }).__sriaOnConsent;
+    onConsent?.forEach((fn) => fn(p));
   };
 
   const acceptAll = () => save("accepted", { necessary: true, analytics: true, functional: true });

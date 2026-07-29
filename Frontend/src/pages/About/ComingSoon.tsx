@@ -100,7 +100,7 @@ const ComingSoon: React.FC = () => {
             Framer Motion) — one of these is the LCP element on this page,
             and a mix of static + fading-in text next to each other would
             look like a glitch, so the whole block paints together. */}
-        <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-6">
+        <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-6">
           Under Construction
         </span>
 

@@ -57,7 +57,7 @@ const NewsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Latest Updates</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Latest Updates</span>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">News &amp; Insights</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
           </motion.div>
@@ -90,7 +90,7 @@ const NewsSection = () => {
                   >
                     {/* Tag Badge */}
                     <div className="mb-5">
-                      <span className="inline-block px-3 py-1 rounded-full bg-orange-50 text-orange-500 text-[10px] font-bold uppercase tracking-widest border border-orange-100">
+                      <span className="inline-block px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-[10px] font-bold uppercase tracking-widest border border-orange-100">
                         {item.tag}
                       </span>
                     </div>
@@ -170,7 +170,7 @@ const NewsSection = () => {
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="max-w-2xl text-center lg:text-left">
-              <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Newsletter</span>
+              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Newsletter</span>
               <h4 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 Stay updated with the latest in SAP &amp; Digital Transformation
               </h4>

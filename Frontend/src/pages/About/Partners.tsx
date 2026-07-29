@@ -121,7 +121,7 @@ function Partners() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">
                 Partnership Overview
               </span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
@@ -199,7 +199,7 @@ function Partners() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Alliance Network</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Alliance Network</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Our Strategic Partners</h2>
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>

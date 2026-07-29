@@ -105,7 +105,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Product Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Product Overview</span>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-5 leading-tight">{overview.title}</h2>
               <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed mb-10">{overview.description}</p>
@@ -181,7 +181,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Capabilities</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Capabilities</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{coreCapabilities.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -215,7 +215,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Features</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Features</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">{keyFeatures.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -248,7 +248,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Deep Dive</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Deep Dive</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Feature Highlights</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -265,7 +265,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                   transition={{ duration: 0.7 }}
                   className="flex-1"
                 >
-                  <span className="inline-block text-orange-500 font-bold text-xs tracking-widest uppercase mb-4">
+                  <span className="inline-block text-orange-700 font-bold text-xs tracking-widest uppercase mb-4">
                     Feature {String(idx + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">{section.title}</h3>
@@ -315,7 +315,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{insights.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -350,7 +350,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5">{benefits.title}</h2>
               <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-8" />
               <ul className="space-y-3">
@@ -407,7 +407,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">FAQ</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">FAQ</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Frequently Asked Questions</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -457,7 +457,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             />
             <div className="absolute top-0 left-1/3 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10">
-              <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
+              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">{cta.title}</h2>
               <Link to="/contact">
                 <motion.button
@@ -482,7 +482,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             viewport={{ once: true }}
             className="mb-10"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Explore More</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Explore More</span>
             <h2 className="text-2xl font-bold text-slate-900">{otherProducts.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
           </motion.div>

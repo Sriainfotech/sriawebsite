@@ -105,19 +105,19 @@ const CustomDevelopment = () => {
       title: "Odoo Cloud Deployment",
       description: "Seamlessly host your Odoo ERP on the cloud for improved performance, scalability, and reduced infrastructure costs.",
       icon: <Cloud className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space",
     },
     {
       title: "Custom App Development",
       description: "Build powerful Odoo applications tailored to automate processes, extend functionality, and support unique business needs.",
       icon: <Code className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80", alt: "Laptop screen showing programming code",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80&fm=webp", alt: "Laptop screen showing programming code",
     },
     {
       title: "Odoo Managed Services",
       description: "End-to-end configuration, monitoring, and maintenance of your Odoo ERP for reliable, uninterrupted operations.",
       icon: <Server className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", alt: "Server rack with tangled cables",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&fm=webp", alt: "Server rack with tangled cables",
     },
   ];
 
@@ -165,7 +165,7 @@ const CustomDevelopment = () => {
               <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[380px]">
                 <img
-                  src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=900&q=80&fm=webp"
                   alt="Desk setup with code monitors"
                   className="w-full h-full object-cover"
                   width={640}
@@ -191,7 +191,7 @@ const CustomDevelopment = () => {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="order-1 lg:order-2"
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Why Choose Us</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Why Choose Us</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
                 Bespoke Odoo Solutions,<br />Built for Your Exact Needs
               </h2>
@@ -302,7 +302,7 @@ const CustomDevelopment = () => {
               {/* Background image */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80"
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400&q=80&fm=webp"
                   alt=""
                   role="presentation"
                   className="w-full h-full object-cover opacity-20"
@@ -319,7 +319,7 @@ const CustomDevelopment = () => {
 
               <div className="relative z-10 px-8">
                 <div className="mb-10 text-center">
-                  <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
+                  <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
                   <h2 className="text-xl font-bold text-white">Resourceful insights of Odoo Custom Development</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

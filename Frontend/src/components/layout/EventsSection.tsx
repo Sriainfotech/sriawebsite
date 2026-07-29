@@ -19,7 +19,7 @@ const EventsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-slate-500 font-semibold tracking-widest uppercase text-xs mb-3">Recent Events</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Recent Events</span>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">Where We've Been</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
           </motion.div>

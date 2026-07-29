@@ -693,7 +693,7 @@ const Gallery: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="max-w-2xl mx-auto text-center"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-5">Our Culture</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-5">Our Culture</span>
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
               More Than a Workplace —{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
@@ -719,7 +719,7 @@ const Gallery: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-2">Photo & Video Gallery</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-2">Photo & Video Gallery</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Moments We Treasure</h2>
               <div className="h-0.5 w-10 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
             </motion.div>
@@ -804,7 +804,7 @@ const Gallery: React.FC = () => {
         <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-orange-500/6 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Join Our Team</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Join Our Team</span>
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-5">
               Be Part of Our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Story</span>

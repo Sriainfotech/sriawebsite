@@ -11,11 +11,11 @@ const Patil = () => (
       datePublished: "August 8, 2025",
     }}
     images={{
-      overview:  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
+      overview:  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fm=webp",
       overviewAlt: "Man working with wood lathe",
-      challenge: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80",
+      challenge: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80&fm=webp",
       challengeAlt: "Rows of desks in office",
-      impact:    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80",
+      impact:    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80&fm=webp",
       impactAlt: "Team meeting with laptops around table",
     }}
     overview={{
@@ -41,25 +41,25 @@ const Patil = () => (
         {
           label: "We Delivered",
           description: "Comprehensive AMS (Application Management Services) to stabilize and support their business-critical applications with proactive monitoring.",
-          image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=80&fm=webp",
           alt: "Modern angular glass building exterior",
         },
         {
           label: "We Built",
           description: "A custom Fund Management solution tailored to Patil's multi-department structure, enabling real-time allocation and tracking.",
-          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80&fm=webp",
           alt: "Person reviewing tax documents calculator",
         },
         {
           label: "We Configured",
           description: "SAP modules in collaboration with Apna Tech to ensure scalability, standardization, and audit-readiness ahead of rollout.",
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80&fm=webp",
           alt: "Laptop showing web analytics dashboard",
         },
         {
           label: "We Automated",
           description: "PDF OCR workflows to extract key data from scanned documents — instantly syncing with internal systems and reducing manual load.",
-          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80&fm=webp",
           alt: "Close-up of computer circuit board",
         },
       ],

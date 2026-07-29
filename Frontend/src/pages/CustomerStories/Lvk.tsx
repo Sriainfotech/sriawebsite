@@ -11,11 +11,11 @@ const Lvk = () => (
       datePublished: "August 5, 2025",
     }}
     images={{
-      overview:  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80",
+      overview:  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80&fm=webp",
       overviewAlt: "Rows of desks in office",
-      challenge: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=900&q=80",
+      challenge: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=900&q=80&fm=webp",
       challengeAlt: "Pill blister packs arranged together",
-      impact:    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1400&q=80",
+      impact:    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1400&q=80&fm=webp",
       impactAlt: "Woman in lab coat smiling",
     }}
     overview={{
@@ -41,25 +41,25 @@ const Lvk = () => (
         {
           label: "We Analyzed",
           description: "Current workflows and mapped pain points in their paper-based processes to identify the right digital solutions.",
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80&fm=webp",
           alt: "Laptop showing web analytics dashboard",
         },
         {
           label: "We Implemented",
           description: "Odoo CRM with modules tailored for pharmaceutical sales, including lead tracking, contact management, and activity scheduling.",
-          image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80&fm=webp",
           alt: "Two developers working at desks",
         },
         {
           label: "We Trained",
           description: "The internal sales and support teams on CRM usage, ensuring quick adoption and a smooth transition from paper to digital.",
-          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80&fm=webp",
           alt: "Team laughing during training session",
         },
         {
           label: "We Automated",
           description: "Email templates, reminders, and reporting dashboards to eliminate repetitive tasks and bring real-time visibility across the team.",
-          image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80&fm=webp",
           alt: "Digital brain circuit illustration",
         },
       ],

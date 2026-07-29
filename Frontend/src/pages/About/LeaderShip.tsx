@@ -83,7 +83,7 @@ function LeaderShip() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Leaders</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Leaders</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
               The Visionaries Behind Sria
             </h2>
@@ -202,7 +202,7 @@ function LeaderShip() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Leadership Vision</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Leadership Vision</span>
             <h2 className="text-xl md:text-2xl font-bold text-white">Chairman's Statement</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto mt-4" />
           </motion.div>
@@ -219,7 +219,7 @@ function LeaderShip() {
               {/* Large quote mark */}
               <Quote className="w-12 h-12 text-orange-500/30 mb-6" />
 
-              <p className="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">
+              <p className="text-xs font-semibold text-orange-500 uppercase tracking-widest mb-3">
                 Innovating the Change
               </p>
 
@@ -269,8 +269,9 @@ function LeaderShip() {
                 <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-500/20 pointer-events-none z-20" />
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/SNeFDUwpNoY"
+                  src="https://www.youtube-nocookie.com/embed/SNeFDUwpNoY"
                   title="CEO Statement Video"
+                  loading="lazy"
                   frameBorder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

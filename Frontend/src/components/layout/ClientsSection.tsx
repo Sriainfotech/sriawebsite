@@ -19,7 +19,7 @@ const ClientsSection = () => {
             transition={{ duration: 0.7 }}
             className="lg:w-1/3 lg:pt-2"
           >
-            <span className="inline-block text-slate-500 font-semibold tracking-widest uppercase text-xs mb-4">Strategic Alliances</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Strategic Alliances</span>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-5 leading-tight">
               Trusted by Industry Leaders
             </h2>

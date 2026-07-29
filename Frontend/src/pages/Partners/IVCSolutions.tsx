@@ -19,48 +19,48 @@ const jointSolutions = [
     label: "SAP Gold Partner Expertise",
     description: "Access to certified SAP consultants, proven implementation methodologies, and comprehensive training programs for SAP S/4HANA, Business One, and ByDesign platforms.",
     icon: <Award className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&fm=webp",
     alt: "Woman presenting ideas with sticky notes",
   },
   {
     label: "Regional Market Coverage",
     description: "Combined delivery capabilities across India and Asia Pacific markets, providing localized support and understanding of regional business practices and compliance requirements.",
     icon: <Globe className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80&fm=webp",
     alt: "City skyline aerial view",
   },
   {
     label: "Industry-Specific Solutions",
     description: "Tailored SAP implementations for wholesale & distribution, retail, manufacturing, food & beverage, logistics, and professional services industries.",
     icon: <Building2 className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80&fm=webp",
     alt: "Laptop displaying analytics dashboard charts",
   },
   {
     label: "End-to-End Implementation",
     description: "Complete project lifecycle support from initial consultation and system design through implementation, data migration, user training, and post-go-live support.",
     icon: <Layers className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80&fm=webp",
     alt: "Presentation to team in boardroom",
   },
 ];
 
 const benefits = [
-  { title: "SAP Gold Partner Status",      description: "Direct access to SAP's latest technologies, training resources, and partner programs, ensuring clients receive cutting-edge solutions and best practices.", icon: <Award className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=70", alt: "Woman presenting ideas with sticky notes" },
-  { title: "Comprehensive ERP Solutions",  description: "Full suite of SAP products including S/4HANA, Business One, ByDesign, with modules for finance, supply chain, HR, and business intelligence.", icon: <Package className="w-5 h-5" />,    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=70", alt: "Close-up of computer circuit board" },
-  { title: "Geographic Expansion",         description: "Extended market reach across Asia Pacific and India, enabling seamless multi-country implementations and regional support coverage.", icon: <Globe className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70", alt: "City skyline aerial view" },
-  { title: "Enhanced R&D Collaboration",   description: "Joint innovation initiatives combining IVC's SAP expertise with Sria's custom development capabilities for unique client requirements.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70", alt: "Laptop screen showing data analytics" },
-  { title: "Professional Services",        description: "Certified consultants providing implementation, customization, integration, training, and managed services with proven track records.", icon: <Briefcase className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=70", alt: "Colleagues high-fiving at desk" },
-  { title: "Industry Best Practices",      description: "Deep industry knowledge and pre-configured solutions for faster deployments with lower risk and higher ROI for clients.", icon: <CheckCircle className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=70", alt: "Laptop displaying analytics dashboard charts" },
+  { title: "SAP Gold Partner Status",      description: "Direct access to SAP's latest technologies, training resources, and partner programs, ensuring clients receive cutting-edge solutions and best practices.", icon: <Award className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=70&fm=webp", alt: "Woman presenting ideas with sticky notes" },
+  { title: "Comprehensive ERP Solutions",  description: "Full suite of SAP products including S/4HANA, Business One, ByDesign, with modules for finance, supply chain, HR, and business intelligence.", icon: <Package className="w-5 h-5" />,    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=70&fm=webp", alt: "Close-up of computer circuit board" },
+  { title: "Geographic Expansion",         description: "Extended market reach across Asia Pacific and India, enabling seamless multi-country implementations and regional support coverage.", icon: <Globe className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70&fm=webp", alt: "City skyline aerial view" },
+  { title: "Enhanced R&D Collaboration",   description: "Joint innovation initiatives combining IVC's SAP expertise with Sria's custom development capabilities for unique client requirements.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70&fm=webp", alt: "Laptop screen showing data analytics" },
+  { title: "Professional Services",        description: "Certified consultants providing implementation, customization, integration, training, and managed services with proven track records.", icon: <Briefcase className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=70&fm=webp", alt: "Colleagues high-fiving at desk" },
+  { title: "Industry Best Practices",      description: "Deep industry knowledge and pre-configured solutions for faster deployments with lower risk and higher ROI for clients.", icon: <CheckCircle className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=70&fm=webp", alt: "Laptop displaying analytics dashboard charts" },
 ];
 
 const solutions = [
-  { title: "SAP S/4HANA",             description: "Next-generation ERP platform with real-time analytics, AI capabilities, and cloud deployment options.", icon: <Layers className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", alt: "Close-up of computer circuit board" },
-  { title: "Accounting & Finance",     description: "Comprehensive financial management, reporting, and compliance solutions for enterprise organizations.", icon: <BarChart2 className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80", alt: "Financial candlestick chart trending down" },
-  { title: "Supply Chain Management",  description: "End-to-end SCM solutions for procurement, inventory, warehouse, and logistics management.", icon: <Package className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80", alt: "Warehouse shelves filled with boxes" },
-  { title: "Human Resources (HRIS)",   description: "Complete HR management including payroll, talent management, and employee self-service portals.", icon: <Users className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80", alt: "Colleagues high-fiving at desk" },
-  { title: "Business Intelligence",    description: "Advanced analytics, reporting, and data visualization tools for data-driven decision making.", icon: <BarChart2 className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", alt: "Laptop screen showing data analytics" },
-  { title: "Cloud Solutions",          description: "Cloud-based ERP deployments, migrations, and managed services for scalability and flexibility.", icon: <Cloud className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space" },
+  { title: "SAP S/4HANA",             description: "Next-generation ERP platform with real-time analytics, AI capabilities, and cloud deployment options.", icon: <Layers className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&fm=webp", alt: "Close-up of computer circuit board" },
+  { title: "Accounting & Finance",     description: "Comprehensive financial management, reporting, and compliance solutions for enterprise organizations.", icon: <BarChart2 className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fm=webp", alt: "Financial candlestick chart trending down" },
+  { title: "Supply Chain Management",  description: "End-to-end SCM solutions for procurement, inventory, warehouse, and logistics management.", icon: <Package className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80&fm=webp", alt: "Warehouse shelves filled with boxes" },
+  { title: "Human Resources (HRIS)",   description: "Complete HR management including payroll, talent management, and employee self-service portals.", icon: <Users className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&fm=webp", alt: "Colleagues high-fiving at desk" },
+  { title: "Business Intelligence",    description: "Advanced analytics, reporting, and data visualization tools for data-driven decision making.", icon: <BarChart2 className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fm=webp", alt: "Laptop screen showing data analytics" },
+  { title: "Cloud Solutions",          description: "Cloud-based ERP deployments, migrations, and managed services for scalability and flexibility.", icon: <Cloud className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space" },
 ];
 
 const challenges = [
@@ -154,7 +154,7 @@ function IVCSolutions() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&fm=webp"
                   alt="Team meeting with laptops around table"
                   className="w-full h-full object-cover"
                   width={660}
@@ -186,7 +186,7 @@ function IVCSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
@@ -205,7 +205,7 @@ function IVCSolutions() {
               <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80&fm=webp"
                   alt="Man presenting whiteboard to team"
                   className="w-full h-full object-cover"
                   width={660}
@@ -230,7 +230,7 @@ function IVCSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">
                 Market Challenges<br />We Address Together
               </h2>
@@ -262,7 +262,7 @@ function IVCSolutions() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&fm=webp"
                   alt="Laptop showing web analytics dashboard"
                   className="w-full h-full object-cover"
                   width={660}
@@ -298,7 +298,7 @@ function IVCSolutions() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
             <h2 className="text-xl font-bold text-white mb-3">Joint Solutions & Capabilities</h2>
             <p className="text-slate-400 max-w-2xl text-sm leading-relaxed">
               Our partnership with IVC Solutions creates a powerful synergy, combining Sria Infotech's innovation-driven approach with IVC's deep SAP expertise to deliver comprehensive enterprise solutions.
@@ -356,7 +356,7 @@ function IVCSolutions() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Partnership Benefits</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -405,7 +405,7 @@ function IVCSolutions() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80&fm=webp"
             alt="Earth at night from space"
             className="w-full h-full object-cover"
             width={1600}
@@ -426,7 +426,7 @@ function IVCSolutions() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-xl font-bold text-white">Partnership Impact</h2>
           </motion.div>
 
@@ -460,7 +460,7 @@ function IVCSolutions() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">Solution Portfolio</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Through our partnership with IVC Solutions, we offer a comprehensive range of SAP and enterprise solutions.

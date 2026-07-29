@@ -27,7 +27,7 @@ const SuccessStories = () => {
  className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6"
  >
  <div>
- <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Case Studies</span>
+ <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Case Studies</span>
  <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">Success Stories</h2>
  </div>
  <p className="text-slate-400 text-base max-w-sm leading-relaxed">

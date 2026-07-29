@@ -88,7 +88,7 @@ const ServicePageLayout = ({
               transition={{ duration: 0.7 }}
               className="lg:w-1/2"
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Approach</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Approach</span>
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 leading-tight mb-4">{processTitle}</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-4" />
               {processDescription && (
@@ -181,7 +181,7 @@ const ServicePageLayout = ({
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">{statsTitle}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -239,7 +239,7 @@ const ServicePageLayout = ({
               transition={{ duration: 0.7 }}
               className="lg:w-5/12 lg:sticky lg:top-24"
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Why Us</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Why Us</span>
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 leading-tight mb-4">{capabilitiesTitle}</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-5" />
               {capabilitiesDescription && (
@@ -324,7 +324,7 @@ const ServicePageLayout = ({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
             <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">{techTrendsTitle}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-4" />
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">{techTrendsDescription}</p>
@@ -360,7 +360,7 @@ const ServicePageLayout = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Explore More</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Explore More</span>
               <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-2">{relatedServicesTitle}</h2>
               <p className="text-slate-500 text-sm">{relatedServicesDescription}</p>
             </motion.div>

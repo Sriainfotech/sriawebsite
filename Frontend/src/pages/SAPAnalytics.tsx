@@ -164,7 +164,7 @@ const STATS = [
 
 function Eyebrow({ children, dark = false, center = false }: { children: React.ReactNode; dark?: boolean; center?: boolean }) {
   return (
-    <span className={`inline-block font-semibold tracking-widest uppercase text-xs mb-3 ${dark ? "text-orange-400" : "text-orange-500"} ${center ? "block text-center" : ""}`}>
+    <span className={`inline-block font-semibold tracking-widest uppercase text-xs mb-3 ${dark ? "text-orange-500" : "text-orange-700"} ${center ? "block text-center" : ""}`}>
       {children}
     </span>
   );

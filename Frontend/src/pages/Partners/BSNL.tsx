@@ -274,7 +274,7 @@ function BSNL() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
@@ -322,7 +322,7 @@ function BSNL() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">
                 Skilling Challenges<br />We Address Together
               </h2>
@@ -389,7 +389,7 @@ function BSNL() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
             <h2 className="text-xl font-bold text-white mb-3">Training Programs &amp; Capabilities</h2>
             <p className="text-slate-400 max-w-2xl text-sm leading-relaxed">
               Our partnership with BSNL creates a structured skilling pipeline, combining BSNL's
@@ -448,7 +448,7 @@ function BSNL() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Partnership Benefits</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -517,7 +517,7 @@ function BSNL() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-xl font-bold text-white">Partnership Impact</h2>
           </motion.div>
 
@@ -551,7 +551,7 @@ function BSNL() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">Program Portfolio</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Through our partnership with BSNL, we deliver a comprehensive range of telecom

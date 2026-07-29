@@ -78,7 +78,7 @@ const ChairmanStatement = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <p className="text-orange-500 text-sm font-semibold tracking-widest uppercase mb-3">
+                    <p className="text-orange-700 text-sm font-semibold tracking-widest uppercase mb-3">
                         Leadership Vision
                     </p>
                     <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900">

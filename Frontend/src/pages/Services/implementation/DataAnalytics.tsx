@@ -104,19 +104,19 @@ function DataAnalytics() {
       icon: <Cloud className="w-8 h-8 text-orange-500" />,
       heading: "Cloud-Based Analytics",
       description: "Leverage cloud platforms for fast, cost-efficient, and scalable analytics solutions.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space",
     },
     {
       icon: <Monitor className="w-8 h-8 text-orange-500" />,
       heading: "Performance Optimization",
       description: "Optimize data pipelines and queries for faster, more reliable analytics processing.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", alt: "Laptop showing web analytics dashboard",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fm=webp", alt: "Laptop showing web analytics dashboard",
     },
     {
       icon: <Server className="w-8 h-8 text-orange-500" />,
       heading: "Managed Analytics Services",
       description: "We handle setup, maintenance, and optimization of your analytics stack for end-to-end support.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", alt: "Server rack with tangled cables",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&fm=webp", alt: "Server rack with tangled cables",
     },
   ];
 
@@ -163,7 +163,7 @@ function DataAnalytics() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Why Choose Us</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Why Choose Us</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
                 End-to-End Data & Analytics,<br />From Raw Data to Real Insight
               </h2>
@@ -200,7 +200,7 @@ function DataAnalytics() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[380px]">
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&fm=webp"
                   alt="Laptop screen showing data analytics"
                   className="w-full h-full object-cover"
                   width={640}
@@ -278,7 +278,7 @@ function DataAnalytics() {
                       <div className="h-px flex-1 bg-orange-100" />
                     </div>
                     <div className="p-6 pt-3">
-                      <p className="text-xs font-semibold text-orange-500 uppercase tracking-widest mb-1">{sol.title}</p>
+                      <p className="text-xs font-semibold text-orange-700 uppercase tracking-widest mb-1">{sol.title}</p>
                       <h3 className="text-base font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
                         {sol.heading}
                       </h3>
@@ -303,7 +303,7 @@ function DataAnalytics() {
               {/* Background */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
+                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80&fm=webp"
                   alt=""
                   role="presentation"
                   className="w-full h-full object-cover opacity-20"
@@ -320,7 +320,7 @@ function DataAnalytics() {
 
               <div className="relative z-10 px-8">
                 <div className="mb-10 text-center">
-                  <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
+                  <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
                   <h2 className="text-xl font-bold text-white">Resourceful insights of Data Analytics Services</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -433,7 +433,7 @@ function DataAnalytics() {
                       whileHover={{ y: -4 }}
                       className="group p-7 bg-white border border-slate-100 rounded-2xl shadow-sm hover:border-orange-400 hover:shadow-xl transition-all duration-300 h-full"
                     >
-                      <h3 className="text-base font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
+                      <h3 className="text-base font-bold text-slate-900 mb-3 group-hover:text-orange-700 transition-colors">
                         {product.title}
                       </h3>
                       <p className="text-slate-500 text-sm leading-relaxed mb-5">{product.description}</p>

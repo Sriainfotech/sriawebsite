@@ -89,7 +89,7 @@ const Culture: React.FC = () => {
               className="flex items-center gap-3 mb-10"
             >
               <Camera className="w-5 h-5 text-orange-400" />
-              <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase">
+              <span className="text-orange-500 text-xs font-semibold tracking-widest uppercase">
                 {event.label}
               </span>
               <div className="flex-1 h-px bg-white/5" />

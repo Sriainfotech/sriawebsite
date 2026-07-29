@@ -12,7 +12,7 @@ const offices = [
     address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA",
     phone: "+91 99897 95335",
     email: "hr@sriainfotech.com",
-    image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80&fm=webp",
     alt: "New York skyline at sunset",
     mapDot: { top: "36%", left: "20%" },
     tooltip: "New York, USA",
@@ -25,7 +25,7 @@ const offices = [
     address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084, India",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
-    image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80&fm=webp",
     alt: "City skyline daytime view",
     mapDot: { top: "52%", left: "68%" },
     tooltip: "Hyderabad, India",
@@ -38,7 +38,7 @@ const offices = [
     address: "Amaravati, Andhra Pradesh 522503, India",
     phone: "+91 95539 55893",
     email: "hr@sriainfotech.com",
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80&fm=webp",
     alt: "City skyline aerial view",
     mapDot: { top: "55%", left: "69%" },
     tooltip: "Amaravati, India",
@@ -51,7 +51,7 @@ const offices = [
     address: "TASK Center, Mulugu, Telangana 506343, India",
     phone: "+91 90145 52492",
     email: "hr@sriainfotech.com",
-    image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80&fm=webp",
     alt: "Desert highway at sunset",
     mapDot: { top: "50%", left: "70%" },
     tooltip: "Mulugu, India",
@@ -141,7 +141,7 @@ function Location() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Our Footprint</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Footprint</span>
             <h2 className="text-xl md:text-2xl font-bold text-white mb-3">Global Offices</h2>
             <p className="text-slate-400 text-sm max-w-xl mx-auto">
               Find the location nearest to you and get in touch with our local teams.
@@ -298,7 +298,7 @@ function Location() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Contact</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Contact</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Get in Touch</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>

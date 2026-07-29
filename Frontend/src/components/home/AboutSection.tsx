@@ -68,7 +68,7 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">About Us</span>
+                            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">About Us</span>
                             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 leading-tight">
                                 What Sets Us Apart:{" "}
                                 <br />

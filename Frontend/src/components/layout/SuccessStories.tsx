@@ -36,7 +36,7 @@ const SuccessStories = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Case Studies</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Case Studies</span>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">Success Stories</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
           </motion.div>

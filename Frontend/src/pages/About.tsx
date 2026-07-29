@@ -41,7 +41,7 @@ const accordionData = [
   {
     title: "Core Values",
     text: "Smart — We leverage cutting-edge technology and data-driven insights to provide intelligent solutions.\nResilient — We design solutions built to endure challenges and perform under pressure.\nInclusive — We foster an inclusive work culture and ensure our services create opportunities for everyone.\nAgile — Our flexible approach allows us to respond swiftly to market changes.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&fm=webp",
     alt: "Woman presenting ideas with sticky notes",
   },
   {
@@ -53,19 +53,19 @@ const accordionData = [
   {
     title: "Why Choose Us?",
     text: "Proven Expertise — Our team brings years of industry expertise, focusing on high-quality customized solutions.\nClient-Centric Approach — We place your business needs at the center of everything we do.\nInnovation — We stay ahead of technology trends to deliver the most innovative solutions.\nCollaborative Culture — Our collaborative approach ensures seamless integration with your teams.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80&fm=webp",
     alt: "Developers coding on laptops together",
   },
   {
     title: "Vision",
     text: "At Sria Infotech, our vision is to build a future where technology empowers every business and individual to thrive. We stand for being Smart in our solutions, Resilient in our execution, Inclusive in our impact, and Agile in adapting to tomorrow's challenges.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80&fm=webp",
     alt: "Earth at night from space",
   },
   {
     title: "Mission",
     text: "Our mission is to deliver world-class digital services—ranging from enterprise software to AI and IT consulting—by embracing the core values of being Smart, Resilient, Inclusive, and Agile. We are committed to transforming businesses, uplifting communities, and fostering innovation for a better digital future.",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80&fm=webp",
     alt: "Laptop displaying analytics dashboard charts",
   },
 ];
@@ -80,20 +80,20 @@ const missionPoints = [
 ];
 
 const timelineEvents = [
-  { year: 2022, title: "Sria Infotech is Launched", description: "Launched Sria Infotech as a global SAP consulting company.", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80", alt: "Presentation to team in boardroom" },
-  { year: 2022, title: "Started with SAP All Modules", description: "Expanded capabilities to cover the complete SAP module portfolio.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80", alt: "Close-up of computer circuit board" },
-  { year: 2023, title: "Started Data Analytics", description: "Launched dedicated data analytics and business intelligence services.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", alt: "Laptop screen showing data analytics" },
-  { year: 2024, title: "Started Application Development", description: "Began delivering custom application development solutions for clients.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80", alt: "Laptop screen showing programming code" },
-  { year: 2025, title: "AMS from Patil Group", description: "Won Application Management Services contract from Patil Group.", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80", alt: "Hands typing on laptop keyboard" },
-  { year: 2025, title: "Odoo Implementation Partner", description: "Became official Odoo Implementation Partner.", image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80", alt: "Leather wallet holding credit cards" },
-  { year: 2025, title: "Branch in Mulugu (Launching Soon)", description: "Opening our new branch in Mulugu, expanding our Indian presence.", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80", alt: "City skyline with tower lit" },
+  { year: 2022, title: "Sria Infotech is Launched", description: "Launched Sria Infotech as a global SAP consulting company.", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80&fm=webp", alt: "Presentation to team in boardroom" },
+  { year: 2022, title: "Started with SAP All Modules", description: "Expanded capabilities to cover the complete SAP module portfolio.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80&fm=webp", alt: "Close-up of computer circuit board" },
+  { year: 2023, title: "Started Data Analytics", description: "Launched dedicated data analytics and business intelligence services.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80&fm=webp", alt: "Laptop screen showing data analytics" },
+  { year: 2024, title: "Started Application Development", description: "Began delivering custom application development solutions for clients.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80&fm=webp", alt: "Laptop screen showing programming code" },
+  { year: 2025, title: "AMS from Patil Group", description: "Won Application Management Services contract from Patil Group.", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80&fm=webp", alt: "Hands typing on laptop keyboard" },
+  { year: 2025, title: "Odoo Implementation Partner", description: "Became official Odoo Implementation Partner.", image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80&fm=webp", alt: "Leather wallet holding credit cards" },
+  { year: 2025, title: "Branch in Mulugu (Launching Soon)", description: "Opening our new branch in Mulugu, expanding our Indian presence.", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80&fm=webp", alt: "City skyline with tower lit" },
 ];
 
 const offices = [
-  { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80", alt: "New York skyline at sunset", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
+  { id: 1, country: "USA", flag: "🇺🇸", name: "New York Office", address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA", phone: "+91 99897 95335", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80&fm=webp", alt: "New York skyline at sunset", mapDot: { top: "36%", left: "20%" }, tooltip: "New York, USA" },
   { id: 2, country: "India", flag: "🇮🇳", name: "Hyderabad Office", address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/hyderabad.png?tr=f-auto,q-auto,w-480", alt: "Hyderabad cable bridge lit night", mapDot: { top: "52%", left: "68%" }, tooltip: "Hyderabad, India" },
-  { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", alt: "City skyline aerial view", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
-  { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80", alt: "Desert highway at sunset", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
+  { id: 3, country: "India", flag: "🇮🇳", name: "Amaravati Office", address: "Amaravati, Andhra Pradesh 522503, India", phone: "+91 95539 55893", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80&fm=webp", alt: "City skyline aerial view", mapDot: { top: "55%", left: "69%" }, tooltip: "Amaravati, India" },
+  { id: 4, country: "India", flag: "🇮🇳", name: "Mulugu Office", address: "TASK Center, Mulugu, Telangana 506343, India", phone: "+91 90145 52492", email: "hr@sriainfotech.com", image: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf?w=600&q=80&fm=webp", alt: "Desert highway at sunset", mapDot: { top: "50%", left: "70%" }, tooltip: "Mulugu, India" },
   { id: 5, country: "India", flag: "🇮🇳", name: "T-Hub Office", address: "Plot No 1/C, Sy No 83/1, Raidurgam, Knowledge City Rd, Panmaktha, Hyderabad, Serilingampalle (M), Telangana 500032, India", phone: "+91 97013 14138", email: "hr@sriainfotech.com", image: "https://ik.imagekit.io/hps6th7vy/sria/partners/thub.jpg?tr=f-auto,q-auto,w-600", alt: "Two people working with a 3D printer", mapDot: { top: "53%", left: "67%" }, tooltip: "T-Hub, Hyderabad" },
 ];
 
@@ -134,7 +134,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Who We Are</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Who We Are</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
                 Starting a Revolution in<br />Digital Transformation
               </h2>
@@ -232,7 +232,7 @@ const About = () => {
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             {/* Quote text */}
             <div className="lg:col-span-2">
-              <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-6">Founder's Vision</span>
+              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-6">Founder's Vision</span>
               <h2 className="text-xl font-bold text-white mb-6 leading-tight">Starting a revolution</h2>
               <Quote className="w-10 h-10 text-orange-500/30 mb-4" />
               <blockquote className="text-slate-300 text-base leading-relaxed mb-6 border-l-4 border-orange-500 pl-6">
@@ -300,7 +300,7 @@ const About = () => {
             className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-12"
           >
             <div>
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Identity</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Identity</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Creating positive change</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-4" />
             </div>
@@ -377,7 +377,7 @@ const About = () => {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
             <div>
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Our Values</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Our Values</span>
               <h2 className="text-2xl font-bold text-slate-900">Mission Statement</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
             </div>
@@ -419,7 +419,7 @@ const About = () => {
                   srcSet="https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-480 480w, https://ik.imagekit.io/hps6th7vy/sria/mission.jpg?tr=f-auto,q-auto,w-960 960w"
                   sizes="(min-width: 1024px) 33vw, 100vw"
                   alt="Team collaborating around laptops in office"
-                  onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"; }}
+                  onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&fm=webp"; }}
                   className="w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
@@ -464,7 +464,7 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Journey</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Journey</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Iconic moments in Sria Infotech history</h2>
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-4" />
           </motion.div>
@@ -536,7 +536,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Our Footprint</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Footprint</span>
             <h2 className="text-xl md:text-2xl font-bold text-white mb-3">Global Offices</h2>
             <p className="text-slate-400 text-sm max-w-xl mx-auto">Find the location nearest to you and get in touch with our local teams.</p>
           </motion.div>

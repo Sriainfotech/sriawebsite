@@ -216,21 +216,21 @@ const customerStories = [
  {
  id: 1,
  image:
- "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
+ "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&fm=webp",
  title: "Transforming Business Operations With Innovative Solutions",
  readMoreLink: "#",
  },
  {
  id: 2,
  image:
- "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+ "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&fm=webp",
  title: "Digital Innovation Success Through Strategic Partnership",
  readMoreLink: "#",
  },
  {
  id: 3,
  image:
- "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
+ "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&fm=webp",
  title: "Scaling New Heights in Technology Excellence",
  readMoreLink: "#",
  },

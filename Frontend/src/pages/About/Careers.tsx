@@ -57,7 +57,7 @@ function Careers() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Why Join Us</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Why Join Us</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Grow Your Career With Us</h2>
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -92,7 +92,7 @@ function Careers() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Process</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Process</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">How Hiring Works</h2>
             <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -126,7 +126,7 @@ function Careers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Current Openings</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Current Openings</span>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
               We're Not Actively Listing Open Roles Right Now
             </h2>

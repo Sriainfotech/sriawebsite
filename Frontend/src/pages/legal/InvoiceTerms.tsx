@@ -6,7 +6,7 @@ const InvoiceTerms = () => {
         {/* Header */}
         <div className="flex items-start justify-between mb-8 border-b pb-6">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-1">Sria Infotech Pvt. Ltd.</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-orange-700 mb-1">Sria Infotech Pvt. Ltd.</p>
             <h1 className="text-3xl font-bold text-slate-900">Terms &amp; Conditions</h1>
             <p className="text-sm text-slate-500 mt-1">Applicable to all invoices, product sales, and service engagements</p>
           </div>

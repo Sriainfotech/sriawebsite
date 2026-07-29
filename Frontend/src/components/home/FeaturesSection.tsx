@@ -82,7 +82,7 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">What We Do</span>
+          <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">What We Do</span>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-3">

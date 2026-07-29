@@ -115,7 +115,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
           {/* Category pill */}
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-orange-500" />
-            <span className="text-orange-400 text-xs font-bold tracking-widest uppercase">{hero.category}</span>
+            <span className="text-orange-500 text-xs font-bold tracking-widest uppercase">{hero.category}</span>
           </div>
 
           {/* Title */}
@@ -166,7 +166,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Project Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Project Overview</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">About This Engagement</h2>
               <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-7" />
               <p className="text-slate-500 leading-relaxed text-sm md:text-base mb-8">{overview.text}</p>
@@ -260,7 +260,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">The Problem</span>
+              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">The Problem</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight">{challenges.title}</h2>
               <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-8" />
               <ul className="space-y-3">
@@ -295,7 +295,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Our Approach</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Approach</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{solutions.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-5" />
             <p className="text-slate-500 text-sm max-w-2xl mx-auto leading-relaxed">{solutions.introText}</p>
@@ -373,7 +373,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Results</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Results</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{businessImpact.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -409,7 +409,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{impactStats.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -448,7 +448,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight">
               Ready to Write Your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">

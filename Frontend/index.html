@@ -31,13 +31,15 @@
 
   <!--
     Google Tag Manager — deferred until the visitor's first interaction
-    (or a capped fallback timer for visitors who never interact) instead of
-    firing synchronously during initial page load, so it can't compete with
-    the LCP-critical hero for network/main-thread time. GA4 is configured
-    as a tag inside this GTM container, so this is the single, non-duplicate
-    analytics entry point for the site (a separate direct gtag.js snippet
-    used to also live here, commented out and unused — removed entirely to
-    avoid ever accidentally re-enabling a duplicate GA4 load alongside GTM).
+    (or a capped fallback timer) so it can't compete with the LCP-critical
+    hero for network/main-thread time, AND gated on the "analytics" cookie
+    category actually being consented to (not merely "not yet rejected") —
+    CookieBanner.tsx calls window.__sriaOnConsent with the visitor's choice
+    once they accept/reject/save preferences, which is what starts the
+    timers below for a first-time visitor. If analytics was already
+    accepted on a prior visit, the timers arm immediately on this load.
+    GA4 is configured as a tag inside this GTM container, so this is the
+    single, non-duplicate analytics entry point for the site.
   -->
   <script>
     (function () {
@@ -50,6 +52,7 @@
 
       var GTM_ID = 'GTM-NGJZXX9M';
       var loaded = false;
+      var listenersArmed = false;
       var events = ['scroll', 'keydown', 'click', 'touchstart', 'mousemove'];
       var fallback;
 
@@ -71,8 +74,21 @@
         clearTimeout(fallback);
       }
 
-      events.forEach(function (evt) { window.addEventListener(evt, loadGTM, { passive: true, once: true }); });
-      fallback = setTimeout(loadGTM, 5000);
+      function armGTM() {
+        if (listenersArmed || loaded) return;
+        listenersArmed = true;
+        events.forEach(function (evt) { window.addEventListener(evt, loadGTM, { passive: true, once: true }); });
+        fallback = setTimeout(loadGTM, 5000);
+      }
+
+      var consent = null;
+      try { consent = JSON.parse(localStorage.getItem('sria_cookie_consent')); } catch (e) {}
+      if (consent && consent.prefs && consent.prefs.analytics) armGTM();
+
+      window.__sriaOnConsent = window.__sriaOnConsent || [];
+      window.__sriaOnConsent.push(function (prefs) {
+        if (prefs.analytics) armGTM();
+      });
     })();
   </script>
   <!-- End Google Tag Manager -->
@@ -147,25 +163,40 @@
 
   <!--
     Tidio Chat — deferred to load during browser idle time rather than
-    immediately, since the chat widget isn't needed for the first render
-    and shouldn't compete with it. Falls back to a plain timeout on Safari,
-    which doesn't implement requestIdleCallback.
+    immediately (doesn't compete with initial render), AND gated on the
+    "functional" cookie category being consented to, the same way GTM is
+    gated on "analytics" above.
   -->
   <script>
     (function () {
       if (window.__PRERENDERING__) return;
 
+      var started = false;
       function loadTidio() {
+        if (started) return;
+        started = true;
         var s = document.createElement('script');
         s.src = '//code.tidio.co/no8lu53bllk9ahvwl08kuvxxh9xm1pbg.js';
         s.async = true;
         document.body.appendChild(s);
       }
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadTidio, { timeout: 5000 });
-      } else {
-        setTimeout(loadTidio, 3000);
+
+      function armTidio() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadTidio, { timeout: 5000 });
+        } else {
+          setTimeout(loadTidio, 3000);
+        }
       }
+
+      var consent = null;
+      try { consent = JSON.parse(localStorage.getItem('sria_cookie_consent')); } catch (e) {}
+      if (consent && consent.prefs && consent.prefs.functional) armTidio();
+
+      window.__sriaOnConsent = window.__sriaOnConsent || [];
+      window.__sriaOnConsent.push(function (prefs) {
+        if (prefs.functional) armTidio();
+      });
     })();
   </script>
 </body>

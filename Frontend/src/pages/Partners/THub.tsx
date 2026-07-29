@@ -35,44 +35,44 @@ const jointPrograms = [
     label: "Startup Mentorship",
     description: "Technical mentorship for founding teams navigating product architecture, technology choices, and engineering practices.",
     icon: <Lightbulb className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80", alt: "Overhead view of startup workspace",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&fm=webp", alt: "Overhead view of startup workspace",
   },
   {
     label: "Technology Enablement",
     description: "Hands-on support helping startups adopt scalable architectures, cloud infrastructure, and modern development practices.",
     icon: <Cloud className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space",
   },
   {
     label: "Product Engineering Support",
     description: "Collaborative product engineering guidance to help startups move from prototype to production-ready solutions.",
     icon: <Code2 className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", alt: "Close-up of computer circuit board",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&fm=webp", alt: "Close-up of computer circuit board",
   },
   {
     label: "Innovation Workshops",
     description: "Workshops and sessions on emerging technology, product strategy, and engineering best practices for founders and teams.",
     icon: <Rocket className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", alt: "Woman presenting ideas with sticky notes",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&fm=webp", alt: "Woman presenting ideas with sticky notes",
   },
 ];
 
 const benefits = [
-  { title: "Recognized Innovation Hub Partner", description: "Trusted technology collaborator within Telangana's startup and innovation ecosystem.", icon: <Rocket className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=70", alt: "Overhead view of startup workspace" },
-  { title: "Startup Ecosystem Access",           description: "Ongoing engagement with early-stage founders, incubated startups, and innovation programs.", icon: <Building2 className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&q=70", alt: "Laptop on high-rise office ledge" },
-  { title: "Technology Enablement",              description: "Practical support helping startups adopt scalable, production-grade technology practices.", icon: <Cloud className="w-5 h-5" />,       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=70", alt: "Earth at night from space" },
-  { title: "Mentorship Network",                  description: "Access to experienced technical mentors supporting founding teams and early product decisions.", icon: <Lightbulb className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=70", alt: "Developers coding on laptops together" },
-  { title: "Co-Innovation Opportunities",         description: "Collaborative engagements exploring emerging technology use cases with innovative startups.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70", alt: "Laptop screen showing data analytics" },
-  { title: "Community Visibility",                description: "Active participation in Telangana's innovation and startup community events and programs.", icon: <Users className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70", alt: "Students laughing together at laptop" },
+  { title: "Recognized Innovation Hub Partner", description: "Trusted technology collaborator within Telangana's startup and innovation ecosystem.", icon: <Rocket className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=70&fm=webp", alt: "Overhead view of startup workspace" },
+  { title: "Startup Ecosystem Access",           description: "Ongoing engagement with early-stage founders, incubated startups, and innovation programs.", icon: <Building2 className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&q=70&fm=webp", alt: "Laptop on high-rise office ledge" },
+  { title: "Technology Enablement",              description: "Practical support helping startups adopt scalable, production-grade technology practices.", icon: <Cloud className="w-5 h-5" />,       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=70&fm=webp", alt: "Earth at night from space" },
+  { title: "Mentorship Network",                  description: "Access to experienced technical mentors supporting founding teams and early product decisions.", icon: <Lightbulb className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=70&fm=webp", alt: "Developers coding on laptops together" },
+  { title: "Co-Innovation Opportunities",         description: "Collaborative engagements exploring emerging technology use cases with innovative startups.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70&fm=webp", alt: "Laptop screen showing data analytics" },
+  { title: "Community Visibility",                description: "Active participation in Telangana's innovation and startup community events and programs.", icon: <Users className="w-5 h-5" />,      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70&fm=webp", alt: "Students laughing together at laptop" },
 ];
 
 const programPortfolio = [
-  { title: "MVP Development",             description: "Rapid, scalable minimum viable product builds for early-stage startups.", icon: <Rocket className="w-6 h-6" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80", alt: "Overhead view of startup workspace" },
-  { title: "Product Engineering",         description: "End-to-end product engineering support from architecture through deployment.", icon: <Code2 className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", alt: "Close-up of computer circuit board" },
-  { title: "Cloud & DevOps Enablement",   description: "Cloud infrastructure setup, CI/CD pipelines, and DevOps practices for scaling startups.", icon: <Cloud className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space" },
-  { title: "UI/UX Design Support",        description: "Design guidance helping startups build intuitive, user-centered digital products.", icon: <Layers className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80", alt: "Developers coding on laptops together" },
-  { title: "Technical Mentorship",         description: "One-on-one mentorship sessions for founders and technical leads on product and engineering strategy.", icon: <Lightbulb className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", alt: "Woman presenting ideas with sticky notes" },
-  { title: "Innovation Workshops",         description: "Sessions on emerging technology trends, product strategy, and engineering best practices.", icon: <Briefcase className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80", alt: "Laptop on high-rise office ledge" },
+  { title: "MVP Development",             description: "Rapid, scalable minimum viable product builds for early-stage startups.", icon: <Rocket className="w-6 h-6" />,      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&fm=webp", alt: "Overhead view of startup workspace" },
+  { title: "Product Engineering",         description: "End-to-end product engineering support from architecture through deployment.", icon: <Code2 className="w-6 h-6" />,    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&fm=webp", alt: "Close-up of computer circuit board" },
+  { title: "Cloud & DevOps Enablement",   description: "Cloud infrastructure setup, CI/CD pipelines, and DevOps practices for scaling startups.", icon: <Cloud className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space" },
+  { title: "UI/UX Design Support",        description: "Design guidance helping startups build intuitive, user-centered digital products.", icon: <Layers className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80&fm=webp", alt: "Developers coding on laptops together" },
+  { title: "Technical Mentorship",         description: "One-on-one mentorship sessions for founders and technical leads on product and engineering strategy.", icon: <Lightbulb className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&fm=webp", alt: "Woman presenting ideas with sticky notes" },
+  { title: "Innovation Workshops",         description: "Sessions on emerging technology trends, product strategy, and engineering best practices.", icon: <Briefcase className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80&fm=webp", alt: "Laptop on high-rise office ledge" },
 ];
 
 function THub() {
@@ -161,7 +161,7 @@ function THub() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80&fm=webp"
                   alt="Laptop on high-rise office ledge"
                   className="w-full h-full object-cover"
                   width={660}
@@ -192,7 +192,7 @@ function THub() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
@@ -214,7 +214,7 @@ function THub() {
               <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80&fm=webp"
                   alt="Developers coding on laptops together"
                   className="w-full h-full object-cover"
                   width={660}
@@ -238,7 +238,7 @@ function THub() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">
                 Innovation Challenges<br />We Address Together
               </h2>
@@ -269,7 +269,7 @@ function THub() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&q=80&fm=webp"
                   alt="Laptop on high-rise office ledge"
                   className="w-full h-full object-cover"
                   width={660}
@@ -304,7 +304,7 @@ function THub() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
             <h2 className="text-xl font-bold text-white mb-3">Programs &amp; Capabilities</h2>
             <p className="text-slate-400 max-w-2xl text-sm leading-relaxed">
               Our partnership with T-Hub combines Sria Infotech's engineering expertise with
@@ -361,7 +361,7 @@ function THub() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Partnership Benefits</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -409,7 +409,7 @@ function THub() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400&q=80&fm=webp"
             alt="Overhead view of startup workspace"
             className="w-full h-full object-cover"
             width={1600}
@@ -430,7 +430,7 @@ function THub() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-xl font-bold text-white">Partnership Impact</h2>
           </motion.div>
 
@@ -464,7 +464,7 @@ function THub() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">Program Portfolio</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Through our partnership with T-Hub, we support a comprehensive range of product

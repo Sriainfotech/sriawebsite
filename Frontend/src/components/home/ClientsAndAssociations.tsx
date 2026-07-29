@@ -63,6 +63,7 @@ const CLIENTS: Client[] = [
   { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png?tr=f-auto,q-auto,w-160" },
   { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/7hills.png?tr=f-auto,q-auto,w-160" },
   { name: "CAMP Systems Private Limited", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/camp.jpg?tr=f-auto,q-auto,w-160" },
+  { name: "Pristine Resource LLC", country: "United States", flag: "🇺🇸", logo: "/Logos/pristine.jpg" },
   // { name: "KIMS Hospitals", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/kims.png?tr=f-auto,q-auto,w-160" },
   // { name: "Alekhya Homes", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/alekya.png?tr=f-auto,q-auto,w-160" },
 ];
@@ -255,7 +256,7 @@ function AssocCard({ assoc }: AssocCardProps) {
       </div>
       <div className="w-full text-center flex-1 flex flex-col items-center justify-start">
         <p className="text-white font-semibold text-sm leading-snug line-clamp-2 min-h-[2.5rem] flex items-center">{assoc.name}</p>
-        <span className="inline-block mt-1 text-[10px] uppercase tracking-widest text-orange-400 border border-orange-400/30 rounded-full px-2 py-0.5 text-center leading-snug">
+        <span className="inline-block mt-1 text-[10px] uppercase tracking-widest text-orange-500 border border-orange-400/30 rounded-full px-2 py-0.5 text-center leading-snug">
           {assoc.tag}
         </span>
       </div>

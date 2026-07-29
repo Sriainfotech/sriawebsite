@@ -34,44 +34,44 @@ const jointPrograms = [
     label: "e-Governance Platforms",
     description: "Design and development of citizen-facing digital platforms for public service delivery and administrative efficiency.",
     icon: <Landmark className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80", alt: "Students laughing together at laptop",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&fm=webp", alt: "Students laughing together at laptop",
   },
   {
     label: "Digital Public Infrastructure",
     description: "Building secure, scalable digital infrastructure that supports state-wide governance and public sector operations.",
     icon: <Layers className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space",
   },
   {
     label: "Data Security & Compliance",
     description: "Implementing security frameworks and compliance practices aligned with government data protection standards.",
     icon: <ShieldCheck className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80", alt: "Illuminated microchip circuit pattern",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80&fm=webp", alt: "Illuminated microchip circuit pattern",
   },
   {
     label: "Citizen Service Delivery",
     description: "Streamlining access to public services through digital portals designed for ease of use across all communities.",
     icon: <Users className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80", alt: "Team meeting with laptops around table",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80&fm=webp", alt: "Team meeting with laptops around table",
   },
 ];
 
 const benefits = [
-  { title: "Recognized State Partner",          description: "Trusted technology partner supporting Telangana's digital governance initiatives.", icon: <Landmark className="w-5 h-5" />,     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70", alt: "Students laughing together at laptop" },
-  { title: "Public Sector Delivery Experience",  description: "Proven track record delivering technology solutions for government departments and agencies.", icon: <Briefcase className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=70", alt: "Hand signing document with pen" },
-  { title: "Security & Compliance Alignment",    description: "Solutions built to meet government data security, privacy, and compliance requirements.", icon: <ShieldCheck className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=70", alt: "Illuminated microchip circuit pattern" },
-  { title: "Statewide Reach",                    description: "Platforms designed to scale across departments and serve citizens throughout Telangana.", icon: <MapPin className="w-5 h-5" />,   image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70", alt: "City skyline aerial view" },
-  { title: "Digital Inclusion Focus",             description: "Solutions designed for accessibility across urban, semi-urban, and rural communities.", icon: <Globe2 className="w-5 h-5" />,    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=70", alt: "Woman teaching coding on laptop" },
-  { title: "Innovation Collaboration",            description: "Ongoing collaboration on emerging technology initiatives for public sector modernization.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70", alt: "Laptop screen showing data analytics" },
+  { title: "Recognized State Partner",          description: "Trusted technology partner supporting Telangana's digital governance initiatives.", icon: <Landmark className="w-5 h-5" />,     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70&fm=webp", alt: "Students laughing together at laptop" },
+  { title: "Public Sector Delivery Experience",  description: "Proven track record delivering technology solutions for government departments and agencies.", icon: <Briefcase className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=70&fm=webp", alt: "Hand signing document with pen" },
+  { title: "Security & Compliance Alignment",    description: "Solutions built to meet government data security, privacy, and compliance requirements.", icon: <ShieldCheck className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=70&fm=webp", alt: "Illuminated microchip circuit pattern" },
+  { title: "Statewide Reach",                    description: "Platforms designed to scale across departments and serve citizens throughout Telangana.", icon: <MapPin className="w-5 h-5" />,   image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70&fm=webp", alt: "City skyline aerial view" },
+  { title: "Digital Inclusion Focus",             description: "Solutions designed for accessibility across urban, semi-urban, and rural communities.", icon: <Globe2 className="w-5 h-5" />,    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=70&fm=webp", alt: "Woman teaching coding on laptop" },
+  { title: "Innovation Collaboration",            description: "Ongoing collaboration on emerging technology initiatives for public sector modernization.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70&fm=webp", alt: "Laptop screen showing data analytics" },
 ];
 
 const programPortfolio = [
-  { title: "e-Governance Solutions",       description: "End-to-end digital platforms for public service delivery and administrative workflows.", icon: <Landmark className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80", alt: "Students laughing together at laptop" },
-  { title: "Citizen Service Portals",      description: "Web and mobile portals enabling citizens to access government services digitally.", icon: <Users className="w-6 h-6" />,           image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80", alt: "Team meeting with laptops around table" },
-  { title: "Data & Records Management",    description: "Secure digital record-keeping and data management systems for government departments.", icon: <FileText className="w-6 h-6" />,     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80", alt: "Hand signing document with pen" },
-  { title: "Public Sector Analytics",       description: "Data-driven insights supporting policy decisions and administrative planning.", icon: <TrendingUp className="w-6 h-6" />,          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", alt: "Laptop screen showing data analytics" },
-  { title: "Digital Infrastructure",         description: "Scalable, secure infrastructure supporting state-wide digital governance initiatives.", icon: <Layers className="w-6 h-6" />,      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space" },
-  { title: "Compliance & Security",          description: "Frameworks ensuring data protection and regulatory compliance across public platforms.", icon: <ShieldCheck className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80", alt: "Illuminated microchip circuit pattern" },
+  { title: "e-Governance Solutions",       description: "End-to-end digital platforms for public service delivery and administrative workflows.", icon: <Landmark className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&fm=webp", alt: "Students laughing together at laptop" },
+  { title: "Citizen Service Portals",      description: "Web and mobile portals enabling citizens to access government services digitally.", icon: <Users className="w-6 h-6" />,           image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80&fm=webp", alt: "Team meeting with laptops around table" },
+  { title: "Data & Records Management",    description: "Secure digital record-keeping and data management systems for government departments.", icon: <FileText className="w-6 h-6" />,     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80&fm=webp", alt: "Hand signing document with pen" },
+  { title: "Public Sector Analytics",       description: "Data-driven insights supporting policy decisions and administrative planning.", icon: <TrendingUp className="w-6 h-6" />,          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fm=webp", alt: "Laptop screen showing data analytics" },
+  { title: "Digital Infrastructure",         description: "Scalable, secure infrastructure supporting state-wide digital governance initiatives.", icon: <Layers className="w-6 h-6" />,      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space" },
+  { title: "Compliance & Security",          description: "Frameworks ensuring data protection and regulatory compliance across public platforms.", icon: <ShieldCheck className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80&fm=webp", alt: "Illuminated microchip circuit pattern" },
 ];
 
 function TelanganaGovernment() {
@@ -163,7 +163,7 @@ function TelanganaGovernment() {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&fm=webp"
                   alt="Students laughing together at laptop"
                   className="w-full h-full object-cover"
                   width={660}
@@ -195,7 +195,7 @@ function TelanganaGovernment() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
@@ -217,7 +217,7 @@ function TelanganaGovernment() {
               <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&fm=webp"
                   alt="Hand signing document with pen"
                   className="w-full h-full object-cover"
                   width={660}
@@ -242,7 +242,7 @@ function TelanganaGovernment() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">
                 Governance Challenges<br />We Address Together
               </h2>
@@ -274,7 +274,7 @@ function TelanganaGovernment() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&q=80&fm=webp"
                   alt="Illuminated microchip circuit pattern"
                   className="w-full h-full object-cover"
                   width={660}
@@ -309,7 +309,7 @@ function TelanganaGovernment() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
             <h2 className="text-xl font-bold text-white mb-3">Programs &amp; Capabilities</h2>
             <p className="text-slate-400 max-w-2xl text-sm leading-relaxed">
               Our partnership with the Government of Telangana supports the delivery of secure,
@@ -366,7 +366,7 @@ function TelanganaGovernment() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Partnership Benefits</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -414,7 +414,7 @@ function TelanganaGovernment() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&q=80&fm=webp"
             alt="Students laughing together at laptop"
             className="w-full h-full object-cover"
             width={1600}
@@ -435,7 +435,7 @@ function TelanganaGovernment() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-xl font-bold text-white">Partnership Impact</h2>
           </motion.div>
 
@@ -469,7 +469,7 @@ function TelanganaGovernment() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">Program Portfolio</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Through our partnership with the Government of Telangana, we support a range of

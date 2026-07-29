@@ -50,7 +50,7 @@ const SolutionPageLayout = ({
               transition={{ duration: 0.7 }}
               className="flex flex-col justify-center"
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-5">Our Impact</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-5">Our Impact</span>
               <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 leading-tight mb-5">
                 {impactHeading}
               </h2>
@@ -137,7 +137,7 @@ const SolutionPageLayout = ({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Partnership</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Partnership</span>
             <h2 className="text-xl lg:text-2xl font-bold text-white">Your Trusted Partner in SAP Transformation</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto mt-4" />
           </motion.div>
@@ -208,7 +208,7 @@ const SolutionPageLayout = ({
                 viewport={{ once: true }}
                 className="mb-8"
               >
-                <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Full Coverage</span>
+                <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Full Coverage</span>
                 <h2 className="text-xl lg:text-2xl font-bold text-white">End-to-End SAP Services</h2>
               </motion.div>
 
@@ -243,7 +243,7 @@ const SolutionPageLayout = ({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
             <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Drive Innovation with Latest Tech Trends</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-4" />
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">

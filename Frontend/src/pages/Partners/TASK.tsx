@@ -35,13 +35,13 @@ const jointPrograms = [
     label: "Employability Training",
     description: "Structured training programs covering technical, communication, and workplace-readiness skills for graduating students.",
     icon: <GraduationCap className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80", alt: "Students laughing together at laptop",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&fm=webp", alt: "Students laughing together at laptop",
   },
   {
     label: "Industry-Aligned Curriculum",
     description: "Co-developed training content aligned with current industry practices and emerging technology requirements.",
     icon: <BookOpen className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80", alt: "Curved library shelves full of books",
+    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80&fm=webp", alt: "Curved library shelves full of books",
   },
   {
     label: "Campus Engagement",
@@ -53,26 +53,26 @@ const jointPrograms = [
     label: "Placement Support",
     description: "Assessment-backed certification and placement readiness support to help students transition into the workforce.",
     icon: <Briefcase className="w-5 h-5" />,
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80", alt: "Colleagues high-fiving at desk",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&fm=webp", alt: "Colleagues high-fiving at desk",
   },
 ];
 
 const benefits = [
-  { title: "Recognized Skill Alliance Partner", description: "Trusted training partner supporting Telangana's academia-industry skilling mission.", icon: <Handshake className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70", alt: "Students laughing together at laptop" },
-  { title: "Structured Curriculum Design",       description: "Employability programs designed around real industry requirements and evolving skill demands.", icon: <BookOpen className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=70", alt: "Curved library shelves full of books" },
-  { title: "Statewide Campus Reach",              description: "Training delivery across engineering, degree, and polytechnic colleges throughout Telangana.", icon: <MapPin className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70", alt: "City skyline aerial view" },
-  { title: "Certification Support",               description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <Award className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=70", alt: "Colleagues high-fiving at desk" },
+  { title: "Recognized Skill Alliance Partner", description: "Trusted training partner supporting Telangana's academia-industry skilling mission.", icon: <Handshake className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=70&fm=webp", alt: "Students laughing together at laptop" },
+  { title: "Structured Curriculum Design",       description: "Employability programs designed around real industry requirements and evolving skill demands.", icon: <BookOpen className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=70&fm=webp", alt: "Curved library shelves full of books" },
+  { title: "Statewide Campus Reach",              description: "Training delivery across engineering, degree, and polytechnic colleges throughout Telangana.", icon: <MapPin className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70&fm=webp", alt: "City skyline aerial view" },
+  { title: "Certification Support",               description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <Award className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=70&fm=webp", alt: "Colleagues high-fiving at desk" },
   { title: "Student Talent Pipeline",              description: "Access to a growing pipeline of trained, job-ready students across the state.", icon: <Users className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/student.jpg?tr=f-auto,q-auto,w-640" },
-  { title: "Community & Academic Impact",          description: "Programs designed to strengthen employability outcomes across both urban and semi-urban colleges.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70", alt: "Laptop screen showing data analytics" },
+  { title: "Community & Academic Impact",          description: "Programs designed to strengthen employability outcomes across both urban and semi-urban colleges.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70&fm=webp", alt: "Laptop screen showing data analytics" },
 ];
 
 const programPortfolio = [
-  { title: "IT & Software Skilling",          description: "Foundational and advanced technical training for engineering and computer science students.", icon: <Layers className="w-6 h-6" />,        image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80", alt: "Curved library shelves full of books" },
+  { title: "IT & Software Skilling",          description: "Foundational and advanced technical training for engineering and computer science students.", icon: <Layers className="w-6 h-6" />,        image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80&fm=webp", alt: "Curved library shelves full of books" },
   { title: "Soft Skills & Communication",       description: "Workplace communication, teamwork, and interview-readiness training for students.", icon: <Users className="w-6 h-6" />,               image: "https://ik.imagekit.io/hps6th7vy/sria/partners/soft-skill-comm.jpg?tr=f-auto,q-auto,w-640" },
-  { title: "Campus-to-Corporate Bridge",        description: "Structured programs helping students transition smoothly from academic to professional environments.", icon: <Handshake className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80", alt: "Students laughing together at laptop" },
-  { title: "Emerging Tech Bootcamps",           description: "Focused bootcamps on emerging technology areas aligned with current industry hiring trends.", icon: <TrendingUp className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", alt: "Laptop screen showing data analytics" },
-  { title: "Certification Programs",            description: "Structured assessments and certificates aligned with employability and industry standards.", icon: <Award className="w-6 h-6" />,        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80", alt: "Colleagues high-fiving at desk" },
-  { title: "Placement Assistance",              description: "Support connecting trained students with employment and internship opportunities.", icon: <Briefcase className="w-6 h-6" />,           image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", alt: "Woman presenting ideas with sticky notes" },
+  { title: "Campus-to-Corporate Bridge",        description: "Structured programs helping students transition smoothly from academic to professional environments.", icon: <Handshake className="w-6 h-6" />, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80&fm=webp", alt: "Students laughing together at laptop" },
+  { title: "Emerging Tech Bootcamps",           description: "Focused bootcamps on emerging technology areas aligned with current industry hiring trends.", icon: <TrendingUp className="w-6 h-6" />,   image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fm=webp", alt: "Laptop screen showing data analytics" },
+  { title: "Certification Programs",            description: "Structured assessments and certificates aligned with employability and industry standards.", icon: <Award className="w-6 h-6" />,        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&fm=webp", alt: "Colleagues high-fiving at desk" },
+  { title: "Placement Assistance",              description: "Support connecting trained students with employment and internship opportunities.", icon: <Briefcase className="w-6 h-6" />,           image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&fm=webp", alt: "Woman presenting ideas with sticky notes" },
 ];
 
 function TASK() {
@@ -194,7 +194,7 @@ function TASK() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Overview</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
@@ -216,7 +216,7 @@ function TASK() {
               <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900&q=80&fm=webp"
                   alt="Curved library shelves full of books"
                   className="w-full h-full object-cover"
                   width={660}
@@ -240,7 +240,7 @@ function TASK() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Challenges</span>
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">
                 Employability Challenges<br />We Address Together
               </h2>
@@ -271,7 +271,7 @@ function TASK() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&fm=webp"
                   alt="Woman presenting ideas with sticky notes"
                   className="w-full h-full object-cover"
                   width={660}
@@ -306,7 +306,7 @@ function TASK() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Capabilities</span>
             <h2 className="text-xl font-bold text-white mb-3">Training Programs &amp; Capabilities</h2>
             <p className="text-slate-400 max-w-2xl text-sm leading-relaxed">
               Our alliance with TASK creates a structured skilling pipeline, combining
@@ -363,7 +363,7 @@ function TASK() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Benefits</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Partnership Benefits</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
           </motion.div>
@@ -411,7 +411,7 @@ function TASK() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1400&q=80&fm=webp"
             alt="Curved library shelves full of books"
             className="w-full h-full object-cover"
             width={1600}
@@ -432,7 +432,7 @@ function TASK() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-xl font-bold text-white">Partnership Impact</h2>
           </motion.div>
 
@@ -466,7 +466,7 @@ function TASK() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Portfolio</span>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">Program Portfolio</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Through our alliance with TASK, we deliver a comprehensive range of employability

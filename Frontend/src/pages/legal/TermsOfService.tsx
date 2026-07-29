@@ -102,7 +102,7 @@ const TermsOfService = () => {
             className="mt-14 bg-slate-950 rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
           >
             <div>
-              <p className="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-1">Questions?</p>
+              <p className="text-orange-500 text-xs font-semibold uppercase tracking-widest mb-1">Questions?</p>
               <p className="text-white font-bold text-lg">Get in Touch with Our Team</p>
               <p className="text-slate-400 text-sm mt-1">hr@sriainfotech.com</p>
             </div>

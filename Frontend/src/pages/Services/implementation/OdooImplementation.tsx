@@ -104,19 +104,19 @@ const OdooImplementation = () => {
       title: "Odoo Cloud Deployment",
       description: "Seamlessly host your Odoo ERP on the cloud for improved performance, scalability, and reduced infrastructure costs.",
       icon: <Cloud className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80", alt: "Earth at night from space",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&fm=webp", alt: "Earth at night from space",
     },
     {
       title: "Odoo Customization & Optimization",
       description: "Enhance and tailor Odoo modules to fit your unique workflows, ensuring maximum efficiency and performance.",
       icon: <Settings className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80", alt: "Laptop displaying analytics dashboard charts",
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80&fm=webp", alt: "Laptop displaying analytics dashboard charts",
     },
     {
       title: "Odoo Managed Services",
       description: "End-to-end configuration, monitoring, and maintenance of your Odoo ERP for reliable, uninterrupted operations.",
       icon: <Server className="w-8 h-8 text-orange-500" />,
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80", alt: "Server rack with tangled cables",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&fm=webp", alt: "Server rack with tangled cables",
     },
   ];
 
@@ -159,7 +159,7 @@ const OdooImplementation = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Why Choose Us</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Why Choose Us</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
                 End-to-End Odoo ERP Delivery,<br />From Strategy to Support
               </h2>
@@ -196,7 +196,7 @@ const OdooImplementation = () => {
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[380px]">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&fm=webp"
                   alt="Colleagues high-fiving at desk"
                   className="w-full h-full object-cover"
                   width={640}
@@ -299,7 +299,7 @@ const OdooImplementation = () => {
               {/* Background image */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
+                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80&fm=webp"
                   alt=""
                   role="presentation"
                   className="w-full h-full object-cover opacity-20"
@@ -316,7 +316,7 @@ const OdooImplementation = () => {
 
               <div className="relative z-10 px-8">
                 <div className="mb-10 text-center">
-                  <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
+                  <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Impact</span>
                   <h2 className="text-xl font-bold text-white">Resourceful insights of Odoo Implementation Services</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

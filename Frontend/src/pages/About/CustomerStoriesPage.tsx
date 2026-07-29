@@ -86,7 +86,7 @@ const CustomerStoriesPage = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Case Studies</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Case Studies</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">
               Real Results for Real Businesses
             </h2>
@@ -129,7 +129,7 @@ const CustomerStoriesPage = () => {
               transition={{ duration: 0.7 }}
               className="mb-6"
             >
-              <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-1">Featured</span>
+              <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-1">Featured</span>
             </motion.div>
 
             <Link to={featured.readMoreLink}>
@@ -192,7 +192,7 @@ const CustomerStoriesPage = () => {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">More Stories</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">More Stories</span>
             <h2 className="text-xl font-bold text-slate-900">More Success Stories</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mt-3" />
           </motion.div>
@@ -267,7 +267,7 @@ const CustomerStoriesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
+            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-5">
               Ready to Write Your<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Success Story?</span>

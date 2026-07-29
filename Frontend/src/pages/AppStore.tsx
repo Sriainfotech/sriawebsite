@@ -118,7 +118,7 @@ const AppStore: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-gradient-to-r from-orange-500 to-amber-400" />
-            <span className="text-orange-400 text-xs font-semibold tracking-widest uppercase font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+            <span className="text-orange-500 text-xs font-semibold tracking-widest uppercase font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
               Sria Infotech
             </span>
           </div>

@@ -26,7 +26,7 @@ const TestimonialsSection = () => {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  >
- <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-4">Client Success</span>
+ <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Client Success</span>
  <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
  What Our Clients Say
  </h2>

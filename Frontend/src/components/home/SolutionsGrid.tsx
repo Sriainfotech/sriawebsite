@@ -56,7 +56,7 @@ const SolutionsGrid = () => {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <span className="inline-block text-orange-400 font-semibold tracking-widest uppercase text-xs mb-3">Our Depth</span>
+          <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Our Depth</span>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3">Our Expertise</h2>
@@ -102,7 +102,7 @@ const SolutionsGrid = () => {
                       <cat.icon className="w-5 h-5 text-orange-400" />
                     </div>
                     <div>
-                      <p className="text-orange-400 text-xs font-semibold uppercase tracking-widest">{cat.label}</p>
+                      <p className="text-orange-500 text-xs font-semibold uppercase tracking-widest">{cat.label}</p>
                       <h3 className="text-white font-bold text-xl leading-tight">{cat.title}</h3>
                     </div>
                   </div>

@@ -131,7 +131,7 @@ const PlansPage = () => {
           {!loading && !error && plans.length > 0 && (
             <>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-                <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Pricing</span>
+                <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Pricing</span>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Simple, Transparent Pricing</h2>
                 <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-4" />
                 <p className="text-slate-500 text-sm max-w-md mx-auto">

@@ -11,11 +11,11 @@ const Hills = () => (
       datePublished: "August 1, 2025",
     }}
     images={{
-      overview:  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80",
+      overview:  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&fm=webp",
       overviewAlt: "Fine dining plated meal served",
-      challenge: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80",
+      challenge: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80&fm=webp",
       challengeAlt: "Industrial-style cafe restaurant interior",
-      impact:    "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1400&q=80",
+      impact:    "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1400&q=80&fm=webp",
       impactAlt: "Aerial view of restaurant dining",
     }}
     overview={{
@@ -41,25 +41,25 @@ const Hills = () => (
         {
           label: "We Built",
           description: "A responsive, modern website with online reservation and menu browsing features to boost digital visibility and improve guest convenience.",
-          image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80&fm=webp",
           alt: "Dual monitors showing website code",
         },
         {
           label: "We Integrated",
           description: "A cloud-based POS system to streamline table-side ordering, billing, and kitchen coordination for faster service and improved accuracy.",
-          image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=700&q=80&fm=webp",
           alt: "Hand entering code on keypad",
         },
         {
           label: "We Developed",
           description: "An inventory module that syncs with the POS and kitchen usage, giving real-time stock updates and waste tracking analytics.",
-          image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=700&q=80&fm=webp",
           alt: "Hammer resting on wooden table",
         },
         {
           label: "We Automated",
           description: "Daily reporting dashboards to monitor bookings, revenue, order trends, and ingredient usage – accessible via mobile or desktop.",
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&fm=webp",
           alt: "Laptop screen showing data analytics",
         },
       ],

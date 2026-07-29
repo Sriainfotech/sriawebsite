@@ -65,6 +65,7 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [mapVisible, setMapVisible] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [file, setFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -145,7 +146,7 @@ const Contact = () => {
               className="lg:col-span-2 flex flex-col gap-8"
             >
               <div>
-                <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Get in Touch</span>
+                <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Get in Touch</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
                   Let's Start a<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400">Conversation</span>
@@ -239,7 +240,7 @@ const Contact = () => {
                       <MessageSquare className="w-5 h-5 text-orange-400" />
                     </div>
                     <div>
-                      <p className="text-orange-400 font-semibold text-xs uppercase tracking-widest">Message Us</p>
+                      <p className="text-orange-500 font-semibold text-xs uppercase tracking-widest">Message Us</p>
                       <h2 className="text-white font-bold text-xl leading-tight">Send a Message</h2>
                     </div>
                   </div>
@@ -396,7 +397,7 @@ const Contact = () => {
               <Building2 className="w-5 h-5 text-orange-500" />
             </div>
             <div>
-              <p className="text-orange-500 font-semibold text-xs uppercase tracking-widest">Where We Are</p>
+              <p className="text-orange-700 font-semibold text-xs uppercase tracking-widest">Where We Are</p>
               <h2 className="text-slate-900 font-bold text-2xl leading-tight">Our Offices</h2>
             </div>
           </motion.div>
@@ -462,7 +463,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="mb-8 text-center"
           >
-            <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-2">Find Us</span>
+            <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-2">Find Us</span>
             <h2 className="text-slate-900 font-bold text-2xl">Head Office – Kondapur, Hyderabad</h2>
           </motion.div>
 
@@ -470,6 +471,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            onViewportEnter={() => setMapVisible(true)}
             transition={{ delay: 0.2 }}
             className="rounded-2xl overflow-hidden border border-slate-100 shadow-lg relative"
           >
@@ -477,15 +479,19 @@ const Contact = () => {
               <MapPin className="w-3.5 h-3.5 text-orange-500" />
               <span className="text-slate-700 text-xs font-semibold">Sria Infotech, Kondapur</span>
             </div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.944798585087!2d78.36957459999999!3d17.462356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93ceea49d8d9%3A0x23e7ee8e40d707ae!2sUdaya%20Vensar%20Apartments!5e0!3m2!1sen!2sin!4v1780461869992!5m2!1sen!2sin"
-              width="100%"
-              height="420"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              title="Sria Infotech Location"
-            />
+            {mapVisible ? (
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.944798585087!2d78.36957459999999!3d17.462356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93ceea49d8d9%3A0x23e7ee8e40d707ae!2sUdaya%20Vensar%20Apartments!5e0!3m2!1sen!2sin!4v1780461869992!5m2!1sen!2sin"
+                width="100%"
+                height="420"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Sria Infotech Location"
+              />
+            ) : (
+              <div className="w-full h-[420px] bg-slate-100" aria-hidden="true" />
+            )}
           </motion.div>
         </div>
       </section>
