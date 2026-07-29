@@ -31,6 +31,13 @@ const offices = [
     email: "hr@sriainfotech.com",
   },
   {
+    title: "India – T-Hub, Hyderabad",
+    flag: "🇮🇳",
+    address: "Plot No 1/C, Sy No 83/1, Raidurgam, Knowledge City Rd, Panmaktha, Hyderabad, Serilingampalle (M), Telangana 500032",
+    phone: "+91 97013 14138",
+    email: "hr@sriainfotech.com",
+  },
+  {
     title: "USA – Pennsylvania",
     flag: "🇺🇸",
     address: "18 Hunters Dr, Gilbertsville, PA 19525-6601, USA",

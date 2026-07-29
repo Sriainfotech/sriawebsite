@@ -56,6 +56,19 @@ const offices = [
     mapDot: { top: "50%", left: "70%" },
     tooltip: "Mulugu, India",
   },
+  {
+    id: 5,
+    country: "INDIA",
+    flag: "🇮🇳",
+    name: "T-Hub Office",
+    address: "Plot No 1/C, Sy No 83/1, Raidurgam, Knowledge City Rd, Panmaktha, Hyderabad, Serilingampalle (M), Telangana 500032, India",
+    phone: "+91 97013 14138",
+    email: "hr@sriainfotech.com",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/thub.jpg?tr=f-auto,q-auto,w-600",
+    alt: "Two people working with a 3D printer",
+    mapDot: { top: "53%", left: "67%" },
+    tooltip: "T-Hub, Hyderabad",
+  },
 ];
 
 const supportBlocks = [
