@@ -135,6 +135,7 @@ const ComingSoon: React.FC = () => {
                   <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                   <input
                     type="email"
+                    aria-label="Email address"
                     value={email}
                     onChange={e => { setEmail(e.target.value); setError(""); }}
                     placeholder="Enter your email"
@@ -181,7 +182,7 @@ const ComingSoon: React.FC = () => {
           className="flex items-center gap-4 my-10"
         >
           <div className="flex-1 h-px bg-white/5" />
-          <span className="text-slate-600 text-xs uppercase tracking-widest">or</span>
+          <span className="text-slate-500 text-xs uppercase tracking-widest">or</span>
           <div className="flex-1 h-px bg-white/5" />
         </motion.div>
 

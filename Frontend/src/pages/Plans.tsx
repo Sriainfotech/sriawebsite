@@ -55,7 +55,7 @@ const PlanDetails = ({ plan, isPopular }: { plan: Plan; isPopular: boolean }) =>
     {
       label: "Plan ID",
       field: "id",
-      value: <span className="font-mono text-slate-400 text-xs">{plan.id}</span>,
+      value: <span className="font-mono text-slate-500 text-xs">{plan.id}</span>,
     },
   ];
 
@@ -109,7 +109,7 @@ const PlansPage = () => {
           {loading && (
             <div className="flex flex-col items-center justify-center py-32 gap-4">
               <div className="w-10 h-10 rounded-full border-4 border-orange-200 border-t-orange-500 animate-spin" />
-              <p className="text-slate-400 text-sm">Fetching plans…</p>
+              <p className="text-slate-500 text-sm">Fetching plans…</p>
             </div>
           )}
 
@@ -171,7 +171,7 @@ const PlansPage = () => {
                             </div>
                             <div>
                               <p className="font-bold text-slate-900 text-base leading-tight">{plan.name}</p>
-                              <p className="text-slate-400 text-[10px] font-mono">{plan.slug}</p>
+                              <p className="text-slate-500 text-[10px] font-mono">{plan.slug}</p>
                             </div>
                           </div>
                           {isPopular && (
@@ -186,13 +186,13 @@ const PlansPage = () => {
                           {isFree ? (
                             <div>
                               <p className="text-3xl font-black text-slate-900">Free</p>
-                              <p className="text-slate-400 text-xs mt-0.5">{plan.posts_limit} posts per package · 7-day trial</p>
+                              <p className="text-slate-500 text-xs mt-0.5">{plan.posts_limit} posts per package · 7-day trial</p>
                             </div>
                           ) : (
                             <div className="flex items-end gap-0.5">
-                              <span className="text-slate-400 text-sm font-semibold mb-0.5">₹</span>
+                              <span className="text-slate-500 text-sm font-semibold mb-0.5">₹</span>
                               <span className="text-3xl font-black text-slate-900">{price.toLocaleString("en-IN")}</span>
-                              <span className="text-slate-400 text-xs mb-1 ml-1">/{plan.interval}</span>
+                              <span className="text-slate-500 text-xs mb-1 ml-1">/{plan.interval}</span>
                             </div>
                           )}
                         </div>

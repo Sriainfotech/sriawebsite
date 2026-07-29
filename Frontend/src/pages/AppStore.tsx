@@ -136,9 +136,10 @@ const AppStore: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
           {/* Search */}
           <div className="relative w-full sm:w-72">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" aria-hidden="true" />
             <input
               type="text"
+              aria-label="Search apps"
               placeholder="Search apps..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -167,7 +168,7 @@ const AppStore: React.FC = () => {
       {/* Grid */}
       <div className="max-w-5xl mx-auto px-4 py-10">
         {filtered.length === 0 ? (
-          <div className="py-20 text-center text-gray-400 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+          <div className="py-20 text-center text-gray-500 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
             No apps match "{search}"
           </div>
         ) : (
@@ -226,7 +227,7 @@ const AppStore: React.FC = () => {
                   <span className="text-gray-800 text-sm font-semibold text-center leading-tight mb-1 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
                     {app.name}
                   </span>
-                  <span className="text-gray-400 text-[11px] text-center leading-snug font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                  <span className="text-gray-500 text-[11px] text-center leading-snug font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
                     {app.description}
                   </span>
                 </CardWrapper>
@@ -236,7 +237,7 @@ const AppStore: React.FC = () => {
         )}
 
         {/* Footer note */}
-        <p className="text-center text-gray-300 text-xs mt-12 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+        <p className="text-center text-gray-500 text-xs mt-12 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
           More apps coming soon · Sria Infotech
         </p>
       </div>

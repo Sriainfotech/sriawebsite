@@ -137,7 +137,7 @@ const SolutionsGrid = () => {
                           <h4 className="text-white/80 font-semibold text-sm group-hover:text-white transition-colors truncate">
                             {item.title}
                           </h4>
-                          <p className="text-slate-500 text-xs mt-0.5 group-hover:text-slate-400 transition-colors truncate">
+                          <p className="text-slate-400 text-xs mt-0.5 group-hover:text-slate-300 transition-colors truncate">
                             {item.tagline}
                           </p>
                         </div>

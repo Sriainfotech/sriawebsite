@@ -232,7 +232,7 @@ const OdooImplementation = () => {
                     key={idx}
                     href={`#${id}`}
                     className={`group flex items-center justify-end text-[11px] font-bold transition-all duration-300 uppercase tracking-[0.2em] py-3 ${
-                      isActive ? "text-orange-600" : "text-slate-400 hover:text-slate-800"
+                      isActive ? "text-orange-600" : "text-slate-500 hover:text-slate-800"
                     }`}
                   >
                     <span className="mr-4">{item}</span>

@@ -74,7 +74,7 @@ const TermsOfService = () => {
                 className="group relative pl-6 border-l-2 border-slate-100 hover:border-orange-400 transition-colors duration-300"
               >
                 <span className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-white border-2 border-slate-200 group-hover:border-orange-400 flex items-center justify-center transition-colors duration-300">
-                  <span className="text-[10px] font-black text-slate-400 group-hover:text-orange-500">{sec.number}</span>
+                  <span className="text-[10px] font-black text-slate-500 group-hover:text-orange-500">{sec.number}</span>
                 </span>
 
                 <h2 className="text-lg font-bold text-slate-900 mb-3">{sec.title}</h2>
@@ -115,9 +115,9 @@ const TermsOfService = () => {
           </motion.div>
 
           {/* Legal nav */}
-          <div className="mt-8 flex flex-wrap gap-4 text-sm text-slate-400">
+          <div className="mt-8 flex flex-wrap gap-4 text-sm text-slate-500">
             <Link to="/privacy" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
-            <span className="text-slate-200">·</span>
+            <span className="text-slate-300">·</span>
             <Link to="/cookies" className="hover:text-orange-500 transition-colors">Cookie Policy</Link>
           </div>
         </div>

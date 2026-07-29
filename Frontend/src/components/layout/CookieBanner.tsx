@@ -80,7 +80,7 @@ const CookieBanner = () => {
                 >
                   Accept All
                 </button>
-                <button onClick={rejectAll} className="text-slate-600 hover:text-slate-300 transition-colors p-1" aria-label="Dismiss">
+                <button onClick={rejectAll} className="text-slate-600 hover:text-slate-300 transition-colors p-1.5 -m-0.5" aria-label="Dismiss">
                   <X className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -109,9 +109,14 @@ const CookieBanner = () => {
                         <button
                           onClick={() => toggle(ct.id)}
                           disabled={ct.required}
-                          className={`relative w-8 h-4 rounded-full transition-all duration-300 flex-shrink-0 ${prefs[ct.id as keyof typeof prefs] ? "bg-orange-500" : "bg-white/10"} ${ct.required ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+                          role="switch"
+                          aria-checked={prefs[ct.id as keyof typeof prefs]}
+                          aria-label={`${ct.label} cookies${ct.required ? " (required, always on)" : ""}`}
+                          className={`relative flex-shrink-0 flex items-center p-2 -m-2 ${ct.required ? "cursor-not-allowed" : "cursor-pointer"}`}
                         >
-                          <span className={`absolute top-0.5 left-0.5 w-3 h-3 rounded-full bg-white shadow transition-transform duration-300 ${prefs[ct.id as keyof typeof prefs] ? "translate-x-4" : "translate-x-0"}`} />
+                          <span className={`relative w-8 h-4 rounded-full transition-all duration-300 ${prefs[ct.id as keyof typeof prefs] ? "bg-orange-500" : "bg-white/10"} ${ct.required ? "opacity-50" : ""}`}>
+                            <span className={`absolute top-0.5 left-0.5 w-3 h-3 rounded-full bg-white shadow transition-transform duration-300 ${prefs[ct.id as keyof typeof prefs] ? "translate-x-4" : "translate-x-0"}`} />
+                          </span>
                         </button>
                       </div>
                     ))}

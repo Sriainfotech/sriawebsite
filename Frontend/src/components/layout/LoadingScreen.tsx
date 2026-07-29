@@ -17,7 +17,12 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[99999] bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
+    <div
+      role="status"
+      aria-live="polite"
+      aria-label={`Loading, ${progress}%`}
+      className="fixed inset-0 z-[99999] bg-slate-950 flex flex-col items-center justify-center overflow-hidden"
+    >
 
       {/* Background dot grid */}
       <div

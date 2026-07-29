@@ -272,37 +272,37 @@ export default function ExecutiveDashboardDemo() {
       </div>
 
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10, alignItems: "center" }}>
-        <select value={year} onChange={(e) => setYear(e.target.value)} style={{ fontSize: 11, height: 30 }}>
+        <select aria-label="Filter by year" value={year} onChange={(e) => setYear(e.target.value)} style={{ fontSize: 11, height: 30 }}>
           <option value="all">Year: all</option>
           {YEARS.map((y) => (
             <option key={y} value={y}>{y}</option>
           ))}
         </select>
-        <select value={month} onChange={(e) => setMonth(e.target.value)} style={{ fontSize: 11, height: 30 }}>
+        <select aria-label="Filter by month" value={month} onChange={(e) => setMonth(e.target.value)} style={{ fontSize: 11, height: 30 }}>
           <option value="all">Month: all</option>
           {MONTHS.map((m) => (
             <option key={m} value={m}>{m}</option>
           ))}
         </select>
-        <select value={unit} onChange={(e) => setUnit(e.target.value)} style={{ fontSize: 11, height: 30 }}>
+        <select aria-label="Filter by business unit" value={unit} onChange={(e) => setUnit(e.target.value)} style={{ fontSize: 11, height: 30 }}>
           <option value="all">Unit: all</option>
           {UNITS.map((u) => (
             <option key={u} value={u}>{u}</option>
           ))}
         </select>
-        <select value={category} onChange={(e) => setCategory(e.target.value)} style={{ fontSize: 11, height: 30 }}>
+        <select aria-label="Filter by category" value={category} onChange={(e) => setCategory(e.target.value)} style={{ fontSize: 11, height: 30 }}>
           <option value="all">Category: all</option>
           {CATS.map((c) => (
             <option key={c} value={c}>{c}</option>
           ))}
         </select>
-        <select value={status} onChange={(e) => setStatus(e.target.value)} style={{ fontSize: 11, height: 30 }}>
+        <select aria-label="Filter by status" value={status} onChange={(e) => setStatus(e.target.value)} style={{ fontSize: 11, height: 30 }}>
           <option value="all">Status: all</option>
           <option>Active</option>
           <option>Partial</option>
           <option>Idle</option>
         </select>
-        <button onClick={reset} style={{ fontSize: 11, height: 30 }}>⟲ Reset</button>
+        <button onClick={reset} aria-label="Reset all filters" style={{ fontSize: 11, height: 30 }}>⟲ Reset</button>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(100px,1fr))", gap: 8, marginBottom: 12 }}>

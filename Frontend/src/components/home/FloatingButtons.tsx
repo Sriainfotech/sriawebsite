@@ -146,7 +146,9 @@ const FloatingButtons = () => {
       </Link> */}
 
       {/* PHONE */}
-      <div
+      <button
+        type="button"
+        aria-label="Call Sria Infotech: +91 97013 14138"
         className={`
  bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
  ${phoneOpen ? "w-[180px]" : "w-12"}
@@ -162,10 +164,12 @@ const FloatingButtons = () => {
         <div className={`whitespace-nowrap text-white font-medium pr-4 transition-opacity duration-300 ${phoneOpen ? "opacity-100" : "opacity-0"}`}>
           +91 97013 14138
         </div>
-      </div>
+      </button>
 
       {/* MAIL */}
-      <div
+      <button
+        type="button"
+        aria-label="Email Sria Infotech: hr@sriainfotech.com"
         className={`
  bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
  ${mailOpen ? "w-[240px]" : "w-12"}
@@ -181,21 +185,26 @@ const FloatingButtons = () => {
         <div className={`whitespace-nowrap text-white font-medium pr-2 transition-opacity duration-300 ${mailOpen ? "opacity-100" : "opacity-0"}`}>
           hr@sriainfotech.com
         </div>
-      </div>
+      </button>
 
       {/* SHARE */}
       <div
         className={`
- bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
+ bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden
  ${shareOpen ? "w-[200px]" : "w-12"}
  `}
         onMouseEnter={() => !isMobile && setShareOpen(true)}
         onMouseLeave={() => !isMobile && setShareOpen(false)}
-        onClick={handleShareTap}
       >
-        <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 text-white">
+        <button
+          type="button"
+          aria-label="Share this website"
+          aria-expanded={shareOpen}
+          onClick={handleShareTap}
+          className="w-12 h-12 flex items-center justify-center flex-shrink-0 text-white cursor-pointer"
+        >
           <Share2 size={22} />
-        </div>
+        </button>
 
         <div className={`flex gap-4 items-center transition-opacity duration-300 ${shareOpen ? "opacity-100" : "opacity-0"}`}>
           <div className="flex justify-center gap-4 text-lg text-white">

@@ -62,7 +62,7 @@ const EventsSection = () => {
                 </div>
 
                 <div className="absolute top-4 right-4 bg-white/95 backdrop-blur p-3 rounded-xl text-center min-w-[60px] shadow-sm">
-                  <span className="block text-[9px] font-bold text-slate-400 uppercase">{event.date.split(" ")[0]}</span>
+                  <span className="block text-[9px] font-bold text-slate-500 uppercase">{event.date.split(" ")[0]}</span>
                   <span className="block text-lg font-black text-slate-800">{event.date.split(" ")[1]?.replace(",", "")}</span>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const EventsSection = () => {
                     {/* <ExternalLink className="w-3.5 h-3.5" />
                     View Details */}
                   </div>
-                  <div className="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+                  <div className="flex items-center gap-1 text-[10px] font-medium text-slate-500">
                     <Calendar className="w-3 h-3" />
                     {event.date.split(",")[1]}
                   </div>

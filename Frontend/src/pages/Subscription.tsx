@@ -107,7 +107,7 @@ const SectionCard = ({ title, subtitle, icon: Icon, accent, children }: {
           <Icon className="w-5 h-5 text-orange-500" />
         </div>
         <div>
-          <p className="text-slate-400 text-xs">{subtitle}</p>
+          <p className="text-slate-500 text-xs">{subtitle}</p>
           <h3 className="text-slate-900 font-bold text-lg leading-tight">{title}</h3>
         </div>
       </div>
@@ -157,7 +157,7 @@ const SubscriptionPage = () => {
           {loading && (
             <div className="flex flex-col items-center justify-center py-32 gap-4">
               <div className="w-10 h-10 rounded-full border-4 border-orange-200 border-t-orange-500 animate-spin" />
-              <p className="text-slate-400 text-sm">Loading…</p>
+              <p className="text-slate-500 text-sm">Loading…</p>
             </div>
           )}
 
@@ -186,7 +186,7 @@ const SubscriptionPage = () => {
                       is_expired={sub.subscription.is_expired}
                       status={sub.subscription.status}
                     />
-                    <span className="text-slate-400 text-xs font-mono">id: {sub.subscription.id}</span>
+                    <span className="text-slate-500 text-xs font-mono">id: {sub.subscription.id}</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2.5">
                     {[
@@ -196,7 +196,7 @@ const SubscriptionPage = () => {
                       { label: "max_accounts", value: String(sub.subscription.plan.max_accounts) },
                     ].map(item => (
                       <div key={item.label} className="bg-slate-50 rounded-xl px-3 py-2.5">
-                        <p className="text-slate-400 text-[10px] font-mono">{item.label}</p>
+                        <p className="text-slate-500 text-[10px] font-mono">{item.label}</p>
                         <p className="text-slate-800 font-bold text-sm capitalize mt-0.5">{item.value}</p>
                       </div>
                     ))}
@@ -213,7 +213,7 @@ const SubscriptionPage = () => {
                       { label: "cancelled_at",         value: sub.subscription.cancelled_at ? fmt(sub.subscription.cancelled_at) : "—" },
                     ].map(item => (
                       <div key={item.label} className="flex items-center justify-between py-2 border-b border-slate-50 last:border-0">
-                        <span className="text-slate-400 text-xs font-mono">{item.label}</span>
+                        <span className="text-slate-500 text-xs font-mono">{item.label}</span>
                         <span className="text-slate-800 text-sm font-semibold">{item.value}</span>
                       </div>
                     ))}
@@ -240,12 +240,12 @@ const SubscriptionPage = () => {
                         <TrendingUp className="w-4 h-4 text-orange-500" />
                         <span className="text-slate-700 text-sm font-semibold">Posts per Package</span>
                       </div>
-                      <span className="text-slate-400 text-xs font-mono">{usage.posts_used} / {usage.is_unlimited ? "∞" : usage.posts_limit}</span>
+                      <span className="text-slate-500 text-xs font-mono">{usage.posts_used} / {usage.is_unlimited ? "∞" : usage.posts_limit}</span>
                     </div>
                     <ProgressBar value={usage.posts_used} max={usage.posts_limit} color="orange" />
                     <div className="flex justify-between mt-1.5">
-                      <span className="text-slate-400 text-xs font-mono">posts_remaining: <span className="text-emerald-500 font-bold">{usage.posts_remaining}</span></span>
-                      <span className="text-slate-400 text-xs font-mono">is_unlimited: <span className={usage.is_unlimited ? "text-emerald-500" : "text-slate-500"}>{String(usage.is_unlimited)}</span></span>
+                      <span className="text-slate-500 text-xs font-mono">posts_remaining: <span className="text-emerald-500 font-bold">{usage.posts_remaining}</span></span>
+                      <span className="text-slate-500 text-xs font-mono">is_unlimited: <span className={usage.is_unlimited ? "text-emerald-500" : "text-slate-500"}>{String(usage.is_unlimited)}</span></span>
                     </div>
                   </div>
 
@@ -256,12 +256,12 @@ const SubscriptionPage = () => {
                         <Zap className="w-4 h-4 text-sky-500" />
                         <span className="text-slate-700 text-sm font-semibold">Daily</span>
                       </div>
-                      <span className="text-slate-400 text-xs font-mono">{usage.daily_used} / {usage.daily_limit}</span>
+                      <span className="text-slate-500 text-xs font-mono">{usage.daily_used} / {usage.daily_limit}</span>
                     </div>
                     <ProgressBar value={usage.daily_used} max={usage.daily_limit} color="sky" />
                     <div className="flex justify-between mt-1.5">
-                      <span className="text-slate-400 text-xs font-mono">daily_used: <span className="text-sky-500 font-bold">{usage.daily_used}</span></span>
-                      <span className="text-slate-400 text-xs font-mono">daily_limit: <span className="text-slate-600 font-bold">{usage.daily_limit}</span></span>
+                      <span className="text-slate-500 text-xs font-mono">daily_used: <span className="text-sky-500 font-bold">{usage.daily_used}</span></span>
+                      <span className="text-slate-500 text-xs font-mono">daily_limit: <span className="text-slate-600 font-bold">{usage.daily_limit}</span></span>
                     </div>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ const SubscriptionPage = () => {
                   ].map(tile => (
                     <div key={tile.label} className="bg-slate-50 rounded-xl p-2.5 text-center">
                       <p className={`font-black text-base leading-none ${tile.color}`}>{tile.value}</p>
-                      <p className="text-slate-400 text-[9px] font-mono mt-1 break-all">{tile.label}</p>
+                      <p className="text-slate-500 text-[9px] font-mono mt-1 break-all">{tile.label}</p>
                     </div>
                   ))}
                 </div>

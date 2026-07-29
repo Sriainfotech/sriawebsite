@@ -152,14 +152,20 @@ const FeaturesSection = () => {
 
             {/* Progress indicator dots */}
             <div className="flex items-center gap-2 px-5 pt-2">
-              {features.map((_, i) => (
+              {features.map((f, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-1 rounded-full transition-all duration-300 ${
-                    i === active ? "w-6 bg-orange-500" : "w-2 bg-slate-200 hover:bg-slate-300"
-                  }`}
-                />
+                  aria-label={`Show ${f.title} details`}
+                  aria-current={i === active ? "true" : undefined}
+                  className={`p-2 -m-2 flex items-center justify-center`}
+                >
+                  <span
+                    className={`block h-1 rounded-full transition-all duration-300 ${
+                      i === active ? "w-6 bg-orange-500" : "w-2 bg-slate-200 hover:bg-slate-300"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </motion.div>

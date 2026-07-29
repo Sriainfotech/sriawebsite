@@ -108,6 +108,14 @@ const Culture: React.FC = () => {
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                     className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-xl"
                     onClick={() => openLightbox(globalIndex)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openLightbox(globalIndex);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
                   >
                     <img
                       src={withW(url, 480)}
@@ -142,10 +150,14 @@ const Culture: React.FC = () => {
             onClick={closeLightbox}
             onKeyDown={handleKeyDown}
             tabIndex={0}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Photo lightbox"
           >
             {/* Close */}
             <button
               onClick={closeLightbox}
+              aria-label="Close lightbox"
               className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
             >
               <X className="w-5 h-5 text-white" />
@@ -154,6 +166,7 @@ const Culture: React.FC = () => {
             {/* Prev */}
             <button
               onClick={e => { e.stopPropagation(); prev(); }}
+              aria-label="Previous photo"
               className="absolute left-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
@@ -179,6 +192,7 @@ const Culture: React.FC = () => {
             {/* Next */}
             <button
               onClick={e => { e.stopPropagation(); next(); }}
+              aria-label="Next photo"
               className="absolute right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
             >
               <ChevronRight className="w-6 h-6 text-white" />

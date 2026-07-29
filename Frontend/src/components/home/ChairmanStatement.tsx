@@ -165,12 +165,17 @@ const ChairmanStatement = () => {
                         <button
                             key={index}
                             onClick={() => scrollTo(index)}
-                            className={`transition-all duration-300 rounded-full ${index === selectedIndex
-                                ? "w-4 h-1.5 bg-orange-500"
-                                : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
-                                }`}
+                            className="p-2 -m-2 flex items-center justify-center"
                             aria-label={`Go to slide ${index + 1}`}
-                        />
+                            aria-current={index === selectedIndex ? "true" : undefined}
+                        >
+                            <span
+                                className={`block transition-all duration-300 rounded-full ${index === selectedIndex
+                                    ? "w-4 h-1.5 bg-orange-500"
+                                    : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
+                                    }`}
+                            />
+                        </button>
                     ))}
                 </div>
             </div>

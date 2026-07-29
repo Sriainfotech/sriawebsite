@@ -5,7 +5,11 @@ const NotFound = () => {
  const location = useLocation();
 
  useEffect(() => {
- console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+ // console.warn, not .error — a 404 is expected, routine navigation
+ // outcome, not an application fault. Lighthouse's Best Practices audit
+ // flags any console.error logged during a page load, so using .error
+ // here would fail that check every time this route is hit.
+ console.warn("404: no route matched", location.pathname);
  }, [location.pathname]);
 
  return (

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
-
+/* Font stylesheet is linked directly in index.html's <head> instead of
+   @import'd here — see the comment there for why. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -119,7 +119,7 @@ function Location() {
                 </div>
                 <div>
                   <p className="text-2xl font-black text-slate-900">{stat.value}</p>
-                  <p className="text-slate-400 text-xs font-medium">{stat.label}</p>
+                  <p className="text-slate-500 text-xs font-medium">{stat.label}</p>
                 </div>
               </motion.div>
             ))}
@@ -173,10 +173,15 @@ function Location() {
               {offices.map((office) => (
                 <div
                   key={office.id}
-                  className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group"
+                  className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group p-2.5 -m-2.5"
                   style={{ top: office.mapDot.top, left: office.mapDot.left }}
                   onMouseEnter={() => setHoveredDot(office.id)}
                   onMouseLeave={() => setHoveredDot(null)}
+                  onFocus={() => setHoveredDot(office.id)}
+                  onBlur={() => setHoveredDot(null)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={office.tooltip}
                 >
                   {/* Ping dot */}
                   <div className="relative w-4 h-4">
@@ -312,7 +317,7 @@ function Location() {
                   {block.icon}
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-1 group-hover:text-orange-600 transition-colors">{block.title}</h3>
-                <p className="text-slate-400 text-xs mb-5">{block.description}</p>
+                <p className="text-slate-500 text-xs mb-5">{block.description}</p>
                 <div className="space-y-2">
                   <div className="flex items-center justify-center gap-2 text-slate-600 text-sm">
                     <Mail className="w-3.5 h-3.5 text-orange-400 flex-shrink-0" />

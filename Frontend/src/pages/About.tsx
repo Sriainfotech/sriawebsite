@@ -189,7 +189,7 @@ const About = () => {
                     {i > 0 && <div className="w-px h-8 bg-slate-200" />}
                     <div className="text-center">
                       <p className="text-xl font-black text-orange-500">{s.value}</p>
-                      <p className="text-xs text-slate-400 font-medium">{s.label}</p>
+                      <p className="text-xs text-slate-500 font-medium">{s.label}</p>
                     </div>
                   </React.Fragment>
                 ))}
@@ -568,10 +568,15 @@ const About = () => {
               {offices.map((office) => (
                 <div
                   key={office.id}
-                  className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10"
+                  className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 p-2.5 -m-2.5"
                   style={{ top: office.mapDot.top, left: office.mapDot.left }}
                   onMouseEnter={() => setHoveredDot(office.id)}
                   onMouseLeave={() => setHoveredDot(null)}
+                  onFocus={() => setHoveredDot(office.id)}
+                  onBlur={() => setHoveredDot(null)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={office.tooltip}
                 >
                   <div className="relative w-4 h-4">
                     <div className="absolute inset-0 bg-orange-500 rounded-full shadow-lg shadow-orange-500/60" />

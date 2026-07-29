@@ -379,7 +379,7 @@ export default function ClientsAndAssociations() {
             ))}
           </div>
 
-          <p className="text-center text-white/30 text-xs mt-10">
+          <p className="text-center text-white/40 text-xs mt-10">
             Recognised partner of the Telangana Innovation Ecosystem · SAP Gold Certified
           </p>
         </div>

@@ -29,6 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
     const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+    // "nested" mega-menu layout (Services): which sub-category's flyout is
+    // open. CSS :hover already reveals it for mouse users; this lets
+    // keyboard users open/close the same flyout via Enter/Space on its
+    // toggle button, since hover alone is unreachable without a pointer.
+    const [openNestedSection, setOpenNestedSection] = useState<number | null>(null);
 
     const handleMouseEnter = (dropdown: string) => {
         if (hoverTimeout) clearTimeout(hoverTimeout);
@@ -47,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({
         const handleScroll = (): void => {
             setScrolled(window.scrollY > 50);
         };
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
@@ -134,13 +139,20 @@ const Navbar: React.FC<NavbarProps> = ({
                                     {section.items.length > 0 ? (
                                         <>
                                             <button
+                                                type="button"
+                                                aria-haspopup="true"
+                                                aria-expanded={openNestedSection === idx}
+                                                onClick={() => setOpenNestedSection(openNestedSection === idx ? null : idx)}
                                                 className="w-full text-left px-4 py-3 text-gray-300 hover:text-orange-300 hover:bg-gray-800 transition-colors text-base font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif] flex items-center justify-between"
                                             >
                                                 {section.title}
                                                 <ChevronDown className="w-4 h-4 -rotate-90" />
                                             </button>
-                                            {/* Nested Dropdown */}
-                                            <div className="absolute left-full top-0 invisible opacity-0 -translate-x-2 group-hover/item:visible group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200 z-50">
+                                            {/* Nested Dropdown — CSS :hover reveals it for mouse users;
+                                                openNestedSection reveals it for keyboard users via the
+                                                button's onClick above, since hover is unreachable without
+                                                a pointer. */}
+                                            <div className={`absolute left-full top-0 transition-all duration-200 z-50 group-hover/item:visible group-hover/item:opacity-100 group-hover/item:translate-x-0 ${openNestedSection === idx ? "visible opacity-100 translate-x-0" : "invisible opacity-0 -translate-x-2"}`}>
                                                 <div className="bg-[#0F0F0F] shadow-2xl border border-gray-700 py-2 min-w-[240px] ml-1">
                                                     <ul className="flex flex-col">
                                                         {section.items.map((item, itemIdx) => (

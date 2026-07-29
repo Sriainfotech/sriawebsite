@@ -275,14 +275,14 @@ const CustomerStoriesPage = () => {
             <p className="text-slate-400 text-sm max-w-xl mx-auto mb-8">
               Join hundreds of businesses that have transformed their operations with Sria Infotech's enterprise solutions.
             </p>
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.04 }}
+            <motion.div whileHover={{ scale: 1.04 }} className="inline-block">
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-orange-500/20 text-sm"
               >
                 Get in Touch <ArrowRight className="w-4 h-4" />
-              </motion.button>
-            </Link>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

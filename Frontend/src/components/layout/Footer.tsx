@@ -92,7 +92,7 @@ const Footer = () => {
                                     className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
                             </Link>
-                            <Link to="https://ivcsol.com/" target="_blank" className="flex items-center group">
+                            <a href="https://ivcsol.com/" target="_blank" rel="noopener noreferrer" className="flex items-center group">
                                 <img
                                     src="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-480"
                                     srcSet="https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320 320w, https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-480 480w"
@@ -104,7 +104,7 @@ const Footer = () => {
                                     decoding="async"
                                     className="w-auto h-30 opacity-80 group-hover:opacity-100 transition-opacity"
                                 />
-                            </Link>
+                            </a>
                         </div>
 
                         <p className="text-sm text-slate-500 mb-8 leading-relaxed">

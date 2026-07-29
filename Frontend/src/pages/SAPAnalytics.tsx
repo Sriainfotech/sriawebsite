@@ -529,6 +529,8 @@ const SAPAnalytics = () => {
                 <figure
                   key={shot.full}
                   tabIndex={0}
+                  role="button"
+                  aria-label={`View larger image: ${shot.caption}`}
                   onClick={() => setLightbox({ src: shot.full, alt: shot.alt })}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {

@@ -18,6 +18,18 @@
   <link rel="preconnect" href="https://ik.imagekit.io" />
 
   <!--
+    Font stylesheet linked directly here (rather than left as only a CSS
+    @import, which used to be the sole source) so the browser's preload
+    scanner discovers and fetches it immediately from the raw HTML — instead
+    of waiting for the bundled stylesheet to load and be parsed first, which
+    is what the @import path costs now that the full stylesheet itself loads
+    asynchronously (see the critical-CSS setup in scripts/prerender.mjs).
+    font-display=swap means text still paints immediately with the fallback
+    font regardless of when this finishes.
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
+
+  <!--
     Google Tag Manager — deferred until the visitor's first interaction
     (or a capped fallback timer for visitors who never interact) instead of
     firing synchronously during initial page load, so it can't compete with

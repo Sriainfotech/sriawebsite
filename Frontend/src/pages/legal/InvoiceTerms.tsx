@@ -8,9 +8,9 @@ const InvoiceTerms = () => {
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-orange-500 mb-1">Sria Infotech Pvt. Ltd.</p>
             <h1 className="text-3xl font-bold text-slate-900">Terms &amp; Conditions</h1>
-            <p className="text-sm text-slate-400 mt-1">Applicable to all invoices, product sales, and service engagements</p>
+            <p className="text-sm text-slate-500 mt-1">Applicable to all invoices, product sales, and service engagements</p>
           </div>
-          <div className="text-right text-xs text-slate-400 mt-1">
+          <div className="text-right text-xs text-slate-500 mt-1">
             <p>GSTIN: 36ABICS3346M1ZV</p>
             <p>Hyderabad, Telangana – 500049</p>
             <p>hr@sriainfotech.com</p>
@@ -133,7 +133,7 @@ const InvoiceTerms = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-12 pt-6 border-t flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-400">
+        <div className="mt-12 pt-6 border-t flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-500">
           <p>Sria Infotech Pvt. Ltd. &nbsp;·&nbsp; 303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana - 500084</p>
           <p className="sm:text-right whitespace-nowrap">© {new Date().getFullYear()} Sria Infotech Pvt. Ltd.</p>
         </div>

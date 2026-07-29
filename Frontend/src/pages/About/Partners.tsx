@@ -273,19 +273,19 @@ function Partners() {
                               {partner.stats.map((stat, i) => (
                                 <div key={i} className="text-center">
                                   <p className="text-2xl font-black text-orange-500">{stat.value}</p>
-                                  <p className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</p>
+                                  <p className="text-xs text-slate-500 font-medium mt-0.5">{stat.label}</p>
                                 </div>
                               ))}
                             </div>
 
-                            <Link to={partner.detailsUrl}>
-                              <motion.button
-                                whileHover={{ x: 4 }}
+                            <motion.div whileHover={{ x: 4 }} className="inline-block">
+                              <Link
+                                to={partner.detailsUrl}
                                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-orange-200"
                               >
                                 View Partnership <ArrowRight className="w-4 h-4" />
-                              </motion.button>
-                            </Link>
+                              </Link>
+                            </motion.div>
                           </div>
                         </div>
                       </div>
@@ -312,8 +312,10 @@ function Partners() {
                     type="button"
                     onClick={() => emblaApi?.scrollTo(idx)}
                     aria-label={`Go to partner ${idx + 1}`}
-                    className="w-2 h-2 rounded-full bg-slate-300 hover:bg-orange-400 transition-colors"
-                  />
+                    className="group p-2.5 -m-2.5 flex items-center justify-center"
+                  >
+                    <span className="block w-2 h-2 rounded-full bg-slate-300 group-hover:bg-orange-400 transition-colors" />
+                  </button>
                 ))}
               </div>
               <button

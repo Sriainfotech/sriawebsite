@@ -271,6 +271,15 @@ const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onOpen}
+      role="button"
+      tabIndex={0}
+      aria-label={`Play video: ${item.caption}`}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
     >
       <video
         ref={videoRef}
@@ -365,6 +374,15 @@ const ImageCard: React.FC<{
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       onClick={() => onOpen(idx)}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open photo: ${item.caption}`}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen(idx);
+        }
+      }}
     >
       <AnimatePresence mode="sync">
         <motion.img
@@ -474,6 +492,15 @@ const Lightbox: React.FC<{ state: LightboxState; onClose: () => void }> = ({ sta
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[9999] bg-slate-950/97 flex flex-col items-center justify-center p-4"
           onClick={onClose}
+          role="button"
+          tabIndex={0}
+          aria-label="Close gallery viewer"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onClose();
+            }
+          }}
         >
           <motion.div
             initial={{ scale: 0.93, opacity: 0 }}
@@ -486,6 +513,7 @@ const Lightbox: React.FC<{ state: LightboxState; onClose: () => void }> = ({ sta
             {/* Close */}
             <button
               onClick={onClose}
+              aria-label="Close lightbox"
               className="absolute -top-14 right-0 w-11 h-11 rounded-full bg-white/20 hover:bg-orange-500 border border-white/40 flex items-center justify-center text-white transition-all z-10 shadow-lg"
             >
               <X className="w-5 h-5" />
@@ -537,12 +565,14 @@ const Lightbox: React.FC<{ state: LightboxState; onClose: () => void }> = ({ sta
               <>
                 <button
                   onClick={prev}
+                  aria-label="Previous image"
                   className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 flex items-center justify-center text-white transition-all"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={next}
+                  aria-label="Next image"
                   className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 flex items-center justify-center text-white transition-all"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -554,6 +584,7 @@ const Lightbox: React.FC<{ state: LightboxState; onClose: () => void }> = ({ sta
                     <button
                       key={i}
                       onClick={() => setIdx(i)}
+                      aria-label={`View image ${i + 1} of ${state.item.images.length}`}
                       className={`w-12 h-9 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${i === idx ? "border-orange-400 opacity-100" : "border-transparent opacity-35 hover:opacity-65"
                         }`}
                     >
@@ -629,7 +660,7 @@ const Gallery: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-black text-slate-900 leading-none">{value}</p>
-                  <p className="text-xs text-slate-400 font-medium mt-0.5">{label}</p>
+                  <p className="text-xs text-slate-500 font-medium mt-0.5">{label}</p>
                 </div>
               </motion.div>
             ))}
@@ -693,7 +724,7 @@ const Gallery: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-slate-400 text-xs md:text-right max-w-xs leading-relaxed"
+              className="text-slate-500 text-xs md:text-right max-w-xs leading-relaxed"
             >
               Hover grouped cards to preview · hover videos to play with sound · click to open
             </motion.p>
@@ -756,7 +787,7 @@ const Gallery: React.FC = () => {
           </AnimatePresence>
 
           {filtered.length === 0 && (
-            <div className="text-center py-24 text-slate-400">
+            <div className="text-center py-24 text-slate-500">
               <Camera className="w-10 h-10 mx-auto mb-3 opacity-25" />
               <p className="text-sm">Nothing here yet.</p>
             </div>

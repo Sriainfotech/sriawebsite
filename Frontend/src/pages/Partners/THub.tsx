@@ -125,7 +125,7 @@ function THub() {
                   Innovation Hub Partner
                 </span>
                 <p className="text-slate-500 text-xs">Startup Ecosystem Collaborator</p>
-                <p className="text-slate-400 text-xs">Partnership Established {PARTNERSHIP_YEAR}</p>
+                <p className="text-slate-500 text-xs">Partnership Established {PARTNERSHIP_YEAR}</p>
               </div>
 
               <div className="flex flex-wrap gap-2 mb-6">
@@ -143,7 +143,7 @@ function THub() {
                   <div key={i} className="flex items-start gap-2.5 p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <div className="mt-0.5 flex-shrink-0">{meta.icon}</div>
                     <div>
-                      <p className="text-xs text-slate-400 font-medium uppercase tracking-wide">{meta.label}</p>
+                      <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">{meta.label}</p>
                       <p className="text-sm text-slate-800 font-semibold leading-snug">{meta.value}</p>
                     </div>
                   </div>

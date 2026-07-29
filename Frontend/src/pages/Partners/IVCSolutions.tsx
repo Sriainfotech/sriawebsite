@@ -115,7 +115,7 @@ function IVCSolutions() {
                   SAP Gold Partner
                 </span>
                 <p className="text-slate-500 text-xs">Joint Venture Partner</p>
-                <p className="text-slate-400 text-xs">Partnership Established 2020</p>
+                <p className="text-slate-500 text-xs">Partnership Established 2020</p>
               </div>
 
               {/* Tags */}
@@ -135,7 +135,7 @@ function IVCSolutions() {
                   <div key={i} className="flex items-start gap-2.5 p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <div className="mt-0.5 flex-shrink-0">{meta.icon}</div>
                     <div>
-                      <p className="text-xs text-slate-400 font-medium uppercase tracking-wide">{meta.label}</p>
+                      <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">{meta.label}</p>
                       <p className="text-sm text-slate-800 font-semibold leading-snug">{meta.value}</p>
                     </div>
                   </div>

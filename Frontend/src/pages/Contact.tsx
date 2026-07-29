@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin, Mail, Phone, Send, CheckCircle, Loader2,
@@ -67,6 +67,7 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -177,7 +178,7 @@ const Contact = () => {
                           <item.icon className="w-4 h-4 text-orange-500 group-hover:text-white transition-colors" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-slate-400 text-xs">{item.label}</p>
+                          <p className="text-slate-500 text-xs">{item.label}</p>
                           <p className="text-slate-800 text-sm font-semibold truncate">{item.value}</p>
                         </div>
                         <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-orange-400 group-hover:translate-x-1 transition-all" />
@@ -188,7 +189,7 @@ const Contact = () => {
                           <item.icon className="w-4 h-4 text-orange-500" />
                         </div>
                         <div>
-                          <p className="text-slate-400 text-xs">{item.label}</p>
+                          <p className="text-slate-500 text-xs">{item.label}</p>
                           <p className="text-slate-800 text-sm font-semibold">{item.value}</p>
                         </div>
                       </div>
@@ -210,7 +211,7 @@ const Contact = () => {
                   >
                     <s.icon className="w-4 h-4 text-orange-500 mx-auto mb-2" />
                     <p className="text-slate-900 font-bold text-lg leading-none">{s.value}</p>
-                    <p className="text-slate-400 text-xs mt-1">{s.label}</p>
+                    <p className="text-slate-500 text-xs mt-1">{s.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -276,7 +277,7 @@ const Contact = () => {
 
                     <div>
                       <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
-                        Phone <span className="text-slate-600 normal-case font-normal">(optional)</span>
+                        Phone <span className="text-slate-400 normal-case font-normal">(optional)</span>
                       </label>
                       <div className="relative">
                         <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
@@ -308,7 +309,7 @@ const Contact = () => {
 
                     <div>
                       <label className="block text-slate-400 text-xs font-semibold uppercase tracking-wide mb-2">
-                        Attach Document <span className="text-slate-600 normal-case font-normal">(optional — PDF, Word, or image, up to {MAX_FILE_SIZE_MB}MB)</span>
+                        Attach Document <span className="text-slate-400 normal-case font-normal">(optional — PDF, Word, or image, up to {MAX_FILE_SIZE_MB}MB)</span>
                       </label>
                       {file ? (
                         <div className="flex items-center justify-between gap-3 h-11 px-4 rounded-xl bg-white/[0.06] border border-white/10">
@@ -326,10 +327,21 @@ const Contact = () => {
                           </button>
                         </div>
                       ) : (
-                        <label className="flex items-center gap-2 h-11 px-4 rounded-xl bg-white/[0.06] border border-dashed border-white/15 text-slate-500 text-sm cursor-pointer hover:border-orange-500/40 hover:text-slate-300 transition-all">
+                        <label
+                          tabIndex={0}
+                          role="button"
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              fileInputRef.current?.click();
+                            }
+                          }}
+                          className="flex items-center gap-2 h-11 px-4 rounded-xl bg-white/[0.06] border border-dashed border-white/15 text-slate-500 text-sm cursor-pointer hover:border-orange-500/40 hover:text-slate-300 transition-all"
+                        >
                           <Paperclip className="w-4 h-4 flex-shrink-0" />
                           Choose a file…
                           <input
+                            ref={fileInputRef}
                             type="file"
                             accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
                             onChange={handleFileChange}
@@ -355,7 +367,7 @@ const Contact = () => {
                       )}
                     </motion.button>
 
-                    <p className="text-slate-600 text-xs text-center">
+                    <p className="text-slate-400 text-xs text-center">
                       By submitting, you agree to our privacy policy. We'll never spam.
                     </p>
                   </form>

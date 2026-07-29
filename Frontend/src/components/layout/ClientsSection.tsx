@@ -81,7 +81,7 @@ const ClientsSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-sm">AWS</p>
-                  <p className="text-xs text-slate-400 mt-0.5">Cloud Partner</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Cloud Partner</p>
                 </div>
               </motion.div>
 
@@ -99,7 +99,7 @@ const ClientsSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Salesforce</p>
-                  <p className="text-xs text-slate-400 mt-0.5">Implementation Partner</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Implementation Partner</p>
                 </div>
               </motion.div>
 
@@ -117,7 +117,7 @@ const ClientsSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Microsoft</p>
-                  <p className="text-xs text-slate-400 mt-0.5">Technology Alliance</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Technology Alliance</p>
                 </div>
               </motion.div>
 
