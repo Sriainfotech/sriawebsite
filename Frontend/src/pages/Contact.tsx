@@ -41,7 +41,7 @@ const offices = [
     title: "USA – Pennsylvania",
     flag: "🇺🇸",
     address: "18 Hunters Dr, Gilbertsville, PA 19525-6601, USA",
-    phone: "+91 99897 95335",
+    phone: "+1 614 216 7070",
     email: "hr@sriainfotech.com",
   },
 ];

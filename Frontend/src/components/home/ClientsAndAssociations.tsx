@@ -226,7 +226,7 @@ function StatCounter({ end, label }: StatCounterProps) {
 // ── Association card ─────────────────────────────────────────────────────────
 
 function AssocCard({ assoc }: AssocCardProps) {
-  const className = `relative w-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl transition-all duration-300 group ${
+  const className = `relative w-full h-full flex flex-col items-center text-center gap-2 sm:gap-3 p-3 sm:p-6 rounded-xl sm:rounded-2xl transition-all duration-300 group ${
     assoc.link ? "cursor-pointer" : ""
   } ${
     assoc.highlight
@@ -236,11 +236,11 @@ function AssocCard({ assoc }: AssocCardProps) {
 
   const content = (
     <>
-      <div className="w-24 h-24 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2.5 flex-shrink-0">
+      <div className="w-14 h-14 sm:w-24 sm:h-24 rounded-lg sm:rounded-xl bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden p-1.5 sm:p-2.5 flex-shrink-0">
         <img
           src={assoc.logo}
           srcSet={assoc.logo.includes("ik.imagekit.io") ? `${assoc.logo.replace(/w-\d+/, "w-160")} 160w, ${assoc.logo.replace(/w-\d+/, "w-320")} 320w` : undefined}
-          sizes="96px"
+          sizes="(min-width: 640px) 96px, 56px"
           alt={assoc.name}
           width={96}
           height={96}
@@ -255,8 +255,8 @@ function AssocCard({ assoc }: AssocCardProps) {
         />
       </div>
       <div className="w-full text-center flex-1 flex flex-col items-center justify-start">
-        <p className="text-white font-semibold text-sm leading-snug line-clamp-2 min-h-[2.5rem] flex items-center">{assoc.name}</p>
-        <span className="inline-block mt-1 text-[10px] uppercase tracking-widest text-orange-500 border border-orange-400/30 rounded-full px-2 py-0.5 text-center leading-snug">
+        <p className="text-white font-semibold text-[11px] sm:text-sm leading-snug line-clamp-2 min-h-[1.8rem] sm:min-h-[2.5rem] flex items-center">{assoc.name}</p>
+        <span className="inline-block mt-1 text-[9px] sm:text-[10px] uppercase tracking-widest text-orange-500 border border-orange-400/30 rounded-full px-1.5 sm:px-2 py-0.5 text-center leading-snug">
           {assoc.tag}
         </span>
       </div>
@@ -315,22 +315,22 @@ export default function ClientsAndAssociations() {
       `}</style>
 
       {/* ── CLIENTS SECTION ── */}
-      <section className="bg-gray-950 py-20 overflow-hidden">
+      <section className="bg-gray-950 py-12 sm:py-16 lg:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <SectionLabel>Our Clients</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
               Trusted Across{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
                 5 Countries
               </span>
             </h2>
-            <p className="mt-3 text-white/50 text-sm max-w-xl mx-auto">
+            <p className="mt-3 text-white/50 text-xs sm:text-sm max-w-xl mx-auto">
               From startups to enterprises, organisations worldwide rely on Sria Infotech to power their digital growth.
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-6 max-w-sm mx-auto mb-12">
+          <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-sm mx-auto mb-8 sm:mb-12">
             <StatCounter end={20} label="Clients" />
             <StatCounter end={5} label="Countries" />
             <StatCounter end={8} label="Years" />
@@ -338,7 +338,7 @@ export default function ClientsAndAssociations() {
 
           <Marquee items={CLIENTS} />
 
-          <div className="flex flex-wrap justify-center gap-2 mt-10">
+          <div className="flex flex-wrap justify-center gap-2 mt-6 sm:mt-10">
             {COUNTRY_SUMMARY.map((c) => (
               <span
                 key={c.label}
@@ -360,30 +360,28 @@ export default function ClientsAndAssociations() {
       </div>
 
       {/* ── ASSOCIATIONS SECTION ── */}
-      <section id="associations" className="bg-gray-950 py-20 scroll-mt-24">
+      <section id="associations" className="bg-gray-950 py-12 sm:py-16 lg:py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <SectionLabel>Associations</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               Backed by{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
                 Industry Leaders
               </span>
             </h2>
-            <p className="mt-3 text-white/50 text-sm max-w-xl mx-auto">
+            <p className="mt-3 text-white/50 text-xs sm:text-sm max-w-xl mx-auto">
               We are proud to be associated with government bodies, skill development programmes, and innovation ecosystems.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-stretch gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
             {ASSOCIATIONS.map((a) => (
-              <div key={a.name} className="w-40 sm:w-44 flex">
-                <AssocCard assoc={a} />
-              </div>
+              <AssocCard key={a.name} assoc={a} />
             ))}
           </div>
 
-          <p className="text-center text-white/40 text-xs mt-10">
+          <p className="text-center text-white/40 text-[11px] sm:text-xs mt-8 sm:mt-10">
             Recognised partner of the Telangana Innovation Ecosystem · SAP Gold Certified
           </p>
         </div>

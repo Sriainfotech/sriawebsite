@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, ChevronDown } from "lucide-react";
 
 const LinkedInIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -25,6 +26,9 @@ const InstagramIcon = () => (
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const [openSection, setOpenSection] = useState<"solutions" | "services" | null>(null);
+    const toggleSection = (section: "solutions" | "services") =>
+        setOpenSection((prev) => (prev === section ? null : section));
 
     const solutions = [
         { label: "Rise with SAP", link: "/solutions/rise-with-sap" },
@@ -75,7 +79,7 @@ const Footer = () => {
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Main footer content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-12 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 pt-8 pb-8 md:pt-12 md:pb-12">
                     {/* Brand Column */}
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
@@ -135,9 +139,17 @@ const Footer = () => {
                     </div>
 
                     {/* Solutions */}
-                    <div className="lg:col-span-1">
-                        <h3 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Solutions</h3>
-                        <ul className="space-y-2.5">
+                    <div className="lg:col-span-1 border-b border-white/6 md:border-none pb-4 md:pb-0">
+                        <button
+                            type="button"
+                            onClick={() => toggleSection("solutions")}
+                            aria-expanded={openSection === "solutions"}
+                            className="w-full flex items-center justify-between md:pointer-events-none font-bold text-white text-sm mb-0 md:mb-6 tracking-wider uppercase py-1 md:py-0"
+                        >
+                            Solutions
+                            <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 md:hidden ${openSection === "solutions" ? "rotate-180" : ""}`} />
+                        </button>
+                        <ul className={`space-y-2.5 pt-4 md:pt-0 ${openSection === "solutions" ? "block" : "hidden"} md:block`}>
                             {solutions.map((item) => (
                                 <li key={item.label}>
                                     <Link
@@ -157,9 +169,17 @@ const Footer = () => {
                     </div>
 
                     {/* Services */}
-                    <div className="lg:col-span-1">
-                        <h3 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Services</h3>
-                        <ul className="space-y-2.5">
+                    <div className="lg:col-span-1 border-b border-white/6 md:border-none pb-4 md:pb-0">
+                        <button
+                            type="button"
+                            onClick={() => toggleSection("services")}
+                            aria-expanded={openSection === "services"}
+                            className="w-full flex items-center justify-between md:pointer-events-none font-bold text-white text-sm mb-0 md:mb-6 tracking-wider uppercase py-1 md:py-0"
+                        >
+                            Services
+                            <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 md:hidden ${openSection === "services" ? "rotate-180" : ""}`} />
+                        </button>
+                        <ul className={`space-y-2.5 pt-4 md:pt-0 ${openSection === "services" ? "block" : "hidden"} md:block`}>
                             {services.map((item) => (
                                 <li key={item.label}>
                                     <Link
