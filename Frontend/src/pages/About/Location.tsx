@@ -10,7 +10,7 @@ const offices = [
     flag: "🇺🇸",
     name: "New York Office",
     address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA",
-    phone: "+91 99897 95335",
+    phone: "+1 614 216 7070",
     email: "hr@sriainfotech.com",
     image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80&fm=webp",
     alt: "New York skyline at sunset",

@@ -406,7 +406,7 @@ function THub() {
       </section>
 
       {/* ── Impact Stats ── */}
-      <section className="py-20 relative overflow-hidden">
+      {/* <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400&q=80&fm=webp"
@@ -453,7 +453,7 @@ function THub() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Program Portfolio ── */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">

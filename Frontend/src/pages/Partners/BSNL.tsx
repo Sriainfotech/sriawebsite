@@ -493,7 +493,7 @@ function BSNL() {
       </section>
 
       {/* ── Impact Stats ── */}
-      <section className="py-20 relative overflow-hidden">
+      {/* <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-1600"
@@ -540,7 +540,7 @@ function BSNL() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Program Portfolio ── */}
       <section className="py-20 bg-slate-50 relative overflow-hidden">
