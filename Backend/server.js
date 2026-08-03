@@ -5,6 +5,9 @@ const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const ProfileRequest = require('./models/ProfileRequest');
 const NotifySubscriber = require('./models/NotifySubscriber');
+const ChatLog = require('./models/ChatLog');
+const { matchQuery, refreshIndex } = require('./chatbot/matcher');
+const sessionStore = require('./chatbot/sessionStore');
 require('dotenv').config();
 
 const app = express();
@@ -21,7 +24,18 @@ app.use(express.json());
 
 // ✅ MongoDB — with reconnect handling
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/sria_craft')
-    .then(() => console.log('MongoDB Connected'))
+    .then(async () => {
+        console.log('MongoDB Connected');
+        // Build the chatbot's Fuse.js index only once the KB collection is
+        // actually reachable — a failure here shouldn't crash the server,
+        // just leave matcher.js to lazily rebuild on first query.
+        try {
+            await refreshIndex();
+            console.log('Chatbot KB index built successfully');
+        } catch (err) {
+            console.error('Chatbot KB index build failed:', err.message);
+        }
+    })
     .catch(err => console.error('MongoDB connection error:', err));
 
 mongoose.connection.on('disconnected', () => {
@@ -192,6 +206,92 @@ app.get('/api/analytics', async (req, res) => {
     }
     if (analyticsCache) return res.json(analyticsCache);
     res.status(500).json({ success: false, message: 'Analytics unavailable.' });
+});
+
+// ✅ /api/chatbot/query — match a user message against the KB, log the
+// exchange, and refresh follow-up session context.
+//
+// Response shape (see explanation given alongside this change):
+//   { success: true, answer, link, category, followUpOptions,
+//     escalationCta, escalationLink, isFallback, logId }
+// On a real match these fields are copied straight from the matched
+// KBEntry; on a fallback, answer/escalationLink come from matcher.js's
+// generic fallback copy instead, and link/category/followUpOptions are
+// null/empty since there's no entry to source them from.
+app.post('/api/chatbot/query', async (req, res) => {
+    const { message, sessionId } = req.body;
+
+    if (!sessionId) {
+        return res.status(400).json({ success: false, message: 'sessionId is required.' });
+    }
+    if (!message || typeof message !== 'string' || !message.trim()) {
+        return res.status(400).json({ success: false, message: 'message is required and must be a non-empty string.' });
+    }
+
+    try {
+        const sessionContext = sessionStore.getSession(sessionId);
+        const result = await matchQuery({ message, sessionContext });
+        const { entry, confidence, isFallback } = result;
+
+        // Fire-and-forget ChatLog write: mongoose assigns _id client-side as
+        // soon as the document is constructed, so it's available for the
+        // response below without waiting on save() to resolve. Errors are
+        // logged, not swallowed, but never block or fail the response.
+        const chatLog = new ChatLog({
+            sessionId,
+            question: message,
+            matchedEntryId: entry ? entry._id : null,
+            confidenceScore: confidence || 0,
+            helpful: null,
+        });
+        chatLog.save().catch(err => console.error('Error saving ChatLog:', err));
+
+        if (!isFallback && entry) {
+            sessionStore.updateSession(sessionId, {
+                entryId: entry._id,
+                topic: entry.subcategory,
+                category: entry.category,
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            answer: isFallback ? result.message : entry.answer,
+            link: isFallback ? null : (entry.link || null),
+            category: isFallback ? null : entry.category,
+            followUpOptions: isFallback ? [] : (entry.follow_up_options || []),
+            escalationCta: isFallback ? 'Talk to our team' : (entry.escalation_cta || null),
+            escalationLink: isFallback ? result.escalation_link : (entry.escalation_link || null),
+            isFallback,
+            logId: chatLog._id,
+        });
+    } catch (error) {
+        console.error('Error in /api/chatbot/query:', error);
+        res.status(500).json({ success: false, message: 'Failed to process chatbot query.', error: error.message });
+    }
+});
+
+// ✅ /api/chatbot/feedback — record whether a matched answer was helpful
+app.post('/api/chatbot/feedback', async (req, res) => {
+    const { logId, helpful } = req.body;
+
+    if (!logId || !mongoose.Types.ObjectId.isValid(logId)) {
+        return res.status(400).json({ success: false, message: 'A valid logId is required.' });
+    }
+    if (typeof helpful !== 'boolean') {
+        return res.status(400).json({ success: false, message: 'helpful must be a boolean.' });
+    }
+
+    try {
+        const updated = await ChatLog.findByIdAndUpdate(logId, { helpful }, { new: true });
+        if (!updated) {
+            return res.status(404).json({ success: false, message: 'No ChatLog entry found for that logId.' });
+        }
+        res.status(200).json({ success: true });
+    } catch (error) {
+        console.error('Error in /api/chatbot/feedback:', error);
+        res.status(500).json({ success: false, message: 'Failed to save feedback.', error: error.message });
+    }
 });
 
 app.get('/', (req, res) => {
