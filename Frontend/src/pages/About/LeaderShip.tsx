@@ -239,8 +239,8 @@ function LeaderShip() {
               <div className="flex items-center gap-4 border-t border-white/10 pt-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
                   <img
-                    src="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-160"
-                    srcSet="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-320 320w"
+                    src="/chairman.jpeg"
+                    srcSet="/chairman.jpeg 160w, /chairman.jpeg 320w"
                     sizes="48px"
                     alt="Ashwini Ganji"
                     className="w-full h-full object-cover object-top"
