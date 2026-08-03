@@ -113,9 +113,9 @@ const HeroSection = () => {
                 setFormData({ name: "", email: "", phone: "" });
                 await downloadFiles(selection.files);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error submitting profile request:", error);
-            toast({ title: "Error", description: "Failed to submit request. Please try again.", variant: "destructive" });
+            toast({ title: "Error", description: error.userMessage || "Failed to submit request. Please try again.", variant: "destructive" });
         } finally {
             setIsLoading(false);
         }
@@ -259,8 +259,11 @@ const HeroSection = () => {
                         </Link>
                     </motion.div>
 
-                    {/* Stats Row */}
-                    <motion.div
+                    {/* Stats Row — PENDING REAL DATA. Projects/Offices/Years figures here
+                        disagreed with other pages sitewide during a consistency audit;
+                        commented out rather than shown as unverified numbers. Restore
+                        once confirmed figures are available. */}
+                    {/* <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
@@ -280,7 +283,7 @@ const HeroSection = () => {
                                 {i < 2 && <div className="w-px h-12 bg-white/20" />}
                             </div>
                         ))}
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </div>
 

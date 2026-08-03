@@ -198,7 +198,7 @@ const GateCheck = () => {
  title="GateCheck Platform"
  subtitle="Digitize facility operations with GateCheck—an IoT-based cloud platform for smart maintenance, compliance, and monitoring."
  breadcrumbs={[
- { name: "Products", path: "/products" },
+ { name: "Products" },
  { name: "GateCheck", path: "/products/gatecheck" },
  ]}
  backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/gatecheck/gatecheck-hero.jpg?tr=f-auto,q-auto,w-1600"

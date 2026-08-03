@@ -1,3 +1,9 @@
+// Must run before any other require() — lib/imagekit.js reads
+// process.env.IMAGEKIT_* at module-load time (when routes/admin.js requires
+// it below), so .env has to be injected first or that client construction
+// fails with "Missing publicKey".
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
@@ -5,7 +11,8 @@ const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const ProfileRequest = require('./models/ProfileRequest');
 const NotifySubscriber = require('./models/NotifySubscriber');
-require('dotenv').config();
+const blogPublicRoutes = require('./routes/blogPublic');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -193,6 +200,10 @@ app.get('/api/analytics', async (req, res) => {
     if (analyticsCache) return res.json(analyticsCache);
     res.status(500).json({ success: false, message: 'Analytics unavailable.' });
 });
+
+// ✅ Blog — public read routes + JWT-protected admin CRUD
+app.use('/api/blogs', blogPublicRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.get('/', (req, res) => {
     res.send('Backend is running!');

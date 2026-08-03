@@ -93,22 +93,23 @@ const FloatingButtons = () => {
   };
 
   return (
-    <div className="hidden sm:flex fixed right-2 top-1/4 z-50 flex-col gap-3 items-end">
+    <div className="flex fixed right-2 top-[38%] sm:top-1/4 z-50 flex-col gap-3 items-end">
 
-      {/* Visitor Count */}
+      {/* Visitor Count — hidden on phones to avoid overlapping hero content;
+          the interactive contact buttons below stay visible everywhere. */}
       {totalVisits && (
-        <div className="bg-black/60 backdrop-blur-sm rounded-md shadow-lg flex items-center gap-2 px-3 py-3">
+        <div className="hidden sm:flex bg-black/60 backdrop-blur-sm rounded-md shadow-lg items-center gap-2 px-3 py-3">
           <span className="text-white text-[15px] font-bold leading-none">{totalVisits}</span>
           <span className="text-white/50 text-[10px] leading-none">Visits</span>
         </div>
       )}
 
-      {/* IVC */}
+      {/* IVC — hidden on phones, same reason as above */}
       <a
         href="https://ivcsol.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white backdrop-blur-sm w-auto h-16 rounded-md shadow-lg hover:bg-black/30 hover:scale-105 transition overflow-hidden flex items-center justify-center"
+        className="hidden sm:flex bg-white backdrop-blur-sm w-auto h-16 rounded-md shadow-lg hover:bg-black/30 hover:scale-105 transition overflow-hidden items-center justify-center"
       >
         <img
           src='https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320'

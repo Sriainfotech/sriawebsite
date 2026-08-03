@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, Users, Award, Globe } from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
 const stories = [
@@ -51,11 +51,15 @@ const stories = [
   },
 ];
 
+// "Happy Clients", "Projects Delivered", and "Years of Excellence" figures
+// are PENDING REAL DATA — they disagreed with other pages sitewide during a
+// consistency audit. Commented out rather than shown as unverified numbers;
+// restore once confirmed figures are available.
 const impactStats = [
-  { value: "100+", label: "Happy Clients", icon: <Users className="w-5 h-5" /> },
-  { value: "500+", label: "Projects Delivered", icon: <TrendingUp className="w-5 h-5" /> },
+  // { value: "100+", label: "Happy Clients", icon: <Users className="w-5 h-5" /> },
+  // { value: "500+", label: "Projects Delivered", icon: <TrendingUp className="w-5 h-5" /> },
   { value: "98%", label: "Customer Satisfaction", icon: <Award className="w-5 h-5" /> },
-  { value: "10+", label: "Years of Excellence", icon: <Globe className="w-5 h-5" /> },
+  // { value: "10+", label: "Years of Excellence", icon: <Globe className="w-5 h-5" /> },
 ];
 
 const CustomerStoriesPage = () => {
@@ -97,7 +101,7 @@ const CustomerStoriesPage = () => {
           </motion.div>
 
           {/* Impact stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 rounded-2xl overflow-hidden border border-slate-100">
+          <div className="grid grid-cols-1 max-w-xs mx-auto gap-px bg-slate-100 rounded-2xl overflow-hidden border border-slate-100">
             {impactStats.map((stat, idx) => (
               <motion.div
                 key={idx}

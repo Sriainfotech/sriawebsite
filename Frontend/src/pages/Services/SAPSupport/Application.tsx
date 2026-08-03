@@ -46,8 +46,8 @@ function Application() {
       title="SAP Application Development"
       subtitle="Build powerful, scalable SAP applications on BTP and S/4HANA that drive innovation, efficiency, and seamless user experiences."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "Application Development", path: "/services/sap-application-development" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/application.jpg?tr=f-auto,q-auto,w-1600"

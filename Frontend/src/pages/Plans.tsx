@@ -86,7 +86,7 @@ const PlansPage = () => {
       const res = await axiosInstance.get("/plans");
       setPlans(res.data);
     } catch (e: any) {
-      setError(e.response?.data?.message || "Failed to load plans.");
+      setError(e.userMessage || "Failed to load plans.");
     } finally {
       setLoading(false);
     }

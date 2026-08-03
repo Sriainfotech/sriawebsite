@@ -135,7 +135,7 @@ const SubscriptionPage = () => {
       setSub(subRes.data);
       setUsage(usageRes.data);
     } catch (e: any) {
-      setError(e.response?.data?.message || "Failed to load data. Please try again.");
+      setError(e.userMessage || "Failed to load data. Please try again.");
     } finally {
       setLoading(false);
     }

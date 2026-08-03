@@ -104,7 +104,7 @@ function Partners() {
         subtitle="Building powerful alliances to deliver world-class enterprise solutions across the globe."
         breadcrumbs={[
           { name: "About Us", path: "/about" },
-          { name: "Partners", path: "/about/partners" },
+          { name: "Partners", path: "/about/sap-partner" },
         ]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/partners/sap-partner.png?tr=f-auto,q-auto,w-1600"
       />

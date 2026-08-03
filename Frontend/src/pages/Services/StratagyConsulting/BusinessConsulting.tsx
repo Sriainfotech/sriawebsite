@@ -36,8 +36,8 @@ function BusinessConsulting() {
       title="Business Strategy Consulting"
       subtitle="Define a transformation roadmap for your business before you commit to a platform, a vendor, or a budget."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "Strategy Consulting", path: "/services/strategy-consulting" },
+        { name: "Services" },
+        { name: "Strategy Consulting" },
         { name: "Business Strategy", path: "/services/strategy-consulting/business" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-1600"
@@ -55,7 +55,9 @@ function BusinessConsulting() {
       stats={[
         { value: "3-6 wks", label: "Typical Engagement Duration", icon: <LifeBuoy className="w-6 h-6" /> },
         { value: "1", label: "Board-Ready Business Case", icon: <Award className="w-6 h-6" /> },
-        { value: "10+", label: "Years of SAP & Odoo Delivery Experience", icon: <Globe className="w-6 h-6" /> },
+        // PENDING REAL DATA — "10+ years" disagreed with other pages sitewide
+        // during a consistency audit; restore once a confirmed figure exists.
+        // { value: "10+", label: "Years of SAP & Odoo Delivery Experience", icon: <Globe className="w-6 h-6" /> },
         { value: "100%", label: "Independent of Any Single Vendor", icon: <Shield className="w-6 h-6" /> },
       ]}
       capabilitiesTitle="What's Included"

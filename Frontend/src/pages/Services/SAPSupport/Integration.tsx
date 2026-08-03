@@ -44,8 +44,8 @@ function Integration() {
       title="SAP BTP & Hybrid Integration"
       subtitle="Unify your enterprise landscape with seamless connectivity across SAP, non-SAP, cloud, and on-premise systems."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "Integration Services", path: "/services/sap-integration" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/business.png?tr=f-auto,q-auto,w-1600"

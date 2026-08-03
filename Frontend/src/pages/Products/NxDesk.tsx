@@ -198,7 +198,7 @@ const NxDesk = () => {
  title="NxDesk"
  subtitle="Smart ticketing system for streamlined issue tracking. Features SLA monitoring, multi-role access, real-time updates, and AI-powered support."
  breadcrumbs={[
- { name: "Products", path: "/products" },
+ { name: "Products" },
  { name: "NxDesk", path: "/products/nxdesk" },
  ]}
  backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Nxdesk/nxdesk-hero.png?tr=f-auto,q-auto,w-1600"

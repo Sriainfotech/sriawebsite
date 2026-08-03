@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Camera, Users, MapPin, Heart, X,
+  ArrowRight, Camera, Users, X,
   ChevronLeft, ChevronRight, Play, Images, Volume2
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
@@ -221,10 +221,14 @@ const gallery: GalleryItem[] = [
   // },
 ];
 
+// "Global Offices" and "Years Together" figures are PENDING REAL DATA — they
+// disagreed with other pages sitewide during a consistency audit. Commented
+// out rather than shown as unverified numbers; restore once confirmed
+// figures are available.
 const stats = [
   { value: "50+", label: "Team Members", Icon: Users },
-  { value: "3", label: "Global Offices", Icon: MapPin },
-  { value: "5+", label: "Years Together", Icon: Heart },
+  // { value: "3", label: "Global Offices", Icon: MapPin },
+  // { value: "5+", label: "Years Together", Icon: Heart },
   { value: "50+", label: "Events Per Year", Icon: Camera },
 ];
 
@@ -648,7 +652,7 @@ const Gallery: React.FC = () => {
       {/* ── Stats ── */}
       <section className="py-10 bg-white border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 max-w-md mx-auto gap-6">
             {stats.map(({ value, label, Icon }, i) => (
               <motion.div
                 key={i}

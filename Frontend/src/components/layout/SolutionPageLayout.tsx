@@ -57,8 +57,11 @@ const SolutionPageLayout = ({
               <div className="h-1 w-16 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-base mb-8">{impactDescription}</p>
 
-              {/* Quick stats row */}
-              <div className="flex gap-8">
+              {/* Quick stats row — PENDING REAL DATA. Projects/Clients/Years figures
+                  here disagreed with other pages sitewide during a consistency
+                  audit; commented out rather than shown as unverified numbers.
+                  Restore once confirmed figures are available. */}
+              {/* <div className="flex gap-8">
                 {[
                   { value: "500+", label: "Projects Delivered" },
                   { value: "100+", label: "Happy Clients" },
@@ -69,7 +72,7 @@ const SolutionPageLayout = ({
                     <p className="text-xs text-slate-400 font-medium">{s.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Right: image */}

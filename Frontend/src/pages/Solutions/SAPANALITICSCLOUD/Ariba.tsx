@@ -151,7 +151,7 @@ const Ariba = () => {
  <SolutionPageLayout
       title="Intelligent Spend Management"
       subtitle="Digitize and optimize your procurement and supply chain with SAP Ariba."
-      breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" }, { name: "Ariba", path: "/solutions/ariba" }]}
+      breadcrumbs={[{ name: "Solutions" }, { name: "SAP Analytics Cloud" }, { name: "Ariba", path: "/solutions/ariba" }]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/ariba-hero.jpg?tr=f-auto,q-auto,w-1600"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We deliver impact-driven SAP implementations for sustainable growth, optimizing your procurement processes and enhancing supplier collaboration."

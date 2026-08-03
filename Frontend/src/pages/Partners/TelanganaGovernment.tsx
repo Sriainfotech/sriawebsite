@@ -199,7 +199,7 @@ function TelanganaGovernment() {
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
-                SRIA Infotech partners with the Government of Telangana to support digital
+                Sria Infotech partners with the Government of Telangana to support digital
                 governance and public sector modernization initiatives. Through this collaboration,
                 we bring technology delivery expertise to help build secure, scalable, and
                 citizen-friendly digital platforms across state government departments.
@@ -531,7 +531,7 @@ function TelanganaGovernment() {
               Interested in partnering with us?
             </h2>
             <p className="text-slate-400 text-sm mb-8 max-w-xl mx-auto leading-relaxed">
-              Get in touch to explore how a skilling or solution partnership with SRIA Infotech can
+              Get in touch to explore how a skilling or solution partnership with Sria Infotech can
               support your organization's goals.
             </p>
             <Link

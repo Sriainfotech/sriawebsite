@@ -56,8 +56,8 @@ const Rise = () => {
       title="Accelerate with RISE"
       subtitle="RISE with SAP is a comprehensive transformation offering that enables seamless migration to SAP cloud solutions and helps businesses become intelligent enterprises."
       breadcrumbs={[
-        { name: "Solutions", path: "/solutions" },
-        { name: "SAP ERP", path: "/solutions/sap-erp" },
+        { name: "Solutions" },
+        { name: "SAP ERP" },
         { name: "RISE with SAP", path: "/solutions/rise-with-sap" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/rise-hero.jpg?tr=f-auto,q-auto,w-1600"

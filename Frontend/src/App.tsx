@@ -6,6 +6,17 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import LoadingScreen from "./components/layout/LoadingScreen";
 import RouteSeo from "./components/seo/RouteSeo";
+import AdminLayout from "./components/admin/AdminLayout";
+import RequireAdminAuth from "./components/admin/RequireAdminAuth";
+
+// Admin — never linked from the public site, reachable only by direct URL
+const AdminLogin = React.lazy(() => import("./pages/admin/Login"));
+const AdminDashboard = React.lazy(() => import("./pages/admin/Dashboard"));
+const AdminPostForm = React.lazy(() => import("./pages/admin/PostForm"));
+
+// Blog
+const BlogListing = React.lazy(() => import("./pages/Blog/BlogListing"));
+const BlogPost = React.lazy(() => import("./pages/Blog/BlogPost"));
 
 // Eager-loaded (critical above-the-fold pages)
 import Index from "./pages/Index";
@@ -161,9 +172,22 @@ const App = () => (
               <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
               <Route path="/sap-analytics" element={<SAPAnalytics />} />
 
+              {/* Admin — standalone, own layout, never linked from public nav.
+                  /admin/login is reachable only by typing the URL directly. */}
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route element={<RequireAdminAuth />}>
+                <Route element={<AdminLayout />}>
+                  <Route path="/admin/blogs" element={<AdminDashboard />} />
+                  <Route path="/admin/blogs/new" element={<AdminPostForm />} />
+                  <Route path="/admin/blogs/edit/:id" element={<AdminPostForm />} />
+                </Route>
+              </Route>
+
               <Route element={<Layout />}>
                 {/* Main Routes */}
                 <Route path="/" element={<Index />} />
+                <Route path="/blog" element={<BlogListing />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/best-digital-transformation-company" element={<Navigate to="/" replace />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/aboutus" element={<Navigate to="/about" replace />} />

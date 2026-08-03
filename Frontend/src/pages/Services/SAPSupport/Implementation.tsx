@@ -46,8 +46,8 @@ function Implementation() {
       title="Fast-Track SAP S/4HANA Implementation"
       subtitle="We deliver tailored SAP implementations aligned to your business goals, ensuring a smooth transition and maximum value."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "SAP Implementation", path: "/services/sap-implementation" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/implement-hero.jpg?tr=f-auto,q-auto,w-1600"

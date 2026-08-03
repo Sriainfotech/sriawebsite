@@ -196,7 +196,7 @@ function THub() {
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
-                SRIA Infotech collaborates with T-Hub, one of Telangana's leading startup
+                Sria Infotech collaborates with T-Hub, one of Telangana's leading startup
                 incubation and innovation hubs, to support early-stage founders and technical
                 teams. Through this partnership, we bring product engineering expertise,
                 mentorship, and technology enablement to help startups build scalable,
@@ -526,7 +526,7 @@ function THub() {
               Interested in partnering with us?
             </h2>
             <p className="text-slate-400 text-sm mb-8 max-w-xl mx-auto leading-relaxed">
-              Get in touch to explore how a skilling or solution partnership with SRIA Infotech can
+              Get in touch to explore how a skilling or solution partnership with Sria Infotech can
               support your organization's goals.
             </p>
             <Link

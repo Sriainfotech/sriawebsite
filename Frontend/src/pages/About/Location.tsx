@@ -25,7 +25,7 @@ const offices = [
     address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084, India",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
-    image: "https://images.unsplash.com/photo-1597735881925-d01e7ae70c88?w=600&q=80&fm=webp",
+    image: "/hyderabad.jpg",
     alt: "City skyline daytime view",
     mapDot: { top: "52%", left: "68%" },
     tooltip: "Hyderabad, India",
@@ -99,10 +99,14 @@ function Location() {
       {/* ── Intro Stats Strip ── */}
       <section className="py-12 bg-white border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* "Global Offices" and "Countries" figures are PENDING REAL DATA — they
+              disagreed with other pages sitewide during a consistency audit.
+              Commented out rather than shown as unverified numbers; restore once
+              confirmed figures are available. */}
+          <div className="grid grid-cols-2 max-w-md mx-auto md:max-w-none gap-8">
             {[
-              { value: "3", label: "Global Offices", icon: <MapPin className="w-5 h-5" /> },
-              { value: "2", label: "Countries", icon: <MapPin className="w-5 h-5" /> },
+              // { value: "3", label: "Global Offices", icon: <MapPin className="w-5 h-5" /> },
+              // { value: "2", label: "Countries", icon: <MapPin className="w-5 h-5" /> },
               { value: "3", label: "Indian Cities", icon: <MapPin className="w-5 h-5" /> },
               { value: "24/7", label: "Support Available", icon: <Headphones className="w-5 h-5" /> },
             ].map((stat, i) => (

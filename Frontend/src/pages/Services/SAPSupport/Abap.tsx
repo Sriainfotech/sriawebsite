@@ -46,8 +46,8 @@ function Abap() {
       title="ABAP RAP Development Services"
       subtitle="Sria Infotech enables rapid development of modern, scalable, cloud-ready, and on-premise SAP applications using ABAP RAP."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "ABAP Services", path: "/services/sap-abap" },
       ]}
       // TODO: re-point to ImageKit once abap.jpg is uploaded there — temporarily serving from Cloudinary since it's still live.

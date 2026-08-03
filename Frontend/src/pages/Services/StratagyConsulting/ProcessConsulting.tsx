@@ -36,8 +36,8 @@ function ProcessConsulting() {
       title="Process Strategy Consulting"
       subtitle="Streamline and standardize how work actually gets done before you automate it — so implementation builds on a clean process, not a broken one."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "Strategy Consulting", path: "/services/strategy-consulting" },
+        { name: "Services" },
+        { name: "Strategy Consulting" },
         { name: "Process Strategy", path: "/services/strategy-consulting/process" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-1600"
@@ -55,7 +55,9 @@ function ProcessConsulting() {
       stats={[
         { value: "2-5 wks", label: "Typical Engagement Duration", icon: <LifeBuoy className="w-6 h-6" /> },
         { value: "1", label: "Documented Target-State Process", icon: <Award className="w-6 h-6" /> },
-        { value: "10+", label: "Years of SAP & Odoo Delivery Experience", icon: <Globe className="w-6 h-6" /> },
+        // PENDING REAL DATA — "10+ years" disagreed with other pages sitewide
+        // during a consistency audit; restore once a confirmed figure exists.
+        // { value: "10+", label: "Years of SAP & Odoo Delivery Experience", icon: <Globe className="w-6 h-6" /> },
         { value: "100%", label: "Requirements Ready for Build", icon: <Shield className="w-6 h-6" /> },
       ]}
       capabilitiesTitle="What's Included"

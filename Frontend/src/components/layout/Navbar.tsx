@@ -571,6 +571,12 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 Our Culture
                             </Link>
+                            <Link
+                                to="/blog"
+                                className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                            >
+                                Blog
+                            </Link>
                             <a
                                 href="https://nxsysdigital.com/"
                                 target="_blank"
@@ -674,6 +680,15 @@ const Navbar: React.FC<NavbarProps> = ({
                                     className="block py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                                 >
                                     Our Culture
+                                </Link>
+                            </div>
+                            <div className="border-b border-gray-700">
+                                <Link
+                                    to="/blog"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="block py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    Blog
                                 </Link>
                             </div>
                             <div className="border-b border-gray-700">

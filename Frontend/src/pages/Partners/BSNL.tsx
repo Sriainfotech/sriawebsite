@@ -156,7 +156,7 @@ function BSNL() {
 
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="inline-block text-xs font-bold uppercase tracking-wider text-white bg-white/15 border border-white/30 backdrop-blur-sm rounded-full px-3 py-1.5">
-              BSNL &times; SRIA Infotech
+              BSNL &times; Sria Infotech
             </span>
             <span className="inline-block text-xs font-bold uppercase tracking-wider text-white bg-slate-950/30 border border-white/20 backdrop-blur-sm rounded-full px-3 py-1.5">
               First in Telangana &amp; Andhra Pradesh
@@ -278,7 +278,7 @@ function BSNL() {
               <h2 className="text-2xl font-bold text-slate-900 mb-5 leading-tight">Partnership Overview</h2>
               <div className="h-1 w-14 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-6" />
               <p className="text-slate-500 leading-relaxed text-sm">
-                SRIA Infotech is the first skill solution partner of BSNL from Telangana and Andhra
+                Sria Infotech is the first skill solution partner of BSNL from Telangana and Andhra
                 Pradesh, designing and delivering telecom skilling programs across India. Through this
                 partnership, we combine BSNL's telecom expertise with Sria's training delivery
                 capabilities to build a skilled workforce through technician training and digital
@@ -641,7 +641,7 @@ function BSNL() {
               Interested in partnering with us?
             </h2>
             <p className="text-slate-400 text-sm mb-8 max-w-xl mx-auto leading-relaxed">
-              Get in touch to explore how a skilling or solution partnership with SRIA Infotech can
+              Get in touch to explore how a skilling or solution partnership with Sria Infotech can
               support your organization's goals.
             </p>
             <Link

@@ -110,8 +110,8 @@ const PaPM = () => {
       title="SAP Profitability & Performance Management"
       subtitle="Model profitability, allocate costs and simulate decisions with SAP PaPM, integrated with S/4HANA and analytics."
       breadcrumbs={[
-        { name: "Solutions", path: "/solutions" },
-        { name: "SAP Analytics Cloud", path: "/solutions/sap-analytics-cloud" },
+        { name: "Solutions" },
+        { name: "SAP Analytics Cloud" },
         { name: "PaPM", path: "/solutions/papm" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/papm.png?tr=f-auto,q-auto,w-1600"

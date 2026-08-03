@@ -140,8 +140,8 @@ const OdooImplementation = () => {
         title="Odoo Implementation Services"
         subtitle="Sria Infotech delivers tailored Odoo ERP solutions to integrate, automate, and streamline your business operations efficiently."
         breadcrumbs={[
-          { name: "Services", path: "/services" },
-          { name: "Implementation", path: "/services/implementation" },
+          { name: "Services" },
+          { name: "Implementation" },
           { name: "Odoo Implementation", path: "/services/odoo-implementation" },
         ]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/odoo-app.png?tr=f-auto,q-auto,w-1600"

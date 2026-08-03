@@ -193,7 +193,7 @@ const AutoExtract = () => {
                 title="Auto Extract"
                 subtitle="Auto Extract is an AI-powered platform that automatically extracts data from invoices, receipts, and forms, improving accuracy, reducing manual effort, and securely integrating with existing workflows."
                 breadcrumbs={[
-                    { name: "Products", path: "/products" },
+                    { name: "Products" },
                     { name: "Auto Extract", path: "/products/auto-extract" },
                 ]}
                 backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/autoextract/auto-hero.png?tr=f-auto,q-auto,w-1600"

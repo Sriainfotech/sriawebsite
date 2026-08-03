@@ -35,8 +35,8 @@ function Upgrade() {
       title="SAP Upgrade Services"
       subtitle="Modernize your SAP landscape with seamless technical and functional upgrades that drive performance and innovation."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "Upgrade Services", path: "/services/sap-upgrades" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/upgrade.jpg?tr=f-auto,q-auto,w-1600"

@@ -35,8 +35,8 @@ function Support() {
       title="SAP Support & Maintenance"
       subtitle="Ensure business continuity and peak performance with our reliable, SLA-driven SAP Application Management Services (AMS)."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "Support & Maintenance", path: "/services/sap-support-maintenance" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/support.jpg?tr=f-auto,q-auto,w-1600"

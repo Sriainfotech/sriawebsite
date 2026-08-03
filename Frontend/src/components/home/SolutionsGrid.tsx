@@ -28,10 +28,10 @@ const categories = [
     alt: "Team viewing data analytics visual",
     count: "4 solutions",
     items: [
-      { num: "01", title: "Business Intelligence",  tagline: "Transform raw data into actionable business insights.",    link: "/services/data-analytics" },
-      { num: "02", title: "Predictive Analytics",   tagline: "Anticipate market trends with AI-driven forecasting.",    link: "/services/data-analytics" },
-      { num: "03", title: "Data Visualization",     tagline: "Interactive dashboards for real-time decision making.",   link: "/services/data-analytics" },
-      { num: "04", title: "Big Data Solutions",     tagline: "Scalable architecture for processing massive datasets.",  link: "/services/data-analytics" },
+      { num: "01", title: "End-to-End Analytics Implementation", tagline: "From data ingestion to visualization, enabling better business decisions.", link: "/services/data-analytics" },
+      { num: "02", title: "Custom Data Models",                  tagline: "Machine learning models and analytics workflows built for your business.", link: "/services/data-analytics" },
+      { num: "03", title: "Data Integration Services",           tagline: "Unify data from CRMs, ERPs, APIs and other sources into one ecosystem.",     link: "/services/data-analytics" },
+      { num: "04", title: "Cloud Analytics Hosting",             tagline: "Host analytics workloads on high-performance cloud environments.",           link: "/services/data-analytics" },
     ],
   },
 ];

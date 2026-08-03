@@ -123,8 +123,8 @@ const AssetPerformance = () => {
   return (
     <SolutionPageLayout
       title="Asset Performance Management"
-      subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
-      breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP HXM", path: "/solutions/successfactors" }, { name: "Asset Performance", path: "/solutions/asset-performance-management" }]}
+      subtitle="Strengthen asset reliability with SAP-powered strategy, risk assessment, and IoT-integrated maintenance planning."
+      breadcrumbs={[{ name: "Solutions" }, { name: "SAP HXM" }, { name: "Asset Performance", path: "/solutions/asset-performance-management" }]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/asset-hero.jpg?tr=f-auto,q-auto,w-1600"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="Maximize the health and performance of your critical assets with SAP APM. Leverage predictive insights to reduce downtime and optimize maintenance strategies."

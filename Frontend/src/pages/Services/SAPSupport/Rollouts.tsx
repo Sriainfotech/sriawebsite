@@ -35,8 +35,8 @@ function Rollouts() {
       title="Global SAP Rollouts"
       subtitle="Standardize processes, accelerate deployments, and align with global business goals while ensuring local compliance."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "SAP Rollouts", path: "/services/sap-rollouts" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/consulting.png?tr=f-auto,q-auto,w-1600"

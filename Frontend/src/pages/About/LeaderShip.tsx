@@ -22,7 +22,7 @@ const leaders = [
     designation: "Chairman — Sria Group of Companies",
     description:
       "Chairman - Sria Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-480",
+    image: "/chairman.jpeg",
     linkedinUrl: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
     email: "admin@sriainfotech.com",
   },

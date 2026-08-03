@@ -10,8 +10,14 @@ const FeaturesSection = lazy(() => import("@/components/home/FeaturesSection"));
 const ServicesSection = lazy(() => import("@/components/home/ServicesSection"));
 const SolutionsGrid = lazy(() => import("@/components/home/SolutionsGrid"));
 const AboutSection = lazy(() => import("@/components/home/AboutSection"));
-const StatsSection = lazy(() => import("@/components/home/StatsSection"));
+// StatsSection is PENDING REAL DATA — every figure it shows (Years of
+// Excellence, Satisfied Clients, Projects Delivered, Global Offices)
+// disagreed with other pages sitewide during a consistency audit. Not
+// rendered until confirmed figures are available; the component itself is
+// left in place, just unused.
+// const StatsSection = lazy(() => import("@/components/home/StatsSection"));
 const ChairmanStatement = lazy(() => import("@/components/home/ChairmanStatement"));
+const BlogPreviewSection = lazy(() => import("@/components/home/BlogPreviewSection"));
 const FAQSection = lazy(() => import("@/components/home/FAQSection"));
 
 const Index = () => {
@@ -33,11 +39,14 @@ const Index = () => {
       <Suspense fallback={<div className="min-h-[380px]" />}>
         <AboutSection />
       </Suspense>
-      <Suspense fallback={<div className="min-h-[160px]" />}>
+      {/* <Suspense fallback={<div className="min-h-[160px]" />}>
         <StatsSection />
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<div className="min-h-[320px]" />}>
         <ChairmanStatement />
+      </Suspense>
+      <Suspense fallback={null}>
+        <BlogPreviewSection />
       </Suspense>
       <Suspense fallback={<div className="min-h-[360px]" />}>
         <FAQSection />

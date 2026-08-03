@@ -6,7 +6,7 @@ Chart.register(...registerables);
 
 /* ── Constants (ported 1:1 from the original static dashboard) ───────────── */
 
-// Recolored to match the SRIA site's own brand palette (slate-800 dark neutral + orange-500/amber-400 accent pair)
+// Recolored to match the Sria site's own brand palette (slate-800 dark neutral + orange-500/amber-400 accent pair)
 const NAVY = "#1e293b"; // slate-800 — was navy blue
 const SKY = "#fbbf24"; // amber-400 — was sky blue
 const ORG = "#f97316"; // orange-500 — site's primary accent (already close to the original)

@@ -127,8 +127,8 @@ const Logistics = () => {
  return (
  <SolutionPageLayout
       title="Manufacturing Logistics"
-      subtitle="Delivering Impact-Driven SAP Implementations for Sustainable Growth."
-      breadcrumbs={[{ name: "Solutions", path: "/solutions" }, { name: "SAP CRM", path: "/solutions/business" }, { name: "Logistics", path: "/solutions/manufacturing-logistics" }]}
+      subtitle="Connect production and warehouse execution with seamless SAP PP and EWM/WM integration."
+      breadcrumbs={[{ name: "Solutions" }, { name: "SAP CRM" }, { name: "Logistics", path: "/solutions/manufacturing-logistics" }]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/logistics-hero.jpg?tr=f-auto,q-auto,w-1600"
       impactHeading={<>Impact-Driven <br /><span className="text-orange-600 pt-2">SAP Growth</span></>}
       impactDescription="We empower businesses to streamline supply chains, optimize warehouse operations, and ensure seamless integration between production and logistics."

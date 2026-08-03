@@ -35,8 +35,8 @@ function SAPFiori() {
       title="SAP Fiori Development Services"
       subtitle="Sria Infotech builds intuitive, responsive, role-based SAP Fiori apps that simplify processes and enhance productivity."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "SAP Fiori", path: "/services/sap-fiori" },
       ]}
       // TODO: re-point to ImageKit once fiori.jpg is uploaded there — temporarily serving from Cloudinary since it's still live.

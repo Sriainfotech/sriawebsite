@@ -142,8 +142,8 @@ const CustomDevelopment = () => {
         title="Odoo Custom App Development"
         subtitle="We build tailored Odoo applications with custom features and seamless integrations to support your unique business workflows."
         breadcrumbs={[
-          { name: "Services", path: "/services" },
-          { name: "Implementation", path: "/services/implementation" },
+          { name: "Services" },
+          { name: "Implementation" },
           { name: "Custom Development", path: "/services/custom-development" },
         ]}
         backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/odoo-app.png?tr=f-auto,q-auto,w-1600"

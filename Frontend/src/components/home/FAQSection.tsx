@@ -22,11 +22,15 @@ const FAQS: FAQItem[] = [
     answer:
       "Yes, Sria Infotech is an SAP Gold certified partner, delivering SAP implementation, rollout, upgrade, and support services across SAP S/4HANA, BTP, CRM, ERP, and HXM solution areas.",
   },
-  {
-    question: "How many years of experience does Sria Infotech have?",
-    answer:
-      "Sria Infotech has over 8 years of experience delivering digital transformation and SAP consulting services to enterprises across 5 countries.",
-  },
+  // "8 years of experience" is PENDING REAL DATA — it disagreed with other
+  // pages sitewide during a consistency audit (values ranged 5+/8/10+ years).
+  // Commented out rather than shown as an unverified figure; restore this FAQ
+  // once a confirmed years-in-business figure is available.
+  // {
+  //   question: "How many years of experience does Sria Infotech have?",
+  //   answer:
+  //     "Sria Infotech has over 8 years of experience delivering digital transformation and SAP consulting services to enterprises across 5 countries.",
+  // },
   {
     question: "Does Sria Infotech work with international clients?",
     answer:

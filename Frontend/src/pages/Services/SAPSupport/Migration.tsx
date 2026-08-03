@@ -35,8 +35,8 @@ function Migration() {
       title="Safe & Efficient SAP Migration"
       subtitle="Sria Infotech ensures smooth, low-risk migration from legacy systems to SAP's advanced environment."
       breadcrumbs={[
-        { name: "Services", path: "/services" },
-        { name: "SAP Support", path: "/services/sap-support" },
+        { name: "Services" },
+        { name: "SAP Support" },
         { name: "Migration Services", path: "/services/sap-migration" },
       ]}
       backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/migration.jpg?tr=f-auto,q-auto,w-1600"

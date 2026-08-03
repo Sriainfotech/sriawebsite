@@ -21,12 +21,16 @@ const ikSrcSet = (url: string, w1: number, w2: number) =>
 
 /* ─────────────── data ─────────────── */
 
+// "Global Offices", "Years of Experience", and "Projects Delivered" figures
+// are PENDING REAL DATA — they disagreed with other pages sitewide during a
+// consistency audit and are commented out rather than shown as unverified
+// numbers. Restore once confirmed figures are available.
 const stats = [
-  { value: "3+", label: "Global Offices" },
+  // { value: "3+", label: "Global Offices" },
   { value: "₹1Cr+", label: "Group Turnover" },
-  { value: "5+", label: "Years of Experience" },
+  // { value: "5+", label: "Years of Experience" },
   { value: "50+", label: "Group Employees" },
-  { value: "20+", label: "Projects Delivered" },
+  // { value: "20+", label: "Projects Delivered" },
   { value: "98%", label: "Customer Satisfaction" },
   { value: "14+", label: "Industry Solutions" },
 ];
@@ -175,8 +179,11 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                 </div>
               </div>
-              {/* Floating stat card */}
-              <motion.div
+              {/* Floating stat card — PENDING REAL DATA. Years/Clients/Offices figures
+                  here disagreed with other pages sitewide during a consistency audit;
+                  commented out rather than shown as unverified numbers. Restore once
+                  confirmed figures are available. */}
+              {/* <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl border border-slate-100 px-8 py-4 flex items-center gap-8 whitespace-nowrap"
@@ -190,7 +197,7 @@ const About = () => {
                     </div>
                   </React.Fragment>
                 ))}
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>
@@ -202,7 +209,7 @@ const About = () => {
           style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "28px 28px" }}
         />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-6 lg:gap-0 lg:divide-x divide-white/10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-white/10">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}

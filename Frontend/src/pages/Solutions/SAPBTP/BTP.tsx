@@ -1,14 +1,4 @@
 import React from "react";
-// import Navigation from "@/components/Navigation";
-// import TwoColumnLayout from "@/components/TwoColumnLayout";
-// import LeftSection from "@/components/LeftSection";
-// import RightSection from "@/components/RightSection";
-// import Requesademobtn from "@/components/Requesademobtn";
-// import SidebarMenu from "@/components/SidebarMenu";
-// import FeatureCard from "@/components/FeatureCard";
-// import FeatureTabs from "@/components/FeatureTabs";
-// import StatCard from "@/components/StatCard";
-// import InfoTab from "@/components/InfoTab";
 import { Link } from "react-router-dom";
 import PageHeader from "@/components/layout/PageHeader";
 
@@ -22,20 +12,6 @@ import {
  Server,
  Cloud,
 } from "lucide-react";
-
-// import FAQSection from "@/components/FAQSection";
-
-// import ProductRange from "@/components/ProductRange";
-// import Resource from "@/components/Resource";
-// import WorldMap from "@/components/aboutus/WorldMap";
-// import BeautifulParallaxTailwind from "@/components/BeautifulParallaxTailwind";
-// import Footer from "@/components/Footer";
-// import StatCardStable from "@/components/StatCardStable";
-// import InfoSection from "@/components/InfoSection";
-// import ConsultationTabsSection from "@/components/services/ConsultationTabsSection";
-// import { CustomerStories } from "@/components/CustomerStoriesTestimonials";
-// import InsightsSection from "@/components/InsightsSection";
-// import RelatedSolutions from "@/components/RelatedSolutions";
 
 
 const faqs = [
@@ -313,8 +289,8 @@ function BTP() {
  title="SAP Business Technology Platform (BTP)"
  subtitle="Accelerate innovation with SAP BTP—a unified platform for data management, analytics, application development, integration, and AI capabilities to build intelligent enterprise solutions."
  breadcrumbs={[
- { name: "Solutions", path: "/solutions" },
- { name: "SAP BTP", path: "/solutions/sap-btp" },
+ { name: "Solutions" },
+ { name: "SAP BTP", path: "/solutions/btp" },
  ]}
  backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/cpi.jpg?tr=f-auto,q-auto,w-1600"
  />
@@ -467,7 +443,6 @@ function BTP() {
  <div className="max-w-7xl mx-auto py-8 sm:py-10">
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
  {tabs.map((tab, idx) => (
- // <InfoTab key={idx} {...tab} />
  <div key={idx} className="p-6 border rounded-lg">
  <div className="mb-4">{tab.icon}</div>
  <h3 className="text-base font-bold mb-2">{tab.title}</h3>

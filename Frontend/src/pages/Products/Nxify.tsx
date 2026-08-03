@@ -198,7 +198,7 @@ const Nxify = () => {
                 title="Nxify"
                 subtitle="Nxify is a unified platform for automating employee financials, payroll, attendance, and HR workflows. It streamlines salary, loans, IT declarations, and approvals with secure role-based access and real-time insights."
                 breadcrumbs={[
-                    { name: "Products", path: "/products" },
+                    { name: "Products" },
                     { name: "Nxify", path: "/products/nxify" },
                 ]}
                 backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Nxify/nxify-hero.png?tr=f-auto,q-auto,w-1600"

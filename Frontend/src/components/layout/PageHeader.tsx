@@ -4,7 +4,10 @@ import { ChevronRight, Home } from "lucide-react";
 interface PageHeaderProps {
  title: string;
  subtitle?: string;
- breadcrumbs?: { name: string; path: string }[];
+ // path is optional: a crumb with no path renders as plain, non-clickable
+ // text — for a category label that has no real landing page to link to,
+ // rather than pointing at a route that doesn't exist.
+ breadcrumbs?: { name: string; path?: string }[];
  backgroundImage?: string;
 }
 
@@ -18,12 +21,13 @@ const buildSrcSet = (url: string) => {
 };
 
 const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeaderProps) => {
- const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+ const linkedCrumbs = breadcrumbs?.filter((c) => c.path) ?? [];
+ const breadcrumbSchema = linkedCrumbs.length > 0 ? {
    "@context": "https://schema.org",
    "@type": "BreadcrumbList",
    itemListElement: [
      { "@type": "ListItem", position: 1, name: "Home", item: "https://sriainfotech.com/" },
-     ...breadcrumbs.map((crumb, index) => ({
+     ...linkedCrumbs.map((crumb, index) => ({
        "@type": "ListItem",
        position: index + 2,
        name: crumb.name,
@@ -87,14 +91,19 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  <ChevronRight className="w-3 h-3 text-white/30" />
  </li>
  {breadcrumbs.map((crumb, index) => (
- <li key={crumb.path} className="flex items-center gap-1.5">
+ <li key={`${crumb.name}-${index}`} className="flex items-center gap-1.5">
  {index === breadcrumbs.length - 1 ? (
  <span className="text-white/80 font-medium">{crumb.name}</span>
- ) : (
+ ) : crumb.path ? (
  <>
  <Link to={crumb.path} className="hover:text-orange-400 transition-colors">
  {crumb.name}
  </Link>
+ <ChevronRight className="w-3 h-3 text-white/30" />
+ </>
+ ) : (
+ <>
+ <span className="text-white/50">{crumb.name}</span>
  <ChevronRight className="w-3 h-3 text-white/30" />
  </>
  )}

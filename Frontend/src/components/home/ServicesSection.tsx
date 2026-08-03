@@ -47,7 +47,7 @@ const sapSolutions = [
   },
   {
     title: "Digital Transformation",
-    link: "#",
+    link: "/services/strategy-consulting/tech",
     icon: TrendingUp,
     description: "Modernizing legacy systems for the digital age.",
   },

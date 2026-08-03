@@ -319,10 +319,14 @@ export default function ClientsAndAssociations() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <SectionLabel>Our Clients</SectionLabel>
+            {/* Specific country count removed — "5 countries" conflicted with other
+                pages during a consistency audit (some said "2"). The country-summary
+                pills below list actual named countries from the real client roster,
+                so the general claim stays true without asserting a disputed number. */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
               Trusted Across{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
-                5 Countries
+                Multiple Countries
               </span>
             </h2>
             <p className="mt-3 text-white/50 text-xs sm:text-sm max-w-xl mx-auto">
@@ -330,11 +334,15 @@ export default function ClientsAndAssociations() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-sm mx-auto mb-8 sm:mb-12">
+          {/* Clients/Countries/Years counters — PENDING REAL DATA. These figures
+              disagreed with other pages sitewide during a consistency audit;
+              commented out rather than shown as unverified numbers. Restore once
+              confirmed figures are available. */}
+          {/* <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-sm mx-auto mb-8 sm:mb-12">
             <StatCounter end={20} label="Clients" />
             <StatCounter end={5} label="Countries" />
             <StatCounter end={8} label="Years" />
-          </div>
+          </div> */}
 
           <Marquee items={CLIENTS} />
 

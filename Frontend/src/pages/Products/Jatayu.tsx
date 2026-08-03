@@ -198,7 +198,7 @@ const Jatayu = () => {
                 title="Jatayu - Building Guardian"
                 subtitle="Simplify society operations with Jatayu. Manage billing, accounting, complaints, and meetings—all in one place."
                 breadcrumbs={[
-                    { name: "Products", path: "/products" },
+                    { name: "Products" },
                     { name: "Jatayu", path: "/products/jatayu" },
                 ]}
                 backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/jatayu/jatayu-hero.jpg?tr=f-auto,q-auto,w-1600"

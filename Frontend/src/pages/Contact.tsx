@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin, Mail, Phone, Send, CheckCircle, Loader2,
-  Clock, MessageSquare, ArrowRight, Building2, Users, Globe, Paperclip, X
+  Clock, MessageSquare, ArrowRight, Building2, Paperclip, X
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import PageHeader from "@/components/layout/PageHeader";
@@ -19,7 +19,7 @@ const offices = [
   {
     title: "India – Amaravati",
     flag: "🇮🇳",
-    address: "Amaravati, Telangana 500081",
+    address: "Amaravati, Andhra Pradesh 522503",
     phone: "+91 95539 55893",
     email: "hr@sriainfotech.com",
   },
@@ -46,10 +46,14 @@ const offices = [
   },
 ];
 
+// "Happy Clients" and "Countries" figures are PENDING REAL DATA — they
+// disagreed with other pages sitewide during a consistency audit. Commented
+// out rather than shown as unverified numbers; restore once confirmed
+// figures are available.
 const stats = [
   { icon: Clock, value: "< 24 hrs", label: "Response Time" },
-  { icon: Users, value: "100+", label: "Happy Clients" },
-  { icon: Globe, value: "2", label: "Countries" },
+  // { icon: Users, value: "100+", label: "Happy Clients" },
+  // { icon: Globe, value: "2", label: "Countries" },
 ];
 
 const MAX_FILE_SIZE_MB = 10;
@@ -116,7 +120,7 @@ const Contact = () => {
         toast({ title: "Error", description: response.data.message || "Failed to send message.", variant: "destructive" });
       }
     } catch (error: any) {
-      toast({ title: "Error", description: error.response?.data?.message || "Something went wrong. Please try again later.", variant: "destructive" });
+      toast({ title: "Error", description: error.userMessage || "Something went wrong. Please try again later.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
@@ -200,7 +204,7 @@ const Contact = () => {
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 max-w-[160px] gap-3">
                 {stats.map((s, i) => (
                   <motion.div
                     key={i}
