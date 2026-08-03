@@ -7,7 +7,7 @@ const leaders = [
     {
         role: "Chairman",
         name: "Ashwini Ganji",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpg?tr=f-auto,q-auto,w-480",
+        image: "/chairman.jpeg",
         quote: "We are not just building software; we are architecting the future of enterprise intelligence.",
         body: "At Sria Infotech, our mission goes beyond implementation. We strive to empower businesses with the agility and insight needed to thrive in a digital-first world. Our commitment to excellence and innovation is unwavering.",
     },
