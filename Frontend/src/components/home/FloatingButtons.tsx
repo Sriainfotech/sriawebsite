@@ -97,12 +97,12 @@ const FloatingButtons = () => {
 
       {/* Visitor Count — hidden on phones to avoid overlapping hero content;
           the interactive contact buttons below stay visible everywhere. */}
-      {totalVisits && (
+      {/* {totalVisits && (
         <div className="hidden sm:flex bg-black/60 backdrop-blur-sm rounded-md shadow-lg items-center gap-2 px-3 py-3">
           <span className="text-white text-[15px] font-bold leading-none">{totalVisits}</span>
           <span className="text-white/50 text-[10px] leading-none">Visits</span>
         </div>
-      )}
+      )} */}
 
       {/* IVC — hidden on phones, same reason as above */}
       <a
