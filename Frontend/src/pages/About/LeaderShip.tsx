@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, ArrowRight, Quote } from "lucide-react";
@@ -56,6 +56,8 @@ const leaders = [
 ];
 
 function LeaderShip() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <div className="w-full min-h-screen bg-white">
       <PageHeader
@@ -180,9 +182,9 @@ function LeaderShip() {
       </section>
 
       {/* ── Chairman's Statement ── */}
-      {/* <section className="py-20 bg-slate-950 relative overflow-hidden"> */}
+      <section className="py-20 bg-slate-950 relative overflow-hidden">
         {/* Background decoration */}
-        {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-3xl" />
           <div
@@ -192,11 +194,11 @@ function LeaderShip() {
               backgroundSize: "40px 40px",
             }}
           />
-        </div> */}
+        </div>
 
-        {/* <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> */}
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section header */}
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -205,19 +207,19 @@ function LeaderShip() {
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Leadership Vision</span>
             <h2 className="text-xl md:text-2xl font-bold text-white">Chairman's Statement</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto mt-4" />
-          </motion.div> */}
+          </motion.div>
 
-          {/* <div className="grid lg:grid-cols-2 gap-12 items-start"> */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left: quote */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
               className="flex flex-col justify-center"
-            > */}
+            >
               {/* Large quote mark */}
-              {/* <Quote className="w-12 h-12 text-orange-500/30 mb-6" />
+              <Quote className="w-12 h-12 text-orange-500/30 mb-6" />
 
               <p className="text-xs font-semibold text-orange-500 uppercase tracking-widest mb-3">
                 Innovating the Change
@@ -233,10 +235,10 @@ function LeaderShip() {
               <p className="text-slate-300 leading-relaxed text-sm mb-8">
                 As Chairman, I envision Sria Infotech as a company that not only enables businesses to thrive but also shapes the future of young talent by preparing them for the AI-driven era of innovation. With strong partnerships, dedicated teams, and a relentless commitment to excellence, we are confident of building a brighter, more sustainable future.
                 Together, let us lead with purpose, innovate with passion, and grow with integrity.
-              </p> */}
+              </p>
 
               {/* Attribution */}
-              {/* <div className="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div className="flex items-center gap-4 border-t border-white/10 pt-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
                   <img
                     src="/chairman.jpeg"
@@ -255,32 +257,45 @@ function LeaderShip() {
                   <p className="text-orange-400 text-xs">Chairman, Sria Group of Companies</p>
                 </div>
               </div>
-            </motion.div> */}
+            </motion.div>
 
             {/* Right: video */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video"> */}
-                {/* Decorative frame */}
-                {/* <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-500/20 pointer-events-none z-20" />
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube-nocookie.com/embed/SNeFDUwpNoY"
-                  title="CEO Statement Video"
-                  loading="lazy"
-                  frameBorder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </motion.div> */}
-          {/* </div> */}
-        {/* </div> */}
-      {/* </section> */}
+             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
+  <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-500/20 pointer-events-none z-20" />
+  {videoLoaded ? (
+    <iframe
+      className="w-full h-full"
+      src="https://www.youtube-nocookie.com/embed/SNeFDUwpNoY?autoplay=1"
+      title="CEO Statement Video"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  ) : (
+    <button
+      onClick={() => setVideoLoaded(true)}
+      className="w-full h-full relative bg-cover bg-center"
+      style={{ backgroundImage: `url(https://img.youtube.com/vi/SNeFDUwpNoY/maxresdefault.jpg)` }}
+      aria-label="Play video"
+    >
+      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
+          <div className="w-0 h-0 border-l-[16px] border-l-white border-y-[10px] border-y-transparent ml-1" />
+        </div>
+      </div>
+    </button>
+  )}
+</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );
