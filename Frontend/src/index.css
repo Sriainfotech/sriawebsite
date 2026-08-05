@@ -147,6 +147,28 @@
   }
 }
 
+/* Mobile browsers (notably iOS Safari) compute 100vh against a taller
+   "layout viewport" than what's actually visible before the collapsible
+   address bar has settled — every min-h-screen/h-screen section on the site
+   (Hero included) ends up taller than the real screen at initial load,
+   pushing fixed-bottom UI like the WhatsApp/chat buttons out of view. dvh
+   tracks the real visible viewport where supported; -webkit-fill-available
+   covers older iOS Safari where dvh isn't available. Overriding the
+   Tailwind utility classes directly here fixes every usage site at once. */
+@layer utilities {
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+  }
+
+  .h-screen {
+    height: 100vh;
+    height: -webkit-fill-available;
+    height: 100dvh;
+  }
+}
+
 @layer components {
   .section-padding {
     @apply py-12;
