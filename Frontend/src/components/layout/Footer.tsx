@@ -229,7 +229,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-
+                                                
                         {/* DPIIT badge — inline with the Contact column, right-aligned,
                             pinned to the bottom of the column */}
                         <div className="flex justify-end mt-auto pt-5">
