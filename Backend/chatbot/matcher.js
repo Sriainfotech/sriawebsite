@@ -62,12 +62,58 @@ async function refreshIndex() {
     return buildIndex();
 }
 
+// Fuse's Bitap matcher only evaluates the query in 32-character chunks and
+// averages the score across every chunk it produces. For a genuine wall of
+// text (hundreds of words) that dilutes a real keyword's score into oblivion,
+// which is what this retry exists to recover from. But ordinary questions —
+// even fairly long or awkwardly-paraphrased ones — regularly run past 32
+// characters too, and the word-by-word retry below is far more prone to
+// coincidental false positives (generic words fuzzy-matching an unrelated
+// entry) than the whole-phrase match is. So this only kicks in well past any
+// realistic single-sentence question, leaving normal questions on the
+// whole-phrase path even when they end up falling back.
+const LONG_QUERY_RETRY_LENGTH = 150;
+
+// Retries a long, failed query word-by-word so a keyword buried in
+// surrounding text can still surface its own strong match.
+function searchWords(normalizedMessage) {
+    const words = [...new Set(normalizedMessage.split(' '))].filter(
+        (w) => w.length >= FUSE_OPTIONS.minMatchCharLength,
+    );
+    let best = null;
+    let bestAdjustedScore = Infinity;
+    for (const word of words) {
+        const results = fuse.search(word);
+        const hit = results.length ? results[0] : null;
+        if (!hit) continue;
+        // Short filler words ("is", "what", "in"...) are often literal
+        // substrings of a question_pattern ("what is gatecheck") and score a
+        // coincidental 0, tying with the actual keyword. Nudge longer words
+        // ahead since they're inherently rarer/more specific — the bonus is
+        // small enough to never flip a genuinely worse match ahead of a
+        // genuinely better one, only to break near-ties between them.
+        const adjustedScore = hit.score - word.length * 0.001;
+        if (adjustedScore < bestAdjustedScore) {
+            bestAdjustedScore = adjustedScore;
+            best = hit;
+        }
+    }
+    return best;
+}
+
 // Runs a single normalized query through the current index and returns the
 // best Fuse hit ({ item, score }) or null if nothing was returned at all.
 function search(normalizedMessage) {
     if (!fuse) return null;
     const results = fuse.search(normalizedMessage);
-    return results.length ? results[0] : null;
+    let hit = results.length ? results[0] : null;
+
+    if (normalizedMessage.length > LONG_QUERY_RETRY_LENGTH && !passesThreshold(hit)) {
+        const wordHit = searchWords(normalizedMessage);
+        if (wordHit && (!hit || wordHit.score < hit.score)) hit = wordHit;
+    }
+
+    return hit;
 }
 
 function passesThreshold(hit) {

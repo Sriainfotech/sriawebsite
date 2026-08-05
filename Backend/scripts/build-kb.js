@@ -130,7 +130,27 @@ function unescapeJsString(s) {
     return s.replace(/\\"/g, '"').replace(/\\n/g, ' ').replace(/\\\\/g, '\\').trim();
 }
 
+// Routes that genuinely belong to a KB category but don't live under that
+// category's own /prefix/ (e.g. /app-store is a Products page, not nested
+// under /products/). Without this, categorize() silently sent them to
+// outOfScope and no KB entry was ever generated for them at all.
+const FLAT_ROUTE_CATEGORIES = {
+    '/app-store': 'Products',
+};
+
+// subcategoryFromTitle() would derive "Product Catalogue" from this route's
+// routeMeta.ts title, but the KB already has a hand-authored "App Store"
+// entry for it (the App Store page also lists individual apps not covered by
+// routeMeta.ts at all, so it needed manual content beyond what auto-extraction
+// could produce). Without this override, the two subcategory strings would
+// never match on lookup and build-kb.js would create a duplicate instead of
+// finding/skipping the existing entry.
+const SUBCATEGORY_OVERRIDES = {
+    '/app-store': 'App Store',
+};
+
 function categorize(link) {
+    if (FLAT_ROUTE_CATEGORIES[link]) return FLAT_ROUTE_CATEGORIES[link];
     if (link.startsWith('/products/')) return 'Products';
     if (link.startsWith('/services/')) return 'Services';
     if (link.startsWith('/solutions/')) return 'Solutions';
@@ -243,13 +263,27 @@ const OVERVIEW_ENTRIES = [
     },
 ];
 
+// Returns 'created', 'updated', or 'skipped' (matched an existing entry that
+// has editedManually: true — its answer/keywords/question_patterns are never
+// touched by this script once a human has hand-tuned them; only `link` is
+// still refreshed if the route itself moved, since a stale link is a real
+// bug regardless of how the content was written).
 async function upsertEntry(doc, filter) {
+    const existing = await KBEntry.findOne(filter);
+
+    if (existing && existing.editedManually) {
+        if (doc.link !== undefined && doc.link !== existing.link) {
+            await KBEntry.updateOne({ _id: existing._id }, { $set: { link: doc.link } });
+        }
+        return 'skipped';
+    }
+
     const result = await KBEntry.findOneAndUpdate(
         filter,
         { $set: doc },
         { upsert: true, new: true, setDefaultsOnInsert: true }
     );
-    return result.createdAt.getTime() === result.updatedAt.getTime();
+    return result.createdAt.getTime() === result.updatedAt.getTime() ? 'created' : 'updated';
 }
 
 async function main() {
@@ -259,13 +293,16 @@ async function main() {
 
     let created = 0;
     let updated = 0;
+    let skippedManual = 0;
     const outOfScope = [];
     const needsReview = [];
     const subcategoryByLink = {};
 
     for (const doc of OVERVIEW_ENTRIES) {
-        const wasCreated = await upsertEntry(doc, { category: doc.category, subcategory: doc.subcategory });
-        wasCreated ? created++ : updated++;
+        const result = await upsertEntry(doc, { category: doc.category, subcategory: doc.subcategory });
+        if (result === 'created') created++;
+        else if (result === 'updated') updated++;
+        else skippedManual++;
     }
 
     const raw = fs.readFileSync(ROUTE_META_FILE, 'utf8');
@@ -282,7 +319,7 @@ async function main() {
             continue;
         }
 
-        const subcategory = subcategoryFromTitle(meta.title);
+        const subcategory = SUBCATEGORY_OVERRIDES[link] || subcategoryFromTitle(meta.title);
         subcategoryByLink[link] = subcategory;
         const answer = stripTrailingCta(meta.description);
         if (!answer) {
@@ -303,8 +340,10 @@ async function main() {
             escalation_link: '/contact',
         };
 
-        const wasCreated = await upsertEntry(doc, { link, subcategory });
-        wasCreated ? created++ : updated++;
+        const result = await upsertEntry(doc, { link, subcategory });
+        if (result === 'created') created++;
+        else if (result === 'updated') updated++;
+        else skippedManual++;
     }
 
     for (const { file, link } of PRODUCT_FAQ_FILES) {
@@ -347,18 +386,21 @@ async function main() {
                 escalation_link: '/contact',
             };
 
-            const wasCreated = await upsertEntry(doc, {
+            const result = await upsertEntry(doc, {
                 link,
                 subcategory,
                 'question_patterns.0': question,
             });
-            wasCreated ? created++ : updated++;
+            if (result === 'created') created++;
+            else if (result === 'updated') updated++;
+            else skippedManual++;
         }
     }
 
     console.log('\n=== KB Build Summary ===');
     console.log(`Created: ${created}`);
     console.log(`Updated: ${updated}`);
+    console.log(`Skipped ${skippedManual} manually-edited entries (answer/keywords/question_patterns preserved)`);
     console.log(`\nOut of category scope (${outOfScope.length}):`);
     outOfScope.forEach((l) => console.log(`  - ${l}`));
     console.log(`\nNeeds manual review (${needsReview.length}):`);

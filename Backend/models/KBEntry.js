@@ -58,6 +58,14 @@ const KBEntrySchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    // True once answer/keywords/question_patterns have been hand-edited
+    // outside of build-kb.js (directly in the DB, or via any other tooling).
+    // build-kb.js checks this before overwriting those three fields on a
+    // re-run — see upsertEntry() there for the actual guard.
+    editedManually: {
+        type: Boolean,
+        default: false,
+    },
 }, {
     timestamps: true,
 });
