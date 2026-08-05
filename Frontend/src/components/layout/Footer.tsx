@@ -79,7 +79,7 @@ const Footer = () => {
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Main footer content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 pt-8 pb-8 md:pt-12 md:pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 pt-8 pb-4 md:pt-12 md:pb-6">
                     {/* Brand Column */}
                     <div className="lg:col-span-1">
                         <div className="flex gap-3 mb-6">
@@ -194,7 +194,7 @@ const Footer = () => {
                     </div>
 
                     {/* Contact */}
-                    <div className="lg:col-span-1">
+                    <div className="lg:col-span-1 flex flex-col h-full">
                         <h3 className="font-bold text-white text-sm mb-6 tracking-wider uppercase">Contact</h3>
                         <div className="space-y-5">
                             <div className="flex items-start gap-3">
@@ -227,6 +227,22 @@ const Footer = () => {
                                         303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* DPIIT badge — inline with the Contact column, right-aligned,
+                            pinned to the bottom of the column */}
+                        <div className="flex justify-end mt-auto pt-5">
+                            <div className="bg-white rounded-md px-3 py-1.5 flex items-center flex-shrink-0">
+                                <img
+                                    src="/Logos/dpiit.png"
+                                    alt="DPIIT Recognized Startup - Startup India"
+                                    width={140}
+                                    height={56}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="h-9 sm:h-11 w-auto object-contain"
+                                />
                             </div>
                         </div>
                     </div>

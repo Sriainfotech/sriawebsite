@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ThumbsUp, ThumbsDown } from "lucide-react";
+import { ThumbsUp, ThumbsDown, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface FollowUpOption {
@@ -49,26 +49,39 @@ const ChatMessage = ({ message, onFollowUp, onFeedback }: ChatMessageProps) => {
   const isUser = message.role === "user";
   const isError = message.role === "error";
 
+  const avatar = isUser ? (
+    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+      <User size={15} />
+    </div>
+  ) : (
+    <div className="h-7 w-7 shrink-0 overflow-hidden rounded-full bg-muted">
+      <img src="/ai-face.png" alt="" className="h-full w-full object-contain" />
+    </div>
+  );
+
   return (
     <div className={cn("flex flex-col", isUser ? "items-end" : "items-start")}>
-      <div
-        className={cn(
-          "max-w-[85%] whitespace-pre-wrap break-words rounded-2xl px-3 py-2 text-sm",
-          isUser && "rounded-br-sm bg-primary text-primary-foreground",
-          !isUser && !isError && "rounded-bl-sm bg-muted text-foreground",
-          isError && "rounded-bl-sm border border-destructive/30 bg-destructive/10 text-destructive",
-        )}
-      >
-        {message.text}
-        {message.link ? (
-          <ReplyLink to={message.link}>Learn more</ReplyLink>
-        ) : message.escalationLink ? (
-          <ReplyLink to={message.escalationLink}>{message.escalationCta || "Talk to our team"}</ReplyLink>
-        ) : null}
+      <div className={cn("flex max-w-[85%] items-end gap-2", isUser && "flex-row-reverse")}>
+        {avatar}
+        <div
+          className={cn(
+            "whitespace-pre-wrap break-words rounded-2xl px-3 py-2 text-sm",
+            isUser && "rounded-br-sm bg-primary text-primary-foreground",
+            !isUser && !isError && "rounded-bl-sm bg-muted text-foreground",
+            isError && "rounded-bl-sm border border-destructive/30 bg-destructive/10 text-destructive",
+          )}
+        >
+          {message.text}
+          {message.link ? (
+            <ReplyLink to={message.link}>Learn more</ReplyLink>
+          ) : message.escalationLink ? (
+            <ReplyLink to={message.escalationLink}>{message.escalationCta || "Talk to our team"}</ReplyLink>
+          ) : null}
+        </div>
       </div>
 
       {!isUser && !isError && !!message.followUpOptions?.length && (
-        <div className="mt-2 flex max-w-[85%] flex-wrap gap-2">
+        <div className="mt-2 flex max-w-[85%] flex-wrap gap-2 pl-9">
           {message.followUpOptions.map((opt, i) => (
             <button
               key={i}
@@ -83,7 +96,7 @@ const ChatMessage = ({ message, onFollowUp, onFeedback }: ChatMessageProps) => {
       )}
 
       {!isUser && !isError && message.logId && (
-        <div className="mt-1 flex items-center gap-2 text-muted-foreground">
+        <div className="mt-1 flex items-center gap-2 pl-9 text-muted-foreground">
           <button
             type="button"
             aria-label="This answer was helpful"

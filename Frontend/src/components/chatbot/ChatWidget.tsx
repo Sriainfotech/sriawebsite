@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { X, Send, Mic, MicOff, Volume2, VolumeX } from "lucide-react";
 import axiosInstance from "@/lib/axios";
 import { cn } from "@/lib/utils";
@@ -312,115 +313,140 @@ const ChatWidget = () => {
 
   return (
     <>
-      {isOpen && (
-        <div
-          role="dialog"
-          aria-label="Chat with AIRA"
-          className="fixed bottom-[136px] right-4 z-[9999] flex h-[500px] max-h-[70vh] w-[90vw] max-w-[360px] flex-col overflow-hidden rounded-xl border border-border bg-background shadow-2xl sm:bottom-[160px] sm:right-6"
-        >
-          <div className="flex items-center justify-between bg-primary px-4 py-3 text-primary-foreground">
-            <span className="font-heading text-sm font-semibold">Chat with AIRA</span>
-            <div className="flex items-center gap-1">
-              <button
-                type="button"
-                aria-label={voiceEnabled ? "Turn off spoken replies" : "Turn on spoken replies"}
-                title={
-                  speechSynthesisSupported
-                    ? voiceEnabled
-                      ? "Spoken replies on"
-                      : "Spoken replies off"
-                    : "Voice output not supported in this browser"
-                }
-                disabled={!speechSynthesisSupported}
-                onClick={toggleVoiceOutput}
-                aria-pressed={voiceEnabled}
-                className="rounded p-1 hover:bg-primary-foreground/10 disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                {voiceEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
-              </button>
-              <button type="button" aria-label="Close chat" onClick={closeChat} className="rounded p-1 hover:bg-primary-foreground/10">
-                <X size={18} />
-              </button>
+      {/*
+        mode="wait" is the key to the sequencing: whichever side is
+        currently mounted (icon or panel) must fully finish its exit
+        animation before the other side mounts and starts its entrance —
+        so the icon visibly drops away and disappears first, then the
+        chat panel fades/slides in afterward (and vice versa on close),
+        instead of both animating on top of each other at once.
+      */}
+      <AnimatePresence mode="wait">
+        {isOpen ? (
+          <motion.div
+            key="panel"
+            role="dialog"
+            aria-label="Chat with AIRA"
+            className="fixed bottom-6 right-4 z-[9999] flex h-[500px] max-h-[70vh] w-[90vw] max-w-[360px] flex-col overflow-hidden rounded-xl border border-border bg-background shadow-2xl sm:bottom-8 sm:right-6"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 40, opacity: 0 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+          >
+            <div className="flex items-center justify-between bg-primary px-4 py-3 text-primary-foreground">
+              <div className="flex items-center gap-2 py-0.5">
+                <div className="rounded-full bg-white/15 p-1">
+                  <img src="/ai-face.png" alt="" className="h-6 w-6 rounded-full object-contain" />
+                </div>
+                <span className="font-heading text-sm font-semibold">Chat with AIRA</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  aria-label={voiceEnabled ? "Turn off spoken replies" : "Turn on spoken replies"}
+                  title={
+                    speechSynthesisSupported
+                      ? voiceEnabled
+                        ? "Spoken replies on"
+                        : "Spoken replies off"
+                      : "Voice output not supported in this browser"
+                  }
+                  disabled={!speechSynthesisSupported}
+                  onClick={toggleVoiceOutput}
+                  aria-pressed={voiceEnabled}
+                  className="rounded p-1 hover:bg-primary-foreground/10 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  {voiceEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
+                </button>
+                <button type="button" aria-label="Close chat" onClick={closeChat} className="rounded p-1 hover:bg-primary-foreground/10">
+                  <X size={18} />
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div ref={threadRef} className="flex-1 space-y-3 overflow-y-auto px-3 py-3">
-            {messages.map((m) => (
-              <ChatMessage key={m.id} message={m} onFollowUp={sendMessage} onFeedback={handleFeedback} />
-            ))}
-            {isLoading && (
-              <div className="flex w-fit items-center gap-1 rounded-2xl rounded-bl-sm bg-muted px-3 py-2">
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]" />
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]" />
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground" />
+            <div ref={threadRef} className="flex-1 space-y-3 overflow-y-auto px-3 py-3">
+              {messages.map((m) => (
+                <ChatMessage key={m.id} message={m} onFollowUp={sendMessage} onFeedback={handleFeedback} />
+              ))}
+              {isLoading && (
+                <div className="flex w-fit items-center gap-1 rounded-2xl rounded-bl-sm bg-muted px-3 py-2">
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground" />
+                </div>
+              )}
+            </div>
+
+            {voiceInputError && (
+              <div className="border-t border-border bg-destructive/10 px-3 py-1.5 text-xs text-destructive">
+                {voiceInputError}
               </div>
             )}
-          </div>
 
-          {voiceInputError && (
-            <div className="border-t border-border bg-destructive/10 px-3 py-1.5 text-xs text-destructive">
-              {voiceInputError}
+            <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-border p-2">
+              <Input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder={isListening ? "Listening..." : "Type a message..."}
+                aria-label="Message"
+                className="h-9"
+              />
+              <Button
+                type="button"
+                size="icon"
+                variant={isListening ? "destructive" : "outline"}
+                className={cn("h-9 w-9 shrink-0", isListening && "animate-pulse")}
+                disabled={!speechRecognitionSupported}
+                title={speechRecognitionSupported ? (isListening ? "Stop listening" : "Speak your message") : "Voice input not supported in this browser"}
+                aria-label={isListening ? "Stop voice input" : "Start voice input"}
+                aria-pressed={isListening}
+                onClick={toggleListening}
+              >
+                {speechRecognitionSupported && isListening ? <MicOff size={16} /> : <Mic size={16} />}
+              </Button>
+              <Button type="submit" size="icon" className="h-9 w-9 shrink-0" disabled={isLoading || !input.trim()}>
+                <Send size={16} />
+              </Button>
+            </form>
+          </motion.div>
+        ) : (
+          /*
+            Deliberately close to the true bottom edge (bottom-6/8, not bottom-24/28)
+            per explicit request — this does mean it can sit under/near the
+            CookieBanner's tap area (bottom-4) while that's still showing, before
+            the user dismisses it. Known tradeoff, not an oversight.
+
+            Bubble sits directly above the bot's head with a bordered outline
+            (two-layer rotated-square tail: an outer colored square plus an
+            inner white one is the standard CSS trick for a tail that reads as
+            part of a bordered bubble, not just a plain triangle).
+          */
+          <motion.div
+            key="icon"
+            className="fixed bottom-6 right-2 z-[9888] sm:bottom-8"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 60, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeIn" }}
+          >
+            <div className="absolute bottom-full right-4 mb-1 w-28 animate-float rounded-lg border-2 border-primary bg-white px-3 py-1.5 shadow-xl">
+              <span className="font-[Poppins,Arial,sans-serif] text-xs font-medium text-slate-800">
+                {greetingPhase === "intro" ? "Hi, I'm AIRA" : "How can I help you?"}
+              </span>
+              {/* Speech-bubble tail pointing down at the bot's head */}
+              <div className="absolute bottom-[-7px] right-10 h-3 w-3 rotate-45 border-b-2 border-r-2 border-primary bg-white" />
             </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-border p-2">
-            <Input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder={isListening ? "Listening..." : "Type a message..."}
-              aria-label="Message"
-              className="h-9"
-            />
-            <Button
+            <button
               type="button"
-              size="icon"
-              variant={isListening ? "destructive" : "outline"}
-              className={cn("h-9 w-9 shrink-0", isListening && "animate-pulse")}
-              disabled={!speechRecognitionSupported}
-              title={speechRecognitionSupported ? (isListening ? "Stop listening" : "Speak your message") : "Voice input not supported in this browser"}
-              aria-label={isListening ? "Stop voice input" : "Start voice input"}
-              aria-pressed={isListening}
-              onClick={toggleListening}
+              aria-label="Open chat"
+              onClick={() => setIsOpen(true)}
+              className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full transition-all hover:scale-110 hover:shadow-2xl"
             >
-              {speechRecognitionSupported && isListening ? <MicOff size={16} /> : <Mic size={16} />}
-            </Button>
-            <Button type="submit" size="icon" className="h-9 w-9 shrink-0" disabled={isLoading || !input.trim()}>
-              <Send size={16} />
-            </Button>
-          </form>
-        </div>
-      )}
-
-      {/*
-        Deliberately close to the true bottom edge (bottom-6/8, not bottom-24/28)
-        per explicit request — this does mean it can sit under/near the
-        CookieBanner's tap area (bottom-4) while that's still showing, before
-        the user dismisses it. Known tradeoff, not an oversight.
-
-        Bubble sits directly above the bot's head with a bordered outline
-        (two-layer rotated-square tail: an outer colored square plus an
-        inner white one is the standard CSS trick for a tail that reads as
-        part of a bordered bubble, not just a plain triangle).
-      */}
-      <div className="fixed bottom-6 right-2 z-[9888] sm:bottom-8">
-        {!isOpen && (
-          <div className="absolute bottom-full right-4 mb-1 w-28 animate-float rounded-lg border-2 border-primary bg-white px-3 py-1.5 shadow-xl">
-            <span className="font-[Poppins,Arial,sans-serif] text-xs font-medium text-slate-800">
-              {greetingPhase === "intro" ? "Hi, I'm AIRA" : "How can I help you?"}
-            </span>
-            {/* Speech-bubble tail pointing down at the bot's head */}
-            <div className="absolute bottom-[-7px] right-10 h-3 w-3 rotate-45 border-b-2 border-r-2 border-primary bg-white" />
-          </div>
+              <img src="/ai-bot-icon.png" alt="" className="h-full w-full object-contain" />
+            </button>
+          </motion.div>
         )}
-        <button
-          type="button"
-          aria-label={isOpen ? "Close chat" : "Open chat"}
-          onClick={() => (isOpen ? closeChat() : setIsOpen(true))}
-          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full transition-all hover:scale-110 hover:shadow-2xl"
-        >
-          <img src="/ai-bot-icon.png" alt="" className="h-full w-full object-contain" />
-        </button>
-      </div>
+      </AnimatePresence>
     </>
   );
 };
