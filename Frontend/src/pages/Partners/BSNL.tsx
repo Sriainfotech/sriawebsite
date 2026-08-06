@@ -36,39 +36,49 @@ const jointPrograms = [
     label: "Technician Training",
     description: "Hands-on training on telecom infrastructure, installation, and maintenance for field technicians.",
     icon: <Wifi className="w-5 h-5" />,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640",
+    // image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Man standing at BSNL plaque",
   },
   {
     label: "Digital Literacy",
     description: "Foundational digital skills training for learners in underserved communities across both states.",
     icon: <Smartphone className="w-5 h-5" />,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640",
+    // image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Two men holding signed agreement",
   },
   {
     label: "Certification Support",
     description: "Structured assessments and certification aligned with industry skilling standards.",
     icon: <GraduationCap className="w-5 h-5" />,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640",
+    // image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Four men holding signed certificate",
   },
   {
     label: "Community Outreach",
     description: "On-ground enrollment and outreach drives to reach learners in rural and semi-urban areas.",
     icon: <Users className="w-5 h-5" />,
-    image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg?tr=f-auto,q-auto,w-640",
+    // image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg?tr=f-auto,q-auto,w-640",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600",
     alt: "Group of men in meeting room",
   },
 ];
 
 const benefits = [
-  { title: "Skill Solution Partner Status", description: "Official recognition as BSNL's first skill solution partner from Telangana and Andhra Pradesh.", icon: <Award className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640", alt: "Man standing at BSNL plaque" },
-  { title: "Comprehensive Telecom Curriculum", description: "Structured modules covering installation, maintenance, and customer-facing telecom support skills.", icon: <Layers className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
-  { title: "Regional & National Expansion", description: "Delivery footprint extending from Telangana and Andhra Pradesh to 9 states and counting.", icon: <MapPin className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
-  { title: "Digital Literacy Outreach", description: "Foundational digital skills programs reaching learners in underserved and rural communities.", icon: <Smartphone className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-05.jpeg?tr=f-auto,q-auto,w-640", alt: "Team photo at training centre sign" },
-  { title: "Certification & Placement Support", description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <GraduationCap className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640", alt: "Man standing at BSNL plaque" },
-  { title: "Community-Centered Delivery", description: "Training centers designed around local access, reaching both urban and rural learners.", icon: <Briefcase className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
+    // { title: "Skill Solution Partner Status", description: "Official recognition as BSNL's first skill solution partner from Telangana and Andhra Pradesh.", icon: <Award className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640", alt: "Man standing at BSNL plaque" },
+    // { title: "Comprehensive Telecom Curriculum", description: "Structured modules covering installation, maintenance, and customer-facing telecom support skills.", icon: <Layers className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
+    // { title: "Regional & National Expansion", description: "Delivery footprint extending from Telangana and Andhra Pradesh to 9 states and counting.", icon: <MapPin className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
+    // { title: "Digital Literacy Outreach", description: "Foundational digital skills programs reaching learners in underserved and rural communities.", icon: <Smartphone className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-05.jpeg?tr=f-auto,q-auto,w-640", alt: "Team photo at training centre sign" },
+    // { title: "Certification & Placement Support", description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <GraduationCap className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640", alt: "Man standing at BSNL plaque" },
+    // { title: "Community-Centered Delivery", description: "Training centers designed around local access, reaching both urban and rural learners.", icon: <Briefcase className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
+    { title: "Skill Solution Partner Status", description: "Official recognition as BSNL's first skill solution partner from Telangana and Andhra Pradesh.", icon: <Award className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Man standing at BSNL plaque" },
+    { title: "Comprehensive Telecom Curriculum", description: "Structured modules covering installation, maintenance, and customer-facing telecom support skills.", icon: <Layers className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Two men holding signed agreement" },
+    { title: "Regional & National Expansion", description: "Delivery footprint extending from Telangana and Andhra Pradesh to 9 states and counting.", icon: <MapPin className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Four men holding signed certificate" },
+    { title: "Digital Literacy Outreach", description: "Foundational digital skills programs reaching learners in underserved and rural communities.", icon: <Smartphone className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Team photo at training centre sign" },
+    { title: "Certification & Placement Support", description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <GraduationCap className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Man standing at BSNL plaque" },
+    { title: "Community-Centered Delivery", description: "Training centers designed around local access, reaching both urban and rural learners.", icon: <Briefcase className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Two men holding signed agreement" },
 ];
 
 // These thumbnails crop a full-body/group photo into a very short, wide
@@ -77,6 +87,12 @@ const benefits = [
 // anchor (percentage down the source image where faces actually sit) so
 // object-cover crops around them instead of through them.
 const FACE_POSITION: Record<string, string> = {
+  // "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg": "object-[center_37%]",
+  // "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg": "object-[center_43%]",
+  // "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg": "object-[center_33%]",
+  // "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg": "object-[center_33%]",
+  // "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-05.jpeg": "object-[center_47%]",
+  // "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-06.jpeg": "object-[center_47%]",
   "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg": "object-[center_37%]",
   "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg": "object-[center_43%]",
   "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg": "object-[center_33%]",
@@ -89,12 +105,18 @@ const FACE_POSITION: Record<string, string> = {
 const facePosition = (image: string) => FACE_POSITION[image.split("?")[0]] ?? "object-center";
 
 const programPortfolio = [
-  { title: "Technician Training",       description: "Installation, maintenance, and troubleshooting skills for telecom field technicians.", icon: <Wifi className="w-6 h-6" />,          image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
-  { title: "Digital Literacy",          description: "Foundational computer and internet skills for learners in underserved communities.", icon: <Smartphone className="w-6 h-6" />,     image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-06.jpeg?tr=f-auto,q-auto,w-640", alt: "Group photo at training centre sign" },
-  { title: "Certification Programs",    description: "Structured assessments and certificates aligned with telecom industry standards.", icon: <GraduationCap className="w-6 h-6" />,   image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640", alt: "Man standing at BSNL plaque" },
-  { title: "Fiber & Network Skilling",   description: "Specialized training on fiber installation and network maintenance practices.", icon: <Layers className="w-6 h-6" />,             image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
-  { title: "Customer Support Training",  description: "Service and communication skills for telecom customer-facing roles.", icon: <Users className="w-6 h-6" />,                      image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
-  { title: "Digital Entrepreneurship",   description: "Skills to help learners use digital tools for small business and self-employment.", icon: <TrendingUp className="w-6 h-6" />,    image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg?tr=f-auto,q-auto,w-640", alt: "Group of men in meeting room" },
+  // { title: "Technician Training",       description: "Installation, maintenance, and troubleshooting skills for telecom field technicians.", icon: <Wifi className="w-6 h-6" />,          image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
+  // { title: "Digital Literacy",          description: "Foundational computer and internet skills for learners in underserved communities.", icon: <Smartphone className="w-6 h-6" />,     image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-06.jpeg?tr=f-auto,q-auto,w-640", alt: "Group photo at training centre sign" },
+  // { title: "Certification Programs",    description: "Structured assessments and certificates aligned with telecom industry standards.", icon: <GraduationCap className="w-6 h-6" />,   image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-640", alt: "Man standing at BSNL plaque" },
+  // { title: "Fiber & Network Skilling",   description: "Specialized training on fiber installation and network maintenance practices.", icon: <Layers className="w-6 h-6" />,             image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
+  // { title: "Customer Support Training",  description: "Service and communication skills for telecom customer-facing roles.", icon: <Users className="w-6 h-6" />,                      image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-03.jpeg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
+  // { title: "Digital Entrepreneurship",   description: "Skills to help learners use digital tools for small business and self-employment.", icon: <TrendingUp className="w-6 h-6" />,    image: "https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-04.jpeg?tr=f-auto,q-auto,w-640", alt: "Group of men in meeting room" },
+    { title: "Technician Training",       description: "Installation, maintenance, and troubleshooting skills for telecom field technicians.", icon: <Wifi className="w-6 h-6" />,          image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Four men holding signed certificate" },
+  { title: "Digital Literacy",          description: "Foundational computer and internet skills for learners in underserved communities.", icon: <Smartphone className="w-6 h-6" />,     image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Group photo at training centre sign" },
+  { title: "Certification Programs",    description: "Structured assessments and certificates aligned with telecom industry standards.", icon: <GraduationCap className="w-6 h-6" />,   image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Man standing at BSNL plaque" },
+  { title: "Fiber & Network Skilling",   description: "Specialized training on fiber installation and network maintenance practices.", icon: <Layers className="w-6 h-6" />,             image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-640", alt: "Two men holding signed agreement" },
+  { title: "Customer Support Training",  description: "Service and communication skills for telecom customer-facing roles.", icon: <Users className="w-6 h-6" />,                      image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-640", alt: "Four men holding signed certificate" },
+  { title: "Digital Entrepreneurship",   description: "Skills to help learners use digital tools for small business and self-employment.", icon: <TrendingUp className="w-6 h-6" />,    image: "https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600", alt: "Group of men in meeting room" },
 ];
 
 function BSNL() {
@@ -297,9 +319,11 @@ function BSNL() {
               <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl border-2 border-orange-200/50 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-72">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-960"
+                  // src="https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-960"
+                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600"
                   alt="Man standing at BSNL plaque"
-                  className={`w-full h-full object-cover ${facePosition("https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-960")}`}
+                  // className={`w-full h-full object-cover ${facePosition("https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-01.jpeg?tr=f-auto,q-auto,w-960")}`}
+                  className='{w-full h-full object-cover ${facePosition("https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600")}}'
                   width={660}
                   height={288}
                   loading="lazy"
@@ -354,9 +378,12 @@ function BSNL() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px]">
                 <img
-                  src="https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-960"
+                  // src="https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-960"
+                  
+                  src="https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600"
                   alt="Two men holding signed agreement"
-                  className={`w-full h-full object-cover ${facePosition("https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-960")}`}
+                  // className={`w-full h-full object-cover ${facePosition("https://ik.imagekit.io/hps6th7vy/sria/gallery/bsnl-partnership-signing-02.jpeg?tr=f-auto,q-auto,w-960")}`}
+                  className={`w-full h-full object-cover ${facePosition("https://ik.imagekit.io/hps6th7vy/sria/partners/bsnl-hero.jpg?tr=f-auto,q-auto,w-1600")}`}
                   width={660}
                   height={420}
                   loading="lazy"

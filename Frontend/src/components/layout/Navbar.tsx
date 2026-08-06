@@ -565,18 +565,18 @@ const Navbar: React.FC<NavbarProps> = ({
                                 sections={aboutSections}
                                 layout="single"
                             />
-                            <Link
+                            {/* <Link
                                 to="/gallery"
                                 className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
                                 Our Culture
-                            </Link>
-                            <Link
+                            </Link> */}
+                            {/* <Link
                                 to="/blog"
                                 className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
                                 Blog
-                            </Link>
+                            </Link> */}
                             <a
                                 href="https://nxsysdigital.com/"
                                 target="_blank"
@@ -673,7 +673,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 sections={aboutSections}
                                 id="mobile-about"
                             />
-                            <div className="border-b border-gray-700">
+                            {/* <div className="border-b border-gray-700">
                                 <Link
                                     to="/gallery"
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -681,8 +681,8 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     Our Culture
                                 </Link>
-                            </div>
-                            <div className="border-b border-gray-700">
+                            </div> */}
+                            {/* <div className="border-b border-gray-700">
                                 <Link
                                     to="/blog"
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -690,7 +690,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     Blog
                                 </Link>
-                            </div>
+                            </div> */}
                             <div className="border-b border-gray-700">
                                 <a
                                     href="https://nxsysdigital.com/"

@@ -74,32 +74,32 @@ const ASSOCIATIONS: Association[] = [
     name: "Telangana Government",
     tag: "State Partner",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/Emblem_of_Telangana.webp?tr=f-auto,q-auto,w-320",
-    link: "/partners/telangana-government",
+    // link: "/partners/telangana-government",
   },
   {
     name: "TASK",
     tag: "Skill Alliance",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/task.jpg?tr=f-auto,q-auto,w-320",
-    link: "/partners/task",
+    // link: "/partners/task",
   },
   {
     name: "BSNL",
     tag: "Skill Solution Partner",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/bsnl.png?tr=f-auto,q-auto,w-320",
     highlight: true,
-    link: "/partners/bsnl",
+    // link: "/partners/bsnl",
   },
   {
     name: "IVC SAP Gold Partner",
     tag: "SAP Gold",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320",
-    link: "/partners/ivc-solutions",
+    // link: "/partners/ivc-solutions",
   },
   {
     name: "T-Hub",
     tag: "Innovation Hub",
     logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/thub.png?tr=f-auto,q-auto,w-320",
-    link: "/partners/t-hub",
+    // link: "/partners/t-hub",
   },
 ];
 
