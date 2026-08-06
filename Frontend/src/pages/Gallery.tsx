@@ -203,15 +203,13 @@ const gallery: GalleryItem[] = [
   // ── Videos ──
   {
     id: 13, type: "video", category: "Videos", caption: "Sria Team Video",
-    // TODO: broken on BOTH ImageKit ("No file found") and Cloudinary (423 Locked) — this file needs to be re-uploaded to ImageKit, no working fallback exists right now.
     videoSrc: "https://ik.imagekit.io/hps6th7vy/sria/gallery/IMG_0225.mp4",
     images: [],
   },
   {
     id: 14, type: "video", category: "Videos", caption: "Sria Moments",
-    // TODO: re-point to ImageKit once IMG_1442.mp4 is uploaded there — temporarily serving from Cloudinary since it's still live.
     size: "tall", objectPosition: "center",
-    videoSrc: "https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779454744/sria/gallery/IMG_1442.mp4",
+    videoSrc: "https://ik.imagekit.io/hps6th7vy/sria/gallery/IMG_1442.mp4",
     images: [],
   },
   // {

@@ -289,9 +289,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "SAP Commerce Cloud implementation and support services from Sria Infotech for B2B and B2C digital commerce, from storefront setup through order management. Get in touch with our team to discuss your specific requirements and timelines.",
   },
   "/solutions/business": {
-    title: "SAP Business One Solutions | Sria Infotech",
+    title: "SAP Business Network Solutions | Sria Infotech",
     description:
-      "SAP Business One implementation and support services from Sria Infotech for small and mid-sized enterprises looking for an affordable, complete ERP platform. Contact Sria Infotech to explore how this fits your organization's roadmap.",
+      "SAP Business Network implementation and support services from Sria Infotech, simplifying freight billing, disruption alerts, and carrier collaboration for real-time global logistics visibility. Contact Sria Infotech to explore how this fits your organization's roadmap.",
   },
   "/solutions/manufacturing-logistics": {
     title: "SAP Manufacturing & Logistics Solutions | Sria Infotech",
