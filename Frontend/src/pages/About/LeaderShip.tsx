@@ -10,8 +10,9 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-// Only ImageKit URLs (ik.imagekit.io) get a 2x srcset; the local /vinod.PNG
-// photo and any other non-ImageKit src just gets loading/decoding/dimensions.
+// Only ImageKit URLs (ik.imagekit.io) get a 2x srcset; any other src just
+// gets loading/decoding/dimensions. All four leader photos are on ImageKit
+// now, but this guard is kept in case a future entry adds a non-CDN image.
 const IK = "ik.imagekit.io";
 const ikSrcSet2x = (url: string, w1: number, w2: number) =>
   url.includes(IK) ? `${url.replace(/w-\d+/, `w-${w1}`)} ${w1}w, ${url.replace(/w-\d+/, `w-${w2}`)} ${w2}w` : undefined;
@@ -22,7 +23,7 @@ const leaders = [
     designation: "Chairman — Sria Group of Companies",
     description:
       "Chairman - Sria Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
-    image: "/chairman.jpeg",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpeg?tr=f-auto,q-auto,w-480",
     linkedinUrl: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
     email: "admin@sriainfotech.com",
   },
@@ -49,7 +50,7 @@ const leaders = [
     designation: "COO — Sria Infotech",
     description:
       "COO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
-    image: "/vinod.PNG",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/vinod.PNG?tr=f-auto,q-auto,w-480",
     linkedinUrl: "https://www.linkedin.com/in/vinod-kumar-burra-31bb13190/",
     email: "vinodkumar@sriainfotech.com",
   },
@@ -241,8 +242,8 @@ function LeaderShip() {
               <div className="flex items-center gap-4 border-t border-white/10 pt-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange-500/40 flex-shrink-0">
                   <img
-                    src="/chairman.jpeg"
-                    srcSet="/chairman.jpeg 160w, /chairman.jpeg 320w"
+                    src="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpeg?tr=f-auto,q-auto,w-160"
+                    srcSet="https://ik.imagekit.io/hps6th7vy/sria/chairman.jpeg?tr=f-auto,q-auto,w-160 160w, https://ik.imagekit.io/hps6th7vy/sria/chairman.jpeg?tr=f-auto,q-auto,w-320 320w"
                     sizes="48px"
                     alt="Ashwini Ganji"
                     className="w-full h-full object-cover object-top"

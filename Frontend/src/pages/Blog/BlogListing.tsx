@@ -44,6 +44,7 @@ const BlogListing = () => {
         title="Blog"
         subtitle="Insights, updates, and perspectives from the Sria Infotech team."
         breadcrumbs={[{ name: "Blog", path: "/blog" }]}
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/blog/blogs.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       <section className="py-16 md:py-20">

@@ -63,7 +63,7 @@ const CLIENTS: Client[] = [
   { name: "Savadia Foundation", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/savadia.png?tr=f-auto,q-auto,w-160" },
   { name: "7 Hills Restaurant", country: "Belgium", flag: "🇧🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/7hills.png?tr=f-auto,q-auto,w-160" },
   { name: "CAMP Systems Private Limited", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/camp.jpg?tr=f-auto,q-auto,w-160" },
-  { name: "Pristine Resource LLC", country: "United States", flag: "🇺🇸", logo: "/Logos/pristine.jpg" },
+  { name: "Pristine Resource LLC", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/pristine.jpg?tr=f-auto,q-auto,w-160" },
   // { name: "KIMS Hospitals", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/kims.png?tr=f-auto,q-auto,w-160" },
   // { name: "Alekhya Homes", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/logos/alekya.png?tr=f-auto,q-auto,w-160" },
 ];

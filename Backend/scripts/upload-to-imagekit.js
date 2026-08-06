@@ -25,6 +25,8 @@ const FILES = [
     ['public/Logos/camp.jpg', 'sria/logos'],
     ['public/Logos/kims.png', 'sria/logos'],
     ['public/Logos/alekya.png', 'sria/logos'],
+    ['public/Logos/dpiit.png', 'sria/logos'],
+    ['public/Logos/msme.jpeg', 'sria/logos'],
     ['public/royal-logo.png', 'sria/logos'],
     // Clients
     ['public/Clients/savadia.png', 'sria/clients'],
@@ -34,6 +36,7 @@ const FILES = [
     ['public/Clients/lvk.png', 'sria/clients'],
     ['public/Clients/live-ramp.png', 'sria/clients'],
     ['public/Clients/stannik.png', 'sria/clients'],
+    ['public/Logos/pristine.jpg', 'sria/clients'],
     // Event photos
     ['public/event photos/ow1.jpeg', 'sria/events'],
     ['public/event photos/ow2.jpeg', 'sria/events'],
@@ -87,6 +90,17 @@ const FILES = [
     ['public/sap-analytics/sales-avg-price-thumb.jpg', 'sria/sap-analytics'],
     ['public/sap-analytics/sales-analysis-full.jpg', 'sria/sap-analytics'],
     ['public/sap-analytics/sales-analysis-thumb.jpg', 'sria/sap-analytics'],
+    // Blog hero
+    ['public/blogs.jpg', 'sria/blog'],
+    // Chatbot widget assets
+    ['public/ai-bot-icon.png', 'sria'],
+    ['public/ai-face.png', 'sria'],
+    // Leadership photos (siblings sai.png/ravi.png are already on ImageKit at sria/ root)
+    ['public/chairman.jpeg', 'sria'],
+    ['public/vinod.PNG', 'sria'],
+    // Locations page
+    ['public/hyderabad.jpg', 'sria/about'],
+    ['public/location.jpg', 'sria/about'],
     // src/assets hero & service images
     ['src/assets/hero-home.jpg', 'sria/home'],
     ['src/assets/hero-about.jpg', 'sria/about'],

@@ -398,5 +398,50 @@
     "rel": "src/assets/service-sap.jpg",
     "folder": "sria/services",
     "url": "https://ik.imagekit.io/hps6th7vy/sria/services/service-sap.jpg"
+  },
+  {
+    "rel": "public/Logos/dpiit.png",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/dpiit.png"
+  },
+  {
+    "rel": "public/Logos/msme.jpeg",
+    "folder": "sria/logos",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/logos/msme.jpeg"
+  },
+  {
+    "rel": "public/Logos/pristine.jpg",
+    "folder": "sria/clients",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/clients/pristine.jpg"
+  },
+  {
+    "rel": "public/ai-bot-icon.png",
+    "folder": "sria",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/ai-bot-icon.png"
+  },
+  {
+    "rel": "public/ai-face.png",
+    "folder": "sria",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/ai-face.png"
+  },
+  {
+    "rel": "public/chairman.jpeg",
+    "folder": "sria",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/chairman.jpeg"
+  },
+  {
+    "rel": "public/vinod.PNG",
+    "folder": "sria",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/vinod.PNG"
+  },
+  {
+    "rel": "public/hyderabad.jpg",
+    "folder": "sria/about",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/about/hyderabad.jpg"
+  },
+  {
+    "rel": "public/location.jpg",
+    "folder": "sria/about",
+    "url": "https://ik.imagekit.io/hps6th7vy/sria/about/location.jpg"
   }
 ]

@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, Calendar, Clock, Loader2 } from "lucide-react";
 import axiosInstance from "@/lib/axios";
+import PageHeader from "@/components/layout/PageHeader";
 
 interface BlogPostData {
   title: string;
@@ -59,29 +60,20 @@ const BlogPost = () => {
   }
 
   return (
-    <article className="min-h-screen bg-white pt-24">
-      {post.coverImageUrl && (
-        <div className="w-full h-[280px] sm:h-[380px] md:h-[440px] bg-slate-100 overflow-hidden">
-          <img
-            src={post.coverImageUrl}
-            alt={post.title}
-            className="w-full h-full object-cover"
-            style={{
-              objectPosition: post.coverImagePosition || "50% 50%",
-              transform: `scale(${(post.coverImageZoom || 100) / 100})`,
-              transformOrigin: post.coverImagePosition || "50% 50%",
-            }}
-          />
-        </div>
-      )}
+    <article className="min-h-screen bg-white">
+      <PageHeader
+        title={post.title}
+        breadcrumbs={[{ name: "Blog", path: "/blog" }, { name: post.title }]}
+        backgroundImage={post.coverImageUrl || undefined}
+        backgroundImagePosition={post.coverImagePosition}
+        backgroundImageZoom={post.coverImageZoom}
+      />
 
       <div className="max-w-[760px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-orange-700 transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" />
           Back to Blog
         </Link>
-
-        <h1 className="font-heading font-bold text-3xl md:text-4xl text-slate-900 leading-tight mb-5">{post.title}</h1>
 
         <div className="flex items-center gap-4 text-sm text-slate-500 pb-8 mb-8 border-b border-slate-100">
           <span className="font-medium text-slate-700">{post.author}</span>

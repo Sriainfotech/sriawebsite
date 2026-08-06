@@ -230,14 +230,25 @@ const Footer = () => {
                             </div>
                         </div>              
                                                 
-                        {/* DPIIT badge — inline with the Contact column, right-aligned,
+                        {/* DPIIT + MSME badges — inline with the Contact column, right-aligned,
                             pinned to the bottom of the column */}
-                        <div className="flex justify-end mt-auto pt-5">
+                        <div className="flex justify-end items-center gap-3 mt-auto pt-5">
                             <div className="bg-white rounded-md px-3 py-1.5 flex items-center flex-shrink-0">
                                 <img
-                                    src="/Logos/dpiit.png"
+                                    src="https://ik.imagekit.io/hps6th7vy/sria/logos/dpiit.png?tr=f-auto,q-auto,w-280"
                                     alt="DPIIT Recognized Startup - Startup India"
                                     width={140}
+                                    height={56}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="h-9 sm:h-11 w-auto object-contain"
+                                />
+                            </div>
+                            <div className="bg-white rounded-md px-3 py-1.5 flex items-center flex-shrink-0">
+                                <img
+                                    src="https://ik.imagekit.io/hps6th7vy/sria/logos/msme.jpeg?tr=f-auto,q-auto,w-112"
+                                    alt="MSME Registered - Ministry of Micro, Small & Medium Enterprises, Government of India"
+                                    width={56}
                                     height={56}
                                     loading="lazy"
                                     decoding="async"

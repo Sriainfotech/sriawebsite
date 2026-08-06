@@ -25,7 +25,7 @@ const offices = [
     address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084, India",
     phone: "+91 97013 14138",
     email: "hr@sriainfotech.com",
-    image: "/hyderabad.jpg",
+    image: "https://ik.imagekit.io/hps6th7vy/sria/about/hyderabad.jpg?tr=f-auto,q-auto,w-960",
     alt: "City skyline daytime view",
     mapDot: { top: "52%", left: "68%" },
     tooltip: "Hyderabad, India",
@@ -93,7 +93,7 @@ function Location() {
           { name: "About Us", path: "/about" },
           { name: "Locations", path: "/about/locations" },
         ]}
-        backgroundImage="/location.jpg"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/about/location.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Intro Stats Strip ── */}

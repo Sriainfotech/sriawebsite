@@ -336,7 +336,7 @@ const ChatWidget = () => {
             <div className="flex items-center justify-between bg-primary px-4 py-3 text-primary-foreground">
               <div className="flex items-center gap-2 py-0.5">
                 <div className="rounded-full bg-white/15 p-1">
-                  <img src="/ai-face.png" alt="" className="h-6 w-6 rounded-full object-contain" />
+                  <img src="https://ik.imagekit.io/hps6th7vy/sria/ai-face.png?tr=f-auto,q-auto,w-96" alt="" className="h-6 w-6 rounded-full object-contain" />
                 </div>
                 <span className="font-heading text-sm font-semibold">Chat with AIRA</span>
               </div>
@@ -429,8 +429,8 @@ const ChatWidget = () => {
             exit={{ y: 60, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeIn" }}
           >
-            <div className="absolute bottom-full right-4 mb-1 w-28 animate-float rounded-lg border-2 border-primary bg-white px-3 py-1.5 shadow-xl">
-              <span className="font-[Poppins,Arial,sans-serif] text-xs font-medium text-slate-800">
+            <div className="absolute bottom-full right-4 mb-1 w-28 animate-float rounded-lg border-2 border-primary bg-white px-1 py-1 shadow-xl">
+              <span className="font-[Poppins,Arial,sans-serif] text-xs font-medium leading-none text-slate-800">
                 {greetingPhase === "intro" ? "Hi, I'm AIRA" : "How can I help you?"}
               </span>
               {/* Speech-bubble tail pointing down at the bot's head */}
@@ -442,7 +442,7 @@ const ChatWidget = () => {
               onClick={() => setIsOpen(true)}
               className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full transition-all hover:scale-110 hover:shadow-2xl"
             >
-              <img src="/ai-bot-icon.png" alt="" className="h-full w-full object-contain" />
+              <img src="https://ik.imagekit.io/hps6th7vy/sria/ai-bot-icon.png?tr=f-auto,q-auto,w-160" alt="" className="h-full w-full object-contain" />
             </button>
           </motion.div>
         )}

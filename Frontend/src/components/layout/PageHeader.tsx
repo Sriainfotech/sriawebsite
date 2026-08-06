@@ -9,6 +9,12 @@ interface PageHeaderProps {
  // rather than pointing at a route that doesn't exist.
  breadcrumbs?: { name: string; path?: string }[];
  backgroundImage?: string;
+ // Optional focal-point/zoom for backgroundImage (e.g. a CMS-editable blog
+ // post cover). Both no-ops unless backgroundImage is also set — every
+ // existing PageHeader call site is unaffected since these are new,
+ // optional props.
+ backgroundImagePosition?: string;
+ backgroundImageZoom?: number;
 }
 
 const IMAGE_WIDTHS = [480, 768, 1080, 1600, 2000];
@@ -20,7 +26,7 @@ const buildSrcSet = (url: string) => {
  return IMAGE_WIDTHS.map((w) => `${base}?${trWithoutWidth},w-${w} ${w}w`).join(", ");
 };
 
-const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage, backgroundImagePosition, backgroundImageZoom }: PageHeaderProps) => {
  const linkedCrumbs = breadcrumbs?.filter((c) => c.path) ?? [];
  const breadcrumbSchema = linkedCrumbs.length > 0 ? {
    "@context": "https://schema.org",
@@ -47,6 +53,15 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage }: PageHeade
  sizes="100vw"
  alt={title}
  className="w-full h-full object-cover"
+ style={
+ backgroundImagePosition || backgroundImageZoom
+ ? {
+ objectPosition: backgroundImagePosition || "50% 50%",
+ transform: `scale(${(backgroundImageZoom || 100) / 100})`,
+ transformOrigin: backgroundImagePosition || "50% 50%",
+ }
+ : undefined
+ }
  // @ts-expect-error — React 18.3 doesn't type fetchpriority yet; lowercase avoids the "unrecognized prop" warning until React 19
  fetchpriority="high"
  decoding="async"
