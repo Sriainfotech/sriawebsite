@@ -57,6 +57,23 @@ module.exports = {
     // keyword, so no dedicated synonym group was needed for this one — see
     // the before/after scores for confirmation either way.
 
+    // "any job openings right now" — was false-positive-matching Office
+    // Locations: the short generic word "any" fuzzy-matches it by coincidence
+    // (score ~0.003) in the tier2 per-word retry, and nothing in the query
+    // otherwise overlapped with the Careers entry's own vocabulary (its
+    // keywords are careers/career/sap/odoo/digital/transformation — no
+    // "job"/"opening"/"hiring" at all). Appending "careers" here gives the
+    // tier2 retry a near-exact keyword hit that outscores "any"'s coincidence
+    // outright — confirmed via before/after scoring, not just added on spec.
+    job: ['jobs', 'opening', 'openings', 'hiring', 'vacancy', 'vacancies', 'careers'],
+    jobs: ['job', 'opening', 'openings', 'hiring', 'vacancy', 'vacancies', 'careers'],
+    opening: ['job', 'jobs', 'openings', 'hiring', 'vacancy', 'vacancies', 'careers'],
+    openings: ['job', 'jobs', 'opening', 'hiring', 'vacancy', 'vacancies', 'careers'],
+    hiring: ['job', 'jobs', 'opening', 'openings', 'vacancy', 'vacancies', 'careers'],
+    vacancy: ['job', 'jobs', 'opening', 'openings', 'hiring', 'vacancies', 'careers'],
+    vacancies: ['job', 'jobs', 'opening', 'openings', 'hiring', 'vacancy', 'careers'],
+    careers: ['job', 'jobs', 'opening', 'openings', 'hiring', 'vacancy', 'vacancies'],
+
     // --- General business/product vocabulary (not tied to a specific gap) ---
     cost: ['pricing', 'price', 'fees', 'charges'],
     pricing: ['cost', 'price', 'fees', 'charges'],
