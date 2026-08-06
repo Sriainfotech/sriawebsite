@@ -469,7 +469,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {
             title: "Insights",
             items: [
-                { label: "Success Stories", link: "/about/customer-stories" },
+                // { label: "Success Stories", link: "/about/customer-stories" },
                 { label: "Blogs", link: "/insights/blogs" },
                 { label: "Newsroom", link: "/insights/newsroom" },
                 { label: "White Papers", link: "/insights/white-papers" },
@@ -484,10 +484,10 @@ const Navbar: React.FC<NavbarProps> = ({
             title: "About Us",
             items: [
                 { label: "Leadership", link: "/about/leadership" },
-                { label: "SAP Partner", link: "/about/sap-partner" },
+                // { label: "SAP Partner", link: "/about/sap-partner" },
                 { label: "Careers", link: "/about/careers" },
                 { label: "Alliances", link: "/about/alliances" },
-                { label: "Success Stories", link: "/about/customer-stories" },
+                // { label: "Success Stories", link: "/about/customer-stories" },
                 { label: "Events", link: "/about/events" },
                 { label: "Locations", link: "/about/locations" },
             ],

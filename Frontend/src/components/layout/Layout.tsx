@@ -49,13 +49,13 @@ const Layout = () => {
  <ClientsSection />
  </Suspense>
  <Suspense fallback={<div className="min-h-[360px]" />}>
- <SuccessStories />
+ {/* <SuccessStories /> */}
  </Suspense>
  <Suspense fallback={<div className="min-h-[300px]" />}>
  <EventsSection />
  </Suspense>
  <Suspense fallback={<div className="min-h-[220px]" />}>
- <TestimonialsSection />
+ {/* <TestimonialsSection /> */}
  </Suspense>
  <Suspense fallback={<div className="min-h-[260px]" />}>
  <CTASection />

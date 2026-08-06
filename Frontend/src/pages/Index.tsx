@@ -25,7 +25,7 @@ const Index = () => {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <HeroSection />
       <Suspense fallback={<div className="min-h-[420px]" />}>
-        <ClientsAndAssociations />
+        {/* <ClientsAndAssociations /> */}
       </Suspense>
       <Suspense fallback={<div className="min-h-[380px]" />}>
         <FeaturesSection />
@@ -46,7 +46,7 @@ const Index = () => {
         <ChairmanStatement />
       </Suspense>
       <Suspense fallback={null}>
-        <BlogPreviewSection />
+        {/* <BlogPreviewSection /> */}
       </Suspense>
       <Suspense fallback={<div className="min-h-[360px]" />}>
         <FAQSection />
