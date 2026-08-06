@@ -105,7 +105,7 @@ const FloatingButtons = () => {
       )} */}
 
       {/* IVC — hidden on phones, same reason as above */}
-      <a
+      {/* <a
         href="https://ivcsol.com/"
         target="_blank"
         rel="noopener noreferrer"
@@ -122,7 +122,7 @@ const FloatingButtons = () => {
           decoding="async"
           className="h-20 max-w-none object-contain"
         />
-      </a>
+      </a> */}
 
       {/* BSNL */}
       {/* <Link

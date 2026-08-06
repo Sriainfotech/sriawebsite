@@ -47,7 +47,7 @@ const CLIENTS: Client[] = [
   { name: "Stannik Technologies", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/stannik.png?tr=f-auto,q-auto,w-160" },
   { name: "OnFocus", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/onfocus.jpg?tr=f-auto,q-auto,w-160" },
   { name: "Magnify 360", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/magnify360.jpg?tr=f-auto,q-auto,w-160" },
-  { name: "IVC", country: "Hong Kong", flag: "🇭🇰", logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-160" },
+  // { name: "IVC", country: "Hong Kong", flag: "🇭🇰", logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-160" },
   { name: "TechLabs", country: "Kenya", flag: "🇰🇪", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/techlab_kenya.jpg?tr=f-auto,q-auto,w-160" },
   { name: "TechLabs", country: "United States", flag: "🇺🇸", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/techlabs_usa.jpg?tr=f-auto,q-auto,w-160" },
   { name: "CM2 IT Solutions", country: "India", flag: "🇮🇳", logo: "https://ik.imagekit.io/hps6th7vy/sria/clients/cm2.png?tr=f-auto,q-auto,w-160" },
@@ -89,12 +89,12 @@ const ASSOCIATIONS: Association[] = [
     highlight: true,
     // link: "/partners/bsnl",
   },
-  {
-    name: "IVC SAP Gold Partner",
-    tag: "SAP Gold",
-    logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320",
-    // link: "/partners/ivc-solutions",
-  },
+  // {
+  //   name: "IVC SAP Gold Partner",
+  //   tag: "SAP Gold",
+  //   logo: "https://ik.imagekit.io/hps6th7vy/sria/ivclogo.png?tr=f-auto,q-auto,w-320",
+  //   // link: "/partners/ivc-solutions",
+  // },
   {
     name: "T-Hub",
     tag: "Innovation Hub",

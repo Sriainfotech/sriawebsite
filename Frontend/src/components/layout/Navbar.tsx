@@ -507,7 +507,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <nav
                 className={`fixed top-0 w-full z-50 transition-all duration-300 ${getNavBackground()}`}
             >
-                <div className={`transition-all duration-300 bg-orange-500 text-white text-left font-medium text-sm overflow-hidden h-5 flex justify-end items-center`}>
+                {/* <div className={`transition-all duration-300 bg-orange-500 text-white text-left font-medium text-sm overflow-hidden h-5 flex justify-end items-center`}>
                     <div
                         style={{
                             whiteSpace: "nowrap",
@@ -518,10 +518,10 @@ const Navbar: React.FC<NavbarProps> = ({
                     >
                         IVC Consulting Group is our Global Partner, enhancing our international delivery capability and enabling seamless collaboration across SAP implementation, rollout, and support engagements worldwide. &nbsp;<a href="https://ivcsol.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        We're proud to be a Skill Solution Partner of BSNL, supporting telecom skilling initiatives across India. &nbsp;<Link to="/partners/bsnl" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</Link>
+                        We're proud to be a Skill Solution Partner of BSNL, supporting telecom skilling initiatives across India. &nbsp;<Link to="/partners/bsnl" style={{ textDecoration: "underline", opacity: 0.85 }}>Learn more →</Link> */}
                         {/* Our website is currently undergoing an upgrade to improve your browsing experience. */}
-                    </div>
-                </div>
+                    {/* </div>
+                </div> */}
 
                 <div className="w-full h-full px-4 sm:px-6 lg:px-8">
                     <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-16">
