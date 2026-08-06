@@ -1,4 +1,5 @@
 const Fuse = require('fuse.js');
+const BM25 = require('okapibm25').default;
 const KBEntry = require('../models/KBEntry');
 const SYNONYMS = require('./synonyms');
 
@@ -37,6 +38,122 @@ const FALLBACK_MESSAGE =
 const FALLBACK_LINK = '/contact';
 
 let fuse = null;
+
+// --- BM25 (second scoring signal, added alongside Fuse — see matchQuery()) ---
+//
+// Why BM25 alongside Fuse, and why this library: Fuse's Bitap fuzzy matcher
+// scores on edit-distance closeness of the WHOLE query string (or a single
+// retried word — see searchWords()/searchWordsFiltered() above), so a real
+// keyword buried in a long, rambling, unfamiliar-phrasing query can get
+// diluted or simply never surface if it isn't the word the word-retry
+// tie-break happens to pick. BM25 scores by term overlap weighted by inverse
+// document frequency across the WHOLE corpus, so a rare, on-topic word
+// contributes strongly to its true entry's score regardless of how much
+// unrelated filler surrounds it in the query — structurally the right tool
+// for "important word buried among noise" (see matchQuery() below for how
+// this is actually combined with Fuse, and why).
+//
+// Picked `okapibm25` over `wink-bm25-text-search`: this corpus is ~85 tiny
+// documents rebuilt from scratch on every buildIndex() call (same lifecycle
+// Fuse already has), so there's no need for wink's persistent/incremental
+// index (add/consolidate workflow) or its own tokenizer — that pulls in
+// wink-nlp + wink-nlp-utils + a full wink-eng-lite-web-model language model
+// as dependencies for a problem this small. okapibm25 is a single pure
+// function — `BM25(documents, queryTokens, {k1, b})` — with zero
+// dependencies, which fits the codebase's existing preference for small,
+// inspectable implementations over heavier NLP dependencies (see the
+// hand-rolled stemmer comment above). We already do our own
+// normalize/stem/tokenize; okapibm25 just needs strings in and gives scores
+// out, which is exactly the shape needed to reuse that existing pipeline.
+const BM25_CONSTANTS = { k1: 1.2, b: 0.75 }; // library defaults, stated explicitly rather than left implicit
+
+// Corpus fields: question_patterns + keywords (like Fuse), PLUS the answer
+// text (unlike Fuse, which never indexes answer prose). Fuse's own keys
+// deliberately exclude answer text — full paragraphs dilute Bitap's
+// whole-string scoring. BM25 doesn't have that failure mode (IDF already
+// discounts common words), and the answer is often the ONLY place a
+// relevant word lives before it's been promoted to a curated keyword/pattern
+// (e.g. "spreadsheets" appears in Auto Extract's answer but not its
+// keywords) — including it is what lets BM25 catch a buried word Fuse
+// structurally can't see at all. question_patterns/keywords are repeated
+// (see PATTERN_REPEAT/KEYWORD_REPEAT) to approximate Fuse's 0.7/0.3 key
+// weighting, since okapibm25's plain document-string API has no native
+// per-field weight — repetition inflates term frequency for those fields
+// the same directional way a real field weight would, without needing a
+// fork or a heavier library with multi-field support.
+const PATTERN_REPEAT = 2;
+const KEYWORD_REPEAT = 2;
+
+// Gate for trusting a BM25 hit — deliberately NOT a mirror of Fuse's
+// CONFIDENCE_THRESHOLD, because raw BM25 scores on this corpus don't sit on
+// a comparable fixed scale (measured: a genuine single-keyword match like
+// "whats gatecheck" scores ~4.6, while a 4-word NONSENSE query
+// ("purple giraffe spreadsheet quantum") scores ~4.5 too, purely because one
+// of its words ("spreadsheet") coincidentally, genuinely appears in one
+// entry's answer text — an absolute-score-only cutoff cannot tell these
+// apart). What DOES separate them, measured against this corpus: what
+// fraction of the query's own (stemmed, stopword-filtered) tokens actually
+// appear in the winning document at all — "coverage". Genuine multi-word
+// matches cover most/all of their tokens (#13 "automate invoice processing":
+// 0.60; #4 "get in touch...": 1.00); the nonsense case covers only 1 of its
+// 4 tokens (0.25). BM25_MIN_SCORE stays only as a low sanity floor — the
+// real gate is coverage.
+const BM25_MIN_COVERAGE = 0.5;
+const BM25_MIN_SCORE = 3;
+
+let bm25Corpus = null; // string[], one per indexed entry, same order as bm25Entries
+let bm25Entries = null; // same array Fuse indexes (see buildIndex()) — keeps `entry` identical either way
+
+function bm25DocText(indexedEntry) {
+    // question_patterns/keywords on `indexedEntry` are already normalize()+stemText()'d
+    // by buildIndex() (same fields Fuse indexes) — reused as-is, not re-derived.
+    const patterns = indexedEntry.question_patterns.join(' ');
+    const keywords = indexedEntry.keywords.join(' ');
+    const answer = stemText(normalize(indexedEntry.answer || ''));
+    const parts = [];
+    for (let i = 0; i < PATTERN_REPEAT; i++) parts.push(patterns);
+    for (let i = 0; i < KEYWORD_REPEAT; i++) parts.push(keywords);
+    parts.push(answer);
+    return parts.join(' ').trim();
+}
+
+// Same GENERIC_STOPWORDS set used below by searchWordsFiltered() (defined
+// further down this file) is reused here too — declared once, used by both,
+// see the set's own comment for what it's for and why "guys" isn't in it
+// (that's synonyms.js's job, not this list's).
+function bm25QueryTokens(text) {
+    return [...new Set(text.split(' ').filter(Boolean))].filter(
+        (w) => w.length >= FUSE_OPTIONS.minMatchCharLength && !GENERIC_STOPWORDS.has(w),
+    );
+}
+
+// Runs BM25 over the whole corpus for the given (already stemmed) query
+// tokens and returns the top hit plus its coverage — or null if there are no
+// usable tokens or no corpus yet.
+function bm25Search(tokens) {
+    if (!bm25Corpus || !bm25Corpus.length || !tokens.length) return null;
+    const scores = BM25(bm25Corpus, tokens, BM25_CONSTANTS);
+    let bestIdx = -1;
+    let bestScore = -Infinity;
+    for (let i = 0; i < scores.length; i++) {
+        if (scores[i] > bestScore) {
+            bestScore = scores[i];
+            bestIdx = i;
+        }
+    }
+    if (bestIdx === -1 || !Number.isFinite(bestScore)) return null;
+    const winningText = bm25Corpus[bestIdx];
+    const covered = tokens.filter((t) => winningText.includes(t));
+    return {
+        item: bm25Entries[bestIdx],
+        score: bestScore,
+        coverage: covered.length / tokens.length,
+    };
+}
+
+function passesBm25Gate(hit) {
+    return !!hit && hit.score >= BM25_MIN_SCORE && hit.coverage >= BM25_MIN_COVERAGE;
+}
 
 // Strip punctuation and collapse whitespace so "What's GateCheck??" and
 // "whats gatecheck" normalize to comparable strings before they ever reach
@@ -192,6 +309,14 @@ async function buildIndex() {
         keywords: stemEntryFields(entry.keywords),
     }));
     fuse = new Fuse(indexed, FUSE_OPTIONS);
+
+    // BM25 corpus is built from the SAME `indexed` array/objects Fuse just
+    // indexed (not a second copy re-derived from `entries`) — so a BM25 hit's
+    // `.item` is reference-identical in shape to a Fuse hit's `.item`, and
+    // question_patterns/keywords are stemmed exactly once, not twice.
+    bm25Entries = indexed;
+    bm25Corpus = indexed.map(bm25DocText);
+
     return fuse;
 }
 
@@ -384,6 +509,7 @@ async function matchQuery({ message, sessionContext } = {}) {
             confidence: 1 - directHit.score,
             usedContext: false,
             isFallback: false,
+            matchedVia: 'fuse',
         };
     }
     // Stemmed-alone missed — retry with synonym expansion for the
@@ -398,6 +524,30 @@ async function matchQuery({ message, sessionContext } = {}) {
             confidence: 1 - expandedHit.score,
             usedContext: false,
             isFallback: false,
+            matchedVia: 'fuse',
+        };
+    }
+    // Both of Fuse's own tiers missed — try BM25 before giving up or falling
+    // back to session context. Deliberately positioned AFTER both Fuse tiers,
+    // never before: measured during calibration that BM25 alone disagrees
+    // with Fuse on at least one currently-passing query (#16 "do you guys
+    // work with odoo" — Fuse's tier2 correctly resolves this via the
+    // "work with" synonym group, while BM25 alone ranks an unrelated entry
+    // higher). Comparing the two signals' scores directly isn't safe because
+    // they're on different, not-directly-comparable scales — so rather than
+    // "take whichever score is higher" for every query, BM25 only ever gets
+    // to answer when Fuse has nothing: it can rescue a query Fuse would
+    // otherwise drop, but it can never outvote a Fuse tier that already
+    // succeeded. See BM25_MIN_COVERAGE's comment for why coverage (not raw
+    // score) is the real accept/reject gate here.
+    const bm25Hit = bm25Search(bm25QueryTokens(stemExpanded(normalized)));
+    if (passesBm25Gate(bm25Hit)) {
+        return {
+            entry: bm25Hit.item,
+            confidence: bm25Hit.coverage,
+            usedContext: false,
+            isFallback: false,
+            matchedVia: 'bm25',
         };
     }
 
@@ -411,6 +561,7 @@ async function matchQuery({ message, sessionContext } = {}) {
                 confidence: 1 - contextHit.score,
                 usedContext: true,
                 isFallback: false,
+                matchedVia: 'fuse',
             };
         }
         const contextExpandedHit = searchWordsFiltered(stemExpanded(mergedNormalized));
@@ -420,6 +571,19 @@ async function matchQuery({ message, sessionContext } = {}) {
                 confidence: 1 - contextExpandedHit.score,
                 usedContext: true,
                 isFallback: false,
+                matchedVia: 'fuse',
+            };
+        }
+        // Same BM25 rescue, one more time, against the context-merged query —
+        // same reasoning and same gate as the no-context attempt above.
+        const contextBm25Hit = bm25Search(bm25QueryTokens(stemExpanded(mergedNormalized)));
+        if (passesBm25Gate(contextBm25Hit)) {
+            return {
+                entry: contextBm25Hit.item,
+                confidence: contextBm25Hit.coverage,
+                usedContext: true,
+                isFallback: false,
+                matchedVia: 'bm25',
             };
         }
     }
