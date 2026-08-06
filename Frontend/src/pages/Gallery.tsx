@@ -227,7 +227,7 @@ const stats = [
   { value: "50+", label: "Team Members", Icon: Users },
   // { value: "3", label: "Global Offices", Icon: MapPin },
   // { value: "5+", label: "Years Together", Icon: Heart },
-  { value: "50+", label: "Events Per Year", Icon: Camera },
+  { value: "3+", label: "Events Per Year", Icon: Camera },
 ];
 
 const countFor = (cat: string) =>
