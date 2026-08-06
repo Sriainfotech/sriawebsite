@@ -156,9 +156,9 @@ async function inlineCriticalCss(html) {
   }
 }
 
-// GTM and Tidio are deliberately deferred client-side (first interaction /
-// idle time — see index.html) so they never compete with the LCP-critical
-// hero. A prerender navigation sits on the page long enough (up to 60s,
+// GTM is deliberately deferred client-side (first interaction / idle time —
+// see index.html) so it never competes with the LCP-critical hero. A
+// prerender navigation sits on the page long enough (up to 60s,
 // waiting for networkidle0) for those deferred timers to fire anyway — and
 // since GTM containers can inject arbitrary further third-party tags once
 // they run (GA4's own gtag.js, remarketing pixels, whatever else is

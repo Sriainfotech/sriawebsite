@@ -160,45 +160,6 @@
 
   <!-- React Entry -->
   <script type="module" src="/src/main.tsx"></script>
-
-  <!--
-    Tidio Chat — deferred to load during browser idle time rather than
-    immediately (doesn't compete with initial render), AND gated on the
-    "functional" cookie category being consented to, the same way GTM is
-    gated on "analytics" above.
-  -->
-  <script>
-    (function () {
-      if (window.__PRERENDERING__) return;
-
-      var started = false;
-      function loadTidio() {
-        if (started) return;
-        started = true;
-        var s = document.createElement('script');
-        s.src = '//code.tidio.co/no8lu53bllk9ahvwl08kuvxxh9xm1pbg.js';
-        s.async = true;
-        document.body.appendChild(s);
-      }
-
-      function armTidio() {
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadTidio, { timeout: 5000 });
-        } else {
-          setTimeout(loadTidio, 3000);
-        }
-      }
-
-      var consent = null;
-      try { consent = JSON.parse(localStorage.getItem('sria_cookie_consent')); } catch (e) {}
-      if (consent && consent.prefs && consent.prefs.functional) armTidio();
-
-      window.__sriaOnConsent = window.__sriaOnConsent || [];
-      window.__sriaOnConsent.push(function (prefs) {
-        if (prefs.functional) armTidio();
-      });
-    })();
-  </script>
 </body>
 
 </html>
