@@ -201,6 +201,37 @@ function computeDepth(answer) {
 // that class of question a real, matchable answer.
 const OVERVIEW_ENTRIES = [
     {
+        category: 'About',
+        subcategory: 'Overview',
+        // General "what does sria do" questions need to out-rank the
+        // Solutions/Overview entry below on Fuse's score, since both entries
+        // share SAP-ish vocabulary. Keeping this entry's own keywords/patterns
+        // focused on company-identity phrasing (not SAP terms) is what keeps
+        // "what does sria do" landing here instead of on Solutions/Overview —
+        // see build-kb.test scores in the KB build log if this ever regresses.
+        keywords: ['sria', 'infotech', 'company', 'do', 'about', 'overview', 'who'],
+        question_patterns: [
+            'what does sria do',
+            'what does sria infotech do',
+            'who is sria infotech',
+            'about sria infotech',
+            'what do you do',
+            'tell me about sria',
+            'tell me about sria infotech',
+            'what is sria infotech',
+        ],
+        answer:
+            "Sria Infotech is a SAP consulting and digital transformation company, helping enterprises implement, integrate and support SAP, Odoo and data platforms across India and global markets. We also build our own in-house products — Auto Extract, GateCheck, Jatayu, NxDesk and Nxify. Want the details on our SAP solutions specifically?",
+        link: null,
+        depth: 'full',
+        // targetIds are wired up after all OVERVIEW_ENTRIES are upserted below
+        // (they reference the other three entries' real _ids, which only
+        // exist once those documents have been created).
+        follow_up_options: [],
+        escalation_cta: 'Talk to our team',
+        escalation_link: '/contact',
+    },
+    {
         category: 'Products',
         subcategory: 'Overview',
         keywords: ['products', 'product', 'autoextract', 'nxdesk', 'nxify', 'jatayu', 'gatecheck'],
@@ -303,6 +334,25 @@ async function main() {
         if (result === 'created') created++;
         else if (result === 'updated') updated++;
         else skippedManual++;
+    }
+
+    // Wire the About/Overview entry's follow_up_options to the real _ids of
+    // the sibling overview entries — these only exist once the loop above has
+    // run, so this has to happen as a second pass rather than inline in
+    // OVERVIEW_ENTRIES. Skipped if About/Overview was hand-edited (editedManually)
+    // or if a sibling overview entry is missing for any reason.
+    const aboutOverview = await KBEntry.findOne({ category: 'About', subcategory: 'Overview' });
+    if (aboutOverview && !aboutOverview.editedManually) {
+        const [solutionsOverview, servicesOverview, productsOverview] = await Promise.all([
+            KBEntry.findOne({ category: 'Solutions', subcategory: 'Overview' }),
+            KBEntry.findOne({ category: 'Services', subcategory: 'Overview' }),
+            KBEntry.findOne({ category: 'Products', subcategory: 'Overview' }),
+        ]);
+        const followUps = [];
+        if (solutionsOverview) followUps.push({ label: 'SAP solutions breakdown', targetId: solutionsOverview._id });
+        if (servicesOverview) followUps.push({ label: 'Our services', targetId: servicesOverview._id });
+        if (productsOverview) followUps.push({ label: 'Our products', targetId: productsOverview._id });
+        await KBEntry.updateOne({ _id: aboutOverview._id }, { $set: { follow_up_options: followUps } });
     }
 
     const raw = fs.readFileSync(ROUTE_META_FILE, 'utf8');

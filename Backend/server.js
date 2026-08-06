@@ -14,11 +14,30 @@ const NotifySubscriber = require('./models/NotifySubscriber');
 const blogPublicRoutes = require('./routes/blogPublic');
 const adminRoutes = require('./routes/admin');
 const ChatLog = require('./models/ChatLog');
-const { matchQuery, refreshIndex } = require('./chatbot/matcher');
+const { matchQuery, refreshIndex, normalize, FALLBACK_LINK } = require('./chatbot/matcher');
 const sessionStore = require('./chatbot/sessionStore');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Exact whole-message matches only — never a substring/startsWith check.
+// This is the entire safety mechanism: "yes tell me about nxdesk instead"
+// normalizes to that whole phrase, which isn't in this set, so it falls
+// through to the normal matcher untouched. Only a message that IS one of
+// these short phrases, in full, short-circuits to escalation.
+const AFFIRMATIVE_REPLIES = new Set([
+    'yes', 'yeah', 'yep', 'yup', 'sure', 'ok', 'okay', 'alright', 'fine',
+    'please', 'please do', 'do that', 'go ahead', 'sounds good',
+    'yes please', 'yes thanks',
+]);
+
+// Reuses matcher.js's normalize() (punctuation-stripped, lowercased,
+// whitespace-collapsed) so "Yes!", "  ok.", "Sure," all normalize the same
+// way the KB matcher itself already does — one definition of "normalize",
+// not two slightly-different ones drifting apart later.
+function isAffirmativeReply(message) {
+    return AFFIRMATIVE_REPLIES.has(normalize(message));
+}
 
 // ✅ CORS — use the cors package properly
 app.use(cors({
@@ -241,6 +260,40 @@ app.post('/api/chatbot/query', async (req, res) => {
 
     try {
         const sessionContext = sessionStore.getSession(sessionId);
+
+        // Short-circuit: a bare "yes"/"sure"/etc. right after we ourselves
+        // offered escalation is almost certainly agreeing to that offer, not
+        // a new question — running it through Fuse would just fail and
+        // re-offer escalation, looping (the bug this exists to fix). Only
+        // fires on an EXACT short affirmative (see isAffirmativeReply), so
+        // "yes tell me about nxdesk instead" is untouched and reaches the
+        // matcher normally below.
+        if (sessionContext?.lastWasFallbackEscalation && isAffirmativeReply(message)) {
+            const chatLog = new ChatLog({
+                sessionId,
+                question: message,
+                matchedEntryId: null,
+                confidenceScore: 0,
+                matchType: 'escalation_shortcut',
+                helpful: null,
+            });
+            chatLog.save().catch(err => console.error('Error saving ChatLog:', err));
+
+            sessionStore.updateSession(sessionId, { fallbackEscalation: false });
+
+            return res.status(200).json({
+                success: true,
+                answer: "Great — here's how to reach our team:",
+                link: null,
+                category: null,
+                followUpOptions: [],
+                escalationCta: 'Talk to our team',
+                escalationLink: FALLBACK_LINK,
+                isFallback: false,
+                logId: chatLog._id,
+            });
+        }
+
         const result = await matchQuery({ message, sessionContext });
         const { entry, confidence, isFallback } = result;
 
@@ -253,6 +306,7 @@ app.post('/api/chatbot/query', async (req, res) => {
             question: message,
             matchedEntryId: entry ? entry._id : null,
             confidenceScore: confidence || 0,
+            matchType: isFallback ? 'fallback' : 'kb_match',
             helpful: null,
         });
         chatLog.save().catch(err => console.error('Error saving ChatLog:', err));
@@ -262,7 +316,10 @@ app.post('/api/chatbot/query', async (req, res) => {
                 entryId: entry._id,
                 topic: entry.subcategory,
                 category: entry.category,
+                fallbackEscalation: false,
             });
+        } else if (isFallback) {
+            sessionStore.updateSession(sessionId, { fallbackEscalation: true });
         }
 
         res.status(200).json({

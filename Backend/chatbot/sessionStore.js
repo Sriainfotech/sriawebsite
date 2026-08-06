@@ -38,18 +38,26 @@ function getSession(sessionId) {
 // Creates the session if it doesn't exist, or merges the given fields into
 // the existing one. Any field left undefined keeps its previous value.
 // updatedAt is always refreshed, which also resets the expiry clock.
-function updateSession(sessionId, { entryId, topic, category } = {}) {
+function updateSession(sessionId, { entryId, topic, category, fallbackEscalation } = {}) {
     const existing = sessions.get(sessionId);
     const session = existing || {
         lastEntryId: null,
         lastTopic: null,
         lastCategory: null,
+        // True only immediately after a genuine fallback that offered
+        // escalation — lets server.js recognize a bare "yes"/"sure" reply
+        // as agreeing to that offer instead of running it through the
+        // matcher (which would just fail and re-offer, looping). Reset to
+        // false on any real match, and on the escalation-shortcut reply
+        // itself, so it only ever fires immediately after a fresh fallback.
+        lastWasFallbackEscalation: false,
         updatedAt: null,
     };
 
     if (entryId !== undefined) session.lastEntryId = entryId;
     if (topic !== undefined) session.lastTopic = topic;
     if (category !== undefined) session.lastCategory = category;
+    if (fallbackEscalation !== undefined) session.lastWasFallbackEscalation = fallbackEscalation;
     session.updatedAt = new Date();
 
     sessions.set(sessionId, session);

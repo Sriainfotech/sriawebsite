@@ -18,13 +18,13 @@ const leaders = [
         quote: "Innovation is not about being first — it is about being relentlessly relevant in a world that never stops evolving.",
         body: "Sria Infotech was born from a conviction that technology, when thoughtfully applied, can unlock the full potential of any enterprise. From our earliest days, we set out not merely to deliver solutions, but to become the strategic backbone on which our clients build their most ambitious futures.",
     },
-    {
-        role: "Co-Founder",
-        name: "Ravikumar Rangari",
-        image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
-        quote: "Exceptional teams build exceptional products. Culture is the architecture that makes everything else possible.",
-        body: "At Sria Infotech, our people are our greatest differentiator. I have dedicated my tenure to fostering an environment where curiosity thrives, accountability is shared, and every team member feels the weight and the privilege of co-creating our clients' success stories.",
-    },
+    // {
+    //     role: "Co-Founder",
+    //     name: "Ravikumar Rangari",
+    //     image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
+    //     quote: "Exceptional teams build exceptional products. Culture is the architecture that makes everything else possible.",
+    //     body: "At Sria Infotech, our people are our greatest differentiator. I have dedicated my tenure to fostering an environment where curiosity thrives, accountability is shared, and every team member feels the weight and the privilege of co-creating our clients' success stories.",
+    // },
     // {
     //     role: "Co-Founder & CTO",
     //     name: "Arjun Venkatesh",

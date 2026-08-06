@@ -34,6 +34,32 @@ type SpeechRecognitionLike = {
 // treating the user as done talking and auto-stopping the mic.
 const SILENCE_AUTO_STOP_MS = 2000;
 
+// speechSynthesis.getVoices() is entirely device/browser-dependent — with no
+// explicit selection, Chrome/Windows/Android/iOS each ship a different
+// default voice (often a different gender), which is what caused the
+// male/female inconsistency. This priority list picks the same voice
+// wherever it's installed, in descending preference, before falling back to
+// whatever en-US (then any English, then anything) is actually available.
+const PREFERRED_VOICE_NAMES = [
+  "Google US English", // Chrome/Android
+  "Microsoft Aria Online (Natural) - English (United States)", // Edge (Windows 11)
+  "Microsoft Jenny Online (Natural) - English (United States)", // Edge (older)
+  "Samantha", // Safari/iOS/macOS
+];
+
+// Picks a consistent voice from whatever the browser reports, in priority
+// order, with a graceful fallback if none of the preferred names are
+// installed locally. Never throws on an empty/undefined list.
+function pickPreferredVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
+  if (!voices || voices.length === 0) return null;
+  const enUS = voices.filter((v) => v.lang === "en-US");
+  for (const name of PREFERRED_VOICE_NAMES) {
+    const match = enUS.find((v) => v.name === name) ?? voices.find((v) => v.name === name);
+    if (match) return match;
+  }
+  return enUS[0] ?? voices.find((v) => v.lang?.startsWith("en")) ?? voices[0] ?? null;
+}
+
 const WELCOME_MESSAGE: ChatMessageData = {
   id: "welcome",
   role: "bot",
@@ -103,6 +129,23 @@ const ChatWidget = () => {
     [],
   );
   const speechSynthesisSupported = useMemo(() => typeof window !== "undefined" && "speechSynthesis" in window, []);
+  // Cached selected voice. getVoices() often returns [] on first call (Chrome
+  // loads voices asynchronously) so this is (re)computed on mount AND on the
+  // voiceschanged event below — speak() falls back to no explicit voice
+  // (still fine, just browser-default) if this hasn't resolved yet.
+  const selectedVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
+
+  useEffect(() => {
+    if (!speechSynthesisSupported) return;
+    const loadVoice = () => {
+      const voices = window.speechSynthesis.getVoices();
+      const picked = pickPreferredVoice(voices);
+      if (picked) selectedVoiceRef.current = picked;
+    };
+    loadVoice();
+    window.speechSynthesis.addEventListener("voiceschanged", loadVoice);
+    return () => window.speechSynthesis.removeEventListener("voiceschanged", loadVoice);
+  }, [speechSynthesisSupported]);
 
   useEffect(() => {
     if (threadRef.current) {
@@ -149,6 +192,11 @@ const ChatWidget = () => {
     // Cancel whatever's currently speaking so answers never overlap/queue.
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    // If voices haven't resolved yet (e.g. voiceschanged hasn't fired),
+    // selectedVoiceRef.current is null and this just leaves utterance.voice
+    // unset — browser default, same as before this fix, never a crash.
+    if (selectedVoiceRef.current) utterance.voice = selectedVoiceRef.current;
     window.speechSynthesis.speak(utterance);
   };
 

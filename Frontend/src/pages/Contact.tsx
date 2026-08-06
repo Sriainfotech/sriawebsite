@@ -13,7 +13,7 @@ const offices = [
     title: "India – Kondapur",
     flag: "🇮🇳",
     address: "303, 3ʳᵈFloor, Udaya Vensar Apartments, Rd Number 1, Hanuman Nagar, Kothaguda, Kondapur, Hyderabad, Telangana 500084",
-    phone: "+91 97013 14138",
+    phone: "+91 90595 85039",
     email: "hr@sriainfotech.com",
   },
   {
@@ -34,7 +34,7 @@ const offices = [
     title: "India – T-Hub, Hyderabad",
     flag: "🇮🇳",
     address: "Plot No 1/C, Sy No 83/1, Raidurgam, Knowledge City Rd, Panmaktha, Hyderabad, Serilingampalle (M), Telangana 500032",
-    phone: "+91 97013 14138",
+    phone: "+91 90595 85039",
     email: "hr@sriainfotech.com",
   },
   {
@@ -164,7 +164,7 @@ const Contact = () => {
               {/* Quick contacts */}
               <div className="flex flex-col gap-3">
                 {[
-                  { icon: Phone, label: "Call Us", value: "+91 97013 14138", href: "tel:+919701314138" },
+                  { icon: Phone, label: "Call Us", value: "+91 90595 85039", href: "tel:+919059585039" },
                   { icon: Mail, label: "Email Us", value: "hr@sriainfotech.com", href: "mailto:hr@sriainfotech.com" },
                   { icon: MapPin, label: "Head Office", value: "Kondapur, Hyderabad, India", href: null },
                 ].map((item, i) => (

@@ -36,15 +36,15 @@ const leaders = [
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
   },
-  {
-    name: "Ravikumar Rangari",
-    designation: "Co-Founder, Executive Chairman — Sria Group of Companies",
-    description:
-      "Co-Founder, Executive Chairman - Sria Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
-    linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
-    email: "ravirangari@sriainfotech.com",
-  },
+  // {
+  //   name: "Ravikumar Rangari",
+  //   designation: "Co-Founder, Executive Chairman — Sria Group of Companies",
+  //   description:
+  //     "Co-Founder, Executive Chairman - Sria Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
+  //   image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
+  //   linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
+  //   email: "ravirangari@sriainfotech.com",
+  // },
   {
     name: "Vinod Kumar Burra",
     designation: "COO — Sria Infotech",

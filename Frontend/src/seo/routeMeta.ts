@@ -291,7 +291,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/solutions/business": {
     title: "SAP Business Network Solutions | Sria Infotech",
     description:
-      "SAP Business Network implementation and support services from Sria Infotech, simplifying freight billing, disruption alerts, and carrier collaboration for real-time global logistics visibility. Contact Sria Infotech to explore how this fits your organization's roadmap.",
+      "SAP Business Network implementation and support services from Sria Infotech, covering freight collaboration, freight settlement, global track and trace, and carrier optimization, with integration into SAP S/4HANA and ECC. Contact Sria Infotech to explore how this fits your organization's roadmap.",
   },
   "/solutions/manufacturing-logistics": {
     title: "SAP Manufacturing & Logistics Solutions | Sria Infotech",

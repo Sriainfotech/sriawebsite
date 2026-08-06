@@ -72,7 +72,7 @@ const Layout = () => {
  */}
  <a
  aria-label="Chat on WhatsApp"
- href={`https://wa.me/919701314138?text=${encodeURIComponent("Hi, I visited your website and would like to know more about your IT services.")}`}
+ href={`https://wa.me/919059585039?text=${encodeURIComponent("Hi, I visited your website and would like to know more about your IT services.")}`}
  target="_blank"
  rel="noreferrer noopener"
  className="fixed right-2 sm:right-2 bottom-[136px] sm:bottom-[200px] z-[9999] bg-green-600 text-white rounded-full w-8 h-8 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-2xl transition-all"

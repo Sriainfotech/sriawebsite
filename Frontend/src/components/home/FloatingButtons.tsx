@@ -44,7 +44,7 @@ const FloatingButtons = () => {
 
   const handlePhoneTap = () => {
     if (!isMobile) {
-      window.location.href = "tel:+919701314138";
+      window.location.href = "tel:+919059585039";
       return;
     }
 
@@ -53,7 +53,7 @@ const FloatingButtons = () => {
       setPhoneOpen(!phoneOpen);
       setTimeout(() => (phoneTapRef.current = 0), 350);
     } else if (phoneTapRef.current === 2) {
-      window.location.href = "tel:+919701314138";
+      window.location.href = "tel:+919059585039";
       phoneTapRef.current = 0;
     }
   };
@@ -149,7 +149,7 @@ const FloatingButtons = () => {
       {/* PHONE */}
       <button
         type="button"
-        aria-label="Call Sria Infotech: +91 97013 14138"
+        aria-label="Call Sria Infotech: +91 90595 85039"
         className={`
  bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
  ${phoneOpen ? "w-[180px]" : "w-12"}
@@ -163,7 +163,7 @@ const FloatingButtons = () => {
         </div>
 
         <div className={`whitespace-nowrap text-white font-medium pr-4 transition-opacity duration-300 ${phoneOpen ? "opacity-100" : "opacity-0"}`}>
-          +91 97013 14138
+          +91 90595 85039
         </div>
       </button>
 
