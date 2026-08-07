@@ -535,7 +535,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                     width={112}
                                     height={112}
                                     decoding="async"
-                                    className="h-auto w-28"
+                                    className="h-auto w-28 pt-4"
                                 />
                             </Link>
                         </div>
