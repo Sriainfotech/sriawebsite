@@ -577,7 +577,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 Blog
                             </Link>
-                            <a
+                            {/* <a
                                 href="https://nxsysdigital.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -592,7 +592,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
                                 NxGen Tech Academy
-                            </a>
+                            </a> */}
                             <a
                                 href="/sap-analytics"
                                 target="_blank"
@@ -601,14 +601,14 @@ const Navbar: React.FC<NavbarProps> = ({
                             >
                                 SAP Analytics
                             </a>
-                            <Link
+                            {/* <Link
                                 to="/app-store"
                                 className="flex items-center gap-1.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white text-sm px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                                 title="App Store"
                             >
                                 <LayoutGrid className="w-4 h-4" />
                                 Apps
-                            </Link>
+                            </Link> */}
                         </div>
 
                         <div className="flex items-center space-x-3">
@@ -691,7 +691,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                     Blog
                                 </Link>
                             </div>
-                            <div className="border-b border-gray-700">
+                            {/* <div className="border-b border-gray-700">
                                 <a
                                     href="https://nxsysdigital.com/"
                                     target="_blank"
@@ -710,7 +710,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     NxGen Tech Academy
                                 </a>
-                            </div>
+                            </div> */}
                             <div className="border-b border-gray-700">
                                 <a
                                     href="/sap-analytics"
@@ -722,7 +722,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                     SAP Analytics
                                 </a>
                             </div>
-                            <div className="pt-2 pb-1">
+                            {/* <div className="pt-2 pb-1">
                                 <Link
                                     to="/app-store"
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -731,7 +731,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                     <LayoutGrid className="w-4 h-4" />
                                     App Store
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
