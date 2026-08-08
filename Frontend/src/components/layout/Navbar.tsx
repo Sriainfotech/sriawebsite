@@ -106,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
             {layout === "single" ? (
                 <div
-                    className={`absolute left-0 right-0 z-50 top-10 transition-all duration-300 ${activeDropdown === id
+                    className={`absolute left-0 right-0 z-50 top-12 transition-all duration-300 ${activeDropdown === id
                         ? "opacity-100 visible translate-y-0"
                         : "opacity-0 invisible -translate-y-4"
                         }`}
@@ -127,7 +127,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </div>
             ) : layout === "nested" ? (
                 <div
-                    className={`absolute left-0 z-50 top-10 transition-all duration-300 ${activeDropdown === id
+                    className={`absolute left-0 z-50 top-12 transition-all duration-300 ${activeDropdown === id
                         ? "opacity-100 visible translate-y-0"
                         : "opacity-0 invisible -translate-y-4"
                         }`}
@@ -184,7 +184,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </div>
             ) : (
                 <div
-                    className={`fixed top-20 left-0 right-0 z-50 transition-all duration-300 ${activeDropdown === id
+                    className={`fixed top-24 left-0 right-0 z-50 transition-all duration-300 ${activeDropdown === id
                         ? "opacity-100 visible translate-y-0"
                         : "opacity-0 invisible -translate-y-4"
                         }`}
@@ -469,7 +469,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {
             title: "Insights",
             items: [
-                // { label: "Success Stories", link: "/about/customer-stories" },
+                { label: "Success Stories", link: "/about/customer-stories" },
                 { label: "Blogs", link: "/insights/blogs" },
                 { label: "Newsroom", link: "/insights/newsroom" },
                 { label: "White Papers", link: "/insights/white-papers" },
@@ -487,7 +487,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 // { label: "SAP Partner", link: "/about/sap-partner" },
                 { label: "Careers", link: "/about/careers" },
                 { label: "Alliances", link: "/about/alliances" },
-                // { label: "Success Stories", link: "/about/customer-stories" },
+                { label: "Success Stories", link: "/about/customer-stories" },
                 { label: "Events", link: "/about/events" },
                 { label: "Locations", link: "/about/locations" },
             ],
@@ -524,7 +524,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </div> */}
 
                 <div className="w-full h-full px-4 sm:px-6 lg:px-8">
-                    <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-16">
+                    <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1600px] flex items-center justify-between h-20">
                         <div className="flex flex-row items-center">
                             <Link to="/" className="font-bold flex flex-row items-center">
                                 <img
@@ -535,7 +535,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                     width={112}
                                     height={112}
                                     decoding="async"
-                                    className="h-auto w-28 pt-4"
+                                    className="h-auto w-28 pt-2"
                                 />
                             </Link>
                         </div>
@@ -565,18 +565,18 @@ const Navbar: React.FC<NavbarProps> = ({
                                 sections={aboutSections}
                                 layout="single"
                             />
-                            {/* <Link
+                            <Link
                                 to="/gallery"
                                 className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
                                 Our Culture
-                            </Link> */}
-                            {/* <Link
+                            </Link>
+                            <Link
                                 to="/blog"
                                 className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
                                 Blog
-                            </Link> */}
+                            </Link>
                             <a
                                 href="https://nxsysdigital.com/"
                                 target="_blank"
@@ -673,7 +673,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 sections={aboutSections}
                                 id="mobile-about"
                             />
-                            {/* <div className="border-b border-gray-700">
+                            <div className="border-b border-gray-700">
                                 <Link
                                     to="/gallery"
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -681,8 +681,8 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     Our Culture
                                 </Link>
-                            </div> */}
-                            {/* <div className="border-b border-gray-700">
+                            </div>
+                            <div className="border-b border-gray-700">
                                 <Link
                                     to="/blog"
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -690,7 +690,7 @@ const Navbar: React.FC<NavbarProps> = ({
                                 >
                                     Blog
                                 </Link>
-                            </div> */}
+                            </div>
                             <div className="border-b border-gray-700">
                                 <a
                                     href="https://nxsysdigital.com/"

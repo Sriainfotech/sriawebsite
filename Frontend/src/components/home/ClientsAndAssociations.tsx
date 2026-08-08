@@ -368,7 +368,7 @@ export default function ClientsAndAssociations() {
       </div>
 
       {/* ── ASSOCIATIONS SECTION ── */}
-      <section id="associations" className="bg-gray-950 py-12 sm:py-16 lg:py-20 scroll-mt-24">
+      {/* <section id="associations" className="bg-gray-950 py-12 sm:py-16 lg:py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <SectionLabel>Associations</SectionLabel>
@@ -393,7 +393,7 @@ export default function ClientsAndAssociations() {
             Recognised partner of the Telangana Innovation Ecosystem · SAP Gold Certified
           </p>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

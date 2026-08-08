@@ -182,3 +182,33 @@
     @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4;
   }
 }
+
+/* Site-wide scrollbar treatment — thinnest cross-browser width, thumb tinted
+   a light version of the brand's --primary orange (same hue/saturation,
+   higher lightness) instead of each browser's default gray bar. Applied
+   globally via `*` rather than per-scrollable-element, so it covers every
+   current and future overflow-auto/overflow-y-auto/overflow-x-auto region
+   (mobile nav drawer, Gallery, SAP Analytics, chat widget, ...) from one
+   place, plus the page's own vertical scrollbar. */
+* {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: hsl(27 96% 72%) transparent; /* Firefox: thumb, track */
+}
+
+*::-webkit-scrollbar {
+  width: 6px; /* Chrome/Safari/Edge */
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: hsl(27 96% 72%); /* light orange, derived from --primary */
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--primary)); /* full brand orange on hover */
+}
