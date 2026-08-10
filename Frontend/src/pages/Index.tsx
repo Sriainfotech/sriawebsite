@@ -24,9 +24,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <HeroSection />
-      <Suspense fallback={<div className="min-h-[420px]" />}>
-        <ClientsAndAssociations />
-      </Suspense>
+      {/* <Suspense fallback={<div className="min-h-[420px]" />}> */}
+        {/* <ClientsAndAssociations /> */}
+      {/* </Suspense> */}
       <Suspense fallback={<div className="min-h-[380px]" />}>
         <FeaturesSection />
       </Suspense>
