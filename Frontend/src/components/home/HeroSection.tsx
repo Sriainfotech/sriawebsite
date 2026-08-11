@@ -202,14 +202,14 @@ const HeroSection = () => {
                         className="flex flex-wrap justify-center gap-4 mb-16"
                     >
                         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                            <DialogTrigger asChild>
+                            {/* <DialogTrigger asChild>
                                 <button className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-base shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300 overflow-hidden">
                                     <span className="relative z-10 flex items-center gap-2">
                                         Download Our Profile <Download className="w-5 h-5" />
                                     </span>
                                     <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </button>
-                            </DialogTrigger>
+                            </DialogTrigger> */}
                             <DialogContent className="sm:max-w-[400px]">
                                 <DialogHeader>
                                     <DialogTitle className="text-lg">Download Company Profile</DialogTitle>
