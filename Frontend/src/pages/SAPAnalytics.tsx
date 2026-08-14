@@ -32,6 +32,7 @@ import {
   Target,
   ChevronRight,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 /* ── Reveal-on-scroll wrapper ─────────────────────────────────────────────── */
 
@@ -650,8 +651,24 @@ const SAPAnalytics = () => {
                   <Phone className="w-4 h-4 text-orange-400" />
                 </div>
                 <div>
-                  <span className="block text-[11px] font-semibold tracking-[.18em] text-orange-400 uppercase mb-1.5">Phone / WhatsApp</span>
+                  <span className="block text-[11px] font-semibold tracking-[.18em] text-orange-400 uppercase mb-1.5">Phone</span>
                   <a href="tel:+919059585039" className="text-white no-underline border-b border-white/30 text-sm">+91 90595 85039</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div className="w-9 h-9 rounded-lg bg-orange-500/15 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <FaWhatsapp className="w-4 h-4 text-orange-400" />
+                </div>
+                <div>
+                  <span className="block text-[11px] font-semibold tracking-[.18em] text-orange-400 uppercase mb-1.5">WhatsApp</span>
+                  <a
+                    href={`https://wa.me/917702127552?text=${encodeURIComponent("Hi, I visited your website and would like to know more about your IT services.")}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-white no-underline border-b border-white/30 text-sm"
+                  >
+                    +91 7702 127 552
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-2xl p-5">
