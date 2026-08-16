@@ -45,15 +45,15 @@ const leaders = [
     linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
   },
-  {
-    name: "Vinod Kumar Burra",
-    designation: "COO — Sria Infotech",
-    description:
-      "COO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
-    image: "https://ik.imagekit.io/hps6th7vy/sria/vinod.PNG?tr=f-auto,q-auto,w-480",
-    linkedinUrl: "https://www.linkedin.com/in/vinod-kumar-burra-31bb13190/",
-    email: "vinodkumar@sriainfotech.com",
-  },
+  // {
+  //   name: "Vinod Kumar Burra",
+  //   designation: "COO — Sria Infotech",
+  //   description:
+  //     "COO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
+  //   image: "https://ik.imagekit.io/hps6th7vy/sria/vinod.PNG?tr=f-auto,q-auto,w-480",
+  //   linkedinUrl: "https://www.linkedin.com/in/vinod-kumar-burra-31bb13190/",
+  //   email: "vinodkumar@sriainfotech.com",
+  // },
 ];
 
 function LeaderShip() {
