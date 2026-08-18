@@ -23,10 +23,6 @@ interface StatCounterProps {
   label: string;
 }
 
-interface MarqueeProps {
-  items: Client[];
-}
-
 interface ClientCardProps {
   client: Client;
 }
@@ -129,22 +125,14 @@ function accentFor(name: string) {
   return CARD_ACCENTS[h % CARD_ACCENTS.length];
 }
 
-// ── Marquee ──────────────────────────────────────────────────────────────────
+// ── Client grid ──────────────────────────────────────────────────────────────
 
-function Marquee({ items }: MarqueeProps) {
-  const doubled = [...items, ...items];
+function ClientGrid({ items }: { items: Client[] }) {
   return (
-    <div className="overflow-hidden relative">
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 z-10 bg-gradient-to-r from-gray-950 to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 z-10 bg-gradient-to-l from-gray-950 to-transparent" />
-      <div
-        className="marquee-track flex gap-5 animate-[marquee_40s_linear_infinite] w-max"
-        style={{ willChange: "transform" }}
-      >
-        {doubled.map((c, i) => (
-          <ClientCard key={i} client={c} />
-        ))}
-      </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
+      {items.map((c, i) => (
+        <ClientCard key={`${c.name}-${i}`} client={c} />
+      ))}
     </div>
   );
 }
@@ -301,19 +289,6 @@ const COUNTRY_SUMMARY: { flag: string; label: string; count: number }[] = [
 export default function ClientsAndAssociations() {
   return (
     <>
-      <style>{`
-        @keyframes marquee {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-\\[marquee_40s_linear_infinite\\] { animation: none; }
-        }
-        .marquee-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-
       {/* ── CLIENTS SECTION ── */}
       <section className="bg-gray-950 py-12 sm:py-16 lg:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -344,7 +319,7 @@ export default function ClientsAndAssociations() {
             <StatCounter end={8} label="Years" />
           </div> */}
 
-          <Marquee items={CLIENTS} />
+          <ClientGrid items={CLIENTS} />
 
           <div className="flex flex-wrap justify-center gap-2 mt-6 sm:mt-10">
             {COUNTRY_SUMMARY.map((c) => (

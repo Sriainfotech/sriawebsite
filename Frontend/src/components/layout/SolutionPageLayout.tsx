@@ -11,7 +11,8 @@ interface TrustedFeature {
 interface SolutionPageLayoutProps {
   title: string;
   subtitle: string;
-  breadcrumbs: { name: string; path: string }[];
+  // path is optional — see the matching comment in ServicePageLayout.tsx.
+  breadcrumbs: { name: string; path?: string }[];
   backgroundImage: string;
   impactHeading: React.ReactNode;
   impactDescription: string;

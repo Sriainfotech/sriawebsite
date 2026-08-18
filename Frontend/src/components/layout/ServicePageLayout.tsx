@@ -33,7 +33,10 @@ export interface RelatedServiceItem {
 interface ServicePageLayoutProps {
   title: string;
   subtitle: string;
-  breadcrumbs: { name: string; path: string }[];
+  // path is optional — PageHeader renders a crumb with no path as plain,
+  // non-clickable text, for category labels (e.g. "Services") that have no
+  // real landing page of their own. Keep this in sync with PageHeaderProps.
+  breadcrumbs: { name: string; path?: string }[];
   backgroundImage: string;
   processTitle: string;
   processDescription?: string;
