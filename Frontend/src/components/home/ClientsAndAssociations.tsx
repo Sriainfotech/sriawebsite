@@ -142,7 +142,7 @@ function ClientCard({ client }: ClientCardProps) {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
-    <div className="flex-shrink-0 w-52 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-orange-400/30 transition-all duration-300 group overflow-hidden">
+    <div className="w-full rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-orange-400/30 transition-all duration-300 group overflow-hidden">
       <div className={`h-1 w-full bg-gradient-to-r ${accent}`} />
       <div className="p-4 flex flex-col items-center text-center">
         <div className={`w-16 h-16 rounded-lg overflow-hidden mb-3 shadow-lg flex-shrink-0 ${imgFailed ? `bg-gradient-to-br ${accent} flex items-center justify-center` : "bg-white p-1.5"}`}>
