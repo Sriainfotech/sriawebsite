@@ -130,11 +130,24 @@
 
   html {
     scroll-behavior: smooth;
+    /* Safety net: several sections position decorative blur/glow shapes with
+       negative offsets (e.g. -top-24 -left-24) relative to their own parent,
+       not the viewport. Any one of those whose parent is missing
+       overflow-hidden bleeds past the screen edge and makes the *whole*
+       document horizontally scrollable by a few pixels on mobile — seen as
+       content cut off on one side and a white gutter on the other. This
+       guards the root scrolling element itself so no single component can
+       ever widen the page; it doesn't affect position:sticky elsewhere in
+       the document since html/body remain the only scrolling ancestor. */
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   h1,

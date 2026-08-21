@@ -147,22 +147,27 @@ const FloatingButtons = () => {
       </Link> */}
 
       {/* PHONE */}
+      {/* Smaller footprint on mobile (h-9/w-9 vs h-12/w-12 at sm+) — matches
+          the WhatsApp button's own mobile/desktop split in Layout.tsx
+          (w-8 h-8 sm:w-14 sm:h-14). Fixed-position buttons never move with
+          scroll, so on narrow phones an undersized-for-mobile footprint here
+          was overlapping whatever content happened to scroll past top-[38%]. */}
       <button
         type="button"
         aria-label="Call Sria Infotech: +91 90595 85039"
         className={`
- bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
- ${phoneOpen ? "w-[180px]" : "w-12"}
+ bg-orange-500 h-9 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
+ ${phoneOpen ? "w-[160px] sm:w-[180px]" : "w-9 sm:w-12"}
  `}
         onMouseEnter={() => !isMobile && setPhoneOpen(true)}
         onMouseLeave={() => !isMobile && setPhoneOpen(false)}
         onClick={handlePhoneTap}
       >
-        <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 text-white">
-          <Phone size={22} />
+        <div className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white">
+          <Phone size={isMobile ? 16 : 22} />
         </div>
 
-        <div className={`whitespace-nowrap text-white font-medium pr-4 transition-opacity duration-300 ${phoneOpen ? "opacity-100" : "opacity-0"}`}>
+        <div className={`whitespace-nowrap text-white font-medium pr-4 text-sm transition-opacity duration-300 ${phoneOpen ? "opacity-100" : "opacity-0"}`}>
           +91 90595 85039
         </div>
       </button>
@@ -172,18 +177,18 @@ const FloatingButtons = () => {
         type="button"
         aria-label="Email Sria Infotech: hr@sriainfotech.com"
         className={`
- bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
- ${mailOpen ? "w-[240px]" : "w-12"}
+ bg-orange-500 h-9 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
+ ${mailOpen ? "w-[220px] sm:w-[240px]" : "w-9 sm:w-12"}
  `}
         onMouseEnter={() => !isMobile && setMailOpen(true)}
         onMouseLeave={() => !isMobile && setMailOpen(false)}
         onClick={handleMailTap}
       >
-        <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 text-white">
-          <Mail size={22} />
+        <div className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white">
+          <Mail size={isMobile ? 16 : 22} />
         </div>
 
-        <div className={`whitespace-nowrap text-white font-medium pr-2 transition-opacity duration-300 ${mailOpen ? "opacity-100" : "opacity-0"}`}>
+        <div className={`whitespace-nowrap text-white font-medium pr-2 text-sm transition-opacity duration-300 ${mailOpen ? "opacity-100" : "opacity-0"}`}>
           hr@sriainfotech.com
         </div>
       </button>
@@ -191,8 +196,8 @@ const FloatingButtons = () => {
       {/* SHARE */}
       <div
         className={`
- bg-orange-500 h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden
- ${shareOpen ? "w-[200px]" : "w-12"}
+ bg-orange-500 h-9 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden
+ ${shareOpen ? "w-[200px]" : "w-9 sm:w-12"}
  `}
         onMouseEnter={() => !isMobile && setShareOpen(true)}
         onMouseLeave={() => !isMobile && setShareOpen(false)}
@@ -202,9 +207,9 @@ const FloatingButtons = () => {
           aria-label="Share this website"
           aria-expanded={shareOpen}
           onClick={handleShareTap}
-          className="w-12 h-12 flex items-center justify-center flex-shrink-0 text-white cursor-pointer"
+          className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white cursor-pointer"
         >
-          <Share2 size={22} />
+          <Share2 size={isMobile ? 16 : 22} />
         </button>
 
         <div className={`flex gap-4 items-center transition-opacity duration-300 ${shareOpen ? "opacity-100" : "opacity-0"}`}>

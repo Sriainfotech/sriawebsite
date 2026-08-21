@@ -97,6 +97,13 @@ const FeaturesSection = () => {
         </motion.div>
 
         {/* ── Interactive layout ── */}
+        {/* Below lg: this collapses to a single implicit grid column since
+            grid-cols-5 only applies at lg:. CSS Grid items default to
+            min-width: auto, so that implicit column refused to shrink below
+            its content's min-content width (measured ~354px on a 312px-wide
+            mobile viewport) — the whole section overflowed the screen on
+            narrow phones as a result. min-w-0 on both children below lets
+            the column actually shrink to the available width. */}
         <div className="grid lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
 
           {/* Left: feature tabs */}
@@ -105,7 +112,7 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 flex flex-col gap-2"
+            className="lg:col-span-2 min-w-0 flex flex-col gap-2"
           >
             {features.map((f, i) => {
               const isActive = i === active;
@@ -176,7 +183,7 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 min-w-0"
           >
             <AnimatePresence mode="wait">
               <motion.div

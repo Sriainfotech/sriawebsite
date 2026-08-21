@@ -46,27 +46,40 @@ const CookieBanner = () => {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ type: "spring", damping: 26, stiffness: 220 }}
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[9995] w-[calc(100%-2rem)] max-w-2xl"
-        >
+        // Horizontal centering lives on this plain wrapper via flexbox, not
+        // a `left-1/2 -translate-x-1/2` transform on the motion.div below —
+        // framer-motion takes exclusive ownership of the `transform` inline
+        // style the moment it manages `y`, which silently overwrote that
+        // Tailwind class's translateX and left the banner ~50% off-screen
+        // to the right on every mobile viewport. See git history/PR notes.
+        <div className="fixed inset-x-0 bottom-4 z-[9995] flex justify-center px-4">
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 80, opacity: 0 }}
+            transition={{ type: "spring", damping: 26, stiffness: 220 }}
+            className="w-full max-w-2xl"
+          >
           <div className="bg-slate-950 border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden">
 
             {/* ── Slim main bar ── */}
-            <div className="flex items-center gap-3 px-4 py-3">
-              <Cookie className="w-4 h-4 text-orange-400 flex-shrink-0" />
+            {/* flex-col on mobile: message text gets its own full-width row
+                (no truncate — it was clipping the sentence), buttons wrap
+                into their own row below instead of being squeezed/cut
+                against the fixed-position chat bubble. Collapses back to
+                the original single row at sm+. */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 px-4 py-3">
+              <div className="flex items-start gap-2 min-w-0">
+                <Cookie className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
+                <p className="text-white/70 text-xs">
+                  We use cookies.{" "}
+                  <Link to="/cookies" className="text-orange-400 hover:text-orange-300 underline underline-offset-2 transition-colors">
+                    Cookie Policy
+                  </Link>
+                </p>
+              </div>
 
-              <p className="text-white/70 text-xs flex-1 min-w-0 truncate">
-                We use cookies.{" "}
-                <Link to="/cookies" className="text-orange-400 hover:text-orange-300 underline underline-offset-2 transition-colors">
-                  Cookie Policy
-                </Link>
-              </p>
-
-              <div className="flex items-center gap-2 flex-shrink-0">
+              <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap sm:flex-shrink-0 sm:ml-auto">
                 <button
                   onClick={() => setShowManage(p => !p)}
                   className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-400 hover:text-white text-xs font-medium transition-all"
@@ -133,7 +146,8 @@ const CookieBanner = () => {
               )}
             </AnimatePresence>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
