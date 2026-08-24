@@ -140,6 +140,11 @@ function DataAnalytics() {
   return (
     <div className="w-full relative bg-white">
       <GlobalStyles />
+      {/* Was "DATA%20ANALYTICS.png" at the /sria/ root — a space-in-filename,
+          all-caps URL that doesn't match any real ImageKit asset (404 on
+          production, absent from upload-to-imagekit.js). Reusing the real,
+          already-live Data Analytics image from the homepage's Core
+          Capabilities showcase instead of guessing a new upload. */}
       <PageHeader
         title="Data Management & Analytics"
         subtitle="Sria Infotech delivers end-to-end data services that transform raw data into actionable insights."
@@ -148,7 +153,7 @@ function DataAnalytics() {
           { name: "Implementation" },
           { name: "Data Analytics", path: "/services/data-analytics" },
         ]}
-        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/DATA%20ANALYTICS.png?tr=f-auto,q-auto,w-1600"
+        backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/home/data-analytics-home.jpg?tr=f-auto,q-auto,w-1600"
       />
 
       {/* ── Intro Split Section ── */}

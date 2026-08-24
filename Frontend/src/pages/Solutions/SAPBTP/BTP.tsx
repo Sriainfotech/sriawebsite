@@ -292,7 +292,7 @@ function BTP() {
  { name: "Solutions" },
  { name: "SAP BTP", path: "/solutions/btp" },
  ]}
- backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/cpi.jpg?tr=f-auto,q-auto,w-1600"
+ backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Solutions/cpi.png?tr=f-auto,q-auto,w-1600"
  />
 
 

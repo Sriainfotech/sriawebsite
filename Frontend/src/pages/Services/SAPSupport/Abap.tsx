@@ -50,8 +50,9 @@ function Abap() {
         { name: "SAP Support" },
         { name: "ABAP Services", path: "/services/sap-abap" },
       ]}
-      // TODO: re-point to ImageKit once abap.jpg is uploaded there — temporarily serving from Cloudinary since it's still live.
-      backgroundImage="https://res.cloudinary.com/dmxfdt7ub/image/upload/f_auto,q_auto/sria/Services/abap.jpg"
+      // Now on ImageKit (uploaded as .png) — the Cloudinary fallback this TODO
+      // was waiting on had since gone stale (401, not just unmigrated).
+      backgroundImage="https://ik.imagekit.io/hps6th7vy/sria/Services/abap.png?tr=f-auto,q-auto,w-1600"
       processTitle="Building Future-Proof SAP Applications with Clean Code & RAP"
       processDescription="We leverage modern ABAP development models to deliver high-performance, maintainable enterprise solutions."
       processSteps={[
