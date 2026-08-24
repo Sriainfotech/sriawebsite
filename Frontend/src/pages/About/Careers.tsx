@@ -5,6 +5,10 @@ import {
 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
+// Already uploaded and in use by the older, now-unrouted pages/Careers.tsx —
+// this page (the live /careers route as of App.tsx) never carried it over.
+const heroCareers = "https://ik.imagekit.io/hps6th7vy/sria/about/hero-careers.jpg?tr=f-auto,q-auto,w-1600";
+
 const whyJoinUs = [
   {
     title: "Real Client Exposure",
@@ -45,6 +49,7 @@ function Careers() {
           { name: "About Us", path: "/about" },
           { name: "Careers", path: "/careers" },
         ]}
+        backgroundImage={heroCareers}
       />
 
       {/* ── Why Join Us ── */}

@@ -68,9 +68,13 @@ const Culture: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      {/* No dedicated hero image exists for this page — reusing the first
+          photo from the events gallery below (already real, already on
+          this page) rather than the plain PageHeader default. */}
       <PageHeader
         title="Our Culture"
         subtitle="Moments from our offices, our people, and the communities we work alongside."
+        backgroundImage={events[0].photos[0]}
       />
 
       {events.map((event, eventIndex) => {
