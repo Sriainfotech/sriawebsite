@@ -38,11 +38,19 @@
     font-display=swap (in the URL) means text paints with the fallback font
     regardless, so there's no FOIT either way. <noscript> covers the no-JS
     case, where onload never fires.
+
+    Weights trimmed to what's actually used (grepped every font-* class and
+    inline fontWeight in src/): Inter keeps 300 (2 real font-light uses,
+    both on body/Inter elements) through 700; Poppins drops both 300 (no
+    heading uses font-light) and 800 (font-extrabold isn't used anywhere).
+    font-black (900) was already unrepresented in the old weight list too —
+    left that as-is rather than adding a new weight file, since that would
+    be a visual change (thicker text) beyond just trimming unused ones.
   -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
   </noscript>
 
   <!--

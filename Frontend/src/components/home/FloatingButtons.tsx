@@ -147,23 +147,25 @@ const FloatingButtons = () => {
       </Link> */}
 
       {/* PHONE */}
-      {/* Smaller footprint on mobile (h-9/w-9 vs h-12/w-12 at sm+) — matches
+      {/* Smaller footprint on mobile (h-11/w-11 vs h-12/w-12 at sm+) — matches
           the WhatsApp button's own mobile/desktop split in Layout.tsx
           (w-8 h-8 sm:w-14 sm:h-14). Fixed-position buttons never move with
           scroll, so on narrow phones an undersized-for-mobile footprint here
-          was overlapping whatever content happened to scroll past top-[38%]. */}
+          was overlapping whatever content happened to scroll past top-[38%].
+          Kept at 44px (Tailwind's 11 = 2.75rem) rather than smaller, since
+          that's the minimum accessible touch-target size. */}
       <button
         type="button"
         aria-label="Call Sria Infotech: +91 90595 85039"
         className={`
- bg-orange-500 h-9 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
- ${phoneOpen ? "w-[160px] sm:w-[180px]" : "w-9 sm:w-12"}
+ bg-orange-500 h-11 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
+ ${phoneOpen ? "w-[160px] sm:w-[180px]" : "w-11 sm:w-12"}
  `}
         onMouseEnter={() => !isMobile && setPhoneOpen(true)}
         onMouseLeave={() => !isMobile && setPhoneOpen(false)}
         onClick={handlePhoneTap}
       >
-        <div className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white">
+        <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white">
           <Phone size={isMobile ? 16 : 22} />
         </div>
 
@@ -177,14 +179,14 @@ const FloatingButtons = () => {
         type="button"
         aria-label="Email Sria Infotech: hr@sriainfotech.com"
         className={`
- bg-orange-500 h-9 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
- ${mailOpen ? "w-[220px] sm:w-[240px]" : "w-9 sm:w-12"}
+ bg-orange-500 h-11 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden cursor-pointer
+ ${mailOpen ? "w-[220px] sm:w-[240px]" : "w-11 sm:w-12"}
  `}
         onMouseEnter={() => !isMobile && setMailOpen(true)}
         onMouseLeave={() => !isMobile && setMailOpen(false)}
         onClick={handleMailTap}
       >
-        <div className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white">
+        <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white">
           <Mail size={isMobile ? 16 : 22} />
         </div>
 
@@ -196,8 +198,8 @@ const FloatingButtons = () => {
       {/* SHARE */}
       <div
         className={`
- bg-orange-500 h-9 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden
- ${shareOpen ? "w-[200px]" : "w-9 sm:w-12"}
+ bg-orange-500 h-11 sm:h-12 flex items-center shadow-lg rounded-md transition-all duration-500 ease-in-out overflow-hidden
+ ${shareOpen ? "w-[200px]" : "w-11 sm:w-12"}
  `}
         onMouseEnter={() => !isMobile && setShareOpen(true)}
         onMouseLeave={() => !isMobile && setShareOpen(false)}
@@ -207,7 +209,7 @@ const FloatingButtons = () => {
           aria-label="Share this website"
           aria-expanded={shareOpen}
           onClick={handleShareTap}
-          className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white cursor-pointer"
+          className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 text-white cursor-pointer"
         >
           <Share2 size={isMobile ? 16 : 22} />
         </button>

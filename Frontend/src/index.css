@@ -147,6 +147,22 @@
   }
 }
 
+/* Respect a visitor's OS-level reduced-motion preference site-wide. Cuts
+   Framer Motion/CSS transition durations to effectively instant rather than
+   disabling them outright — state-driven UI (menus, tabs, accordions) still
+   needs its "animation" to actually complete for the resulting layout to be
+   correct, just without the motion itself. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Mobile browsers (notably iOS Safari) compute 100vh against a taller
    "layout viewport" than what's actually visible before the collapsible
    address bar has settled — every min-h-screen/h-screen section on the site

@@ -35,6 +35,22 @@ const Navbar: React.FC<NavbarProps> = ({
     // toggle button, since hover alone is unreachable without a pointer.
     const [openNestedSection, setOpenNestedSection] = useState<number | null>(null);
 
+    // The desktop mega-menu block below (xl:flex) was previously only
+    // CSS-hidden ("hidden xl:flex") on mobile — display:none still leaves
+    // every mega-menu link mounted in the DOM, and Lighthouse's DOM-size
+    // audit counts those regardless of visibility. It's also pure duplicate
+    // markup: MobileMenuItem below renders the same nav content for mobile
+    // already. Read synchronously so there's no flash on first paint.
+    const [isDesktopNav, setIsDesktopNav] = useState(() =>
+        typeof window !== "undefined" ? window.matchMedia("(min-width: 1280px)").matches : true
+    );
+    useEffect(() => {
+        const mql = window.matchMedia("(min-width: 1280px)");
+        const handleChange = (e: MediaQueryListEvent) => setIsDesktopNav(e.matches);
+        mql.addEventListener("change", handleChange);
+        return () => mql.removeEventListener("change", handleChange);
+    }, []);
+
     const handleMouseEnter = (dropdown: string) => {
         if (hoverTimeout) clearTimeout(hoverTimeout);
         setActiveDropdown(dropdown);
@@ -540,76 +556,85 @@ const Navbar: React.FC<NavbarProps> = ({
                             </Link>
                         </div>
 
-                        <div className="hidden xl:flex items-center space-x-6">
-                            <MegaMenu
-                                id="products"
-                                label="Products"
-                                sections={productsSections}
-                                layout="single"
-                            />
-                            <MegaMenu
-                                id="solutions"
-                                label="Solutions"
-                                sections={solutionsSections}
-                                layout="multi"
-                            />
-                            <MegaMenu
-                                id="services"
-                                label="Services"
-                                sections={servicesSections}
-                                layout="nested"
-                            />
-                            <MegaMenu
-                                id="about"
-                                label="About"
-                                sections={aboutSections}
-                                layout="single"
-                            />
-                            {/* <Link
-                                to="/gallery"
-                                className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                            >
-                                Our Culture
-                            </Link> */}
-                            <Link
-                                to="/blog"
-                                className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                            >
-                                Blog
-                            </Link>
-                            {/* <a
-                                href="https://nxsysdigital.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                            >
-                                NxSys Digital
-                            </a>
-                            <a
-                                href="https://nxgentechacademy.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                            >
-                                NxGen Tech Academy
-                            </a> */}
-                            <a
-                                href="/sap-analytics"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                            >
-                                SAP Analytics
-                            </a>
-                            {/* <Link
-                                to="/app-store"
-                                className="flex items-center gap-1.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white text-sm px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                                title="App Store"
-                            >
-                                <LayoutGrid className="w-4 h-4" />
-                                Apps
-                            </Link> */}
-                        </div>
+                        {/* Only mounted at xl+ — see isDesktopNav above. This
+                            block alone is 4 mega-menus' worth of link/icon
+                            markup (40+ nodes); it was previously always
+                            mounted and merely display:none'd below xl,
+                            counting fully toward Lighthouse's DOM-size audit
+                            and duplicating what MobileMenuItem below already
+                            renders for mobile. */}
+                        {isDesktopNav && (
+                            <div className="hidden xl:flex items-center space-x-6">
+                                <MegaMenu
+                                    id="products"
+                                    label="Products"
+                                    sections={productsSections}
+                                    layout="single"
+                                />
+                                <MegaMenu
+                                    id="solutions"
+                                    label="Solutions"
+                                    sections={solutionsSections}
+                                    layout="multi"
+                                />
+                                <MegaMenu
+                                    id="services"
+                                    label="Services"
+                                    sections={servicesSections}
+                                    layout="nested"
+                                />
+                                <MegaMenu
+                                    id="about"
+                                    label="About"
+                                    sections={aboutSections}
+                                    layout="single"
+                                />
+                                {/* <Link
+                                    to="/gallery"
+                                    className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    Our Culture
+                                </Link> */}
+                                <Link
+                                    to="/blog"
+                                    className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    Blog
+                                </Link>
+                                {/* <a
+                                    href="https://nxsysdigital.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    NxSys Digital
+                                </a>
+                                <a
+                                    href="https://nxgentechacademy.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    NxGen Tech Academy
+                                </a> */}
+                                <a
+                                    href="/sap-analytics"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center text-orange-400 hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                    SAP Analytics
+                                </a>
+                                {/* <Link
+                                    to="/app-store"
+                                    className="flex items-center gap-1.5 bg-white/10 hover:bg-orange-500 border border-white/20 hover:border-orange-500 text-white text-sm px-3 py-1.5 rounded-lg transition-all duration-200 whitespace-nowrap font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                    title="App Store"
+                                >
+                                    <LayoutGrid className="w-4 h-4" />
+                                    Apps
+                                </Link> */}
+                            </div>
+                        )}
 
                         <div className="flex items-center space-x-3">
                             <div className="hidden md:flex items-center space-x-3">
@@ -622,7 +647,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             </Link>
                             <button
                                 onClick={() => setIsMobileMenuOpen(true)}
-                                className="xl:hidden text-white hover:text-orange-300 transition-colors"
+                                className="xl:hidden flex min-h-11 min-w-11 items-center justify-center text-white hover:text-orange-300 transition-colors"
                                 aria-label="Open mobile menu"
                             >
                                 <Menu className="w-6 h-6" />
@@ -646,7 +671,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             </p>
                             <button
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-white hover:text-orange-300 transition-colors"
+                                className="flex min-h-11 min-w-11 items-center justify-center text-white hover:text-orange-300 transition-colors"
                                 aria-label="Close mobile menu"
                             >
                                 <X className="w-6 h-6" />

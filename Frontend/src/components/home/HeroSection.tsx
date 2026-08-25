@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, Loader2, ChevronDown } from "lucide-react";
@@ -50,6 +50,13 @@ const PROFILE_OPTIONS: Record<ProfileKey, { label: string; files: ProfileFile[] 
     both: { label: "Both (Sria & NxSys Digital)", files: [SRIA_PROFILE, NXSYS_PROFILE] },
 };
 
+// Same source photo the video's own poster already used — kept for visual
+// consistency, just served as a proper responsive image set instead of a
+// single 1400px frame. Unsplash's CDN honors ?fm=webp/&q=.
+const HERO_IMAGE_480 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=480&q=70&fm=webp";
+const HERO_IMAGE_768 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=768&q=70&fm=webp";
+const HERO_IMAGE_1080 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1080&q=75&fm=webp";
+
 const HeroSection = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -57,6 +64,21 @@ const HeroSection = () => {
     const [selectedProfile, setSelectedProfile] = useState<ProfileKey>("sria");
     const { toast } = useToast();
     const videoUrl = "Sria Website Video.mp4";
+
+    // Mobile never mounts the <video> element at all — a CSS-only
+    // hidden/visible split would still let the browser fetch it. Read
+    // synchronously on first render (not in an effect) so the correct
+    // branch paints immediately with no flash, and this is what the LCP
+    // element (the h1 just below) actually renders behind on first paint.
+    const [isDesktopViewport, setIsDesktopViewport] = useState(() =>
+        typeof window !== "undefined" ? window.matchMedia("(min-width: 768px)").matches : true
+    );
+    useEffect(() => {
+        const mql = window.matchMedia("(min-width: 768px)");
+        const handleChange = (e: MediaQueryListEvent) => setIsDesktopViewport(e.matches);
+        mql.addEventListener("change", handleChange);
+        return () => mql.removeEventListener("change", handleChange);
+    }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -122,26 +144,49 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
-            {/* Video Background */}
+        <section className="relative min-h-[88svh] md:min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+            {/* Background: video on desktop, a static image on mobile.
+                isDesktopViewport is read synchronously above (not behind a
+                lazy/CSS-only toggle), so the <video> element — and its
+                network request — never mounts at all on a mobile viewport,
+                instead of just being hidden after downloading. The hero h1
+                just below is this page's LCP element; a mobile visitor was
+                previously waiting on this video before it could paint. */}
             <div className="absolute inset-0 z-0">
-                <video
-                    autoPlay muted loop playsInline
-                    preload="metadata"
-                    poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=60"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
-                >
-                    {/* TODO: re-point to ImageKit once "Sria Website Video.mp4" is uploaded there — temporarily serving from Cloudinary since it's still live. */}
-                    <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
-                </video>
-                {/* Cinematic gradient overlays */}
+                {isDesktopViewport ? (
+                    <video
+                        autoPlay muted loop playsInline
+                        preload="metadata"
+                        poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=60"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
+                    >
+                        {/* TODO: re-point to ImageKit once "Sria Website Video.mp4" is uploaded there — temporarily serving from Cloudinary since it's still live. */}
+                        <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
+                    </video>
+                ) : (
+                    <img
+                        src={HERO_IMAGE_768}
+                        srcSet={`${HERO_IMAGE_480} 480w, ${HERO_IMAGE_768} 768w, ${HERO_IMAGE_1080} 1080w`}
+                        sizes="100vw"
+                        alt=""
+                        fetchPriority="high"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
+                    />
+                )}
+                {/* Cinematic gradient overlays — identical on both branches so the
+                    text stays equally readable either way. */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
             </div>
 
-            {/* Animated floating orbs */}
-            <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+            {/* Animated floating orbs — purely decorative, so skipped on mobile
+                to cut animation/main-thread work on the LCP-critical first
+                viewport (also respects prefers-reduced-motion, set globally
+                in index.css). */}
+            <div className="hidden md:block absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                 <motion.div
                     animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.2, 1] }}
                     transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
@@ -189,8 +234,11 @@ const HeroSection = () => {
                         </span>
                     </h1>
 
-                    {/* Subtitle — same reasoning as the headline above. */}
-                    <p className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
+                    {/* Subtitle — same reasoning as the headline above.
+                        text-white/80 (was /70): Lighthouse flagged this
+                        against the darkened hero background as insufficient
+                        contrast. */}
+                    <p className="text-base sm:text-lg md:text-xl text-white/80 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
                         Helping businesses accelerate digital transformation with cloud-driven solutions where innovation meets technology.
                     </p>
 
@@ -287,11 +335,12 @@ const HeroSection = () => {
                 </div>
             </div>
 
-            {/* Scroll indicator */}
+            {/* Scroll indicator — decorative-only, hidden on mobile along with
+                the floating orbs above. */}
             <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/40"
+                className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/40"
             >
                 <ChevronDown className="w-6 h-6" />
             </motion.div>
