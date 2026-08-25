@@ -44,6 +44,14 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Photos from Sria Infotech's partnerships, events and office life, including our BSNL skill solution partnership signing and moments from our wider consulting practice.",
   },
+  // /blog itself; individual /blog/:slug posts are handled separately in
+  // RouteSeo (dynamic path, can't be a static key here) and override this
+  // with their own title/excerpt once loaded — see BlogPost.tsx.
+  "/blog": {
+    title: "Blog | Sria Infotech",
+    description:
+      "Insights, updates and perspectives from the Sria Infotech team on SAP consulting, Odoo implementation and digital transformation.",
+  },
   "/about/customer-stories": {
     title: "Customer Success Stories | Sria Infotech",
     description:
@@ -413,6 +421,24 @@ export const NOT_FOUND_META: RouteMeta = {
     "The page you're looking for doesn't exist or may have moved. Use the navigation above to find services, products, or contact Sria Infotech directly. Contact Sria Infotech to explore how this fits your organization's roadmap.",
   noindex: true,
 };
+
+// /blog/:slug is dynamic — can't be a static ROUTE_META key — so it isn't
+// "known" by the exact-match check below. Was previously falling all the way
+// through to NOT_FOUND_META (title "Page Not Found", noindex) for every real,
+// published blog post. This generic-but-indexable placeholder is what shows
+// briefly before BlogPost.tsx's own <Seo/> mounts with the real post's
+// title/excerpt once it's fetched (see BlogPost.tsx) — never the final tags
+// for a real visit, but not a false 404 either.
+export const BLOG_POST_FALLBACK_META: RouteMeta = {
+  title: "Blog | Sria Infotech",
+  description:
+    "Insights, updates and perspectives from the Sria Infotech team on SAP consulting, Odoo implementation and digital transformation.",
+};
+
+const BLOG_POST_PATH = /^\/blog\/[^/]+$/;
+export function isBlogPostPath(pathname: string): boolean {
+  return BLOG_POST_PATH.test(pathname);
+}
 
 export function isKnownRoute(pathname: string): boolean {
   return pathname in ROUTE_META || LEGACY_REDIRECT_PATHS.includes(pathname);

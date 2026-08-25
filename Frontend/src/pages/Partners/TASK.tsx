@@ -47,7 +47,13 @@ const jointPrograms = [
     label: "Campus Engagement",
     description: "On-campus training drives and workshops delivered across engineering and degree colleges in Telangana.",
     icon: <Users className="w-5 h-5" />,
-    image: "/campus.jpg",
+    // Was "/campus.jpg" — no such file exists anywhere in the repo; the dev
+    // server's SPA fallback was silently serving index.html in its place
+    // (200 OK, but Content-Type: text/html, not an image), and it also had
+    // no alt text at all, both real Lighthouse Accessibility violations on
+    // this exact page (91/100, the site's lowest).
+    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80&fm=webp",
+    alt: "Students at desks in a classroom during a training session",
   },
   {
     label: "Placement Support",
@@ -62,7 +68,7 @@ const benefits = [
   { title: "Structured Curriculum Design",       description: "Employability programs designed around real industry requirements and evolving skill demands.", icon: <BookOpen className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=70&fm=webp", alt: "Curved library shelves full of books" },
   { title: "Statewide Campus Reach",              description: "Training delivery across engineering, degree, and polytechnic colleges throughout Telangana.", icon: <MapPin className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&q=70&fm=webp", alt: "City skyline aerial view" },
   { title: "Certification Support",               description: "Assessment-backed certification pathways aligned with industry skilling standards.", icon: <Award className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=70&fm=webp", alt: "Colleagues high-fiving at desk" },
-  { title: "Student Talent Pipeline",              description: "Access to a growing pipeline of trained, job-ready students across the state.", icon: <Users className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/student.jpg?tr=f-auto,q-auto,w-640" },
+  { title: "Student Talent Pipeline",              description: "Access to a growing pipeline of trained, job-ready students across the state.", icon: <Users className="w-5 h-5" />, image: "https://ik.imagekit.io/hps6th7vy/sria/partners/student.jpg?tr=f-auto,q-auto,w-640", alt: "Student working at a desk" },
   { title: "Community & Academic Impact",          description: "Programs designed to strengthen employability outcomes across both urban and semi-urban colleges.", icon: <TrendingUp className="w-5 h-5" />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=70&fm=webp", alt: "Laptop screen showing data analytics" },
 ];
 

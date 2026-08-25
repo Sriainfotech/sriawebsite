@@ -18,16 +18,32 @@
   <link rel="preconnect" href="https://ik.imagekit.io" />
 
   <!--
-    Font stylesheet linked directly here (rather than left as only a CSS
-    @import, which used to be the sole source) so the browser's preload
-    scanner discovers and fetches it immediately from the raw HTML — instead
-    of waiting for the bundled stylesheet to load and be parsed first, which
-    is what the @import path costs now that the full stylesheet itself loads
-    asynchronously (see the critical-CSS setup in scripts/prerender.mjs).
-    font-display=swap means text still paints immediately with the fallback
-    font regardless of when this finishes.
+    Font stylesheet still discovered immediately from the raw HTML via the
+    preload scanner (not left to a CSS @import, which would wait on the
+    bundled stylesheet first — see the critical-CSS setup in
+    scripts/prerender.mjs) — but no longer a plain <link rel="stylesheet">.
+    Verified Beasties (preload: "swap" in prerender.mjs) does NOT touch this
+    external/cross-origin link — its critical-CSS pass only rewrites the
+    app's own same-origin bundle — so this was genuinely render-blocking on
+    every single page (avg. 1,262ms of mobile render-blocking cost sitewide,
+    Aug 2026 PageSpeed audit) with nothing downstream fixing it.
+
+    Standard preload+onload-swap pattern below: rel="preload" fetches it in
+    parallel at high priority without blocking first paint; media="print"
+    keeps the <link rel="stylesheet"> copy non-render-blocking until its
+    onload fires and flips media to "all". (A prerendered snapshot of this
+    page will show media="all" already, since Puppeteer waits for the page
+    to finish loading — including this onload firing — before capturing;
+    that's the correct post-load state, not a sign the trick didn't work.)
+    font-display=swap (in the URL) means text paints with the fallback font
+    regardless, so there's no FOIT either way. <noscript> covers the no-JS
+    case, where onload never fires.
   -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
+  </noscript>
 
   <!--
     Google Tag Manager — deferred until the visitor's first interaction

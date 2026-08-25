@@ -5,10 +5,12 @@ import remarkGfm from "remark-gfm";
 import { ArrowLeft, Calendar, Clock, Loader2 } from "lucide-react";
 import axiosInstance from "@/lib/axios";
 import PageHeader from "@/components/layout/PageHeader";
+import Seo from "@/components/seo/Seo";
 
 interface BlogPostData {
   title: string;
   slug: string;
+  excerpt?: string;
   content: string;
   coverImageUrl: string;
   coverImagePosition?: string;
@@ -16,6 +18,19 @@ interface BlogPostData {
   author: string;
   publishedAt: string;
   readTimeMinutes: number;
+}
+
+// Fallback when a post has no excerpt set — strips markdown syntax down to
+// plain text and truncates to a normal meta-description length, rather than
+// shipping an empty <meta name="description">.
+function descriptionFromContent(content: string): string {
+  const plain = content
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[#*_`>~-]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return plain.length > 300 ? `${plain.slice(0, 297)}...` : plain;
 }
 
 const BlogPost = () => {
@@ -61,6 +76,16 @@ const BlogPost = () => {
 
   return (
     <article className="min-h-screen bg-white">
+      {/* Overrides RouteSeo's generic /blog/:slug fallback with this post's
+          real title + excerpt — was previously falling through all the way
+          to NOT_FOUND_META (title "Page Not Found", noindex) for every
+          published post, since a dynamic slug can't be a static routeMeta
+          key. React-helmet-async lets the deeper-mounted <Seo/> here win. */}
+      <Seo
+        title={`${post.title} | Sria Infotech Blog`}
+        description={post.excerpt?.trim() || descriptionFromContent(post.content)}
+        canonicalPath={`/blog/${post.slug}`}
+      />
       <PageHeader
         title={post.title}
         breadcrumbs={[{ name: "Blog", path: "/blog" }, { name: post.title }]}

@@ -1,4 +1,27 @@
 {
+  "redirects": [
+    { "source": "/terms", "destination": "/terms-and-conditions", "permanent": true },
+    { "source": "/best-digital-transformation-company", "destination": "/", "permanent": true },
+    { "source": "/aboutus", "destination": "/about", "permanent": true },
+    { "source": "/contactus", "destination": "/contact", "permanent": true },
+    { "source": "/about/careers", "destination": "/careers", "permanent": true },
+    { "source": "/hills", "destination": "/customer-stories/7hills-restaurant", "permanent": true },
+    { "source": "/Lvk", "destination": "/customer-stories/lvk-pharma-odoo-crm", "permanent": true },
+    { "source": "/patil", "destination": "/customer-stories/patil-sap-ams-automation", "permanent": true },
+    { "source": "/insights/customer-stories", "destination": "/about/customer-stories", "permanent": true },
+    { "source": "/upgrades", "destination": "/services/sap-upgrade", "permanent": true },
+    { "source": "/abap", "destination": "/services/sap-abap-rap-development", "permanent": true },
+    { "source": "/migrations", "destination": "/services/sap-migration", "permanent": true },
+    { "source": "/integration", "destination": "/services/sap-integration", "permanent": true },
+    { "source": "/rollouts", "destination": "/services/global-sap-rollouts", "permanent": true },
+    { "source": "/application-development", "destination": "/services/sap-application-development", "permanent": true },
+    { "source": "/fioridevelop", "destination": "/services/sap-fiori-development", "permanent": true },
+    { "source": "/implement", "destination": "/services/sap-s4hana-implementation", "permanent": true },
+    { "source": "/support-maintainance", "destination": "/services/sap-support-maintenance", "permanent": true },
+    { "source": "/odooservices/customdevelopment", "destination": "/services/odoo-custom-development", "permanent": true },
+    { "source": "/additionalServices/dataanalytics", "destination": "/services/data-analytics", "permanent": true },
+    { "source": "/odooservices/implementation", "destination": "/services/odoo-implementation", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

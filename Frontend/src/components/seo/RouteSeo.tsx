@@ -1,6 +1,13 @@
 import { useLocation } from "react-router-dom";
 import Seo from "./Seo";
-import { ROUTE_META, DEFAULT_META, NOT_FOUND_META, isKnownRoute } from "@/seo/routeMeta";
+import {
+  ROUTE_META,
+  DEFAULT_META,
+  NOT_FOUND_META,
+  BLOG_POST_FALLBACK_META,
+  isKnownRoute,
+  isBlogPostPath,
+} from "@/seo/routeMeta";
 
 /**
  * Renders the correct <title>/description/canonical for the current route.
@@ -9,7 +16,13 @@ import { ROUTE_META, DEFAULT_META, NOT_FOUND_META, isKnownRoute } from "@/seo/ro
  */
 const RouteSeo = () => {
   const { pathname } = useLocation();
-  const meta = ROUTE_META[pathname] ?? (isKnownRoute(pathname) ? DEFAULT_META : NOT_FOUND_META);
+  const meta =
+    ROUTE_META[pathname] ??
+    (isBlogPostPath(pathname)
+      ? BLOG_POST_FALLBACK_META
+      : isKnownRoute(pathname)
+        ? DEFAULT_META
+        : NOT_FOUND_META);
 
   return (
     <Seo
