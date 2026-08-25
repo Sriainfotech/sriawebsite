@@ -87,9 +87,23 @@ const SolutionPageLayout = ({
               {/* Decorative frame */}
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-orange-200/60 pointer-events-none" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[320px]">
+                {/* Reuses the page's own hero photo rather than a distinct
+                    "impact" image — every page using this layout has no
+                    second photo to draw from, so that's a deliberate design
+                    choice, not something to change here. What was a real
+                    bug: this srcset's own [768,1600] ladder never overlapped
+                    PageHeader's ([480,768,1080,1600,2000]), and this box's
+                    "(min-width:1024px) 660px, 100vw" sizes almost never
+                    resolves to the same rung the hero picked — so the exact
+                    same photo was a second, genuinely separate network
+                    fetch on every load (verified: 2 distinct requests for
+                    business-hero.jpg on both mobile and desktop). Adding the
+                    480w rung here means mobile (where PageHeader itself
+                    picks 480w) now has a real chance of a cache hit instead
+                    of a guaranteed second download. */}
                 <img
                   src={backgroundImage}
-                  srcSet={backgroundImage.includes("ik.imagekit.io") ? `${backgroundImage.replace(/w-\d+/, "w-768")} 768w, ${backgroundImage.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
+                  srcSet={backgroundImage.includes("ik.imagekit.io") ? `${backgroundImage.replace(/w-\d+/, "w-480")} 480w, ${backgroundImage.replace(/w-\d+/, "w-768")} 768w, ${backgroundImage.replace(/w-\d+/, "w-1600")} 1600w` : undefined}
                   sizes="(min-width: 1024px) 660px, 100vw"
                   alt={title}
                   width={660}

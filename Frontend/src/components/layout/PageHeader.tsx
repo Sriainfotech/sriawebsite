@@ -52,6 +52,14 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage, backgroundI
  srcSet={buildSrcSet(backgroundImage)}
  sizes="100vw"
  alt={title}
+ // Lighthouse's "explicit width/height" check flags any <img> missing
+ // these regardless of how it's actually laid out — this one is
+ // absolutely positioned and CSS-stretched to fill its section (so these
+ // attributes don't drive real layout here the way they would for an
+ // in-flow image), but the audit doesn't know that. 1600x600 matches the
+ // ~2.67:1 ratio these hero banners are shot at sitewide.
+ width={1600}
+ height={600}
  className="w-full h-full object-cover"
  style={
  backgroundImagePosition || backgroundImageZoom
