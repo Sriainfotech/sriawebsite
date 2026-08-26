@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Rangari;Ravikumar;;;
+FN:Ravikumar Rangari
+ORG:SRIA Infotech
+TITLE:Co Founder & Executive Chairman
+TEL;TYPE=CELL,VOICE:+919701314138
+TEL;TYPE=WORK,VOICE:+919701314138
+EMAIL;TYPE=INTERNET,PREF:ravirangari@sriainfotech.com
+EMAIL;TYPE=INTERNET,WORK:sales@sriainfotech.com
+URL:https://www.sriainfotech.com
+ADR;TYPE=WORK:;;T-Hub, Hyderabad, Telangana, India;;;;
+NOTE:Helping businesses with Digital Transformation, SAP Consulting, AI Solutions, Enterprise Software Development, HRMS, ERP, Web & Mobile Applications.
+END:VCARD

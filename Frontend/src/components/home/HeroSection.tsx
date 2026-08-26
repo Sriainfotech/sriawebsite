@@ -70,9 +70,25 @@ const HeroSection = () => {
     // synchronously on first render (not in an effect) so the correct
     // branch paints immediately with no flash, and this is what the LCP
     // element (the h1 just below) actually renders behind on first paint.
-    const [isDesktopViewport, setIsDesktopViewport] = useState(() =>
-        typeof window !== "undefined" ? window.matchMedia("(min-width: 768px)").matches : true
-    );
+    //
+    // window.__PRERENDERING__ (set by scripts/prerender.mjs before app code
+    // runs, same flag the GTM loader in index.html checks) forces the image
+    // branch during the prerender pass specifically, regardless of
+    // Puppeteer's own viewport at build time. Without this, matchMedia was
+    // evaluating Puppeteer's real (desktop-sized, ~800px) viewport during
+    // that ONE build-time pass, baking the <video> branch permanently into
+    // the static HTML every visitor receives — mobile included. Confirmed on
+    // production: the prod homepage HTML had <video poster="...w=1400...">
+    // baked in for every visitor before this fix. This flag is never set for
+    // a real visitor's own session (main.tsx does a plain createRoot mount,
+    // not hydrateRoot, so there's no hydration-mismatch concern either way —
+    // a real browser always gets its own fresh, correctly-branched render
+    // the moment JS mounts, regardless of what the static HTML showed first).
+    const [isDesktopViewport, setIsDesktopViewport] = useState(() => {
+        if (typeof window === "undefined") return true;
+        if ((window as unknown as { __PRERENDERING__?: boolean }).__PRERENDERING__) return false;
+        return window.matchMedia("(min-width: 768px)").matches;
+    });
     useEffect(() => {
         const mql = window.matchMedia("(min-width: 768px)");
         const handleChange = (e: MediaQueryListEvent) => setIsDesktopViewport(e.matches);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Mail, ArrowRight, Quote } from "lucide-react";
+import { Mail, ArrowRight, Quote, IdCard } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
 const LinkedInIcon = () => (
@@ -35,6 +35,10 @@ const leaders = [
     image: "https://ik.imagekit.io/hps6th7vy/sria/sai.png?tr=f-auto,q-auto,w-480",
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
+    // Digital business card — hidden route, only reachable from here (or a
+    // direct link/QR code). Also reachable at the short /sai-kumar slug —
+    // see App.tsx, both render the same page. See src/pages/SaiKumar.
+    cardRoute: "/about/leadership/sai-kumar",
   },
   {
     name: "Ravikumar Rangari",
@@ -44,6 +48,7 @@ const leaders = [
     image: "https://ik.imagekit.io/hps6th7vy/sria/ravi.png?tr=f-auto,q-auto,w-480",
     linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
+    cardRoute: "/about/leadership/ravi-kumar",
   },
   // {
   //   name: "Vinod Kumar Burra",
@@ -139,6 +144,16 @@ function LeaderShip() {
                     >
                       <Mail className="w-4 h-4" aria-hidden="true" />
                     </a>
+                    {person.cardRoute && (
+                      <Link
+                        to={person.cardRoute}
+                        aria-label={`${person.name}'s digital business card`}
+                        className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-white transition-colors shadow-lg"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <IdCard className="w-4 h-4" aria-hidden="true" />
+                      </Link>
+                    )}
                   </div>
                 </div>
 
@@ -162,14 +177,29 @@ function LeaderShip() {
                       href={person.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-slate-500 hover:text-[#0077b5] text-xs font-medium transition-colors"
+                      className="flex items-center gap-1.5 text-slate-500 hover:text-[#0077b5] text-xs font-medium transition-colors flex-shrink-0"
                     >
                       <LinkedInIcon /> LinkedIn
                     </a>
+                    {/* Digital business card — hover icon above isn't
+                        reachable on touch devices, so this stays visible
+                        for the two leaders who have one. */}
+                    {person.cardRoute && (
+                      <>
+                        <span className="text-slate-200">·</span>
+                        <Link
+                          to={person.cardRoute}
+                          className="flex items-center gap-1.5 text-orange-500 hover:text-orange-600 text-xs font-medium transition-colors flex-shrink-0"
+                        >
+                          <IdCard className="w-3.5 h-3.5" aria-hidden="true" />
+                          Profile
+                        </Link>
+                      </>
+                    )}
                     <span className="text-slate-200">·</span>
                     <a
                       href={`mailto:${person.email}`}
-                      className="flex items-center gap-1.5 text-slate-500 hover:text-orange-500 text-xs font-medium transition-colors truncate"
+                      className="flex items-center gap-1.5 text-slate-500 hover:text-orange-500 text-xs font-medium transition-colors truncate min-w-0"
                     >
                       <Mail className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
                       <span className="truncate">{person.email}</span>

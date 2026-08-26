@@ -35,6 +35,12 @@ const Patil = React.lazy(() => import("./pages/CustomerStories/Patil"));
 // About Sub-pages
 const ComingSoon = React.lazy(() => import("./pages/About/ComingSoon"));
 const Careers = React.lazy(() => import("./pages/About/Careers"));
+
+// Hidden routes, not linked anywhere on the site (no navbar entry, not in
+// sitemap.xml) — reachable only via direct link, QR code, or the profile
+// icon on the Leadership page. See src/pages/SaiKumar/index.tsx.
+const SaiKumar = React.lazy(() => import("./pages/SaiKumar"));
+const RaviKumar = React.lazy(() => import("./pages/RaviKumar"));
 const CustomerStoriesPage = React.lazy(() => import("./pages/About/CustomerStoriesPage"));
 const LeaderShip = React.lazy(() => import("./pages/About/LeaderShip"));
 const Location = React.lazy(() => import("./pages/About/Location"));
@@ -171,6 +177,19 @@ const App = () => (
               {/* Standalone — no navbar/footer */}
               <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
               <Route path="/sap-analytics" element={<SAPAnalytics />} />
+              {/* Hidden — not linked anywhere on the site (no navbar entry,
+                  not in sitemap.xml), reachable only via direct link/QR
+                  code/Leadership page profile icon. Standalone shareable
+                  cards, so they deliberately skip the main site chrome too.
+                  Each card is intentionally reachable at two slugs — the
+                  short form for QR codes/business cards, and the
+                  /about/leadership/... form for links shared from context
+                  of the Leadership page itself. Both render the exact same
+                  page component. */}
+              <Route path="/sai-kumar" element={<SaiKumar />} />
+              <Route path="/ravi-kumar" element={<RaviKumar />} />
+              <Route path="/about/leadership/sai-kumar" element={<SaiKumar />} />
+              <Route path="/about/leadership/ravi-kumar" element={<RaviKumar />} />
 
               {/* Admin — standalone, own layout, never linked from public nav.
                   /admin/login is reachable only by typing the URL directly. */}

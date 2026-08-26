@@ -11,6 +11,23 @@ export const DEFAULT_META: RouteMeta = {
     "Sria Infotech is a SAP consulting and digital transformation company specializing in SAP implementation, Odoo, analytics and enterprise support across India and global markets, backed by a dedicated delivery and support team.",
 };
 
+// Each hidden digital-business-card route exists at two slugs (see
+// App.tsx) — both need their own ROUTE_META entry since it's keyed by
+// exact pathname, so they share one object here to avoid the copy
+// drifting between the two.
+const SAI_KUMAR_CARD_META: RouteMeta = {
+  title: "Sai Kumar Bonakurthi — Founder & Managing Director | Sria Infotech",
+  description:
+    "Transforming Ideas Into Digital Reality. Save Sai Kumar Bonakurthi's digital business card, connect on socials, and reach Sria Infotech instantly.",
+  noindex: true,
+};
+const RAVI_KUMAR_CARD_META: RouteMeta = {
+  title: "Ravikumar Rangari — Co Founder & Executive Chairman | Sria Infotech",
+  description:
+    "Empowering Businesses Through Technology. Save Ravikumar Rangari's digital business card, connect on socials, and reach Sria Infotech instantly.",
+  noindex: true,
+};
+
 // One entry per indexable route. Routes not listed here fall back to
 // DEFAULT_META in RouteSeo — every entry here should be unique so search
 // engines can target each page's own intent (see website audit, July 2026).
@@ -39,6 +56,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Explore a career at Sria Infotech in SAP, Odoo and digital transformation consulting — how our hiring process works, why people join us, and how to get in touch.",
   },
+  // Hidden digital business cards — not linked from the navbar or sitemap,
+  // reachable only via direct link/QR code/the Leadership page.
+  "/sai-kumar": SAI_KUMAR_CARD_META,
+  "/about/leadership/sai-kumar": SAI_KUMAR_CARD_META,
+  "/ravi-kumar": RAVI_KUMAR_CARD_META,
+  "/about/leadership/ravi-kumar": RAVI_KUMAR_CARD_META,
   "/gallery": {
     title: "Gallery | Sria Infotech",
     description:

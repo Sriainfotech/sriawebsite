@@ -104,30 +104,46 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage, backgroundI
  )}
 
  {breadcrumbs && breadcrumbs.length > 0 && (
- <nav aria-label="Breadcrumb" className="mb-5">
- <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/50">
- <li className="flex items-center gap-1.5">
- <Link to="/" className="flex items-center gap-1 hover:text-orange-400 transition-colors">
+ <nav aria-label="Breadcrumb" className="mb-5 overflow-x-auto">
+ {/* flex-nowrap (was flex-wrap) + whitespace-nowrap on every crumb:
+ this row was measurably causing mobile layout shift — not the
+ hero image below. font-display: swap means these crumbs render
+ in a fallback font first, then the real webfont swaps in with
+ slightly different character widths; on a mobile-width flex-wrap
+ row that was sometimes just enough to push one crumb onto a
+ second line, growing this section's height by a full line
+ (~22px) after first paint and shoving the whole page down.
+ Measured on production: 0.146–0.258 CLS on /solutions/manufacturing-execution
+ and /services/strategy-consulting/process, both traced via the
+ Layout Instability API directly to this element's height change
+ (not the image, which is position:absolute with both CSS
+ dimensions already set and can't shift layout at all). Making the
+ row a fixed single line removes the wrap trigger entirely,
+ regardless of font-swap timing; it scrolls horizontally in the
+ rare case a very long breadcrumb chain doesn't fit. */}
+ <ol className="flex flex-nowrap items-center gap-1.5 text-xs text-white/50 w-max">
+ <li className="flex items-center gap-1.5 flex-shrink-0">
+ <Link to="/" className="flex items-center gap-1 hover:text-orange-400 transition-colors whitespace-nowrap">
  <Home className="w-3.5 h-3.5" />
  <span>Home</span>
  </Link>
- <ChevronRight className="w-3 h-3 text-white/30" />
+ <ChevronRight className="w-3 h-3 text-white/30 flex-shrink-0" />
  </li>
  {breadcrumbs.map((crumb, index) => (
- <li key={`${crumb.name}-${index}`} className="flex items-center gap-1.5">
+ <li key={`${crumb.name}-${index}`} className="flex items-center gap-1.5 flex-shrink-0">
  {index === breadcrumbs.length - 1 ? (
- <span className="text-white/80 font-medium">{crumb.name}</span>
+ <span className="text-white/80 font-medium whitespace-nowrap">{crumb.name}</span>
  ) : crumb.path ? (
  <>
- <Link to={crumb.path} className="hover:text-orange-400 transition-colors">
+ <Link to={crumb.path} className="hover:text-orange-400 transition-colors whitespace-nowrap">
  {crumb.name}
  </Link>
- <ChevronRight className="w-3 h-3 text-white/30" />
+ <ChevronRight className="w-3 h-3 text-white/30 flex-shrink-0" />
  </>
  ) : (
  <>
- <span className="text-white/50">{crumb.name}</span>
- <ChevronRight className="w-3 h-3 text-white/30" />
+ <span className="text-white/50 whitespace-nowrap">{crumb.name}</span>
+ <ChevronRight className="w-3 h-3 text-white/30 flex-shrink-0" />
  </>
  )}
  </li>

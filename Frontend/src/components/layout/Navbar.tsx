@@ -41,9 +41,24 @@ const Navbar: React.FC<NavbarProps> = ({
     // audit counts those regardless of visibility. It's also pure duplicate
     // markup: MobileMenuItem below renders the same nav content for mobile
     // already. Read synchronously so there's no flash on first paint.
-    const [isDesktopNav, setIsDesktopNav] = useState(() =>
-        typeof window !== "undefined" ? window.matchMedia("(min-width: 1280px)").matches : true
-    );
+    //
+    // window.__PRERENDERING__ forces this to true during the build-time
+    // prerender pass specifically (same flag used in HeroSection.tsx and by
+    // the GTM loader in index.html) — Puppeteer's own viewport there is
+    // under 1280px, so without this the mega-menu was being omitted from
+    // *every* prerendered page's static HTML entirely, for every visitor,
+    // confirmed missing from production. That's a real regression this
+    // component never intended: removing the mega-menu was only ever meant
+    // to apply to a real mobile visitor's own client-rendered DOM (which
+    // still happens correctly and immediately once their own JS mounts,
+    // regardless of what the static snapshot contains) — the static HTML
+    // itself should keep showing real desktop users' actual nav, both for
+    // crawlability and so the page doesn't look broken before JS loads.
+    const [isDesktopNav, setIsDesktopNav] = useState(() => {
+        if (typeof window === "undefined") return true;
+        if ((window as unknown as { __PRERENDERING__?: boolean }).__PRERENDERING__) return true;
+        return window.matchMedia("(min-width: 1280px)").matches;
+    });
     useEffect(() => {
         const mql = window.matchMedia("(min-width: 1280px)");
         const handleChange = (e: MediaQueryListEvent) => setIsDesktopNav(e.matches);

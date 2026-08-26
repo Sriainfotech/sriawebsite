@@ -29,6 +29,14 @@ const ROUTES = [
   "/about",
   "/careers",
   "/contact",
+  // Hidden routes — deliberately not in sitemap.xml or the navbar, only
+  // reachable via direct link/QR code/Leadership page — but still
+  // prerendered so they load fast and carry correct OG tags when shared
+  // (see routeMeta.ts).
+  "/sai-kumar",
+  "/ravi-kumar",
+  "/about/leadership/sai-kumar",
+  "/about/leadership/ravi-kumar",
   "/about/alliances",
   "/about/coming-soon",
   "/about/customer-stories",
