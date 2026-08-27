@@ -51,6 +51,36 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
+// "Show their favicon" — the sites' own /favicon.ico files are real but
+// unexpectedly heavy for an icon (nxsysdigital.com's is 2.2MB, sriainfotech's
+// is 1.4MB — full-resolution images served as .ico, not actual small icons),
+// so hotlinking them here would ship megabytes for a 44px tile on a page
+// built to be lightweight and shareable. Sria and NxSys Digital use the
+// brand logo files provided for this card, cropped down to just the icon
+// mark (public/sria_logo_gray_icon.png, public/nxsys_digital_icon.png) —
+// the originals are full lockups with wordmark + tagline, which rendered
+// small and padded inside the 48px tile via object-contain; NxGen Tech
+// Academy's source is already a tight square mark, so it still uses the
+// same small ImageKit-optimized icon it already uses elsewhere on this
+// site (AppStore.tsx).
+const OUR_COMPANIES = [
+  {
+    name: "NxGen Tech Academy",
+    url: "https://nxgentechacademy.com",
+    icon: "https://ik.imagekit.io/hps6th7vy/sria/logos/nxgen_logo.png?tr=f-auto,q-auto,w-96",
+  },
+  {
+    name: "NxSys Digital",
+    url: "https://nxsysdigital.com",
+    icon: "/nxsys_digital_icon.png",
+  },
+  {
+    name: "SRIA Infotech",
+    url: "https://www.sriainfotech.com",
+    icon: "/sria_logo_gray_icon.png",
+  },
+];
+
 export function DigitalCard({ data }: { data: CardData }) {
   const telHref = `tel:${data.phone}`;
   const waHref = `https://wa.me/${data.whatsapp.replace(/[^\d]/g, "")}`;
@@ -197,6 +227,16 @@ export function DigitalCard({ data }: { data: CardData }) {
               })}
           </div>
         </section>
+
+        {/* Our Companies */}
+        <section className="px-4 pb-6 pt-0 sm:px-6">
+          <SectionEyebrow text="Our Companies" />
+          <div className="mt-3 grid grid-cols-3 gap-3">
+            {OUR_COMPANIES.map((c, i) => (
+              <LogoTile key={c.name} logo={c.icon} label={c.name} href={c.url} index={i} />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -236,6 +276,39 @@ function IconTile({
     >
       <div className={cn("flex h-12 w-12 items-center justify-center rounded-xl shadow-sm", iconBg)}>
         <Icon className={cn("h-5 w-5", iconColor ?? "text-white")} />
+      </div>
+      <span className="text-center text-[10px] font-medium leading-tight text-slate-900">{label}</span>
+    </motion.a>
+  );
+}
+
+function LogoTile({
+  logo,
+  label,
+  href,
+  index,
+}: {
+  logo: string;
+  label: string;
+  href: string;
+  index: number;
+}) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      initial={{ opacity: 0, scale: 0.94 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.04 }}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.96 }}
+      className="flex flex-col items-center gap-1"
+      aria-label={label}
+    >
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-orange-100 bg-white p-1.5 shadow-sm">
+        <img src={logo} alt="" width={40} height={40} loading="lazy" decoding="async" className="h-full w-full object-contain" />
       </div>
       <span className="text-center text-[10px] font-medium leading-tight text-slate-900">{label}</span>
     </motion.a>
