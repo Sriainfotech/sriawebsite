@@ -55,15 +55,25 @@ const fadeUp = {
 // unexpectedly heavy for an icon (nxsysdigital.com's is 2.2MB, sriainfotech's
 // is 1.4MB — full-resolution images served as .ico, not actual small icons),
 // so hotlinking them here would ship megabytes for a 44px tile on a page
-// built to be lightweight and shareable. Sria and NxSys Digital use the
-// brand logo files provided for this card, cropped down to just the icon
-// mark (public/sria_logo_gray_icon.png, public/nxsys_digital_icon.png) —
-// the originals are full lockups with wordmark + tagline, which rendered
-// small and padded inside the 48px tile via object-contain; NxGen Tech
-// Academy's source is already a tight square mark, so it still uses the
-// same small ImageKit-optimized icon it already uses elsewhere on this
-// site (AppStore.tsx).
-const OUR_COMPANIES = [
+// built to be lightweight and shareable. Sria, NxSys Digital, and AIRA HRMS
+// use the brand logo files provided for this card, cropped down to just the
+// icon mark (public/sria_logo_gray_icon.png, public/nxsys_digital_icon.png,
+// public/aira_hrms_icon.png) — the originals are full lockups with wordmark
+// + tagline, which rendered small and padded inside the 48px tile via
+// object-contain. eSkoolia's mark has the icon (turban+glasses smiley) woven
+// directly into the letters — no clean icon-only crop exists — so it keeps
+// the full wordmark, sourced from public/eskoolia_logo_optimized.png (the
+// provided public/eskoolia_logo.png cropped to just the logo and downscaled
+// from 1536×1024/2MB to 400×169/~140KB, since the full original is far more
+// than a 48px tile needs). NxGen Tech Academy still uses the same small
+// ImageKit-optimized mark already used elsewhere on this site (AppStore.tsx).
+const OUR_COMPANIES: Array<{
+  name: string;
+  url: string;
+  icon?: string;
+  fallbackIcon?: LucideIcon;
+  iconBg?: string;
+}> = [
   {
     name: "NxGen Tech Academy",
     url: "https://nxgentechacademy.com",
@@ -78,6 +88,16 @@ const OUR_COMPANIES = [
     name: "SRIA Infotech",
     url: "https://www.sriainfotech.com",
     icon: "/sria_logo_gray_icon.png",
+  },
+  {
+    name: "AIRA HRMS",
+    url: "https://aira.nxsys.in",
+    icon: "/aira_hrms_icon.png",
+  },
+  {
+    name: "eSkoolia",
+    url: "https://eskoolia.com",
+    icon: "/eskoolia_logo_optimized.png",
   },
 ];
 
@@ -233,7 +253,15 @@ export function DigitalCard({ data }: { data: CardData }) {
           <SectionEyebrow text="Our Companies" />
           <div className="mt-3 grid grid-cols-3 gap-3">
             {OUR_COMPANIES.map((c, i) => (
-              <LogoTile key={c.name} logo={c.icon} label={c.name} href={c.url} index={i} />
+              <LogoTile
+                key={c.name}
+                logo={c.icon}
+                fallbackIcon={c.fallbackIcon}
+                iconBg={c.iconBg}
+                label={c.name}
+                href={c.url}
+                index={i}
+              />
             ))}
           </div>
         </section>
@@ -284,11 +312,15 @@ function IconTile({
 
 function LogoTile({
   logo,
+  fallbackIcon: FallbackIcon,
+  iconBg,
   label,
   href,
   index,
 }: {
-  logo: string;
+  logo?: string;
+  fallbackIcon?: LucideIcon;
+  iconBg?: string;
   label: string;
   href: string;
   index: number;
@@ -307,9 +339,15 @@ function LogoTile({
       className="flex flex-col items-center gap-1"
       aria-label={label}
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-orange-100 bg-white p-1.5 shadow-sm">
-        <img src={logo} alt="" width={40} height={40} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-      </div>
+      {logo ? (
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-orange-100 bg-white p-1.5 shadow-sm">
+          <img src={logo} alt="" width={40} height={40} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+        </div>
+      ) : (
+        <div className={cn("flex h-12 w-12 items-center justify-center rounded-xl shadow-sm", iconBg ?? "bg-orange-500")}>
+          {FallbackIcon && <FallbackIcon className="h-5 w-5 text-white" />}
+        </div>
+      )}
       <span className="text-center text-[10px] font-medium leading-tight text-slate-900">{label}</span>
     </motion.a>
   );

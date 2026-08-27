@@ -30,9 +30,9 @@ const apps: App[] = [
     comingSoon: true,
   },
   {
-    name: "HRMS",
+    name: "AIRA HRMS",
     description: "Human Resource Management",
-    url: "http://hr.nxsys.in/",
+    url: "https://aira.nxsys.in",
     icon: "👥",
     bg: "bg-violet-50",
     category: "Operations",
