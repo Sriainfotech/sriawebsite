@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import axiosInstance from "@/lib/axios";
+import { ikSrc, ikSrcSet } from "@/lib/imagekit";
 
 interface BlogListItem {
   _id: string;
@@ -83,7 +84,9 @@ const BlogListing = () => {
                             }}
                           >
                             <img
-                              src={post.coverImageUrl}
+                              src={ikSrc(post.coverImageUrl, 480)}
+                              srcSet={ikSrcSet(post.coverImageUrl, [480, 720])}
+                              sizes="(min-width: 1024px) 480px, 100vw"
                               alt={post.title}
                               loading="lazy"
                               decoding="async"

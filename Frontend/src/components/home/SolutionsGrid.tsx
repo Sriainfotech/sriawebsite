@@ -77,7 +77,10 @@ const SolutionsGrid = () => {
               <div className="relative h-48 overflow-hidden flex-shrink-0">
                 <img
                   src={cat.image}
-                  srcSet={`${cat.image.replace(/w-\d+/, "w-960")} 960w, ${cat.image.replace(/w-\d+/, "w-1600")} 1600w`}
+                  // 720w added — see AboutSection.tsx for the measured
+                  // waste this closes (960w was the smallest candidate,
+                  // oversized for this image's mobile display width).
+                  srcSet={`${cat.image.replace(/w-\d+/, "w-720")} 720w, ${cat.image.replace(/w-\d+/, "w-960")} 960w, ${cat.image.replace(/w-\d+/, "w-1600")} 1600w`}
                   sizes="(min-width: 1024px) 660px, 100vw"
                   alt={cat.alt}
                   width={960}

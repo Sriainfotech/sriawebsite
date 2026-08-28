@@ -30,7 +30,12 @@ const AboutSection = () => {
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl h-full min-h-[320px]">
                             <img
                                 src={aboutImageUrl}
-                                srcSet={`${aboutImageUrl.replace(/w-\d+/, "w-960")} 960w, ${aboutImageUrl.replace(/w-\d+/, "w-1600")} 1600w`}
+                                // 720w added: a live PageSpeed audit measured this image
+                                // rendering at 358 CSS px wide on mobile (2x DPR = 716 physical
+                                // px needed) but the srcset jumped straight to 960w since that
+                                // was the smallest candidate — wasting ~28KB/load. 720w gives
+                                // mobile a tight match without touching the desktop 1600w tier.
+                                srcSet={`${aboutImageUrl.replace(/w-\d+/, "w-720")} 720w, ${aboutImageUrl.replace(/w-\d+/, "w-960")} 960w, ${aboutImageUrl.replace(/w-\d+/, "w-1600")} 1600w`}
                                 sizes="(min-width: 1024px) 660px, 100vw"
                                 alt="Team collaborating around laptop together"
                                 width={960}

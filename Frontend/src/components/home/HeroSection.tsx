@@ -53,9 +53,17 @@ const PROFILE_OPTIONS: Record<ProfileKey, { label: string; files: ProfileFile[] 
 // Same source photo the video's own poster already used — kept for visual
 // consistency, just served as a proper responsive image set instead of a
 // single 1400px frame. Unsplash's CDN honors ?fm=webp/&q=.
-const HERO_IMAGE_480 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=480&q=70&fm=webp";
-const HERO_IMAGE_768 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=768&q=70&fm=webp";
-const HERO_IMAGE_1080 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1080&q=75&fm=webp";
+// q=60 across all three tiers (down from 70/70/75) — a live PageSpeed audit
+// flagged the 1080w tier specifically as ~56KB heavier than it needs to be
+// purely from compression, not sizing. Safe to drop further than a typical
+// content photo would tolerate: this image renders behind a CSS filter
+// (brightness(0.45) contrast(1.15) saturate(0.9), see below) that already
+// darkens/desaturates it substantially, so compression artifacts that
+// might show on the original are far less visible here. Matches the q=60
+// already used for this same photo's video poster a few lines down.
+const HERO_IMAGE_480 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=480&q=60&fm=webp";
+const HERO_IMAGE_768 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=768&q=60&fm=webp";
+const HERO_IMAGE_1080 = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1080&q=60&fm=webp";
 
 const HeroSection = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -168,6 +176,24 @@ const HeroSection = () => {
                 instead of just being hidden after downloading. The hero h1
                 just below is this page's LCP element; a mobile visitor was
                 previously waiting on this video before it could paint. */}
+            {/* DISABLED 2026-08-28: the <video> branch this used to render
+                on desktop (isDesktopViewport) is commented out below — its
+                Cloudinary source returns 401 on every request, verified
+                directly, and it's not an expired-signature/private-asset
+                issue: the response body is literally "cloud_name dmxfdt7ub
+                is disabled", i.e. the whole Cloudinary account, not just
+                this one asset. Nothing in this codebase can fix that
+                (billing/account status on Cloudinary's side) — every
+                desktop visitor was getting a failed network request +
+                console error for a video that could never play; the
+                poster image was the only thing they ever actually saw
+                anyway. Falling back to the same static image mobile
+                already uses (no visible change for desktop users) until
+                either the Cloudinary account is restored or the video is
+                re-uploaded to ImageKit per the TODO that was already here.
+                To re-enable: restore/replace the video source, uncomment
+                the block below, and swap the unconditional <img> back to
+                the isDesktopViewport ternary.
             <div className="absolute inset-0 z-0">
                 {isDesktopViewport ? (
                     <video
@@ -177,28 +203,31 @@ const HeroSection = () => {
                         className="absolute inset-0 w-full h-full object-cover"
                         style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
                     >
-                        {/* TODO: re-point to ImageKit once "Sria Website Video.mp4" is uploaded there — temporarily serving from Cloudinary since it's still live. */}
                         <source src="https://res.cloudinary.com/dmxfdt7ub/video/upload/f_auto,q_auto/v1779455315/sria/Sria%20Website%20Video.mp4" type="video/mp4" />
                     </video>
                 ) : (
-                    <img
-                        src={HERO_IMAGE_768}
-                        srcSet={`${HERO_IMAGE_480} 480w, ${HERO_IMAGE_768} 768w, ${HERO_IMAGE_1080} 1080w`}
-                        sizes="100vw"
-                        alt=""
-                        fetchPriority="high"
-                        decoding="async"
-                        // Same reasoning as PageHeader.tsx's hero image: this is
-                        // absolutely positioned and CSS-stretched to fill its
-                        // section, so these don't drive real layout — added
-                        // purely so Lighthouse's width/height audit stops
-                        // flagging it. 1920x1080 matches the 1080w variant.
-                        width={1920}
-                        height={1080}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
-                    />
+                    <img ... />
                 )}
+            </div>
+            */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src={HERO_IMAGE_768}
+                    srcSet={`${HERO_IMAGE_480} 480w, ${HERO_IMAGE_768} 768w, ${HERO_IMAGE_1080} 1080w`}
+                    sizes="100vw"
+                    alt=""
+                    fetchPriority="high"
+                    decoding="async"
+                    // Same reasoning as PageHeader.tsx's hero image: this is
+                    // absolutely positioned and CSS-stretched to fill its
+                    // section, so these don't drive real layout — added
+                    // purely so Lighthouse's width/height audit stops
+                    // flagging it. 1920x1080 matches the 1080w variant.
+                    width={1920}
+                    height={1080}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
+                />
                 {/* Cinematic gradient overlays — identical on both branches so the
                     text stays equally readable either way. */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />

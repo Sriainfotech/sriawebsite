@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import axiosInstance from "@/lib/axios";
+import { ikSrc, ikSrcSet } from "@/lib/imagekit";
 
 interface BlogPreviewItem {
   _id: string;
@@ -87,7 +88,9 @@ const BlogPreviewSection = () => {
                       }}
                     >
                       <img
-                        src={post.coverImageUrl}
+                        src={ikSrc(post.coverImageUrl, 480)}
+                        srcSet={ikSrcSet(post.coverImageUrl, [480, 720])}
+                        sizes="(min-width: 1024px) 450px, 100vw"
                         alt={post.title}
                         loading="lazy"
                         decoding="async"

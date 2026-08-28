@@ -490,7 +490,10 @@ const ChatWidget = () => {
               onClick={() => setIsOpen(true)}
               className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full transition-all hover:scale-110 hover:shadow-2xl"
             >
-              <img src="https://ik.imagekit.io/hps6th7vy/sria/ai-bot-icon.png?tr=f-auto,q-auto,w-160" alt="" width={80} height={80} className="h-full w-full object-contain" />
+              {/* q-70 explicit (was q-auto) — ImageKit's auto-quality picked a
+                  higher setting than this small icon needs; a live audit
+                  flagged ~10KB of pure compression waste here. */}
+              <img src="https://ik.imagekit.io/hps6th7vy/sria/ai-bot-icon.png?tr=f-auto,q-70,w-160" alt="" width={80} height={80} className="h-full w-full object-contain" />
             </button>
           </motion.div>
         )}

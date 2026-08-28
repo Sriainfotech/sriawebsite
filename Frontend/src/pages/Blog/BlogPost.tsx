@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar, Clock, Loader2 } from "lucide-react";
 import axiosInstance from "@/lib/axios";
 import PageHeader from "@/components/layout/PageHeader";
 import Seo from "@/components/seo/Seo";
+import { ikSrc } from "@/lib/imagekit";
 
 interface BlogPostData {
   title: string;
@@ -89,7 +90,13 @@ const BlogPost = () => {
       <PageHeader
         title={post.title}
         breadcrumbs={[{ name: "Blog", path: "/blog" }, { name: post.title }]}
-        backgroundImage={post.coverImageUrl || undefined}
+        // Adding a ?tr=...,w-1600 transform here (via ikSrc) rather than
+        // passing the raw upload URL lets PageHeader's own buildSrcSet
+        // detect the width query and generate its full responsive srcset
+        // automatically — otherwise (no query at all) it silently skips
+        // srcset and this hero ships as one full-size, uncompressed image
+        // to every device. See src/lib/imagekit.ts.
+        backgroundImage={post.coverImageUrl ? ikSrc(post.coverImageUrl, 1600) : undefined}
         backgroundImagePosition={post.coverImagePosition}
         backgroundImageZoom={post.coverImageZoom}
       />

@@ -183,7 +183,10 @@ const FeaturesSection = () => {
                   <div className="absolute inset-0">
                     <img
                       src={current.image}
-                      srcSet={`${current.image.replace(/w-\d+/, "w-960")} 960w, ${current.image.replace(/w-\d+/, "w-1600")} 1600w`}
+                      // 720w added — see AboutSection.tsx for the measured
+                      // waste this closes (960w was the smallest candidate,
+                      // oversized for this image's mobile display width).
+                      srcSet={`${current.image.replace(/w-\d+/, "w-720")} 720w, ${current.image.replace(/w-\d+/, "w-960")} 960w, ${current.image.replace(/w-\d+/, "w-1600")} 1600w`}
                       sizes="(min-width: 1024px) 800px, 100vw"
                       alt={current.alt}
                       width={960}

@@ -235,7 +235,10 @@ const Footer = () => {
                         <div className="flex justify-end items-center gap-3 mt-auto pt-5">
                             <div className="bg-white rounded-md px-3 py-1.5 flex items-center flex-shrink-0">
                                 <img
-                                    src="https://ik.imagekit.io/hps6th7vy/sria/logos/dpiit.png?tr=f-auto,q-auto,w-280"
+                                    // w-160 (was w-280) — a live audit measured this
+                                    // rendering at 153x72 physical px and flagged the
+                                    // 280w request as oversized for it.
+                                    src="https://ik.imagekit.io/hps6th7vy/sria/logos/dpiit.png?tr=f-auto,q-auto,w-160"
                                     alt="DPIIT Recognized Startup - Startup India"
                                     width={140}
                                     height={56}
