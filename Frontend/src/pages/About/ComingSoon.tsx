@@ -149,7 +149,7 @@ const ComingSoon: React.FC = () => {
                   whileTap={{ scale: isLoading ? 1 : 0.97 }}
                   type="submit"
                   disabled={isLoading}
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition-shadow whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-900 font-semibold text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition-shadow whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <><Loader2 className="w-4 h-4 animate-spin" /> Saving...</>

@@ -81,7 +81,7 @@ const SuccessStories = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
 
                     <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
-                      <span className="inline-block px-3 py-1 bg-orange-500 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3">
+                      <span className="inline-block px-3 py-1 bg-orange-500 text-slate-900 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3">
                         {story.category}
                       </span>
                       <h3 className="text-base font-bold mb-4 leading-snug">{story.title}</h3>

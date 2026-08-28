@@ -302,7 +302,7 @@ const VideoCard: React.FC<{ item: GalleryItem; onOpen: () => void }> = ({ item, 
           separate visible strings inside one aria-labelled control was
           tripping axe's label/content mismatch check. */}
       <div className="absolute top-3 left-3" aria-hidden="true">
-        <span className="px-2.5 py-1 bg-orange-500 text-white rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg">
+        <span className="px-2.5 py-1 bg-orange-500 text-slate-900 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg">
           Video
         </span>
       </div>
@@ -421,7 +421,7 @@ const ImageCard: React.FC<{
           {item.category}
         </span>
         {isGroup && (
-          <span className="flex items-center gap-1 px-2 py-1 bg-orange-500/90 backdrop-blur-sm text-white rounded-full text-[10px] font-bold">
+          <span className="flex items-center gap-1 px-2 py-1 bg-orange-500/90 backdrop-blur-sm text-slate-900 rounded-full text-[10px] font-bold">
             <Images className="w-3 h-3" />{item.images.length}
           </span>
         )}

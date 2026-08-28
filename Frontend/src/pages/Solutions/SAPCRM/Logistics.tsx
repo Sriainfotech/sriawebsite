@@ -135,6 +135,7 @@ const Logistics = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Logistics Expert"
     >
  {/* Hero Section */}
 

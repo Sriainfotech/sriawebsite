@@ -1,4 +1,4 @@
-import Fuse from "fuse.js";
+import type Fuse from "fuse.js";
 import { ROUTE_META } from "@/seo/routeMeta";
 
 export interface SearchDoc {
@@ -30,21 +30,31 @@ function buildSearchDocs(): SearchDoc[] {
     }));
 }
 
-let cached: { docs: SearchDoc[]; fuse: Fuse<SearchDoc> } | null = null;
+let cached: Promise<{ docs: SearchDoc[]; fuse: Fuse<SearchDoc> }> | null = null;
 
-export function getSiteSearch(): { docs: SearchDoc[]; fuse: Fuse<SearchDoc> } {
+// fuse.js is dynamically imported here rather than statically at the top
+// of this file — a static import pulled the whole library into the main
+// eagerly-loaded bundle (shipped on every single page load via
+// Navbar -> SiteSearch, whether or not the visitor ever opens search),
+// which a live Lighthouse audit flagged as unused-JS weight on every page
+// that isn't the one where someone actually searches. Deferred to the
+// moment the search box is actually opened/focused (see SiteSearch.tsx)
+// so it only loads for visitors who use the feature.
+export async function getSiteSearch(): Promise<{ docs: SearchDoc[]; fuse: Fuse<SearchDoc> }> {
   if (cached) return cached;
-  const docs = buildSearchDocs();
-  const fuse = new Fuse(docs, {
-    keys: [
-      { name: "title", weight: 0.6 },
-      { name: "summary", weight: 0.3 },
-      { name: "path", weight: 0.1 },
-    ],
-    threshold: 0.35,
-    ignoreLocation: true,
-    minMatchCharLength: 2,
+  cached = import("fuse.js").then(({ default: Fuse }) => {
+    const docs = buildSearchDocs();
+    const fuse = new Fuse(docs, {
+      keys: [
+        { name: "title", weight: 0.6 },
+        { name: "summary", weight: 0.3 },
+        { name: "path", weight: 0.1 },
+      ],
+      threshold: 0.35,
+      ignoreLocation: true,
+      minMatchCharLength: 2,
+    });
+    return { docs, fuse };
   });
-  cached = { docs, fuse };
   return cached;
 }

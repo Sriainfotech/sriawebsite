@@ -167,7 +167,7 @@ const CustomerStoriesPage = () => {
                   {/* Right: text */}
                   <div className="p-10 lg:p-14 flex flex-col justify-center">
                     <div className="flex items-center gap-3 mb-5">
-                      <span className="px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs font-bold uppercase tracking-wider">
+                      <span className="px-3 py-1.5 rounded-full bg-orange-500 text-slate-900 text-xs font-bold uppercase tracking-wider">
                         {featured.tag}
                       </span>
                       <span className="text-slate-500 text-xs">{featured.category}</span>
@@ -228,7 +228,7 @@ const CustomerStoriesPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                     {/* Top badge */}
                     <div className="absolute top-4 left-4">
-                      <span className="px-2.5 py-1 rounded-full bg-orange-500 text-white text-xs font-bold">
+                      <span className="px-2.5 py-1 rounded-full bg-orange-500 text-slate-900 text-xs font-bold">
                         {story.tag}
                       </span>
                     </div>
@@ -282,7 +282,7 @@ const CustomerStoriesPage = () => {
             <motion.div whileHover={{ scale: 1.04 }} className="inline-block">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-orange-500/20 text-sm"
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-slate-900 px-10 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-orange-500/20 text-sm"
               >
                 Get in Touch <ArrowRight className="w-4 h-4" />
               </Link>

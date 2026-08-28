@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import { Reveal } from "@/components/motion/Reveal";
@@ -21,6 +22,14 @@ interface SolutionPageLayoutProps {
   trustedFeatures: TrustedFeature[];
   endToEndServices: string[];
   techTrends: string[];
+  // In-page CTA rendered after Tech Trends, specific to this solution's
+  // topic — this layout previously had NO CTA button of its own anywhere
+  // in the page body (only the global header nav's generic "Contact Us",
+  // which stays untouched). Defaults preserve prior behavior for any page
+  // not yet updated to pass its own text.
+  ctaTitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
 }
 
 const SolutionPageLayout = ({
@@ -28,6 +37,9 @@ const SolutionPageLayout = ({
   impactHeading, impactDescription,
   children,
   trustedFeatures, endToEndServices, techTrends,
+  ctaTitle = "Ready to get started?",
+  ctaText = "Contact Us",
+  ctaLink = "/contact",
 }: SolutionPageLayoutProps) => {
   return (
     <div className="bg-white font-sans text-slate-800">
@@ -260,12 +272,28 @@ const SolutionPageLayout = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
                 whileHover={{ y: -4, scale: 1.05 }}
-                className="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300 cursor-default shadow-sm"
+                className="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-orange-500 hover:border-orange-500 hover:text-slate-900 transition-all duration-300 cursor-default shadow-sm"
               >
                 {tech}
               </motion.span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="py-16 bg-slate-950 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Reveal className="flex flex-col items-center gap-5 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-white">{ctaTitle}</h2>
+            <Link
+              to={ctaLink}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-900 font-semibold text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-105 transition-all duration-300"
+            >
+              {ctaText} <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Reveal>
         </div>
       </section>
     </div>

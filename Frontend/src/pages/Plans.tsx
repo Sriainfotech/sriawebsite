@@ -121,7 +121,7 @@ const PlansPage = () => {
               </div>
               <p className="text-slate-700 font-semibold">{error}</p>
               <button onClick={fetchPlans}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors">
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-orange-500 text-slate-900 text-sm font-semibold hover:bg-orange-600 transition-colors">
                 <RefreshCw className="w-4 h-4" /> Retry
               </button>
             </div>
@@ -175,7 +175,7 @@ const PlansPage = () => {
                             </div>
                           </div>
                           {isPopular && (
-                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500 text-white text-[10px] font-bold flex-shrink-0">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500 text-slate-900 text-[10px] font-bold flex-shrink-0">
                               <Star className="w-2.5 h-2.5 fill-current" /> Popular
                             </span>
                           )}
@@ -207,7 +207,7 @@ const PlansPage = () => {
                       <div className="p-5 pt-3 bg-white">
                         <button className={`w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all ${
                           isPopular
-                            ? "bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/20"
+                            ? "bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-900 shadow-lg shadow-orange-500/20"
                             : isFree
                               ? "bg-slate-100 hover:bg-slate-200 text-slate-600"
                               : "bg-slate-900 hover:bg-slate-800 text-white"

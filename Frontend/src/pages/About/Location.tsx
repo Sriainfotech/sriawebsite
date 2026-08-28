@@ -225,7 +225,7 @@ function Location() {
                   key={country}
                   onClick={() => setSelectedCountry(country)}
                   className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex-shrink-0 ${selectedCountry === country
-                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
+                    ? "bg-orange-500 text-slate-900 shadow-lg shadow-orange-500/20"
                     : "bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:border-white/20"
                     }`}
                 >

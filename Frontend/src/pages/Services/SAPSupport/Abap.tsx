@@ -75,6 +75,7 @@ function Abap() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Talk to an ABAP Expert"
     />
   );
 }

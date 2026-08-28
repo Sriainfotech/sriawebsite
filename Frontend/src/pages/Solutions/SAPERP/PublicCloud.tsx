@@ -175,6 +175,7 @@ const PublicCloud = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Explore Public Cloud Options"
     >
  {/* Hero Section */}
 

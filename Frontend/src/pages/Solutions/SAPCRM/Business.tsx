@@ -117,6 +117,7 @@ const Business = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Join the SAP Business Network"
     >
       {/* Hero Section */}
 

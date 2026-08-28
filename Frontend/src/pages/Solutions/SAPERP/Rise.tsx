@@ -66,6 +66,7 @@ const Rise = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Start Your RISE Journey"
     >
       {/* Advisory & Assessment */}
       <section className="py-16 px-6 lg:px-12 bg-white">

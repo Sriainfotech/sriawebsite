@@ -238,7 +238,7 @@ const SAPAnalytics = () => {
               <div className="flex gap-3.5 flex-wrap">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 px-[26px] py-3.5 rounded-xl font-bold text-[15px] bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
+                  className="group inline-flex items-center gap-2 px-[26px] py-3.5 rounded-xl font-bold text-[15px] bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-900 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
                 >
                   Book a walkthrough
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -640,7 +640,7 @@ const SAPAnalytics = () => {
               <Eyebrow dark>Next step</Eyebrow>
               <SectionHeading dark className="max-w-[500px]">Let's build your analytics roadmap together</SectionHeading>
               <p className="text-slate-300 max-w-[500px]">We welcome the chance to walk through any of these architectures in depth and tailor a plan to your SAP landscape. A 45-minute walkthrough is enough to map your first three dashboards.</p>
-              <a href="tel:+919059585039" className="group inline-flex items-center gap-2 mt-8 px-[26px] py-3.5 rounded-xl font-bold text-[15px] bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
+              <a href="tel:+919059585039" className="group inline-flex items-center gap-2 mt-8 px-[26px] py-3.5 rounded-xl font-bold text-[15px] bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-900 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
                 Talk to us today
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>

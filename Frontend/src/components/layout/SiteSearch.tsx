@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { Search, X } from "lucide-react";
@@ -6,13 +6,29 @@ import { getSiteSearch, type SearchDoc } from "@/lib/searchIndex";
 
 const MAX_RESULTS = 6;
 
+// getSiteSearch() dynamically imports fuse.js on first call (see
+// searchIndex.ts) so it isn't part of the main bundle every page pays
+// for — this hook just awaits that instead of computing synchronously.
 function useResults(query: string): SearchDoc[] {
-  return useMemo(() => {
+  const [results, setResults] = useState<SearchDoc[]>([]);
+
+  useEffect(() => {
     const q = query.trim();
-    if (q.length < 2) return [];
-    const { fuse } = getSiteSearch();
-    return fuse.search(q, { limit: MAX_RESULTS }).map((r) => r.item);
+    if (q.length < 2) {
+      setResults([]);
+      return;
+    }
+    let cancelled = false;
+    getSiteSearch().then(({ fuse }) => {
+      if (cancelled) return;
+      setResults(fuse.search(q, { limit: MAX_RESULTS }).map((r) => r.item));
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [query]);
+
+  return results;
 }
 
 /**

@@ -134,6 +134,7 @@ const Warehouse = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Optimize Your Warehouse Ops"
     >
  {/* Hero Section */}
 

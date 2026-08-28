@@ -73,6 +73,7 @@ function Application() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Get a Free App Assessment"
     />
   );
 }

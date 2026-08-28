@@ -156,6 +156,7 @@ const SuccessFactors = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to an HXM Consultant"
     >
  {/* Hero Section */}
 

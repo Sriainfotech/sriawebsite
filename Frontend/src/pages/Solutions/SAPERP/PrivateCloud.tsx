@@ -160,6 +160,7 @@ const PrivateCloud = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Explore Private Cloud Options"
     >
  {/* Hero Section */}
 

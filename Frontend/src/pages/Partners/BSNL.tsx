@@ -675,7 +675,7 @@ function BSNL() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-slate-900 text-sm font-semibold transition-colors"
             >
               Contact us
               <ArrowRight className="w-4 h-4" />

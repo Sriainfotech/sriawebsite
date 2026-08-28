@@ -64,6 +64,7 @@ function Support() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Get Reliable SAP Support"
     />
   );
 }

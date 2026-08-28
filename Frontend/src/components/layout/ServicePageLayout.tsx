@@ -53,6 +53,14 @@ interface ServicePageLayoutProps {
   relatedServicesTitle?: string;
   relatedServicesDescription?: string;
   relatedServices: RelatedServiceItem[];
+  // In-page CTA button rendered in the CTA Banner section, specific to
+  // this service's topic (e.g. "Get a Free Fiori App Assessment") rather
+  // than a generic "Contact Us" — that generic label already exists once,
+  // globally, as the header nav button (untouched, out of scope here).
+  // Defaults preserve prior behavior for any page not yet updated to pass
+  // its own text.
+  ctaText?: string;
+  ctaLink?: string;
 }
 
 const ServicePageLayout = ({
@@ -66,6 +74,8 @@ const ServicePageLayout = ({
   relatedServicesTitle = "Elevate, Innovate, and Thrive with SAP",
   relatedServicesDescription = "Comprehensive services supporting every stage of your SAP lifecycle.",
   relatedServices,
+  ctaText = "Contact Us",
+  ctaLink = "/contact",
 }: ServicePageLayoutProps) => {
   return (
     <div className="w-full relative overflow-x-hidden">
@@ -300,10 +310,18 @@ const ServicePageLayout = ({
         <div className="absolute inset-0 flex items-center justify-center">
           <Reveal
             y={10}
-            className="text-center"
+            className="flex flex-col items-center gap-4 px-4"
           >
-            <p className="text-white/50 text-xs tracking-widest uppercase mb-2">Powering Enterprise Transformation</p>
-            <p className="text-white text-xl font-bold">Trusted by 100+ businesses across India & the USA</p>
+            <div className="text-center">
+              <p className="text-white/50 text-xs tracking-widest uppercase mb-2">Powering Enterprise Transformation</p>
+              <p className="text-white text-xl font-bold">Trusted by 100+ businesses across India & the USA</p>
+            </div>
+            <Link
+              to={ctaLink}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-900 font-semibold text-sm shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-105 transition-all duration-300"
+            >
+              {ctaText} <ArrowRight className="w-4 h-4" />
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -332,7 +350,7 @@ const ServicePageLayout = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.04 }}
                 whileHover={{ y: -4, scale: 1.05 }}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300 cursor-default shadow-sm"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-orange-500 hover:border-orange-500 hover:text-slate-900 transition-all duration-300 cursor-default shadow-sm"
               >
                 {tech.icon && <span className="[&_svg]:w-4 [&_svg]:h-4">{tech.icon}</span>}
                 {tech.name}

@@ -21,7 +21,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">1</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">1</span>
               Payment Terms
             </h2>
             <p>
@@ -35,7 +35,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">2</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">2</span>
               Delivery of Products
             </h2>
             <p>
@@ -49,7 +49,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">3</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">3</span>
               Warranty
             </h2>
             <p>
@@ -63,7 +63,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">4</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">4</span>
               Returns &amp; Cancellations
             </h2>
             <p>
@@ -78,7 +78,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">5</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">5</span>
               Taxes &amp; GST
             </h2>
             <p>
@@ -92,7 +92,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">6</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">6</span>
               IT Services &amp; Consulting
             </h2>
             <p>
@@ -106,7 +106,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">7</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">7</span>
               Limitation of Liability
             </h2>
             <p>
@@ -119,7 +119,7 @@ const InvoiceTerms = () => {
 
           <section>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-orange-500 text-white text-xs flex items-center justify-center font-bold">8</span>
+              <span className="w-5 h-5 rounded-full bg-orange-500 text-slate-900 text-xs flex items-center justify-center font-bold">8</span>
               Dispute Resolution &amp; Governing Law
             </h2>
             <p>

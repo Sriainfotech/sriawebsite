@@ -107,7 +107,7 @@ const TermsOfService = () => {
               <p className="text-slate-400 text-sm mt-1">hr@sriainfotech.com</p>
             </div>
             <a href="mailto:hr@sriainfotech.com"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-all flex-shrink-0"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-slate-900 font-semibold text-sm transition-all flex-shrink-0"
             >
               <Mail className="w-4 h-4" /> Email Us
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

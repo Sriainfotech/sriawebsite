@@ -658,7 +658,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             <SiteSearch />
                             <Link
                                 to="/contact"
-                                className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
+                                className="bg-orange-500 hover:bg-orange-600 text-slate-900 px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
                             >
                                 Contact Us →
                             </Link>

@@ -140,6 +140,7 @@ const CommerceCloud = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Commerce Expert"
     >
  {/* Hero Section */}
 

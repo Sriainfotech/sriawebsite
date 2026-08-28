@@ -131,6 +131,7 @@ const AssetPerformance = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to an APM Expert"
     >
       {/* Hero Section */}
 

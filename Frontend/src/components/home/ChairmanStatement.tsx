@@ -121,7 +121,7 @@ const ChairmanStatement = () => {
                                             </div>
 
                                             {/* Role badge */}
-                                            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+                                            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-slate-900 text-xs font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
                                                 {leader.role}
                                             </div>
                                         </div>

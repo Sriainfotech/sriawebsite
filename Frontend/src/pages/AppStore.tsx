@@ -154,7 +154,7 @@ const AppStore: React.FC = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all font-[Questrial,Arial,Verdana,Tahoma,sans-serif] ${activeCategory === cat
-                  ? "bg-orange-500 text-white"
+                  ? "bg-orange-500 text-slate-900"
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700"
                   }`}
               >

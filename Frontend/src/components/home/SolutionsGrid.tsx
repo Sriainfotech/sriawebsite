@@ -152,7 +152,7 @@ const SolutionsGrid = () => {
         {/* ── CTA ── */}
         <Reveal y={20} delay={0.4} className="mt-12 text-center">
           <Link to="/contact">
-            <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-3.5 text-sm rounded-full font-semibold shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-300 hover:-translate-y-0.5">
+            <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-900 px-8 py-3.5 text-sm rounded-full font-semibold shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-300 hover:-translate-y-0.5">
               Get Started with Our Expertise
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>

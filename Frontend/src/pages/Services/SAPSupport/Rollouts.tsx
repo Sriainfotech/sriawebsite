@@ -62,6 +62,7 @@ function Rollouts() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Plan Your Global Rollout"
     />
   );
 }

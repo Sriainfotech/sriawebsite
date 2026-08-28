@@ -135,6 +135,7 @@ const Manufacturing = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Manufacturing Expert"
     >
       {/* Hero Section */}
 

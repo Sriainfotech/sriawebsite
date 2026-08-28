@@ -158,6 +158,7 @@ const Ariba = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Procurement Expert"
     >
  {/* Hero Section */}
 

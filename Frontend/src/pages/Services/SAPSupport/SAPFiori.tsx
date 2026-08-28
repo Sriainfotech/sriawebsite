@@ -64,6 +64,7 @@ function SAPFiori() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Get a Fiori App Assessment"
     />
   );
 }

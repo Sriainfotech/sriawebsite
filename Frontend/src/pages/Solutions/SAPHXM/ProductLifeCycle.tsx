@@ -129,6 +129,7 @@ const ProductLifeCycle = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a PLM Consultant"
     >
  {/* Hero Section */}
 

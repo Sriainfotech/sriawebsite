@@ -63,6 +63,7 @@ function Upgrade() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Plan Your SAP Upgrade"
     />
   );
 }

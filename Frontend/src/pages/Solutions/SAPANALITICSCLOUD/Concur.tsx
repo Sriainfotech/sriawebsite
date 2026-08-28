@@ -152,6 +152,7 @@ const Concur = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Simplify Your Expense Process"
     >
  {/* Hero Section */}
 

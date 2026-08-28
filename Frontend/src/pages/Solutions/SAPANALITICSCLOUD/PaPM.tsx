@@ -125,6 +125,7 @@ const PaPM = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a PaPM Consultant"
     >
       {/* SECTION 2: Modelling & Allocation */}
       <section className="section-padding px-6 lg:px-12 bg-white">

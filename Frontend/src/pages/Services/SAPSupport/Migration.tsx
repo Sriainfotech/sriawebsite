@@ -62,6 +62,7 @@ function Migration() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Get a Free Migration Assessment"
     />
   );
 }

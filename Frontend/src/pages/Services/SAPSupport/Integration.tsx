@@ -73,6 +73,7 @@ function Integration() {
       capabilities={capabilities}
       techTrends={techTrends}
       relatedServices={relatedServices}
+      ctaText="Talk to an Integration Expert"
     />
   );
 }

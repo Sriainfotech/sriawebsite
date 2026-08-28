@@ -167,7 +167,7 @@ const SubscriptionPage = () => {
                 <XCircle className="w-7 h-7 text-red-500" />
               </div>
               <p className="text-slate-700 font-semibold">{error}</p>
-              <button onClick={fetchAll} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors">
+              <button onClick={fetchAll} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-orange-500 text-slate-900 text-sm font-semibold hover:bg-orange-600 transition-colors">
                 <RefreshCw className="w-4 h-4" /> Retry
               </button>
             </div>
@@ -286,7 +286,7 @@ const SubscriptionPage = () => {
               {/* ── Actions ── */}
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <Link to="/plans"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-sm font-bold shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5">
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-900 text-sm font-bold shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5">
                   <Sparkles className="w-4 h-4" /> View All Plans
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

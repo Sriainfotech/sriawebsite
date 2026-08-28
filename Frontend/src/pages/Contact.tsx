@@ -377,7 +377,7 @@ const Contact = () => {
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                       type="submit"
                       disabled={isSubmitting || isSubmitted}
-                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 disabled:opacity-70 text-white font-bold text-sm flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
+                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 disabled:opacity-70 text-slate-900 font-bold text-sm flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
                     >
                       {isSubmitting ? (
                         <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>

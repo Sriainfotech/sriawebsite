@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
   <!--
+    Explicit favicon links. public/favicon.ico was a 1024x1024 PNG (1.4MB,
+    mislabeled with a .ico extension) — loaded on every single page load
+    sitewide since browsers request /favicon.ico by default even with no
+    <link rel="icon"> present. Confirmed via a live Lighthouse audit (Aug
+    2026) as the single largest byte-weight item on the homepage, bigger
+    than every JS bundle combined. Replaced with a properly-sized set
+    (32x32 down to ~2KB) and referenced explicitly here so browsers use
+    these instead of guessing at /favicon.ico.
+  -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!--
     Preconnect to the origins the LCP element (hero text/image) depends on
     on almost every page — the heading/body font (Google Fonts) and the
     ImageKit CDN serving nearly every real content image. Establishing the
@@ -116,6 +131,87 @@
     })();
   </script>
   <!-- End Google Tag Manager -->
+
+  <!--
+    Google Analytics 4 (gtag.js) — added directly rather than relying on a
+    GA4 tag inside the GTM container above: a live audit (Aug 2026)
+    confirmed no gtag/GA4 request was firing on the deployed site at all,
+    so whatever was assumed to be configured inside GTM either isn't there
+    or isn't reachable — this is now the actual, verified analytics entry
+    point. NOTE: if a GA4 tag is later added inside the GTM container too,
+    remove one of the two — running both at once double-counts every
+    pageview/event.
+
+    Same deferral + consent-gating as GTM above (first genuine interaction
+    or a capped fallback timer; gated on the "analytics" cookie category).
+    send_page_view is explicitly disabled on config — because loading is
+    deferred, gtag's own automatic initial pageview would fire late/against
+    a possibly-stale path. Instead this fires one page_view explicitly the
+    moment GA finishes loading (for whatever route the visitor is actually
+    on then), and RouteSeo.tsx (mounted once near the router root, outside
+    Suspense) fires one on every subsequent client-side route change —
+    together these cover every pageview a real SPA visitor generates,
+    with none doubled and none missed before consent.
+
+    VITE_GA_MEASUREMENT_ID is a build-time env var (see Frontend/.env) —
+    PLACEHOLDER, left unset until a real GA4 property exists. Vite replaces
+    %VITE_GA_MEASUREMENT_ID% in this static HTML file at build time; when
+    unset it's replaced with an empty string, so the guard below skips
+    loading entirely rather than sending a broken request.
+  -->
+  <script>
+    (function () {
+      if (window.__PRERENDERING__) return;
+
+      var GA_ID = '%VITE_GA_MEASUREMENT_ID%';
+      if (!GA_ID || GA_ID.indexOf('%') !== -1) return;
+
+      var loaded = false;
+      var listenersArmed = false;
+      var events = ['scroll', 'keydown', 'click', 'touchstart', 'mousemove'];
+      var fallback;
+
+      function loadGA(evt) {
+        if (evt && !evt.isTrusted) return;
+        if (loaded) return;
+        loaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        var j = document.createElement('script');
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(j);
+
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID, { send_page_view: false });
+        window.gtag('event', 'page_view', {
+          page_path: window.location.pathname + window.location.search,
+          page_title: document.title,
+        });
+
+        events.forEach(function (evt) { window.removeEventListener(evt, loadGA); });
+        clearTimeout(fallback);
+      }
+
+      function armGA() {
+        if (listenersArmed || loaded) return;
+        listenersArmed = true;
+        events.forEach(function (evt) { window.addEventListener(evt, loadGA, { passive: true, once: true }); });
+        fallback = setTimeout(loadGA, 5000);
+      }
+
+      var consent = null;
+      try { consent = JSON.parse(localStorage.getItem('sria_cookie_consent')); } catch (e) {}
+      if (consent && consent.prefs && consent.prefs.analytics) armGA();
+
+      window.__sriaOnConsent = window.__sriaOnConsent || [];
+      window.__sriaOnConsent.push(function (prefs) {
+        if (prefs.analytics) armGA();
+      });
+    })();
+  </script>
+  <!-- End Google Analytics 4 -->
 
   <!--
     Intentionally no static <title>, <meta name="description">,

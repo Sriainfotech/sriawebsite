@@ -67,6 +67,7 @@ function ProcessConsulting() {
       relatedServicesTitle="Where This Leads Next"
       relatedServicesDescription="Once processes are redesigned and documented, these are the natural next steps."
       relatedServices={relatedServices}
+      ctaText="Talk to a Process Consultant"
     />
   );
 }

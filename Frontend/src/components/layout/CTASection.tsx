@@ -81,7 +81,7 @@ const CTASection = () => {
               className="inline-block"
             >
               <Link to="/contact">
-                <button className="group relative inline-flex items-center gap-3 px-12 py-5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-base shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300 overflow-hidden">
+                <button className="group relative inline-flex items-center gap-3 px-12 py-5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-900 font-bold text-base shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300 overflow-hidden">
                   <span className="relative z-10 flex items-center gap-3">
                     <Sparkles className="w-5 h-5" />
                     Get Started Now

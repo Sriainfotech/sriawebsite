@@ -131,6 +131,7 @@ const FieldServiceMgmt = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Field Service Expert"
     >
  {/* Hero Section */}
 

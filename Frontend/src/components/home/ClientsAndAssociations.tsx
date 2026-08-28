@@ -110,13 +110,21 @@ function initials(name: string) {
     .toUpperCase();
 }
 
+// Every stop here is deliberately kept in the orange-400..amber-600 range —
+// the shared LogoTile/initials-fallback text on top of this is a fixed
+// text-slate-900 (see below), and shades outside this range (orange-700+,
+// red-600) drop below 4.5:1 contrast with slate-900 (some pass with white
+// instead, but no single static text color passes ALL of these gradients —
+// verified precisely, not eyeballed). Capping the palette to this range
+// means one fixed dark text color reliably passes on every variant instead
+// of needing per-swatch conditional text color logic.
 const CARD_ACCENTS: string[] = [
   "from-orange-500 to-amber-600",
-  "from-orange-600 to-orange-800",
+  "from-orange-400 to-orange-600",
   "from-amber-500 to-orange-600",
   "from-orange-400 to-amber-500",
-  "from-amber-600 to-orange-700",
-  "from-orange-500 to-red-600",
+  "from-amber-400 to-amber-600",
+  "from-amber-400 to-orange-500",
 ];
 
 function accentFor(name: string) {
@@ -159,7 +167,7 @@ function ClientCard({ client }: ClientCardProps) {
               onError={() => setImgFailed(true)}
             />
           ) : (
-            <span className="text-white text-base font-bold">{initials(client.name)}</span>
+            <span className="text-slate-900 text-base font-bold">{initials(client.name)}</span>
           )}
         </div>
         <p className="text-white text-sm font-semibold leading-tight line-clamp-2 group-hover:text-orange-300 transition-colors">

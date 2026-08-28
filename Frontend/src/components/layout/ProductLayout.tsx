@@ -386,7 +386,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg shadow-orange-500/20"
+                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-slate-900 px-10 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg shadow-orange-500/20"
                 >
                   {cta.buttonText} <ArrowRight className="w-4 h-4" />
                 </motion.button>

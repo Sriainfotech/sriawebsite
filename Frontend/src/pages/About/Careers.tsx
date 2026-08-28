@@ -112,7 +112,7 @@ function Careers() {
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 className="bg-white rounded-2xl border border-slate-100 p-6 relative"
               >
-                <span className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-orange-500 text-white text-sm font-bold flex items-center justify-center shadow-md">
+                <span className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-orange-500 text-slate-900 text-sm font-bold flex items-center justify-center shadow-md">
                   {item.step}
                 </span>
                 <h3 className="text-base font-bold text-slate-900 mb-2 mt-2">{item.title}</h3>
@@ -142,7 +142,7 @@ function Careers() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-slate-900 text-sm font-semibold transition-colors"
             >
               <Mail className="w-4 h-4" />
               Get in Touch

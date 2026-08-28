@@ -67,7 +67,7 @@ const SuccessStories = () => {
  {/* Content */}
  <div className="absolute bottom-0 left-0 right-0 p-8">
  {/* Category pill */}
- <span className="inline-block px-3.5 py-1.5 rounded-full bg-orange-500/90 backdrop-blur-sm text-white text-xs font-bold mb-4 tracking-wide">
+ <span className="inline-block px-3.5 py-1.5 rounded-full bg-orange-500/90 backdrop-blur-sm text-slate-900 text-xs font-bold mb-4 tracking-wide">
  {story.category}
  </span>
 

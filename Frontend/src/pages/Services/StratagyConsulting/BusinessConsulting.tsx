@@ -67,6 +67,7 @@ function BusinessConsulting() {
       relatedServicesTitle="Where This Leads Next"
       relatedServicesDescription="Once the roadmap and business case are set, these are the natural next steps."
       relatedServices={relatedServices}
+      ctaText="Talk to a Strategy Consultant"
     />
   );
 }

@@ -147,6 +147,7 @@ const Digital = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Manufacturing Cloud Expert"
     >
  {/* Hero Section */}
 

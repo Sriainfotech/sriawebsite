@@ -71,7 +71,7 @@ const NewsSection = () => {
           >
             <Link
               to="/about"
-              className="group flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-slate-100 text-slate-900 font-semibold text-sm hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
+              className="group flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-slate-100 text-slate-900 font-semibold text-sm hover:bg-orange-500 hover:text-slate-900 hover:border-orange-500 transition-all duration-300"
             >
               View All News <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -124,7 +124,7 @@ const NewsSection = () => {
           {/* Navigation Arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-md hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 z-20 disabled:opacity-0"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-md hover:bg-orange-500 hover:text-slate-900 hover:border-orange-500 transition-all duration-300 z-20 disabled:opacity-0"
             disabled={!prevBtnEnabled}
             aria-label="Previous slide"
           >
@@ -132,7 +132,7 @@ const NewsSection = () => {
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-md hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 z-20 disabled:opacity-0"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-md hover:bg-orange-500 hover:text-slate-900 hover:border-orange-500 transition-all duration-300 z-20 disabled:opacity-0"
             disabled={!nextBtnEnabled}
             aria-label="Next slide"
           >
@@ -184,7 +184,7 @@ const NewsSection = () => {
                 placeholder="Enter your email"
                 className="px-6 py-3.5 bg-white/[0.07] border border-white/15 rounded-full text-white placeholder:text-slate-400 focus:outline-none focus:border-orange-500/50 focus:bg-white/[0.10] transition-all text-sm w-full lg:w-64"
               />
-              <button className="px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm rounded-full transition-all shadow-lg shadow-orange-500/20 whitespace-nowrap">
+              <button className="px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-slate-900 font-semibold text-sm rounded-full transition-all shadow-lg shadow-orange-500/20 whitespace-nowrap">
                 Get Notified
               </button>
             </div>

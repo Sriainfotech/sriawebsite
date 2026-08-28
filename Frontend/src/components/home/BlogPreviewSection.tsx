@@ -57,7 +57,7 @@ const BlogPreviewSection = () => {
           >
             <Link
               to="/blog"
-              className="group flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-slate-100 text-slate-900 font-semibold text-sm hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
+              className="group flex items-center gap-2 bg-white px-6 py-3 rounded-full border border-slate-100 text-slate-900 font-semibold text-sm hover:bg-orange-500 hover:text-slate-900 hover:border-orange-500 transition-all duration-300"
             >
               View All Posts <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>

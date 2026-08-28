@@ -66,6 +66,7 @@ function TechConsulting() {
       relatedServicesTitle="Where This Leads Next"
       relatedServicesDescription="Once the architecture and roadmap are set, these are the natural next steps."
       relatedServices={relatedServices}
+      ctaText="Talk to a Tech Strategist"
     />
   );
 }

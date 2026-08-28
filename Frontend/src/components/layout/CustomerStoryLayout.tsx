@@ -299,7 +299,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent" />
                   {/* Label badge */}
                   <div className="absolute bottom-4 left-5">
-                    <span className="px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
+                    <span className="px-3 py-1.5 rounded-full bg-orange-500 text-slate-900 text-xs font-bold uppercase tracking-wider shadow-lg">
                       {item.label}
                     </span>
                   </div>
@@ -417,7 +417,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg shadow-orange-500/20"
+                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-slate-900 px-10 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg shadow-orange-500/20"
                 >
                   Contact Us <ArrowRight className="w-4 h-4" />
                 </motion.button>

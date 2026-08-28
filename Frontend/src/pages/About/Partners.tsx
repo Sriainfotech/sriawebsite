@@ -281,7 +281,7 @@ function Partners() {
                             <motion.div whileHover={{ x: 4 }} className="inline-block">
                               <Link
                                 to={partner.detailsUrl}
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-orange-200"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-500 hover:bg-orange-600 text-slate-900 font-semibold text-sm transition-colors shadow-lg shadow-orange-200"
                               >
                                 View Partnership <ArrowRight className="w-4 h-4" />
                               </Link>

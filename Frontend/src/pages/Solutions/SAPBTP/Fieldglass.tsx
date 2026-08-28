@@ -153,6 +153,7 @@ const Fieldglass = () => {
       trustedFeatures={trustedPartnerFeatures}
       endToEndServices={endToEndServices}
       techTrends={techTrends}
+      ctaText="Talk to a Workforce Expert"
     >
  {/* Hero Section */}
 
