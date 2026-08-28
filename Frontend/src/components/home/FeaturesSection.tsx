@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GitBranch, CloudCog, BarChart3, HeartPulse, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Reveal } from "@/components/motion/Reveal";
 
 const features = [
   {
@@ -75,13 +76,7 @@ const FeaturesSection = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Heading ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
+        <Reveal y={20} duration={0.6} className="mb-12">
           <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">What We Do</span>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
@@ -94,7 +89,7 @@ const FeaturesSection = () => {
               From SAP implementations to cloud migrations — our expertise spans the full digital transformation journey.
             </p>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* ── Interactive layout ── */}
         {/* Below lg: this collapses to a single implicit grid column since
@@ -107,13 +102,7 @@ const FeaturesSection = () => {
         <div className="grid lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
 
           {/* Left: feature tabs */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-2 min-w-0 flex flex-col gap-2"
-          >
+          <Reveal x={-20} y={0} duration={0.6} className="lg:col-span-2 min-w-0 flex flex-col gap-2">
             {features.map((f, i) => {
               const isActive = i === active;
               const a = accentClasses[f.color];
@@ -128,7 +117,7 @@ const FeaturesSection = () => {
                   }`}
                 >
                   {/* Number */}
-                  <span className={`text-xs font-black font-mono flex-shrink-0 transition-colors ${isActive ? "text-slate-400" : "text-slate-200 group-hover:text-slate-300"}`}>
+                  <span className={`text-xs font-black font-mono flex-shrink-0 transition-colors ${isActive ? "text-slate-600" : "text-slate-200 group-hover:text-slate-300"}`}>
                     {f.number}
                   </span>
 
@@ -144,7 +133,7 @@ const FeaturesSection = () => {
                     <p className={`font-bold text-sm transition-colors ${isActive ? "text-slate-900" : "text-slate-600 group-hover:text-slate-800"}`}>
                       {f.title}
                     </p>
-                    <p className={`text-xs mt-0.5 truncate transition-colors ${isActive ? "text-slate-500" : "text-slate-400"}`}>
+                    <p className={`text-xs mt-0.5 truncate transition-colors ${isActive ? "text-slate-500" : "text-slate-600"}`}>
                       {f.subtitle}
                     </p>
                   </div>
@@ -175,16 +164,10 @@ const FeaturesSection = () => {
                 </button>
               ))}
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Right: showcase panel */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-3 min-w-0"
-          >
+          <Reveal x={20} y={0} duration={0.6} className="lg:col-span-3 min-w-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -277,7 +260,7 @@ const FeaturesSection = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </motion.div>
+          </Reveal>
 
         </div>
       </div>

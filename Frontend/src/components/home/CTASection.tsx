@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,11 +29,10 @@ const CTASection = () => {
  <div className="absolute inset-0 bg-gradient-to-r from-gray-10 via-gray-10 to-gray-10" />
 
  <div className="container-custom relative z-10 text-center">
- <motion.div
- initial={{ opacity: 0, scale: 0.9 }}
- whileInView={{ opacity: 1, scale: 1 }}
- viewport={{ once: true }}
- transition={{ duration: 0.8 }}
+ <Reveal
+ y={0}
+ scale={0.9}
+ duration={0.8}
  className="max-w-4xl mx-auto"
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white mb-8 backdrop-blur-sm border border-white/20">
@@ -62,7 +62,7 @@ const CTASection = () => {
  </Button>
  </Link>
  </motion.div>
- </motion.div>
+ </Reveal>
  </div>
  </section>
  );

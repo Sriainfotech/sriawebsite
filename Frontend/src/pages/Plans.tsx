@@ -65,7 +65,7 @@ const PlanDetails = ({ plan, isPopular }: { plan: Plan; isPopular: boolean }) =>
         <div key={row.field} className="flex items-center justify-between py-2.5 px-1">
           <div>
             <span className="text-slate-500 text-xs">{row.label}</span>
-            <span className="text-slate-300 text-[10px] font-mono ml-1.5">· {row.field}</span>
+            <span className="text-slate-600 text-[10px] font-mono ml-1.5">· {row.field}</span>
           </div>
           <div className="text-sm">{row.value}</div>
         </div>

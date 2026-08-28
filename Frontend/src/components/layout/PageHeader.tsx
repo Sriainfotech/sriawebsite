@@ -32,12 +32,12 @@ const PageHeader = ({ title, subtitle, breadcrumbs, backgroundImage, backgroundI
    "@context": "https://schema.org",
    "@type": "BreadcrumbList",
    itemListElement: [
-     { "@type": "ListItem", position: 1, name: "Home", item: "https://sriainfotech.com/" },
+     { "@type": "ListItem", position: 1, name: "Home", item: "https://www.sriainfotech.com/" },
      ...linkedCrumbs.map((crumb, index) => ({
        "@type": "ListItem",
        position: index + 2,
        name: crumb.name,
-       item: `https://sriainfotech.com${crumb.path}`,
+       item: `https://www.sriainfotech.com${crumb.path}`,
      })),
    ],
  } : null;

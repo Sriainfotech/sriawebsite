@@ -100,6 +100,51 @@ const upload = multer({
     },
 });
 
+// reCAPTCHA v3 (invisible) — verifies the token the frontend obtained via
+// grecaptcha.execute() (see Frontend/src/lib/recaptcha.ts) against Google's
+// siteverify endpoint. Mirrors the same "degrade gracefully until real
+// credentials exist" pattern already used below for EMAIL_USER/PASS: if
+// RECAPTCHA_SECRET_KEY isn't configured yet, submissions are allowed
+// through with a warning rather than rejected, so local/dev/staging isn't
+// broken before a real key is generated at google.com/recaptcha. Once a
+// real secret is set, a missing/failed/low-score token DOES reject the
+// submission — this is the actual bot-filtering step, not just logging.
+const RECAPTCHA_SCORE_THRESHOLD = 0.5;
+
+async function verifyRecaptcha(token) {
+    if (!process.env.RECAPTCHA_SECRET_KEY) {
+        console.warn('RECAPTCHA_SECRET_KEY not set — skipping reCAPTCHA verification.');
+        return { ok: true, skipped: true };
+    }
+    if (!token) {
+        return { ok: false, reason: 'Missing reCAPTCHA token.' };
+    }
+    try {
+        const params = new URLSearchParams({
+            secret: process.env.RECAPTCHA_SECRET_KEY,
+            response: token,
+        });
+        const verifyRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: params,
+        });
+        const result = await verifyRes.json();
+        if (!result.success) {
+            return { ok: false, reason: `reCAPTCHA verification failed: ${(result['error-codes'] || []).join(', ')}` };
+        }
+        if (typeof result.score === 'number' && result.score < RECAPTCHA_SCORE_THRESHOLD) {
+            return { ok: false, reason: `reCAPTCHA score too low (${result.score}).` };
+        }
+        return { ok: true, score: result.score };
+    } catch (error) {
+        console.error('reCAPTCHA verification request failed:', error.message);
+        // Network/API failure, not a bot signal — fail open rather than
+        // blocking every real visitor if Google's endpoint is unreachable.
+        return { ok: true, skipped: true, error: error.message };
+    }
+}
+
 // ✅ /api/contact — with input validation, correct `from` field, and optional document attachment
 app.post('/api/contact', (req, res) => {
     upload.single('document')(req, res, async (uploadErr) => {
@@ -107,10 +152,16 @@ app.post('/api/contact', (req, res) => {
             return res.status(400).json({ success: false, message: uploadErr.message || 'File upload failed.' });
         }
 
-        const { name, email, phone, message } = req.body;
+        const { name, email, phone, message, recaptchaToken } = req.body;
 
         if (!name || !email || !message) {
             return res.status(400).json({ success: false, message: 'Name, email, and message are required.' });
+        }
+
+        const recaptcha = await verifyRecaptcha(recaptchaToken);
+        if (!recaptcha.ok) {
+            console.warn('Contact form submission rejected by reCAPTCHA:', recaptcha.reason);
+            return res.status(400).json({ success: false, message: 'Spam check failed. Please try again.' });
         }
 
         console.log('Received contact form submission:', { name, email, phone, message, file: req.file?.originalname });

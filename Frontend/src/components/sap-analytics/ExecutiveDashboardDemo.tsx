@@ -369,7 +369,7 @@ export default function ExecutiveDashboardDemo() {
                   </div>
                 ))
             ) : (
-              <div style={{ fontSize: 11, color: "#94A3B8", padding: 8 }}>No assets match filters</div>
+              <div style={{ fontSize: 11, color: "#475569", padding: 8 }}>No assets match filters</div>
             )}
           </div>
         </div>
@@ -421,7 +421,7 @@ export default function ExecutiveDashboardDemo() {
                 ))
               ) : (
                 <motion.tr key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <td colSpan={6} style={{ padding: 8, color: "#94A3B8" }}>No assets match filters</td>
+                  <td colSpan={6} style={{ padding: 8, color: "#475569" }}>No assets match filters</td>
                 </motion.tr>
               )}
             </AnimatePresence>

@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { ArrowRight, Network, BarChart3, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Reveal } from "@/components/motion/Reveal";
 
 const categories = [
   {
@@ -50,12 +50,7 @@ const SolutionsGrid = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* ── Heading ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-14"
-        >
+        <Reveal y={20} className="mb-14">
           <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Our Depth</span>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
@@ -66,17 +61,16 @@ const SolutionsGrid = () => {
               Deep domain expertise across SAP and modern data platforms — built over a decade of enterprise engagements.
             </p>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* ── Two category columns ── */}
         <div className="grid lg:grid-cols-2 gap-6">
           {categories.map((cat, ci) => (
-            <motion.div
+            <Reveal
               key={cat.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: ci * 0.15 }}
+              y={30}
+              duration={0.6}
+              delay={ci * 0.15}
               className="rounded-3xl overflow-hidden border border-white/[0.07] bg-white/[0.02] flex flex-col"
             >
               {/* ── Image banner ── */}
@@ -115,12 +109,12 @@ const SolutionsGrid = () => {
               {/* ── Items list ── */}
               <div className="flex-1 divide-y divide-white/[0.05]">
                 {cat.items.map((item, idx) => (
-                  <motion.div
+                  <Reveal
                     key={item.num}
-                    initial={{ opacity: 0, x: ci === 0 ? -15 : 15 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.1 + idx * 0.07 }}
+                    x={ci === 0 ? -15 : 15}
+                    y={0}
+                    duration={0.4}
+                    delay={0.1 + idx * 0.07}
                   >
                     <Link to={item.link}>
                       <div className="group flex items-center gap-4 px-6 py-4 hover:bg-orange-500/5 transition-all duration-200 relative overflow-hidden">
@@ -148,28 +142,22 @@ const SolutionsGrid = () => {
                         </div>
                       </div>
                     </Link>
-                  </motion.div>
+                  </Reveal>
                 ))}
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
         {/* ── CTA ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 text-center"
-        >
+        <Reveal y={20} delay={0.4} className="mt-12 text-center">
           <Link to="/contact">
             <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-3.5 text-sm rounded-full font-semibold shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-300 hover:-translate-y-0.5">
               Get Started with Our Expertise
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </Link>
-        </motion.div>
+        </Reveal>
 
       </div>
     </section>

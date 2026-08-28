@@ -754,7 +754,7 @@ const Gallery: React.FC = () => {
                     }`}
                 >
                   {cat}
-                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center ${active ? "bg-white/20 text-white" : "bg-slate-200 text-slate-500"
+                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center ${active ? "bg-white/20 text-white" : "bg-slate-200 text-slate-600"
                     }`}>
                     {countFor(cat)}
                   </span>

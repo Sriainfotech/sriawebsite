@@ -122,7 +122,7 @@ const CookieBanner = () => {
                             <span className="text-white text-xs font-semibold">{ct.label}</span>
                             {ct.required && <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full">Required</span>}
                           </div>
-                          <p className="text-slate-500 text-[10px] mt-0.5">{ct.description}</p>
+                          <p className="text-slate-400 text-[10px] mt-0.5">{ct.description}</p>
                         </div>
                         <button
                           onClick={() => toggle(ct.id)}

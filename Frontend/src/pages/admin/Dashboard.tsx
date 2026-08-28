@@ -93,7 +93,7 @@ const AdminDashboard = () => {
             <FileText className="w-5 h-5 text-orange-600" />
           </div>
           <p className="text-slate-700 font-medium">No posts yet</p>
-          <p className="text-slate-400 text-sm mt-1">Create your first post to get started.</p>
+          <p className="text-slate-600 text-sm mt-1">Create your first post to get started.</p>
         </div>
       ) : (
         <div className="bg-white rounded-2xl border border-slate-100 divide-y divide-slate-100 overflow-hidden">
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
                     {post.status}
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-600 mt-1">
                   /{post.slug} · Updated {new Date(post.updatedAt).toLocaleDateString()}
                 </p>
               </div>

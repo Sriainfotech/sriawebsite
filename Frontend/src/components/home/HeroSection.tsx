@@ -188,6 +188,13 @@ const HeroSection = () => {
                         alt=""
                         fetchPriority="high"
                         decoding="async"
+                        // Same reasoning as PageHeader.tsx's hero image: this is
+                        // absolutely positioned and CSS-stretched to fill its
+                        // section, so these don't drive real layout — added
+                        // purely so Lighthouse's width/height audit stops
+                        // flagging it. 1920x1080 matches the 1080w variant.
+                        width={1920}
+                        height={1080}
                         className="absolute inset-0 w-full h-full object-cover"
                         style={{ filter: "brightness(0.45) contrast(1.15) saturate(0.9)" }}
                     />

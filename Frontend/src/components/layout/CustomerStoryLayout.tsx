@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ArrowRight, Building2, MapPin, Users, Calendar, ChevronRight } from "lucide-react";
 
@@ -160,12 +161,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
+            <Reveal x={-30} y={0} duration={0.7}>
               <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Project Overview</span>
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 leading-tight">About This Engagement</h2>
               <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-7" />
@@ -184,16 +180,10 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </Reveal>
 
             {/* Overview image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative hidden lg:block"
-            >
+            <Reveal x={30} y={0} duration={0.8} className="relative hidden lg:block">
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-orange-100 rounded-2xl pointer-events-none" />
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
                 <img
@@ -216,7 +206,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -230,13 +220,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Challenge image */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative hidden lg:block"
-            >
+            <Reveal x={-30} y={0} duration={0.8} className="relative hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                 <img
                   src={images.challenge}
@@ -251,15 +235,10 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
               </div>
-            </motion.div>
+            </Reveal>
 
             {/* Challenges list */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
+            <Reveal x={30} y={0} duration={0.7}>
               <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">The Problem</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight">{challenges.title}</h2>
               <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mb-8" />
@@ -280,7 +259,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                   </motion.li>
                 ))}
               </ul>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -289,26 +268,19 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange-50 rounded-full -translate-x-1/3 -translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
+          <Reveal className="text-center mb-14">
             <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Our Approach</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{solutions.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-5" />
             <p className="text-slate-500 text-sm max-w-2xl mx-auto leading-relaxed">{solutions.introText}</p>
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {solutions.items.map((item, i) => (
-              <motion.div
+              <Reveal
                 key={i}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                y={25}
+                delay={i * 0.1}
                 className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-orange-200 hover:shadow-xl transition-all duration-300"
               >
                 {/* Image strip */}
@@ -338,7 +310,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 <div className="p-6">
                   <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
                 </div>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -367,25 +339,18 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
+          <Reveal className="text-center mb-14">
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Results</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{businessImpact.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {businessImpact.items.map((item, i) => (
-              <motion.div
+              <Reveal
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
+                y={20}
+                delay={i * 0.07}
                 className="group bg-white border border-slate-100 rounded-2xl p-6 hover:border-orange-300 hover:shadow-xl transition-all duration-300"
               >
                 <div className="w-8 h-8 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-500 mb-4 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all">
@@ -393,7 +358,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 </div>
                 <h3 className="text-sm font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                 <p className="text-slate-500 text-xs leading-relaxed">{item.description}</p>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -403,25 +368,18 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
+          <Reveal className="text-center mb-14">
             <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">Impact</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{impactStats.title}</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto" />
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {impactStats.items.map((stat, i) => (
-              <motion.div
+              <Reveal
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
+                y={20}
+                delay={i * 0.15}
                 className="group relative bg-white border border-slate-100 rounded-2xl p-10 text-center hover:border-orange-200 hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -429,7 +387,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                   {stat.percentage}
                 </p>
                 <p className="text-slate-500 text-sm leading-relaxed relative z-10">{stat.description}</p>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -443,11 +401,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
         />
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <Reveal>
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-5">Get Started</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight">
               Ready to Write Your{" "}
@@ -478,7 +432,7 @@ const CustomerStoryLayout: React.FC<CustomerStoryProps> = ({
                 </motion.button>
               </Link>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
     </div>

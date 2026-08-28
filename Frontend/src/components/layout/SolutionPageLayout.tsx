@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
+import { Reveal } from "@/components/motion/Reveal";
 
 interface TrustedFeature {
   icon: React.ReactNode;
@@ -44,11 +45,10 @@ const SolutionPageLayout = ({
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-stretch">
             {/* Left: text */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+            <Reveal
+              x={-30}
+              y={0}
+              duration={0.7}
               className="flex flex-col justify-center"
             >
               <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-5">Our Impact</span>
@@ -74,14 +74,14 @@ const SolutionPageLayout = ({
                   </div>
                 ))}
               </div> */}
-            </motion.div>
+            </Reveal>
 
             {/* Right: image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15 }}
+            <Reveal
+              x={30}
+              y={0}
+              duration={0.7}
+              delay={0.15}
               className="relative"
             >
               {/* Decorative frame */}
@@ -121,7 +121,7 @@ const SolutionPageLayout = ({
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -149,32 +149,25 @@ const SolutionPageLayout = ({
         </div>
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
+          <Reveal className="text-center mb-14">
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Partnership</span>
             <h2 className="text-xl lg:text-2xl font-bold text-white">Your Trusted Partner in SAP Transformation</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto mt-4" />
-          </motion.div>
+          </Reveal>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {trustedFeatures.map((item, i) => (
-              <motion.div
+              <Reveal
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                duration={0.5}
+                delay={i * 0.1}
                 className="group bg-white border border-slate-100 rounded-2xl p-6 flex flex-col items-center text-center hover:border-orange-200 hover:shadow-xl transition-all duration-300"
               >
                 <div className="mb-4 w-14 h-14 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300 [&_svg]:w-6 [&_svg]:h-6">
                   {item.icon}
                 </div>
                 <span className="font-semibold text-slate-800 text-sm group-hover:text-orange-600 transition-colors">{item.label}</span>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -190,11 +183,10 @@ const SolutionPageLayout = ({
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left image */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+            <Reveal
+              x={-30}
+              y={0}
+              duration={0.7}
               className="lg:w-5/12 relative"
             >
               <div className="rounded-2xl overflow-hidden h-64 shadow-2xl">
@@ -216,33 +208,28 @@ const SolutionPageLayout = ({
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
 
             {/* Right: services list */}
             <div className="lg:w-7/12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-8"
-              >
+              <Reveal className="mb-8">
                 <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-3">Full Coverage</span>
                 <h2 className="text-xl lg:text-2xl font-bold text-white">End-to-End SAP Services</h2>
-              </motion.div>
+              </Reveal>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {endToEndServices.map((service, i) => (
-                  <motion.div
+                  <Reveal
                     key={i}
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                    x={10}
+                    y={0}
+                    duration={0.4}
+                    delay={i * 0.05}
                     className="group flex items-center gap-3 bg-white/[0.04] border border-white/8 rounded-xl px-4 py-3.5 hover:bg-orange-500/10 hover:border-orange-500/30 transition-all duration-300"
                   >
                     <CheckCircle2 className="w-4 h-4 text-orange-400 flex-shrink-0" />
                     <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors">{service}</span>
-                  </motion.div>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -255,19 +242,14 @@ const SolutionPageLayout = ({
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-50 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl opacity-60 pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <Reveal className="text-center mb-12">
             <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Technologies</span>
             <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Drive Innovation with Latest Tech Trends</h2>
             <div className="h-0.5 w-12 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full mx-auto mb-4" />
             <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed">
               Our innovative technologies empower businesses to streamline operations, enhance customer experiences, and drive growth.
             </p>
-          </motion.div>
+          </Reveal>
 
           <div className="flex flex-wrap justify-center gap-3">
             {techTrends.map((tech, i) => (

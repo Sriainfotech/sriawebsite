@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Search, Globe, ChevronDown, Menu, X, LayoutGrid } from "lucide-react";
+import { Globe, ChevronDown, Menu, X, LayoutGrid } from "lucide-react";
 import { Link } from "react-router-dom";
+import SiteSearch from "./SiteSearch";
 
 interface DropdownSection {
     title: string;
@@ -654,6 +655,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         <div className="flex items-center space-x-3">
                             <div className="hidden md:flex items-center space-x-3">
                             </div>
+                            <SiteSearch />
                             <Link
                                 to="/contact"
                                 className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"

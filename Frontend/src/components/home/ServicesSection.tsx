@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "react-router-dom";
 import { ArrowRight, Gauge, Network, Lightbulb, Cpu, AppWindow, CloudUpload, KeyRound, TrendingUp } from "lucide-react";
 
@@ -8,48 +8,56 @@ const sapSolutions = [
     link: "/support-maintainance/",
     icon: Gauge,
     description: "Comprehensive application management and optimization.",
+    cta: "Get Managed Support",
   },
   {
     title: "SAP S/4HANA Implementation",
     link: "/services/sap-s4hana-implementation",
     icon: Network,
     description: "End-to-end implementation for the intelligent enterprise.",
+    cta: "Start Your S/4HANA Move",
   },
   {
     title: "SAP Consulting Services",
     link: "/services/global-sap-rollouts",
     icon: Lightbulb,
     description: "Strategic guidance for your digital roadmap.",
+    cta: "Talk to a Consultant",
   },
   {
     title: "SAP Business Technology",
     link: "/integration/",
     icon: Cpu,
     description: "Leveraging BTP for innovation and integration.",
+    cta: "Explore BTP Options",
   },
   {
     title: "Odoo Implementation",
     link: "/odooservices/implementation/",
     icon: AppWindow,
     description: "Agile and scalable ERP solutions for growing businesses.",
+    cta: "Talk to an Odoo Consultant",
   },
   {
     title: "Cloud Migration",
     link: "/solutions/public-cloud",
     icon: CloudUpload,
     description: "Seamless transition to secure cloud environments.",
+    cta: "Plan Your Cloud Move",
   },
   {
     title: "Security & Compliance",
     link: "/solutions/private-cloud",
     icon: KeyRound,
     description: "Ensuring data integrity and regulatory adherence.",
+    cta: "Secure Your SAP Landscape",
   },
   {
     title: "Digital Transformation",
     link: "/services/strategy-consulting/tech",
     icon: TrendingUp,
     description: "Modernizing legacy systems for the digital age.",
+    cta: "Start Your Transformation",
   },
 ];
 
@@ -71,27 +79,22 @@ const ServicesSection = () => {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <Reveal y={20}>
             <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">What We Offer</span>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
               Our Core Services
             </h2>
             <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto rounded-full" />
-          </motion.div>
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {sapSolutions.map((service, index) => (
-            <motion.div
+            <Reveal
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.07 }}
+              y={30}
+              duration={0.5}
+              delay={index * 0.07}
             >
               <Link
                 to={service.link}
@@ -116,13 +119,14 @@ const ServicesSection = () => {
                 </p>
 
                 <div className="inline-flex items-center gap-1.5 text-xs font-medium text-orange-400/60 group-hover:text-orange-400 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-                  Learn More <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <span>{service.cta}</span>
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0 group-hover:translate-x-1 transition-transform" />
                 </div>
 
                 {/* Bottom border accent */}
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>

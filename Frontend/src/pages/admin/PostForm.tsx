@@ -190,7 +190,7 @@ const AdminPostForm = () => {
 
       <div className="flex items-center justify-between mb-6">
         <h1 className="font-heading font-bold text-2xl text-slate-900">{isEdit ? "Edit Post" : "New Post"}</h1>
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-slate-600">
           <span className="text-red-500">*</span> Required
         </p>
       </div>
@@ -216,7 +216,7 @@ const AdminPostForm = () => {
                 }}
                 placeholder="post-url-slug"
               />
-              <p className="text-xs text-slate-400">/blog/{slug || "..."}</p>
+              <p className="text-xs text-slate-600">/blog/{slug || "..."}</p>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -298,7 +298,7 @@ const AdminPostForm = () => {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Zoom</span>
+                    <span className="text-xs text-slate-600 whitespace-nowrap">Zoom</span>
                     <input
                       type="range"
                       min={100}
@@ -311,13 +311,13 @@ const AdminPostForm = () => {
                     <button
                       type="button"
                       onClick={resetFocalPoint}
-                      className="text-xs text-slate-400 hover:text-orange-700 flex items-center gap-1 transition-colors"
+                      className="text-xs text-slate-600 hover:text-orange-700 flex items-center gap-1 transition-colors"
                     >
                       <RotateCcw className="w-3 h-3" />
                       Reset
                     </button>
                   </div>
-                  <p className="text-xs text-slate-400">Click or drag on the image to choose what part stays in view when it's cropped.</p>
+                  <p className="text-xs text-slate-600">Click or drag on the image to choose what part stays in view when it's cropped.</p>
                 </div>
               )}
             </div>

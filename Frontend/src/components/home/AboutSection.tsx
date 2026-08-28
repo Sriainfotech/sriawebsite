@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
 const aboutImageUrl = "https://ik.imagekit.io/hps6th7vy/sria/home/about-home.png?tr=f-auto,q-auto,w-1600";
 
 const highlights = [
@@ -22,13 +23,7 @@ const AboutSection = () => {
                 <div className="grid lg:grid-cols-2 gap-16 items-stretch">
 
                     {/* Image Side */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.9, ease: "easeOut" }}
-                        className="relative h-full"
-                    >
+                    <Reveal x={-60} y={0} duration={0.9} className="relative h-full">
                         {/* Decorative frame behind */}
                         <div className="absolute -bottom-4 -right-4 w-full h-full rounded-3xl border-2 border-orange-200/50" />
 
@@ -58,16 +53,11 @@ const AboutSection = () => {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </Reveal>
 
                     {/* Content Side */}
                     <div className="flex flex-col justify-center space-y-8">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
+                        <Reveal y={20} duration={0.6}>
                             <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-4">About Us</span>
                             <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 leading-tight">
                                 What Sets Us Apart:{" "}
@@ -76,7 +66,7 @@ const AboutSection = () => {
                                     Partner-Centric Approach
                                 </span>
                             </h2>
-                        </motion.div>
+                        </Reveal>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -109,19 +99,14 @@ const AboutSection = () => {
                             ))}
                         </ul>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.7 }}
-                        >
+                        <Reveal y={20} duration={0.6} delay={0.7}>
                             <Link to="/about">
                                 <button className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                                     Discover More
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </Link>
-                        </motion.div>
+                        </Reveal>
                     </div>
                 </div>
             </div>

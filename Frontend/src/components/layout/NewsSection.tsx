@@ -182,7 +182,7 @@ const NewsSection = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-6 py-3.5 bg-white/[0.07] border border-white/15 rounded-full text-white placeholder:text-slate-500 focus:outline-none focus:border-orange-500/50 focus:bg-white/[0.10] transition-all text-sm w-full lg:w-64"
+                className="px-6 py-3.5 bg-white/[0.07] border border-white/15 rounded-full text-white placeholder:text-slate-400 focus:outline-none focus:border-orange-500/50 focus:bg-white/[0.10] transition-all text-sm w-full lg:w-64"
               />
               <button className="px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm rounded-full transition-all shadow-lg shadow-orange-500/20 whitespace-nowrap">
                 Get Notified

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "react-router-dom";
 import { Cloud, Database, Layers, Shield, ArrowRight } from "lucide-react";
 
@@ -10,6 +10,7 @@ const solutions = [
  title: "SAP S/4HANA",
  description: "End-to-end implementation and migration services for intelligent enterprise solutions.",
  link: "/services/sap-s4hana-implementation",
+ cta: "Get a Free S/4HANA Assessment",
  },
  {
  icon: Cloud,
@@ -18,6 +19,7 @@ const solutions = [
  title: "Cloud Solutions",
  description: "Seamless cloud migration and management with SAP Business Technology Platform.",
  link: "/solutions/btp",
+ cta: "Explore Cloud Solutions",
  },
  {
  icon: Database,
@@ -26,6 +28,7 @@ const solutions = [
  title: "Data Analytics",
  description: "Transform data into actionable insights for informed decision-making.",
  link: "/services/data-analytics",
+ cta: "Talk to a Data Consultant",
  },
  {
  icon: Shield,
@@ -34,6 +37,7 @@ const solutions = [
  title: "Managed Services",
  description: "Comprehensive application management and support services.",
  link: "/services/sap-support-maintenance",
+ cta: "Get Managed Support",
  },
 ];
 
@@ -41,24 +45,18 @@ const RecommendedSolutions = () => {
  return (
  <section className="section-padding bg-background overflow-hidden">
  <div className="container-custom">
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- className="text-center mb-16"
- >
+ <Reveal y={20} className="text-center mb-16">
  <span className="text-primary font-semibold tracking-wider uppercase text-sm">Our Expertise</span>
  <h2 className="text-2xl md:text-3xl font-heading font-bold mt-2">Recommended Solutions</h2>
- </motion.div>
+ </Reveal>
 
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
  {solutions.map((solution, index) => (
- <motion.div
+ <Reveal
  key={solution.title}
- initial={{ opacity: 0, y: 100 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+ y={100}
+ duration={0.6}
+ delay={index * 0.1}
  >
  <Link
  to={solution.link}
@@ -90,13 +88,13 @@ const RecommendedSolutions = () => {
  {solution.description}
  </p>
 
- <div className="flex items-center text-primary font-semibold text-sm group-hover:text-secondary transition-colors">
- Learn More
- <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" />
+ <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:text-secondary transition-colors">
+ <span>{solution.cta}</span>
+ <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-2" />
  </div>
  </div>
  </Link>
- </motion.div>
+ </Reveal>
  ))}
  </div>
  </div>

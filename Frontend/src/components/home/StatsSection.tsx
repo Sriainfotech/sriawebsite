@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Trophy, Users, Briefcase, Globe } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
 
 const stats = [
     { value: 10, suffix: "+", label: "Years of Excellence", icon: Trophy },
@@ -76,20 +77,13 @@ const StatsSection = () => {
             </div>
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/10"
-                >
+                <Reveal y={40} duration={0.8} className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/10">
                     {stats.map((stat, index) => (
-                        <motion.div
+                        <Reveal
                             key={stat.label}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            y={30}
+                            duration={0.5}
+                            delay={index * 0.1}
                             className="text-center group bg-white/[0.03] hover:bg-white/[0.07] transition-colors duration-400 p-10 lg:p-12"
                         >
                             <motion.div
@@ -104,9 +98,9 @@ const StatsSection = () => {
                                 <Counter value={stat.value} suffix={stat.suffix} />
                             </div>
                             <p className="text-slate-400 font-medium text-sm tracking-wide">{stat.label}</p>
-                        </motion.div>
+                        </Reveal>
                     ))}
-                </motion.div>
+                </Reveal>
             </div>
         </section>
     );

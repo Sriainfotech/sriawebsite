@@ -117,7 +117,7 @@ const TermsOfService = () => {
           {/* Legal nav */}
           <div className="mt-8 flex flex-wrap gap-4 text-sm text-slate-500">
             <Link to="/privacy" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
-            <span className="text-slate-300">·</span>
+            <span className="text-slate-600">·</span>
             <Link to="/cookies" className="hover:text-orange-500 transition-colors">Cookie Policy</Link>
           </div>
         </div>

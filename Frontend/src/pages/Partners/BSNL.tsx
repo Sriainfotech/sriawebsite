@@ -155,6 +155,8 @@ function BSNL() {
               <img
                 src={BSNL_LOGO}
                 alt="BSNL"
+                width={96}
+                height={96}
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   const t = e.currentTarget;

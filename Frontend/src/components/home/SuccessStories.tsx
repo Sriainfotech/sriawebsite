@@ -30,7 +30,7 @@ const SuccessStories = () => {
  <span className="inline-block text-orange-700 font-semibold tracking-widest uppercase text-xs mb-3">Case Studies</span>
  <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900">Success Stories</h2>
  </div>
- <p className="text-slate-400 text-base max-w-sm leading-relaxed">
+ <p className="text-slate-600 text-base max-w-sm leading-relaxed">
  Real results from real clients — see how we've transformed businesses across industries.
  </p>
  </motion.div>
@@ -51,6 +51,8 @@ const SuccessStories = () => {
  <img
  src={story.image}
  alt={story.title}
+ width={720}
+ height={480}
  className={`absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-108 ${
  story.imageFit === "contain" ? "object-contain p-12" : "object-cover"
  }`}

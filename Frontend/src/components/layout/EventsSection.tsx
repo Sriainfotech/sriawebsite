@@ -51,6 +51,8 @@ const EventsSection = () => {
                 <img
                   src={event.image}
                   alt={event.title}
+                  width={640}
+                  height={360}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />

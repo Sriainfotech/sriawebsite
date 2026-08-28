@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
           {/* Legal nav */}
           <div className="mt-8 flex flex-wrap gap-4 text-sm text-slate-500">
             <Link to="/terms" className="hover:text-orange-500 transition-colors">Terms of Service</Link>
-            <span className="text-slate-300">·</span>
+            <span className="text-slate-600">·</span>
             <Link to="/cookies" className="hover:text-orange-500 transition-colors">Cookie Policy</Link>
           </div>
         </div>

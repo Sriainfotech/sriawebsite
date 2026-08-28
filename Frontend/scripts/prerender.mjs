@@ -164,6 +164,30 @@ async function inlineCriticalCss(html) {
   }
 }
 
+// index.html loads the Google Fonts stylesheet with the standard
+// preload+onload-swap pattern: media="print" so the browser doesn't block
+// initial render on it, flipped to media="all" by an onload handler once
+// it's actually loaded. Puppeteer waits for the page to fully finish
+// loading (networkidle0) before this file captures page.content() below —
+// which is AFTER that onload already fired, so the captured static HTML
+// freezes the POST-swap state (media="all") rather than the pre-swap state
+// the trick depends on. Every real visitor then loads this prerendered
+// HTML fresh from the server and sees media="all" from byte one — a
+// genuinely render-blocking stylesheet, on every single prerendered route,
+// with the entire swap mechanism defeated. Confirmed directly: a live
+// Lighthouse mobile run flagged this exact link as costing ~1,700ms of
+// FCP on every page checked (Aug 2026). This resets it back to the
+// pre-swap media="print" state before writing the file to disk, so real
+// visitors' browsers get to run the swap themselves as originally
+// intended. Scoped to the Google Fonts stylesheet specifically (matched by
+// its onload handler) so no unrelated media="all" link is touched.
+function resetFontLoadingState(html) {
+  return html.replace(
+    /(<link[^>]*fonts\.googleapis\.com[^>]*)media="all"([^>]*onload="this\.media='all'"[^>]*>)/,
+    '$1media="print"$2'
+  );
+}
+
 // GTM is deliberately deferred client-side (first interaction / idle time —
 // see index.html) so it never competes with the LCP-critical hero. A
 // prerender navigation sits on the page long enough (up to 60s,
@@ -199,7 +223,7 @@ async function renderRoute(browser, baseUrl, route) {
       { timeout: 20000 }
     );
 
-    const html = await inlineCriticalCss(await page.content());
+    const html = resetFontLoadingState(await inlineCriticalCss(await page.content()));
 
     if (route === "/") {
       await writeFile(HOME_HOLDING_FILE, html, "utf-8");

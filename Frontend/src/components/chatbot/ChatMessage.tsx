@@ -55,7 +55,7 @@ const ChatMessage = ({ message, onFollowUp, onFeedback }: ChatMessageProps) => {
     </div>
   ) : (
     <div className="h-7 w-7 shrink-0 overflow-hidden rounded-full bg-muted">
-      <img src="https://ik.imagekit.io/hps6th7vy/sria/ai-face.png?tr=f-auto,q-auto,w-96" alt="" className="h-full w-full object-contain" />
+      <img src="https://ik.imagekit.io/hps6th7vy/sria/ai-face.png?tr=f-auto,q-auto,w-96" alt="" width={28} height={28} className="h-full w-full object-contain" />
     </div>
   );
 

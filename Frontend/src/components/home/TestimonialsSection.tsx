@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 import { Star, Quote } from "lucide-react";
 import siteData from "@/data/siteData.json";
 
@@ -21,26 +22,20 @@ const TestimonialsSection = () => {
  <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
  {/* Header */}
  <div className="text-center mb-16">
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- >
+ <Reveal y={20}>
  <span className="inline-block text-orange-500 font-semibold tracking-widest uppercase text-xs mb-4">Client Success</span>
  <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
  What Our Clients Say
  </h2>
- </motion.div>
+ </Reveal>
  </div>
 
  <div className="grid md:grid-cols-3 gap-6">
  {testimonials.map((testimonial, index) => (
- <motion.div
+ <Reveal
  key={index}
- initial={{ opacity: 0, y: 40 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ duration: 0.6, delay: index * 0.15 }}
+ y={40}
+ delay={index * 0.15}
  className="group relative"
  >
  <div className="relative h-full rounded-2xl bg-white/[0.04] border border-white/8 p-8 hover:bg-white/[0.08] hover:border-white/16 transition-all duration-400 overflow-hidden">
@@ -94,7 +89,7 @@ const TestimonialsSection = () => {
  {/* Bottom border accent */}
  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
  </div>
- </motion.div>
+ </Reveal>
  ))}
  </div>
  </div>

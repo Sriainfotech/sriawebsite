@@ -7,6 +7,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import PageHeader from "@/components/layout/PageHeader";
 import axiosInstance from "@/lib/axios";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 const offices = [
   {
@@ -98,11 +99,18 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      // Invisible v3 check — resolves null (not a submission blocker) if no
+      // site key is configured yet or the check fails for any reason; see
+      // lib/recaptcha.ts. The backend re-verifies this token server-side
+      // rather than trusting the client.
+      const recaptchaToken = await getRecaptchaToken("contact_form");
+
       const payload = new FormData();
       payload.append("name", formData.name);
       payload.append("email", formData.email);
       payload.append("phone", formData.phone);
       payload.append("message", formData.message);
+      if (recaptchaToken) payload.append("recaptchaToken", recaptchaToken);
       if (file) payload.append("document", file);
 
       // Let the browser set its own multipart Content-Type + boundary —
@@ -113,6 +121,14 @@ const Contact = () => {
       if (response.data.success) {
         setIsSubmitted(true);
         toast({ title: "Message Sent!", description: response.data.message || "We'll get back to you soon." });
+        // GA4 conversion event — fires only on a confirmed successful
+        // submission, so lead conversions can be tracked separately from
+        // page views. Reuses the same GTM/dataLayer entry point already
+        // wired up in index.html (GA4 is configured as a tag inside that
+        // GTM container) rather than adding a second, competing analytics
+        // pipeline.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "generate_lead", form_name: "contact_form" });
         setFormData({ name: "", email: "", phone: "", message: "" });
         setFile(null);
         setTimeout(() => setIsSubmitted(false), 3000);
